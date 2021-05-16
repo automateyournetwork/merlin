@@ -1,0 +1,662 @@
+{
+    "type": "NetworkGraph",
+    "label": "Learn Interfaces",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_Nexus9k"
+        },
+        { 
+            "id": "Mgmt0"
+        },
+        { 
+            "id": "Description: DO NOT TOUCH CONFIG ON THIS INTERFACE"
+        },
+        { 
+            "id": "IP Address: 10.10.20.58/24"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: up"
+        },
+        { 
+            "id": "MAC Address: 0050.56bf.5774"
+        },
+        { 
+            "id": "VRF: management"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/5"
+        },
+        { 
+            "id": "Description: L3 Link"
+        },
+        { 
+            "id": "IP Address: 172.16.1.1/30"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: up"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: 01:28:24"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Loopback1"
+        },
+        { 
+            "id": "IP Address: 172.16.0.1/32"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: up"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Vlan105"
+        },
+        { 
+            "id": "Description: iot svi - DEMO PLEASE DON'T TOUCH"
+        },
+        { 
+            "id": "IP Address: 172.16.105.1/24"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Vlan104"
+        },
+        { 
+            "id": "Description: security svi - DEMO PLEASE DON'T TOUCH"
+        },
+        { 
+            "id": "IP Address: 172.16.104.1/24"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Vlan103"
+        },
+        { 
+            "id": "Description: test svi - DEMO PLEASE DON'T TOUCH"
+        },
+        { 
+            "id": "IP Address: 172.16.103.1/24"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Vlan102"
+        },
+        { 
+            "id": "Description: dev svi - DEMO PLEASE DON'T TOUCH"
+        },
+        { 
+            "id": "IP Address: 172.16.102.1/24"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Vlan101"
+        },
+        { 
+            "id": "Description: prod svi - DEMO PLEASE DON'T TOUCH"
+        },
+        { 
+            "id": "IP Address: 172.16.101.1/24"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Vlan100"
+        },
+        { 
+            "id": "Description: mgmt svi - DEMO PLEASE DON'T TOUCH"
+        },
+        { 
+            "id": "IP Address: 172.16.100.1/24"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Port-channel11"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "Switchport Mode: trunk"
+        },
+        { 
+            "id": "Access VLAN: 1"
+        },
+        { 
+            "id": "Trunk VLANs: 100-110"
+        },
+        { 
+            "id": "Native VLAN: 1"
+        },  
+        { 
+            "id": "Port Channel Member: Ethernet1/1"
+        },
+        { 
+            "id": "Port-channel11"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "Switchport Mode: trunk"
+        },
+        { 
+            "id": "Access VLAN: 1"
+        },
+        { 
+            "id": "Trunk VLANs: 100-110"
+        },
+        { 
+            "id": "Native VLAN: 1"
+        },  
+        { 
+            "id": "Port Channel Member: Ethernet1/2"
+        }
+    ],
+    "links": [
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Mgmt0",
+            "cost": 2
+        },
+        { 
+            "source": "Mgmt0",
+            "target": "Description: DO NOT TOUCH CONFIG ON THIS INTERFACE",
+            "cost": 2
+        },
+        { 
+            "source": "Mgmt0",
+            "target": "IP Address: 10.10.20.58/24",
+            "cost": 2
+        },
+        { 
+            "source": "Mgmt0",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Mgmt0",
+            "target": "Operational Status: up",
+            "cost": 2
+        },
+        { 
+            "source": "Mgmt0",
+            "target": "MAC Address: 0050.56bf.5774",
+            "cost": 2
+        },
+        { 
+            "source": "Mgmt0",
+            "target": "VRF: management",
+            "cost": 2
+        },
+        { 
+            "source": "Mgmt0",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/5",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/5",
+            "target": "Description: L3 Link",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/5",
+            "target": "IP Address: 172.16.1.1/30",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/5",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/5",
+            "target": "Operational Status: up",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/5",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/5",
+            "target": "VRF: default",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/5",
+            "target": "Last Change: 01:28:24",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/5",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Loopback1",
+            "cost": 2
+        },
+        { 
+            "source": "Loopback1",
+            "target": "IP Address: 172.16.0.1/32",
+            "cost": 2
+        },
+        { 
+            "source": "Loopback1",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Loopback1",
+            "target": "Operational Status: up",
+            "cost": 2
+        },
+        { 
+            "source": "Loopback1",
+            "target": "VRF: default",
+            "cost": 2
+        },
+        { 
+            "source": "Loopback1",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan105",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan105",
+            "target": "Description: iot svi - DEMO PLEASE DON'T TOUCH",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan105",
+            "target": "IP Address: 172.16.105.1/24",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan105",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Vlan105",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan105",
+            "target": "VRF: default",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan105",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan104",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan104",
+            "target": "Description: security svi - DEMO PLEASE DON'T TOUCH",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan104",
+            "target": "IP Address: 172.16.104.1/24",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan104",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Vlan104",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan104",
+            "target": "VRF: default",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan104",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan103",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan103",
+            "target": "Description: test svi - DEMO PLEASE DON'T TOUCH",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan103",
+            "target": "IP Address: 172.16.103.1/24",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan103",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Vlan103",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan103",
+            "target": "VRF: default",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan103",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan102",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan102",
+            "target": "Description: dev svi - DEMO PLEASE DON'T TOUCH",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan102",
+            "target": "IP Address: 172.16.102.1/24",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan102",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Vlan102",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan102",
+            "target": "VRF: default",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan102",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan101",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan101",
+            "target": "Description: prod svi - DEMO PLEASE DON'T TOUCH",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan101",
+            "target": "IP Address: 172.16.101.1/24",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan101",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Vlan101",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan101",
+            "target": "VRF: default",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan101",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan100",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan100",
+            "target": "Description: mgmt svi - DEMO PLEASE DON'T TOUCH",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan100",
+            "target": "IP Address: 172.16.100.1/24",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan100",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Vlan100",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan100",
+            "target": "VRF: default",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan100",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Port-channel11",
+            "cost": 2            
+        },
+        { 
+            "source": "Port-channel11",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Port-channel11",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Port-channel11",
+            "target": "Switchport Mode: trunk",
+            "cost": 2
+        },
+        { 
+            "source": "Port-channel11",
+            "target": "Access VLAN: 1",
+            "cost": 2
+        },
+        { 
+            "source": "Port-channel11",
+            "target": "Trunk VLANs: 100-110",
+            "cost": 2
+        },
+        { 
+            "source": "Port-channel11",
+            "target": "Native VLAN: 1",
+            "cost": 2
+        },  
+        { 
+            "source": "Port-channel11",
+            "target": "Port Channel Member: Ethernet1/1",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Port-channel11",
+            "cost": 2            
+        },
+        { 
+            "source": "Port-channel11",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Port-channel11",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Port-channel11",
+            "target": "Switchport Mode: trunk",
+            "cost": 2
+        },
+        { 
+            "source": "Port-channel11",
+            "target": "Access VLAN: 1",
+            "cost": 2
+        },
+        { 
+            "source": "Port-channel11",
+            "target": "Trunk VLANs: 100-110",
+            "cost": 2
+        },
+        { 
+            "source": "Port-channel11",
+            "target": "Native VLAN: 1",
+            "cost": 2
+        },  
+        { 
+            "source": "Port-channel11",
+            "target": "Port Channel Member: Ethernet1/2",
+            "cost": 2
+        }
+    ]
+}

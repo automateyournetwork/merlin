@@ -1,0 +1,1544 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Access Lists",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_Nexus9k"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 30"
+        },
+        {
+            "id": "Access Control Entry: 40"
+        },
+        {
+            "id": "Access Control Entry: 30"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 40"
+        },
+        {
+            "id": "Access Control Entry: 30"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 40"
+        },
+        {
+            "id": "Access Control Entry: 30"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 40"
+        },
+        {
+            "id": "Access Control Entry: 30"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 40"
+        },
+        {
+            "id": "Access Control Entry: 30"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 40"
+        },
+        {
+            "id": "Access Control Entry: 30"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 80"
+        },
+        {
+            "id": "Access Control Entry: 70"
+        },
+        {
+            "id": "Access Control Entry: 60"
+        },
+        {
+            "id": "Access Control Entry: 50"
+        },
+        {
+            "id": "Access Control Entry: 40"
+        },
+        {
+            "id": "Access Control Entry: 30"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 80"
+        },
+        {
+            "id": "Access Control Entry: 70"
+        },
+        {
+            "id": "Access Control Entry: 60"
+        },
+        {
+            "id": "Access Control Entry: 50"
+        },
+        {
+            "id": "Access Control Entry: 40"
+        },
+        {
+            "id": "Access Control Entry: 30"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 30"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 40"
+        },
+        {
+            "id": "Access Control Entry: 30"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 40"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },
+        {
+            "id": "Access Control Entry: 20"
+        },
+        {
+            "id": "Access Control Entry: 10"
+        },  
+        {
+            "id": "TCP Destination Port: 107"
+        },  
+        {
+            "id": "TCP Destination Port: telnet"
+        },  
+        {
+            "id": "TCP Destination Port: 107"
+        },  
+        {
+            "id": "TCP Destination Port: telnet"
+        },  
+        {
+            "id": "TCP Destination Port: tacacs"
+        },  
+        {
+            "id": "TCP Destination Port: tacacs"
+        },  
+        {
+            "id": "TCP Destination Port: 22"
+        },  
+        {
+            "id": "TCP Destination Port: 22"
+        },  
+        {
+            "id": "TCP Destination Port: 162"
+        },  
+        {
+            "id": "TCP Destination Port: 161"
+        },  
+        {
+            "id": "TCP Destination Port: 162"
+        },  
+        {
+            "id": "TCP Destination Port: 161"
+        },  
+        {
+            "id": "TCP Destination Port: 115"
+        },  
+        {
+            "id": "TCP Destination Port: 443"
+        },  
+        {
+            "id": "TCP Destination Port: www"
+        },  
+        {
+            "id": "TCP Destination Port: ftp"
+        },  
+        {
+            "id": "TCP Destination Port: ftp-data"
+        },
+        
+        {
+            "id": "Access Control List: copp-system-p-acl-vrrp6"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-vrrp"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-vpc"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-undesirable"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-traceroute"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-tftp6"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-tftp"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-telnet6"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-telnet"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-tacacs6"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-tacacs"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-ssh6"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-ssh"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-snmp6"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-snmp"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-sftp"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-rip6"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-rip"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-radius6"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-radius"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-ptp-uc"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-ptp-l2"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-ptp"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-pim6-reg"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-pim6"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-pim-reg"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-pim-mdt-join"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-pim"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-ospf6"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-ospf"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-openflow"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-ntp6"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-ntp"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-ndp"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-msdp"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-mld"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-mac-undesirable"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-mac-stp"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-mac-sdp-srp"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-mac-lldp"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-mac-lacp"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-mac-l3-isis"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-mac-l2-tunnel"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-mac-fcoe"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-mac-dot1x"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-mac-cfsoe"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-mac-cdp-udld-vtp"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-igmp"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-icmp6"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-icmp"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-https"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-http"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-hsrp6"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-hsrp"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-ftp"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-eigrp6"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-eigrp"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-dhcp6-relay-response"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-dhcp6"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-dhcp-relay-response"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-dhcp"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-bgp6"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-bgp"
+        },
+        {
+            "id": "Access Control List: copp-system-p-acl-auto-rp"
+        }
+    ],
+    "links": [
+        {
+            "source": "Access Control List: copp-system-p-acl-vrrp",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-vpc",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-undesirable",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-traceroute",
+            "target": "Access Control Entry: 30",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-tftp6",
+            "target": "Access Control Entry: 40",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-tftp6",
+            "target": "Access Control Entry: 30",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-tftp6",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-tftp6",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-tftp",
+            "target": "Access Control Entry: 40",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-tftp",
+            "target": "Access Control Entry: 30",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-tftp",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-tftp",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-telnet6",
+            "target": "Access Control Entry: 40",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-telnet6",
+            "target": "Access Control Entry: 30",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-telnet6",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-telnet6",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-telnet",
+            "target": "Access Control Entry: 40",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-telnet",
+            "target": "Access Control Entry: 30",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-telnet",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-telnet",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-tacacs6",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-tacacs6",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-tacacs",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-tacacs",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-ssh6",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-ssh6",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-ssh",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-ssh",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-snmp6",
+            "target": "Access Control Entry: 40",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-snmp6",
+            "target": "Access Control Entry: 30",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-snmp6",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-snmp6",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-snmp",
+            "target": "Access Control Entry: 40",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-snmp",
+            "target": "Access Control Entry: 30",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-snmp",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-snmp",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-sftp",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-sftp",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-rip",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-radius6",
+            "target": "Access Control Entry: 80",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-radius6",
+            "target": "Access Control Entry: 70",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-radius6",
+            "target": "Access Control Entry: 60",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-radius6",
+            "target": "Access Control Entry: 50",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-radius6",
+            "target": "Access Control Entry: 40",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-radius6",
+            "target": "Access Control Entry: 30",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-radius6",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-radius6",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-radius",
+            "target": "Access Control Entry: 80",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-radius",
+            "target": "Access Control Entry: 70",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-radius",
+            "target": "Access Control Entry: 60",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-radius",
+            "target": "Access Control Entry: 50",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-radius",
+            "target": "Access Control Entry: 40",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-radius",
+            "target": "Access Control Entry: 30",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-radius",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-radius",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-ptp-uc",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-ptp-uc",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-ptp-l2",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-ptp",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-ptp",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-pim6",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-pim-mdt-join",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-pim",
+            "target": "Access Control Entry: 30",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-pim",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-openflow",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-ntp6",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-ntp6",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-ntp",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-ntp",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-msdp",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-msdp",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-mac-undesirable",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-mac-stp",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-mac-stp",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-mac-sdp-srp",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-mac-lldp",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-mac-lacp",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-mac-l3-isis",
+            "target": "Access Control Entry: 40",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-mac-l3-isis",
+            "target": "Access Control Entry: 30",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-mac-l3-isis",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-mac-l3-isis",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-mac-l2-tunnel",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-mac-fcoe",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-mac-fcoe",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-mac-dot1x",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-mac-cfsoe",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-mac-cfsoe",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-mac-cdp-udld-vtp",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-https",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-https",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-http",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-http",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-hsrp",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-ftp",
+            "target": "Access Control Entry: 40",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-ftp",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-ftp",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-dhcp6-relay-response",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-dhcp6-relay-response",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-dhcp6",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-dhcp6",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-dhcp-relay-response",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-dhcp-relay-response",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-dhcp",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-dhcp",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-bgp6",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-bgp6",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-bgp",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-bgp",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-auto-rp",
+            "target": "Access Control Entry: 20",
+            "cost": 2
+        },
+        {
+            "source": "Access Control List: copp-system-p-acl-auto-rp",
+            "target": "Access Control Entry: 10",
+            "cost": 2
+        },  
+        {
+            "source": "Access Control Entry: 20",
+            "target": "TCP Destination Port: 107",
+            "cost": 2      
+        },  
+        {
+            "source": "Access Control Entry: 10",
+            "target": "TCP Destination Port: telnet",
+            "cost": 2      
+        },  
+        {
+            "source": "Access Control Entry: 20",
+            "target": "TCP Destination Port: 107",
+            "cost": 2      
+        },  
+        {
+            "source": "Access Control Entry: 10",
+            "target": "TCP Destination Port: telnet",
+            "cost": 2      
+        },  
+        {
+            "source": "Access Control Entry: 10",
+            "target": "TCP Destination Port: tacacs",
+            "cost": 2      
+        },  
+        {
+            "source": "Access Control Entry: 10",
+            "target": "TCP Destination Port: tacacs",
+            "cost": 2      
+        },  
+        {
+            "source": "Access Control Entry: 10",
+            "target": "TCP Destination Port: 22",
+            "cost": 2      
+        },  
+        {
+            "source": "Access Control Entry: 10",
+            "target": "TCP Destination Port: 22",
+            "cost": 2      
+        },  
+        {
+            "source": "Access Control Entry: 40",
+            "target": "TCP Destination Port: 162",
+            "cost": 2      
+        },  
+        {
+            "source": "Access Control Entry: 30",
+            "target": "TCP Destination Port: 161",
+            "cost": 2      
+        },  
+        {
+            "source": "Access Control Entry: 40",
+            "target": "TCP Destination Port: 162",
+            "cost": 2      
+        },  
+        {
+            "source": "Access Control Entry: 30",
+            "target": "TCP Destination Port: 161",
+            "cost": 2      
+        },  
+        {
+            "source": "Access Control Entry: 10",
+            "target": "TCP Destination Port: 115",
+            "cost": 2      
+        },  
+        {
+            "source": "Access Control Entry: 20",
+            "target": "TCP Destination Port: 443",
+            "cost": 2      
+        },  
+        {
+            "source": "Access Control Entry: 20",
+            "target": "TCP Destination Port: www",
+            "cost": 2      
+        },  
+        {
+            "source": "Access Control Entry: 20",
+            "target": "TCP Destination Port: ftp",
+            "cost": 2      
+        },  
+        {
+            "source": "Access Control Entry: 10",
+            "target": "TCP Destination Port: ftp-data",
+            "cost": 2      
+        },
+        
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-vrrp6",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-vrrp",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-vpc",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-undesirable",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-traceroute",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-tftp6",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-tftp",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-telnet6",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-telnet",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-tacacs6",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-tacacs",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-ssh6",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-ssh",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-snmp6",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-snmp",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-sftp",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-rip6",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-rip",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-radius6",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-radius",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-ptp-uc",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-ptp-l2",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-ptp",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-pim6-reg",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-pim6",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-pim-reg",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-pim-mdt-join",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-pim",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-ospf6",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-ospf",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-openflow",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-ntp6",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-ntp",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-ndp",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-msdp",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-mld",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-mac-undesirable",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-mac-stp",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-mac-sdp-srp",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-mac-lldp",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-mac-lacp",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-mac-l3-isis",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-mac-l2-tunnel",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-mac-fcoe",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-mac-dot1x",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-mac-cfsoe",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-mac-cdp-udld-vtp",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-igmp",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-icmp6",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-icmp",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-https",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-http",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-hsrp6",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-hsrp",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-ftp",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-eigrp6",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-eigrp",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-dhcp6-relay-response",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-dhcp6",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-dhcp-relay-response",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-dhcp",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-bgp6",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-bgp",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Access Control List: copp-system-p-acl-auto-rp",
+            "cost": 1
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{% if filetype_loop_jinja2 == "csv" %}Hostname,OS Version,OS Name,Model
+{{ variable["host-name"] }},{{ variable["os-version"] }},{{ variable["os-name"] }},{{ variable["hardware-model"] }}{% elif filetype_loop_jinja2 == "md" %}
+# Show system information
+| Hostname | OS Version | OS Name | Model |
+| -------- | ---------- | ------- | ----- |
+| {{ variable["host-name"] }} | {{ variable["os-version"] }} | {{ variable["os-name"] }} | {{ variable["hardware-model"] }} |{% else %}
+<html>
+    <body>
+    <h1>Show system information</h1>
+    <table style="width:100%">
+        <tr>
+            <th>Hostname</th>
+            <th>OS Version</th>
+            <th>OS Name</th>
+            <th>Model</th>
+        </tr>
+        <tr>
+            <td>{{ variable["host-name"] }}</td>
+            <td>{{ variable["os-version"] }}</td>
+            <td>{{ variable["os-name"] }}</td>
+            <td>{{ variable["hardware-model"] }}</td>
+        </tr>
+    </table>
+    </body>
+</html>{% endif %}

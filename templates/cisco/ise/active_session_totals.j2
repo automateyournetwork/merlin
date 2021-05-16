@@ -1,0 +1,19 @@
+{% if filetype_loop_jinja2 == "csv" %}Total Active Sessions
+{{ to_parse_active_session_totals.sessionCount.count }}
+{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Total Active Sessions
+| Total Active Sessions |
+| --------------------- |
+| {{ to_parse_active_session_totals.sessionCount.count }} |
+{% else %}
+<html><body>
+<h1>Total Active Sessions</h1>
+<table style="width:100%">
+  <tr>
+    <th>Total Active Sessions</th>
+  </tr>
+  <tr>
+    <td>{{ to_parse_active_session_totals.sessionCount.count }}</td>
+  </tr>
+</table>
+</body></html>{% endif %}{% endif %}

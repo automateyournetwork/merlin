@@ -1,0 +1,17 @@
+APIs:
+  inventory:
+    sharePointUrl: 'https://{{ mydomain.com }}'
+    folderUrl: '/Inventory'
+    sharePointFileName: "Inventory/Inventory.csv"
+    uploadFileName: "Inventory.csv"
+    sharepoint_domain: mydomain
+    sharepoint_user: {{ domain_user_name }}
+    sharepoint_password: {{ domain_password }}
+  contracts:
+    sharePointUrl: 'https://{{ mydomain.com }}'
+    folderUrl: '/Inventory'
+    sharePointFileName: "Inventory/Contracts.csv"
+    uploadFileName: "Contracts.csv"
+    sharepoint_domain: mydomain
+    sharepoint_user: {{ domain_user_name }}
+    sharepoint_password: {{ domain_password }}

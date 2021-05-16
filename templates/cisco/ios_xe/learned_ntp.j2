@@ -1,0 +1,38 @@
+{% if filetype_loop_jinja2 == "csv" %}
+Association Address,Local Mode,Clock Offset,Clock Precision,Clock Reference ID,Clock State,Clock Statum,Reference Time,Root Delay,Root Dispersion
+{{ to_parse_ntp.system_status.associations_address }},{{ to_parse_ntp.system_status.associations_local_mode }},{{ to_parse_ntp.system_status.clock_offset }},{{ to_parse_ntp.system_status.clock_precision }},{{ to_parse_ntp.system_status.clock_refid }},{{ to_parse_ntp.system_status.clock_state }},{{ to_parse_ntp.system_status.clock_stratum }},{{ to_parse_ntp.system_status.reference_time }},{{ to_parse_ntp.system_status.root_delay }},{{ to_parse_ntp.system_status.root_dispersion }}
+{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Learn NTP Clock State
+| Association Address | Local Mode | Clock Offset | Clock Precision | Clock Reference ID | Clock State | Clock Statum | Reference Time | Root Delay | Root Dispersion |
+| ------------------- | ---------- | ------------ | --------------- | ------------------ | ----------- | ------------ | -------------- | ---------- | --------------- |
+| {{ to_parse_ntp.system_status.associations_address }} | {{ to_parse_ntp.system_status.associations_local_mode }} | {{ to_parse_ntp.system_status.clock_offset }} | {{ to_parse_ntp.system_status.clock_precision }} | {{ to_parse_ntp.system_status.clock_refid }} | {{ to_parse_ntp.system_status.clock_state }} | {{ to_parse_ntp.system_status.clock_stratum }} | {{ to_parse_ntp.system_status.reference_time }} | {{ to_parse_ntp.system_status.root_delay }} | {{ to_parse_ntp.system_status.root_dispersion }} |
+{% else %}
+<html><body>
+<h1>Learn NTP Clock State</h1>
+<table style="width:100%">
+  <tr>
+    <th>Association Address</th>
+    <th>Local Mode</th>
+    <th>Clock Offset</th>
+    <th>Clock Precision</th>
+    <th>Clock Reference ID</th>
+    <th>Clock State</th>
+    <th>Clock Statum</th>
+    <th>Reference Time</th>
+    <th>Root Delay</th>
+    <th>Root Dispersion</th>  
+  </tr>
+  <tr>
+    <td>{{ to_parse_ntp.system_status.associations_address }}</td>
+    <td>{{ to_parse_ntp.system_status.associations_local_mode }}</td>
+    <td>{{ to_parse_ntp.system_status.clock_offset }}</td>
+    <td>{{ to_parse_ntp.system_status.clock_precision }}</td>
+    <td>{{ to_parse_ntp.system_status.clock_refid }}</td>
+    <td>{{ to_parse_ntp.system_status.clock_state }}</td>
+    <td>{{ to_parse_ntp.system_status.clock_stratum }}</td>
+    <td>{{ to_parse_ntp.system_status.reference_time }}</td>
+    <td>{{ to_parse_ntp.system_status.root_delay }}</td>
+    <td>{{ to_parse_ntp.system_status.root_dispersion }}</td>
+  </tr> 
+</table>
+</body></html>{% endif %}{% endif %}

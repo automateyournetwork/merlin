@@ -1,0 +1,25 @@
+{% if filetype_loop_jinja2 == "csv" %}VRF,Protocols,Interfaces{% for vrf in to_parse_vrf %}{% for interface in to_parse_vrf[vrf].interfaces %}{% for protocol in to_parse_vrf[vrf].protocols %} {% if interface != "ipv4" %}
+{{ vrf }},{{ protocol }},{{ interface }}{% endif %}{% endfor %}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show VRF
+| VRF | Protocol | Interfaces |
+| --- | -------- | ---------- |{% for vrf in to_parse_vrf %}{% for interface in to_parse_vrf[vrf].interfaces %}{% for protocol in to_parse_vrf[vrf].protocols %} {% if interface != "ipv4" %}
+| {{ vrf }} | {{ protocol }} | {{ interface }} |{% endif %}{% endfor %}{% endfor %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show VRF</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>VRF</th>
+    <th>Protocols</th>
+    <th>Interfaces</th>
+  </tr>
+  </thead>
+  <tbody>{% for vrf in to_parse_vrf %}{% for interface in to_parse_vrf[vrf].interfaces %}{% for protocol in to_parse_vrf[vrf].protocols %}{% if interface != "ipv4" %}
+  <tr>
+    <td>{{ vrf }}</td>
+    <td>{{ protocol }}</td>
+    <td>{{ interface }}</td>
+  </tr>{% endif %}{% endfor %}{% endfor %}{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

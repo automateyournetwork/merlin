@@ -1,0 +1,41 @@
+{% if filetype_loop_jinja2 == "csv" %}VRF,Address Family,Instance,Area,LSA Type,LSA,Age,Link Count,Check Sum,Sequence Number{% for vrf in to_parse_ip_ospf_database %}{% for address_family in to_parse_ip_ospf_database[vrf].address_family %}{% for instance in to_parse_ip_ospf_database[vrf].address_family[address_family].instance %}{% for area in to_parse_ip_ospf_database[vrf].address_family[address_family].instance[instance].areas %}{% for lsa_type in to_parse_ip_ospf_database[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types %}{% for lsa in to_parse_ip_ospf_database[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas %}
+{{ vrf }},{{ address_family }},{{ instance }},{{ area }},{{ lsa_type }},{{ lsa }},{{ to_parse_ip_ospf_database[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.age }},{{ to_parse_ip_ospf_database[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.link_count }},{{ to_parse_ip_ospf_database[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.checksum }},{{ to_parse_ip_ospf_database[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.seq_num }}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show IP OPSF Database
+| VRF | Address Family | Instance | Area | LSA Type | LSA | Age | Link Count | Check Sum | Sequence Number |
+| --- | -------------- | -------- | ---- | -------- | --- | --- | ---------- | --------- | --------------- |{% for vrf in to_parse_ip_ospf_database %}{% for address_family in to_parse_ip_ospf_database[vrf].address_family %}{% for instance in to_parse_ip_ospf_database[vrf].address_family[address_family].instance %}{% for area in to_parse_ip_ospf_database[vrf].address_family[address_family].instance[instance].areas %}{% for lsa_type in to_parse_ip_ospf_database[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types %}{% for lsa in to_parse_ip_ospf_database[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas %}
+| {{ vrf }} | {{ address_family }} | {{ instance }} | {{ area }} | {{ lsa_type }} | {{ lsa }} | {{ to_parse_ip_ospf_database[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.age }} | {{ to_parse_ip_ospf_database[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.link_count }} | {{ to_parse_ip_ospf_database[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.checksum }} | {{ to_parse_ip_ospf_database[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.seq_num }} |{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show IP OSPF </h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>VRF</th>
+    <th>Address Family</th>
+    <th>Instance</th>
+    <th>Area</th>
+    <th>LSA Type</th>
+    <th>LSA</th>
+    <th>Age</th>
+    <th>Link Count</th>
+    <th>Check Sum</th>
+    <th>Sequence Number</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  {% for vrf in to_parse_ip_ospf_database %}{% for address_family in to_parse_ip_ospf_database[vrf].address_family %}{% for instance in to_parse_ip_ospf_database[vrf].address_family[address_family].instance %}{% for area in to_parse_ip_ospf_database[vrf].address_family[address_family].instance[instance].areas %}{% for lsa_type in to_parse_ip_ospf_database[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types %}{% for lsa in to_parse_ip_ospf_database[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas %}
+  <tr>
+    <td>{{ vrf }}</td>
+    <td>{{ address_family }}</td>
+    <td>{{ instance }}</td>
+    <td>{{ area }}</td>
+    <td>{{ lsa_type }}</td>
+    <td>{{ lsa }}</td>
+    <td>{{ to_parse_ip_ospf_database[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.age }}</td>
+    <td>{{ to_parse_ip_ospf_database[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.link_count }}</td>
+    <td>{{ to_parse_ip_ospf_database[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.checksum }}</td>
+    <td>{{ to_parse_ip_ospf_database[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.seq_num }}</td>
+  </tr>{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

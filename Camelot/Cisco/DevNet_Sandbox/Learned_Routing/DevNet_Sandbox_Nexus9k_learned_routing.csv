@@ -1,0 +1,8 @@
+VRF,Address Family,Route,Active,Metric,Next Hop Index,Next Hop,Outgoing Interface,Route Preference,Source Protocol,Source Protocol Code
+management,ipv4,10.10.20.58/32,True,0,1,10.10.20.58,N/A,0,local,
+management,ipv4,10.10.20.0/24,True,0,1,10.10.20.58,N/A,0,direct,
+management,ipv4,0.0.0.0/0,True,0,1,10.10.20.254,N/A,1,static,
+default,ipv4,172.16.1.1/32,True,0,1,172.16.1.1,N/A,0,local,
+default,ipv4,172.16.1.0/30,True,0,1,172.16.1.1,N/A,0,direct,
+default,ipv4,172.16.0.1/32,True,0,2,172.16.0.1,N/A,0,direct,
+default,ipv4,172.16.0.1/32,True,0,1,172.16.0.1,N/A,0,direct,

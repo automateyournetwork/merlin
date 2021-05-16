@@ -1,0 +1,12 @@
+devices:
+    F5:
+      alias: 'F5'
+      type: 'F5'
+      os: 'BIGIP'
+      platform: i2600
+      credentials:
+        default:
+          username: {{ F5 API Username }}
+          password: {{ F5 API Password}}
+      connections:        
+          ip: "{{ F5 REST API IP Address }}"

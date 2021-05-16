@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.1.6/dist/style.min.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@6.6.0"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.2.6"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.1.6/dist/index.umd.min.js"></script><script>(r => {
+          setTimeout(r);
+        })(() => {
+  const {
+    markmap,
+    mm
+  } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, data) => {
+        const {
+          Markmap
+        } = getMarkmap();
+        window.mm = Markmap.create('svg#mindmap', getOptions == null ? void 0 : getOptions(), data);
+      })(() => window.markmap,null,{"t":"heading","d":1,"p":{"lines":[1,2]},"v":"Learn BGP","c":[{"t":"thead","d":3,"p":{"lines":[2,3]},"v":"","c":[{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Instance"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"BGP ID"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"State"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"VRF"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Router ID"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Cluster ID"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Confederation ID"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Neighbor"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Version"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Hold Time"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Keep Alive Interval"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Local AS"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Remote AS"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Total Recieved Messages"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Total Sent Messages"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Connect Last Reset"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Reset Reason"}]},{"t":"tbody","d":3,"p":{"lines":[4,5]},"v":"","c":[{"t":"td","d":5,"p":{},"v":"default"},{"t":"td","d":5,"p":{},"v":"65535"},{"t":"td","d":5,"p":{},"v":"running"},{"t":"td","d":5,"p":{},"v":"default"},{"t":"td","d":5,"p":{},"v":"172.16.0.1"},{"t":"td","d":5,"p":{},"v":"0.0.0.0"},{"t":"td","d":5,"p":{},"v":"0"},{"t":"td","d":5,"p":{},"v":"172.16.0.2"},{"t":"td","d":5,"p":{},"v":"4"},{"t":"td","d":5,"p":{},"v":"180"},{"t":"td","d":5,"p":{},"v":"60"},{"t":"td","d":5,"p":{},"v":"None"},{"t":"td","d":5,"p":{},"v":"65535"},{"t":"td","d":5,"p":{},"v":"0"},{"t":"td","d":5,"p":{},"v":"0"},{"t":"td","d":5,"p":{},"v":"never"},{"t":"td","d":5,"p":{},"v":"no error"}]}]})</script>
+</body>
+</html>

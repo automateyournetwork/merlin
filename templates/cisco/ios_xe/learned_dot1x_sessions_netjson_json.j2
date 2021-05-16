@@ -1,0 +1,46 @@
+{
+    "type": "NetworkGraph",
+    "label": "Learn Dot1X Sessions",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },
+        { 
+            "id": "System Auth Control: {{ to_parse_dot1x.system_auth_control }}"
+        },
+        { 
+            "id": "Authorized Clients: {{ to_parse_dot1x.sessions.authorized_clients }}"
+        },
+        { 
+            "id": "Unauthorized Clients: {{ to_parse_dot1x.sessions.unauthorized_clients }}"
+        },
+        { 
+            "id": "Total Clients: {{ to_parse_dot1x.sessions.total }}"
+        }
+    ],
+    "links": [
+        { 
+            "source": "{{ device_alias }}",
+            "target": "System Auth Control: {{ to_parse_dot1x.system_auth_control }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Authorized Clients: {{ to_parse_dot1x.sessions.authorized_clients }}",
+            "cost": 1            
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Unauthorized Clients: {{ to_parse_dot1x.sessions.unauthorized_clients }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Total Clients: {{ to_parse_dot1x.sessions.total }}",
+            "cost": 1            
+        }        
+    ]
+}

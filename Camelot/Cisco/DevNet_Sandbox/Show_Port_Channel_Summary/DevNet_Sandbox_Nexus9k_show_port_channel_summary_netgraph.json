@@ -1,0 +1,41 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Port-Channel Summary",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_Nexus9k"
+        },
+        {
+            "id": "Port-channel11"
+        },
+        
+            
+        {
+            "id": "Ethernet1/1"         
+        },
+        {
+            "id": "Ethernet1/2"
+        }
+    ],
+    "links": [
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Port-channel11",
+            "cost": 1
+        },
+            
+        {
+            "source": "Port-channel11",
+            "target": "Ethernet1/1",
+            "cost": 2         
+        },
+        {
+            "source": "Port-channel11",
+            "target": "Ethernet1/2",
+            "cost": 2
+        }
+    ]
+}

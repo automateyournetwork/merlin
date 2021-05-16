@@ -1,0 +1,846 @@
+{
+    "type": "NetworkGraph",
+    "label": "Learn Interfaces",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for interface in to_parse_interface %}{% set interface_loop = loop %}{% if (to_parse_interface[interface].ipv4 is defined) and (to_parse_interface[interface].port_channel is defined) %}{% for ip_address in to_parse_interface[interface].ipv4 %}{% set ip_address_loop = loop %}{% if to_parse_interface[interface].port_channel.port_channel_member_intfs %}{% for member in to_parse_interface[interface].port_channel.port_channel_member_intfs %}{% set member_loop = loop %}
+        { 
+            "id": "{{ interface }}"
+        },{% if to_parse_interface[interface].description is defined %}
+        { 
+            "id": "Description: {{ to_parse_interface[interface].description }}"
+        },{% endif %}{% if to_parse_interface[interface].ipv4 is defined %}
+        { 
+            "id": "IP Address: {{ ip_address }}"
+        },{% endif %}
+        { 
+            "id": "Enabled: {{ to_parse_interface[interface].enabled }}"
+        },        
+        { 
+            "id": "Operational Status: {{ to_parse_interface[interface].oper_status }}"
+        },{% if to_parse_interface[interface].mac_address is defined %}
+        { 
+            "id": "MAC Address: {{ to_parse_interface[interface].mac_address }}"
+        },{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+        { 
+            "id": "Switchport Mode: {{ to_parse_interface[interface].switchport_mode }}"
+        },{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+        { 
+            "id": "Access VLAN: {{ to_parse_interface[interface].access_vlan }}"
+        },{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+        { 
+            "id": "Trunk VLANs: {{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}"
+        },{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+        { 
+            "id": "Native VLAN: {{ to_parse_interface[interface].native_vlan }}"
+        },{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+        { 
+            "id": "VRF: {{ to_parse_interface[interface].vrf }}"
+        },{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+        { 
+            "id": "Last Change: {{ to_parse_interface[interface].last_change }}"
+        },{% endif %}
+        { 
+            "id": "Port Channel Member: {{ member }}"{% if (interface_loop.last) and (ip_address_loop.last) and (member_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% else %}{% if to_parse_interface[interface].port_channel.port_channel_member == "true" %}
+        { 
+            "id": "{{ interface }}"
+        },{% if to_parse_interface[interface].description is defined %}
+        { 
+            "id": "Description: {{ to_parse_interface[interface].description }}"
+        },{% endif %}{% if to_parse_interface[interface].ipv4 is defined %}
+        { 
+            "id": "IP Address: {{ ip_address }}"
+        },{% endif %}
+        { 
+            "id": "Enabled: {{ to_parse_interface[interface].enabled }}"
+        },        
+        { 
+            "id": "Operational Status: {{ to_parse_interface[interface].oper_status }}"
+        },{% if to_parse_interface[interface].mac_address is defined %}
+        { 
+            "id": "MAC Address: {{ to_parse_interface[interface].mac_address }}"
+        },{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+        { 
+            "id": "Switchport Mode: {{ to_parse_interface[interface].switchport_mode }}"
+        },{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+        { 
+            "id": "Access VLAN: {{ to_parse_interface[interface].access_vlan }}"
+        },{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+        { 
+            "id": "Trunk VLANs: {{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}"
+        },{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+        { 
+            "id": "Native VLAN: {{ to_parse_interface[interface].native_vlan }}"
+        },{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+        { 
+            "id": "VRF: {{ to_parse_interface[interface].vrf }}"
+        },{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+        { 
+            "id": "Last Change: {{ to_parse_interface[interface].last_change }}"
+        },{% endif %}
+        { 
+            "id": "Port Channel Interface: {{ to_parse_interface[interface].port_channel.port_channel_int }}"
+        },        
+        { 
+            "id": "Port Channel Member: {{ to_parse_interface[interface].port_channel.port_channel_member }}"{% if (interface_loop.last) and (ip_address_loop.last) %}
+        }{% else %}
+        },{% endif %}{% else %}
+        { 
+            "id": "{{ interface }}"
+        },{% if to_parse_interface[interface].description is defined %}
+        { 
+            "id": "Description: {{ to_parse_interface[interface].description }}"
+        },{% endif %}{% if to_parse_interface[interface].ipv4 is defined %}
+        { 
+            "id": "IP Address: {{ ip_address }}"
+        },{% endif %}
+        { 
+            "id": "Enabled: {{ to_parse_interface[interface].enabled }}"
+        },        
+        { 
+            "id": "Operational Status: {{ to_parse_interface[interface].oper_status }}"
+        },{% if to_parse_interface[interface].mac_address is defined %}
+        { 
+            "id": "MAC Address: {{ to_parse_interface[interface].mac_address }}"
+        },{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+        { 
+            "id": "Switchport Mode: {{ to_parse_interface[interface].switchport_mode }}"
+        },{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+        { 
+            "id": "Access VLAN: {{ to_parse_interface[interface].access_vlan }}"
+        },{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+        { 
+            "id": "Trunk VLANs: {{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}"
+        },{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+        { 
+            "id": "Native VLAN: {{ to_parse_interface[interface].native_vlan }}"
+        },{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+        { 
+            "id": "VRF: {{ to_parse_interface[interface].vrf }}"
+        },{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+        { 
+            "id": "Last Change: {{ to_parse_interface[interface].last_change }}"
+        },{% endif %}
+        { 
+            "id": "Port Channel Member: {{ to_parse_interface[interface].port_channel.port_channel_member }}"{% if (interface_loop.last) and (ip_address_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endif %}{% endif %}{% endfor %}{% else %}{% if to_parse_interface[interface].ipv4 is defined %}
+        { 
+            "id": "{{ interface }}"
+        },{% if to_parse_interface[interface].description is defined %}
+        { 
+            "id": "Description: {{ to_parse_interface[interface].description }}"
+        },{% endif %}{% if to_parse_interface[interface].ipv4 is defined %}
+        { 
+            "id": "IP Address: {{ ip_address }}"
+        },{% endif %}
+        { 
+            "id": "Enabled: {{ to_parse_interface[interface].enabled }}"
+        },        
+        { 
+            "id": "Operational Status: {{ to_parse_interface[interface].oper_status }}"
+        },{% if to_parse_interface[interface].mac_address is defined %}
+        { 
+            "id": "MAC Address: {{ to_parse_interface[interface].mac_address }}"
+        },{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+        { 
+            "id": "Switchport Mode: {{ to_parse_interface[interface].switchport_mode }}"
+        },{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+        { 
+            "id": "Access VLAN: {{ to_parse_interface[interface].access_vlan }}"
+        },{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+        { 
+            "id": "Trunk VLANs: {{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}"
+        },{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+        { 
+            "id": "Native VLAN: {{ to_parse_interface[interface].native_vlan }}"
+        },{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+        { 
+            "id": "VRF: {{ to_parse_interface[interface].vrf }}"
+        },{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+        { 
+            "id": "Last Change: {{ to_parse_interface[interface].last_change }}"{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endif %}{% else %}{% if to_parse_interface[interface].port_channel is defined %}{% if to_parse_interface[interface].port_channel.port_channel_member_intfs %}{% for member in to_parse_interface[interface].port_channel.port_channel_member_intfs %}{% set member_loop = loop %}
+        { 
+            "id": "{{ interface }}"
+        },{% if to_parse_interface[interface].description is defined %}
+        { 
+            "id": "Description: {{ to_parse_interface[interface].description }}"
+        },{% endif %}
+        { 
+            "id": "Enabled: {{ to_parse_interface[interface].enabled }}"
+        },        
+        { 
+            "id": "Operational Status: {{ to_parse_interface[interface].oper_status }}"
+        },{% if to_parse_interface[interface].mac_address is defined %}
+        { 
+            "id": "MAC Address: {{ to_parse_interface[interface].mac_address }}"
+        },{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+        { 
+            "id": "Switchport Mode: {{ to_parse_interface[interface].switchport_mode }}"
+        },{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+        { 
+            "id": "Access VLAN: {{ to_parse_interface[interface].access_vlan }}"
+        },{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+        { 
+            "id": "Trunk VLANs: {{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}"
+        },{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+        { 
+            "id": "Native VLAN: {{ to_parse_interface[interface].native_vlan }}"
+        },{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+        { 
+            "id": "VRF: {{ to_parse_interface[interface].vrf }}"
+        },{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+        { 
+            "id": "Last Change: {{ to_parse_interface[interface].last_change }}"
+        },{% endif %}  
+        { 
+            "id": "Port Channel Member: {{ member }}"{% if (interface_loop.last) and (member_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% else %}{% if to_parse_interface[interface].port_channel.port_channel_member == "true" %}
+        { 
+            "id": "{{ interface }}"
+        },{% if to_parse_interface[interface].description is defined %}
+        { 
+            "id": "Description: {{ to_parse_interface[interface].description }}"
+        },{% endif %}
+        { 
+            "id": "Enabled: {{ to_parse_interface[interface].enabled }}"
+        },        
+        { 
+            "id": "Operational Status: {{ to_parse_interface[interface].oper_status }}"
+        },{% if to_parse_interface[interface].mac_address is defined %}
+        { 
+            "id": "MAC Address: {{ to_parse_interface[interface].mac_address }}"
+        },{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+        { 
+            "id": "Switchport Mode: {{ to_parse_interface[interface].switchport_mode }}"
+        },{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+        { 
+            "id": "Access VLAN: {{ to_parse_interface[interface].access_vlan }}"
+        },{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+        { 
+            "id": "Trunk VLANs: {{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}"
+        },{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+        { 
+            "id": "Native VLAN: {{ to_parse_interface[interface].native_vlan }}"
+        },{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+        { 
+            "id": "VRF: {{ to_parse_interface[interface].vrf }}"
+        },{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+        { 
+            "id": "Last Change: {{ to_parse_interface[interface].last_change }}"
+        },{% endif %}
+        { 
+            "id": "Port Channel Interface: {{ to_parse_interface[interface].port_channel.port_channel_int }}"
+        },
+        { 
+            "id": "Port Channel Member: {{ to_parse_interface[interface].port_channel.port_channel_member }}"{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% else %}
+        { 
+            "id": "{{ interface }}"
+        },{% if to_parse_interface[interface].description is defined %}
+        { 
+            "id": "Description: {{ to_parse_interface[interface].description }}"
+        },{% endif %}
+        { 
+            "id": "Enabled: {{ to_parse_interface[interface].enabled }}"
+        },        
+        { 
+            "id": "Operational Status: {{ to_parse_interface[interface].oper_status }}"
+        },{% if to_parse_interface[interface].mac_address is defined %}
+        { 
+            "id": "MAC Address: {{ to_parse_interface[interface].mac_address }}"
+        },{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+        { 
+            "id": "Switchport Mode: {{ to_parse_interface[interface].switchport_mode }}"
+        },{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+        { 
+            "id": "Access VLAN: {{ to_parse_interface[interface].access_vlan }}"
+        },{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+        { 
+            "id": "Trunk VLANs: {{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}"
+        },{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+        { 
+            "id": "Native VLAN: {{ to_parse_interface[interface].native_vlan }}"
+        },{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+        { 
+            "id": "VRF: {{ to_parse_interface[interface].vrf }}"
+        },{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+        { 
+            "id": "Last Change: {{ to_parse_interface[interface].last_change }}"
+        },{% endif %}
+        { 
+            "id": "Port Channel Member: {{ to_parse_interface[interface].port_channel.port_channel_member }}"{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endif %}{% endif %}{% else %}
+        { 
+            "id": "{{ interface }}"
+        },{% if to_parse_interface[interface].description is defined %}
+        { 
+            "id": "Description: {{ to_parse_interface[interface].description }}"
+        },{% endif %}
+        { 
+            "id": "Enabled: {{ to_parse_interface[interface].enabled }}"
+        },        
+        { 
+            "id": "Operational Status: {{ to_parse_interface[interface].oper_status }}"
+        },{% if to_parse_interface[interface].mac_address is defined %}
+        { 
+            "id": "MAC Address: {{ to_parse_interface[interface].mac_address }}"
+        },{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+        { 
+            "id": "Switchport Mode: {{ to_parse_interface[interface].switchport_mode }}"
+        },{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+        { 
+            "id": "Access VLAN: {{ to_parse_interface[interface].access_vlan }}"
+        },{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+        { 
+            "id": "Trunk VLANs: {{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}"
+        },{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+        { 
+            "id": "Native VLAN: {{ to_parse_interface[interface].native_vlan }}"
+        },{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+        { 
+            "id": "VRF: {{ to_parse_interface[interface].vrf }}"
+        },{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+        { 
+            "id": "Last Change: {{ to_parse_interface[interface].last_change }}"
+        },{% endif %}
+        { 
+            "id": "Port Channel Interface: {{ to_parse_interface[interface].port_channel.port_channel_int }}"
+        },
+        { 
+            "id": "Port Channel Member: {{ to_parse_interface[interface].port_channel.port_channel_member }}"{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endif %}{% endif %}{% endif %}{% endfor %}
+    ],
+    "links": [{% for interface in to_parse_interface %}{% set interface_loop = loop %}{% if (to_parse_interface[interface].ipv4 is defined) and (to_parse_interface[interface].port_channel is defined) %}{% for ip_address in to_parse_interface[interface].ipv4 %}{% set ip_address_loop = loop %}{% if to_parse_interface[interface].port_channel.port_channel_member_intfs %}{% for member in to_parse_interface[interface].port_channel.port_channel_member_intfs %}{% set member_loop = loop %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 2
+        },{% if to_parse_interface[interface].description is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Description: {{ to_parse_interface[interface].description }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].ipv4 is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "IP Address: {{ ip_address }}",
+            "cost": 2
+        },{% endif %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Enabled: {{ to_parse_interface[interface].enabled }}",
+            "cost": 2
+        },        
+        { 
+            "source": "{{ interface }}",
+            "target": "Operational Status: {{ to_parse_interface[interface].oper_status }}",
+            "cost": 2
+        },{% if to_parse_interface[interface].mac_address is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "MAC Address: {{ to_parse_interface[interface].mac_address }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Switchport Mode: {{ to_parse_interface[interface].switchport_mode }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Access VLAN: {{ to_parse_interface[interface].access_vlan }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Trunk VLANs: {{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Native VLAN: {{ to_parse_interface[interface].native_vlan }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "VRF: {{ to_parse_interface[interface].vrf }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Last Change: {{ to_parse_interface[interface].last_change }}",
+            "cost": 2
+        },{% endif %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Port Channel Member: {{ member }}",
+            "cost": 2{% if (interface_loop.last) and (ip_address_loop.last) and (member_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% else %}{% if to_parse_interface[interface].port_channel.port_channel_member == "true" %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 2
+        },{% if to_parse_interface[interface].description is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Description: {{ to_parse_interface[interface].description }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].ipv4 is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "IP Address: {{ ip_address }}",
+            "cost": 2
+        },{% endif %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Enabled: {{ to_parse_interface[interface].enabled }}",
+            "cost": 2
+        },        
+        { 
+            "source": "{{ interface }}",
+            "target": "Operational Status: {{ to_parse_interface[interface].oper_status }}",
+            "cost": 2
+        },{% if to_parse_interface[interface].mac_address is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "MAC Address: {{ to_parse_interface[interface].mac_address }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Switchport Mode: {{ to_parse_interface[interface].switchport_mode }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Access VLAN: {{ to_parse_interface[interface].access_vlan }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Trunk VLANs: {{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Native VLAN: {{ to_parse_interface[interface].native_vlan }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "VRF: {{ to_parse_interface[interface].vrf }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Last Change: {{ to_parse_interface[interface].last_change }}",
+            "cost": 2
+        },{% endif %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Port Channel Interface: {{ to_parse_interface[interface].port_channel.port_channel_int }}",
+            "cost": 2
+        },        
+        { 
+            "source": "{{ interface }}",
+            "target": "Port Channel Member: {{ to_parse_interface[interface].port_channel.port_channel_member }}",
+            "cost": 2{% if (interface_loop.last) and (ip_address_loop.last) %}
+        }{% else %}
+        },{% endif %}{% else %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 2
+        },{% if to_parse_interface[interface].description is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Description: {{ to_parse_interface[interface].description }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].ipv4 is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "IP Address: {{ ip_address }}",
+            "cost": 2
+        },{% endif %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Enabled: {{ to_parse_interface[interface].enabled }}",
+            "cost": 2
+        },        
+        { 
+            "source": "{{ interface }}",
+            "target": "Operational Status: {{ to_parse_interface[interface].oper_status }}",
+            "cost": 2
+        },{% if to_parse_interface[interface].mac_address is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "MAC Address: {{ to_parse_interface[interface].mac_address }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Switchport Mode: {{ to_parse_interface[interface].switchport_mode }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Access VLAN: {{ to_parse_interface[interface].access_vlan }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Trunk VLANs: {{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Native VLAN: {{ to_parse_interface[interface].native_vlan }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "VRF: {{ to_parse_interface[interface].vrf }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Last Change: {{ to_parse_interface[interface].last_change }}",
+            "cost": 2
+        },{% endif %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Port Channel Member: {{ to_parse_interface[interface].port_channel.port_channel_member }}",
+            "cost": 2{% if (interface_loop.last) and (ip_address_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endif %}{% endif %}{% endfor %}{% else %}{% if to_parse_interface[interface].ipv4 is defined %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 2            
+        },{% if to_parse_interface[interface].description is defined %}
+        {
+            "source": "{{ interface }}",
+            "target": "Description: {{ to_parse_interface[interface].description }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].ipv4 is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "IP Address: {{ ip_address }}",
+            "cost": 2
+        },{% endif %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Enabled: {{ to_parse_interface[interface].enabled }}",
+            "cost": 2
+        },        
+        { 
+            "source": "{{ interface }}",
+            "target": "Operational Status: {{ to_parse_interface[interface].oper_status }}",
+            "cost": 2
+        },{% if to_parse_interface[interface].mac_address is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "MAC Address: {{ to_parse_interface[interface].mac_address }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Switchport Mode: {{ to_parse_interface[interface].switchport_mode }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Access VLAN: {{ to_parse_interface[interface].access_vlan }}",
+            "cost": 2 
+        },{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Trunk VLANs: {{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Native VLAN: {{ to_parse_interface[interface].native_vlan }}",
+            "cost": 2 
+        },{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "VRF: {{ to_parse_interface[interface].vrf }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Last Change: {{ to_parse_interface[interface].last_change }}",
+            "cost": 2{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endif %}{% else %}{% if to_parse_interface[interface].port_channel is defined %}{% if to_parse_interface[interface].port_channel.port_channel_member_intfs %}{% for member in to_parse_interface[interface].port_channel.port_channel_member_intfs %}{% set member_loop = loop %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 2            
+        },{% if to_parse_interface[interface].description is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Description: {{ to_parse_interface[interface].description }}",
+            "cost": 2
+        },{% endif %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Enabled: {{ to_parse_interface[interface].enabled }}",
+            "cost": 2
+        },        
+        { 
+            "source": "{{ interface }}",
+            "target": "Operational Status: {{ to_parse_interface[interface].oper_status }}",
+            "cost": 2
+        },{% if to_parse_interface[interface].mac_address is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "MAC Address: {{ to_parse_interface[interface].mac_address }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Switchport Mode: {{ to_parse_interface[interface].switchport_mode }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Access VLAN: {{ to_parse_interface[interface].access_vlan }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Trunk VLANs: {{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Native VLAN: {{ to_parse_interface[interface].native_vlan }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "VRF: {{ to_parse_interface[interface].vrf }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Last Change: {{ to_parse_interface[interface].last_change }}",
+            "cost": 2
+        },{% endif %}  
+        { 
+            "source": "{{ interface }}",
+            "target": "Port Channel Member: {{ member }}",
+            "cost": 2{% if (interface_loop.last) and (member_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% else %}{% if to_parse_interface[interface].port_channel.port_channel_member == "true" %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 2
+        },{% if to_parse_interface[interface].description is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Description: {{ to_parse_interface[interface].description }}",
+            "cost": 2
+        },{% endif %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Enabled: {{ to_parse_interface[interface].enabled }}",
+            "cost": 2
+        },        
+        { 
+            "source": "{{ interface }}",
+            "target": "Operational Status: {{ to_parse_interface[interface].oper_status }}",
+            "cost": 2
+        },{% if to_parse_interface[interface].mac_address is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "MAC Address: {{ to_parse_interface[interface].mac_address }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Switchport Mode: {{ to_parse_interface[interface].switchport_mode }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Access VLAN: {{ to_parse_interface[interface].access_vlan }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Trunk VLANs: {{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}",
+            "cost": 2            
+        },{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Native VLAN: {{ to_parse_interface[interface].native_vlan }}",
+            "cost": 2            
+        },{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "VRF: {{ to_parse_interface[interface].vrf }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Last Change: {{ to_parse_interface[interface].last_change }}",
+            "cost": 2
+        },{% endif %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Port Channel Interface: {{ to_parse_interface[interface].port_channel.port_channel_int }}",
+            "cost": 2
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Port Channel Member: {{ to_parse_interface[interface].port_channel.port_channel_member }}",
+            "cost": 2{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% else %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 2             
+        },{% if to_parse_interface[interface].description is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Description: {{ to_parse_interface[interface].description }}",
+            "cost": 2
+        },{% endif %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Enabled: {{ to_parse_interface[interface].enabled }}",
+            "cost": 2
+        },        
+        { 
+            "source": "{{ interface }}",
+            "target": "Operational Status: {{ to_parse_interface[interface].oper_status }}",
+            "cost": 2
+        },{% if to_parse_interface[interface].mac_address is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "MAC Address: {{ to_parse_interface[interface].mac_address }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Switchport Mode: {{ to_parse_interface[interface].switchport_mode }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Access VLAN: {{ to_parse_interface[interface].access_vlan }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Trunk VLANs: {{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Native VLAN: {{ to_parse_interface[interface].native_vlan }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "VRF: {{ to_parse_interface[interface].vrf }}",
+            "cost": 2            
+        },{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Last Change: {{ to_parse_interface[interface].last_change }}",
+            "cost": 2
+        },{% endif %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Port Channel Member: {{ to_parse_interface[interface].port_channel.port_channel_member }}",
+            "cost": 2{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endif %}{% endif %}{% else %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 2            
+        },{% if to_parse_interface[interface].description is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Description: {{ to_parse_interface[interface].description }}",
+            "cost": 2
+        },{% endif %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Enabled: {{ to_parse_interface[interface].enabled }}",
+            "cost": 2
+        },        
+        { 
+            "source": "{{ interface }}",
+            "target": "Operational Status: {{ to_parse_interface[interface].oper_status }}",
+            "cost": 2
+        },{% if to_parse_interface[interface].mac_address is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "MAC Address: {{ to_parse_interface[interface].mac_address }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Switchport Mode: {{ to_parse_interface[interface].switchport_mode }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Access VLAN: {{ to_parse_interface[interface].access_vlan }}",
+            "cost": 2            
+        },{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Trunk VLANs: {{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Native VLAN: {{ to_parse_interface[interface].native_vlan }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "VRF: {{ to_parse_interface[interface].vrf }}",
+            "cost": 2
+        },{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Last Change: {{ to_parse_interface[interface].last_change }}",
+            "cost": 2
+        },{% endif %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Port Channel Interface: {{ to_parse_interface[interface].port_channel.port_channel_int }}",
+            "cost": 2
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Port Channel Member: {{ to_parse_interface[interface].port_channel.port_channel_member }}",
+            "cost": 2{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endif %}{% endif %}{% endif %}{% endfor %}
+    ]
+}

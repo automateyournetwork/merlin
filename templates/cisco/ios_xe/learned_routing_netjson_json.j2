@@ -1,0 +1,154 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Routing",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for vrf in to_parse_routing %}{% set vrf_loop = loop %}{% for address_family in to_parse_routing[vrf].address_family %}{% set address_family_loop = loop %}{% for route in to_parse_routing[vrf].address_family[address_family].routes %}{% set route_loop = loop %}{% if to_parse_routing[vrf].address_family[address_family].routes[route].next_hop.next_hop_list is defined %}{% for next_hop in to_parse_routing[vrf].address_family[address_family].routes[route].next_hop.next_hop_list %}{% set next_hop_loop = loop %}
+        { 
+            "id": "VRF: {{ vrf }}"
+        },
+        { 
+            "id": "Address Family: {{ address_family }}"
+        },
+        { 
+            "id": "Route: {{ route }}"
+        },
+        { 
+            "id": "Active: {{ to_parse_routing[vrf].address_family[address_family].routes[route].active }}"
+        },
+        { 
+            "id": "Metric: {{ to_parse_routing[vrf].address_family[address_family].routes[route].metric }}"
+        },
+        { 
+            "id": "Preference: {{ to_parse_routing[vrf].address_family[address_family].routes[route].route_preference }}"
+        },
+        { 
+            "id": "Source Protocol: {{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol }}"
+        },        
+        { 
+            "id": "Code: {{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol_codes }}"
+        },        
+        { 
+            "id": "Hop: {{ next_hop }}"
+        },
+        { 
+            "id": "Next Hop: {{ to_parse_routing[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].next_hop }}"{% if (vrf_loop.last) and (address_family_loop.last) and (route_loop.last) and (next_hop_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% else %}{% for outgoing_interface in to_parse_routing[vrf].address_family[address_family].routes[route].next_hop.outgoing_interface %}{% set outgoing_loop = loop %}
+        { 
+            "id": "VRF: {{ vrf }}"
+        },
+        { 
+            "id": "Address Family: {{ address_family }}"
+        },
+        { 
+            "id": "Route: {{ route }}"
+        },
+        { 
+            "id": "Active: {{ to_parse_routing[vrf].address_family[address_family].routes[route].active }}"
+        },
+        { 
+            "id": "Outgoing Interface: {{ outgoing_interface }}"
+        },
+        { 
+            "id": "Source Protocol: {{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol }}"
+        },
+        { 
+            "id": "Code: {{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol_codes }}"{% if (vrf_loop.last) and (address_family_loop.last) and (route_loop.last) and (outgoing_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endif %}{% endfor %}{% endfor %}{% endfor %}
+    ],
+    "links": [{% for vrf in to_parse_routing %}{% set vrf_loop = loop %}{% for address_family in to_parse_routing[vrf].address_family %}{% set address_family_loop = loop %}{% for route in to_parse_routing[vrf].address_family[address_family].routes %}{% set route_loop = loop %}{% if to_parse_routing[vrf].address_family[address_family].routes[route].next_hop.next_hop_list is defined %}{% for next_hop in to_parse_routing[vrf].address_family[address_family].routes[route].next_hop.next_hop_list %}{% set next_hop_loop = loop %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "VRF: {{ vrf }}",
+            "cost": 1
+        },    
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "Address Family: {{ address_family }}",
+            "cost": 1
+        },
+        { 
+            "source": "Address Family: {{ address_family }}",
+            "target": "Route: {{ route }}",
+            "cost": 1
+        },
+        { 
+            "source": "Route: {{ route }}",
+            "target": "Active: {{ to_parse_routing[vrf].address_family[address_family].routes[route].active }}",
+            "cost": 2
+        },
+        { 
+            "source": "Route: {{ route }}",
+            "target": "Metric: {{ to_parse_routing[vrf].address_family[address_family].routes[route].metric }}",
+            "cost": 2
+        },
+        { 
+            "source": "Route: {{ route }}",
+            "target": "Preference: {{ to_parse_routing[vrf].address_family[address_family].routes[route].route_preference }}",
+            "cost": 2
+        },
+        { 
+            "source": "Route: {{ route }}",
+            "target": "Source Protocol: {{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol }}",
+            "cost": 2
+        },          
+        { 
+            "source": "Route: {{ route }}",
+            "target": "Code: {{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol_codes }}",
+            "cost": 2
+        },        
+        { 
+            "source": "Route: {{ route }}",
+            "target": "Hop: {{ next_hop }}",
+            "cost": 1
+        },
+        { 
+            "source": "Hop: {{ next_hop }}",
+            "target": "Next Hop: {{ to_parse_routing[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].next_hop }}",
+            "cost": 1{% if (vrf_loop.last) and (address_family_loop.last) and (route_loop.last) and (next_hop_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% else %}{% for outgoing_interface in to_parse_routing[vrf].address_family[address_family].routes[route].next_hop.outgoing_interface %}{% set outgoing_loop = loop %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "VRF: {{ vrf }}",
+            "cost": 1
+        },    
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "Address Family: {{ address_family }}",
+            "cost": 1
+        },
+        { 
+            "source": "Address Family: {{ address_family }}",
+            "target": "Route: {{ route }}",
+            "cost": 1
+        },
+        { 
+            "source": "Route: {{ route }}",
+            "target": "Active: {{ to_parse_routing[vrf].address_family[address_family].routes[route].active }}",
+            "cost": 2
+        },
+        { 
+            "source": "Route: {{ route }}",
+            "target": "Outgoing Interface: {{ outgoing_interface }}",
+            "cost": 1
+        },
+        { 
+            "source": "Route: {{ route }}",
+            "target": "Source Protocol: {{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol }}",
+            "cost": 2
+        },          
+        { 
+            "source": "Route: {{ route }}",
+            "target": "Code: {{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol_codes }}",
+            "cost": 2{% if (vrf_loop.last) and (address_family_loop.last) and (route_loop.last) and (outgoing_loop.last) %}           
+        }{% else %}
+        },{% endif %}{% endfor %}{% endif %}{% endfor %}{% endfor %}{% endfor %}   
+    ]
+}

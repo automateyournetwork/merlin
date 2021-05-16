@@ -1,0 +1,7 @@
+{% for port_channel in host_data_model.host_port_channels %}interface port-channel{{ port_channel }}{% if host_data_model.host_port_channels[port_channel].switchport %}
+  switchport
+  switchport mode {{ host_data_model.host_port_channels[port_channel].switchport_mode }}
+  switchport trunk allowed vlan {{ host_data_model.host_port_channels[port_channel].switchport_allowed_vlans }}{% endif %}{% for member in host_data_model.host_port_channels[port_channel].members %}
+
+interface {{ member }}
+  channel-group {{ port_channel }}{% endfor %}{% endfor %}

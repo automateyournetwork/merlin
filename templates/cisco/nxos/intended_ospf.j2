@@ -1,0 +1,4 @@
+{% for router in host_data_model.host_ospf %}
+router ospf {{ router }}
+  router-id {{ host_data_model.host_ospf[router].router_id }}{% if host_data_model.host_ospf[router].passive_interface == "default" %}
+  passive-interface default{% endif %}{% endfor %}

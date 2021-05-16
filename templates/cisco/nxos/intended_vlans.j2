@@ -1,0 +1,3 @@
+{% for vlan in host_data_model.host_vlans %}vlan {{ vlan }}
+  name {{ host_data_model.host_vlans[vlan].name }}
+{% endfor %}

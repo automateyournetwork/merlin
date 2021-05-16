@@ -1,0 +1,48 @@
+{% if filetype_loop_jinja2 == "csv" %}{% for part in to_parse_inventory.main.chassis %}
+{{ hostname }},{{ part }},{{ to_parse_inventory.main.chassis[part].pid }},{{ to_parse_inventory.main.chassis[part].descr | replace(","," ") }},{{ to_parse_inventory.main.chassis[part].sn | default("N/A") }},{{ to_parse_inventory.main.chassis[part].vid | default("N/A") }},N/A,N/A,N/A,N/A,N/A{% endfor %}{% for slot in to_parse_inventory.slot %}{% for board in to_parse_inventory.slot[slot] %}{% for part in to_parse_inventory.slot[slot][board] %}{% if to_parse_inventory.slot[slot][board][part].subslot is defined %}{% for subslot in to_parse_inventory.slot[slot][board][part].subslot %}{% for sub_part in to_parse_inventory.slot[slot][board][part].subslot[subslot] %}
+{{ hostname }},{{ part }},{{ to_parse_inventory.slot[slot][board][part].pid }},{{ to_parse_inventory.slot[slot][board][part].descr | replace(","," ") }},{{ to_parse_inventory.slot[slot][board][part].sn | default("N/A") }},{{ to_parse_inventory.slot[slot][board][part].vid | default("N/A") }},{{ subslot }},{{ sub_part }},{{ to_parse_inventory.slot[slot][board][part].subslot[subslot][sub_part].descr }},{{ to_parse_inventory.slot[slot][board][part].subslot[subslot][sub_part].sn | default ("N/A") }},{{ to_parse_inventory.slot[slot][board][part].subslot[subslot][sub_part].vid | default("N/A") }}{% endfor %}{% endfor %}{% else %}
+{{ hostname }},{{ part }},{{ to_parse_inventory.slot[slot][board][part].pid }},{{ to_parse_inventory.slot[slot][board][part].descr | replace(","," ") }},{{ to_parse_inventory.slot[slot][board][part].sn | default("N/A") }},{{ to_parse_inventory.slot[slot][board][part].vid | default("N/A") }},N/A,N/A,N/A,N/A,N/A{% endif %}{% endfor %}{% endfor %}{% endfor %}
+{% else %}{% if filetype_loop_jinja2 == "md" %}{% for part in to_parse_inventory.main.chassis %}
+| {{ hostname }} | {{ part }} | {{ to_parse_inventory.main.chassis[part].pid }} | {{ to_parse_inventory.main.chassis[part].descr | replace(","," ") }} | {{ to_parse_inventory.main.chassis[part].sn | default("N/A") }} | {{ to_parse_inventory.main.chassis[part].vid | default("N/A") }} | N/A | N/A | N/A | N/A | N/A |{% endfor %}{% for slot in to_parse_inventory.slot %}{% for board in to_parse_inventory.slot[slot] %}{% for part in to_parse_inventory.slot[slot][board] %}{% if to_parse_inventory.slot[slot][board][part].subslot is defined %}{% for subslot in to_parse_inventory.slot[slot][board][part].subslot %}{% for sub_part in to_parse_inventory.slot[slot][board][part].subslot[subslot] %}
+| {{ hostname }} | {{ part }} | {{ to_parse_inventory.slot[slot][board][part].pid }} | {{ to_parse_inventory.slot[slot][board][part].descr | replace(","," ") }} | {{ to_parse_inventory.slot[slot][board][part].sn | default("N/A") }} | {{ to_parse_inventory.slot[slot][board][part].vid | default("N/A") }} | {{ subslot }} | {{ sub_part }} | {{ to_parse_inventory.slot[slot][board][part].subslot[subslot][sub_part].descr }} | {{ to_parse_inventory.slot[slot][board][part].subslot[subslot][sub_part].sn | default ("N/A") }} | {{ to_parse_inventory.slot[slot][board][part].subslot[subslot][sub_part].vid | default("N/A") }} |{% endfor %}{% endfor %}{% else %}
+| {{ hostname }} | {{ part }} | {{ to_parse_inventory.slot[slot][board][part].pid }} | {{ to_parse_inventory.slot[slot][board][part].descr | replace(","," ") }} | {{ to_parse_inventory.slot[slot][board][part].sn | default("N/A") }} | {{ to_parse_inventory.slot[slot][board][part].vid | default("N/A") }} | N/A | N/A | N/A | N/A | N/A |{% endif %}{% endfor %}{% endfor %}{% endfor %}
+{% else %}
+{% for part in to_parse_inventory.main.chassis %}
+<tr>
+  <td>{{ hostname }}</td>
+  <td>{{ part }}</td>
+  <td>{{ to_parse_inventory.main.chassis[part].pid }}</td>
+  <td>{{ to_parse_inventory.main.chassis[part].descr | replace(","," ") }}</td>
+  <td>{{ to_parse_inventory.main.chassis[part].sn | default("N/A") }}</td>
+  <td>{{ to_parse_inventory.main.chassis[part].vid | default("N/A") }}</td>
+  <td>N/A</td>
+  <td>N/A</td>
+  <td>N/A</td>
+  <td>N/A</td>
+  <td>N/A</td>
+  </tr>{% endfor %}{% for slot in to_parse_inventory.slot %}{% for board in to_parse_inventory.slot[slot] %}{% for part in to_parse_inventory.slot[slot][board] %}{% if to_parse_inventory.slot[slot][board][part].subslot is defined %}{% for subslot in to_parse_inventory.slot[slot][board][part].subslot %}{% for sub_part in to_parse_inventory.slot[slot][board][part].subslot[subslot] %}
+<tr>
+  <td>{{ hostname }}</td>
+  <td>{{ part }}</td>
+  <td>{{ to_parse_inventory.slot[slot][board][part].pid }}</td>
+  <td>{{ to_parse_inventory.slot[slot][board][part].descr | replace(","," ") }}</td>
+  <td>{{ to_parse_inventory.slot[slot][board][part].sn | default("N/A") }}</td>
+  <td>{{ to_parse_inventory.slot[slot][board][part].vid | default("N/A") }}</td>
+  <td>{{ subslot }}</td><td>{{ sub_part }}</td>
+  <td>{{ to_parse_inventory.slot[slot][board][part].subslot[subslot][sub_part].descr }}</td>
+  <td>{{ to_parse_inventory.slot[slot][board][part].subslot[subslot][sub_part].sn | default ("N/A") }}</td>
+  <td>{{ to_parse_inventory.slot[slot][board][part].subslot[subslot][sub_part].vid | default("N/A") }}
+</tr>{% endfor %}{% endfor %}{% else %}
+<tr>
+  <td>{{ hostname }}</td><td>{{ part }}</td>
+  <td>{{ to_parse_inventory.slot[slot][board][part].pid }}</td>
+  <td>{{ to_parse_inventory.slot[slot][board][part].descr | replace(","," ") }}</td>
+  <td>{{ to_parse_inventory.slot[slot][board][part].sn | default("N/A") }}</td>
+  <td>{{ to_parse_inventory.slot[slot][board][part].vid | default("N/A") }}</td>
+  <td>N/A</td>
+  <td>N/A</td>
+  <td>N/A</td>
+  <td>N/A</td>
+  <td>N/A{% endif %}{% endfor %}{% endfor %}{% endfor %}
+</tr>
+{% endif %}{% endif %}

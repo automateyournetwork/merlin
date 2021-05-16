@@ -1,0 +1,22 @@
+{
+    "name": {
+        "Chassis": {
+            "description": "Nexus9000 C9500v Chassis",
+            "pid": "N9K-C9500v",
+            "serial_number": "91OMZP37WBR",
+            "slot": "None"
+        },
+        "Slot 1": {
+            "description": "Nexus 9000v 64 port Ethernet Module",
+            "pid": "N9K-X9564v",
+            "serial_number": "9OW8JB5XF53",
+            "slot": "1"
+        },
+        "Slot 27": {
+            "description": "Supervisor Module",
+            "pid": "N9K-vSUP",
+            "serial_number": "9FJTZNHQ62X",
+            "slot": "27"
+        }
+    }
+}

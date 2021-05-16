@@ -1,0 +1,18 @@
+!!python/object/new:genie.ops.base.maker.CmdDict
+dictitems:
+  sessions: !!python/object/new:genie.ops.base.maker.CmdDict
+    dictitems:
+      authorized_clients: 0
+      total: 0
+      unauthorized_clients: 0
+    state:
+      leaf_dict:
+        authorized_clients: &id001 !!python/name:genie.libs.parser.iosxe.show_dot1x.ShowDot1xAllCount ''
+        total: *id001
+        unauthorized_clients: *id001
+  system_auth_control: false
+  version: 3
+state:
+  leaf_dict:
+    system_auth_control: &id002 !!python/name:genie.libs.parser.iosxe.show_dot1x.ShowDot1xAllDetail ''
+    version: *id002

@@ -1,0 +1,4 @@
+APIs:
+  serial_2_info:
+    serial_2_info_api_username: {{ your client key here }}
+    serial_2_info_api_password: {{ your secret here }}

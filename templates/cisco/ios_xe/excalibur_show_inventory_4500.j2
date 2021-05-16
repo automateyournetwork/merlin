@@ -1,0 +1,16 @@
+{% if filetype_loop_jinja2 == "csv" %}{% for part in to_parse_inventory %}{% for pid in to_parse_inventory[part] %}
+{{ hostname }},{{ to_parse_inventory[part][pid].name }},{{ pid }},{{ to_parse_inventory[part][pid].descr | replace(","," ") }},{{ to_parse_inventory[part][pid].sn }},{{ to_parse_inventory[part][pid].vid | default("N/A") }},N/A,N/A,N/A,N/A,N/A{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}{% for part in to_parse_inventory %}{% for pid in to_parse_inventory[part] %}
+| {{ hostname }} | {{ to_parse_inventory[part][pid].name }} | {{ pid }} | {{ to_parse_inventory[part][pid].descr | replace(","," ") }} | {{ to_parse_inventory[part][pid].sn }} | {{ to_parse_inventory[part][pid].vid | default("N/A") }} | N/A | N/A | N/A | N/A | N/A |{% endfor %}{% endfor %}{% else %}{% for part in to_parse_inventory %}{% for pid in to_parse_inventory[part] %}
+<tr>
+  <td>{{ hostname }}</td>
+  <td>{{ to_parse_inventory[part][pid].name }}</td>
+  <td>{{ pid }}</td>
+  <td>{{ to_parse_inventory[part][pid].descr | replace(","," ") }}</td>
+  <td>{{ to_parse_inventory[part][pid].sn }}</td>
+  <td>{{ to_parse_inventory[part][pid].vid | default("N/A") }}</td>
+  <td>N/A</td>
+  <td>N/A</td>
+  <td>N/A</td>
+  <td>N/A</td>
+  <td>N/A</td>
+</tr>{% endfor %}{% endfor %}{% endif %}{% endif %}

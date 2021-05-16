@@ -1,0 +1,14 @@
+{% if filetype_loop_jinja2 == "csv" %}{% for result in to_parse_administrator_details %}
+{{ to_parse_administrator_details[result].name }},{{ to_parse_administrator_details[result].description | default("No Description") }},{{ to_parse_administrator_details[result].enabled }},{{ to_parse_administrator_details[result].adminGroups }},{{ to_parse_administrator_details[result].changePassword }},{{ to_parse_administrator_details[result].externalUser }},{{ to_parse_administrator_details[result].inactiveAccountNeverDisabled }},{{ to_parse_administrator_details[result].includeSystemAlarmsInEmail }},{{ to_parse_administrator_details[result].id }}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}{% for result in to_parse_administrator_details %}
+| {{ to_parse_administrator_details[result].name }} | {{ to_parse_administrator_details[result].description | default("No Description") }} | {{ to_parse_administrator_details[result].enabled }} | {{ to_parse_administrator_details[result].adminGroups }} | {{ to_parse_administrator_details[result].changePassword }} | {{ to_parse_administrator_details[result].externalUser }} | {{ to_parse_administrator_details[result].inactiveAccountNeverDisabled }} | {{ to_parse_administrator_details[result].includeSystemAlarmsInEmail }} | {{ to_parse_administrator_details[result].id }} |{% endfor %}{% else %}{% for result in to_parse_administrator_details %}
+<tr>
+  <td>{{ to_parse_administrator_details[result].name }}</td>
+  <td>{{ to_parse_administrator_details[result].description | default("No Description") }}</td>
+  <td>{{ to_parse_administrator_details[result].enabled }}</td>
+  <td>{{ to_parse_administrator_details[result].adminGroups }}</td>
+  <td>{{ to_parse_administrator_details[result].changePassword }}</td>
+  <td>{{ to_parse_administrator_details[result].externalUser }}</td>
+  <td>{{ to_parse_administrator_details[result].inactiveAccountNeverDisabled }}</td>
+  <td>{{ to_parse_administrator_details[result].includeSystemAlarmsInEmail }}</td>
+  <td>{{ to_parse_administrator_details[result].id }}</td>
+</tr>{% endfor %}{% endif %}{% endif %}

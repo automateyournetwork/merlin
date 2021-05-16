@@ -1,0 +1,862 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show VLAN",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_Nexus9k"
+        },
+        { 
+            "id": "VLAN: interface_vlan_enabled"
+        },
+        { 
+            "id": "Name: "
+        },
+        { 
+            "id": "State: "
+        },
+        { 
+            "id": "Shutdown: "
+        },
+        { 
+            "id": "VLAN: 105"
+        },
+        { 
+            "id": "Name: iot"
+        },
+        { 
+            "id": "State: active"
+        },
+        { 
+            "id": "Shutdown: False"
+        },
+        { 
+            "id": "Port-channel11"
+        },
+        { 
+            "id": "VLAN: 105"
+        },
+        { 
+            "id": "Name: iot"
+        },
+        { 
+            "id": "State: active"
+        },
+        { 
+            "id": "Shutdown: False"
+        },
+        { 
+            "id": "Ethernet1/1"
+        },
+        { 
+            "id": "VLAN: 105"
+        },
+        { 
+            "id": "Name: iot"
+        },
+        { 
+            "id": "State: active"
+        },
+        { 
+            "id": "Shutdown: False"
+        },
+        { 
+            "id": "Ethernet1/2"
+        },
+        { 
+            "id": "VLAN: 104"
+        },
+        { 
+            "id": "Name: security"
+        },
+        { 
+            "id": "State: active"
+        },
+        { 
+            "id": "Shutdown: False"
+        },
+        { 
+            "id": "Port-channel11"
+        },
+        { 
+            "id": "VLAN: 104"
+        },
+        { 
+            "id": "Name: security"
+        },
+        { 
+            "id": "State: active"
+        },
+        { 
+            "id": "Shutdown: False"
+        },
+        { 
+            "id": "Ethernet1/1"
+        },
+        { 
+            "id": "VLAN: 104"
+        },
+        { 
+            "id": "Name: security"
+        },
+        { 
+            "id": "State: active"
+        },
+        { 
+            "id": "Shutdown: False"
+        },
+        { 
+            "id": "Ethernet1/2"
+        },
+        { 
+            "id": "VLAN: 103"
+        },
+        { 
+            "id": "Name: test"
+        },
+        { 
+            "id": "State: active"
+        },
+        { 
+            "id": "Shutdown: False"
+        },
+        { 
+            "id": "Port-channel11"
+        },
+        { 
+            "id": "VLAN: 103"
+        },
+        { 
+            "id": "Name: test"
+        },
+        { 
+            "id": "State: active"
+        },
+        { 
+            "id": "Shutdown: False"
+        },
+        { 
+            "id": "Ethernet1/1"
+        },
+        { 
+            "id": "VLAN: 103"
+        },
+        { 
+            "id": "Name: test"
+        },
+        { 
+            "id": "State: active"
+        },
+        { 
+            "id": "Shutdown: False"
+        },
+        { 
+            "id": "Ethernet1/2"
+        },
+        { 
+            "id": "VLAN: 102"
+        },
+        { 
+            "id": "Name: dev"
+        },
+        { 
+            "id": "State: active"
+        },
+        { 
+            "id": "Shutdown: False"
+        },
+        { 
+            "id": "Port-channel11"
+        },
+        { 
+            "id": "VLAN: 102"
+        },
+        { 
+            "id": "Name: dev"
+        },
+        { 
+            "id": "State: active"
+        },
+        { 
+            "id": "Shutdown: False"
+        },
+        { 
+            "id": "Ethernet1/1"
+        },
+        { 
+            "id": "VLAN: 102"
+        },
+        { 
+            "id": "Name: dev"
+        },
+        { 
+            "id": "State: active"
+        },
+        { 
+            "id": "Shutdown: False"
+        },
+        { 
+            "id": "Ethernet1/2"
+        },
+        { 
+            "id": "VLAN: 101"
+        },
+        { 
+            "id": "Name: prod"
+        },
+        { 
+            "id": "State: active"
+        },
+        { 
+            "id": "Shutdown: False"
+        },
+        { 
+            "id": "Port-channel11"
+        },
+        { 
+            "id": "VLAN: 101"
+        },
+        { 
+            "id": "Name: prod"
+        },
+        { 
+            "id": "State: active"
+        },
+        { 
+            "id": "Shutdown: False"
+        },
+        { 
+            "id": "Ethernet1/1"
+        },
+        { 
+            "id": "VLAN: 101"
+        },
+        { 
+            "id": "Name: prod"
+        },
+        { 
+            "id": "State: active"
+        },
+        { 
+            "id": "Shutdown: False"
+        },
+        { 
+            "id": "Ethernet1/2"
+        },
+        { 
+            "id": "VLAN: 100"
+        },
+        { 
+            "id": "Name: mgmt"
+        },
+        { 
+            "id": "State: active"
+        },
+        { 
+            "id": "Shutdown: False"
+        },
+        { 
+            "id": "Port-channel11"
+        },
+        { 
+            "id": "VLAN: 100"
+        },
+        { 
+            "id": "Name: mgmt"
+        },
+        { 
+            "id": "State: active"
+        },
+        { 
+            "id": "Shutdown: False"
+        },
+        { 
+            "id": "Ethernet1/1"
+        },
+        { 
+            "id": "VLAN: 100"
+        },
+        { 
+            "id": "Name: mgmt"
+        },
+        { 
+            "id": "State: active"
+        },
+        { 
+            "id": "Shutdown: False"
+        },
+        { 
+            "id": "Ethernet1/2"
+        },
+        { 
+            "id": "VLAN: 1"
+        },
+        { 
+            "id": "Name: default"
+        },
+        { 
+            "id": "State: active"
+        },
+        { 
+            "id": "Shutdown: False"
+        },
+        { 
+            "id": "VLAN: configuration"
+        },
+        { 
+            "id": "Name: "
+        },
+        { 
+            "id": "State: "
+        },
+        { 
+            "id": "Shutdown: "
+        },
+        { 
+            "id": "VLAN: vn_segment_vlan_based_enabled"
+        },
+        { 
+            "id": "Name: "
+        },
+        { 
+            "id": "State: "
+        },
+        { 
+            "id": "Shutdown: "
+        }       
+    ],
+    "links": [
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: interface_vlan_enabled",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: interface_vlan_enabled",
+            "target": "Name: ",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: interface_vlan_enabled",
+            "target": "State: ",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: interface_vlan_enabled",
+            "target": "Shutdown: ",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: 105",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: 105",
+            "target": "Name: iot",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 105",
+            "target": "State: active",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 105",
+            "target": "Shutdown: False",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 105",
+            "target": "Port-channel11",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: 105",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: 105",
+            "target": "Name: iot",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 105",
+            "target": "State: active",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 105",
+            "target": "Shutdown: False",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 105",
+            "target": "Ethernet1/1",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: 105",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: 105",
+            "target": "Name: iot",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 105",
+            "target": "State: active",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 105",
+            "target": "Shutdown: False",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 105",
+            "target": "Ethernet1/2",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: 104",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: 104",
+            "target": "Name: security",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 104",
+            "target": "State: active",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 104",
+            "target": "Shutdown: False",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 104",
+            "target": "Port-channel11",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: 104",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: 104",
+            "target": "Name: security",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 104",
+            "target": "State: active",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 104",
+            "target": "Shutdown: False",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 104",
+            "target": "Ethernet1/1",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: 104",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: 104",
+            "target": "Name: security",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 104",
+            "target": "State: active",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 104",
+            "target": "Shutdown: False",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 104",
+            "target": "Ethernet1/2",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: 103",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: 103",
+            "target": "Name: test",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 103",
+            "target": "State: active",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 103",
+            "target": "Shutdown: False",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 103",
+            "target": "Port-channel11",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: 103",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: 103",
+            "target": "Name: test",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 103",
+            "target": "State: active",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 103",
+            "target": "Shutdown: False",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 103",
+            "target": "Ethernet1/1",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: 103",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: 103",
+            "target": "Name: test",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 103",
+            "target": "State: active",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 103",
+            "target": "Shutdown: False",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 103",
+            "target": "Ethernet1/2",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: 102",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: 102",
+            "target": "Name: dev",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 102",
+            "target": "State: active",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 102",
+            "target": "Shutdown: False",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 102",
+            "target": "Port-channel11",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: 102",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: 102",
+            "target": "Name: dev",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 102",
+            "target": "State: active",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 102",
+            "target": "Shutdown: False",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 102",
+            "target": "Ethernet1/1",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: 102",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: 102",
+            "target": "Name: dev",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 102",
+            "target": "State: active",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 102",
+            "target": "Shutdown: False",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 102",
+            "target": "Ethernet1/2",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: 101",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: 101",
+            "target": "Name: prod",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 101",
+            "target": "State: active",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 101",
+            "target": "Shutdown: False",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 101",
+            "target": "Port-channel11",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: 101",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: 101",
+            "target": "Name: prod",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 101",
+            "target": "State: active",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 101",
+            "target": "Shutdown: False",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 101",
+            "target": "Ethernet1/1",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: 101",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: 101",
+            "target": "Name: prod",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 101",
+            "target": "State: active",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 101",
+            "target": "Shutdown: False",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 101",
+            "target": "Ethernet1/2",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: 100",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: 100",
+            "target": "Name: mgmt",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 100",
+            "target": "State: active",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 100",
+            "target": "Shutdown: False",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 100",
+            "target": "Port-channel11",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: 100",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: 100",
+            "target": "Name: mgmt",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 100",
+            "target": "State: active",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 100",
+            "target": "Shutdown: False",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 100",
+            "target": "Ethernet1/1",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: 100",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: 100",
+            "target": "Name: mgmt",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 100",
+            "target": "State: active",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 100",
+            "target": "Shutdown: False",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 100",
+            "target": "Ethernet1/2",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: 1",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: 1",
+            "target": "Name: default",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 1",
+            "target": "State: active",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: 1",
+            "target": "Shutdown: False",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: configuration",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: configuration",
+            "target": "Name: ",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: configuration",
+            "target": "State: ",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: configuration",
+            "target": "Shutdown: ",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: vn_segment_vlan_based_enabled",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: vn_segment_vlan_based_enabled",
+            "target": "Name: ",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: vn_segment_vlan_based_enabled",
+            "target": "State: ",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: vn_segment_vlan_based_enabled",
+            "target": "Shutdown: ",
+            "cost": 2
+        }    
+    ]
+}

@@ -1,0 +1,5 @@
+!!python/object/new:genie.conf.base.utils.QDict
+dictitems:
+  interfaces: {}
+  statistics:
+    entries_total: 0

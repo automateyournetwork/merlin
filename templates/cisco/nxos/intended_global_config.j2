@@ -1,0 +1,8 @@
+hostname {{ host_data_model.global_config.hostname }}
+{% for feature in host_data_model.global_config.features %}feature {{ feature }}
+{% endfor %}
+{% if host_data_model.global_config.ip_domain_lookup == "false" %}no ip domain-lookup
+{% endif %}
+icam monitor {{ host_data_model.global_config.icam_monitor }}
+{% if host_data_model.global_config.logging_console %}{% else %}
+no logging console{% endif %}

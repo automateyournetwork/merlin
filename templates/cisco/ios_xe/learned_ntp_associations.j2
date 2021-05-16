@@ -1,0 +1,36 @@
+{% if filetype_loop_jinja2 == "csv" %}VRF,Association Address,Delay,Configured,Local Mode,Offset,Poll,Reach,Receive Time,Reference ID,Stratum{% for vrf in to_parse_ntp %}{% for address in to_parse_ntp[vrf].associations.address %}{% for is_conf,value in to_parse_ntp[vrf].associations.address[address].local_mode.client.isconfigured.items() %}
+{{ vrf }},{{ address }},{{ value.delay }},{{ value.isconfigured }},{{ value.local_mode }},{{ value.offset }},{{ value.poll }},{{ value.reach }},{{ value.receive_time }},{{ value.refid }},{{ value.stratum }}{% endfor %}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Learn NTP Associations
+| VRF | Association Address | Delay | Configured | Local Mode | Offset | Poll | Reach | Receive Time | Reference ID | Stratum |
+| --- | ------------------- | ----- | ---------- | ---------- | ------ | ---- | ----- | ------------ | ------------ | ------- | {% for vrf in to_parse_ntp %}{% for address in to_parse_ntp[vrf].associations.address %}{% for is_conf,value in to_parse_ntp[vrf].associations.address[address].local_mode.client.isconfigured.items() %}
+| {{ vrf }} | {{ address }} | {{ value.delay }} | {{ value.isconfigured }} | {{ value.local_mode }} | {{ value.offset }} | {{ value.poll }} | {{ value.reach }} | {{ value.receive_time }} | {{ value.refid }} | {{ value.stratum }} |{% endfor %}{% endfor %}{% endfor %}{% else %}
+<html><body>
+<h1>Learn NTP Associations</h1>
+<table style="width:100%">
+  <tr>
+    <th>VRF</th>
+    <th>Association Address</th>
+    <th>Delay</th><th>Configured</th>
+    <th>Local Mode</th>
+    <th>Offset</th>
+    <th>Poll</th>
+    <th>Reach</th>
+    <th>Receive Time</th>
+    <th>Reference ID</th>
+    <th>Stratum</th>
+  </tr>{% for vrf in to_parse_ntp %}{% for address in to_parse_ntp[vrf].associations.address %}{% for is_conf,value in to_parse_ntp[vrf].associations.address[address].local_mode.client.isconfigured.items() %}
+  <tr>
+    <td>{{ vrf }}</td>
+    <td>{{ address }}</td>
+    <td>{{ value.delay }}</td>
+    <td>{{ value.isconfigured }}</td>
+    <td>{{ value.local_mode }}</td>
+    <td>{{ value.offset }}</td>
+    <td>{{ value.poll }}</td>
+    <td>{{ value.reach }}</td>
+    <td>{{ value.receive_time }}</td>
+    <td>{{ value.refid }}</td>
+    <td>{{ value.stratum }}</td>    
+  </tr>{% endfor %}{% endfor %}{% endfor %}
+</table>
+</body></html>{% endif %}{% endif %}

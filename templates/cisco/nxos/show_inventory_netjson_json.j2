@@ -1,0 +1,33 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Inventory",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },
+        {% for part in to_parse_inventory_name %}{% set outer_loop = loop %}{% if outer_loop.index > 0 %}
+        {
+            "id": "{{ to_parse_inventory_name[part].description }}"{% if outer_loop.last %}
+        }{% else %}
+        },{% endif %}{% else %}
+        {
+            "id": "{{ to_parse_inventory_name[part].description }}"
+        }{% endif %}{% endfor %}
+    ],
+    "links": [{% for part in to_parse_inventory_name %}{% set outer_loop = loop %}{% if outer_loop.index > 0 %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "{{ to_parse_inventory_name[part].description }}",
+            "cost": 1{% if outer_loop.last %}
+        }{% else %}
+        },{% endif %}{% else %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "{{ to_parse_inventory_name[part].description }}",
+            "cost": 1
+        }{% endif %}{% endfor %}
+    ]
+}

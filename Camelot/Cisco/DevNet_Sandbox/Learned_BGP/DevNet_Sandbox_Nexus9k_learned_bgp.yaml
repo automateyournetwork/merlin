@@ -1,0 +1,144 @@
+!!python/object/new:genie.ops.base.maker.CmdDict
+dictitems:
+  instance: !!python/object/new:genie.ops.base.maker.CmdDict
+    dictitems:
+      default: !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          bgp_id: 65535
+          protocol_state: running
+          vrf: !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              default: !!python/object/new:genie.ops.base.maker.CmdDict
+                dictitems:
+                  address_family: !!python/object/new:genie.ops.base.maker.CmdDict
+                    dictitems:
+                      ipv4 unicast: !!python/object/new:genie.ops.base.maker.CmdDict
+                        dictitems:
+                          nexthop_trigger_delay_critical: 3000
+                          nexthop_trigger_delay_non_critical: 10000
+                          nexthop_trigger_enable: true
+                        state:
+                          leaf_dict:
+                            nexthop_trigger_delay_critical: &id001 !!python/name:genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllAllNextHopDatabase ''
+                            nexthop_trigger_delay_non_critical: *id001
+                            nexthop_trigger_enable: *id001
+                      ipv6 unicast: !!python/object/new:genie.ops.base.maker.CmdDict
+                        dictitems:
+                          nexthop_trigger_delay_critical: 3000
+                          nexthop_trigger_delay_non_critical: 10000
+                          nexthop_trigger_enable: true
+                        state:
+                          leaf_dict:
+                            nexthop_trigger_delay_critical: *id001
+                            nexthop_trigger_delay_non_critical: *id001
+                            nexthop_trigger_enable: *id001
+                    state:
+                      leaf_dict: {}
+                  cluster_id: 0.0.0.0
+                  confederation_identifier: 0
+                  neighbor: !!python/object/new:genie.ops.base.maker.CmdDict
+                    dictitems:
+                      172.16.0.2: !!python/object/new:genie.ops.base.maker.CmdDict
+                        dictitems:
+                          bgp_negotiated_keepalive_timers: !!python/object/new:genie.ops.base.maker.CmdDict
+                            dictitems:
+                              hold_time: 180
+                              keepalive_interval: 60
+                            state:
+                              leaf_dict:
+                                hold_time: &id002 !!python/name:genie.libs.parser.nxos.show_bgp.ShowBgpVrfAllNeighbors ''
+                                keepalive_interval: *id002
+                          bgp_neighbor_counters: !!python/object/new:genie.ops.base.maker.CmdDict
+                            dictitems:
+                              messages: !!python/object/new:genie.ops.base.maker.CmdDict
+                                dictitems:
+                                  received: !!python/object/new:genie.ops.base.maker.CmdDict
+                                    dictitems:
+                                      bytes_in_queue: 0
+                                      capability: 0
+                                      keepalives: 0
+                                      notifications: 0
+                                      opens: 0
+                                      route_refresh: 0
+                                      total: 0
+                                      total_bytes: 0
+                                      updates: 0
+                                    state:
+                                      leaf_dict:
+                                        bytes_in_queue: *id002
+                                        capability: *id002
+                                        keepalives: *id002
+                                        notifications: *id002
+                                        opens: *id002
+                                        route_refresh: *id002
+                                        total: *id002
+                                        total_bytes: *id002
+                                        updates: *id002
+                                  sent: !!python/object/new:genie.ops.base.maker.CmdDict
+                                    dictitems:
+                                      bytes_in_queue: 0
+                                      capability: 0
+                                      keepalives: 0
+                                      notifications: 0
+                                      opens: 0
+                                      route_refresh: 0
+                                      total: 0
+                                      total_bytes: 0
+                                      updates: 0
+                                    state:
+                                      leaf_dict:
+                                        bytes_in_queue: *id002
+                                        capability: *id002
+                                        keepalives: *id002
+                                        notifications: *id002
+                                        opens: *id002
+                                        route_refresh: *id002
+                                        total: *id002
+                                        total_bytes: *id002
+                                        updates: *id002
+                                state:
+                                  leaf_dict: {}
+                            state:
+                              leaf_dict: {}
+                          bgp_session_transport: !!python/object/new:genie.ops.base.maker.CmdDict
+                            dictitems:
+                              connection: !!python/object/new:genie.ops.base.maker.CmdDict
+                                dictitems:
+                                  last_reset: never
+                                  reset_reason: no error
+                                state:
+                                  leaf_dict:
+                                    last_reset: *id002
+                                    reset_reason: *id002
+                            state:
+                              leaf_dict: {}
+                          bgp_version: 4
+                          holdtime: 180
+                          keepalive_interval: 60
+                          local_as_as_no: None
+                          remote_as: 65535
+                        state:
+                          leaf_dict:
+                            bgp_version: *id002
+                            holdtime: *id002
+                            keepalive_interval: *id002
+                            local_as_as_no: *id002
+                            remote_as: *id002
+                    state:
+                      leaf_dict: {}
+                  router_id: 172.16.0.1
+                state:
+                  leaf_dict:
+                    cluster_id: &id003 !!python/name:genie.libs.parser.nxos.show_bgp.ShowBgpProcessVrfAll ''
+                    confederation_identifier: *id003
+                    router_id: *id003
+            state:
+              leaf_dict: {}
+        state:
+          leaf_dict:
+            bgp_id: *id003
+            protocol_state: *id003
+    state:
+      leaf_dict: {}
+state:
+  leaf_dict: {}

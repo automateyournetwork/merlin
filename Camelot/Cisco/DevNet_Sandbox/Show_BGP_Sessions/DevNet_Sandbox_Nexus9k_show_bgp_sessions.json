@@ -1,0 +1,27 @@
+{
+    "local_as": 65535,
+    "total_established_peers": 0,
+    "total_peers": 1,
+    "vrf": {
+        "default": {
+            "local_as": 65535,
+            "neighbor": {
+                "172.16.0.2": {
+                    "connections_dropped": 0,
+                    "last_flap": "01:29:50",
+                    "last_read": "never",
+                    "last_write": "never",
+                    "local_port": 0,
+                    "notifications_received": 0,
+                    "notifications_sent": 0,
+                    "remote_as": 65535,
+                    "remote_port": 0,
+                    "state": "idle"
+                }
+            },
+            "router_id": "172.16.0.1",
+            "vrf_established_peers": 0,
+            "vrf_peers": 1
+        }
+    }
+}

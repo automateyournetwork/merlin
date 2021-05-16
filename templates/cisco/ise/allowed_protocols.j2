@@ -1,0 +1,16 @@
+{% if filetype_loop_jinja2 == "csv" %}Name,Description,ISE ID{% for resource in to_parse_allowed_protocols.SearchResult.resources %}
+{{ resource.name }},{{ resource.description | default("No Description") }},{{ resource.id }}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Allowed Protocols
+| Name | Description | ISE ID |
+| ---- | ----------- | ------ |{% for resource in to_parse_allowed_protocols.SearchResult.resources %}
+| {{ resource.name }} | {{ resource.description | default("No Description") }} | {{ resource.id }} |{% endfor %}{% else %}
+<html><body><h1>Allowed Protocols</h1><table style="width:100%">
+<tr>
+  <th>Name</th>
+  <th>Description</th>
+  <th>ISE ID</th></tr>{% for resource in to_parse_allowed_protocols.SearchResult.resources %}
+<tr>
+  <td>{{ resource.name }}</td>
+  <td>{{ resource.description | default("No Description") }}</td>
+  <td>{{ resource.id }}</td>
+</tr>{% endfor %}{% endif %}{% endif %}

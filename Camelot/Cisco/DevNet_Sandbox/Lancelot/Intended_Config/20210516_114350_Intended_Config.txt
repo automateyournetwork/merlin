@@ -1,0 +1,212 @@
+
+hostname sbx-n9kv
+feature nxapi
+feature bash-shell
+feature scp-server
+feature ospf
+feature bgp
+feature netconf
+feature restconf
+feature grpc
+feature interface-vlan
+
+
+icam monitor scale
+
+no logging console
+
+vdc sbx-n9kv id 1
+  limit-resource vlan minimum 16 maximum 4094
+  limit-resource vrf minimum 2 maximum 4096
+  limit-resource port-channel minimum 0 maximum 511
+  limit-resource u4route-mem minimum 248 maximum 248
+  limit-resource u6route-mem minimum 96 maximum 96
+  limit-resource m4route-mem minimum 58 maximum 58
+  limit-resource m6route-mem minimum 8 maximum 8
+  limit-resource vni_bd minimum 4096 maximum 4096
+
+
+username admin password 5 $5$NHJPMI$nAF5/Os4JZ/VEGa3bvsZ9DicHG4yh9XvDdRX4Rh7U03  role network-admin
+
+
+
+radius-server host 172.16.1.12 key 7 "VwritosWsgsziGio" authentication accounting
+radius-server host 172.16.1.13 key 7 "VwritosWsgsziGio" authentication accounting
+
+aaa group server radius AAA-Radius-Group
+    server 172.16.1.12
+    server 172.16.1.13
+    use-vrf management
+    source-interface mgmt0
+
+
+snmp-server user admin auth md5 0x6e3f7802ad4401539b7624482a05a2c8 priv 0x6e3f7802ad4401539b7624482a05a2c8 localizedkey engineID 128:0:0:9:3:0:191:13:31:27:1
+
+
+rmon event 1 log trap public description FATAL(1) owner PMON@FATAL
+rmon event 2 log trap public description FATAL(1) owner PMON@FATAL
+rmon event 3 log trap public description FATAL(1) owner PMON@FATAL
+rmon event 4 log trap public description FATAL(1) owner PMON@FATAL
+rmon event 5 log trap public description FATAL(1) owner PMON@FATAL
+
+
+vlan 100
+  name mgmt
+vlan 101
+  name prod
+vlan 102
+  name dev
+vlan 103
+  name test
+vlan 104
+  name security
+vlan 105
+  name iot
+
+
+vrf context management
+  ip domain-name sj.ivt.net
+  ip name-server 10.10.2.18 10.10.2.20 128.107.212.175 
+  ip route 0.0.0.0/0 10.10.20.254
+  
+
+interface Vlan1
+interface Vlan100
+  description mgmt svi - DEMO PLEASE DON'T TOUCH
+  no shutdown
+  ip address 172.16.100.1/24
+  ip router ospf 1 area 0.0.0.0
+interface Vlan101
+  description prod svi - DEMO PLEASE DON'T TOUCH
+  no shutdown
+  ip address 172.16.101.1/24
+  ip router ospf 1 area 0.0.0.0
+interface Vlan102
+  description dev svi - DEMO PLEASE DON'T TOUCH
+  no shutdown
+  ip address 172.16.102.1/24
+  ip router ospf 1 area 0.0.0.0
+interface Vlan103
+  description test svi - DEMO PLEASE DON'T TOUCH
+  no shutdown
+  ip address 172.16.103.1/24
+  ip router ospf 1 area 0.0.0.0
+interface Vlan104
+  description security svi - DEMO PLEASE DON'T TOUCH
+  no shutdown
+  ip address 172.16.104.1/24
+  ip router ospf 1 area 0.0.0.0
+interface Vlan105
+  description iot svi - DEMO PLEASE DON'T TOUCH
+  no shutdown
+  ip address 172.16.105.1/24
+  ip router ospf 1 area 0.0.0.0
+
+
+interface port-channel11
+  switchport
+  switchport mode trunk
+  switchport trunk allowed vlan 100-110
+
+interface Ethernet1/1
+  channel-group 11
+
+interface Ethernet1/2
+  channel-group 11
+
+
+Interface Ethernet1/3
+Interface Ethernet1/4
+Interface Ethernet1/5
+  no shutdown
+  description L3 Link
+  ip address 172.16.1.1/30
+  ip ospf network broadcast
+  no ip ospf passive-interface
+  ip router ospf 1 area 0.0.0.0
+Interface Ethernet1/6
+Interface Ethernet1/7
+Interface Ethernet1/8
+Interface Ethernet1/9
+Interface Ethernet1/10
+Interface Ethernet1/11
+Interface Ethernet1/12
+Interface Ethernet1/13
+Interface Ethernet1/14
+Interface Ethernet1/15
+Interface Ethernet1/16
+Interface Ethernet1/17
+Interface Ethernet1/18
+Interface Ethernet1/19
+Interface Ethernet1/20
+Interface Ethernet1/21
+Interface Ethernet1/22
+Interface Ethernet1/23
+Interface Ethernet1/24
+Interface Ethernet1/25
+Interface Ethernet1/26
+Interface Ethernet1/27
+Interface Ethernet1/28
+Interface Ethernet1/29
+Interface Ethernet1/30
+Interface Ethernet1/31
+Interface Ethernet1/32
+Interface Ethernet1/33
+Interface Ethernet1/34
+Interface Ethernet1/35
+Interface Ethernet1/36
+Interface Ethernet1/37
+Interface Ethernet1/38
+Interface Ethernet1/39
+Interface Ethernet1/40
+Interface Ethernet1/41
+Interface Ethernet1/42
+Interface Ethernet1/43
+Interface Ethernet1/44
+Interface Ethernet1/45
+Interface Ethernet1/46
+Interface Ethernet1/47
+Interface Ethernet1/48
+Interface Ethernet1/49
+Interface Ethernet1/50
+Interface Ethernet1/51
+Interface Ethernet1/52
+Interface Ethernet1/53
+Interface Ethernet1/54
+Interface Ethernet1/55
+Interface Ethernet1/56
+Interface Ethernet1/57
+Interface Ethernet1/58
+Interface Ethernet1/59
+Interface Ethernet1/60
+Interface Ethernet1/61
+Interface Ethernet1/62
+Interface Ethernet1/63
+Interface Ethernet1/64
+
+
+interface mgmt0
+  description DO NOT TOUCH CONFIG ON THIS INTERFACE
+  vrf member management
+  ip address 10.10.20.58/24
+
+
+interface loopback1
+  ip address 172.16.0.1/32
+
+line console
+  exec-timeout 0
+line vty
+  exec-timeout 0
+
+
+router ospf 1
+  router-id 172.16.0.1
+  passive-interface default
+
+
+router bgp 65535
+  address-family ipv4 unicast
+    network 172.16.0.0/16
+  neighbor 172.16.0.2
+    remote-as 65535

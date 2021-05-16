@@ -1,0 +1,33 @@
+{% if filetype_loop_jinja2 == "csv" %}Slot,Part,Description,PID,Serial Number,Virtual ID{% for slot in to_parse_inventory %}{% for part in to_parse_inventory[slot] %}{% for part_number in to_parse_inventory[slot][part] %}
+{{ slot }},{{ part_number }},{{ to_parse_inventory[slot][part][part_number].descr }},{{ to_parse_inventory[slot][part][part_number].pid }},{{ to_parse_inventory[slot][part][part_number].sn }},{{ to_parse_inventory[slot][part][part_number].vid }}{% endfor %}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show Inventory
+| Slot | Part | Description | PID | Serial Number | Virtual ID |
+| ---- | ---- | ----------- | --- | ------------- | ---------- |{% for slot in to_parse_inventory %}{% for part in to_parse_inventory[slot] %}{% for part_number in to_parse_inventory[slot][part] %}
+| {{ slot }} | {{ part_number }} | {{ to_parse_inventory[slot][part][part_number].descr }} | {{ to_parse_inventory[slot][part][part_number].pid }} | {{ to_parse_inventory[slot][part][part_number].sn }} | {{ to_parse_inventory[slot][part][part_number].vid }} |{% endfor %}{% endfor %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show Inventory</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Slot</th>
+    <th>Part</th>
+    <th>Description</th>
+    <th>PID</th>
+    <th>Serial Number</th>   
+    <th>Virtual ID</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  {% for slot in to_parse_inventory %}{% for part in to_parse_inventory[slot] %}{% for part_number in to_parse_inventory[slot][part] %}
+  <tr>
+    <td>{{ slot }}</td>
+    <td>{{ part_number }}</td>
+    <td>{{ to_parse_inventory[slot][part][part_number].descr }}</td>
+    <td>{{ to_parse_inventory[slot][part][part_number].pid }}</td>
+    <td>{{ to_parse_inventory[slot][part][part_number].sn }}</td>
+    <td>{{ to_parse_inventory[slot][part][part_number].vid }}</td>
+  </tr>{% endfor %}{% endfor %}{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

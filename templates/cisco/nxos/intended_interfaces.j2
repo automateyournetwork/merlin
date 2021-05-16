@@ -1,0 +1,8 @@
+{% for interface in host_data_model.host_interfaces %}
+Interface {{ interface }}{% if host_data_model.host_interfaces[interface].enabled %}
+  no shutdown{% endif %}{% if host_data_model.host_interfaces[interface].description is defined %}
+  description {{ host_data_model.host_interfaces[interface].description }}{% endif %}{% if host_data_model.host_interfaces[interface].ip_address is defined %}
+  ip address {{ host_data_model.host_interfaces[interface].ip_address }}{% endif %}{% if host_data_model.host_interfaces[interface].ospf_broadcast %}
+  ip ospf network broadcast{% endif %}{% if host_data_model.host_interfaces[interface].no_ospf_passive_interface %}
+  no ip ospf passive-interface{% endif %}{% if host_data_model.host_interfaces[interface].ospf_instance is defined %}
+  ip router ospf {{ host_data_model.host_interfaces[interface].ospf_instance }} area {{ host_data_model.host_interfaces[interface].ospf_area }}{% endif %}{% endfor %}

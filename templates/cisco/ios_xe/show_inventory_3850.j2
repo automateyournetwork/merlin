@@ -1,0 +1,53 @@
+{% if filetype_loop_jinja2 == "csv" %}Slot,Part,Description,Serial Number,Virtual ID,Subslot,Subslot Part,Subslot Description,Subslot Serial Number,SubSlot Virtual ID{% for slot in to_parse_inventory %}{% for part in to_parse_inventory[slot] %}{% for part_number in to_parse_inventory[slot][part] %}{% if to_parse_inventory[slot][part][part_number].subslot is defined %}{% for subslot in to_parse_inventory[slot][part][part_number].subslot %}{% for subslot,subslot_part in to_parse_inventory[slot][part][part_number].subslot.items() %}{% for subslot_part,part_details in subslot_part.items() %}
+{{ slot }},{{ part_number }},{{ to_parse_inventory[slot][part][part_number].descr }},{{ to_parse_inventory[slot][part][part_number].sn }},{{ to_parse_inventory[slot][part][part_number].vid }},{{ subslot }},{{ subslot_part }},{{ part_details.descr }},{{ part_details.sn }},{{ part_details.vid }}{% endfor %}{% endfor %}{% endfor %}{% else %}
+{{ slot }},{{ part_number }},{{ to_parse_inventory[slot][part][part_number].descr }},{{ to_parse_inventory[slot][part][part_number].sn }},{{ to_parse_inventory[slot][part][part_number].vid }},N/A,N/A,N/A,N/A,N/A{% endif %}{% endfor %}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show Inventory
+| Slot | Part | Description | Serial Number | Virtual ID | Subslot | Subslot Part | Subslot Description | Subslot Serial Number | SubSlot Virtual ID |
+| ---- | ---- | ----------- | ------------- | ---------- | ------- | ------------ | ------------------- | --------------------- | ------------------ |{% for slot in to_parse_inventory %}{% for part in to_parse_inventory[slot] %}{% for part_number in to_parse_inventory[slot][part] %}{% if to_parse_inventory[slot][part][part_number].subslot is defined %}{% for subslot in to_parse_inventory[slot][part][part_number].subslot %}{% for subslot,subslot_part in to_parse_inventory[slot][part][part_number].subslot.items() %}{% for subslot_part,part_details in subslot_part.items() %}
+| {{ slot }} | {{ part_number }} | {{ to_parse_inventory[slot][part][part_number].descr }} | {{ to_parse_inventory[slot][part][part_number].sn }} | {{ to_parse_inventory[slot][part][part_number].vid }} | {{ subslot }} | {{ subslot_part }} | {{ part_details.descr }} | {{ part_details.sn }} | {{ part_details.vid }} |{% endfor %}{% endfor %}{% endfor %}{% else %}
+| {{ slot }} | {{ part_number }} | {{ to_parse_inventory[slot][part][part_number].descr }} | {{ to_parse_inventory[slot][part][part_number].sn }} | {{ to_parse_inventory[slot][part][part_number].vid }} | N/A | N/A | N/A | N/A | N/A | {% endif %}{% endfor %}{% endfor %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show Inventory</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Slot</th>
+    <th>Part</th>
+    <th>Description</th>
+    <th>Serial Number</th>
+    <th>Virtual ID</th>   
+    <th>Subslot</th>
+    <th>Subslot Part</th>
+    <th>Subslot Description</th>
+    <th>Subslot Serial Number</th>
+    <th>Subslot Virtual ID</th>
+  </tr>
+  </thead>
+  <tbody>{% for slot in to_parse_inventory %}{% for part in to_parse_inventory[slot] %}{% for part_number in to_parse_inventory[slot][part] %}{% if to_parse_inventory[slot][part][part_number].subslot is defined %}{% for subslot in to_parse_inventory[slot][part][part_number].subslot %}{% for subslot,subslot_part in to_parse_inventory[slot][part][part_number].subslot.items() %}{% for subslot_part,part_details in subslot_part.items() %}
+  <tr>
+    <td>{{ slot }}</td>
+    <td>{{ part }}</td>
+    <td>{{ to_parse_inventory[slot][part][part_number].descr }}</td>
+    <td>{{ to_parse_inventory[slot][part][part_number].sn }}</td>
+    <td>{{ to_parse_inventory[slot][part][part_number].vid }}</td>
+    <td>{{ subslot }}</td>
+    <td>{{ subslot_part }}</td>
+    <td>{{ part_details.descr }}</td>
+    <td>{{ part_details.sn }}</td>
+    <td>{{ part_details.vid }}</td>
+  </tr>{% endfor %}{% endfor %}{% endfor %}{% else %}
+    <tr>
+    <td>{{ slot }}</td>
+    <td>{{ part }}</td>
+    <td>{{ to_parse_inventory[slot][part][part_number].descr }}</td>
+    <td>{{ to_parse_inventory[slot][part][part_number].sn }}</td>
+    <td>{{ to_parse_inventory[slot][part][part_number].vid }}</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endif %}{% endfor %}{% endfor %}{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

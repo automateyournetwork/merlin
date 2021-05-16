@@ -1,0 +1,175 @@
+Access Control List,Access Control Entry,Permission,Logging,Source Network,Destination Network,L3 Protocol,L4 Protocol,Operator,Port
+copp-system-p-acl-auto-rp,10,permit,No Logging,any,224.0.1.39/32 224.0.1.39/32,ip,N/A,N/A,N/A
+copp-system-p-acl-auto-rp,20,permit,No Logging,any,224.0.1.40/32 224.0.1.40/32,ip,N/A,N/A,N/A
+copp-system-p-acl-bgp,10,permit,No Logging,any,any any,tcp,N/A,N/A,N/A
+copp-system-p-acl-bgp,20,permit,No Logging,any,1023 1023,tcp,N/A,N/A,N/A
+copp-system-p-acl-dhcp,10,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-dhcp,20,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-dhcp-relay-response,10,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-dhcp-relay-response,20,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-eigrp,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+copp-system-p-acl-eigrp6,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+copp-system-p-acl-ftp,10,permit,No Logging,any,any any,tcp,N/A,N/A,N/A
+copp-system-p-acl-ftp,20,permit,No Logging,any,any any,tcp,N/A,N/A,N/A
+copp-system-p-acl-ftp,40,permit,No Logging,any,any any,tcp,N/A,N/A,N/A
+copp-system-p-acl-hsrp,10,permit,No Logging,any,224.0.0.0/24 224.0.0.0/24,udp,N/A,N/A,N/A
+copp-system-p-acl-hsrp6,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+copp-system-p-acl-http,10,permit,No Logging,any,any any,tcp,N/A,N/A,N/A
+copp-system-p-acl-http,20,permit,No Logging,any,any any,tcp,N/A,N/A,N/A
+copp-system-p-acl-https,10,permit,No Logging,any,any any,tcp,N/A,N/A,N/A
+copp-system-p-acl-https,20,permit,No Logging,any,any any,tcp,N/A,N/A,N/A
+copp-system-p-acl-icmp,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+copp-system-p-acl-icmp6,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+copp-system-p-acl-igmp,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+copp-system-p-acl-mld,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+copp-system-p-acl-msdp,10,permit,No Logging,any,639 639,tcp,N/A,N/A,N/A
+copp-system-p-acl-msdp,20,permit,No Logging,any,1023 1023,tcp,N/A,N/A,N/A
+copp-system-p-acl-ndp,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+copp-system-p-acl-ntp,10,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-ntp,20,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-openflow,10,permit,No Logging,any,any any,tcp,N/A,N/A,N/A
+copp-system-p-acl-ospf,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+copp-system-p-acl-ospf6,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+copp-system-p-acl-pim,20,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-pim,30,permit,No Logging,any,224.0.0.13/32 224.0.0.13/32,ip,N/A,N/A,N/A
+copp-system-p-acl-pim-mdt-join,10,permit,No Logging,any,224.0.0.13/32 224.0.0.13/32,udp,N/A,N/A,N/A
+copp-system-p-acl-pim-reg,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+copp-system-p-acl-pim6-reg,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+copp-system-p-acl-ptp,10,permit,No Logging,any,224.0.1.129/32 224.0.1.129/32,udp,N/A,N/A,N/A
+copp-system-p-acl-ptp,20,permit,No Logging,any,224.0.1.129/32 224.0.1.129/32,udp,N/A,N/A,N/A
+copp-system-p-acl-ptp-uc,10,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-ptp-uc,20,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-radius,10,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-radius,20,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-radius,30,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-radius,40,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-radius,50,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-radius,60,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-radius,70,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-radius,80,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-rip,10,permit,No Logging,any,224.0.0.0/24 224.0.0.0/24,udp,N/A,N/A,N/A
+copp-system-p-acl-rip6,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+copp-system-p-acl-sftp,10,permit,No Logging,any,any any,tcp,N/A,N/A,N/A
+copp-system-p-acl-sftp,20,permit,No Logging,any,any any,tcp,N/A,N/A,N/A
+copp-system-p-acl-snmp,10,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-snmp,20,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-snmp,30,permit,No Logging,any,any any,tcp,N/A,N/A,N/A
+copp-system-p-acl-snmp,40,permit,No Logging,any,any any,tcp,N/A,N/A,N/A
+copp-system-p-acl-ssh,10,permit,No Logging,any,any any,tcp,N/A,N/A,N/A
+copp-system-p-acl-ssh,20,permit,No Logging,any,any any,tcp,N/A,N/A,N/A
+copp-system-p-acl-tacacs,10,permit,No Logging,any,any any,tcp,N/A,N/A,N/A
+copp-system-p-acl-tacacs,20,permit,No Logging,any,any any,tcp,N/A,N/A,N/A
+copp-system-p-acl-telnet,10,permit,No Logging,any,any any,tcp,N/A,N/A,N/A
+copp-system-p-acl-telnet,20,permit,No Logging,any,any any,tcp,N/A,N/A,N/A
+copp-system-p-acl-telnet,30,permit,No Logging,any,any any,tcp,N/A,N/A,N/A
+copp-system-p-acl-telnet,40,permit,No Logging,any,any any,tcp,N/A,N/A,N/A
+copp-system-p-acl-tftp,10,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-tftp,20,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-tftp,30,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-tftp,40,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-traceroute,30,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-undesirable,10,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-vpc,10,permit,No Logging,any,any any,udp,N/A,N/A,N/A
+copp-system-p-acl-vrrp,10,permit,No Logging,any,224.0.0.18/32 224.0.0.18/32,ip,N/A,N/A,N/A
+copp-system-p-acl-vrrp6,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+copp-system-p-acl-bgp,10,permit,No Logging,Source Protocol,N/A,N/A,TCP,gt,1023
+copp-system-p-acl-bgp,20,permit,No Logging,Source Protocol,N/A,N/A,TCP,eq,bgp any gt
+copp-system-p-acl-bgp6,10,permit,No Logging,Source Protocol,N/A,N/A,TCP,gt,1023
+copp-system-p-acl-bgp6,20,permit,No Logging,Source Protocol,N/A,N/A,TCP,eq,bgp any gt
+copp-system-p-acl-dhcp,10,permit,No Logging,Source Protocol,N/A,N/A,UDP,eq,bootpc
+copp-system-p-acl-dhcp,20,permit,No Logging,Source Protocol,N/A,N/A,UDP,neq,bootps
+copp-system-p-acl-dhcp-relay-response,10,permit,No Logging,Source Protocol,N/A,N/A,UDP,eq,bootps  
+copp-system-p-acl-dhcp-relay-response,20,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,bootpc
+copp-system-p-acl-dhcp6,10,permit,No Logging,Source Protocol,N/A,N/A,UDP,eq,546  
+copp-system-p-acl-dhcp6,20,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,547
+copp-system-p-acl-dhcp6-relay-response,10,permit,No Logging,Source Protocol,N/A,N/A,UDP,eq,547  
+copp-system-p-acl-dhcp6-relay-response,20,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,546
+copp-system-p-acl-eigrp,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+copp-system-p-acl-eigrp6,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A  
+copp-system-p-acl-ftp,10,permit,No Logging,N/A,Destination Protocol,N/A,TCP,eq,ftp-data  
+copp-system-p-acl-ftp,20,permit,No Logging,N/A,Destination Protocol,N/A,TCP,eq,ftp
+copp-system-p-acl-ftp,40,permit,No Logging,Source Protocol,N/A,N/A,TCP,eq,ftp  
+copp-system-p-acl-hsrp,10,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,1985
+copp-system-p-acl-hsrp6,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+copp-system-p-acl-http,10,permit,No Logging,Source Protocol,N/A,N/A,TCP,eq,www  
+copp-system-p-acl-http,20,permit,No Logging,N/A,Destination Protocol,N/A,TCP,eq,www
+copp-system-p-acl-https,10,permit,No Logging,Source Protocol,N/A,N/A,TCP,eq,443  
+copp-system-p-acl-https,20,permit,No Logging,N/A,Destination Protocol,N/A,TCP,eq,443
+copp-system-p-acl-icmp,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+copp-system-p-acl-icmp6,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+copp-system-p-acl-igmp,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+copp-system-p-acl-mld,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+copp-system-p-acl-msdp,10,permit,No Logging,Source Protocol,N/A,N/A,TCP,gt,1023 any eq
+copp-system-p-acl-msdp,20,permit,No Logging,Source Protocol,N/A,N/A,TCP,eq,639 any gt
+copp-system-p-acl-ndp,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A  
+copp-system-p-acl-ntp,10,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,ntp
+copp-system-p-acl-ntp,20,permit,No Logging,Source Protocol,N/A,N/A,UDP,eq,ntp  
+copp-system-p-acl-ntp6,10,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,ntp
+copp-system-p-acl-ntp6,20,permit,No Logging,Source Protocol,N/A,N/A,UDP,eq,ntp
+copp-system-p-acl-openflow,10,permit,No Logging,Source Protocol,N/A,N/A,TCP,eq,6653
+copp-system-p-acl-ospf,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+copp-system-p-acl-ospf6,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A  
+copp-system-p-acl-pim,20,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,pim-auto-rp
+copp-system-p-acl-pim-reg,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A  
+copp-system-p-acl-pim6,20,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,pim-auto-rp
+copp-system-p-acl-pim6-reg,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A  
+copp-system-p-acl-ptp,10,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,319  
+copp-system-p-acl-ptp,20,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,320  
+copp-system-p-acl-ptp-uc,10,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,319  
+copp-system-p-acl-ptp-uc,20,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,320  
+copp-system-p-acl-radius,10,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,1812  
+copp-system-p-acl-radius,20,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,1813  
+copp-system-p-acl-radius,30,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,1645  
+copp-system-p-acl-radius,40,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,1646
+copp-system-p-acl-radius,50,permit,No Logging,Source Protocol,N/A,N/A,UDP,eq,1812
+copp-system-p-acl-radius,60,permit,No Logging,Source Protocol,N/A,N/A,UDP,eq,1813
+copp-system-p-acl-radius,70,permit,No Logging,Source Protocol,N/A,N/A,UDP,eq,1645
+copp-system-p-acl-radius,80,permit,No Logging,Source Protocol,N/A,N/A,UDP,eq,1646  
+copp-system-p-acl-radius6,10,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,1812  
+copp-system-p-acl-radius6,20,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,1813  
+copp-system-p-acl-radius6,30,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,1645  
+copp-system-p-acl-radius6,40,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,1646
+copp-system-p-acl-radius6,50,permit,No Logging,Source Protocol,N/A,N/A,UDP,eq,1812
+copp-system-p-acl-radius6,60,permit,No Logging,Source Protocol,N/A,N/A,UDP,eq,1813
+copp-system-p-acl-radius6,70,permit,No Logging,Source Protocol,N/A,N/A,UDP,eq,1645
+copp-system-p-acl-radius6,80,permit,No Logging,Source Protocol,N/A,N/A,UDP,eq,1646  
+copp-system-p-acl-rip,10,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,rip
+copp-system-p-acl-rip6,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A  
+copp-system-p-acl-sftp,10,permit,No Logging,N/A,Destination Protocol,N/A,TCP,eq,115
+copp-system-p-acl-sftp,20,permit,No Logging,Source Protocol,N/A,N/A,TCP,eq,115  
+copp-system-p-acl-snmp,10,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,snmp  
+copp-system-p-acl-snmp,20,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,snmptrap  
+copp-system-p-acl-snmp,30,permit,No Logging,N/A,Destination Protocol,N/A,TCP,eq,161  
+copp-system-p-acl-snmp,40,permit,No Logging,N/A,Destination Protocol,N/A,TCP,eq,162  
+copp-system-p-acl-snmp6,10,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,snmp  
+copp-system-p-acl-snmp6,20,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,snmptrap  
+copp-system-p-acl-snmp6,30,permit,No Logging,N/A,Destination Protocol,N/A,TCP,eq,161  
+copp-system-p-acl-snmp6,40,permit,No Logging,N/A,Destination Protocol,N/A,TCP,eq,162  
+copp-system-p-acl-ssh,10,permit,No Logging,N/A,Destination Protocol,N/A,TCP,eq,22
+copp-system-p-acl-ssh,20,permit,No Logging,Source Protocol,N/A,N/A,TCP,eq,22  
+copp-system-p-acl-ssh6,10,permit,No Logging,N/A,Destination Protocol,N/A,TCP,eq,22
+copp-system-p-acl-ssh6,20,permit,No Logging,Source Protocol,N/A,N/A,TCP,eq,22  
+copp-system-p-acl-tacacs,10,permit,No Logging,N/A,Destination Protocol,N/A,TCP,eq,tacacs
+copp-system-p-acl-tacacs,20,permit,No Logging,Source Protocol,N/A,N/A,TCP,eq,tacacs  
+copp-system-p-acl-tacacs6,10,permit,No Logging,N/A,Destination Protocol,N/A,TCP,eq,tacacs
+copp-system-p-acl-tacacs6,20,permit,No Logging,Source Protocol,N/A,N/A,TCP,eq,tacacs  
+copp-system-p-acl-telnet,10,permit,No Logging,N/A,Destination Protocol,N/A,TCP,eq,telnet  
+copp-system-p-acl-telnet,20,permit,No Logging,N/A,Destination Protocol,N/A,TCP,eq,107
+copp-system-p-acl-telnet,30,permit,No Logging,Source Protocol,N/A,N/A,TCP,eq,telnet
+copp-system-p-acl-telnet,40,permit,No Logging,Source Protocol,N/A,N/A,TCP,eq,107  
+copp-system-p-acl-telnet6,10,permit,No Logging,N/A,Destination Protocol,N/A,TCP,eq,telnet  
+copp-system-p-acl-telnet6,20,permit,No Logging,N/A,Destination Protocol,N/A,TCP,eq,107
+copp-system-p-acl-telnet6,30,permit,No Logging,Source Protocol,N/A,N/A,TCP,eq,telnet
+copp-system-p-acl-telnet6,40,permit,No Logging,Source Protocol,N/A,N/A,TCP,eq,107  
+copp-system-p-acl-tftp,10,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,tftp  
+copp-system-p-acl-tftp,20,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,1758
+copp-system-p-acl-tftp,30,permit,No Logging,Source Protocol,N/A,N/A,UDP,eq,tftp
+copp-system-p-acl-tftp,40,permit,No Logging,Source Protocol,N/A,N/A,UDP,eq,1758  
+copp-system-p-acl-tftp6,10,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,tftp  
+copp-system-p-acl-tftp6,20,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,1758
+copp-system-p-acl-tftp6,30,permit,No Logging,Source Protocol,N/A,N/A,UDP,eq,tftp
+copp-system-p-acl-tftp6,40,permit,No Logging,Source Protocol,N/A,N/A,UDP,eq,1758  
+copp-system-p-acl-traceroute,30,permit,No Logging,N/A,Destination Protocol,N/A,UDP,range,33434 33534  
+copp-system-p-acl-undesirable,10,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,1434  
+copp-system-p-acl-vpc,10,permit,No Logging,N/A,Destination Protocol,N/A,UDP,eq,3200
+copp-system-p-acl-vrrp6,No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A

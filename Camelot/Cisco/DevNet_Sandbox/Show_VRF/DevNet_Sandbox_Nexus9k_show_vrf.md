@@ -1,0 +1,6 @@
+
+# Show VRF
+| VRF | Reason | ID | State |
+| --- | ------ | -- | ----- |
+| default | -- | 1 | Up |
+| management | -- | 2 | Up |

@@ -1,0 +1,66 @@
+!!python/object/new:genie.ops.base.maker.CmdDict
+dictitems:
+  interfaces: !!python/object/new:genie.ops.base.maker.CmdDict
+    dictitems:
+      GigabitEthernet1: !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          arp_dynamic_learning: !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              local_proxy_enable: false
+              proxy_enable: true
+            state:
+              leaf_dict:
+                local_proxy_enable: &id001 !!python/name:genie.libs.parser.iosxe.show_interface.ShowIpInterface ''
+                proxy_enable: *id001
+          ipv4: !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              neighbors: !!python/object/new:genie.ops.base.maker.CmdDict
+                dictitems:
+                  10.10.20.254: !!python/object/new:genie.ops.base.maker.CmdDict
+                    dictitems:
+                      ip: 10.10.20.254
+                      link_layer_address: 0050.56bf.4a47
+                      origin: dynamic
+                    state:
+                      leaf_dict:
+                        ip: &id002 !!python/name:genie.libs.parser.iosxe.show_arp.ShowIpArp ''
+                        link_layer_address: *id002
+                        origin: *id002
+                  10.10.20.48: !!python/object/new:genie.ops.base.maker.CmdDict
+                    dictitems:
+                      ip: 10.10.20.48
+                      link_layer_address: 0050.56bf.08f1
+                      origin: static
+                    state:
+                      leaf_dict:
+                        ip: *id002
+                        link_layer_address: *id002
+                        origin: *id002
+                state:
+                  leaf_dict: {}
+            state:
+              leaf_dict: {}
+        state:
+          leaf_dict: {}
+    state:
+      leaf_dict: {}
+  statistics: !!python/object/new:genie.ops.base.maker.CmdDict
+    dictitems:
+      entries_total: 2
+      in_drops: 0
+      in_replies_pkts: 1
+      in_requests_pkts: 5
+      incomplete_total: 0
+      out_replies_pkts: 6
+      out_requests_pkts: 1
+    state:
+      leaf_dict:
+        entries_total: &id004 !!python/name:genie.libs.parser.iosxe.show_arp.ShowIpArpSummary ''
+        in_drops: &id003 !!python/name:genie.libs.parser.iosxe.show_arp.ShowIpTraffic ''
+        in_replies_pkts: *id003
+        in_requests_pkts: *id003
+        incomplete_total: *id004
+        out_replies_pkts: *id003
+        out_requests_pkts: *id003
+state:
+  leaf_dict: {}

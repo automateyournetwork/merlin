@@ -1,0 +1,14 @@
+{
+    "type": "NetworkGraph",
+    "label": "Learn dot1x",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_CSR1000v"
+        },
+    ],
+    "links": [
+    ]
+}

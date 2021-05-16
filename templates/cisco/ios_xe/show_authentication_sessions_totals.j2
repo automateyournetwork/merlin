@@ -1,0 +1,17 @@
+{% if filetype_loop_jinja2 == "csv" %}Total Authentication Sessions
+{{ to_parse_authentication_sessions.session_count }}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Total Authentication Sessions
+| Total Authentication Sessions | 
+| ----------------------------- |
+| {{ to_parse_authentication_sessions.session_count }} |{% else %}
+<html><body>
+<h1>Total Authentication Sessions</h1>
+<table style="width:100%">
+  <tr>
+    <th>Total Authentication Sessions</th>
+  </tr>
+  <tr>
+    <td>{{ to_parse_authentication_sessions.session_count }}</td>
+  </tr>
+</table>
+</body></html>{% endif %}{% endif %}

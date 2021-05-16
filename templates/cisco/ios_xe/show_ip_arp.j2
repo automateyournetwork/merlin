@@ -1,0 +1,33 @@
+{% if filetype_loop_jinja2 == "csv" %}Interface,Neighbor IP Address,MAC Address,Type,Origin,Age,Protocol{% for interface in to_parse_ip_arp %}{% for neighbor in to_parse_ip_arp[interface].ipv4.neighbors %}
+{{ interface }},{{ neighbor }},{{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].link_layer_address }},{{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].type }},{{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].origin }},{{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].age }},{{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].protocol }}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show IP ARP (Global Routing Table)
+| Interface | Neighbor IP Address | MAC Address | Type | Origin | Age | Protocol |
+| --------- | ------------------- | ----------- | ---- | ------ | --- | -------- |{% for interface in to_parse_ip_arp %}{% for neighbor in to_parse_ip_arp[interface].ipv4.neighbors %}
+| {{ interface }} | {{ neighbor }} | {{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].link_layer_address }} | {{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].type }} | {{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].origin }} | {{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].age }} | {{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].protocol }} |{% endfor %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show IP ARP (Global Routing Table)</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Interface</th>
+    <th>Neighbor IP Address</th>
+    <th>MAC Address</th>
+    <th>Type</th>
+    <th>Origin</th>
+    <th>Age</th>
+    <th>Protocol</th>
+  </tr>
+  </thead>
+  <tbody>{% for interface in to_parse_ip_arp %}{% for neighbor in to_parse_ip_arp[interface].ipv4.neighbors %}
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ neighbor }}</td>
+    <td>{{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].link_layer_address }}</td>
+    <td>{{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].type }}</td>
+    <td>{{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].origin }}</td>
+    <td>{{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].age }}</td>
+    <td>{{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].protocol }}</td>
+  </tr>{% endfor %}{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

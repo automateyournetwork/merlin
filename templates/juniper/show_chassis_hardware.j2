@@ -1,0 +1,66 @@
+{% if filetype_loop_jinja2 == "csv" %}Name,Description,Serial Number,Part Number,Version
+{{ variable["name"] }},{{ variable["description"] }},{{ variable["serial-number"] }},{% if variable["part-number"] is defined %}{{ variable["part-number"] }}{% else %}—{% endif %},{% if variable["version"] is defined %}{{ variable["version"] }}{% else %}—{% endif %}{% for module in variable["chassis-module"] %}
+{{ module["name"] }},{% if module["description"] is defined %}{{ module["description"] }}{% else %}—{% endif %},{% if module["serial-number"] is defined %}{{ module["serial-number"] }}{% else %}—{% endif %},{% if module["part-number"] is defined %}{{ module["part-number"] }}{% else %}—{% endif %},{% if module["version"] is defined %}{{ module["version"] }}{% else %}—{% endif %}{% if module["chassis-sub-module"] is defined %}{% for submodule1 in module["chassis-sub-module"] %}
+{{ submodule1["name"] }},{% if submodule1["description"] is defined %}{{ submodule1["description"] }}{% else %}—{% endif %},{% if submodule1["serial-number"] is defined %}{{ submodule1["serial-number"] }}{% else %}—{% endif %},{% if submodule1["part-number"] is defined %}{{ submodule1["part-number"] }}{% else %}—{% endif %},{% if submodule1["version"] is defined %}{{ submodule1["version"] }}{% else %}—{% endif %}{% if submodule1["chassis-sub-sub-module"] is defined %}{% for submodule2 in submodule1["chassis-sub-sub-module"] %}
+{{ submodule2["name"] }},{% if submodule2["description"] is defined %}{{ submodule2["description"] }}{% else %}—{% endif %},{% if submodule2["serial-number"] is defined %}{{ submodule2["serial-number"] }}{% else %}—{% endif %},{% if submodule2["part-number"] is defined %}{{ submodule2["part-number"] }}{% else %}—{% endif %},{% if submodule2["version"] is defined %}{{ submodule2["version"] }}{% else %}—{% endif %}{% if submodule2["chassis-sub-sub-sub-module"] is defined %}{% for submodule3 in submodule2["chassis-sub-sub-sub-module"] %}
+{{ submodule3["name"] }},{% if submodule3["description"] is defined %}{{ submodule3["description"] }}{% else %}—{% endif %},{% if submodule3["serial-number"] is defined %}{{ submodule3["serial-number"] }}{% else %}—{% endif %},{% if submodule3["part-number"] is defined %}{{ submodule3["part-number"] }}{% else %}—{% endif %},{% if submodule3["version"] is defined %}{{ submodule3["version"] }}{% else %}—{% endif %}{% endfor %}{% endif %}{% endfor %}{% endif %}{% endfor %}{% endif %}{% endfor %}
+{% elif filetype_loop_jinja2 == "md" %}
+# Show chassis hardware
+| Name | Description | Serial Number | Part Number | Version |
+| -------- | ---------- | ------- | ----- | ----- |
+| {{ variable["name"] }} | {{ variable["description"] }} | {{ variable["serial-number"] }} | {% if variable["part-number"] is defined %}{{ variable["part-number"] }}{% else %}—{% endif %} | {% if variable["version"] is defined %}{{ variable["version"] }}{% else %}—{% endif %} |{% for module in variable["chassis-module"] %}
+| {{ module["name"] }} | {% if module["description"] is defined %}{{ module["description"] }}{% else %}—{% endif %} | {% if module["serial-number"] is defined %}{{ module["serial-number"] }}{% else %}—{% endif %} | {% if module["part-number"] is defined %}{{ module["part-number"] }}{% else %}—{% endif %} | {% if module["version"] is defined %}{{ module["version"] }}{% else %}—{% endif %} |{% if module["chassis-sub-module"] is defined %}{% for submodule1 in module["chassis-sub-module"] %}
+| {{ submodule1["name"] }} | {% if submodule1["description"] is defined %}{{ submodule1["description"] }}{% else %}—{% endif %} | {% if submodule1["serial-number"] is defined %}{{ submodule1["serial-number"] }}{% else %}—{% endif %} | {% if submodule1["part-number"] is defined %}{{ submodule1["part-number"] }}{% else %}—{% endif %} | {% if submodule1["version"] is defined %}{{ submodule1["version"] }}{% else %}—{% endif %} |{% if submodule1["chassis-sub-sub-module"] is defined %}{% for submodule2 in submodule1["chassis-sub-sub-module"] %}
+| {{ submodule2["name"] }} | {% if submodule2["description"] is defined %}{{ submodule2["description"] }}{% else %}—{% endif %} | {% if submodule2["serial-number"] is defined %}{{ submodule2["serial-number"] }}{% else %}—{% endif %} | {% if submodule2["part-number"] is defined %}{{ submodule2["part-number"] }}{% else %}—{% endif %} | {% if submodule2["version"] is defined %}{{ submodule2["version"] }}{% else %}—{% endif %} |{% if submodule2["chassis-sub-sub-sub-module"] is defined %}{% for submodule3 in submodule2["chassis-sub-sub-sub-module"] %}
+| {{ submodule3["name"] }} | {% if submodule3["description"] is defined %}{{ submodule3["description"] }}{% else %}—{% endif %} | {% if submodule3["serial-number"] is defined %}{{ submodule3["serial-number"] }}{% else %}—{% endif %} | {% if submodule3["part-number"] is defined %}{{ submodule3["part-number"] }}{% else %}—{% endif %} | {% if submodule3["version"] is defined %}{{ submodule3["version"] }}{% else %}—{% endif %} |{% endfor %}{% endif %}{% endfor %}{% endif %}{% endfor %}{% endif %}{% endfor %}
+{% else %}
+    <html>
+        <body>
+        <h1>Show system information</h1>
+        <table style="width:100%">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Serial Number</th>
+                <th>Part Number</th>
+                <th>Version</th>
+            </tr>
+            <tr>
+                <td>{{ variable["name"] }}</td>
+                <td>{{ variable["description"] }}</td>
+                <td>{{ variable["serial-number"] }}</td>
+                <td>{% if variable["part-number"] is defined %}{{ variable["part-number"] }}{% else %}—{% endif %}</td>
+                <td>{% if variable["version"] is defined %}{{ variable["version"] }}{% else %}—{% endif %}</td>
+            </tr>{% for module in variable["chassis-module"] %}
+            <tr>
+                <td>{{ module["name"] }}</td>
+                <td>{% if module["description"] is defined %}{{ module["description"] }}{% else %}—{% endif %}</td>
+                <td>{% if module["serial-number"] is defined %}{{ module["serial-number"] }}{% else %}—{% endif %}</td>
+                <td>{% if module["part-number"] is defined %}{{ module["part-number"] }}{% else %}—{% endif %}</td>
+                <td>{% if module["version"] is defined %}{{ module["version"] }}{% else %}—{% endif %}</td>
+            </tr>{% if module["chassis-sub-module"] is defined %}{% for submodule1 in module["chassis-sub-module"] %}
+            <tr>
+                <td>{{ submodule1["name"] }}</td>
+                <td>{% if submodule1["description"] is defined %}{{ submodule1["description"] }}{% else %}—{% endif %}</td>
+                <td>{% if submodule1["serial-number"] is defined %}{{ submodule1["serial-number"] }}{% else %}—{% endif %}</td>
+                <td>{% if submodule1["part-number"] is defined %}{{ submodule1["part-number"] }}{% else %}—{% endif %}</td>
+                <td>{% if submodule1["version"] is defined %}{{ submodule1["version"] }}{% else %}—{% endif %}</td>
+            </tr>{% if submodule1["chassis-sub-sub-module"] is defined %}{% for submodule2 in submodule1["chassis-sub-sub-module"] %}
+            <tr>
+                <td>{{ submodule2["name"] }}</td>
+                <td>{% if submodule2["description"] is defined %}{{ submodule2["description"] }}{% else %}—{% endif %}</td>
+                <td>{% if submodule2["serial-number"] is defined %}{{ submodule2["serial-number"] }}{% else %}—{% endif %}</td>
+                <td>{% if submodule2["part-number"] is defined %}{{ submodule2["part-number"] }}{% else %}—{% endif %}</td>
+                <td>{% if submodule2["version"] is defined %}{{ submodule2["version"] }}{% else %}—{% endif %}</td>
+            </tr>{% if submodule2["chassis-sub-sub-sub-module"] is defined %}{% for submodule3 in submodule2["chassis-sub-sub-sub-module"] %}
+            <tr>
+                <td>{{ submodule3["name"] }}</td>
+                <td>{% if submodule3["description"] is defined %}{{ submodule3["description"] }}{% else %}—{% endif %}</td>
+                <td>{% if submodule3["serial-number"] is defined %}{{ submodule3["serial-number"] }}{% else %}—{% endif %}</td>
+                <td>{% if submodule3["part-number"] is defined %}{{ submodule3["part-number"] }}{% else %}—{% endif %}</td>
+                <td>{% if submodule3["version"] is defined %}{{ submodule3["version"] }}{% else %}—{% endif %}</td>{% endfor %}{% endif %}{% endfor %}{% endif %}{% endfor %}{% endif %}{% endfor %}
+            </tr>
+        </table>
+        </body>
+    </html>
+{% endif %}

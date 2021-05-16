@@ -1,0 +1,202 @@
+{
+    "feature_ospf": true,
+    "vrf": {
+        "default": {
+            "address_family": {
+                "ipv4": {
+                    "instance": {
+                        "1": {
+                            "areas": {
+                                "0.0.0.0": {
+                                    "area_id": "0.0.0.0",
+                                    "area_type": "normal",
+                                    "database": {
+                                        "lsa_types": {
+                                            "1": {
+                                                "lsa_type": 1,
+                                                "lsas": {
+                                                    "172.16.0.1 172.16.0.1": {
+                                                        "adv_router": "172.16.0.1",
+                                                        "lsa_id": "172.16.0.1",
+                                                        "ospfv2": {
+                                                            "body": {
+                                                                "router": {
+                                                                    "links": {
+                                                                        "172.16.1.0": {
+                                                                            "link_data": "255.255.255.252",
+                                                                            "link_id": "172.16.1.0",
+                                                                            "topologies": {
+                                                                                "0": {
+                                                                                    "metric": 40,
+                                                                                    "mt_id": 0
+                                                                                }
+                                                                            },
+                                                                            "type": "stub network"
+                                                                        }
+                                                                    },
+                                                                    "num_of_links": 1
+                                                                }
+                                                            },
+                                                            "header": {
+                                                                "adv_router": "172.16.0.1",
+                                                                "age": 1680,
+                                                                "checksum": "0x876a",
+                                                                "length": 36,
+                                                                "lsa_id": "172.16.0.1",
+                                                                "option": "0x2",
+                                                                "seq_num": "0x80000004",
+                                                                "type": 1
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "interfaces": {
+                                        "Ethernet1/5": {
+                                            "bfd": {
+                                                "enable": false
+                                            },
+                                            "cost": 40,
+                                            "dead_interval": 40,
+                                            "dr_ip_addr": "172.16.1.1",
+                                            "dr_router_id": "172.16.0.1",
+                                            "enable": true,
+                                            "hello_interval": 10,
+                                            "hello_timer": "00:00:05",
+                                            "interface_type": "broadcast",
+                                            "name": "Ethernet1/5",
+                                            "passive": false,
+                                            "priority": 1,
+                                            "retransmit_interval": 5,
+                                            "state": "dr",
+                                            "statistics": {
+                                                "link_scope_lsa_cksum_sum": 0,
+                                                "link_scope_lsa_count": 0
+                                            },
+                                            "transmit_delay": 1
+                                        },
+                                        "Vlan100": {
+                                            "bfd": {
+                                                "enable": false
+                                            },
+                                            "cost": 40,
+                                            "enable": true,
+                                            "interface_type": "broadcast",
+                                            "name": "Vlan100",
+                                            "passive": true,
+                                            "state": "down"
+                                        },
+                                        "Vlan101": {
+                                            "bfd": {
+                                                "enable": false
+                                            },
+                                            "cost": 40,
+                                            "enable": true,
+                                            "interface_type": "broadcast",
+                                            "name": "Vlan101",
+                                            "passive": true,
+                                            "state": "down"
+                                        },
+                                        "Vlan102": {
+                                            "bfd": {
+                                                "enable": false
+                                            },
+                                            "cost": 40,
+                                            "enable": true,
+                                            "interface_type": "broadcast",
+                                            "name": "Vlan102",
+                                            "passive": true,
+                                            "state": "down"
+                                        },
+                                        "Vlan103": {
+                                            "bfd": {
+                                                "enable": false
+                                            },
+                                            "cost": 40,
+                                            "enable": true,
+                                            "interface_type": "broadcast",
+                                            "name": "Vlan103",
+                                            "passive": true,
+                                            "state": "down"
+                                        },
+                                        "Vlan104": {
+                                            "bfd": {
+                                                "enable": false
+                                            },
+                                            "cost": 40,
+                                            "enable": true,
+                                            "interface_type": "broadcast",
+                                            "name": "Vlan104",
+                                            "passive": true,
+                                            "state": "down"
+                                        },
+                                        "Vlan105": {
+                                            "bfd": {
+                                                "enable": false
+                                            },
+                                            "cost": 40,
+                                            "enable": true,
+                                            "interface_type": "broadcast",
+                                            "name": "Vlan105",
+                                            "passive": true,
+                                            "state": "down"
+                                        }
+                                    },
+                                    "mpls": {
+                                        "ldp": {
+                                            "auto_config": false,
+                                            "sync": false
+                                        }
+                                    },
+                                    "statistics": {
+                                        "area_scope_lsa_cksum_sum": "1",
+                                        "area_scope_lsa_count": 1,
+                                        "spf_runs_count": 1
+                                    }
+                                }
+                            },
+                            "auto_cost": {
+                                "enable": false,
+                                "reference_bandwidth": 40000
+                            },
+                            "enable": false,
+                            "graceful_restart": {
+                                "ietf": {
+                                    "enable": true,
+                                    "restart_interval": 60,
+                                    "type": "ietf"
+                                }
+                            },
+                            "nsr": {
+                                "enable": true
+                            },
+                            "preference": {
+                                "single_value": {
+                                    "all": 110
+                                }
+                            },
+                            "router_id": "172.16.0.1",
+                            "spf_control": {
+                                "paths": 8,
+                                "throttle": {
+                                    "lsa": {
+                                        "hold": 5000,
+                                        "maximum": 5000,
+                                        "start": 0
+                                    },
+                                    "spf": {
+                                        "hold": 1000,
+                                        "maximum": 5000,
+                                        "start": 200
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

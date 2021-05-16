@@ -1,0 +1,29 @@
+{% if filetype_loop_jinja2 == "csv" %}Interface,Neighbor IP Address,MAC Address,Origin,Age{% for interface in to_parse_ip_arp %}{% for neighbor in to_parse_ip_arp[interface].ipv4.neighbors %}
+{{ interface }},{{ neighbor }},{{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].link_layer_address }},{{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].origin }},{{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].age }}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show IP ARP (VRF)
+| Interface | Neighbor IP Address | MAC Address | Origin | Age |
+| --------- | ------------------- | ----------- | ------ | --- |{% for interface in to_parse_ip_arp %}{% for neighbor in to_parse_ip_arp[interface].ipv4.neighbors %}
+| {{ interface }} | {{ neighbor }} | {{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].link_layer_address }} | {{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].origin }} | {{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].age }} |{% endfor %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show IP ARP VRF</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Interface</th>
+    <th>Neighbor IP Address</th>
+    <th>MAC Address</th>
+    <th>Origin</th>
+    <th>Age</th>
+  </tr>
+  </thead>
+  <tbody>{% for interface in to_parse_ip_arp %}{% for neighbor in to_parse_ip_arp[interface].ipv4.neighbors %}
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ neighbor }}</td>
+    <td>{{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].link_layer_address }}</td>
+    <td>{{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].origin }}</td>
+    <td>{{ to_parse_ip_arp[interface].ipv4.neighbors[neighbor].age }}</td>
+  </tr>{% endfor %}{% endfor %}
+  </tbody>  
+</table>
+</body></html>{% endif %}{% endif %}

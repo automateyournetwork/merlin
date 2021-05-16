@@ -1,0 +1,48 @@
+{% if filetype_loop_jinja2 == "csv" %}VRF,Instance,Area,Interface,Neighbor,Neighbor Address,Neighbor Router ID,Index,Priority,State,Dead Time,Total Retransmissions,Uptime{% for vrf in to_parse_ip_ospf_neighbor_detail %}{% for address_family in to_parse_ip_ospf_neighbor_detail[vrf].address_family %}{% for instance in to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance %}{% for area in to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas %}{% for interface in to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces %}{% for neighbor in to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors %}
+{{ vrf }},{{ instance }},{{ area }},{{ interface }},{{ neighbor }},{{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].address }},{{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].neighbor_router_id }},{{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].index | replace(",","") }},{{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].priority }},{{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].state }},{{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].dead_timer }},{{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].statistics.total_retransmission }},{{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].uptime }}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show IP OPSF Neighbor Detail
+| VRF | Instance | Area | Interface | Neighbor | Neighbor Address | Neighbor Router ID | Index | Priority | State | Dead Time | Total Retransmissions | Uptime |
+| --- | -------- | ---- | --------- | -------- | ---------------- | ------------------ | ----- | -------- | ----- | --------- | --------------------- | ------ |{% for vrf in to_parse_ip_ospf_neighbor_detail %}{% for address_family in to_parse_ip_ospf_neighbor_detail[vrf].address_family %}{% for instance in to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance %}{% for area in to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas %}{% for interface in to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces %}{% for neighbor in to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors %}
+| {{ vrf }} | {{ instance }} | {{ area }} | {{ interface }} | {{ neighbor }} | {{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].address }} | {{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].neighbor_router_id }} | {{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].index | replace(",","") }} | {{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].priority }} | {{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].state }} | {{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].dead_timer }} | {{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].statistics.total_retransmission }} | {{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].uptime }} |{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show IP OSPF Neighbor Detail</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>VRF</th>
+    <th>Instance</th>
+    <th>Area</th>
+    <th>Interface</th>
+    <th>Neighbor</th>
+    <th>Neighbor ID</th>
+    <th>Neighbor Address</th>
+    <th>Neighbor Router ID</th>
+    <th>Index</th>
+    <th>Priority</th>
+    <th>State</th>
+    <th>Dead Time</th>
+    <th>Total Retransmissions</th>
+    <th>Uptime </th>
+  </tr>
+  </thead>
+
+  <tbody>
+  {% for vrf in to_parse_ip_ospf_neighbor_detail %}{% for address_family in to_parse_ip_ospf_neighbor_detail[vrf].address_family %}{% for instance in to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance %}{% for area in to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas %}{% for interface in to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces %}{% for neighbor in to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors %}
+  <tr>
+    <td>{{ vrf }}</td>
+    <td>{{ instance }}</td>
+    <td>{{ area }}</td>
+    <td>{{ interface }}</td>
+    <td>{{ neighbor }}</td>
+    <td>{{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].address }}</td>
+    <td>{{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].neighbor_router_id }}</td>
+    <td>{{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].index | replace(",","") }}</td>
+    <td>{{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].priority }}</td>
+    <td>{{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].state }}</td>
+    <td>{{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].dead_timer }}</td>
+    <td>{{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].statistics.total_retransmission }}</td>
+    <td>{{ to_parse_ip_ospf_neighbor_detail[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].uptime }}</td>
+  </tr>{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}
+  <tbody>
+</table>
+</body></html>{% endif %}{% endif %}

@@ -1,0 +1,9 @@
+{% if filetype_loop_jinja2 == "csv" %}{% for dACL in to_parse_dACL_details %}
+{{ to_parse_dACL_details[dACL].name }},{{ to_parse_dACL_details[dACL].description | default("N/A") }},{{ to_parse_dACL_details[dACL].daclType | default("N/A") }},{{ to_parse_dACL_details[dACL].dacl | default("N/A") | replace("\n",",") }}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}{% for dACL in to_parse_dACL_details %}
+| {{ to_parse_dACL_details[dACL].name }} | {{ to_parse_dACL_details[dACL].description | default("N/A") }} | {{ to_parse_dACL_details[dACL].daclType | default("N/A") }} | {{ to_parse_dACL_details[dACL].dacl | default("N/A") | replace("\n",",") }} |{% endfor %}{% else %}{% for dACL in to_parse_dACL_details %}
+<tr>
+  <td>{{ to_parse_dACL_details[dACL].name }}</td>
+  <td>{{ to_parse_dACL_details[dACL].description | default("N/A") }}</td>
+  <td>{{ to_parse_dACL_details[dACL].daclType | default("N/A") }}</td>
+  <td>{{ to_parse_dACL_details[dACL].dacl | default("N/A") | replace("\n",",") }}</td>
+</tr>{% endfor %}{% endif %}{% endif %}

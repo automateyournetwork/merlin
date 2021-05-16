@@ -1,0 +1,40 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show IP OSPF",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for vrf in to_parse_ip_route %}
+        {
+            "id": "VRF: {{ vrf }}"
+        },{% endfor %}{% for vrf in to_parse_ip_route %}{% for address_family in to_parse_ip_route[vrf].address_family %}{% for instance in to_parse_ip_route[vrf].address_family[address_family].instance %}
+        {
+            "id": "Router ID: {{ to_parse_ip_route[vrf].address_family[address_family].instance[instance].router_id }}"
+        },{% endfor %}{% endfor %}{% endfor %}{% for vrf in to_parse_ip_route %}{% set vrf_loop = loop %}{% for address_family in to_parse_ip_route[vrf].address_family %}{% for instance in to_parse_ip_route[vrf].address_family[address_family].instance %}{% set instance_loop = loop %}{% for area in to_parse_ip_route[vrf].address_family[address_family].instance[instance].areas %}{% set area_loop = loop %}
+        {
+            "id": "Area: {{ area }}"{% if (vrf_loop.last) and (instance_loop.last) and (area_loop.last) %}          
+        }{% else %}         
+        },{% endif %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}
+    ],
+    "links": [{% for vrf in to_parse_ip_route %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "VRF: {{ vrf }}",
+            "cost": 1
+        },{% endfor %}{% for vrf in to_parse_ip_route %}{% for address_family in to_parse_ip_route[vrf].address_family %}{% for instance in to_parse_ip_route[vrf].address_family[address_family].instance %}
+        {
+            "source": "VRF: {{ vrf }}",
+            "target": "Router ID: {{ to_parse_ip_route[vrf].address_family[address_family].instance[instance].router_id }}",
+            "cost": 2
+        },{% endfor %}{% endfor %}{% endfor %}{% for vrf in to_parse_ip_route %}{% set vrf_loop = loop %}{% for address_family in to_parse_ip_route[vrf].address_family %}{% for instance in to_parse_ip_route[vrf].address_family[address_family].instance %}{% set instance_loop = loop %}{% for area in to_parse_ip_route[vrf].address_family[address_family].instance[instance].areas %}{% set area_loop = loop %}
+        {
+            "source": "Router ID: {{ to_parse_ip_route[vrf].address_family[address_family].instance[instance].router_id }}",
+            "target": "Area: {{ area }}",
+            "cost": 3{% if (vrf_loop.last) and (instance_loop.last) and (area_loop.last) %}          
+        }{% else %}         
+        },{% endif %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}        
+    ]
+}

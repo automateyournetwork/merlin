@@ -1,0 +1,3 @@
+{% for interface in host_data_model.host_loopback_interfaces %}
+interface loopback{{ interface }}
+  ip address {{ host_data_model.host_loopback_interfaces[interface].ip_address }}{% endfor %}

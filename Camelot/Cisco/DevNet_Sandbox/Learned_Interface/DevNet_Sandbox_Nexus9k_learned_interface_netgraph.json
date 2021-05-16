@@ -1,0 +1,4278 @@
+{
+    "type": "NetworkGraph",
+    "label": "Learn Interfaces",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_Nexus9k"
+        },
+        { 
+            "id": "Mgmt0"
+        },
+        { 
+            "id": "Description: DO NOT TOUCH CONFIG ON THIS INTERFACE"
+        },
+        { 
+            "id": "IP Address: 10.10.20.58/24"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: up"
+        },
+        { 
+            "id": "MAC Address: 0050.56bf.5774"
+        },
+        { 
+            "id": "VRF: management"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/64"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/63"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/62"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/61"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/60"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/59"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/58"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/57"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/56"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/55"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/54"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/53"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/52"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/51"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/50"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/49"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/48"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/47"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/46"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/45"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/44"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/43"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/42"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/41"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/40"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/39"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/38"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/37"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/36"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/35"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/34"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/33"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/32"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/31"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/30"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/29"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/28"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/27"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/26"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/25"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/24"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/23"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/22"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/21"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/20"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/19"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/18"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/17"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/16"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/15"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/14"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/13"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/12"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/11"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/10"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/9"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/8"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/7"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/6"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/5"
+        },
+        { 
+            "id": "Description: L3 Link"
+        },
+        { 
+            "id": "IP Address: 172.16.1.1/30"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: up"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: 01:28:24"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/4"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Ethernet1/3"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Loopback1"
+        },
+        { 
+            "id": "IP Address: 172.16.0.1/32"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: up"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Vlan105"
+        },
+        { 
+            "id": "Description: iot svi - DEMO PLEASE DON'T TOUCH"
+        },
+        { 
+            "id": "IP Address: 172.16.105.1/24"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Vlan104"
+        },
+        { 
+            "id": "Description: security svi - DEMO PLEASE DON'T TOUCH"
+        },
+        { 
+            "id": "IP Address: 172.16.104.1/24"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Vlan103"
+        },
+        { 
+            "id": "Description: test svi - DEMO PLEASE DON'T TOUCH"
+        },
+        { 
+            "id": "IP Address: 172.16.103.1/24"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Vlan102"
+        },
+        { 
+            "id": "Description: dev svi - DEMO PLEASE DON'T TOUCH"
+        },
+        { 
+            "id": "IP Address: 172.16.102.1/24"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Vlan101"
+        },
+        { 
+            "id": "Description: prod svi - DEMO PLEASE DON'T TOUCH"
+        },
+        { 
+            "id": "IP Address: 172.16.101.1/24"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Vlan100"
+        },
+        { 
+            "id": "Description: mgmt svi - DEMO PLEASE DON'T TOUCH"
+        },
+        { 
+            "id": "IP Address: 172.16.100.1/24"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Vlan1"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "Port-channel11"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "Switchport Mode: trunk"
+        },
+        { 
+            "id": "Access VLAN: 1"
+        },
+        { 
+            "id": "Trunk VLANs: 100-110"
+        },
+        { 
+            "id": "Native VLAN: 1"
+        },  
+        { 
+            "id": "Port Channel Member: Ethernet1/1"
+        },
+        { 
+            "id": "Port-channel11"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "Switchport Mode: trunk"
+        },
+        { 
+            "id": "Access VLAN: 1"
+        },
+        { 
+            "id": "Trunk VLANs: 100-110"
+        },
+        { 
+            "id": "Native VLAN: 1"
+        },  
+        { 
+            "id": "Port Channel Member: Ethernet1/2"
+        },
+        { 
+            "id": "Ethernet1/2"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.0102"
+        },
+        { 
+            "id": "Switchport Mode: trunk"
+        },
+        { 
+            "id": "Access VLAN: 1"
+        },
+        { 
+            "id": "Trunk VLANs: 100-110"
+        },
+        { 
+            "id": "Native VLAN: 1"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: True"
+        },
+        { 
+            "id": "Ethernet1/1"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 00bf.5774.0101"
+        },
+        { 
+            "id": "Switchport Mode: trunk"
+        },
+        { 
+            "id": "Access VLAN: 1"
+        },
+        { 
+            "id": "Trunk VLANs: 100-110"
+        },
+        { 
+            "id": "Native VLAN: 1"
+        },
+        { 
+            "id": "Last Change: never"
+        },
+        { 
+            "id": "Port Channel Member: True"
+        }
+    ],
+    "links": [
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Mgmt0",
+            "cost": 2
+        },
+        { 
+            "source": "Mgmt0",
+            "target": "Description: DO NOT TOUCH CONFIG ON THIS INTERFACE",
+            "cost": 2
+        },
+        { 
+            "source": "Mgmt0",
+            "target": "IP Address: 10.10.20.58/24",
+            "cost": 2
+        },
+        { 
+            "source": "Mgmt0",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Mgmt0",
+            "target": "Operational Status: up",
+            "cost": 2
+        },
+        { 
+            "source": "Mgmt0",
+            "target": "MAC Address: 0050.56bf.5774",
+            "cost": 2
+        },
+        { 
+            "source": "Mgmt0",
+            "target": "VRF: management",
+            "cost": 2
+        },
+        { 
+            "source": "Mgmt0",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/64",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/64",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/64",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/64",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/64",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/64",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/64",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/63",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/63",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/63",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/63",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/63",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/63",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/63",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/62",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/62",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/62",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/62",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/62",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/62",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/62",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/61",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/61",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/61",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/61",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/61",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/61",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/61",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/60",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/60",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/60",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/60",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/60",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/60",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/60",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/59",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/59",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/59",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/59",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/59",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/59",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/59",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/58",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/58",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/58",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/58",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/58",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/58",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/58",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/57",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/57",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/57",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/57",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/57",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/57",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/57",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/56",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/56",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/56",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/56",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/56",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/56",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/56",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/55",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/55",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/55",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/55",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/55",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/55",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/55",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/54",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/54",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/54",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/54",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/54",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/54",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/54",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/53",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/53",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/53",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/53",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/53",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/53",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/53",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/52",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/52",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/52",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/52",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/52",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/52",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/52",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/51",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/51",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/51",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/51",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/51",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/51",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/51",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/50",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/50",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/50",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/50",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/50",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/50",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/50",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/49",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/49",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/49",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/49",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/49",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/49",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/49",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/48",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/48",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/48",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/48",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/48",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/48",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/48",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/47",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/47",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/47",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/47",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/47",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/47",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/47",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/46",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/46",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/46",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/46",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/46",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/46",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/46",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/45",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/45",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/45",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/45",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/45",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/45",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/45",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/44",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/44",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/44",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/44",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/44",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/44",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/44",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/43",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/43",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/43",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/43",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/43",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/43",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/43",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/42",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/42",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/42",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/42",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/42",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/42",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/42",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/41",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/41",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/41",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/41",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/41",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/41",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/41",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/40",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/40",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/40",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/40",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/40",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/40",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/40",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/39",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/39",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/39",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/39",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/39",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/39",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/39",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/38",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/38",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/38",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/38",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/38",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/38",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/38",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/37",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/37",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/37",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/37",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/37",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/37",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/37",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/36",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/36",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/36",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/36",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/36",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/36",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/36",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/35",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/35",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/35",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/35",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/35",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/35",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/35",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/34",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/34",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/34",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/34",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/34",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/34",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/34",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/33",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/33",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/33",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/33",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/33",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/33",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/33",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/32",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/32",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/32",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/32",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/32",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/32",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/32",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/31",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/31",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/31",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/31",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/31",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/31",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/31",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/30",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/30",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/30",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/30",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/30",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/30",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/30",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/29",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/29",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/29",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/29",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/29",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/29",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/29",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/28",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/28",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/28",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/28",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/28",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/28",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/28",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/27",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/27",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/27",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/27",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/27",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/27",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/27",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/26",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/26",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/26",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/26",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/26",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/26",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/26",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/25",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/25",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/25",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/25",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/25",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/25",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/25",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/24",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/24",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/24",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/24",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/24",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/24",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/24",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/23",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/23",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/23",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/23",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/23",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/23",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/23",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/22",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/22",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/22",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/22",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/22",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/22",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/22",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/21",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/21",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/21",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/21",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/21",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/21",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/21",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/20",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/20",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/20",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/20",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/20",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/20",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/20",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/19",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/19",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/19",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/19",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/19",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/19",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/19",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/18",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/18",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/18",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/18",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/18",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/18",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/18",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/17",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/17",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/17",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/17",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/17",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/17",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/17",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/16",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/16",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/16",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/16",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/16",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/16",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/16",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/15",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/15",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/15",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/15",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/15",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/15",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/15",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/14",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/14",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/14",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/14",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/14",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/14",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/14",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/13",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/13",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/13",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/13",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/13",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/13",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/13",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/12",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/12",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/12",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/12",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/12",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/12",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/12",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/11",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/11",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/11",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/11",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/11",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/11",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/11",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/10",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/10",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/10",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/10",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/10",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/10",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/10",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/9",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/9",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/9",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/9",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/9",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/9",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/9",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/8",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/8",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/8",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/8",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/8",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/8",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/8",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/7",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/7",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/7",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/7",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/7",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/7",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/7",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/6",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/6",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/6",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/6",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/6",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/6",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/6",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/5",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/5",
+            "target": "Description: L3 Link",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/5",
+            "target": "IP Address: 172.16.1.1/30",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/5",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/5",
+            "target": "Operational Status: up",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/5",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/5",
+            "target": "VRF: default",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/5",
+            "target": "Last Change: 01:28:24",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/5",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/4",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/4",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/4",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/4",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/4",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/4",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/4",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/3",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/3",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/3",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/3",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/3",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Ethernet1/3",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/3",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Loopback1",
+            "cost": 2
+        },
+        { 
+            "source": "Loopback1",
+            "target": "IP Address: 172.16.0.1/32",
+            "cost": 2
+        },
+        { 
+            "source": "Loopback1",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Loopback1",
+            "target": "Operational Status: up",
+            "cost": 2
+        },
+        { 
+            "source": "Loopback1",
+            "target": "VRF: default",
+            "cost": 2
+        },
+        { 
+            "source": "Loopback1",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan105",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan105",
+            "target": "Description: iot svi - DEMO PLEASE DON'T TOUCH",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan105",
+            "target": "IP Address: 172.16.105.1/24",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan105",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Vlan105",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan105",
+            "target": "VRF: default",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan105",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan104",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan104",
+            "target": "Description: security svi - DEMO PLEASE DON'T TOUCH",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan104",
+            "target": "IP Address: 172.16.104.1/24",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan104",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Vlan104",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan104",
+            "target": "VRF: default",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan104",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan103",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan103",
+            "target": "Description: test svi - DEMO PLEASE DON'T TOUCH",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan103",
+            "target": "IP Address: 172.16.103.1/24",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan103",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Vlan103",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan103",
+            "target": "VRF: default",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan103",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan102",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan102",
+            "target": "Description: dev svi - DEMO PLEASE DON'T TOUCH",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan102",
+            "target": "IP Address: 172.16.102.1/24",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan102",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Vlan102",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan102",
+            "target": "VRF: default",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan102",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan101",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan101",
+            "target": "Description: prod svi - DEMO PLEASE DON'T TOUCH",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan101",
+            "target": "IP Address: 172.16.101.1/24",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan101",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Vlan101",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan101",
+            "target": "VRF: default",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan101",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan100",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan100",
+            "target": "Description: mgmt svi - DEMO PLEASE DON'T TOUCH",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan100",
+            "target": "IP Address: 172.16.100.1/24",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan100",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Vlan100",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan100",
+            "target": "VRF: default",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan100",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan1",
+            "cost": 2             
+        },
+        { 
+            "source": "Vlan1",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Vlan1",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Vlan1",
+            "target": "VRF: default",
+            "cost": 2            
+        },
+        { 
+            "source": "Vlan1",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Port-channel11",
+            "cost": 2            
+        },
+        { 
+            "source": "Port-channel11",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Port-channel11",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Port-channel11",
+            "target": "Switchport Mode: trunk",
+            "cost": 2
+        },
+        { 
+            "source": "Port-channel11",
+            "target": "Access VLAN: 1",
+            "cost": 2
+        },
+        { 
+            "source": "Port-channel11",
+            "target": "Trunk VLANs: 100-110",
+            "cost": 2
+        },
+        { 
+            "source": "Port-channel11",
+            "target": "Native VLAN: 1",
+            "cost": 2
+        },  
+        { 
+            "source": "Port-channel11",
+            "target": "Port Channel Member: Ethernet1/1",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Port-channel11",
+            "cost": 2            
+        },
+        { 
+            "source": "Port-channel11",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Port-channel11",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Port-channel11",
+            "target": "Switchport Mode: trunk",
+            "cost": 2
+        },
+        { 
+            "source": "Port-channel11",
+            "target": "Access VLAN: 1",
+            "cost": 2
+        },
+        { 
+            "source": "Port-channel11",
+            "target": "Trunk VLANs: 100-110",
+            "cost": 2
+        },
+        { 
+            "source": "Port-channel11",
+            "target": "Native VLAN: 1",
+            "cost": 2
+        },  
+        { 
+            "source": "Port-channel11",
+            "target": "Port Channel Member: Ethernet1/2",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/2",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/2",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/2",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/2",
+            "target": "MAC Address: 00bf.5774.0102",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/2",
+            "target": "Switchport Mode: trunk",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/2",
+            "target": "Access VLAN: 1",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/2",
+            "target": "Trunk VLANs: 100-110",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/2",
+            "target": "Native VLAN: 1",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/2",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/2",
+            "target": "Port Channel Member: True",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/1",
+            "cost": 2             
+        },
+        { 
+            "source": "Ethernet1/1",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "Ethernet1/1",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/1",
+            "target": "MAC Address: 00bf.5774.0101",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/1",
+            "target": "Switchport Mode: trunk",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/1",
+            "target": "Access VLAN: 1",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/1",
+            "target": "Trunk VLANs: 100-110",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/1",
+            "target": "Native VLAN: 1",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/1",
+            "target": "Last Change: never",
+            "cost": 2
+        },
+        { 
+            "source": "Ethernet1/1",
+            "target": "Port Channel Member: True",
+            "cost": 2
+        }
+    ]
+}

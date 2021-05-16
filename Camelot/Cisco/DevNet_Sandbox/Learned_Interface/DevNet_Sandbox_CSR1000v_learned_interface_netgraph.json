@@ -1,0 +1,166 @@
+{
+    "type": "NetworkGraph",
+    "label": "Learn Interfaces",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_CSR1000v"
+        },
+        { 
+            "id": "GigabitEthernet3"
+        },
+        { 
+            "id": "Description: Network Interface"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 0050.56bf.a3a9"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "GigabitEthernet2"
+        },
+        { 
+            "id": "Description: Network Interface"
+        },
+        { 
+            "id": "Enabled: False"
+        },        
+        { 
+            "id": "Operational Status: down"
+        },
+        { 
+            "id": "MAC Address: 0050.56bf.cc0a"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
+            "id": "GigabitEthernet1"
+        },
+        { 
+            "id": "Description: MANAGEMENT INTERFACE - DON'T TOUCH ME"
+        },
+        { 
+            "id": "IP Address: 10.10.20.48/24"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: up"
+        },
+        { 
+            "id": "MAC Address: 0050.56bf.08f1"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        }
+    ],
+    "links": [
+        {
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "GigabitEthernet3",
+            "cost": 2             
+        },
+        { 
+            "source": "GigabitEthernet3",
+            "target": "Description: Network Interface",
+            "cost": 2
+        },
+        { 
+            "source": "GigabitEthernet3",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "GigabitEthernet3",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "GigabitEthernet3",
+            "target": "MAC Address: 0050.56bf.a3a9",
+            "cost": 2
+        },
+        { 
+            "source": "GigabitEthernet3",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "GigabitEthernet2",
+            "cost": 2             
+        },
+        { 
+            "source": "GigabitEthernet2",
+            "target": "Description: Network Interface",
+            "cost": 2
+        },
+        { 
+            "source": "GigabitEthernet2",
+            "target": "Enabled: False",
+            "cost": 2
+        },        
+        { 
+            "source": "GigabitEthernet2",
+            "target": "Operational Status: down",
+            "cost": 2
+        },
+        { 
+            "source": "GigabitEthernet2",
+            "target": "MAC Address: 0050.56bf.cc0a",
+            "cost": 2
+        },
+        { 
+            "source": "GigabitEthernet2",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "GigabitEthernet1",
+            "cost": 2
+        },
+        { 
+            "source": "GigabitEthernet1",
+            "target": "Description: MANAGEMENT INTERFACE - DON'T TOUCH ME",
+            "cost": 2
+        },
+        { 
+            "source": "GigabitEthernet1",
+            "target": "IP Address: 10.10.20.48/24",
+            "cost": 2
+        },
+        { 
+            "source": "GigabitEthernet1",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "GigabitEthernet1",
+            "target": "Operational Status: up",
+            "cost": 2
+        },
+        { 
+            "source": "GigabitEthernet1",
+            "target": "MAC Address: 0050.56bf.08f1",
+            "cost": 2
+        },
+        { 
+            "source": "GigabitEthernet1",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        }
+    ]
+}

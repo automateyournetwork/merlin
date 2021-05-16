@@ -1,0 +1,71 @@
+{
+    "interfaces": {
+        "Ethernet1/5": {
+            "arp_dynamic_learning": {
+                "local_proxy_enable": false,
+                "proxy_enable": false
+            }
+        },
+        "Vlan100": {
+            "arp_dynamic_learning": {
+                "local_proxy_enable": false,
+                "proxy_enable": false
+            }
+        },
+        "Vlan101": {
+            "arp_dynamic_learning": {
+                "local_proxy_enable": false,
+                "proxy_enable": false
+            }
+        },
+        "Vlan102": {
+            "arp_dynamic_learning": {
+                "local_proxy_enable": false,
+                "proxy_enable": false
+            }
+        },
+        "Vlan103": {
+            "arp_dynamic_learning": {
+                "local_proxy_enable": false,
+                "proxy_enable": false
+            }
+        },
+        "Vlan104": {
+            "arp_dynamic_learning": {
+                "local_proxy_enable": false,
+                "proxy_enable": false
+            }
+        },
+        "Vlan105": {
+            "arp_dynamic_learning": {
+                "local_proxy_enable": false,
+                "proxy_enable": false
+            }
+        },
+        "loopback1": {
+            "arp_dynamic_learning": {
+                "local_proxy_enable": false,
+                "proxy_enable": false
+            }
+        },
+        "mgmt0": {
+            "arp_dynamic_learning": {
+                "local_proxy_enable": false,
+                "proxy_enable": false
+            }
+        }
+    },
+    "statistics": {
+        "entries_total": 0,
+        "in_drops": 0,
+        "in_replies_pkts": 0,
+        "in_requests_pkts": 0,
+        "in_total": 0,
+        "incomplete_total": 0,
+        "out_drops": 0,
+        "out_gratuitous_pkts": 2,
+        "out_replies_pkts": 0,
+        "out_requests_pkts": 2,
+        "out_total": 4
+    }
+}

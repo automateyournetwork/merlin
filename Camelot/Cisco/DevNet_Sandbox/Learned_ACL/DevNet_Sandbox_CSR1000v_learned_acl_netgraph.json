@@ -1,0 +1,24 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Access Lists",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_CSR1000v"
+        },
+        
+        {
+            "id": "Access Control List: meraki-fqdn-dns"
+        }
+    ],
+    "links": [
+        
+        {
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "Access Control List: meraki-fqdn-dns",
+            "cost": 1
+        }
+    ]
+}

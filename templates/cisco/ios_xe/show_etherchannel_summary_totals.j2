@@ -1,0 +1,24 @@
+{% if filetype_loop_jinja2 == "csv" %}Number of Aggregators,Number of LAG in use
+{{ to_parse_etherchannel_summary.number_of_aggregators }},{{ to_parse_etherchannel_summary.number_of_lag_in_use }}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Etherchannel Totals
+| Number of Aggregators | Number of LAG in use |
+| --------------------- | -------------------- |
+| {{ to_parse_etherchannel_summary.number_of_aggregators }} | {{ to_parse_etherchannel_summary.number_of_lag_in_use }} |{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show Etherchannel Summary</h1>
+
+<table class="merlin-table">
+  <thead>
+    <tr>
+      <th>Number of Aggregators</th>
+      <th>Number of LAG In Use</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ to_parse_etherchannel_summary.number_of_aggregators }}</td>
+      <td>{{ to_parse_etherchannel_summary.number_of_lag_in_use }}</td>
+    </tr>
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

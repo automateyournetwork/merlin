@@ -1,0 +1,7 @@
+{% for router in host_data_model.host_bgp %}
+router bgp {{ router }}{% for address_family in host_data_model.host_bgp[router].address_families %}
+  address-family {{ address_family }} unicast
+    network {{ host_data_model.host_bgp[router].address_families[address_family].network }}{% endfor %}{% for neighbor in host_data_model.host_bgp[router].neighbor %}
+  neighbor {{ neighbor }}
+    remote-as {{ host_data_model.host_bgp[router].neighbor[neighbor].remote_as }}{% endfor %}
+{% endfor %}

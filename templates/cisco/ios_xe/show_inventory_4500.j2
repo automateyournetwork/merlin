@@ -1,0 +1,31 @@
+{% if filetype_loop_jinja2 == "csv" %}Name,Part,Description,Serial Number,Virtual ID{% for part in to_parse_inventory %}{% for pid in to_parse_inventory[part] %}
+{{ to_parse_inventory[part][pid].name }},{{ pid }},{{ to_parse_inventory[part][pid].descr }},{{ to_parse_inventory[part][pid].sn }},{{ to_parse_inventory[part][pid].vid | default("N/A") }}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show Inventory
+| Name | Description | PID | Serial Number | Virtual ID |
+| ---- | ----------- | --- | ------------- | ---------- |{% for part in to_parse_inventory %}{% for pid in to_parse_inventory[part] %}
+| {{ to_parse_inventory[part][pid].name }} | {{ pid }} | {{ to_parse_inventory[part][pid].descr }} | {{ to_parse_inventory[part][pid].sn }} | {{ to_parse_inventory[part][pid].vid | default("N/A") }} |{% endfor %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show Inventory</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Part</th>
+    <th>Description</th>
+    <th>Serial Number</th>   
+    <th>Virtual ID</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  {% for part in to_parse_inventory %}{% for pid in to_parse_inventory[part] %}
+  <tr>
+    <td>{{ to_parse_inventory[part][pid].name }}</td>
+    <td>{{ pid }}</td>
+    <td>{{ to_parse_inventory[part][pid].descr }}</td>
+    <td>{{ to_parse_inventory[part][pid].sn }}</td>
+    <td>{{ to_parse_inventory[part][pid].vid | default("N/A") }}</td>
+  </tr>{% endfor %}{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

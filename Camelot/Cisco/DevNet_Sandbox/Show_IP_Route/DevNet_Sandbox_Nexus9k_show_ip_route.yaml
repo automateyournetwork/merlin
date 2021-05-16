@@ -1,0 +1,138 @@
+!!python/object/new:genie.conf.base.utils.QDict
+dictitems:
+  vrf:
+    default:
+      address_family:
+        ipv4:
+          routes:
+            172.16.0.1/32:
+              active: true
+              attached: true
+              mbest: 0
+              metric: 0
+              next_hop:
+                next_hop_list:
+                  1:
+                    best_ucast_nexthop: true
+                    index: 1
+                    metric: 0
+                    next_hop: 172.16.0.1
+                    outgoing_interface: Loopback1
+                    route_preference: 0
+                    source_protocol: local
+                    updated: 01:29:48
+                  2:
+                    best_ucast_nexthop: true
+                    index: 2
+                    metric: 0
+                    next_hop: 172.16.0.1
+                    outgoing_interface: Loopback1
+                    route_preference: 0
+                    source_protocol: direct
+                    updated: 01:29:48
+              route: 172.16.0.1/32
+              route_preference: 0
+              source_protocol: direct
+              ubest: 2
+            172.16.1.0/30:
+              active: true
+              attached: true
+              mbest: 0
+              metric: 0
+              next_hop:
+                next_hop_list:
+                  1:
+                    best_ucast_nexthop: true
+                    index: 1
+                    metric: 0
+                    next_hop: 172.16.1.1
+                    outgoing_interface: Ethernet1/5
+                    route_preference: 0
+                    source_protocol: direct
+                    updated: 01:28:48
+              route: 172.16.1.0/30
+              route_preference: 0
+              source_protocol: direct
+              ubest: 1
+            172.16.1.1/32:
+              active: true
+              attached: true
+              mbest: 0
+              metric: 0
+              next_hop:
+                next_hop_list:
+                  1:
+                    best_ucast_nexthop: true
+                    index: 1
+                    metric: 0
+                    next_hop: 172.16.1.1
+                    outgoing_interface: Ethernet1/5
+                    route_preference: 0
+                    source_protocol: local
+                    updated: 01:28:48
+              route: 172.16.1.1/32
+              route_preference: 0
+              source_protocol: local
+              ubest: 1
+    management:
+      address_family:
+        ipv4:
+          routes:
+            0.0.0.0/0:
+              active: true
+              mbest: 0
+              metric: 0
+              next_hop:
+                next_hop_list:
+                  1:
+                    best_ucast_nexthop: true
+                    index: 1
+                    metric: 0
+                    next_hop: 10.10.20.254
+                    route_preference: 1
+                    source_protocol: static
+                    updated: 01:29:48
+              route: 0.0.0.0/0
+              route_preference: 1
+              source_protocol: static
+              ubest: 1
+            10.10.20.0/24:
+              active: true
+              attached: true
+              mbest: 0
+              metric: 0
+              next_hop:
+                next_hop_list:
+                  1:
+                    best_ucast_nexthop: true
+                    index: 1
+                    metric: 0
+                    next_hop: 10.10.20.58
+                    outgoing_interface: mgmt0
+                    route_preference: 0
+                    source_protocol: direct
+                    updated: 01:29:48
+              route: 10.10.20.0/24
+              route_preference: 0
+              source_protocol: direct
+              ubest: 1
+            10.10.20.58/32:
+              active: true
+              attached: true
+              mbest: 0
+              metric: 0
+              next_hop:
+                next_hop_list:
+                  1:
+                    best_ucast_nexthop: true
+                    index: 1
+                    metric: 0
+                    next_hop: 10.10.20.58
+                    outgoing_interface: mgmt0
+                    route_preference: 0
+                    source_protocol: local
+                    updated: 01:29:48
+              route: 10.10.20.58/32
+              route_preference: 0
+              source_protocol: local
+              ubest: 1

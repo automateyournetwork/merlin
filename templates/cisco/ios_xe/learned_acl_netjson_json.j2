@@ -1,0 +1,82 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Access Lists",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for access_list in to_parse_access_list %}{% for ace in to_parse_access_list[access_list].aces %}
+        {
+            "id": "Access Control Entry: {{ ace }}"
+        },{% endfor %}{% endfor %}{% for list in to_parse_access_list %}{% for ace in to_parse_access_list[list].aces %}{% if to_parse_access_list[list].aces[ace].matches.l3 is defined %}{% if to_parse_access_list[list].aces[ace].matches.l3.ipv4 is defined %}{% if to_parse_access_list[list].aces[ace].matches.l3.ipv4.source_network is defined %}{% for source_network in to_parse_access_list[list].aces[ace].matches.l3.ipv4.source_network %}
+        {
+            "id": "Source Network: {{ source_network }}"
+        },{% endfor %}{% else %}{% for destination_network in to_parse_access_list[list].aces[ace].matches.l3.ipv4.destination_network %}
+        {
+            "id": "Destination Network: {{ destination_network }}"
+        },{% endfor %}{% endif %}{% endif %}{% endif %}{% endfor %}{% endfor %}{% for list in to_parse_access_list %}{% for ace in to_parse_access_list[list].aces %}{% if to_parse_access_list[list].aces[ace].matches.l4 is defined %}{% if to_parse_access_list[list].aces[ace].matches.l4.udp is defined %}{% if to_parse_access_list[list].aces[ace].matches.l4.udp.source_port is defined %}
+        {
+            "id": "UDP Source Port: {{ to_parse_access_list[list].aces[ace].matches.l4.udp.source_port.operator.port }}"
+        },{% else %}{% if to_parse_access_list[list].aces[ace].matches.l4.udp.destination_port is defined%}  
+        {
+            "id": "UDP Destination Port: {{ to_parse_access_list[list].aces[ace].matches.l4.udp.destination_port.operator.port }}"
+        },{% endif %}{% endif %}{% else %}{% if to_parse_access_list[list].aces[ace].matches.l4.tcp is defined %}{% if to_parse_access_list[list].aces[ace].matches.l4.tcp.source_port is defined %}
+        {
+            "id": "TCP Source Port: {{ to_parse_access_list[list].aces[ace].matches.l4.tcp.source_port.operator.port }}"
+        },{% else %}{% if to_parse_access_list[list].aces[ace].matches.l4.tcp.destination_port is defined%}  
+        {
+            "id": "TCP Destination Port: {{ to_parse_access_list[list].aces[ace].matches.l4.tcp.destination_port.operator.port }}"
+        },{% endif %}{% endif %}{% endif %}{% endif %}{% endif %}{% endfor %}{% endfor %}
+        {% for access_list in to_parse_access_list %}{% set access_list_loop = loop %}
+        {
+            "id": "Access Control List: {{ access_list }}"{% if access_list_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}
+    ],
+    "links": [{% for access_list in to_parse_access_list %}{% for ace in to_parse_access_list[access_list].aces %}
+        {
+            "source": "Access Control List: {{ access_list }}",
+            "target": "Access Control Entry: {{ ace }}",
+            "cost": 2
+        },{% endfor %}{% endfor %}{% for list in to_parse_access_list %}{% for ace in to_parse_access_list[list].aces %}{% if to_parse_access_list[list].aces[ace].matches.l3 is defined %}{% if to_parse_access_list[list].aces[ace].matches.l3.ipv4 is defined %}{% if to_parse_access_list[list].aces[ace].matches.l3.ipv4.source_network is defined %}{% for source_network in to_parse_access_list[list].aces[ace].matches.l3.ipv4.source_network %}
+        {
+            "source": "Access Control Entry: {{ ace }}",
+            "target": "Source Network: {{ source_network }}",
+            "cost": 2
+        },{% endfor %}{% else %}{% for destination_network in to_parse_access_list[list].aces[ace].matches.l3.ipv4.destination_network %}
+        {
+            "source": "Access Control Entry: {{ ace }}",
+            "target": "Destination Network: {{ destination_network }}",
+            "cost": 2
+        },{% endfor %}{% endif %}{% endif %}{% endif %}{% endfor %}{% endfor %}{% for list in to_parse_access_list %}{% for ace in to_parse_access_list[list].aces %}{% if to_parse_access_list[list].aces[ace].matches.l4 is defined %}{% if to_parse_access_list[list].aces[ace].matches.l4.udp is defined %}{% if to_parse_access_list[list].aces[ace].matches.l4.udp.source_port is defined %}
+        {
+            "source": "Access Control Entry: {{ ace }}",
+            "target": "UDP Source Port: {{ to_parse_access_list[list].aces[ace].matches.l4.udp.source_port.operator.port }}",
+            "cost": 2            
+        },{% else %}{% if to_parse_access_list[list].aces[ace].matches.l4.udp.destination_port is defined%}  
+        {
+            "source": "Access Control Entry: {{ ace }}",
+            "target": "UDP Destination Port: {{ to_parse_access_list[list].aces[ace].matches.l4.udp.destination_port.operator.port }}",
+            "cost": 2 
+        },{% endif %}{% endif %}{% else %}{% if to_parse_access_list[list].aces[ace].matches.l4.tcp is defined %}{% if to_parse_access_list[list].aces[ace].matches.l4.tcp.source_port is defined %}
+        {
+            "source": "Access Control Entry: {{ ace }}",
+            "target": "TCP Source Port: {{ to_parse_access_list[list].aces[ace].matches.l4.tcp.source_port.operator.port }}",
+            "cost": 2         
+        },{% else %}{% if to_parse_access_list[list].aces[ace].matches.l4.tcp.destination_port is defined%}  
+        {
+            "source": "Access Control Entry: {{ ace }}",
+            "target": "TCP Destination Port: {{ to_parse_access_list[list].aces[ace].matches.l4.tcp.destination_port.operator.port }}",
+            "cost": 2      
+        },{% endif %}{% endif %}{% endif %}{% endif %}{% endif %}{% endfor %}{% endfor %}
+        {% for access_list in to_parse_access_list %}{% set access_list_loop = loop %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "Access Control List: {{ access_list }}",
+            "cost": 1{% if access_list_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}
+    ]
+}

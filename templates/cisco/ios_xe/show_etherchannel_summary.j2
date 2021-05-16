@@ -1,0 +1,38 @@
+{% if filetype_loop_jinja2 == "csv" %}Port-Channel,Bundle ID,Name,Status,Protocol,Flags,Member Interface,Memeber Bundled,Member Flags{% for interface in to_parse_etherchannel_summary %}{% for member in to_parse_etherchannel_summary[interface].members %}
+{{ interface }},{{ to_parse_etherchannel_summary[interface].bundle_id }},{{ to_parse_etherchannel_summary[interface].name }},{{ to_parse_etherchannel_summary[interface].oper_status }},{{ to_parse_etherchannel_summary[interface].protocol | default("Mode On") }},{{ to_parse_etherchannel_summary[interface].flags }},{{ member }},{{ to_parse_etherchannel_summary[interface].members[member].bundled }},{{ to_parse_etherchannel_summary[interface].members[member].flags }}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Etherchannel Summary
+| Port-Channel | Bundle ID | Name | Status | Protocol | Flags | Member Interface | Memeber Bundled | Member Flags |{% for interface in to_parse_etherchannel_summary %}{% for member in to_parse_etherchannel_summary[interface].members %}
+| ------------ | --------- | ---- | ------ | -------- | ----- | ---------------- | --------------- | ------------ |
+| {{ interface }} | {{ to_parse_etherchannel_summary[interface].bundle_id }} | {{ to_parse_etherchannel_summary[interface].name }} | {{ to_parse_etherchannel_summary[interface].oper_status }} | {{ to_parse_etherchannel_summary[interface].protocol | default("Mode On") }} | {{ to_parse_etherchannel_summary[interface].flags }} | {{ member }} | {{ to_parse_etherchannel_summary[interface].members[member].bundled }} | {{ to_parse_etherchannel_summary[interface].members[member].flags }} |{% endfor %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show Etherchannel Summary</h1>
+<table class="merlin-table">
+  <thead>
+    <tr>
+      <th>Port-Channel</th>
+      <th>Bundle ID</th>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Protocol</th>
+      <th>Flags</th>
+      <th>Member Interface</th>
+      <th>Member Bundled</th>
+      <th>Member Flags</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for interface in to_parse_etherchannel_summary %}{% for member in to_parse_etherchannel_summary[interface].members %}  
+    <tr>
+      <td>{{ interface }}</td>
+      <td>{{ to_parse_etherchannel_summary[interface].bundle_id }}</td>
+      <td>{{ to_parse_etherchannel_summary[interface].name }}</td>
+      <td>{{ to_parse_etherchannel_summary[interface].oper_status }}</td>
+      <td>{{ to_parse_etherchannel_summary[interface].protocol | default("Mode On") }}</td>
+      <td>{{ to_parse_etherchannel_summary[interface].flags }}</td>
+      <td>{{ to_parse_etherchannel_summary[interface].members[member].interface }}</td>
+      <td>{{ to_parse_etherchannel_summary[interface].members[member].bundled }}</td>
+      <td></td>
+    </tr>{% endfor %}{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

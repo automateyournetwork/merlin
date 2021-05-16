@@ -1,0 +1,199 @@
+{% if filetype_loop_jinja2 == "csv" %}Interface,Description,Type,Connected,Enabled,Bandwidth,Port Speed,Port Duplex,IPv4 Address,Line Protocol,Operational Status,MAC Address,Media Type,Delay,Encapsulation,Keepalive,MTU,Port Channel Member,Port Channel Member Interface,Input CRC Errors,Input Errors,Output Errors,Input Packets,Output Packets,QoS Strategy,Input Queue Drops,Total Output Drops{% for interface in to_parse_interfaces %}{% if ( (to_parse_interfaces[interface].port_channel.port_channel_member_intfs is defined) and (to_parse_interfaces[interface].ipv4 is defined)) %}{% for member_interface in to_parse_interfaces[interface].port_channel.port_channel_member_intfs %}{% for ip_address in to_parse_interfaces[interface].ipv4 %}
+{{ interface }},{{ to_parse_interfaces[interface].description | default ("No Description") }},{{ to_parse_interfaces[interface].type }},{{ to_parse_interfaces[interface].connected | default ("Not Connected") | replace(",","") }},{{ to_parse_interfaces[interface].enabled | default ("Not Enabled" ) | replace(",","")}},{{ to_parse_interfaces[interface].bandwidth }},{{ to_parse_interfaces[interface].port_speed | default ("N/A")}},{{ to_parse_interfaces[interface].duplex_mode | default ("N/A") }},{{ ip_address }},{{ to_parse_interfaces[interface].line_protocol }},{{ to_parse_interfaces[interface].oper_status }},{{ to_parse_interfaces[interface].mac_address }},{{ to_parse_interfaces[interface].media_type | default ("N/A")}},{{ to_parse_interfaces[interface].delay }},{{ to_parse_interfaces[interface].encapsulations.encapsulation }},{{ to_parse_interfaces[interface].keepalive | default ("N/A")}},{{ to_parse_interfaces[interface].mtu }},{{ to_parse_interfaces[interface].port_channel.port_channel_member }},{{ member_interface }},{% if to_parse_interfaces[interface].counters is defined %}{{ to_parse_interfaces[interface].counters.in_crc_errors }},{{ to_parse_interfaces[interface].counters.in_errors }},{{ to_parse_interfaces[interface].counters.out_errors }},{{ to_parse_interfaces[interface].counters.in_pkts }},{{ to_parse_interfaces[interface].counters.out_pkts }},{% else %}N/A,N/A,N/A,N/A,N/A,{% endif %}{% if to_parse_interfaces[interface].queues is defined %}{{ to_parse_interfaces[interface].queues.queue_strategy }},{{ to_parse_interfaces[interface].queues.input_queue_drops }},{{ to_parse_interfaces[interface].queues.total_output_drop }}{% else %}N/A,N/A,N/A{% endif %}{% endfor %}{% endfor %}{% elif to_parse_interfaces[interface].port_channel.port_channel_member_intfs is defined %}{% for member_interface in to_parse_interfaces[interface].port_channel.port_channel_member_intfs %}
+{{ interface }},{{ to_parse_interfaces[interface].description | default ("No Description") }},{{ to_parse_interfaces[interface].type }},{{ to_parse_interfaces[interface].connected | default ("Not Connected") | replace(",","") }},{{ to_parse_interfaces[interface].enabled | default ("Not Enabled" ) | replace(",","")}},{{ to_parse_interfaces[interface].bandwidth }},{{ to_parse_interfaces[interface].port_speed | default ("N/A")}},{{ to_parse_interfaces[interface].duplex_mode | default ("N/A")}},No IP Address,{{ to_parse_interfaces[interface].line_protocol }},{{ to_parse_interfaces[interface].oper_status }},{{ to_parse_interfaces[interface].mac_address }},{{ to_parse_interfaces[interface].media_type | default ("N/A")}},{{ to_parse_interfaces[interface].delay }},{{ to_parse_interfaces[interface].encapsulations.encapsulation }},{{ to_parse_interfaces[interface].keepalive | default ("N/A")}},{{ to_parse_interfaces[interface].mtu }},{{ to_parse_interfaces[interface].port_channel.port_channel_member }},{{ member_interface }},{% if to_parse_interfaces[interface].counters is defined %}{{ to_parse_interfaces[interface].counters.in_crc_errors }},{{ to_parse_interfaces[interface].counters.in_errors }},{{ to_parse_interfaces[interface].counters.out_errors }},{{ to_parse_interfaces[interface].counters.in_pkts }},{{ to_parse_interfaces[interface].counters.out_pkts }},{% else %}N/A,N/A,N/A,N/A,N/A,{% endif %}{% if to_parse_interfaces[interface].queues is defined %}{{ to_parse_interfaces[interface].queues.queue_strategy }},{{ to_parse_interfaces[interface].queues.input_queue_drops }},{{ to_parse_interfaces[interface].queues.total_output_drop }}{% else %}N/A,N/A,N/A{% endif %}{% endfor %}{% elif to_parse_interfaces[interface].port_channel.port_channel_member_intfs is defined %}{% for ip_address in to_parse_interfaces[interface].ipv4 %}
+{{ interface }},{{ to_parse_interfaces[interface].description | default ("No Description") }},{{ to_parse_interfaces[interface].type }},{{ to_parse_interfaces[interface].connected | default ("Not Connected") | replace(",","") }},{{ to_parse_interfaces[interface].enabled | default ("Not Enabled" ) | replace(",","")}},{{ to_parse_interfaces[interface].bandwidth }},{{ to_parse_interfaces[interface].port_speed | default ("N/A")}},{{ to_parse_interfaces[interface].duplex_mode | default ("N/A")}},{{ ip_address }},{{ to_parse_interfaces[interface].line_protocol }},{{ to_parse_interfaces[interface].oper_status }},{{ to_parse_interfaces[interface].mac_address }},{{ to_parse_interfaces[interface].media_type | default ("N/A")}},{{ to_parse_interfaces[interface].delay }},{{ to_parse_interfaces[interface].encapsulations.encapsulation }},{{ to_parse_interfaces[interface].keepalive | default ("N/A")}},{{ to_parse_interfaces[interface].mtu }},{{ to_parse_interfaces[interface].port_channel.port_channel_member }},Stand Alone Port,{% if to_parse_interfaces[interface].counters is defined %}{{ to_parse_interfaces[interface].counters.in_crc_errors }},{{ to_parse_interfaces[interface].counters.in_errors }},{{ to_parse_interfaces[interface].counters.out_errors }},{{ to_parse_interfaces[interface].counters.in_pkts }},{{ to_parse_interfaces[interface].counters.out_pkts }},{% else %}N/A,N/A,N/A,N/A,N/A,{% endif %}{% if to_parse_interfaces[interface].queues is defined %}{{ to_parse_interfaces[interface].queues.queue_strategy }},{{ to_parse_interfaces[interface].queues.input_queue_drops }},{{ to_parse_interfaces[interface].queues.total_output_drop }}{% else %}N/A,N/A,N/A{% endif %}{% endfor %}{% else %}
+{{ interface }},{{ to_parse_interfaces[interface].description | default ("No Description") }},{{ to_parse_interfaces[interface].type }},{{ to_parse_interfaces[interface].connected | default ("Not Connected") | replace(",","") }},{{ to_parse_interfaces[interface].enabled | default ("Not Enabled" ) | replace(",","")}},{{ to_parse_interfaces[interface].bandwidth }},{{ to_parse_interfaces[interface].port_speed | default ("N/A")}},{{ to_parse_interfaces[interface].duplex_mode | default ("N/A")}},No IP Address,{{ to_parse_interfaces[interface].line_protocol }},{{ to_parse_interfaces[interface].oper_status }},{{ to_parse_interfaces[interface].mac_address }},{{ to_parse_interfaces[interface].media_type | default ("N/A")}},{{ to_parse_interfaces[interface].delay }},{{ to_parse_interfaces[interface].encapsulations.encapsulation }},{{ to_parse_interfaces[interface].keepalive | default ("N/A")}},{{ to_parse_interfaces[interface].mtu }},{{ to_parse_interfaces[interface].port_channel.port_channel_member }},Stand Alone Port,{% if to_parse_interfaces[interface].counters is defined %}{{ to_parse_interfaces[interface].counters.in_crc_errors }},{{ to_parse_interfaces[interface].counters.in_errors }},{{ to_parse_interfaces[interface].counters.out_errors }},{{ to_parse_interfaces[interface].counters.in_pkts }},{{ to_parse_interfaces[interface].counters.out_pkts }},{% else %}N/A,N/A,N/A,N/A,N/A,{% endif %}{% if to_parse_interfaces[interface].queues is defined %}{{ to_parse_interfaces[interface].queues.queue_strategy }},{{ to_parse_interfaces[interface].queues.input_queue_drops }},{{ to_parse_interfaces[interface].queues.total_output_drop }}{% else %}N/A,N/A,N/A{% endif %}{% endif %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show Interfaces
+| Interface | Description | Type | Connected | Enabled | Bandwidth | Port Speed | Port Duplex | IPv4 Address | Line Protocol | Operational Status | MAC Address | Media Type | Delay | Encapsulation | Keepalive | MTU | Port Channel Member | Port Channel Member Interface | Input CRC Errors | Input Errors | Output Errors | Input Packets | Output Packets | QoS Strategy | Input Queue Drops | Total Output Drops |
+| --------- | ----------- | ---- | --------- | ------- | --------- | ---------- | ----------- | ------------ | ------------- | ------------------ | ----------- | ---------- | ----- | ------------- | --------- | --- | ------------------- | ----------------------------- | ---------------- | ------------ | ------------- | ------------- | -------------- | ------------ | ----------------- | ------------------ |{% for interface in to_parse_interfaces %}{% if ( (to_parse_interfaces[interface].port_channel.port_channel_member_intfs is defined) and (to_parse_interfaces[interface].ipv4 is defined)) %}{% for member_interface in to_parse_interfaces[interface].port_channel.port_channel_member_intfs %}{% for ip_address in to_parse_interfaces[interface].ipv4 %}
+{{ interface }} | {{ to_parse_interfaces[interface].description | default ("No Description") }} | {{ to_parse_interfaces[interface].type }} | {{ to_parse_interfaces[interface].connected | default ("Not Connected") | replace(",","") }} | {{ to_parse_interfaces[interface].enabled | default ("Not Enabled" ) | replace(",","")}} | {{ to_parse_interfaces[interface].bandwidth }} | {{ to_parse_interfaces[interface].port_speed | default ("N/A")}} | {{ to_parse_interfaces[interface].duplex_mode | default ("N/A") }} | {{ ip_address }} | {{ to_parse_interfaces[interface].line_protocol }} | {{ to_parse_interfaces[interface].oper_status }} | {{ to_parse_interfaces[interface].mac_address }} | {{ to_parse_interfaces[interface].media_type | default ("N/A")}} | {{ to_parse_interfaces[interface].delay }} | {{ to_parse_interfaces[interface].encapsulations.encapsulation }} | {{ to_parse_interfaces[interface].keepalive | default ("N/A")}} | {{ to_parse_interfaces[interface].mtu }} | {{ to_parse_interfaces[interface].port_channel.port_channel_member }} | {{ member_interface }} | {% if to_parse_interfaces[interface].counters is defined %}{{ to_parse_interfaces[interface].counters.in_crc_errors }} | {{ to_parse_interfaces[interface].counters.in_errors }} | {{ to_parse_interfaces[interface].counters.out_errors }} | {{ to_parse_interfaces[interface].counters.in_pkts }} | {{ to_parse_interfaces[interface].counters.out_pkts }} | {% else %}N/A | N/A | N/A | N/A | N/A | {% endif %}{% if to_parse_interfaces[interface].queues is defined %}{{ to_parse_interfaces[interface].queues.queue_strategy }} | {{ to_parse_interfaces[interface].queues.input_queue_drops }} | {{ to_parse_interfaces[interface].queues.total_output_drop }}{% else %}N/A | N/A | N/A{% endif %}{% endfor %}{% endfor %}{% elif to_parse_interfaces[interface].port_channel.port_channel_member_intfs is defined %}{% for member_interface in to_parse_interfaces[interface].port_channel.port_channel_member_intfs %}
+{{ interface }} | {{ to_parse_interfaces[interface].description | default ("No Description") }} | {{ to_parse_interfaces[interface].type }} | {{ to_parse_interfaces[interface].connected | default ("Not Connected") | replace(",","") }} | {{ to_parse_interfaces[interface].enabled | default ("Not Enabled" ) | replace(",","")}} | {{ to_parse_interfaces[interface].bandwidth }} | {{ to_parse_interfaces[interface].port_speed | default ("N/A")}} | {{ to_parse_interfaces[interface].duplex_mode | default ("N/A")}} | No IP Address | {{ to_parse_interfaces[interface].line_protocol }} | {{ to_parse_interfaces[interface].oper_status }} | {{ to_parse_interfaces[interface].mac_address }} | {{ to_parse_interfaces[interface].media_type | default ("N/A")}} | {{ to_parse_interfaces[interface].delay }} | {{ to_parse_interfaces[interface].encapsulations.encapsulation }} | {{ to_parse_interfaces[interface].keepalive | default ("N/A")}} | {{ to_parse_interfaces[interface].mtu }} | {{ to_parse_interfaces[interface].port_channel.port_channel_member }} | {{ member_interface }} | {% if to_parse_interfaces[interface].counters is defined %}{{ to_parse_interfaces[interface].counters.in_crc_errors }} | {{ to_parse_interfaces[interface].counters.in_errors }} | {{ to_parse_interfaces[interface].counters.out_errors }} | {{ to_parse_interfaces[interface].counters.in_pkts }} | {{ to_parse_interfaces[interface].counters.out_pkts }} | {% else %}N/A | N/A | N/A | N/A | N/A | {% endif %}{% if to_parse_interfaces[interface].queues is defined %}{{ to_parse_interfaces[interface].queues.queue_strategy }} | {{ to_parse_interfaces[interface].queues.input_queue_drops }} | {{ to_parse_interfaces[interface].queues.total_output_drop }}{% else %}N/A | N/A | N/A{% endif %}{% endfor %}{% elif to_parse_interfaces[interface].port_channel.port_channel_member_intfs is defined %}{% for ip_address in to_parse_interfaces[interface].ipv4 %}
+{{ interface }} | {{ to_parse_interfaces[interface].description | default ("No Description") }} | {{ to_parse_interfaces[interface].type }} | {{ to_parse_interfaces[interface].connected | default ("Not Connected") | replace(",","") }} | {{ to_parse_interfaces[interface].enabled | default ("Not Enabled" ) | replace(",","")}} | {{ to_parse_interfaces[interface].bandwidth }} | {{ to_parse_interfaces[interface].port_speed | default ("N/A")}} | {{ to_parse_interfaces[interface].duplex_mode | default ("N/A")}} | {{ ip_address }} | {{ to_parse_interfaces[interface].line_protocol }} | {{ to_parse_interfaces[interface].oper_status }} | {{ to_parse_interfaces[interface].mac_address }} | {{ to_parse_interfaces[interface].media_type | default ("N/A")}} | {{ to_parse_interfaces[interface].delay }} | {{ to_parse_interfaces[interface].encapsulations.encapsulation }} | {{ to_parse_interfaces[interface].keepalive | default ("N/A")}} | {{ to_parse_interfaces[interface].mtu }} | {{ to_parse_interfaces[interface].port_channel.port_channel_member }} | Stand Alone Port | {% if to_parse_interfaces[interface].counters is defined %}{{ to_parse_interfaces[interface].counters.in_crc_errors }} | {{ to_parse_interfaces[interface].counters.in_errors }} | {{ to_parse_interfaces[interface].counters.out_errors }} | {{ to_parse_interfaces[interface].counters.in_pkts }} | {{ to_parse_interfaces[interface].counters.out_pkts }} | {% else %}N/A | N/A | N/A | N/A | N/A | {% endif %}{% if to_parse_interfaces[interface].queues is defined %}{{ to_parse_interfaces[interface].queues.queue_strategy }} | {{ to_parse_interfaces[interface].queues.input_queue_drops }} | {{ to_parse_interfaces[interface].queues.total_output_drop }}{% else %}N/A | N/A | N/A{% endif %}{% endfor %}{% else %}
+{{ interface }} | {{ to_parse_interfaces[interface].description | default ("No Description") }} | {{ to_parse_interfaces[interface].type }} | {{ to_parse_interfaces[interface].connected | default ("Not Connected") | replace(",","") }} | {{ to_parse_interfaces[interface].enabled | default ("Not Enabled" ) | replace(",","")}} | {{ to_parse_interfaces[interface].bandwidth }} | {{ to_parse_interfaces[interface].port_speed | default ("N/A")}} | {{ to_parse_interfaces[interface].duplex_mode | default ("N/A")}} | No IP Address | {{ to_parse_interfaces[interface].line_protocol }} | {{ to_parse_interfaces[interface].oper_status }} | {{ to_parse_interfaces[interface].mac_address }} | {{ to_parse_interfaces[interface].media_type | default ("N/A")}} | {{ to_parse_interfaces[interface].delay }} | {{ to_parse_interfaces[interface].encapsulations.encapsulation }} | {{ to_parse_interfaces[interface].keepalive | default ("N/A")}} | {{ to_parse_interfaces[interface].mtu }} | {{ to_parse_interfaces[interface].port_channel.port_channel_member }} | Stand Alone Port | {% if to_parse_interfaces[interface].counters is defined %}{{ to_parse_interfaces[interface].counters.in_crc_errors }} | {{ to_parse_interfaces[interface].counters.in_errors }} | {{ to_parse_interfaces[interface].counters.out_errors }} | {{ to_parse_interfaces[interface].counters.in_pkts }} | {{ to_parse_interfaces[interface].counters.out_pkts }} | {% else %}N/A | N/A | N/A | N/A | N/A | {% endif %}{% if to_parse_interfaces[interface].queues is defined %}{{ to_parse_interfaces[interface].queues.queue_strategy }} | {{ to_parse_interfaces[interface].queues.input_queue_drops }} | {{ to_parse_interfaces[interface].queues.total_output_drop }}{% else %}N/A | N/A | N/A{% endif %}{% endif %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show Interfaces</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Interface</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Connected</th>
+    <th>Enabled</th>
+    <th>Bandwidth</th>
+    <th>Port Speed</th>
+    <th>Port Duplex</th>
+    <th>IPv4 Address</th>
+    <th>Line Protocol</th>
+    <th>Operational Status</th>
+    <th>MAC Address</th>
+    <th>Media Type</th>
+    <th>Delay</th>
+    <th>Encapsulation</th>
+    <th>Keepalive</th>
+    <th>MTU</th>
+    <th>Port Channel Member</th>
+    <th>Port Channel Member Interface</th>
+    <th>Input CRC Errors</th>
+    <th>Input Errors</th>
+    <th>Output Errors</th>
+    <th>Input Packets</th>
+    <th>Output Packets</th>
+    <th>QoS Strategy</th>
+    <th>Input Queue Drops</th>
+    <th>Total Output Drops</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for interface in to_parse_interfaces %}{% if ( (to_parse_interfaces[interface].port_channel.port_channel_member_intfs is defined) and (to_parse_interfaces[interface].ipv4 is defined)) %}{% for member_interface in to_parse_interfaces[interface].port_channel.port_channel_member_intfs %}{% for ip_address in to_parse_interfaces[interface].ipv4 %}
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ to_parse_interfaces[interface].description | default ("No Description") }}</td>
+    <td>{{ to_parse_interfaces[interface].type }}</td>
+    <td>{{ to_parse_interfaces[interface].connected | default ("Not Connected") | replace(",","") }}</td>
+    <td>{{ to_parse_interfaces[interface].enabled | default ("Not Enabled" ) | replace(",","")}}</td>
+    <td>{{ to_parse_interfaces[interface].bandwidth }}</td>
+    <td>{{ to_parse_interfaces[interface].port_speed | default ("N/A")}}</td>
+    <td>{{ to_parse_interfaces[interface].duplex_mode | default ("N/A") }}</td>
+    <td>{{ ip_address }}</td>
+    <td>{{ to_parse_interfaces[interface].line_protocol }}</td>
+    <td>{{ to_parse_interfaces[interface].oper_status }}</td>
+    <td>{{ to_parse_interfaces[interface].mac_address }}</td>
+    <td>{{ to_parse_interfaces[interface].media_type | default ("N/A")}}</td>
+    <td>{{ to_parse_interfaces[interface].delay }}</td>
+    <td>{{ to_parse_interfaces[interface].encapsulations.encapsulation }}</td>
+    <td>{{ to_parse_interfaces[interface].keepalive | default ("N/A")}}</td>
+    <td>{{ to_parse_interfaces[interface].mtu }}</td>
+    <td>{{ to_parse_interfaces[interface].port_channel.port_channel_member }}</td>
+    <td>{{ member_interface }}</td>{% if to_parse_interfaces[interface].counters is defined %}
+    <td>{{ to_parse_interfaces[interface].counters.in_crc_errors }}</td>
+    <td>{{ to_parse_interfaces[interface].counters.in_errors }}</td>
+    <td>{{ to_parse_interfaces[interface].counters.out_errors }}</td>
+    <td>{{ to_parse_interfaces[interface].counters.in_pkts }}</td>
+    <td>{{ to_parse_interfaces[interface].counters.out_pkts }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if to_parse_interfaces[interface].queues is defined %}
+    <td>{{ to_parse_interfaces[interface].queues.queue_strategy }}</td>
+    <td>{{ to_parse_interfaces[interface].queues.input_queue_drops }}</td>
+    <td>{{ to_parse_interfaces[interface].queues.total_output_drop }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}
+  </tr>{% endfor %}{% endfor %}{% elif to_parse_interfaces[interface].port_channel.port_channel_member_intfs is defined %}{% for member_interface in to_parse_interfaces[interface].port_channel.port_channel_member_intfs %}
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ to_parse_interfaces[interface].description | default ("No Description") }}</td>
+    <td>{{ to_parse_interfaces[interface].type }}</td>
+    <td>{{ to_parse_interfaces[interface].connected | default ("Not Connected") | replace(",","") }}</td>
+    <td>{{ to_parse_interfaces[interface].enabled | default ("Not Enabled" ) | replace(",","")}}</td>
+    <td>{{ to_parse_interfaces[interface].bandwidth }}</td>
+    <td>{{ to_parse_interfaces[interface].port_speed | default ("N/A")}}</td>
+    <td>{{ to_parse_interfaces[interface].duplex_mode | default ("N/A") }}</td>
+    <td>No IP Address</td>
+    <td>{{ to_parse_interfaces[interface].line_protocol }}</td>
+    <td>{{ to_parse_interfaces[interface].oper_status }}</td>
+    <td>{{ to_parse_interfaces[interface].mac_address }}</td>
+    <td>{{ to_parse_interfaces[interface].media_type | default ("N/A")}}</td>
+    <td>{{ to_parse_interfaces[interface].delay }}</td>
+    <td>{{ to_parse_interfaces[interface].encapsulations.encapsulation }}</td>
+    <td>{{ to_parse_interfaces[interface].keepalive | default ("N/A")}}</td>
+    <td>{{ to_parse_interfaces[interface].mtu }}</td>
+    <td>{{ to_parse_interfaces[interface].port_channel.port_channel_member }}</td>
+    <td>{{ member_interface }}</td>{% if to_parse_interfaces[interface].counters is defined %}
+    <td>{{ to_parse_interfaces[interface].counters.in_crc_errors }}</td>
+    <td>{{ to_parse_interfaces[interface].counters.in_errors }}</td>
+    <td>{{ to_parse_interfaces[interface].counters.out_errors }}</td>
+    <td>{{ to_parse_interfaces[interface].counters.in_pkts }}</td>
+    <td>{{ to_parse_interfaces[interface].counters.out_pkts }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if to_parse_interfaces[interface].queues is defined %}
+    <td>{{ to_parse_interfaces[interface].queues.queue_strategy }}</td>
+    <td>{{ to_parse_interfaces[interface].queues.input_queue_drops }}</td>
+    <td>{{ to_parse_interfaces[interface].queues.total_output_drop }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}
+  </tr>{% endfor %}{% elif to_parse_interfaces[interface].port_channel.port_channel_member_intfs is defined %}{% for ip_address in to_parse_interfaces[interface].ipv4 %}
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ to_parse_interfaces[interface].description | default ("No Description") }}</td>
+    <td>{{ to_parse_interfaces[interface].type }}</td>
+    <td>{{ to_parse_interfaces[interface].connected | default ("Not Connected") | replace(",","") }}</td>
+    <td>{{ to_parse_interfaces[interface].enabled | default ("Not Enabled" ) | replace(",","")}}</td>
+    <td>{{ to_parse_interfaces[interface].bandwidth }}</td>
+    <td>{{ to_parse_interfaces[interface].port_speed | default ("N/A")}}</td>
+    <td>{{ to_parse_interfaces[interface].duplex_mode | default ("N/A") }}</td>
+    <td>{{ ip_address }}</td>
+    <td>{{ to_parse_interfaces[interface].line_protocol }}</td>
+    <td>{{ to_parse_interfaces[interface].oper_status }}</td>
+    <td>{{ to_parse_interfaces[interface].mac_address }}</td>
+    <td>{{ to_parse_interfaces[interface].media_type | default ("N/A")}}</td>
+    <td>{{ to_parse_interfaces[interface].delay }}</td>
+    <td>{{ to_parse_interfaces[interface].encapsulations.encapsulation }}</td>
+    <td>{{ to_parse_interfaces[interface].keepalive | default ("N/A")}}</td>
+    <td>{{ to_parse_interfaces[interface].mtu }}</td>
+    <td>{{ to_parse_interfaces[interface].port_channel.port_channel_member }}</td>
+    <td>Stand Alone Port</td>{% if to_parse_interfaces[interface].counters is defined %}
+    <td>{{ to_parse_interfaces[interface].counters.in_crc_errors }}</td>
+    <td>{{ to_parse_interfaces[interface].counters.in_errors }}</td>
+    <td>{{ to_parse_interfaces[interface].counters.out_errors }}</td>
+    <td>{{ to_parse_interfaces[interface].counters.in_pkts }}</td>
+    <td>{{ to_parse_interfaces[interface].counters.out_pkts }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if to_parse_interfaces[interface].queues is defined %}
+    <td>{{ to_parse_interfaces[interface].queues.queue_strategy }}</td>
+    <td>{{ to_parse_interfaces[interface].queues.input_queue_drops }}</td>
+    <td>{{ to_parse_interfaces[interface].queues.total_output_drop }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}
+  </tr>{% endfor %}{% else %}
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ to_parse_interfaces[interface].description | default ("No Description") }}</td>
+    <td>{{ to_parse_interfaces[interface].type }}</td>
+    <td>{{ to_parse_interfaces[interface].connected | default ("Not Connected") | replace(",","") }}</td>
+    <td>{{ to_parse_interfaces[interface].enabled | default ("Not Enabled" ) | replace(",","")}}</td>
+    <td>{{ to_parse_interfaces[interface].bandwidth }}</td>
+    <td>{{ to_parse_interfaces[interface].port_speed | default ("N/A")}}</td>
+    <td>{{ to_parse_interfaces[interface].duplex_mode | default ("N/A") }}</td>
+    <td>No IP Address</td>
+    <td>{{ to_parse_interfaces[interface].line_protocol }}</td>
+    <td>{{ to_parse_interfaces[interface].oper_status }}</td>
+    <td>{{ to_parse_interfaces[interface].mac_address }}</td>
+    <td>{{ to_parse_interfaces[interface].media_type | default ("N/A")}}</td>
+    <td>{{ to_parse_interfaces[interface].delay }}</td>
+    <td>{{ to_parse_interfaces[interface].encapsulations.encapsulation }}</td>
+    <td>{{ to_parse_interfaces[interface].keepalive | default ("N/A")}}</td>
+    <td>{{ to_parse_interfaces[interface].mtu }}</td>
+    <td>{{ to_parse_interfaces[interface].port_channel.port_channel_member }}</td>
+    <td>Stand Alone Port</td>{% if to_parse_interfaces[interface].counters is defined %}
+    <td>{{ to_parse_interfaces[interface].counters.in_crc_errors }}</td>
+    <td>{{ to_parse_interfaces[interface].counters.in_errors }}</td>
+    <td>{{ to_parse_interfaces[interface].counters.out_errors }}</td>
+    <td>{{ to_parse_interfaces[interface].counters.in_pkts }}</td>
+    <td>{{ to_parse_interfaces[interface].counters.out_pkts }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if to_parse_interfaces[interface].queues is defined %}
+    <td>{{ to_parse_interfaces[interface].queues.queue_strategy }}</td>
+    <td>{{ to_parse_interfaces[interface].queues.input_queue_drops }}</td>
+    <td>{{ to_parse_interfaces[interface].queues.total_output_drop }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}
+  </tr>{% endif %}{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

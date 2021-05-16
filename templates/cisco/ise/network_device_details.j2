@@ -1,0 +1,22 @@
+{% if filetype_loop_jinja2 == "csv" %}{% for detail in to_parse_network_device_details %}
+{{ to_parse_network_device_details[detail].name }},{{ to_parse_network_device_details[detail].NetworkDeviceIPList[0].ipaddress | default("No IP Address") }},{{ to_parse_network_device_details[detail].NetworkDeviceIPList[0].mask | default("No Mask") }},{{ to_parse_network_device_details[detail].description | default("No Description") }},{{ to_parse_network_device_details[detail].profileName | default("No Profile") }},{{ to_parse_network_device_details[detail].authenticationSettings.networkProtocol | default("N/A") }},{{ to_parse_network_device_details[detail].authenticationSettings.radiusSharedSecret | default("N/A") }},{% if to_parse_network_device_details[detail].snmpsettings is defined %}{{ to_parse_network_device_details[detail].snmpsettings.linkTrapQuery | default("N/A") }},{{ to_parse_network_device_details[detail].snmpsettings.macTrapQuery | default("N/A") }},{{ to_parse_network_device_details[detail].snmpsettings.pollingInterval | default("N/A") }},{{ to_parse_network_device_details[detail].snmpsettings.roCommunity | default("N/A") }},{{ to_parse_network_device_details[detail].snmpsettings.version | default("N/A") }}{% else %}N/A,N/A,N/A,N/A,N/A{% endif %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}{% for detail in to_parse_network_device_details %}
+| {{ to_parse_network_device_details[detail].name }} | {{ to_parse_network_device_details[detail].NetworkDeviceIPList[0].ipaddress | default("No IP Address") }} | {{ to_parse_network_device_details[detail].NetworkDeviceIPList[0].mask | default("No Mask") }} | {{ to_parse_network_device_details[detail].description | default("No Description") }} | {{ to_parse_network_device_details[detail].profileName | default("No Profile") }} | {{ to_parse_network_device_details[detail].authenticationSettings.networkProtocol | default("N/A") }} | {{ to_parse_network_device_details[detail].authenticationSettings.radiusSharedSecret | default("N/A") }} | {% if to_parse_network_device_details[detail].snmpsettings is defined %}{{ to_parse_network_device_details[detail].snmpsettings.linkTrapQuery | default("N/A") }} | {{ to_parse_network_device_details[detail].snmpsettings.macTrapQuery | default("N/A") }} | {{ to_parse_network_device_details[detail].snmpsettings.pollingInterval | default("N/A") }} | {{ to_parse_network_device_details[detail].snmpsettings.roCommunity | default("N/A") }} | {{ to_parse_network_device_details[detail].snmpsettings.version | default("N/A") }} |{% else %}N/A | N/A | N/A | N/A | N/A |{% endif %}{% endfor %}{% else %}{% for detail in to_parse_network_device_details %}
+<tr>
+  <td>{{ to_parse_network_device_details[detail].name }}</td>
+  <td>{{ to_parse_network_device_details[detail].NetworkDeviceIPList[0].ipaddress | default("No IP Address") }}</td>
+  <td>{{ to_parse_network_device_details[detail].NetworkDeviceIPList[0].mask | default("No Mask") }}</td>
+  <td>{{ to_parse_network_device_details[detail].description | default("No Description") }}</td>
+  <td>{{ to_parse_network_device_details[detail].profileName | default("No Profile") }}</td>
+  <td>{{ to_parse_network_device_details[detail].authenticationSettings.networkProtocol | default("N/A") }}</td>
+  <td>{{ to_parse_network_device_details[detail].authenticationSettings.radiusSharedSecret | default("N/A") }}</td>{% if to_parse_network_device_details[detail].snmpsettings is defined %}
+  <td>{{ to_parse_network_device_details[detail].snmpsettings.linkTrapQuery | default("N/A") }}</td>
+  <td>{{ to_parse_network_device_details[detail].snmpsettings.macTrapQuery | default("N/A") }}</td>
+  <td>{{ to_parse_network_device_details[detail].snmpsettings.pollingInterval | default("N/A") }}</td>
+  <td>{{ to_parse_network_device_details[detail].snmpsettings.roCommunity | default("N/A") }}</td>
+  <td>{{ to_parse_network_device_details[detail].snmpsettings.version | default("N/A") }}{% else %}
+  <td>N/A</td>
+  <td>N/A</td>
+  <td>N/A</td>
+  <td>N/A</td>
+  <td>N/A</td>
+</tr>{% endif %}{% endfor %}{% endif %}{% endif %}

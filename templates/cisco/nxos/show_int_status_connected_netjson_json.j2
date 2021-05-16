@@ -1,0 +1,24 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Interface Status - Connected",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for interface in to_parse_interfaces if to_parse_interfaces[interface].status == "connected" %}{% set outer_loop = loop %}
+        {
+            "id": "{{ interface }}"{% if outer_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}
+    ],
+    "links": [{% for interface in to_parse_interfaces if to_parse_interfaces[interface].status == "connected" %}{% set outer_loop = loop %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 1{% if outer_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}
+    ]
+}

@@ -1,0 +1,13 @@
+{% if filetype_loop_jinja2 == "csv" %}{% for result in to_parse_authorization_profile_details %}
+{{ to_parse_authorization_profile_details[result].name }},{{ to_parse_authorization_profile_details[result].description | default("N/A") }},{{ to_parse_authorization_profile_details[result].accessType | default("N/A") }},{{ to_parse_authorization_profile_details[result].authzProfileType | default("N/A") }},{{ to_parse_authorization_profile_details[result].profileName | default("N/A") }},{% if to_parse_authorization_profile_details[result].vlan is defined %}{{ to_parse_authorization_profile_details[result].vlan.nameID | default("N/A") }}{% else %}N/A{% endif %},{{ to_parse_authorization_profile_details[result].voiceDomainPermission | default("N/A") }},{{ to_parse_authorization_profile_details[result].webAuth | default("N/A") }}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}{% for result in to_parse_authorization_profile_details %}
+| {{ to_parse_authorization_profile_details[result].name }} | {{ to_parse_authorization_profile_details[result].description | default("N/A") }} | {{ to_parse_authorization_profile_details[result].accessType | default("N/A") }} | {{ to_parse_authorization_profile_details[result].authzProfileType | default("N/A") }} | {{ to_parse_authorization_profile_details[result].profileName | default("N/A") }} | {% if to_parse_authorization_profile_details[result].vlan is defined %}{{ to_parse_authorization_profile_details[result].vlan.nameID | default("N/A") }}{% else %}N/A{% endif %} | {{ to_parse_authorization_profile_details[result].voiceDomainPermission | default("N/A") }} | {{ to_parse_authorization_profile_details[result].webAuth | default("N/A") }} |{% endfor %}{% else %}{% for result in to_parse_authorization_profile_details %}
+<tr>
+  <td>{{ to_parse_authorization_profile_details[result].name }}</td>
+  <td>{{ to_parse_authorization_profile_details[result].description | default("N/A") }}</td>
+  <td>{{ to_parse_authorization_profile_details[result].accessType | default("N/A") }}</td>
+  <td>{{ to_parse_authorization_profile_details[result].authzProfileType | default("N/A") }}</td>
+  <td>{{ to_parse_authorization_profile_details[result].profileName | default("N/A") }}</td>{% if to_parse_authorization_profile_details[result].vlan is defined %}
+  <td>{{ to_parse_authorization_profile_details[result].vlan.nameID | default("N/A") }}</td>{% else %}
+  <td>N/A</td>{% endif %}
+  <td>{{ to_parse_authorization_profile_details[result].voiceDomainPermission | default("N/A") }}</td>
+  <td>{{ to_parse_authorization_profile_details[result].webAuth | default("N/A") }}</td>{% endfor %}{% endif %}{% endif %}

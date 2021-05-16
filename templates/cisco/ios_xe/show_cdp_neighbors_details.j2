@@ -1,0 +1,42 @@
+{% if filetype_loop_jinja2 == "csv" %}Local Interface,Device ID,Remote Interface,IP Address,Platform,Native VLAN,Hold Time,Duplex,Capaibilities,Software Version{% for neighbor in to_parse_cdp_neighbors %}{% for ip_address in to_parse_cdp_neighbors[neighbor].entry_addresses %}
+{{ to_parse_cdp_neighbors[neighbor].local_interface }},{{ to_parse_cdp_neighbors[neighbor].device_id }},{{ to_parse_cdp_neighbors[neighbor].port_id }},{{ ip_address }},{{ to_parse_cdp_neighbors[neighbor].platform }},{{ to_parse_cdp_neighbors[neighbor].native_vlan }},{{ to_parse_cdp_neighbors[neighbor].hold_time }},{{ to_parse_cdp_neighbors[neighbor].duplex_mode }},{{ to_parse_cdp_neighbors[neighbor].capabilities }},{{ to_parse_cdp_neighbors[neighbor].software_version | replace(","," ") | replace("\n"," ") }}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show CDP Neighbors Details
+| Local Interface | Device ID | Remote Interface | IP Address | Platform | Native VLAN | Hold Time | Duplex | Capaibilities | Software Version |
+| --------------- | --------- | ---------------- | ---------- | -------- | ----------- | --------- | ------ | ------------- | ---------------- |{% for neighbor in to_parse_cdp_neighbors %}{% for ip_address in to_parse_cdp_neighbors[neighbor].entry_addresses %}
+| {{ to_parse_cdp_neighbors[neighbor].local_interface }} | {{ to_parse_cdp_neighbors[neighbor].device_id }} | {{ to_parse_cdp_neighbors[neighbor].port_id }} | {{ ip_address }} | {{ to_parse_cdp_neighbors[neighbor].platform }} | {{ to_parse_cdp_neighbors[neighbor].native_vlan }} | {{ to_parse_cdp_neighbors[neighbor].hold_time }} | {{ to_parse_cdp_neighbors[neighbor].duplex_mode }} | {{ to_parse_cdp_neighbors[neighbor].capabilities }} | {{ to_parse_cdp_neighbors[neighbor].software_version | replace(","," ") | replace("\n"," ") }} |{% endfor %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show CDP Neighbors Details</h1>
+<table class="merlin-table">
+  <thead>
+    <tr>
+      <th>Local Interface</th>
+      <th>Device ID</th>
+      <th>Remote Interface</th>
+      <th>IP Address</th>
+      <th>Platform</th>
+      <th>Native VLAN</th>
+      <th>Hold Time</th>
+      <th>Duplex</th>
+      <th>Capaibilities</th>
+      <th>Software Version</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  {% for neighbor in to_parse_cdp_neighbors %}{% for ip_address in to_parse_cdp_neighbors[neighbor].entry_addresses %}
+  <tr>
+    <td>{{ to_parse_cdp_neighbors[neighbor].local_interface }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].device_id }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].port_id }}</td>
+    <td>{{ ip_address }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].platform }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].native_vlan }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].hold_time }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].dupex_mode }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].capabilities }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].capabilities }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].software_version | replace(","," ") | replace("\n"," ") }}</td>
+  </tr>{% endfor %}{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

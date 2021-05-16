@@ -1,0 +1,38 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Interface Status - Connected",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_Nexus9k"
+        },
+        {
+            "id": "mgmt0"
+        },
+        {
+            "id": "Ethernet1/5"
+        },
+        {
+            "id": "Loopback1"
+        }
+    ],
+    "links": [
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "mgmt0",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/5",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Loopback1",
+            "cost": 1
+        }
+    ]
+}

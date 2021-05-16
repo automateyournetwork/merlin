@@ -1,0 +1,90 @@
+{
+    "vlans": {
+        "1": {
+            "mode": "ce",
+            "name": "default",
+            "shutdown": false,
+            "state": "active",
+            "type": "enet",
+            "vlan_id": "1"
+        },
+        "100": {
+            "interfaces": [
+                "Port-channel11",
+                "Ethernet1/1",
+                "Ethernet1/2"
+            ],
+            "mode": "ce",
+            "name": "mgmt",
+            "shutdown": false,
+            "state": "active",
+            "type": "enet",
+            "vlan_id": "100"
+        },
+        "101": {
+            "interfaces": [
+                "Port-channel11",
+                "Ethernet1/1",
+                "Ethernet1/2"
+            ],
+            "mode": "ce",
+            "name": "prod",
+            "shutdown": false,
+            "state": "active",
+            "type": "enet",
+            "vlan_id": "101"
+        },
+        "102": {
+            "interfaces": [
+                "Port-channel11",
+                "Ethernet1/1",
+                "Ethernet1/2"
+            ],
+            "mode": "ce",
+            "name": "dev",
+            "shutdown": false,
+            "state": "active",
+            "type": "enet",
+            "vlan_id": "102"
+        },
+        "103": {
+            "interfaces": [
+                "Port-channel11",
+                "Ethernet1/1",
+                "Ethernet1/2"
+            ],
+            "mode": "ce",
+            "name": "test",
+            "shutdown": false,
+            "state": "active",
+            "type": "enet",
+            "vlan_id": "103"
+        },
+        "104": {
+            "interfaces": [
+                "Port-channel11",
+                "Ethernet1/1",
+                "Ethernet1/2"
+            ],
+            "mode": "ce",
+            "name": "security",
+            "shutdown": false,
+            "state": "active",
+            "type": "enet",
+            "vlan_id": "104"
+        },
+        "105": {
+            "interfaces": [
+                "Port-channel11",
+                "Ethernet1/1",
+                "Ethernet1/2"
+            ],
+            "mode": "ce",
+            "name": "iot",
+            "shutdown": false,
+            "state": "active",
+            "type": "enet",
+            "vlan_id": "105"
+        }
+    }
+}

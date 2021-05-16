@@ -1,0 +1,5 @@
+
+# Etherchannel Totals
+| Number of Aggregators | Number of LAG in use |
+| --------------------- | -------------------- |
+| 0 | 0 |

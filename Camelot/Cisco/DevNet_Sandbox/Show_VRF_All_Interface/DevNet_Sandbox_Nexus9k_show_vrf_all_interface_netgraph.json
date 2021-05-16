@@ -1,0 +1,1150 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Interface Status",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_Nexus9k"
+        },
+        {
+            "id": "Vlan1"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Vlan100"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Vlan101"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Vlan102"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Vlan103"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Vlan104"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Vlan105"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "loopback1"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/3"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/4"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/5"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/6"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/7"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/8"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/9"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/10"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/11"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/12"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/13"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/14"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/15"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/16"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/17"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/18"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/19"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/20"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/21"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/22"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/23"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/24"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/25"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/26"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/27"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/28"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/29"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/30"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/31"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/32"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/33"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/34"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/35"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/36"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/37"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/38"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/39"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/40"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/41"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/42"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/43"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/44"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/45"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/46"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/47"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/48"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/49"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/50"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/51"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/52"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/53"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/54"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/55"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/56"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/57"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/58"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/59"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/60"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/61"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/62"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/63"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "Ethernet1/64"
+        },
+        {
+            "id": "default"
+        },
+        {
+            "id": "mgmt0"
+        },
+        {
+            "id": "management"
+        }
+    ],
+    "links": [
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan1",
+            "cost": 1
+        },
+        {
+            "source": "Vlan1",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan100",
+            "cost": 1
+        },
+        {
+            "source": "Vlan100",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan101",
+            "cost": 1
+        },
+        {
+            "source": "Vlan101",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan102",
+            "cost": 1
+        },
+        {
+            "source": "Vlan102",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan103",
+            "cost": 1
+        },
+        {
+            "source": "Vlan103",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan104",
+            "cost": 1
+        },
+        {
+            "source": "Vlan104",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan105",
+            "cost": 1
+        },
+        {
+            "source": "Vlan105",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "loopback1",
+            "cost": 1
+        },
+        {
+            "source": "loopback1",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/3",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/3",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/4",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/4",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/5",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/5",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/6",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/6",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/7",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/7",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/8",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/8",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/9",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/9",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/10",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/10",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/11",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/11",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/12",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/12",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/13",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/13",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/14",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/14",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/15",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/15",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/16",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/16",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/17",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/17",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/18",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/18",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/19",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/19",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/20",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/20",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/21",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/21",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/22",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/22",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/23",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/23",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/24",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/24",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/25",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/25",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/26",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/26",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/27",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/27",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/28",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/28",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/29",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/29",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/30",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/30",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/31",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/31",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/32",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/32",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/33",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/33",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/34",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/34",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/35",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/35",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/36",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/36",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/37",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/37",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/38",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/38",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/39",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/39",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/40",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/40",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/41",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/41",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/42",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/42",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/43",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/43",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/44",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/44",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/45",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/45",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/46",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/46",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/47",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/47",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/48",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/48",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/49",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/49",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/50",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/50",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/51",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/51",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/52",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/52",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/53",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/53",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/54",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/54",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/55",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/55",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/56",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/56",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/57",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/57",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/58",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/58",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/59",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/59",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/60",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/60",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/61",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/61",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/62",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/62",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/63",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/63",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Ethernet1/64",
+            "cost": 1
+        },
+        {
+            "source": "Ethernet1/64",
+            "target": "default",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "mgmt0",
+            "cost": 1
+        },
+        {
+            "source": "mgmt0",
+            "target": "management",
+            "cost": 1
+        }
+    ]
+}

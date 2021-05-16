@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.1.6/dist/style.min.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@6.6.0"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.2.6"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.1.6/dist/index.umd.min.js"></script><script>(r => {
+          setTimeout(r);
+        })(() => {
+  const {
+    markmap,
+    mm
+  } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, data) => {
+        const {
+          Markmap
+        } = getMarkmap();
+        window.mm = Markmap.create('svg#mindmap', getOptions == null ? void 0 : getOptions(), data);
+      })(() => window.markmap,null,{"t":"heading","d":1,"p":{"lines":[1,2]},"v":"Show IP Route","c":[{"t":"thead","d":3,"p":{"lines":[2,3]},"v":"","c":[{"t":"th","d":5,"p":{"lines":[2,3]},"v":"VRF"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Address Family"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Route"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Active"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Metric"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Route Preference"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Source Protocol"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Source Protocol Code"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Next Hop Number"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Next Hop"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Outgoing Interface"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Updated"}]},{"t":"tbody","d":3,"p":{"lines":[4,5]},"v":"","c":[{"t":"td","d":5,"p":{},"v":"default"},{"t":"td","d":5,"p":{},"v":"ipv4"},{"t":"td","d":5,"p":{},"v":"0.0.0.0/0"},{"t":"td","d":5,"p":{},"v":"True"},{"t":"td","d":5,"p":{},"v":"0"},{"t":"td","d":5,"p":{},"v":"1"},{"t":"td","d":5,"p":{},"v":"static"},{"t":"td","d":5,"p":{},"v":"S*"},{"t":"td","d":5,"p":{},"v":"1"},{"t":"td","d":5,"p":{},"v":"10.10.20.254"},{"t":"td","d":5,"p":{},"v":"GigabitEthernet1"},{"t":"td","d":5,"p":{},"v":""}]}]})</script>
+</body>
+</html>

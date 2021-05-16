@@ -1,0 +1,33 @@
+{% if filetype_loop_jinja2 == "csv" %}VLAN,Interface,Name,State,Shutdown,Type,Mode{% for vlan in to_parse_vlan %}{% for interface in to_parse_vlan[vlan].interfaces %}
+{{ vlan }},{{ interface }},{{ to_parse_vlan[vlan].name }},{{ to_parse_vlan[vlan].state }},{{ to_parse_vlan[vlan].shutdown }},{{ to_parse_vlan[vlan].type }},{{ to_parse_vlan[vlan].mode }}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show VLAN
+| VLAN | Interface | Name | State | Shutdown | Type | Mode |
+| ---- | --------- | ---- | ----- | -------- | ---- | ---- |{% for vlan in to_parse_vlan %}{% for interface in to_parse_vlan[vlan].interfaces %}
+| {{ vlan }} | {{ interface }} | {{ to_parse_vlan[vlan].name }} | {{ to_parse_vlan[vlan].state }} | {{ to_parse_vlan[vlan].shutdown }} | {{ to_parse_vlan[vlan].type }} | {{ to_parse_vlan[vlan].mode }} |{% endfor %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show VLAN</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>VLAN</th>
+    <th>Interface</th>
+    <th>Name</th>
+    <th>State</th>
+    <th>Shutdown</th>
+    <th>Type</th>
+    <th>Mode</th>
+  </tr>
+  </thead>
+  <tbody>{% for vlan in to_parse_vlan %}{% for interface in to_parse_vlan[vlan].interfaces %}
+  <tr>
+    <td>{{ vlan }}</td>
+    <td>{{ interface }}</td>
+    <td>{{ to_parse_vlan[vlan].name }}</td>
+    <td>{{ to_parse_vlan[vlan].state }}</td>
+    <td>{{ to_parse_vlan[vlan].shutdown }}</td>
+    <td>{{ to_parse_vlan[vlan].type }}</td>
+    <td>{{ to_parse_vlan[vlan].mode }}</td>
+  </tr>{% endfor %}{% endfor %}
+  </tbody>  
+</table>
+</body></html>{% endif %}{% endif %}

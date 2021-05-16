@@ -1,0 +1,29 @@
+{% if filetype_loop_jinja2 == "csv" %}VLAN,MAC Address,Interface,Entry Type,Age{% for vlan in to_parse_mac_address_table.vlans %}{% for mac in to_parse_mac_address_table.vlans[vlan].mac_addresses %}{% for interface in to_parse_mac_address_table.vlans[vlan].mac_addresses[mac].interfaces %}
+{{ vlan }},{{ mac }},{{ interface }},{{ to_parse_mac_address_table.vlans[vlan].mac_addresses[mac].interfaces[interface].mac_type }},{{ to_parse_mac_address_table.vlans[vlan].mac_addresses[mac].interfaces[interface].age }}{% endfor %}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show MAC Address-Table
+| VLAN | MAC Address | Interface | Entry Type | Age |
+| ---- | ----------- | --------- | ---------- | --- |{% for vlan in to_parse_mac_address_table.vlans %}{% for mac in to_parse_mac_address_table.vlans[vlan].mac_addresses %}{% for interface in to_parse_mac_address_table.vlans[vlan].mac_addresses[mac].interfaces %}
+| {{ vlan }} | {{ mac }} | {{ interface }} | {{ to_parse_mac_address_table.vlans[vlan].mac_addresses[mac].interfaces[interface].mac_type }} | {{ to_parse_mac_address_table.vlans[vlan].mac_addresses[mac].interfaces[interface].age }} |{% endfor %}{% endfor %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show MAC Address-Table</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>VLAN</th>
+    <th>MAC Address</th>
+    <th>Interface</th>
+    <th>Entry Type</th>
+    <th>Age</th>
+  </tr>
+  </thead>
+  <tbody>{% for vlan in to_parse_mac_address_table.vlans %}{% for mac in to_parse_mac_address_table.vlans[vlan].mac_addresses %}{% for interface in to_parse_mac_address_table.vlans[vlan].mac_addresses[mac].interfaces %}
+  <tr>
+    <td>{{ vlan }}</td>
+    <td>{{ mac }}</td>
+    <td>{{ interface }}</td>
+    <td>{{ to_parse_mac_address_table.vlans[vlan].mac_addresses[mac].interfaces[interface].mac_type }}</td>
+    <td>{{ to_parse_mac_address_table.vlans[vlan].mac_addresses[mac].interfaces[interface].age }}
+  </tr>{% endfor %}{% endfor %}{% endfor %}
+  </tbody>  
+</table>
+</body></html>{% endif %}{% endif %}

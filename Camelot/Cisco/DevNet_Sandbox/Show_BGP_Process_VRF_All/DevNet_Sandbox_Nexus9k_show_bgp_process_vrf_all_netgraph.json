@@ -1,0 +1,23 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show BGP PROCESS VRF ALL",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_Nexus9k"
+        },
+        
+        {
+            "id": "Router ID: 172.16.0.1"
+        }
+    ],
+    "links": [
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Router ID: 172.16.0.1",
+            "cost": 1
+        }
+    ]
+}

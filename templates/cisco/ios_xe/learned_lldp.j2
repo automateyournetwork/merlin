@@ -1,0 +1,42 @@
+{% if filetype_loop_jinja2 == "csv" %}
+Enabled,Hello Timer,Hold Timer,Aged Out Entries,Frame Discards,Frame Input Errors,Frame Input,Frame Output,TLV Discard,TLV Unknown
+{{ to_parse_lldp.enabled }},{{ to_parse_lldp.hello_timer }},{{ to_parse_lldp.hold_timer }},{{ to_parse_lldp.counters.entries_aged_out }},{{ to_parse_lldp.counters.frame_discard }},{{ to_parse_lldp.counters.frame_error_in }},{{ to_parse_lldp.counters.frame_in }},{{ to_parse_lldp.counters.frame_out }},{{ to_parse_lldp.counters.tlv_discard }},{{ to_parse_lldp.counters.tlv_unknown }}
+{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Learn LLDP Counters
+| Enabled | Hello Timer | Hold Timer | Aged Out Entries | Frame Discards | Frame Input Errors | Frame Input | Frame Output | TLV Discard | TLV Unknown |
+| ------- | ----------- | ---------- | ---------------- | -------------- | ------------------ | ----------- | ------------ | ----------- | ----------- |
+| {{ to_parse_lldp.enabled }} | {{ to_parse_lldp.hello_timer }} | {{ to_parse_lldp.hold_timer }} | {{ to_parse_lldp.counters.entries_aged_out }} | {{ to_parse_lldp.counters.frame_discard }} | {{ to_parse_lldp.counters.frame_error_in }} | {{ to_parse_lldp.counters.frame_in }} | {{ to_parse_lldp.counters.frame_out }} | {{ to_parse_lldp.counters.tlv_discard }} | {{ to_parse_lldp.counters.tlv_unknown }} |
+{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Learn LLDP Counters</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Enabled</th>
+    <th>Hello Timer</th>
+    <th>Hold Timer</th>
+    <th>Aged Out Entries</th>
+    <th>Frame Discards</th>
+    <th>Frame Input Errors</th>
+    <th>Frame Input</th>
+    <th>Frame Output</th>
+    <th>TLV Discard</th>
+    <th>TLV Unknown</th>
+  </tr>
+  </thead>
+  <tbody>  
+  <tr>
+    <td>{{ to_parse_lldp.enabled }}</td>
+    <td>{{ to_parse_lldp.hello_timer }}</td>
+    <td>{{ to_parse_lldp.hold_timer }}</td>
+    <td>{{ to_parse_lldp.counters.entries_aged_out }}</td>
+    <td>{{ to_parse_lldp.counters.frame_discard }}</td>
+    <td>{{ to_parse_lldp.counters.frame_error_in }}</td>
+    <td>{{ to_parse_lldp.counters.frame_in }}</td>
+    <td>{{ to_parse_lldp.counters.frame_out }}</td>
+    <td>{{ to_parse_lldp.counters.tlv_discard }}</td>
+    <td>{{ to_parse_lldp.counters.tlv_unknown }}</td>  
+  </tr>
+  </tbody>  
+</table>
+</body></html>{% endif %}{% endif %}

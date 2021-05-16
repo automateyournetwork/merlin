@@ -1,0 +1,40 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show NTP Unicast",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for vrf in to_parse_ntp %}{% set vrf_loop = loop %}{% for address in to_parse_ntp[vrf].unicast_configuration.address %}{% set address_loop = loop %}
+        { 
+            "id": "VRF: {{ vrf }}"
+        },
+        { 
+            "id": "{{ address }}"
+        },
+        { 
+            "id": "Preferred: {{ to_parse_ntp[vrf].unicast_configuration.address[address].type.server.preferred }}"{% if (vrf_loop.last) and (address_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}
+    ],
+    "links": [{% for vrf in to_parse_ntp %}{% set vrf_loop = loop %}{% for address in to_parse_ntp[vrf].unicast_configuration.address %}{% set address_loop = loop %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "VRF: {{ vrf }}",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "{{ address }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ address }}",
+            "target": "Preferred: {{ to_parse_ntp[vrf].unicast_configuration.address[address].type.server.preferred }}",
+            "cost": 1{% if (vrf_loop.last) and (address_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}        
+    ]
+}

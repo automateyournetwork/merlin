@@ -1,0 +1,633 @@
+{% if filetype_loop_jinja2 == "csv" %}Interface,Description,IP Address,IP Origin,Type,Enabled,Operational Status,Physical Address,MAC Address,Switchport Enabled,Switchport Mode,Access VLAN,Trunk VLAN,Native VLAN,VRF,Bandwidth,MTU,Delay,Encapsulation,Medium,Flow Control Receive,Flow Control Send,Last Change,Port Channel,Port Channel Member,Input Broadcast,Input CRC Errors,Input Errors,Input Unicast,Input Multicast,Input Total,Output Broadcast,Output Discards,Output Errors,Output Unicast,Output Multicast,Output Total,Input Rate,Output Rate{% for interface in to_parse_interface %}{% if (to_parse_interface[interface].ipv4 is defined) and (to_parse_interface[interface].port_channel is defined) %}{% for ip_address in to_parse_interface[interface].ipv4 %}{% if to_parse_interface[interface].port_channel.port_channel_member_intfs %}{% for member in to_parse_interface[interface].port_channel.port_channel_member_intfs %}
+{{ interface }},{% if to_parse_interface[interface].description is defined %}{{ to_parse_interface[interface].description }},{% else %}No Description,{% endif %}{% if to_parse_interface[interface].ipv4 is defined %}{{ ip_address }},{{ to_parse_interface[interface].ipv4[ip_address].origin | default("No Origin") }},{% else %}N/A,N/A,{% endif %}{% if to_parse_interface[interface].type is defined %}{{ to_parse_interface[interface].type }},{% else %}N/A,{% endif %}{{ to_parse_interface[interface].enabled }},{{ to_parse_interface[interface].oper_status }},{% if to_parse_interface[interface].phys_address is defined %}{{ to_parse_interface[interface].phys_address }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].mac_address is defined %}{{ to_parse_interface[interface].mac_address }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}{{ to_parse_interface[interface].switchport_enable }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}{{ to_parse_interface[interface].switchport_mode }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}{{ to_parse_interface[interface].access_vlan }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}{{ to_parse_interface[interface].native_vlan }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].vrf is defined %}{{ to_parse_interface[interface].vrf }},{% else %}N/A,{% endif %}{{ to_parse_interface[interface].bandwidth }},{{ to_parse_interface[interface].mtu }},{{ to_parse_interface[interface].delay }},{{ to_parse_interface[interface].encapsulation.encapsulation }},{% if to_parse_interface[interface].medium is defined %}{{ to_parse_interface[interface].medium }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].flow_control is defined %}{{ to_parse_interface[interface].flow_control.receive }},{{ to_parse_interface[interface].flow_control.send }},{% else %}N/A,N/A,{% endif %}{% if to_parse_interface[interface].last_change is defined %}{{ to_parse_interface[interface].last_change }},{% else %}N/A,{% endif %}{{ interface }},{{ member }}{% if to_parse_interface[interface].counters is defined %}{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }},{{ to_parse_interface[interface].counters.in_errors }},{{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }},{{ to_parse_interface[interface].counters.out_broadcast_pkts| default("N/A") }},{{ to_parse_interface[interface].counters.out_discard | default("N/A") }},{{ to_parse_interface[interface].counters.out_errors | default("N/A") }},{{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.out_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }},{{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}{% else %}N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A{% endif %}{% endfor %}{% else %}{% if to_parse_interface[interface].port_channel.port_channel_member == "True" %}
+{{ interface }},{% if to_parse_interface[interface].description is defined %}{{ to_parse_interface[interface].description }},{% else %}No Description,{% endif %}{% if to_parse_interface[interface].ipv4 is defined %}{{ ip_address }},{{ to_parse_interface[interface].ipv4[ip_address].origin | default("No Origin") }},{% else %}N/A,N/A,{% endif %}{% if to_parse_interface[interface].type is defined %}{{ to_parse_interface[interface].type }},{% else %}N/A,{% endif %}{{ to_parse_interface[interface].enabled }},{{ to_parse_interface[interface].oper_status }},{% if to_parse_interface[interface].phys_address is defined %}{{ to_parse_interface[interface].phys_address }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].mac_address is defined %}{{ to_parse_interface[interface].mac_address }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}{{ to_parse_interface[interface].switchport_enable }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}{{ to_parse_interface[interface].switchport_mode }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}{{ to_parse_interface[interface].access_vlan }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}{{ to_parse_interface[interface].native_vlan }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].vrf is defined %}{{ to_parse_interface[interface].vrf }},{% else %}N/A,{% endif %}{{ to_parse_interface[interface].bandwidth }},{{ to_parse_interface[interface].mtu }},{{ to_parse_interface[interface].delay }},{{ to_parse_interface[interface].encapsulation.encapsulation }},{% if to_parse_interface[interface].medium is defined %}{{ to_parse_interface[interface].medium }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].flow_control is defined %}{{ to_parse_interface[interface].flow_control.receive }},{{ to_parse_interface[interface].flow_control.send }},{% else %}N/A,N/A,{% endif %}{% if to_parse_interface[interface].last_change is defined %}{{ to_parse_interface[interface].last_change }},{% else %}N/A,{% endif %}{{ to_parse_interface[interface].port_channel.port_channel_int }},{{ to_parse_interface[interface].port_channel.port_channel_member }},{% if to_parse_interface[interface].counters is defined %}{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }},{{ to_parse_interface[interface].counters.in_errors }},{{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }},{{ to_parse_interface[interface].counters.out_broadcast_pkts| default("N/A") }},{{ to_parse_interface[interface].counters.out_discard | default("N/A") }},{{ to_parse_interface[interface].counters.out_errors | default("N/A") }},{{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.out_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }},{{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}{% else %}N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A{% endif %}{% else %}
+{{ interface }},{% if to_parse_interface[interface].description is defined %}{{ to_parse_interface[interface].description }},{% else %}No Description,{% endif %}{% if to_parse_interface[interface].ipv4 is defined %}{{ ip_address }},{{ to_parse_interface[interface].ipv4[ip_address].origin | default("No Origin") }},{% else %}N/A,N/A,{% endif %}{% if to_parse_interface[interface].type is defined %}{{ to_parse_interface[interface].type }},{% else %}N/A,{% endif %}{{ to_parse_interface[interface].enabled }},{{ to_parse_interface[interface].oper_status }},{% if to_parse_interface[interface].phys_address is defined %}{{ to_parse_interface[interface].phys_address }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].mac_address is defined %}{{ to_parse_interface[interface].mac_address }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}{{ to_parse_interface[interface].switchport_enable }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}{{ to_parse_interface[interface].switchport_mode }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}{{ to_parse_interface[interface].access_vlan }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}{{ to_parse_interface[interface].native_vlan }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].vrf is defined %}{{ to_parse_interface[interface].vrf }},{% else %}N/A,{% endif %}{{ to_parse_interface[interface].bandwidth }},{{ to_parse_interface[interface].mtu }},{{ to_parse_interface[interface].delay }},{{ to_parse_interface[interface].encapsulation.encapsulation }},{% if to_parse_interface[interface].medium is defined %}{{ to_parse_interface[interface].medium }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].flow_control is defined %}{{ to_parse_interface[interface].flow_control.receive }},{{ to_parse_interface[interface].flow_control.send }},{% else %}N/A,N/A,{% endif %}{% if to_parse_interface[interface].last_change is defined %}{{ to_parse_interface[interface].last_change }},{% else %}N/A,{% endif %}N/A,{{ to_parse_interface[interface].port_channel.port_channel_member }},{% if to_parse_interface[interface].counters is defined %}{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }},{{ to_parse_interface[interface].counters.in_errors | default("N/A") }},{{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }},{{ to_parse_interface[interface].counters.out_broadcast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.out_discard | default("N/A") }},{{ to_parse_interface[interface].counters.out_errors | default("N/A") }},{{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.out_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }},{{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}{% else %}N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A{% endif %}{% endif %}{% endif %}{% endfor %}{% else %}{% if to_parse_interface[interface].ipv4 is defined %}
+{{ interface }},{% if to_parse_interface[interface].description is defined %}{{ to_parse_interface[interface].description }},{% else %}No Description,{% endif %}{% if to_parse_interface[interface].ipv4 is defined %}{{ ip_address }},{{ to_parse_interface[interface].ipv4[ip_address].origin | default("No Origin") }},{% else %}N/A,N/A,{% endif %}{% if to_parse_interface[interface].type is defined %}{{ to_parse_interface[interface].type }},{% else %}N/A,{% endif %}{{ to_parse_interface[interface].enabled }},{{ to_parse_interface[interface].oper_status }},{% if to_parse_interface[interface].phys_address is defined %}{{ to_parse_interface[interface].phys_address }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].mac_address is defined %}{{ to_parse_interface[interface].mac_address }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}{{ to_parse_interface[interface].switchport_enable }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}{{ to_parse_interface[interface].switchport_mode }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}{{ to_parse_interface[interface].access_vlan }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}{{ to_parse_interface[interface].native_vlan }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].vrf is defined %}{{ to_parse_interface[interface].vrf }},{% else %}N/A,{% endif %}{{ to_parse_interface[interface].bandwidth }},{{ to_parse_interface[interface].mtu }},{{ to_parse_interface[interface].delay }},{{ to_parse_interface[interface].encapsulation.encapsulation }},{% if to_parse_interface[interface].medium is defined %}{{ to_parse_interface[interface].medium }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].flow_control is defined %}{{ to_parse_interface[interface].flow_control.receive }},{{ to_parse_interface[interface].flow_control.send }},{% else %}N/A,N/A,{% endif %}{% if to_parse_interface[interface].last_change is defined %}{{ to_parse_interface[interface].last_change }},{% else %}N/A,{% endif %}N/A,N/A,{% if to_parse_interface[interface].counters is defined %}{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }},{{ to_parse_interface[interface].counters.in_errors }},{{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }},{{ to_parse_interface[interface].counters.out_broadcast_pkts| default("N/A") }},{{ to_parse_interface[interface].counters.out_discard | default("N/A") }},{{ to_parse_interface[interface].counters.out_errors | default("N/A") }},{{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.out_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }},{{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}{% else %}N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A{% endif %}{% else %}{% if to_parse_interface[interface].port_channel is defined %}{% if to_parse_interface[interface].port_channel.port_channel_member_intfs %}{% for member in to_parse_interface[interface].port_channel.port_channel_member_intfs %}
+{{ interface }},{% if to_parse_interface[interface].description is defined %}{{ to_parse_interface[interface].description }},{% else %}No Description,{% endif %}N/A,N/A,{% if to_parse_interface[interface].type is defined %}{{ to_parse_interface[interface].type }},{% else %}N/A,{% endif %}{{ to_parse_interface[interface].enabled }},{{ to_parse_interface[interface].oper_status }},{% if to_parse_interface[interface].phys_address is defined %}{{ to_parse_interface[interface].phys_address }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].mac_address is defined %}{{ to_parse_interface[interface].mac_address }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}{{ to_parse_interface[interface].switchport_enable }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}{{ to_parse_interface[interface].switchport_mode }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}{{ to_parse_interface[interface].access_vlan }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}{{ to_parse_interface[interface].native_vlan }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].vrf is defined %}{{ to_parse_interface[interface].vrf }},{% else %}N/A,{% endif %}{{ to_parse_interface[interface].bandwidth }},{{ to_parse_interface[interface].mtu }},{{ to_parse_interface[interface].delay }},{{ to_parse_interface[interface].encapsulation.encapsulation }},{% if to_parse_interface[interface].medium is defined %}{{ to_parse_interface[interface].medium }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].flow_control is defined %}{{ to_parse_interface[interface].flow_control.receive }},{{ to_parse_interface[interface].flow_control.send }},{% else %}N/A,N/A,{% endif %}{% if to_parse_interface[interface].last_change is defined %}{{ to_parse_interface[interface].last_change }},{% else %}N/A,{% endif %}{{ interface }},{{ member }}{% if to_parse_interface[interface].counters is defined %}{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }},{{ to_parse_interface[interface].counters.in_errors }},{{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }},{{ to_parse_interface[interface].counters.out_broadcast_pkts| default("N/A") }},{{ to_parse_interface[interface].counters.out_discard | default("N/A") }},{{ to_parse_interface[interface].counters.out_errors | default("N/A") }},{{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.out_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }},{{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}{% else %}N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A{% endif %}{% endfor %}{% else %}{% if to_parse_interface[interface].port_channel.port_channel_member == "True" %}
+{{ interface }},{% if to_parse_interface[interface].description is defined %}{{ to_parse_interface[interface].description }},{% else %}No Description,{% endif %}N/A,N/A,{% if to_parse_interface[interface].type is defined %}{{ to_parse_interface[interface].type }}{% else %}N/A,{% endif %}{{ to_parse_interface[interface].enabled }},{{ to_parse_interface[interface].oper_status }},{% if to_parse_interface[interface].phys_address is defined %}{{ to_parse_interface[interface].phys_address }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].mac_address is defined %}{{ to_parse_interface[interface].mac_address }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}{{ to_parse_interface[interface].switchport_enable }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}{{ to_parse_interface[interface].switchport_mode }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}{{ to_parse_interface[interface].access_vlan }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}{{ to_parse_interface[interface].native_vlan }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].vrf is defined %}{{ to_parse_interface[interface].vrf }},{% else %}N/A,{% endif %}{{ to_parse_interface[interface].bandwidth }},{{ to_parse_interface[interface].mtu }},{{ to_parse_interface[interface].delay }},{{ to_parse_interface[interface].encapsulation.encapsulation }},{% if to_parse_interface[interface].medium is defined %}{{ to_parse_interface[interface].medium }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].flow_control is defined %}{{ to_parse_interface[interface].flow_control.receive }},{{ to_parse_interface[interface].flow_control.send }},{% else %}N/A,N/A,{% endif %}{% if to_parse_interface[interface].last_change is defined %}{{ to_parse_interface[interface].last_change }},{% else %}N/A,{% endif %}{{ to_parse_interface[interface].port_channel.port_channel_int }},{{ to_parse_interface[interface].port_channel.port_channel_member }},{% if to_parse_interface[interface].counters is defined %}{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }},{{ to_parse_interface[interface].counters.in_errors }},{{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }},{{ to_parse_interface[interface].counters.out_broadcast_pkts| default("N/A") }},{{ to_parse_interface[interface].counters.out_discard | default("N/A") }},{{ to_parse_interface[interface].counters.out_errors | default("N/A") }},{{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.out_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }},{{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}{% else %}N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A{% endif %}{% else %}
+{{ interface }},{% if to_parse_interface[interface].description is defined %}{{ to_parse_interface[interface].description }},{% else %}No Description,{% endif %}N/A,N/A,{% if to_parse_interface[interface].type is defined %}{{ to_parse_interface[interface].type }},{% else %}N/A,{% endif %}{{ to_parse_interface[interface].enabled }},{{ to_parse_interface[interface].oper_status }},{% if to_parse_interface[interface].phys_address is defined %}{{ to_parse_interface[interface].phys_address }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].mac_address is defined %}{{ to_parse_interface[interface].mac_address }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}{{ to_parse_interface[interface].switchport_enable }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}{{ to_parse_interface[interface].switchport_mode }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}{{ to_parse_interface[interface].access_vlan }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}{{ to_parse_interface[interface].native_vlan }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].vrf is defined %}{{ to_parse_interface[interface].vrf }},{% else %}N/A,{% endif %}{{ to_parse_interface[interface].bandwidth }},{{ to_parse_interface[interface].mtu }},{{ to_parse_interface[interface].delay }},{{ to_parse_interface[interface].encapsulation.encapsulation }},{% if to_parse_interface[interface].medium is defined %}{{ to_parse_interface[interface].medium }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].flow_control is defined %}{{ to_parse_interface[interface].flow_control.receive }},{{ to_parse_interface[interface].flow_control.send }},{% else %}N/A,N/A,{% endif %}{% if to_parse_interface[interface].last_change is defined %}{{ to_parse_interface[interface].last_change }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].port_channel.port_channel_member == "True" %}{{ interface }},{% else %}N/A,{% endif %}{{ to_parse_interface[interface].port_channel.port_channel_member }},{% if to_parse_interface[interface].counters is defined %}{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }},{{ to_parse_interface[interface].counters.in_errors }},{{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }},{{ to_parse_interface[interface].counters.out_broadcast_pkts| default("N/A") }},{{ to_parse_interface[interface].counters.out_discard | default("N/A") }},{{ to_parse_interface[interface].counters.out_errors | default("N/A") }},{{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.out_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }},{{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}{% else %}N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A{% endif %}{% endif %}{% endif %}{% else %}
+{{ interface }},{% if to_parse_interface[interface].description is defined %}{{ to_parse_interface[interface].description }},{% else %}No Description,{% endif %}N/A,N/A,{% if to_parse_interface[interface].type is defined %}{{ to_parse_interface[interface].type }},{% else %}N/A,{% endif %}{{ to_parse_interface[interface].enabled }},{{ to_parse_interface[interface].oper_status }},{% if to_parse_interface[interface].phys_address is defined %}{{ to_parse_interface[interface].phys_address }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].mac_address is defined %}{{ to_parse_interface[interface].mac_address }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}{{ to_parse_interface[interface].switchport_enable }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}{{ to_parse_interface[interface].switchport_mode }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}{{ to_parse_interface[interface].access_vlan }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}{{ to_parse_interface[interface].native_vlan }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].vrf is defined %}{{ to_parse_interface[interface].vrf }},{% else %}N/A,{% endif %}{{ to_parse_interface[interface].bandwidth }},{{ to_parse_interface[interface].mtu }},{{ to_parse_interface[interface].delay }},{{ to_parse_interface[interface].encapsulation.encapsulation }},{% if to_parse_interface[interface].medium is defined %}{{ to_parse_interface[interface].medium }},{% else %}N/A,{% endif %}{% if to_parse_interface[interface].flow_control is defined %}{{ to_parse_interface[interface].flow_control.receive }},{{ to_parse_interface[interface].flow_control.send }},{% else %}N/A,N/A,{% endif %}N/A,N/A,{% if to_parse_interface[interface].last_change is defined %}{{ to_parse_interface[interface].last_change }},{% else %}N/A,{% endif %}{{ to_parse_interface[interface].port_channel.port_channel_int }},{{ to_parse_interface[interface].port_channel.port_channel_member }},{% if to_parse_interface[interface].counters is defined %}{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }},{{ to_parse_interface[interface].counters.in_errors }},{{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }},{{ to_parse_interface[interface].counters.out_broadcast_pkts| default("N/A") }},{{ to_parse_interface[interface].counters.out_discard | default("N/A") }},{{ to_parse_interface[interface].counters.out_errors | default("N/A") }},{{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.out_pkts | default("N/A") }},{{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }},{{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}{% else %}N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A{% endif %}{% endif %}{% endif %}{% endif %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Learn Interface
+| Interface | Description | IP Address | IP Origin | Type | Enabled | Operational Status | Physical Address | MAC Address | Switchport Enabled | Switchport Mode | Access VLAN | Trunk VLAN | Native VLAN | VRF | Bandwidth | MTU | Delay | Encapsulation | Medium | Flow Control Receive | Flow Control Send | Last Change | Port Channel | Port Channel Member | Input Broadcast | Input CRC Errors | Input Errors | Input Unicast | Input Multicast | Input Total | Output Broadcast | Output Discards | Output Errors | Output Unicast | Output Multicast | Output Total | Input Rate | Output Rate |
+| --------- | ----------- | ---------- | --------- | ---- | ------- | ------------------ | ---------------- | ----------- | ------------------ | --------------- | ----------- | ---------- | ----------- | --- | --------- | --- | ----- | ------------- | ------ | -------------------- | ----------------- | ----------- | ------------ | ------------------- | --------------- | ---------------- | ------------ | ------------- | --------------- | ----------- | ---------------- | --------------- | ------------- | -------------- | ---------------- | ------------ | ---------- | ----------- |{% for interface in to_parse_interface %}{% if (to_parse_interface[interface].ipv4 is defined) and (to_parse_interface[interface].port_channel is defined) %}{% for ip_address in to_parse_interface[interface].ipv4 %}{% if to_parse_interface[interface].port_channel.port_channel_member_intfs %}{% for member in to_parse_interface[interface].port_channel.port_channel_member_intfs %}
+| {{ interface }} | {% if to_parse_interface[interface].description is defined %}{{ to_parse_interface[interface].description }} | {% else %}No Description | {% endif %}{% if to_parse_interface[interface].ipv4 is defined %}{{ ip_address }} | {{ to_parse_interface[interface].ipv4[ip_address].origin | default("No Origin") }} | {% else %}N/A | N/A | {% endif %}{% if to_parse_interface[interface].type is defined %}{{ to_parse_interface[interface].type }} | {% else %}N/A | {% endif %}{{ to_parse_interface[interface].enabled }} | {{ to_parse_interface[interface].oper_status }} | {% if to_parse_interface[interface].phys_address is defined %}{{ to_parse_interface[interface].phys_address }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].mac_address is defined %}{{ to_parse_interface[interface].mac_address }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}{{ to_parse_interface[interface].switchport_enable }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}{{ to_parse_interface[interface].switchport_mode }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].access_vlan is defined %}{{ to_parse_interface[interface].access_vlan }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].native_vlan is defined %}{{ to_parse_interface[interface].native_vlan }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].vrf is defined %}{{ to_parse_interface[interface].vrf }} | {% else %}N/A | {% endif %}{{ to_parse_interface[interface].bandwidth }} | {{ to_parse_interface[interface].mtu }} | {{ to_parse_interface[interface].delay }} | {{ to_parse_interface[interface].encapsulation.encapsulation }} | {% if to_parse_interface[interface].medium is defined %}{{ to_parse_interface[interface].medium }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].flow_control is defined %}{{ to_parse_interface[interface].flow_control.receive }} | {{ to_parse_interface[interface].flow_control.send }} | {% else %}N/A | N/A | {% endif %}{% if to_parse_interface[interface].last_change is defined %}{{ to_parse_interface[interface].last_change }} | {% else %}N/A | {% endif %}{{ interface }} | {{ member }}{% if to_parse_interface[interface].counters is defined %}{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }} | {{ to_parse_interface[interface].counters.in_errors }} | {{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }} | {{ to_parse_interface[interface].counters.out_broadcast_pkts| default("N/A") }} | {{ to_parse_interface[interface].counters.out_discard | default("N/A") }} | {{ to_parse_interface[interface].counters.out_errors | default("N/A") }} | {{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.out_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }} | {{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}{% else %}N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |{% endif %}{% endfor %}{% else %}{% if to_parse_interface[interface].port_channel.port_channel_member == "True" %}
+| {{ interface }} | {% if to_parse_interface[interface].description is defined %}{{ to_parse_interface[interface].description }} | {% else %}No Description | {% endif %}{% if to_parse_interface[interface].ipv4 is defined %}{{ ip_address }} | {{ to_parse_interface[interface].ipv4[ip_address].origin | default("No Origin") }} | {% else %}N/A | N/A | {% endif %}{% if to_parse_interface[interface].type is defined %}{{ to_parse_interface[interface].type }} | {% else %}N/A | {% endif %}{{ to_parse_interface[interface].enabled }} | {{ to_parse_interface[interface].oper_status }} | {% if to_parse_interface[interface].phys_address is defined %}{{ to_parse_interface[interface].phys_address }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].mac_address is defined %}{{ to_parse_interface[interface].mac_address }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}{{ to_parse_interface[interface].switchport_enable }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}{{ to_parse_interface[interface].switchport_mode }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].access_vlan is defined %}{{ to_parse_interface[interface].access_vlan }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].native_vlan is defined %}{{ to_parse_interface[interface].native_vlan }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].vrf is defined %}{{ to_parse_interface[interface].vrf }} | {% else %}N/A | {% endif %}{{ to_parse_interface[interface].bandwidth }} | {{ to_parse_interface[interface].mtu }} | {{ to_parse_interface[interface].delay }} | {{ to_parse_interface[interface].encapsulation.encapsulation }} | {% if to_parse_interface[interface].medium is defined %}{{ to_parse_interface[interface].medium }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].flow_control is defined %}{{ to_parse_interface[interface].flow_control.receive }} | {{ to_parse_interface[interface].flow_control.send }} | {% else %}N/A | N/A | {% endif %}{% if to_parse_interface[interface].last_change is defined %}{{ to_parse_interface[interface].last_change }} | {% else %}N/A | {% endif %}{{ to_parse_interface[interface].port_channel.port_channel_int }} | {{ to_parse_interface[interface].port_channel.port_channel_member }} | {% if to_parse_interface[interface].counters is defined %}{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }} | {{ to_parse_interface[interface].counters.in_errors }} | {{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }} | {{ to_parse_interface[interface].counters.out_broadcast_pkts| default("N/A") }} | {{ to_parse_interface[interface].counters.out_discard | default("N/A") }} | {{ to_parse_interface[interface].counters.out_errors | default("N/A") }} | {{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.out_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }} | {{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}{% else %}N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |{% endif %}{% else %}
+| {{ interface }} | {% if to_parse_interface[interface].description is defined %}{{ to_parse_interface[interface].description }} | {% else %}No Description | {% endif %}{% if to_parse_interface[interface].ipv4 is defined %}{{ ip_address }} | {{ to_parse_interface[interface].ipv4[ip_address].origin | default("No Origin") }} | {% else %}N/A | N/A | {% endif %}{% if to_parse_interface[interface].type is defined %}{{ to_parse_interface[interface].type }} | {% else %}N/A | {% endif %}{{ to_parse_interface[interface].enabled }} | {{ to_parse_interface[interface].oper_status }} | {% if to_parse_interface[interface].phys_address is defined %}{{ to_parse_interface[interface].phys_address }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].mac_address is defined %}{{ to_parse_interface[interface].mac_address }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}{{ to_parse_interface[interface].switchport_enable }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}{{ to_parse_interface[interface].switchport_mode }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].access_vlan is defined %}{{ to_parse_interface[interface].access_vlan }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].native_vlan is defined %}{{ to_parse_interface[interface].native_vlan }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].vrf is defined %}{{ to_parse_interface[interface].vrf }} | {% else %}N/A | {% endif %}{{ to_parse_interface[interface].bandwidth }} | {{ to_parse_interface[interface].mtu }} | {{ to_parse_interface[interface].delay }} | {{ to_parse_interface[interface].encapsulation.encapsulation }} | {% if to_parse_interface[interface].medium is defined %}{{ to_parse_interface[interface].medium }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].flow_control is defined %}{{ to_parse_interface[interface].flow_control.receive }} | {{ to_parse_interface[interface].flow_control.send }} | {% else %}N/A | N/A | {% endif %}{% if to_parse_interface[interface].last_change is defined %}{{ to_parse_interface[interface].last_change }} | {% else %}N/A | {% endif %}N/A | {{ to_parse_interface[interface].port_channel.port_channel_member }} | {% if to_parse_interface[interface].counters is defined %}{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }} | {{ to_parse_interface[interface].counters.in_errors | default("N/A") }} | {{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }} | {{ to_parse_interface[interface].counters.out_broadcast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.out_discard | default("N/A") }} | {{ to_parse_interface[interface].counters.out_errors | default("N/A") }} | {{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.out_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }} | {{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}{% else %}N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |{% endif %}{% endif %}{% endif %}{% endfor %}{% else %}{% if to_parse_interface[interface].ipv4 is defined %}
+| {{ interface }} | {% if to_parse_interface[interface].description is defined %}{{ to_parse_interface[interface].description }} | {% else %}No Description | {% endif %}{% if to_parse_interface[interface].ipv4 is defined %}{{ ip_address }} | {{ to_parse_interface[interface].ipv4[ip_address].origin | default("No Origin") }} | {% else %}N/A | N/A | {% endif %}{% if to_parse_interface[interface].type is defined %}{{ to_parse_interface[interface].type }} | {% else %}N/A | {% endif %}{{ to_parse_interface[interface].enabled }} | {{ to_parse_interface[interface].oper_status }} | {% if to_parse_interface[interface].phys_address is defined %}{{ to_parse_interface[interface].phys_address }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].mac_address is defined %}{{ to_parse_interface[interface].mac_address }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}{{ to_parse_interface[interface].switchport_enable }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}{{ to_parse_interface[interface].switchport_mode }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].access_vlan is defined %}{{ to_parse_interface[interface].access_vlan }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].native_vlan is defined %}{{ to_parse_interface[interface].native_vlan }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].vrf is defined %}{{ to_parse_interface[interface].vrf }} | {% else %}N/A | {% endif %}{{ to_parse_interface[interface].bandwidth }} | {{ to_parse_interface[interface].mtu }} | {{ to_parse_interface[interface].delay }} | {{ to_parse_interface[interface].encapsulation.encapsulation }} | {% if to_parse_interface[interface].medium is defined %}{{ to_parse_interface[interface].medium }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].flow_control is defined %}{{ to_parse_interface[interface].flow_control.receive }} | {{ to_parse_interface[interface].flow_control.send }} | {% else %}N/A | N/A | {% endif %}{% if to_parse_interface[interface].last_change is defined %}{{ to_parse_interface[interface].last_change }} | {% else %}N/A | {% endif %}N/A | N/A | {% if to_parse_interface[interface].counters is defined %}{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }} | {{ to_parse_interface[interface].counters.in_errors }} | {{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }} | {{ to_parse_interface[interface].counters.out_broadcast_pkts| default("N/A") }} | {{ to_parse_interface[interface].counters.out_discard | default("N/A") }} | {{ to_parse_interface[interface].counters.out_errors | default("N/A") }} | {{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.out_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }} | {{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}{% else %}N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |{% endif %}{% else %}{% if to_parse_interface[interface].port_channel is defined %}{% if to_parse_interface[interface].port_channel.port_channel_member_intfs %}{% for member in to_parse_interface[interface].port_channel.port_channel_member_intfs %}
+| {{ interface }} | {% if to_parse_interface[interface].description is defined %}{{ to_parse_interface[interface].description }} | {% else %}No Description | {% endif %}N/A | N/A | {% if to_parse_interface[interface].type is defined %}{{ to_parse_interface[interface].type }} | {% else %}N/A | {% endif %}{{ to_parse_interface[interface].enabled }} | {{ to_parse_interface[interface].oper_status }} | {% if to_parse_interface[interface].phys_address is defined %}{{ to_parse_interface[interface].phys_address }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].mac_address is defined %}{{ to_parse_interface[interface].mac_address }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}{{ to_parse_interface[interface].switchport_enable }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}{{ to_parse_interface[interface].switchport_mode }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].access_vlan is defined %}{{ to_parse_interface[interface].access_vlan }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].native_vlan is defined %}{{ to_parse_interface[interface].native_vlan }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].vrf is defined %}{{ to_parse_interface[interface].vrf }} | {% else %}N/A | {% endif %}{{ to_parse_interface[interface].bandwidth }} | {{ to_parse_interface[interface].mtu }} | {{ to_parse_interface[interface].delay }} | {{ to_parse_interface[interface].encapsulation.encapsulation }} | {% if to_parse_interface[interface].medium is defined %}{{ to_parse_interface[interface].medium }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].flow_control is defined %}{{ to_parse_interface[interface].flow_control.receive }} | {{ to_parse_interface[interface].flow_control.send }} | {% else %}N/A | N/A | {% endif %}{% if to_parse_interface[interface].last_change is defined %}{{ to_parse_interface[interface].last_change }} | {% else %}N/A | {% endif %}{{ interface }} | {{ member }}{% if to_parse_interface[interface].counters is defined %}{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }} | {{ to_parse_interface[interface].counters.in_errors }} | {{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }} | {{ to_parse_interface[interface].counters.out_broadcast_pkts| default("N/A") }} | {{ to_parse_interface[interface].counters.out_discard | default("N/A") }} | {{ to_parse_interface[interface].counters.out_errors | default("N/A") }} | {{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.out_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }} | {{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}{% else %}N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |{% endif %}{% endfor %}{% else %}{% if to_parse_interface[interface].port_channel.port_channel_member == "True" %}
+| {{ interface }} | {% if to_parse_interface[interface].description is defined %}{{ to_parse_interface[interface].description }} | {% else %}No Description | {% endif %}N/A | N/A | {% if to_parse_interface[interface].type is defined %}{{ to_parse_interface[interface].type }}{% else %}N/A | {% endif %}{{ to_parse_interface[interface].enabled }} | {{ to_parse_interface[interface].oper_status }} | {% if to_parse_interface[interface].phys_address is defined %}{{ to_parse_interface[interface].phys_address }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].mac_address is defined %}{{ to_parse_interface[interface].mac_address }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}{{ to_parse_interface[interface].switchport_enable }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}{{ to_parse_interface[interface].switchport_mode }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].access_vlan is defined %}{{ to_parse_interface[interface].access_vlan }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].native_vlan is defined %}{{ to_parse_interface[interface].native_vlan }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].vrf is defined %}{{ to_parse_interface[interface].vrf }} | {% else %}N/A | {% endif %}{{ to_parse_interface[interface].bandwidth }} | {{ to_parse_interface[interface].mtu }} | {{ to_parse_interface[interface].delay }} | {{ to_parse_interface[interface].encapsulation.encapsulation }} | {% if to_parse_interface[interface].medium is defined %}{{ to_parse_interface[interface].medium }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].flow_control is defined %}{{ to_parse_interface[interface].flow_control.receive }} | {{ to_parse_interface[interface].flow_control.send }} | {% else %}N/A | N/A | {% endif %}{% if to_parse_interface[interface].last_change is defined %}{{ to_parse_interface[interface].last_change }} | {% else %}N/A | {% endif %}{{ to_parse_interface[interface].port_channel.port_channel_int }} | {{ to_parse_interface[interface].port_channel.port_channel_member }} | {% if to_parse_interface[interface].counters is defined %}{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }} | {{ to_parse_interface[interface].counters.in_errors }} | {{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }} | {{ to_parse_interface[interface].counters.out_broadcast_pkts| default("N/A") }} | {{ to_parse_interface[interface].counters.out_discard | default("N/A") }} | {{ to_parse_interface[interface].counters.out_errors | default("N/A") }} | {{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.out_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }} | {{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}{% else %}N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |{% endif %}{% else %}
+| {{ interface }} | {% if to_parse_interface[interface].description is defined %}{{ to_parse_interface[interface].description }} | {% else %}No Description | {% endif %}N/A | N/A | {% if to_parse_interface[interface].type is defined %}{{ to_parse_interface[interface].type }} | {% else %}N/A | {% endif %}{{ to_parse_interface[interface].enabled }} | {{ to_parse_interface[interface].oper_status }} | {% if to_parse_interface[interface].phys_address is defined %}{{ to_parse_interface[interface].phys_address }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].mac_address is defined %}{{ to_parse_interface[interface].mac_address }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}{{ to_parse_interface[interface].switchport_enable }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}{{ to_parse_interface[interface].switchport_mode }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].access_vlan is defined %}{{ to_parse_interface[interface].access_vlan }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].native_vlan is defined %}{{ to_parse_interface[interface].native_vlan }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].vrf is defined %}{{ to_parse_interface[interface].vrf }} | {% else %}N/A | {% endif %}{{ to_parse_interface[interface].bandwidth }} | {{ to_parse_interface[interface].mtu }} | {{ to_parse_interface[interface].delay }} | {{ to_parse_interface[interface].encapsulation.encapsulation }} | {% if to_parse_interface[interface].medium is defined %}{{ to_parse_interface[interface].medium }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].flow_control is defined %}{{ to_parse_interface[interface].flow_control.receive }} | {{ to_parse_interface[interface].flow_control.send }} | {% else %}N/A | N/A | {% endif %}{% if to_parse_interface[interface].last_change is defined %}{{ to_parse_interface[interface].last_change }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].port_channel.port_channel_member == "True" %} {{ interface }} | {% else %} N/A | {% endif %}{{ to_parse_interface[interface].port_channel.port_channel_member }} | {% if to_parse_interface[interface].counters is defined %}{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }} | {{ to_parse_interface[interface].counters.in_errors }} | {{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }} | {{ to_parse_interface[interface].counters.out_broadcast_pkts| default("N/A") }} | {{ to_parse_interface[interface].counters.out_discard | default("N/A") }} | {{ to_parse_interface[interface].counters.out_errors | default("N/A") }} | {{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.out_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }} | {{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}{% else %}N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |{% endif %}{% endif %}{% endif %}{% else %}
+| {{ interface }} | {% if to_parse_interface[interface].description is defined %}{{ to_parse_interface[interface].description }} | {% else %}No Description | {% endif %}N/A | N/A | {% if to_parse_interface[interface].type is defined %}{{ to_parse_interface[interface].type }} | {% else %}N/A | {% endif %}{{ to_parse_interface[interface].enabled }} | {{ to_parse_interface[interface].oper_status }} | {% if to_parse_interface[interface].phys_address is defined %}{{ to_parse_interface[interface].phys_address }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].mac_address is defined %}{{ to_parse_interface[interface].mac_address }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}{{ to_parse_interface[interface].switchport_enable }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}{{ to_parse_interface[interface].switchport_mode }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].access_vlan is defined %}{{ to_parse_interface[interface].access_vlan }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].native_vlan is defined %}{{ to_parse_interface[interface].native_vlan }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].vrf is defined %}{{ to_parse_interface[interface].vrf }} | {% else %}N/A | {% endif %}{{ to_parse_interface[interface].bandwidth }} | {{ to_parse_interface[interface].mtu }} | {{ to_parse_interface[interface].delay }} | {{ to_parse_interface[interface].encapsulation.encapsulation }} | {% if to_parse_interface[interface].medium is defined %}{{ to_parse_interface[interface].medium }} | {% else %}N/A | {% endif %}{% if to_parse_interface[interface].flow_control is defined %}{{ to_parse_interface[interface].flow_control.receive }} | {{ to_parse_interface[interface].flow_control.send }} | {% else %}N/A | N/A | {% endif %}N/A | N/A | {% if to_parse_interface[interface].last_change is defined %}{{ to_parse_interface[interface].last_change }} | {% else %}N/A | {% endif %}{{ to_parse_interface[interface].port_channel.port_channel_int }} | {{ to_parse_interface[interface].port_channel.port_channel_member }} | {% if to_parse_interface[interface].counters is defined %}{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }} | {{ to_parse_interface[interface].counters.in_errors }} | {{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }} | {{ to_parse_interface[interface].counters.out_broadcast_pkts| default("N/A") }} | {{ to_parse_interface[interface].counters.out_discard | default("N/A") }} | {{ to_parse_interface[interface].counters.out_errors | default("N/A") }} | {{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.out_pkts | default("N/A") }} | {{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }} | {{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}{% else %}N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |{% endif %}{% endif %}{% endif %}{% endif %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Learn Interface</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Interface</th>
+    <th>Description</th>
+    <th>IP Address</th>
+    <th>IP Origin</th>
+    <th>Type</th>
+    <th>Enabled</th>
+    <th>Operational Status</th>
+    <th>Physical Address</th>
+    <th>MAC Address</th>
+    <th>Switchport Enabled</th>
+    <th>Switchport Mode</th>
+    <th>Access VLAN</th>
+    <th>Trunk VLAN</th>
+    <th>Native VLAN</th>
+    <th>VRF</th>
+    <th>Bandwidth</th>
+    <th>MTU</th>
+    <th>Delay</th>
+    <th>Encapsulation</th>
+    <th>Medium</th>
+    <th>Flow Control Receive</th>
+    <th>Flow Control Send</th>
+    <th>Last Change</th>
+    <th>Port Channel</th>
+    <th>Port Channel Member</th>
+    <th>Input Broadcast</th>
+    <th>Input CRC Errors</th>
+    <th>Input Errors</th>
+    <th>Input Unicast</th>
+    <th>Input Multicast</th>
+    <th>Input Total</th>
+    <th>Output Broadcast</th>
+    <th>Output Discards</th>
+    <th>Output Errors</th>
+    <th>Output Unicast</th>
+    <th>Output Multicast</th>
+    <th>Output Total</th>
+    <th>Input Rate</th>
+    <th>Output Rate</th>
+  </tr>
+  </thead>
+  <tbody>{% for interface in to_parse_interface %}{% if (to_parse_interface[interface].ipv4 is defined) and (to_parse_interface[interface].port_channel is defined) %}{% for ip_address in to_parse_interface[interface].ipv4 %}{% if to_parse_interface[interface].port_channel.port_channel_member_intfs %}{% for member in to_parse_interface[interface].port_channel.port_channel_member_intfs %}
+  <tr>
+    <td>{{ interface }}</td>{% if to_parse_interface[interface].description is defined %}
+    <td>{{ to_parse_interface[interface].description }}</td>{% else %}
+    <td>No Description</td>{% endif %}{% if to_parse_interface[interface].ipv4 is defined %}
+    <td>{{ ip_address }}</td>
+    <td>{{ to_parse_interface[interface].ipv4[ip_address].origin | default("No Origin") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].type is defined %}
+    <td>{{ to_parse_interface[interface].type }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ to_parse_interface[interface].enabled }}</td>
+    <td>{{ to_parse_interface[interface].oper_status }}</td>{% if to_parse_interface[interface].phys_address is defined %}
+    <td>{{ to_parse_interface[interface].phys_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].mac_address is defined %}
+    <td>{{ to_parse_interface[interface].mac_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}
+    <td>{{ to_parse_interface[interface].switchport_enable }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+    <td>{{ to_parse_interface[interface].switchport_mode }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+    <td>{{ to_parse_interface[interface].access_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+    <td>{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+    <td>{{ to_parse_interface[interface].native_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+    <td>{{ to_parse_interface[interface].vrf }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ to_parse_interface[interface].bandwidth }}</td>
+    <td>{{ to_parse_interface[interface].mtu }}</td>
+    <td>{{ to_parse_interface[interface].delay }}</td>
+    <td>{{ to_parse_interface[interface].encapsulation.encapsulation }}</td>{% if to_parse_interface[interface].medium is defined %}
+    <td>{{ to_parse_interface[interface].medium }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].flow_control is defined %}
+    <td>{{ to_parse_interface[interface].flow_control.receive }}</td>
+    <td>{{ to_parse_interface[interface].flow_control.send }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+    <td>{{ to_parse_interface[interface].last_change }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ interface }}</td>
+    <td>{{ member }}{% if to_parse_interface[interface].counters is defined %}
+    <td>{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_errors }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_broadcast_pkts| default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_discard | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_errors | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endif %}{% endfor %}{% else %}{% if to_parse_interface[interface].port_channel.port_channel_member == "True" %}
+  <tr>
+    <td>{{ interface }}</td>{% if to_parse_interface[interface].description is defined %}
+    <td>{{ to_parse_interface[interface].description }}</td>{% else %}
+    <td>No Description</td>{% endif %}{% if to_parse_interface[interface].ipv4 is defined %}
+    <td>{{ ip_address }}</td>
+    <td>{{ to_parse_interface[interface].ipv4[ip_address].origin | default("No Origin") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].type is defined %}
+    <td>{{ to_parse_interface[interface].type }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ to_parse_interface[interface].enabled }}</td>
+    <td>{{ to_parse_interface[interface].oper_status }}</td>{% if to_parse_interface[interface].phys_address is defined %}
+    <td>{{ to_parse_interface[interface].phys_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].mac_address is defined %}
+    <td>{{ to_parse_interface[interface].mac_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}
+    <td>{{ to_parse_interface[interface].switchport_enable }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+    <td>{{ to_parse_interface[interface].switchport_mode }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+    <td>{{ to_parse_interface[interface].access_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+    <td>{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+    <td>{{ to_parse_interface[interface].native_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+    <td>{{ to_parse_interface[interface].vrf }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ to_parse_interface[interface].bandwidth }}</td>
+    <td>{{ to_parse_interface[interface].mtu }}</td>
+    <td>{{ to_parse_interface[interface].delay }}</td>
+    <td>{{ to_parse_interface[interface].encapsulation.encapsulation }}</td>{% if to_parse_interface[interface].medium is defined %}
+    <td>{{ to_parse_interface[interface].medium }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].flow_control is defined %}
+    <td>{{ to_parse_interface[interface].flow_control.receive }}</td>
+    <td>{{ to_parse_interface[interface].flow_control.send }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+    <td>{{ to_parse_interface[interface].last_change }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ to_parse_interface[interface].port_channel.port_channel_int }}</td>
+    <td>{{ to_parse_interface[interface].port_channel.port_channel_member }}</td>{% if to_parse_interface[interface].counters is defined %}
+    <td>{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_errors }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_broadcast_pkts| default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_discard | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_errors | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endif %}{% else %}
+  <tr>
+    <td>{{ interface }}</td>{% if to_parse_interface[interface].description is defined %}
+    <td>{{ to_parse_interface[interface].description }}</td>{% else %}
+    <td>No Description</td>{% endif %}{% if to_parse_interface[interface].ipv4 is defined %}
+    <td>{{ ip_address }}</td>
+    <td>{{ to_parse_interface[interface].ipv4[ip_address].origin | default("No Origin") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].type is defined %}
+    <td>{{ to_parse_interface[interface].type }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ to_parse_interface[interface].enabled }}</td>
+    <td>{{ to_parse_interface[interface].oper_status }}</td>{% if to_parse_interface[interface].phys_address is defined %}
+    <td>{{ to_parse_interface[interface].phys_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].mac_address is defined %}
+    <td>{{ to_parse_interface[interface].mac_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}
+    <td>{{ to_parse_interface[interface].switchport_enable }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+    <td>{{ to_parse_interface[interface].switchport_mode }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+    <td>{{ to_parse_interface[interface].access_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+    <td>{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+    <td>{{ to_parse_interface[interface].native_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+    <td>{{ to_parse_interface[interface].vrf }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ to_parse_interface[interface].bandwidth }}</td>
+    <td>{{ to_parse_interface[interface].mtu }}</td>
+    <td>{{ to_parse_interface[interface].delay }}</td>
+    <td>{{ to_parse_interface[interface].encapsulation.encapsulation }}</td>{% if to_parse_interface[interface].medium is defined %}
+    <td>{{ to_parse_interface[interface].medium }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].flow_control is defined %}
+    <td>{{ to_parse_interface[interface].flow_control.receive }}</td>
+    <td>{{ to_parse_interface[interface].flow_control.send }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+    <td>{{ to_parse_interface[interface].last_change }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>N/A</td>
+    <td>{{ to_parse_interface[interface].port_channel.port_channel_member }}</td>{% if to_parse_interface[interface].counters is defined %}
+    <td>{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_errors | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_broadcast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_discard | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_errors | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  <tr>{% endif %}{% endif %}{% endif %}{% endfor %}{% else %}{% if to_parse_interface[interface].ipv4 is defined %}
+  <tr>
+    <td>{{ interface }}</td>{% if to_parse_interface[interface].description is defined %}
+    <td>{{ to_parse_interface[interface].description }}</td>{% else %}
+    <td>No Description</td>{% endif %}{% if to_parse_interface[interface].ipv4 is defined %}
+    <td>{{ ip_address }}</td>
+    <td>{{ to_parse_interface[interface].ipv4[ip_address].origin | default("No Origin") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].type is defined %}
+    <td>{{ to_parse_interface[interface].type }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ to_parse_interface[interface].enabled }}</td>
+    <td>{{ to_parse_interface[interface].oper_status }}</td>{% if to_parse_interface[interface].phys_address is defined %}
+    <td>{{ to_parse_interface[interface].phys_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].mac_address is defined %}
+    <td>{{ to_parse_interface[interface].mac_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}
+    <td>{{ to_parse_interface[interface].switchport_enable }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+    <td>{{ to_parse_interface[interface].switchport_mode }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+    <td>{{ to_parse_interface[interface].access_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+    <td>{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+    <td>{{ to_parse_interface[interface].native_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+    <td>{{ to_parse_interface[interface].vrf }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ to_parse_interface[interface].bandwidth }}</td>
+    <td>{{ to_parse_interface[interface].mtu }}</td>
+    <td>{{ to_parse_interface[interface].delay }}</td>
+    <td>{{ to_parse_interface[interface].encapsulation.encapsulation }}</td>{% if to_parse_interface[interface].medium is defined %}
+    <td>{{ to_parse_interface[interface].medium }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].flow_control is defined %}
+    <td>{{ to_parse_interface[interface].flow_control.receive }}</td>
+    <td>{{ to_parse_interface[interface].flow_control.send }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+    <td>{{ to_parse_interface[interface].last_change }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>N/A</td>
+    <td>N/A</td>{% if to_parse_interface[interface].counters is defined %}
+    <td>{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_errors }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_broadcast_pkts| default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_discard | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_errors | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endif %}{% else %}{% if to_parse_interface[interface].port_channel is defined %}{% if to_parse_interface[interface].port_channel.port_channel_member_intfs %}{% for member in to_parse_interface[interface].port_channel.port_channel_member_intfs %}
+  <tr>
+    <td>{{ interface }}</td>{% if to_parse_interface[interface].description is defined %}
+    <td>{{ to_parse_interface[interface].description }}</td>{% else %}
+    <td>No Description</td>{% endif %}
+    <td>N/A</td>
+    <td>N/A</td>{% if to_parse_interface[interface].type is defined %}
+    <td>{{ to_parse_interface[interface].type }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ to_parse_interface[interface].enabled }}</td>
+    <td>{{ to_parse_interface[interface].oper_status }}</td>{% if to_parse_interface[interface].phys_address is defined %}
+    <td>{{ to_parse_interface[interface].phys_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].mac_address is defined %}
+    <td>{{ to_parse_interface[interface].mac_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}
+    <td>{{ to_parse_interface[interface].switchport_enable }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+    <td>{{ to_parse_interface[interface].switchport_mode }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+    <td>{{ to_parse_interface[interface].access_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+    <td>{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+    <td>{{ to_parse_interface[interface].native_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+    <td>{{ to_parse_interface[interface].vrf }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ to_parse_interface[interface].bandwidth }}</td>
+    <td>{{ to_parse_interface[interface].mtu }}</td>
+    <td>{{ to_parse_interface[interface].delay }}</td>
+    <td>{{ to_parse_interface[interface].encapsulation.encapsulation }}</td>{% if to_parse_interface[interface].medium is defined %}
+    <td>{{ to_parse_interface[interface].medium }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].flow_control is defined %}
+    <td>{{ to_parse_interface[interface].flow_control.receive }}</td>
+    <td>{{ to_parse_interface[interface].flow_control.send }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+    <td>{{ to_parse_interface[interface].last_change }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ interface }}</td>
+    <td>{{ member }}{% if to_parse_interface[interface].counters is defined %}
+    <td>{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_errors }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_broadcast_pkts| default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_discard | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_errors | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endif %}{% endfor %}{% else %}{% if to_parse_interface[interface].port_channel.port_channel_member == "True" %}
+  <tr>
+    <td>{{ interface }}</td>{% if to_parse_interface[interface].description is defined %}
+    <td>{{ to_parse_interface[interface].description }}</td>{% else %}
+    <td>No Description</td>{% endif %}
+    <td>N/A</td>
+    <td>N/A</td>{% if to_parse_interface[interface].type is defined %}
+    <td>{{ to_parse_interface[interface].type }}{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ to_parse_interface[interface].enabled }}</td>
+    <td>{{ to_parse_interface[interface].oper_status }}</td>{% if to_parse_interface[interface].phys_address is defined %}
+    <td>{{ to_parse_interface[interface].phys_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].mac_address is defined %}
+    <td>{{ to_parse_interface[interface].mac_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}
+    <td>{{ to_parse_interface[interface].switchport_enable }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+    <td>{{ to_parse_interface[interface].switchport_mode }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+    <td>{{ to_parse_interface[interface].access_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+    <td>{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+    <td>{{ to_parse_interface[interface].native_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+    <td>{{ to_parse_interface[interface].vrf }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ to_parse_interface[interface].bandwidth }}</td>
+    <td>{{ to_parse_interface[interface].mtu }}</td>
+    <td>{{ to_parse_interface[interface].delay }}</td>
+    <td>{{ to_parse_interface[interface].encapsulation.encapsulation }}</td>{% if to_parse_interface[interface].medium is defined %}
+    <td>{{ to_parse_interface[interface].medium }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].flow_control is defined %}
+    <td>{{ to_parse_interface[interface].flow_control.receive }}</td>
+    <td>{{ to_parse_interface[interface].flow_control.send }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+    <td>{{ to_parse_interface[interface].last_change }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ to_parse_interface[interface].port_channel.port_channel_int }}</td>
+    <td>{{ to_parse_interface[interface].port_channel.port_channel_member }}</td>{% if to_parse_interface[interface].counters is defined %}
+    <td>{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_errors }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_broadcast_pkts| default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_discard | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_errors | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endif %}{% else %}
+  <tr>
+    <td>{{ interface }}</td>{% if to_parse_interface[interface].description is defined %}
+    <td>{{ to_parse_interface[interface].description }}</td>{% else %}
+    <td>No Description</td>{% endif %}
+    <td>N/A</td>
+    <td>N/A</td>{% if to_parse_interface[interface].type is defined %}
+    <td>{{ to_parse_interface[interface].type }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ to_parse_interface[interface].enabled }}</td>
+    <td>{{ to_parse_interface[interface].oper_status }}</td>{% if to_parse_interface[interface].phys_address is defined %}
+    <td>{{ to_parse_interface[interface].phys_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].mac_address is defined %}
+    <td>{{ to_parse_interface[interface].mac_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}
+    <td>{{ to_parse_interface[interface].switchport_enable }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+    <td>{{ to_parse_interface[interface].switchport_mode }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+    <td>{{ to_parse_interface[interface].access_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+    <td>{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+    <td>{{ to_parse_interface[interface].native_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+    <td>{{ to_parse_interface[interface].vrf }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ to_parse_interface[interface].bandwidth }}</td>
+    <td>{{ to_parse_interface[interface].mtu }}</td>
+    <td>{{ to_parse_interface[interface].delay }}</td>
+    <td>{{ to_parse_interface[interface].encapsulation.encapsulation }}</td>{% if to_parse_interface[interface].medium is defined %}
+    <td>{{ to_parse_interface[interface].medium }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].flow_control is defined %}
+    <td>{{ to_parse_interface[interface].flow_control.receive }}</td>
+    <td>{{ to_parse_interface[interface].flow_control.send }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].last_change is defined %}
+    <td>{{ to_parse_interface[interface].last_change }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].port_channel.port_channel_member == "True" %}
+    <td>{{ interface }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ to_parse_interface[interface].port_channel.port_channel_member }}</td>{% if to_parse_interface[interface].counters is defined %}
+    <td>{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_errors }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_broadcast_pkts| default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_discard | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_errors | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endif %}{% endif %}{% endif %}{% else %}
+  <tr>
+    <td>{{ interface }}</td>{% if to_parse_interface[interface].description is defined %}
+    <td>{{ to_parse_interface[interface].description }}</td>{% else %}
+    <td>No Description</td>{% endif %}
+    <td>N/A</td>
+    <td>N/A</td>{% if to_parse_interface[interface].type is defined %}
+    <td>{{ to_parse_interface[interface].type }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ to_parse_interface[interface].enabled }}</td>
+    <td>{{ to_parse_interface[interface].oper_status }}</td>{% if to_parse_interface[interface].phys_address is defined %}
+    <td>{{ to_parse_interface[interface].phys_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].mac_address is defined %}
+    <td>{{ to_parse_interface[interface].mac_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].switchport_enable is defined %}
+    <td>{{ to_parse_interface[interface].switchport_enable }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].switchport_mode is defined %}
+    <td>{{ to_parse_interface[interface].switchport_mode }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].access_vlan is defined %}
+    <td>{{ to_parse_interface[interface].access_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].trunk_vlans is defined %}
+    <td>{{ to_parse_interface[interface].trunk_vlans | replace(","," ") }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].native_vlan is defined %}
+    <td>{{ to_parse_interface[interface].native_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].vrf is defined %}
+    <td>{{ to_parse_interface[interface].vrf }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ to_parse_interface[interface].bandwidth }}</td>
+    <td>{{ to_parse_interface[interface].mtu }}</td>
+    <td>{{ to_parse_interface[interface].delay }}</td>
+    <td>{{ to_parse_interface[interface].encapsulation.encapsulation }}</td>{% if to_parse_interface[interface].medium is defined %}
+    <td>{{ to_parse_interface[interface].medium }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if to_parse_interface[interface].flow_control is defined %}
+    <td>{{ to_parse_interface[interface].flow_control.receive }}</td>
+    <td>{{ to_parse_interface[interface].flow_control.send }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}
+    <td>N/A</td>
+    <td>N/A</td>{% if to_parse_interface[interface].last_change is defined %}
+    <td>{{ to_parse_interface[interface].last_change }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ to_parse_interface[interface].port_channel.port_channel_int }}</td>
+    <td>{{ to_parse_interface[interface].port_channel.port_channel_member }}</td>{% if to_parse_interface[interface].counters is defined %}
+    <td>{{ to_parse_interface[interface].counters.in_broadcast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_crc_errors | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_errors }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_unicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_multicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.in_pkts  | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_broadcast_pkts| default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_discard | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_errors | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_unicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_multicast_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.out_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.rate.in_rate | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].counters.rate.out_rate | default("N/A") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endif %}{% endif %}{% endif %}{% endif %}{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

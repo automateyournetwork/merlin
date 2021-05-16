@@ -1,0 +1,72 @@
+{
+    "type": "NetworkGraph",
+    "label": "Learn LLDP Interfaces",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for interface in to_parse_lldp %}{% set interface_loop = loop %}{% if to_parse_lldp[interface].port_id is defined %}{% for port in to_parse_lldp[interface].port_id %}{% set port_loop = loop %}{% for neighbor in to_parse_lldp[interface].port_id[port].neighbors %}{% set neighbor_loop = loop %}{% for capability in to_parse_lldp[interface].port_id[port].neighbors[neighbor].capabilities %}{% set capability_loop = loop %}
+        { 
+            "id": "{{ interface }}"
+        },
+        { 
+            "id": "Neighbor: {{ neighbor }}"
+        },
+        { 
+            "id": "Port: {{ port }}"
+        },
+        { 
+            "id": "Description: {{ to_parse_lldp[interface].port_id[port].neighbors[neighbor].port_description }}"
+        },
+        { 
+            "id": "Capability: {{ capability }}"
+        },   
+        { 
+            "id": "Management Address: {{ to_parse_lldp[interface].port_id[port].neighbors[neighbor].management_address }}"
+        },{% endfor %}{% endfor %}{% endfor %}{% else %}
+        { 
+            "id": "{{ interface }}"{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endif %}{% endfor %}     
+    ],
+    "links": [{% for interface in to_parse_lldp %}{% set interface_loop = loop %}{% if to_parse_lldp[interface].port_id is defined %}{% for port in to_parse_lldp[interface].port_id %}{% set port_loop = loop %}{% for neighbor in to_parse_lldp[interface].port_id[port].neighbors %}{% set neighbor_loop = loop %}{% for capability in to_parse_lldp[interface].port_id[port].neighbors[neighbor].capabilities %}{% set capability_loop = loop %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Neighbor: {{ neighbor }}",
+            "cost": 1
+        },
+        { 
+            "source": "Neighbor: {{ neighbor }}",
+            "target": "Port: {{ port }}",
+            "cost": 1
+        },
+        { 
+            "source": "Port: {{ port }}",
+            "target": "Description: {{ to_parse_lldp[interface].port_id[port].neighbors[neighbor].port_description }}",
+            "cost": 2
+        },
+        { 
+            "source": "Port: {{ port }}",
+            "target": "Capability: {{ capability }}",
+            "cost": 2
+        },   
+        { 
+            "source": "Neighbor: {{ neighbor }}",
+            "target": "Management Address: {{ to_parse_lldp[interface].port_id[port].neighbors[neighbor].management_address }}",
+            "cost": 2
+        },{% endfor %}{% endfor %}{% endfor %}{% else %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 1{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endif %}{% endfor %}   
+    ]
+}

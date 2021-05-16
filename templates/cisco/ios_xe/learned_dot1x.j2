@@ -1,0 +1,93 @@
+{% if filetype_loop_jinja2 == "csv" %}Interface,Client,EAP Method,PAE,Status,Session,Auth Bend,Auth SM State,Max Reauth,Max Requests,Last RX MAC,RX Invalid,RX Error,RX Logoff,RX Response,RX Start,RX Total,TX Requests,TX Request ID,TX Total,Quiet Period,Server Timeout,Supplicant Timeout,TX Period{% for interface in to_parse_dot1x.interfaces %}{% if to_parse_dot1x.interfaces[interface].clients is defined %}{% for client in to_parse_dot1x.interfaces[interface].clients %}{% for session in to_parse_dot1x.interfaces[interface].clients[client].session %}
+{{ interface }},{{ client }},{{ to_parse_dot1x.interfaces[interface].clients[client].eap_method }},{{ to_parse_dot1x.interfaces[interface].clients[client].pae }},{{ to_parse_dot1x.interfaces[interface].clients[client].status }},{{ session }},{{ to_parse_dot1x.interfaces[interface].clients[client].session[session].auth_bend_sm_state }},{{ to_parse_dot1x.interfaces[interface].clients[client].session[session].auth_sm_state }},{{ to_parse_dot1x.interfaces[interface].max_reauth_req }},{{ to_parse_dot1x.interfaces[interface].max_req }},{{ to_parse_dot1x.interfaces[interface].statistics.lastrxsrcmac }},{{ to_parse_dot1x.interfaces[interface].statistics.rxinvalid }},{{ to_parse_dot1x.interfaces[interface].statistics.rxlenerr }},{{ to_parse_dot1x.interfaces[interface].statistics.rxlogoff }},{{ to_parse_dot1x.interfaces[interface].statistics.rxresp }},{{ to_parse_dot1x.interfaces[interface].statistics.rxstart }},{{ to_parse_dot1x.interfaces[interface].statistics.rxtotal }},{{ to_parse_dot1x.interfaces[interface].statistics.txreq }},{{ to_parse_dot1x.interfaces[interface].statistics.txreqid }},{{ to_parse_dot1x.interfaces[interface].statistics.txtotal }},{{ to_parse_dot1x.interfaces[interface].timeout.quiet_period }},{{ to_parse_dot1x.interfaces[interface].timeout.server_timeout }},{{ to_parse_dot1x.interfaces[interface].timeout.supp_timeout }},{{ to_parse_dot1x.interfaces[interface].timeout.tx_period }}{% endfor %}{% endfor %}{% else %}
+{{ interface }},No Client,N/A,N/A,N/A,No Sessions,N/A,N/A,{{ to_parse_dot1x.interfaces[interface].max_reauth_req }},{{ to_parse_dot1x.interfaces[interface].max_req }},{{ to_parse_dot1x.interfaces[interface].statistics.lastrxsrcmac }},{{ to_parse_dot1x.interfaces[interface].statistics.rxinvalid }},{{ to_parse_dot1x.interfaces[interface].statistics.rxlenerr }},{{ to_parse_dot1x.interfaces[interface].statistics.rxlogoff }},{{ to_parse_dot1x.interfaces[interface].statistics.rxresp }},{{ to_parse_dot1x.interfaces[interface].statistics.rxstart }},{{ to_parse_dot1x.interfaces[interface].statistics.rxtotal }},{{ to_parse_dot1x.interfaces[interface].statistics.txreq }},{{ to_parse_dot1x.interfaces[interface].statistics.txreqid }},{{ to_parse_dot1x.interfaces[interface].statistics.txtotal }},{{ to_parse_dot1x.interfaces[interface].timeout.quiet_period }},{{ to_parse_dot1x.interfaces[interface].timeout.server_timeout }},{{ to_parse_dot1x.interfaces[interface].timeout.supp_timeout }},{{ to_parse_dot1x.interfaces[interface].timeout.tx_period }}{% endif %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Learn Dot1x
+| Interface | Client | EAP Method | PAE | Status | Session | Auth Bend | Auth SM State | Max Reauth | Max Requests | Last RX MAC | RX Invalid | RX Error | RX Logoff | RX Response | RX Start | RX Total | TX Requests | TX Request ID | TX Total | Quiet Period | Server Timeout | Supplicant Timeout | TX Period |
+| --------- | ------ | ---------- | --- | ------ | ------- | --------- | ------------- | ---------- | ------------ | ----------- | ---------- | -------- | --------- | ----------- | -------- | -------- | ----------- | ------------- | -------- | ------------ | -------------- | ------------------ | --------- |  {% for interface in to_parse_dot1x.interfaces %}{% if to_parse_dot1x.interfaces[interface].clients is defined %}{% for client in to_parse_dot1x.interfaces[interface].clients %}{% for session in to_parse_dot1x.interfaces[interface].clients[client].session %}
+| {{ interface }} | {{ client }} | {{ to_parse_dot1x.interfaces[interface].clients[client].eap_method }} | {{ to_parse_dot1x.interfaces[interface].clients[client].pae }} | {{ to_parse_dot1x.interfaces[interface].clients[client].status }} | {{ session }} | {{ to_parse_dot1x.interfaces[interface].clients[client].session[session].auth_bend_sm_state }} | {{ to_parse_dot1x.interfaces[interface].clients[client].session[session].auth_sm_state }} | {{ to_parse_dot1x.interfaces[interface].max_reauth_req }} | {{ to_parse_dot1x.interfaces[interface].max_req }} | {{ to_parse_dot1x.interfaces[interface].statistics.lastrxsrcmac }} | {{ to_parse_dot1x.interfaces[interface].statistics.rxinvalid }} | {{ to_parse_dot1x.interfaces[interface].statistics.rxlenerr }} | {{ to_parse_dot1x.interfaces[interface].statistics.rxlogoff }} | {{ to_parse_dot1x.interfaces[interface].statistics.rxresp }} | {{ to_parse_dot1x.interfaces[interface].statistics.rxstart }} | {{ to_parse_dot1x.interfaces[interface].statistics.rxtotal }} | {{ to_parse_dot1x.interfaces[interface].statistics.txreq }} | {{ to_parse_dot1x.interfaces[interface].statistics.txreqid }} | {{ to_parse_dot1x.interfaces[interface].statistics.txtotal }} | {{ to_parse_dot1x.interfaces[interface].timeout.quiet_period }} | {{ to_parse_dot1x.interfaces[interface].timeout.server_timeout }} | {{ to_parse_dot1x.interfaces[interface].timeout.supp_timeout }} | {{ to_parse_dot1x.interfaces[interface].timeout.tx_period }} |{% endfor %}{% endfor %}{% else %}
+| {{ interface }} | No Client | N/A | N/A | N/A | No Sessions | N/A | N/A | {{ to_parse_dot1x.interfaces[interface].max_reauth_req }} | {{ to_parse_dot1x.interfaces[interface].max_req }} | {{ to_parse_dot1x.interfaces[interface].statistics.lastrxsrcmac }} | {{ to_parse_dot1x.interfaces[interface].statistics.rxinvalid }} | {{ to_parse_dot1x.interfaces[interface].statistics.rxlenerr }} | {{ to_parse_dot1x.interfaces[interface].statistics.rxlogoff }} | {{ to_parse_dot1x.interfaces[interface].statistics.rxresp }} | {{ to_parse_dot1x.interfaces[interface].statistics.rxstart }} | {{ to_parse_dot1x.interfaces[interface].statistics.rxtotal }} | {{ to_parse_dot1x.interfaces[interface].statistics.txreq }} | {{ to_parse_dot1x.interfaces[interface].statistics.txreqid }} | {{ to_parse_dot1x.interfaces[interface].statistics.txtotal }} | {{ to_parse_dot1x.interfaces[interface].timeout.quiet_period }} | {{ to_parse_dot1x.interfaces[interface].timeout.server_timeout }} | {{ to_parse_dot1x.interfaces[interface].timeout.supp_timeout }} | {{ to_parse_dot1x.interfaces[interface].timeout.tx_period }} |{% endif %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Learn Dot1x/h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Interface</th>
+    <th>Client</th>
+    <th>EAP Method</th>
+    <th>PAE</th>
+    <th>Status</th>
+    <th>Session</th>
+    <th>Auth Bend</th>
+    <th>Auth SM State</th>
+    <th>Max Reauth</th>
+    <th>Max Requests</th>
+    <th>Last RX MAC</th>
+    <th>RX Invalid</th>
+    <th>RX Error</th>
+    <th>RX Logoff</th>
+    <th>RX Response</th>
+    <th>RX Start</th>
+    <th>RX Total</th>
+    <th>TX Requests</th>
+    <th>TX Request ID</th>
+    <th>TX Total</th>
+    <th>Quiet Period</th>
+    <th>Server Timeout</th>
+    <th>Supplicant Timeout</th>
+    <th>TX Period</th>  
+  </tr>
+  </thead>
+  <tbody>{% for interface in to_parse_dot1x.interfaces %}{% if to_parse_dot1x.interfaces[interface].clients is defined %}{% for client in to_parse_dot1x.interfaces[interface].clients %}{% for session in to_parse_dot1x.interfaces[interface].clients[client].session %}
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ client }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].clients[client].eap_method }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].clients[client].pae }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].clients[client].status }}</td>
+    <td>{{ session }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].clients[client].session[session].auth_bend_sm_state }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].clients[client].session[session].auth_sm_state }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].max_reauth_req }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].max_req }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].statistics.lastrxsrcmac }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].statistics.rxinvalid }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].statistics.rxlenerr }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].statistics.rxlogoff }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].statistics.rxresp }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].statistics.rxstart }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].statistics.rxtotal }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].statistics.txreq }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].statistics.txreqid }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].statistics.txtotal }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].timeout.quiet_period }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].timeout.server_timeout }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].timeout.supp_timeout }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].timeout.tx_period }}</td>{% endfor %}{% endfor %}{% else %}
+    <td>{{ interface }}</td>
+    <td>No Client</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>No Sessions</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].max_reauth_req }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].max_req }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].statistics.lastrxsrcmac }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].statistics.rxinvalid }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].statistics.rxlenerr }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].statistics.rxlogoff }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].statistics.rxresp }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].statistics.rxstart }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].statistics.rxtotal }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].statistics.txreq }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].statistics.txreqid }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].statistics.txtotal }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].timeout.quiet_period }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].timeout.server_timeout }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].timeout.supp_timeout }}</td>
+    <td>{{ to_parse_dot1x.interfaces[interface].timeout.tx_period }}</td>    
+  </tr>{% endif %}{% endfor %}
+  </tbody>  
+</table>
+</body></html>{% endif %}{% endif %}

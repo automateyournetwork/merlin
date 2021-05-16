@@ -1,0 +1,29 @@
+{
+    "platform": {
+        "hardware": {
+            "bootflash": "4287040 kB",
+            "chassis": "Nexus9000 C9500v",
+            "cpu": "Intel(R) Xeon(R) CPU E5-4669 v4 @ 2.20GHz",
+            "device_name": "sbx-n9kv",
+            "memory": "7939724 kB",
+            "model": "Nexus9000 C9500v",
+            "processor_board_id": "9FJTZNHQ62X",
+            "rp": "Supervisor Module",
+            "slots": "None"
+        },
+        "kernel_uptime": {
+            "days": 0,
+            "hours": 1,
+            "minutes": 31,
+            "seconds": 45
+        },
+        "name": "Nexus",
+        "os": "NX-OS",
+        "reason": "Unknown",
+        "software": {
+            "system_compile_time": "7/20/2020 20:00:00 [07/21/2020 06:30:11]",
+            "system_image_file": "bootflash:///nxos.9.3.5.bin",
+            "system_version": "9.3(5)"
+        }
+    }
+}

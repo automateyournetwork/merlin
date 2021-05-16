@@ -1,0 +1,102 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Interface Status",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },
+        {
+            "id": "Total Entries: {{ to_parse_arp.entries_total }}"
+        },
+        {
+            "id": "Input Drops: {{ to_parse_arp.in_drops }}"
+        },
+        {
+            "id": "Input Replies: {{ to_parse_arp.in_replies_pkts }}"
+        },
+        { 
+            "id": "Input Requests: {{ to_parse_arp.in_requests_pkts }}"
+        },
+        {
+            "id": "Input Total: {{ to_parse_arp.in_total }}"
+        },
+        {
+            "id": "Incomplete Total: {{ to_parse_arp.incomplete_total }}"
+        },
+        {
+            "id": "Output Drops: {{ to_parse_arp.out_drops }}"
+        },
+        { 
+            "id": "Output Gratuitous: {{ to_parse_arp.out_gratuitous_pkts }}"
+        },
+        {
+            "id": "Output Replies: {{ to_parse_arp.out_replies_pkts }}"
+        },
+        {
+            "id": "Output Requests: {{ to_parse_arp.out_requests_pkts }}"
+        },
+        {
+            "id": "Output Total: {{ to_parse_arp.out_total }}"
+        }       
+    ],
+    "links": [
+        {
+            "source": "{{ device_alias }}",
+            "target": "Total Entries: {{ to_parse_arp.entries_total }}",
+            "cost": 1
+        },
+        {
+            "source": "{{ device_alias }}",
+            "target": "Input Drops: {{ to_parse_arp.in_drops }}",
+            "cost": 1
+        },
+        {
+            "source": "{{ device_alias }}",
+            "target": "Input Replies: {{ to_parse_arp.in_replies_pkts }}",
+            "cost": 1
+        },
+        {
+            "source": "{{ device_alias }}",
+            "target": "Input Requests: {{ to_parse_arp.in_requests_pkts }}",
+            "cost": 1
+        },
+        {
+            "source": "{{ device_alias }}",
+            "target": "Input Total: {{ to_parse_arp.in_total }}",
+            "cost": 1
+        },
+        {
+            "source": "{{ device_alias }}",
+            "target": "Incomplete Total: {{ to_parse_arp.incomplete_total }}",
+            "cost": 1
+        },
+        {
+            "source": "{{ device_alias }}",
+            "target": "Output Drops: {{ to_parse_arp.out_drops }}",
+            "cost": 1
+        },
+        {
+            "source": "{{ device_alias }}",
+            "target": "Output Gratuitous: {{ to_parse_arp.out_gratuitous_pkts }}",
+            "cost": 1
+        },
+        {
+            "source": "{{ device_alias }}",
+            "target": "Output Replies: {{ to_parse_arp.out_replies_pkts }}",
+            "cost": 1
+        },
+        {
+            "source": "{{ device_alias }}",
+            "target": "Output Requests: {{ to_parse_arp.out_requests_pkts }}",
+            "cost": 1
+        },
+        {
+            "source": "{{ device_alias }}",
+            "target": "Output Total: {{ to_parse_arp.out_total }}",
+            "cost": 1
+        }      
+    ]
+}

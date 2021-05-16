@@ -1,0 +1,45 @@
+{% if filetype_loop_jinja2 == "csv" %}Interface,User Name,MAC Address,Current Policy,Domain,IPv4 Address,IPv6 Address,VLAN,Method,State,Host Mode,Session Timeout,Status{% for interface in to_parse_access_interface_details %}{% for mac_address in to_parse_access_interface_details[interface].mac_address %}{% for method in to_parse_access_interface_details[interface].mac_address[mac_address].method_status%}
+{{ interface }},{{ to_parse_access_interface_details[interface].mac_address[mac_address].user_name }},{{ mac_address }},{{ to_parse_access_interface_details[interface].mac_address[mac_address].current_policy }},{{ to_parse_access_interface_details[interface].mac_address[mac_address].domain }},{{ to_parse_access_interface_details[interface].mac_address[mac_address].ipv4_address }},{{ to_parse_access_interface_details[interface].mac_address[mac_address].ipv6_address }},{% if to_parse_access_interface_details[interface].mac_address[mac_address].local_policies is defined %}{{ to_parse_access_interface_details[interface].mac_address[mac_address].local_policies.vlan_group.vlan }}{% else %}"N/A"{% endif %},{{ method }},{{ to_parse_access_interface_details[interface].mac_address[mac_address].method_status[method].state }},{{ to_parse_access_interface_details[interface].mac_address[mac_address].oper_host_mode }},{{ to_parse_access_interface_details[interface].mac_address[mac_address].session_timeout.remaining }},{{ to_parse_access_interface_details[interface].mac_address[mac_address].status }}{% endfor %}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show Access Sessions Interface Details
+| Interface | User Name | MAC Address | Current Policy | Domain | IPv4 Address | IPv6 Address | VLAN | Method | State | Host Mode | Session Timeout | Status |
+| --------- | --------- | ----------- | -------------- | ------ | ------------ | ------------ | ---- | ------ | ----- | --------- | --------------- | ------ |{% for interface in to_parse_access_interface_details %}{% for mac_address in to_parse_access_interface_details[interface].mac_address %}{% for method in to_parse_access_interface_details[interface].mac_address[mac_address].method_status %}
+| {{ interface }} | {{ to_parse_access_interface_details[interface].mac_address[mac_address].user_name }} | {{ mac_address }} | {{ to_parse_access_interface_details[interface].mac_address[mac_address].current_policy }} | {{ to_parse_access_interface_details[interface].mac_address[mac_address].domain }} | {{ to_parse_access_interface_details[interface].mac_address[mac_address].ipv4_address }} | {{ to_parse_access_interface_details[interface].mac_address[mac_address].ipv6_address }} | {% if to_parse_access_interface_details[interface].mac_address[mac_address].local_policies is defined %}{{ to_parse_access_interface_details[interface].mac_address[mac_address].local_policies.vlan_group.vlan }}{% else %}"N/A"{% endif %} | {{ method }} | {{ to_parse_access_interface_details[interface].mac_address[mac_address].method_status[method].state }} | {{ to_parse_access_interface_details[interface].mac_address[mac_address].oper_host_mode }} | {{ to_parse_access_interface_details[interface].mac_address[mac_address].session_timeout.remaining }} | {{ to_parse_access_interface_details[interface].mac_address[mac_address].status }} |{% endfor %}{% endfor %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show Access Sessions Interface Details</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Interface</th>
+    <th>User Name</th>
+    <th>MAC Address</th>
+    <th>Current Policy</th>
+    <th>Domain</th>
+    <th>IPv4 Address</th>
+    <th>IPv6 Address</th>
+    <th>VLAN</th>
+    <th>Method</th>
+    <th>State</th>
+    <th>Host Mode</th>
+    <th>Session Timeout</th>
+    <th>Status</th>
+  </tr>
+  </thead>
+  <tbody>{% for interface in to_parse_access_interface_details %}{% for mac_address in to_parse_access_interface_details[interface].mac_address %}{% for method in to_parse_access_interface_details[interface].mac_address[mac_address].method_status%}
+<tr>
+  <td>{{ interface }}</td>
+  <td>{{ to_parse_access_interface_details[interface].mac_address[mac_address].user_name }}</td>
+  <td>{{ mac_address }}</td>
+  <td>{{ to_parse_access_interface_details[interface].mac_address[mac_address].current_policy }}</td>
+  <td>{{ to_parse_access_interface_details[interface].mac_address[mac_address].domain }}</td>
+  <td>{{ to_parse_access_interface_details[interface].mac_address[mac_address].ipv4_address }}</td>
+  <td>{{ to_parse_access_interface_details[interface].mac_address[mac_address].ipv6_address }}</td>
+  <td>{% if to_parse_access_interface_details[interface].mac_address[mac_address].local_policies is defined %}{{ to_parse_access_interface_details[interface].mac_address[mac_address].local_policies.vlan_group.vlan }}{% else %}"N/A"{% endif %}</td>
+  <td>{{ method }}</td>
+  <td>{{ to_parse_access_interface_details[interface].mac_address[mac_address].method_status[method].state }}</td>
+  <td>{{ to_parse_access_interface_details[interface].mac_address[mac_address].oper_host_mode }}</td>
+  <td>{{ to_parse_access_interface_details[interface].mac_address[mac_address].session_timeout.remaining }}</td>
+  <td>{{ to_parse_access_interface_details[interface].mac_address[mac_address].status }}</td>
+  </tr>{% endfor %}{% endfor %}{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

@@ -1,0 +1,186 @@
+!!python/object/new:genie.ops.base.maker.CmdDict
+dictitems:
+  vlans: !!python/object/new:genie.ops.base.maker.CmdDict
+    dictitems:
+      '1': !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          mode: ce
+          name: default
+          shutdown: false
+          state: active
+          vlan_id: '1'
+        state:
+          leaf_dict:
+            mode: &id001 !!python/name:genie.libs.parser.nxos.show_vlan.ShowVlan ''
+            name: *id001
+            shutdown: *id001
+            state: *id001
+            vlan_id: *id001
+      '100': !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          interfaces:
+          - Port-channel11
+          - Ethernet1/1
+          - Ethernet1/2
+          mode: ce
+          name: mgmt
+          shutdown: false
+          state: active
+          vlan_id: '100'
+        state:
+          leaf_dict:
+            interfaces: *id001
+            mode: *id001
+            name: *id001
+            shutdown: *id001
+            state: *id001
+            vlan_id: *id001
+      '101': !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          interfaces:
+          - Port-channel11
+          - Ethernet1/1
+          - Ethernet1/2
+          mode: ce
+          name: prod
+          shutdown: false
+          state: active
+          vlan_id: '101'
+        state:
+          leaf_dict:
+            interfaces: *id001
+            mode: *id001
+            name: *id001
+            shutdown: *id001
+            state: *id001
+            vlan_id: *id001
+      '102': !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          interfaces:
+          - Port-channel11
+          - Ethernet1/1
+          - Ethernet1/2
+          mode: ce
+          name: dev
+          shutdown: false
+          state: active
+          vlan_id: '102'
+        state:
+          leaf_dict:
+            interfaces: *id001
+            mode: *id001
+            name: *id001
+            shutdown: *id001
+            state: *id001
+            vlan_id: *id001
+      '103': !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          interfaces:
+          - Port-channel11
+          - Ethernet1/1
+          - Ethernet1/2
+          mode: ce
+          name: test
+          shutdown: false
+          state: active
+          vlan_id: '103'
+        state:
+          leaf_dict:
+            interfaces: *id001
+            mode: *id001
+            name: *id001
+            shutdown: *id001
+            state: *id001
+            vlan_id: *id001
+      '104': !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          interfaces:
+          - Port-channel11
+          - Ethernet1/1
+          - Ethernet1/2
+          mode: ce
+          name: security
+          shutdown: false
+          state: active
+          vlan_id: '104'
+        state:
+          leaf_dict:
+            interfaces: *id001
+            mode: *id001
+            name: *id001
+            shutdown: *id001
+            state: *id001
+            vlan_id: *id001
+      '105': !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          interfaces:
+          - Port-channel11
+          - Ethernet1/1
+          - Ethernet1/2
+          mode: ce
+          name: iot
+          shutdown: false
+          state: active
+          vlan_id: '105'
+        state:
+          leaf_dict:
+            interfaces: *id001
+            mode: *id001
+            name: *id001
+            shutdown: *id001
+            state: *id001
+            vlan_id: *id001
+      configuration: !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          '1': !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              ip_igmp_snooping: enabled
+            state:
+              leaf_dict:
+                ip_igmp_snooping: &id002 !!python/name:genie.libs.parser.nxos.show_igmp.ShowIpIgmpSnooping ''
+          '100': !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              ip_igmp_snooping: enabled
+            state:
+              leaf_dict:
+                ip_igmp_snooping: *id002
+          '101': !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              ip_igmp_snooping: enabled
+            state:
+              leaf_dict:
+                ip_igmp_snooping: *id002
+          '102': !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              ip_igmp_snooping: enabled
+            state:
+              leaf_dict:
+                ip_igmp_snooping: *id002
+          '103': !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              ip_igmp_snooping: enabled
+            state:
+              leaf_dict:
+                ip_igmp_snooping: *id002
+          '104': !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              ip_igmp_snooping: enabled
+            state:
+              leaf_dict:
+                ip_igmp_snooping: *id002
+          '105': !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              ip_igmp_snooping: enabled
+            state:
+              leaf_dict:
+                ip_igmp_snooping: *id002
+        state:
+          leaf_dict: {}
+      interface_vlan_enabled: true
+      vn_segment_vlan_based_enabled: false
+    state:
+      leaf_dict:
+        interface_vlan_enabled: &id003 !!python/name:genie.libs.parser.nxos.show_feature.ShowFeature ''
+        vn_segment_vlan_based_enabled: *id003
+state:
+  leaf_dict: {}

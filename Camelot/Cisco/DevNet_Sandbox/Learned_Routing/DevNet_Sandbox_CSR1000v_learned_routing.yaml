@@ -1,0 +1,16 @@
+!!python/object/new:genie.ops.base.maker.CmdDict
+dictitems:
+  acls: !!python/object/new:genie.ops.base.maker.CmdDict
+    dictitems:
+      meraki-fqdn-dns: !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          name: meraki-fqdn-dns
+          type: ipv4-acl-type
+        state:
+          leaf_dict:
+            name: &id001 !!python/name:genie.libs.parser.iosxe.show_acl.ShowAccessLists ''
+            type: *id001
+    state:
+      leaf_dict: {}
+state:
+  leaf_dict: {}

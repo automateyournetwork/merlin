@@ -1,0 +1,40 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show MAC Address-Table",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for vlan in to_parse_mac_address_table.vlans %}
+        {
+            "id": "VLAN: {{ vlan }}"
+        },{% endfor %}{% for vlan in to_parse_mac_address_table.vlans %}{% for mac in to_parse_mac_address_table.vlans[vlan].mac_addresses %}
+        {
+            "id": "MAC Address: {{ mac }}"
+        },{% endfor %}{% endfor %}{% for vlan in to_parse_mac_address_table.vlans %}{% set vlan_loop = loop %}{% for mac in to_parse_mac_address_table.vlans[vlan].mac_addresses %}{% set mac_loop = loop %}{% for interface in to_parse_mac_address_table.vlans[vlan].mac_addresses[mac].interfaces %}{% set interface_loop = loop %}
+        {
+            "id": "Interface: {{ interface }}"{% if (vlan_loop.last) and (mac_loop.last) and (interface_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}{% endfor %}
+    ],
+    "links": [{% for vlan in to_parse_mac_address_table.vlans %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "VLAN: {{ vlan }}",
+            "cost": 1
+        },{% endfor %}{% for vlan in to_parse_mac_address_table.vlans %}{% for mac in to_parse_mac_address_table.vlans[vlan].mac_addresses %}
+        {
+            "source": "VLAN: {{ vlan }}",
+            "target": "MAC Address: {{ mac }}",
+            "cost": 1
+        },{% endfor %}{% endfor %}{% for vlan in to_parse_mac_address_table.vlans %}{% set vlan_loop = loop %}{% for mac in to_parse_mac_address_table.vlans[vlan].mac_addresses %}{% set mac_loop = loop %}{% for interface in to_parse_mac_address_table.vlans[vlan].mac_addresses[mac].interfaces %}{% set interface_loop = loop %}
+        {
+            "source": "MAC Address: {{ mac }}",
+            "target": "Interface: {{ interface }}",
+            "cost": 1{% if (vlan_loop.last) and (mac_loop.last) and (interface_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}{% endfor %}
+    ]
+}

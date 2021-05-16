@@ -1,0 +1,14 @@
+devices:
+    qfx:
+      type: 'switch'
+      os: 'junos'
+      credentials:
+        default:
+          username: {{ your username }}
+          password: {{ your password }}
+      connections:
+        cli:
+          protocol: ssh
+          ip: {{ your device IP }}
+          arguments:
+            connection_timeout: 360

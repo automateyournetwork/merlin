@@ -1,0 +1,147 @@
+devices:
+    6500:
+      alias: '6500'
+      type: 'router'
+      os: 'ios'
+      platform: cat6500
+      credentials:
+        default:
+          username: {{ SSH Username }}
+          password: {{ SSH Password }}
+      connections:        
+        cli:
+          protocol: ssh
+          ip: "{{ SSH IP Address }}"
+          arguments:
+            connection_timeout: 360
+            
+    4500:
+      alias: '4500'
+      type: 'router'
+      os: 'iosxe'
+      platform: cat4500
+      credentials:
+        default:
+          username: {{ SSH Username }}
+          password: {{ SSH Password }}
+      connections:        
+        cli:
+          protocol: ssh
+          ip: "{{ SSH IP Address }}"
+          arguments:
+            connection_timeout: 360
+
+    3850:
+      alias: '3850'
+      type: 'switch'
+      os: 'iosxe'
+      platform: cat3850
+      credentials:
+        default:
+          username: {{ SSH Username }}
+          password: {{ SSH Password }}
+      connections:        
+        cli:
+          protocol: ssh
+          ip: "{{ SSH IP Address }}"
+          arguments:
+            connection_timeout: 360 
+
+    3750:
+      alias: '3750'
+      type: 'switch'
+      os: 'ios'
+      platform: cat3750
+      credentials:
+        default:
+          username: {{ SSH Username }}
+          password: {{ SSH Password }}
+      connections:        
+        cli:
+          protocol: ssh
+          ip: "{{ SSH IP Address }}"
+          arguments:
+            connection_timeout: 360
+
+    9300:
+      alias: '9300'
+      type: 'switch'
+      os: 'iosxe'
+      platform: c9300
+      custom:
+        abstraction:
+          order: [os, platform]      
+      credentials:
+        default:
+          username: {{ SSH Username }}
+          password: {{ SSH Password }}
+      connections:        
+        cli:
+          protocol: ssh
+          ip: "{{ SSH IP Address }}"
+          arguments:
+            connection_timeout: 360
+
+    3560:
+      alias: '3560'
+      type: 'switch'
+      os: 'ios'
+      platform: cat3560
+      credentials:
+        default:
+          username: {{ SSH Username }}
+          password: {{ SSH Password }}
+      connections:        
+        cli:
+          protocol: ssh
+          ip: "{{ SSH IP Address }}"
+          arguments:
+            connection_timeout: 360
+
+    2960:
+      alias: '2960'
+      type: 'switch'
+      os: 'ios'
+      platform: cat2960
+      credentials:
+        default:
+          username: {{ SSH Username }}
+          password: {{ SSH Password }}
+      connections:        
+        cli:
+          protocol: ssh
+          ip: "{{ SSH IP Address }}"
+          arguments:
+            connection_timeout: 360
+
+    ISR:
+      alias: 'ISR'
+      type: 'router'
+      os: 'ios'
+      platform: isr
+      credentials:
+        default:
+          username: {{ SSH Username }}
+          password: {{ SSH Password }}
+      connections:        
+        cli:
+          protocol: ssh
+          ip: "{{ SSH IP Address }}"
+          arguments:
+            connection_timeout: 360
+
+    NXOS:
+      alias: 'NXOS'
+      type: 'router'
+      os: 'nxos'
+      platform: nxos
+      credentials:
+        default:
+          username: {{ SSH Username }}
+          password: {{ SSH Password }}
+      connections:        
+        cli:
+          protocol: ssh
+          ip: "{{ SSH IP Address }}"
+          arguments:
+            connection_timeout: 360

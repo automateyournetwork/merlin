@@ -1,0 +1,9 @@
+{% if filetype_loop_jinja2 == "csv" %}{% for resource in to_parse_endpoint_group_details %}
+{{ to_parse_endpoint_group_details[resource].name }},{{ to_parse_endpoint_group_details[resource].description }},{{ to_parse_endpoint_group_details[resource].id }},{{ to_parse_endpoint_group_details[resource].systemDefined }}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}{% for resource in to_parse_endpoint_group_details %}
+| {{ to_parse_endpoint_group_details[resource].name }} | {{ to_parse_endpoint_group_details[resource].description }} | {{ to_parse_endpoint_group_details[resource].id }} | {{ to_parse_endpoint_group_details[resource].systemDefined }} |{% endfor %}{% else %}{% for resource in to_parse_endpoint_group_details %}
+<tr>
+  <td>{{ to_parse_endpoint_group_details[resource].name }}</td>
+  <td>{{ to_parse_endpoint_group_details[resource].description }}</td>
+  <td>{{ to_parse_endpoint_group_details[resource].id }}</td>
+  <td>{{ to_parse_endpoint_group_details[resource].systemDefined }}</td>
+</tr>{% endfor %}{% endif %}{% endif %}

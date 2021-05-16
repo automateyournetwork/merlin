@@ -1,0 +1,33 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show CDP Neighbor Details",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_ip }}"
+        },
+        {% for neighbor in to_parse_cdp_neighbors %}{% set outer_loop = loop %}{% for entry in to_parse_cdp_neighbors[neighbor].entry_addresses %}{% if outer_loop.index > 0 %}
+        {
+            "id": "{{ entry }}"{% if outer_loop.last %}
+        }{% else %}
+        },{% endif %}{% else %}
+        {
+            "id": "{{ entry }}"
+        }{% endif %}{% endfor %}{% endfor %}
+    ],
+    "links": [{% for neighbor in to_parse_cdp_neighbors %}{% set outer_loop = loop %}{% for entry in to_parse_cdp_neighbors[neighbor].entry_addresses %}{% if outer_loop.index > 0 %}
+        {
+            "source": "{{ device_ip }}",
+            "target": "{{ entry }}",
+            "cost": 1{% if outer_loop.last %}
+        }{% else %}
+        },{% endif %}{% else %}
+        {
+            "source": "{{ device_ip }}",
+            "target": "{{ entry }}",
+            "cost": 1
+        }{% endif %}{% endfor %}{% endfor %}     
+    ]
+}

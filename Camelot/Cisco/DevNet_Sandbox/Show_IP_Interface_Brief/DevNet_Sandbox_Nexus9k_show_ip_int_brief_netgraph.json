@@ -1,0 +1,142 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show IP Interface Brief",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_Nexus9k"
+        },
+        {
+            "id": "Vlan100"
+        },
+        {
+            "id": "172.16.100.1"
+        },
+        {
+            "id": "Vlan101"
+        },
+        {
+            "id": "172.16.101.1"
+        },
+        {
+            "id": "Vlan102"
+        },
+        {
+            "id": "172.16.102.1"
+        },
+        {
+            "id": "Vlan103"
+        },
+        {
+            "id": "172.16.103.1"
+        },
+        {
+            "id": "Vlan104"
+        },
+        {
+            "id": "172.16.104.1"
+        },
+        {
+            "id": "Vlan105"
+        },
+        {
+            "id": "172.16.105.1"
+        },
+        {
+            "id": "Lo1"
+        },
+        {
+            "id": "172.16.0.1"
+        },
+        {
+            "id": "Eth1/5"
+        },
+        {
+            "id": "172.16.1.1"
+        }
+    ],
+    "links": [
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan100",
+            "cost": 1
+        },
+        {
+            "source": "Vlan100",
+            "target": "172.16.100.1",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan101",
+            "cost": 1
+        },
+        {
+            "source": "Vlan101",
+            "target": "172.16.101.1",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan102",
+            "cost": 1
+        },
+        {
+            "source": "Vlan102",
+            "target": "172.16.102.1",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan103",
+            "cost": 1
+        },
+        {
+            "source": "Vlan103",
+            "target": "172.16.103.1",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan104",
+            "cost": 1
+        },
+        {
+            "source": "Vlan104",
+            "target": "172.16.104.1",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Vlan105",
+            "cost": 1
+        },
+        {
+            "source": "Vlan105",
+            "target": "172.16.105.1",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Lo1",
+            "cost": 1
+        },
+        {
+            "source": "Lo1",
+            "target": "172.16.0.1",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/5",
+            "cost": 1
+        },
+        {
+            "source": "Eth1/5",
+            "target": "172.16.1.1",
+            "cost": 1
+        }
+    ]    
+}

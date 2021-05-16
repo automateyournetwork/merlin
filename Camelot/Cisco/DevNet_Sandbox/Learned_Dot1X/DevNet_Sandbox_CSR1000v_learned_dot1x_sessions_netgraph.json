@@ -1,0 +1,46 @@
+{
+    "type": "NetworkGraph",
+    "label": "Learn Dot1X Sessions",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_CSR1000v"
+        },
+        { 
+            "id": "System Auth Control: False"
+        },
+        { 
+            "id": "Authorized Clients: 0"
+        },
+        { 
+            "id": "Unauthorized Clients: 0"
+        },
+        { 
+            "id": "Total Clients: 0"
+        }
+    ],
+    "links": [
+        { 
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "System Auth Control: False",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "Authorized Clients: 0",
+            "cost": 1            
+        },
+        { 
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "Unauthorized Clients: 0",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "Total Clients: 0",
+            "cost": 1            
+        }        
+    ]
+}

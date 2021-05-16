@@ -1,0 +1,53 @@
+{% if filetype_loop_jinja2 == "csv" %}Instance,BGP ID,State,VRF,Router ID,Cluster ID,Confederation ID,Neighbor,Version,Hold Time,Keep Alive Interval,Local AS,Remote AS,Total Recieved Messages,Total Sent Messages,Connect Last Reset,Reset Reason{% for instance in to_parse_bgp %}{% for vrf in to_parse_bgp[instance].vrf %}{% for neighbor in to_parse_bgp[instance].vrf[vrf].neighbor %}
+{{ instance }},{{ to_parse_bgp[instance].bgp_id }},{{ to_parse_bgp[instance].protocol_state }},{{ vrf }},{{ to_parse_bgp[instance].vrf[vrf].router_id }},{{ to_parse_bgp[instance].vrf[vrf].cluster_id }},{{ to_parse_bgp[instance].vrf[vrf].confederation_identifier }},{{ neighbor }},{{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_version }},{{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].holdtime }},{{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].keepalive_interval }},{{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].local_as_as_no }},{{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].remote_as }},{{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_neighbor_counters.messages.received.total }},{{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_neighbor_counters.messages.sent.total }},{{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_session_transport.connection.last_reset }},{{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_session_transport.connection.reset_reason }}{% endfor %}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Learn BGP
+| Instance | BGP ID | State | VRF | Router ID | Cluster ID | Confederation ID | Neighbor | Version | Hold Time | Keep Alive Interval | Local AS | Remote AS | Total Recieved Messages | Total Sent Messages | Connect Last Reset | Reset Reason |
+| -------- | ------ | ----- | --- | --------- | ---------- | ---------------- | -------- | ------- | --------- | ------------------- | -------- | --------- | ----------------------- | ------------------- | ------------------ | ------------ |{% for instance in to_parse_bgp %}{% for vrf in to_parse_bgp[instance].vrf %}{% for neighbor in to_parse_bgp[instance].vrf[vrf].neighbor %}
+| {{ instance }} | {{ to_parse_bgp[instance].bgp_id }} | {{ to_parse_bgp[instance].protocol_state }} | {{ vrf }} | {{ to_parse_bgp[instance].vrf[vrf].router_id }} | {{ to_parse_bgp[instance].vrf[vrf].cluster_id }} | {{ to_parse_bgp[instance].vrf[vrf].confederation_identifier }} | {{ neighbor }} | {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_version }} | {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].holdtime }} | {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].keepalive_interval }} | {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].local_as_as_no }} | {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].remote_as }} | {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_neighbor_counters.messages.received.total }} | {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_neighbor_counters.messages.sent.total }} | {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_session_transport.connection.last_reset }} | {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_session_transport.connection.reset_reason }} |{% endfor %}{% endfor %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Learn BGP</h1>
+<table class="merlin-table">
+<thead>
+  <tr>
+    <th>Instance</th>
+    <th>BGP ID</th>
+    <th>State</th>
+    <th>VRF</th>
+    <th>Router ID</th>
+    <th>Cluster ID</th>
+    <th>Confederation ID</th>
+    <th>Neighbor</th>
+    <th>Version</th>
+    <th>Hold Time</th>
+    <th>Keep Alive Interval</th>
+    <th>Local AS</th>
+    <th>Remote AS</th>
+    <th>Total Recieved Messages</th>
+    <th>Total Sent Messages</th>
+    <th>Connect Last Reset</th>
+    <th>Reset Reason</th>
+  </tr>
+  </thead>
+  <tbody>{% for instance in to_parse_bgp %}{% for vrf in to_parse_bgp[instance].vrf %}{% for neighbor in to_parse_bgp[instance].vrf[vrf].neighbor %}
+<tr>
+    <td>{{ instance }}</td>
+    <td>{{ to_parse_bgp[instance].bgp_id }}</td>
+    <td>{{ to_parse_bgp[instance].protocol_state }}</td>
+    <td>{{ vrf }}</td>
+    <td>{{ to_parse_bgp[instance].vrf[vrf].router_id }}</td>
+    <td>{{ to_parse_bgp[instance].vrf[vrf].cluster_id }}</td>
+    <td>{{ to_parse_bgp[instance].vrf[vrf].confederation_identifier }}</td>
+    <td>{{ neighbor }}</td>
+    <td>{{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_version }}</td>
+    <td>{{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].holdtime }}</td>
+    <td>{{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].keepalive_interval }}</td>
+    <td>{{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].local_as_as_no }}</td>
+    <td>{{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].remote_as }}</td>
+    <td>{{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_neighbor_counters.messages.received.total }}</td>
+    <td>{{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_neighbor_counters.messages.sent.total }}</td>
+    <td>{{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_session_transport.connection.last_reset }}</td>
+    <td>{{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_session_transport.connection.reset_reason }}</td>
+  </tr>{% endfor %}{% endfor %}{% endfor %}
+  </tbody>  
+</table>
+</body></html>{% endif %}{% endif %}

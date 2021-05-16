@@ -1,0 +1,72 @@
+{
+    "instance": {
+        "default": {
+            "bgp_id": 65535,
+            "protocol_state": "running",
+            "vrf": {
+                "default": {
+                    "address_family": {
+                        "ipv4 unicast": {
+                            "nexthop_trigger_delay_critical": 3000,
+                            "nexthop_trigger_delay_non_critical": 10000,
+                            "nexthop_trigger_enable": true
+                        },
+                        "ipv6 unicast": {
+                            "nexthop_trigger_delay_critical": 3000,
+                            "nexthop_trigger_delay_non_critical": 10000,
+                            "nexthop_trigger_enable": true
+                        }
+                    },
+                    "cluster_id": "0.0.0.0",
+                    "confederation_identifier": 0,
+                    "neighbor": {
+                        "172.16.0.2": {
+                            "bgp_negotiated_keepalive_timers": {
+                                "hold_time": 180,
+                                "keepalive_interval": 60
+                            },
+                            "bgp_neighbor_counters": {
+                                "messages": {
+                                    "received": {
+                                        "bytes_in_queue": 0,
+                                        "capability": 0,
+                                        "keepalives": 0,
+                                        "notifications": 0,
+                                        "opens": 0,
+                                        "route_refresh": 0,
+                                        "total": 0,
+                                        "total_bytes": 0,
+                                        "updates": 0
+                                    },
+                                    "sent": {
+                                        "bytes_in_queue": 0,
+                                        "capability": 0,
+                                        "keepalives": 0,
+                                        "notifications": 0,
+                                        "opens": 0,
+                                        "route_refresh": 0,
+                                        "total": 0,
+                                        "total_bytes": 0,
+                                        "updates": 0
+                                    }
+                                }
+                            },
+                            "bgp_session_transport": {
+                                "connection": {
+                                    "last_reset": "never",
+                                    "reset_reason": "no error"
+                                }
+                            },
+                            "bgp_version": 4,
+                            "holdtime": 180,
+                            "keepalive_interval": 60,
+                            "local_as_as_no": "None",
+                            "remote_as": 65535
+                        }
+                    },
+                    "router_id": "172.16.0.1"
+                }
+            }
+        }
+    }
+}

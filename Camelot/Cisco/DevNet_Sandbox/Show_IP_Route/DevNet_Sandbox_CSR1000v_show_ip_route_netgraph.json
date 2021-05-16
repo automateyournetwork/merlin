@@ -1,0 +1,46 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show CDP Neighbor NETJSON Netgraph",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_CSR1000v"
+        },
+        {
+            "id": "0.0.0.0/0"
+        },
+        {
+            "id": "10.10.20.0/24"
+        },
+        {
+            "id": "10.10.20.48/32"
+        },
+        {
+            "id": "10.10.20.254"         
+        },
+    ],
+    "links": [
+        {
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "0.0.0.0/0",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "10.10.20.0/24",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "10.10.20.48/32",
+            "cost": 2
+        },
+        {
+            "source": "0.0.0.0/0",
+            "target": "10.10.20.254",
+            "cost": 2
+        },
+    ]
+}

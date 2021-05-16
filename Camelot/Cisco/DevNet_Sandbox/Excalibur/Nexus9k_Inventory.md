@@ -1,0 +1,6 @@
+# Inventory
+| Hostname | Slot | Part | Description | Serial Number | Virtual ID | Subslot | Subslot Part | Subslot Description | Subslot Serial Number | SubSlot Virtual ID |
+| -------- | ---- | ---- | ----------- | ------------- | ---------- | ------- | ------------ | ------------------- | --------------------- | ------------------ |
+| DevNet_Sandbox_Nexus9k | Chassis | N9K-C9500v | Nexus9000 C9500v Chassis | 91OMZP37WBR | N/A | N/A | N/A | N/A | N/A | N/A |
+| DevNet_Sandbox_Nexus9k | Slot 1 | N9K-X9564v | Nexus 9000v 64 port Ethernet Module | 9OW8JB5XF53 | N/A | N/A | N/A | N/A | N/A | N/A |
+| DevNet_Sandbox_Nexus9k | Slot 27 | N9K-vSUP | Supervisor Module | 9FJTZNHQ62X | N/A | N/A | N/A | N/A | N/A | N/A |

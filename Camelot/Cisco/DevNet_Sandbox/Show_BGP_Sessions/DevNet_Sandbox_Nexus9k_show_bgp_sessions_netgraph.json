@@ -1,0 +1,31 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show BGP Sessions",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        {
+            "id": "DevNet_Sandbox_Nexus9k"
+        },
+        { 
+            "id": "Router ID: 172.16.0.1"
+        },
+        
+        {
+            "id": "Neighbor: 172.16.0.2"
+        }
+    ],
+    "links": [
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Router ID: 172.16.0.1",
+            "cost": 1
+        },
+        {
+            "source": "Router ID: 172.16.0.1",
+            "target": "Neighbor: 172.16.0.2",
+            "cost": 1
+        }
+    ]
+}

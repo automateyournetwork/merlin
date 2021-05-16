@@ -1,0 +1,39 @@
+{% if filetype_loop_jinja2 == "csv" %}Interface,Neighbor IP Address,Neighbor MAC Address,Origin,ARP Dynamic Learning Local Proxy Enabled,ARP Dynamic Learning Proxy Enable{% for interface in to_parse_arp %}{% if to_parse_arp[interface].ipv4 is defined %}{% for neighbor in to_parse_arp[interface].ipv4.neighbors %}
+{{ interface }},{{ neighbor }},{{ to_parse_arp[interface].ipv4.neighbors[neighbor].link_layer_address }},{{ to_parse_arp[interface].ipv4.neighbors[neighbor].origin }},{{ to_parse_arp[interface].arp_dynamic_learning.local_proxy_enable }},{{ to_parse_arp[interface].arp_dynamic_learning.proxy_enable }}{% endfor %}{% else %}
+{{ interface }},N/A,N/A,N/A,{{ to_parse_arp[interface].arp_dynamic_learning.local_proxy_enable }},{{ to_parse_arp[interface].arp_dynamic_learning.proxy_enable }}{% endif %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Learn ARP
+| Interface | Neighbor IP Address | Neighbor MAC Address | Origin | ARP Dynamic Learning Local Proxy Enabled | ARP Dynamic Learning Proxy Enable |
+| --------- | ------------------- | -------------------- | ------ | ---------------------------------------- | --------------------------------- |{% for interface in to_parse_arp %}{% if to_parse_arp[interface].ipv4 is defined %}{% for neighbor in to_parse_arp[interface].ipv4.neighbors %}
+| {{ interface }} | {{ neighbor }} | {{ to_parse_arp[interface].ipv4.neighbors[neighbor].link_layer_address }} | {{ to_parse_arp[interface].ipv4.neighbors[neighbor].origin }} | {{ to_parse_arp[interface].arp_dynamic_learning.local_proxy_enable }} | {{ to_parse_arp[interface].arp_dynamic_learning.proxy_enable }} |{% endfor %}{% else %}
+| {{ interface }} | N/A | N/A | N/A | {{ to_parse_arp[interface].arp_dynamic_learning.local_proxy_enable }} | {{ to_parse_arp[interface].arp_dynamic_learning.proxy_enable }} |{% endif %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Learn ARP</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Interface</th>
+    <th>Neighbor IP Address</th>
+    <th>Neighbor MAC Address</th>
+    <th>Origin</th>
+    <th>ARP Dynamic Learning Local Proxy Enabled</th>
+    <th>ARP Dynamic Learning Proxy Enable</th>
+  </tr>
+  </thead>
+  <tbody>{% for interface in to_parse_arp %}{% if to_parse_arp[interface].ipv4 is defined %}{% for neighbor in to_parse_arp[interface].ipv4.neighbors %}
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ neighbor }}</td>
+    <td>{{ to_parse_arp[interface].ipv4.neighbors[neighbor].link_layer_address }}</td>
+    <td>{{ to_parse_arp[interface].ipv4.neighbors[neighbor].origin }}</td>
+    <td>{{ to_parse_arp[interface].arp_dynamic_learning.local_proxy_enable }}</td>
+    <td>{{ to_parse_arp[interface].arp_dynamic_learning.proxy_enable }}</td>{% endfor %}{% else %}
+    <td>{{ interface }}</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>{{ to_parse_arp[interface].arp_dynamic_learning.local_proxy_enable }}</td>
+    <td>{{ to_parse_arp[interface].arp_dynamic_learning.proxy_enable }}</td>
+  </tr>{% endif %}{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

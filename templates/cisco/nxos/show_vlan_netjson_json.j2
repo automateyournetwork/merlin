@@ -1,0 +1,32 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show VLAN",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for vlan in to_parse_vlan %}
+        {
+            "id": "{{ vlan }}"
+        },{% endfor %}{% for vlan in to_parse_vlan %}{% set vlan_loop = loop %}{% if to_parse_vlan[vlan].interfaces is defined %}{% for interface in to_parse_vlan[vlan].interfaces %}{% set interface_loop = loop %}
+        {
+            "id": "{{ interface }}"{% if (vlan_loop.last) and (interface_loop.last) %}
+        }{% else %}         
+        },{% endif %}{% endfor %}{% endif %}{% endfor %}
+    ],
+    "links": [{% for vlan in to_parse_vlan %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "{{ vlan }}",
+            "cost": 1
+        },{% endfor %}{% for vlan in to_parse_vlan %}{% set vlan_loop = loop %}{% if to_parse_vlan[vlan].interfaces is defined %}{% for interface in to_parse_vlan[vlan].interfaces %}{% set interface_loop = loop %}
+        {
+            "source": "{{ vlan }}",
+            "target": "{{ interface }}",
+            "cost": 2{% if (vlan_loop.last) and (interface_loop.last) %}
+        }{% else %}         
+        },{% endif %}{% endfor %}{% endif %}{% endfor %}
+    ]
+}

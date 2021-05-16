@@ -1,0 +1,49 @@
+{% if filetype_loop_jinja2 == "csv" %}
+Product PID,Product Name,Software Type,Image Name,Description,Feature Set,Image Size,Suggested,Major Release,Train,Release Name,Release Date,Lifecycle,Installed Version{% for product in to_parse_recommended %}{% for suggestion in product.suggestions %}{% for image in suggestion.images %}
+{{ product.product.basePID }},{{ product.product.productName }},{{ product.product.softwareType }},{{ image.imageName }},{{ image.description }},{{ image.featureSet }},{{ image.imageSize }},{{ suggestion.isSuggested }},{{ suggestion.majorRelease }},{{ suggestion.releaseTrain }},{{ suggestion.relDispName }},{{ suggestion.releaseDate }},{{ suggestion.releaseLifeCycle }},{{ installed_version }}{% endfor %}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Recommended Releases
+| Product PID | Product Name | Software Type | Image Name | Description | Feature Set | Image Size | Suggested | Major Release | Train | Release Name | Release Date | Lifecycle | Installed Version |
+| ----------- | ------------ | ------------- | ---------- | ----------- | ----------- | ---------- | --------- | ------------- | ----- | ------------ | ------------ | --------- | ----------------- |{% for product in to_parse_recommended %}{% for suggestion in product.suggestions %}{% for image in suggestion.images %}
+| {{ product.product.basePID }} | {{ product.product.productName }} | {{ product.product.softwareType }} | {{ image.imageName }} | {{ image.description }} | {{ image.featureSet }} | {{ image.imageSize }} | {{ suggestion.isSuggested }} | {{ suggestion.majorRelease }} | {{ suggestion.releaseTrain }} | {{ suggestion.relDispName }} | {{ suggestion.releaseDate }} | {{ suggestion.releaseLifeCycle }} | {{ installed_version }} |{% endfor %}{% endfor %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Recommended Release</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Product PID</th>
+    <th>Product Name</th>
+    <th>Software Type</th>
+    <th>Image Name</th>
+    <th>Image ID</th>
+    <th>Description</th>   
+    <th>Feature Set</th>
+    <th>Image Size</th>
+    <th>Suggested</th>
+    <th>Major Release</th>
+    <th>Train</th>
+    <th>Release Name</th>
+    <th>Release Date</th>
+    <th>Lifecycle</th>
+    <th>Installed Version</th>
+  </tr>
+  </thead>
+  <tbody>{% for product in to_parse_recommended %}{% for suggestion in product.suggestions %}{% for image in suggestion.images %}
+  <tr>
+    <td>{{ product.product.basePID }}</td>
+    <td>{{ product.product.productName }}</td>
+    <td>{{ product.product.softwareType }}</td>
+    <td>{{ image.imageName }}</td>
+    <td>{{ image.description }}</td>
+    <td>{{ image.featureSet }}</td>   
+    <td>{{ image.imageSize }}</td>
+    <td>{{ suggestion.isSuggested }}</td>
+    <td>{{ suggestion.majorRelease }}</td>
+    <td>{{ suggestion.releaseTrain }}</td>
+    <td>{{ suggestion.relDispName }}</td>
+    <td>{{ suggestion.releaseDate }}</td>
+    <td>{{ suggestion.releaseLifeCycle }}</td>
+    <td>{{ installed_version}}</td>
+  </tr>{% endfor %}{% endfor %}{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

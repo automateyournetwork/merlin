@@ -1,0 +1,2898 @@
+{
+    "acls": {
+        "copp-system-p-acl-auto-rp": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "224.0.1.39/32": {
+                                        "destination_ipv4_network": "224.0.1.39/32"
+                                    }
+                                },
+                                "protocol": "ip",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "224.0.1.40/32": {
+                                        "destination_ipv4_network": "224.0.1.40/32"
+                                    }
+                                },
+                                "protocol": "ip",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-auto-rp",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-bgp": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "1023": {
+                                        "destination_ipv4_network": "1023"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-bgp",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-bgp6": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "1023": {
+                                        "destination_ipv6_network": "1023"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-bgp6",
+            "type": "ipv6-acl-type"
+        },
+        "copp-system-p-acl-dhcp": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-dhcp",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-dhcp-relay-response": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-dhcp-relay-response",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-dhcp6": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-dhcp6",
+            "type": "ipv6-acl-type"
+        },
+        "copp-system-p-acl-dhcp6-relay-response": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-dhcp6-relay-response",
+            "type": "ipv6-acl-type"
+        },
+        "copp-system-p-acl-eigrp": {
+            "name": "copp-system-p-acl-eigrp",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-eigrp6": {
+            "name": "copp-system-p-acl-eigrp6",
+            "type": "ipv6-acl-type"
+        },
+        "copp-system-p-acl-ftp": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        },
+                        "l4": {
+                            "tcp": {
+                                "destination_port": {
+                                    "operator": {
+                                        "operator": "eq",
+                                        "port": "ftp-data"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        },
+                        "l4": {
+                            "tcp": {
+                                "destination_port": {
+                                    "operator": {
+                                        "operator": "eq",
+                                        "port": "ftp"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                },
+                "40": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "40"
+                }
+            },
+            "name": "copp-system-p-acl-ftp",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-hsrp": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "224.0.0.0/24": {
+                                        "destination_ipv4_network": "224.0.0.0/24"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                }
+            },
+            "name": "copp-system-p-acl-hsrp",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-hsrp6": {
+            "name": "copp-system-p-acl-hsrp6",
+            "type": "ipv6-acl-type"
+        },
+        "copp-system-p-acl-http": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        },
+                        "l4": {
+                            "tcp": {
+                                "destination_port": {
+                                    "operator": {
+                                        "operator": "eq",
+                                        "port": "www"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-http",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-https": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        },
+                        "l4": {
+                            "tcp": {
+                                "destination_port": {
+                                    "operator": {
+                                        "operator": "eq",
+                                        "port": "443"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-https",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-icmp": {
+            "name": "copp-system-p-acl-icmp",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-icmp6": {
+            "name": "copp-system-p-acl-icmp6",
+            "type": "ipv6-acl-type"
+        },
+        "copp-system-p-acl-igmp": {
+            "name": "copp-system-p-acl-igmp",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-mac-cdp-udld-vtp": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l2": {
+                            "eth": {
+                                "destination_mac_address": "0100.0ccc.cccc 0000.0000.0000",
+                                "source_mac_address": "any"
+                            }
+                        }
+                    },
+                    "name": "10"
+                }
+            },
+            "name": "copp-system-p-acl-mac-cdp-udld-vtp",
+            "type": "eth-acl-type"
+        },
+        "copp-system-p-acl-mac-cfsoe": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l2": {
+                            "eth": {
+                                "destination_mac_address": "0180.c200.000e 0000.0000.0000",
+                                "source_mac_address": "any"
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l2": {
+                            "eth": {
+                                "destination_mac_address": "0180.c200.000e 0000.0000.0000",
+                                "source_mac_address": "any"
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-mac-cfsoe",
+            "type": "eth-acl-type"
+        },
+        "copp-system-p-acl-mac-dot1x": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l2": {
+                            "eth": {
+                                "destination_mac_address": "0180.c200.0003 0000.0000.0000",
+                                "source_mac_address": "any"
+                            }
+                        }
+                    },
+                    "name": "10"
+                }
+            },
+            "name": "copp-system-p-acl-mac-dot1x",
+            "type": "eth-acl-type"
+        },
+        "copp-system-p-acl-mac-fcoe": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l2": {
+                            "eth": {
+                                "destination_mac_address": "any",
+                                "source_mac_address": "any"
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l2": {
+                            "eth": {
+                                "destination_mac_address": "any",
+                                "source_mac_address": "any"
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-mac-fcoe",
+            "type": "eth-acl-type"
+        },
+        "copp-system-p-acl-mac-l2-tunnel": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l2": {
+                            "eth": {
+                                "destination_mac_address": "any",
+                                "source_mac_address": "any"
+                            }
+                        }
+                    },
+                    "name": "10"
+                }
+            },
+            "name": "copp-system-p-acl-mac-l2-tunnel",
+            "type": "eth-acl-type"
+        },
+        "copp-system-p-acl-mac-l3-isis": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l2": {
+                            "eth": {
+                                "destination_mac_address": "0180.c200.0015 0000.0000.0000",
+                                "source_mac_address": "any"
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l2": {
+                            "eth": {
+                                "destination_mac_address": "0180.c200.0014 0000.0000.0000",
+                                "source_mac_address": "any"
+                            }
+                        }
+                    },
+                    "name": "20"
+                },
+                "30": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l2": {
+                            "eth": {
+                                "destination_mac_address": "0900.2b00.0005 0000.0000.0000",
+                                "source_mac_address": "any"
+                            }
+                        }
+                    },
+                    "name": "30"
+                },
+                "40": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l2": {
+                            "eth": {
+                                "destination_mac_address": "0900.2b00.0004 0000.0000.0000",
+                                "source_mac_address": "any"
+                            }
+                        }
+                    },
+                    "name": "40"
+                }
+            },
+            "name": "copp-system-p-acl-mac-l3-isis",
+            "type": "eth-acl-type"
+        },
+        "copp-system-p-acl-mac-lacp": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l2": {
+                            "eth": {
+                                "destination_mac_address": "0180.c200.0002 0000.0000.0000",
+                                "source_mac_address": "any"
+                            }
+                        }
+                    },
+                    "name": "10"
+                }
+            },
+            "name": "copp-system-p-acl-mac-lacp",
+            "type": "eth-acl-type"
+        },
+        "copp-system-p-acl-mac-lldp": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l2": {
+                            "eth": {
+                                "destination_mac_address": "0180.c200.000e 0000.0000.0000",
+                                "source_mac_address": "any"
+                            }
+                        }
+                    },
+                    "name": "10"
+                }
+            },
+            "name": "copp-system-p-acl-mac-lldp",
+            "type": "eth-acl-type"
+        },
+        "copp-system-p-acl-mac-sdp-srp": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l2": {
+                            "eth": {
+                                "destination_mac_address": "0180.c200.000e 0000.0000.0000",
+                                "source_mac_address": "any"
+                            }
+                        }
+                    },
+                    "name": "10"
+                }
+            },
+            "name": "copp-system-p-acl-mac-sdp-srp",
+            "type": "eth-acl-type"
+        },
+        "copp-system-p-acl-mac-stp": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l2": {
+                            "eth": {
+                                "destination_mac_address": "0100.0ccc.cccd 0000.0000.0000",
+                                "source_mac_address": "any"
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l2": {
+                            "eth": {
+                                "destination_mac_address": "0180.c200.0000 0000.0000.0000",
+                                "source_mac_address": "any"
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-mac-stp",
+            "type": "eth-acl-type"
+        },
+        "copp-system-p-acl-mac-undesirable": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l2": {
+                            "eth": {
+                                "destination_mac_address": "any",
+                                "source_mac_address": "any"
+                            }
+                        }
+                    },
+                    "name": "10"
+                }
+            },
+            "name": "copp-system-p-acl-mac-undesirable",
+            "type": "eth-acl-type"
+        },
+        "copp-system-p-acl-mld": {
+            "name": "copp-system-p-acl-mld",
+            "type": "ipv6-acl-type"
+        },
+        "copp-system-p-acl-msdp": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "639": {
+                                        "destination_ipv4_network": "639"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "1023": {
+                                        "destination_ipv4_network": "1023"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-msdp",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-ndp": {
+            "name": "copp-system-p-acl-ndp",
+            "type": "ipv6-acl-type"
+        },
+        "copp-system-p-acl-ntp": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-ntp",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-ntp6": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-ntp6",
+            "type": "ipv6-acl-type"
+        },
+        "copp-system-p-acl-openflow": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                }
+            },
+            "name": "copp-system-p-acl-openflow",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-ospf": {
+            "name": "copp-system-p-acl-ospf",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-ospf6": {
+            "name": "copp-system-p-acl-ospf6",
+            "type": "ipv6-acl-type"
+        },
+        "copp-system-p-acl-pim": {
+            "aces": {
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                },
+                "30": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "224.0.0.13/32": {
+                                        "destination_ipv4_network": "224.0.0.13/32"
+                                    }
+                                },
+                                "protocol": "ip",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "30"
+                }
+            },
+            "name": "copp-system-p-acl-pim",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-pim-mdt-join": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "224.0.0.13/32": {
+                                        "destination_ipv4_network": "224.0.0.13/32"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                }
+            },
+            "name": "copp-system-p-acl-pim-mdt-join",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-pim-reg": {
+            "name": "copp-system-p-acl-pim-reg",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-pim6": {
+            "aces": {
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-pim6",
+            "type": "ipv6-acl-type"
+        },
+        "copp-system-p-acl-pim6-reg": {
+            "name": "copp-system-p-acl-pim6-reg",
+            "type": "ipv6-acl-type"
+        },
+        "copp-system-p-acl-ptp": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "224.0.1.129/32": {
+                                        "destination_ipv4_network": "224.0.1.129/32"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "224.0.1.129/32": {
+                                        "destination_ipv4_network": "224.0.1.129/32"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-ptp",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-ptp-l2": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l2": {
+                            "eth": {
+                                "destination_mac_address": "any",
+                                "source_mac_address": "any"
+                            }
+                        }
+                    },
+                    "name": "10"
+                }
+            },
+            "name": "copp-system-p-acl-ptp-l2",
+            "type": "eth-acl-type"
+        },
+        "copp-system-p-acl-ptp-uc": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-ptp-uc",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-radius": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                },
+                "30": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "30"
+                },
+                "40": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "40"
+                },
+                "50": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "50"
+                },
+                "60": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "60"
+                },
+                "70": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "70"
+                },
+                "80": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "80"
+                }
+            },
+            "name": "copp-system-p-acl-radius",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-radius6": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                },
+                "30": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "30"
+                },
+                "40": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "40"
+                },
+                "50": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "50"
+                },
+                "60": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "60"
+                },
+                "70": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "70"
+                },
+                "80": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "80"
+                }
+            },
+            "name": "copp-system-p-acl-radius6",
+            "type": "ipv6-acl-type"
+        },
+        "copp-system-p-acl-rip": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "224.0.0.0/24": {
+                                        "destination_ipv4_network": "224.0.0.0/24"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                }
+            },
+            "name": "copp-system-p-acl-rip",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-rip6": {
+            "name": "copp-system-p-acl-rip6",
+            "type": "ipv6-acl-type"
+        },
+        "copp-system-p-acl-sftp": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        },
+                        "l4": {
+                            "tcp": {
+                                "destination_port": {
+                                    "operator": {
+                                        "operator": "eq",
+                                        "port": "115"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-sftp",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-snmp": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                },
+                "30": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        },
+                        "l4": {
+                            "tcp": {
+                                "destination_port": {
+                                    "operator": {
+                                        "operator": "eq",
+                                        "port": "161"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "30"
+                },
+                "40": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        },
+                        "l4": {
+                            "tcp": {
+                                "destination_port": {
+                                    "operator": {
+                                        "operator": "eq",
+                                        "port": "162"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "40"
+                }
+            },
+            "name": "copp-system-p-acl-snmp",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-snmp6": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                },
+                "30": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        },
+                        "l4": {
+                            "tcp": {
+                                "destination_port": {
+                                    "operator": {
+                                        "operator": "eq",
+                                        "port": "161"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "30"
+                },
+                "40": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        },
+                        "l4": {
+                            "tcp": {
+                                "destination_port": {
+                                    "operator": {
+                                        "operator": "eq",
+                                        "port": "162"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "40"
+                }
+            },
+            "name": "copp-system-p-acl-snmp6",
+            "type": "ipv6-acl-type"
+        },
+        "copp-system-p-acl-ssh": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        },
+                        "l4": {
+                            "tcp": {
+                                "destination_port": {
+                                    "operator": {
+                                        "operator": "eq",
+                                        "port": "22"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-ssh",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-ssh6": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        },
+                        "l4": {
+                            "tcp": {
+                                "destination_port": {
+                                    "operator": {
+                                        "operator": "eq",
+                                        "port": "22"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-ssh6",
+            "type": "ipv6-acl-type"
+        },
+        "copp-system-p-acl-tacacs": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        },
+                        "l4": {
+                            "tcp": {
+                                "destination_port": {
+                                    "operator": {
+                                        "operator": "eq",
+                                        "port": "tacacs"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-tacacs",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-tacacs6": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        },
+                        "l4": {
+                            "tcp": {
+                                "destination_port": {
+                                    "operator": {
+                                        "operator": "eq",
+                                        "port": "tacacs"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                }
+            },
+            "name": "copp-system-p-acl-tacacs6",
+            "type": "ipv6-acl-type"
+        },
+        "copp-system-p-acl-telnet": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        },
+                        "l4": {
+                            "tcp": {
+                                "destination_port": {
+                                    "operator": {
+                                        "operator": "eq",
+                                        "port": "telnet"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        },
+                        "l4": {
+                            "tcp": {
+                                "destination_port": {
+                                    "operator": {
+                                        "operator": "eq",
+                                        "port": "107"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                },
+                "30": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "30"
+                },
+                "40": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "40"
+                }
+            },
+            "name": "copp-system-p-acl-telnet",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-telnet6": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        },
+                        "l4": {
+                            "tcp": {
+                                "destination_port": {
+                                    "operator": {
+                                        "operator": "eq",
+                                        "port": "telnet"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        },
+                        "l4": {
+                            "tcp": {
+                                "destination_port": {
+                                    "operator": {
+                                        "operator": "eq",
+                                        "port": "107"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                },
+                "30": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "30"
+                },
+                "40": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "tcp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "40"
+                }
+            },
+            "name": "copp-system-p-acl-telnet6",
+            "type": "ipv6-acl-type"
+        },
+        "copp-system-p-acl-tftp": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                },
+                "30": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "30"
+                },
+                "40": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "40"
+                }
+            },
+            "name": "copp-system-p-acl-tftp",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-tftp6": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                },
+                "20": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "20"
+                },
+                "30": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "30"
+                },
+                "40": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv6": {
+                                "destination_ipv6_network": {
+                                    "any": {
+                                        "destination_ipv6_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv6_network": {
+                                    "any": {
+                                        "source_ipv6_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "40"
+                }
+            },
+            "name": "copp-system-p-acl-tftp6",
+            "type": "ipv6-acl-type"
+        },
+        "copp-system-p-acl-traceroute": {
+            "aces": {
+                "30": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "30"
+                }
+            },
+            "name": "copp-system-p-acl-traceroute",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-undesirable": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                }
+            },
+            "name": "copp-system-p-acl-undesirable",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-vpc": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "any": {
+                                        "destination_ipv4_network": "any"
+                                    }
+                                },
+                                "protocol": "udp",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                }
+            },
+            "name": "copp-system-p-acl-vpc",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-vrrp": {
+            "aces": {
+                "10": {
+                    "actions": {
+                        "forwarding": "accept"
+                    },
+                    "matches": {
+                        "l3": {
+                            "ipv4": {
+                                "destination_ipv4_network": {
+                                    "224.0.0.18/32": {
+                                        "destination_ipv4_network": "224.0.0.18/32"
+                                    }
+                                },
+                                "protocol": "ip",
+                                "source_ipv4_network": {
+                                    "any": {
+                                        "source_ipv4_network": "any"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "name": "10"
+                }
+            },
+            "name": "copp-system-p-acl-vrrp",
+            "type": "ipv4-acl-type"
+        },
+        "copp-system-p-acl-vrrp6": {
+            "name": "copp-system-p-acl-vrrp6",
+            "type": "ipv6-acl-type"
+        }
+    }
+}

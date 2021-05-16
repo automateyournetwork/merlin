@@ -1,0 +1,11 @@
+!!python/object/new:genie.conf.base.utils.QDict
+dictitems:
+  vrfs:
+    default:
+      reason: --
+      vrf_id: 1
+      vrf_state: Up
+    management:
+      reason: --
+      vrf_id: 2
+      vrf_state: Up

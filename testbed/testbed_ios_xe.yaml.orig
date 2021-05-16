@@ -1,0 +1,46 @@
+devices:
+    4500:
+      alias: '4500'
+      type: 'router'
+      os: 'iosxe'
+      platform: cat4500
+      credentials:
+        default:
+          username: {{ your username }}
+          password: {{ your password }}
+      connections:        
+        cli:
+          protocol: ssh
+          ip: {{ your device IP }}
+          arguments:
+            connection_timeout: 360  
+    3850:
+      alias: '3850'
+      type: 'switch'
+      os: 'iosxe'
+      platform: cat3850
+      credentials:
+        default:
+          username: {{ your username }}
+          password: {{ your password }}
+      connections:        
+        cli:
+          protocol: ssh
+          ip: {{ your device IP }}
+          arguments:
+            connection_timeout: 360
+    9300:
+      alias: '9300'
+      type: 'switch'
+      os: 'iosxe'
+      platform: c9300
+      credentials:
+        default:
+          username: {{ your username }}
+          password: {{ your password }}
+      connections:        
+        cli:
+          protocol: ssh
+          ip: {{ your device IP }}
+          arguments:
+            connection_timeout: 360              

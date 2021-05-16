@@ -1,0 +1,9 @@
+{
+    "sessions": {
+        "authorized_clients": 0,
+        "total": 0,
+        "unauthorized_clients": 0
+    },
+    "system_auth_control": false,
+    "version": 3
+}

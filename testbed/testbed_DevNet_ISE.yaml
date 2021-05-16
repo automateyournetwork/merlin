@@ -1,0 +1,12 @@
+devices:
+    ISE:
+      alias: 'ISE'
+      type: 'ISE'
+      os: 'ISE'
+      platform: ISE
+      credentials:
+        default:
+          username: "admin"
+          password: "C1sco12345!"
+      connections:
+          ip: "10.10.20.70"

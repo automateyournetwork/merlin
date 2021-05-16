@@ -1,0 +1,31 @@
+{% if filetype_loop_jinja2 == "csv" %}Interface,Admin State,MAX,Oper State,Power{% for interface in to_parse_power_inline %}
+{{ interface }},{{ to_parse_power_inline[interface].admin_state }},{{ to_parse_power_inline[interface].max }},{{ to_parse_power_inline[interface].oper_state }},{{ to_parse_power_inline[interface].power }}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show Power Inline
+| Interface | Admin State | MAX | Oper State | Power |
+| --------- | ----------- | --- | ---------- | ----- |{% for interface in to_parse_power_inline %}
+| {{ interface }} | {{ to_parse_power_inline[interface].admin_state }} | {{ to_parse_power_inline[interface].max }} | {{ to_parse_power_inline[interface].oper_state }} | {{ to_parse_power_inline[interface].power }} |{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show Power Inline</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Interface</th>
+    <th>Admin State</th>
+    <th>MAX</th>
+    <th>Oper State</th>   
+    <th>Power</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  {% for interface in to_parse_power_inline %}
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ to_parse_power_inline[interface].admin_state }}</td>
+    <td>{{ to_parse_power_inline[interface].max }}</td>
+    <td>{{ to_parse_power_inline[interface].oper_state }}</td>
+    <td>{{ to_parse_power_inline[interface].power }}</td>
+  </tr>{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

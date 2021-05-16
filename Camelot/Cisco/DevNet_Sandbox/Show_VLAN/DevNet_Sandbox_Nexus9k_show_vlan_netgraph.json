@@ -1,0 +1,214 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show VLAN",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_Nexus9k"
+        },
+        {
+            "id": "1"
+        },
+        {
+            "id": "100"
+        },
+        {
+            "id": "101"
+        },
+        {
+            "id": "102"
+        },
+        {
+            "id": "103"
+        },
+        {
+            "id": "104"
+        },
+        {
+            "id": "105"
+        },
+        {
+            "id": "Port-channel11"         
+        },
+        {
+            "id": "Ethernet1/1"         
+        },
+        {
+            "id": "Ethernet1/2"         
+        },
+        {
+            "id": "Port-channel11"         
+        },
+        {
+            "id": "Ethernet1/1"         
+        },
+        {
+            "id": "Ethernet1/2"         
+        },
+        {
+            "id": "Port-channel11"         
+        },
+        {
+            "id": "Ethernet1/1"         
+        },
+        {
+            "id": "Ethernet1/2"         
+        },
+        {
+            "id": "Port-channel11"         
+        },
+        {
+            "id": "Ethernet1/1"         
+        },
+        {
+            "id": "Ethernet1/2"         
+        },
+        {
+            "id": "Port-channel11"         
+        },
+        {
+            "id": "Ethernet1/1"         
+        },
+        {
+            "id": "Ethernet1/2"         
+        },
+        {
+            "id": "Port-channel11"         
+        },
+        {
+            "id": "Ethernet1/1"         
+        },
+        {
+            "id": "Ethernet1/2"
+        }
+    ],
+    "links": [
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "1",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "100",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "101",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "102",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "103",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "104",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "105",
+            "cost": 1
+        },
+        {
+            "source": "100",
+            "target": "Port-channel11",
+            "cost": 2         
+        },
+        {
+            "source": "100",
+            "target": "Ethernet1/1",
+            "cost": 2         
+        },
+        {
+            "source": "100",
+            "target": "Ethernet1/2",
+            "cost": 2         
+        },
+        {
+            "source": "101",
+            "target": "Port-channel11",
+            "cost": 2         
+        },
+        {
+            "source": "101",
+            "target": "Ethernet1/1",
+            "cost": 2         
+        },
+        {
+            "source": "101",
+            "target": "Ethernet1/2",
+            "cost": 2         
+        },
+        {
+            "source": "102",
+            "target": "Port-channel11",
+            "cost": 2         
+        },
+        {
+            "source": "102",
+            "target": "Ethernet1/1",
+            "cost": 2         
+        },
+        {
+            "source": "102",
+            "target": "Ethernet1/2",
+            "cost": 2         
+        },
+        {
+            "source": "103",
+            "target": "Port-channel11",
+            "cost": 2         
+        },
+        {
+            "source": "103",
+            "target": "Ethernet1/1",
+            "cost": 2         
+        },
+        {
+            "source": "103",
+            "target": "Ethernet1/2",
+            "cost": 2         
+        },
+        {
+            "source": "104",
+            "target": "Port-channel11",
+            "cost": 2         
+        },
+        {
+            "source": "104",
+            "target": "Ethernet1/1",
+            "cost": 2         
+        },
+        {
+            "source": "104",
+            "target": "Ethernet1/2",
+            "cost": 2         
+        },
+        {
+            "source": "105",
+            "target": "Port-channel11",
+            "cost": 2         
+        },
+        {
+            "source": "105",
+            "target": "Ethernet1/1",
+            "cost": 2         
+        },
+        {
+            "source": "105",
+            "target": "Ethernet1/2",
+            "cost": 2
+        }
+    ]
+}

@@ -1,0 +1,46 @@
+{% if filetype_loop_jinja2 == "csv" %}ID,Title,Bug ID,CVEs,Base Score,Severity,First Fixed,Made Public,Last Updated,Status,Detailed URL,Vulernable{% if to_parse_psirt.errorCode is defined %}
+N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,{{ to_parse_psirt.errorMessage }}{% else %}{% for advisory in to_parse_psirt %}{% for bugID in advisory.bugIDs %}
+{{ advisory.advisoryId }},{{ advisory.advisoryTitle | replace(','," ") }},{{ bugID }},{{ advisory.cves | replace(','," ") | replace("['"," ") | replace("']"," ") }},{{ advisory.cvssBaseScore }},{{ advisory.sir }},{{ advisory.firstFixed | replace(','," ") | replace("['"," ") | replace("']"," ") }},{{ advisory.firstPublished }},{{ advisory.lastUpdated }},{{ advisory.status }},{{ advisory.publicationUrl }},YES{% endfor %}{% endfor %}{% endif %}
+{% else %}{% if filetype_loop_jinja2 == "md" %}
+# PSIRT Report
+| ID | Title | Bug ID | CVEs | Base Score | Severity | First Fixed | Made Public | Last Updated | Status | Detailed URL | Vulernable |
+| -- | ----- | ------ | ---- | ---------- | -------- | ----------- | ----------- | ------------ | ------ | ------------ | ---------- |{% if to_parse_psirt.errorCode is defined %}
+| N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | {{ to_parse_psirt.errorMessage }} |{% else %}{% for advisory in to_parse_psirt %}{% for bugID in advisory.bugIDs %}
+| {{ advisory.advisoryId }} | {{ advisory.advisoryTitle | replace(','," ") }} | {{ bugID }} | {{ advisory.cves | replace(','," ") | replace("['"," ") | replace("']"," ") }} | {{ advisory.cvssBaseScore }} | {{ advisory.sir }} | {{ advisory.firstFixed | replace(','," ") | replace("['"," ") | replace("']"," ") }} | {{ advisory.firstPublished }} | {{ advisory.lastUpdated }} | {{ advisory.status }} | {{ advisory.publicationUrl }} | YES |{% endfor %}{% endfor %}{% endif %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>PSIRT Report</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Title</th>
+    <th>Bug ID</th>
+    <th>CVEs</th>
+    <th>Base Score</th>
+    <th>Severity</th>   
+    <th>First Fixed</th>
+    <th>Made Public</th>
+    <th>Last Updated</th>
+    <th>Status</th>
+    <th>Detailed URL</th>
+    <th>Vulernable</th>
+  </tr>
+  </thead>
+  <tbody>{% for advisory in to_parse_psirt %}{% for bugID in advisory.bugIDs %}
+  <tr>
+    <td>{{ advisory.advisoryId }}</td>
+    <td>{{ advisory.advisoryTitle | replace(','," ") }}</td>
+    <td>{{ bugID }}</td>
+    <td>{{ advisory.cves | replace(','," ") | replace("['"," ") | replace("']"," ") }}</td>
+    <td>{{ advisory.cvssBaseScore }}</td>
+    <td>{{ advisory.sir }}</td>   
+    <td>{{ advisory.firstFixed | replace(','," ") | replace("['"," ") | replace("']"," ") }}</td>
+    <td>{{ advisory.firstPublished }}</td>
+    <td>{{ advisory.lastUpdated }}</td>
+    <td>{{ advisory.status }}</td>
+    <td>{{ advisory.publicationUrl }}</td>
+    <td>YES</td>
+  </tr>{% endfor %}{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.1.6/dist/style.min.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@6.6.0"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.2.6"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.1.6/dist/index.umd.min.js"></script><script>(r => {
+          setTimeout(r);
+        })(() => {
+  const {
+    markmap,
+    mm
+  } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, data) => {
+        const {
+          Markmap
+        } = getMarkmap();
+        window.mm = Markmap.create('svg#mindmap', getOptions == null ? void 0 : getOptions(), data);
+      })(() => window.markmap,null,{"t":"heading","d":1,"p":{"lines":[1,2]},"v":"Show VLAN","c":[{"t":"thead","d":3,"p":{"lines":[2,3]},"v":"","c":[{"t":"th","d":5,"p":{"lines":[2,3]},"v":"VLAN"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Interface"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Name"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"State"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Shutdown"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Type"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Mode"}]},{"t":"tbody","d":3,"p":{"lines":[4,22]},"v":"","c":[{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"100"},{"t":"td","d":5,"p":{},"v":"Port-channel11"},{"t":"td","d":5,"p":{},"v":"mgmt"},{"t":"td","d":5,"p":{},"v":"active"},{"t":"td","d":5,"p":{},"v":"False"},{"t":"td","d":5,"p":{},"v":"enet"},{"t":"td","d":5,"p":{},"v":"ce"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"100"},{"t":"td","d":5,"p":{},"v":"Ethernet1/1"},{"t":"td","d":5,"p":{},"v":"mgmt"},{"t":"td","d":5,"p":{},"v":"active"},{"t":"td","d":5,"p":{},"v":"False"},{"t":"td","d":5,"p":{},"v":"enet"},{"t":"td","d":5,"p":{},"v":"ce"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"100"},{"t":"td","d":5,"p":{},"v":"Ethernet1/2"},{"t":"td","d":5,"p":{},"v":"mgmt"},{"t":"td","d":5,"p":{},"v":"active"},{"t":"td","d":5,"p":{},"v":"False"},{"t":"td","d":5,"p":{},"v":"enet"},{"t":"td","d":5,"p":{},"v":"ce"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"101"},{"t":"td","d":5,"p":{},"v":"Port-channel11"},{"t":"td","d":5,"p":{},"v":"prod"},{"t":"td","d":5,"p":{},"v":"active"},{"t":"td","d":5,"p":{},"v":"False"},{"t":"td","d":5,"p":{},"v":"enet"},{"t":"td","d":5,"p":{},"v":"ce"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"101"},{"t":"td","d":5,"p":{},"v":"Ethernet1/1"},{"t":"td","d":5,"p":{},"v":"prod"},{"t":"td","d":5,"p":{},"v":"active"},{"t":"td","d":5,"p":{},"v":"False"},{"t":"td","d":5,"p":{},"v":"enet"},{"t":"td","d":5,"p":{},"v":"ce"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"101"},{"t":"td","d":5,"p":{},"v":"Ethernet1/2"},{"t":"td","d":5,"p":{},"v":"prod"},{"t":"td","d":5,"p":{},"v":"active"},{"t":"td","d":5,"p":{},"v":"False"},{"t":"td","d":5,"p":{},"v":"enet"},{"t":"td","d":5,"p":{},"v":"ce"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"102"},{"t":"td","d":5,"p":{},"v":"Port-channel11"},{"t":"td","d":5,"p":{},"v":"dev"},{"t":"td","d":5,"p":{},"v":"active"},{"t":"td","d":5,"p":{},"v":"False"},{"t":"td","d":5,"p":{},"v":"enet"},{"t":"td","d":5,"p":{},"v":"ce"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"102"},{"t":"td","d":5,"p":{},"v":"Ethernet1/1"},{"t":"td","d":5,"p":{},"v":"dev"},{"t":"td","d":5,"p":{},"v":"active"},{"t":"td","d":5,"p":{},"v":"False"},{"t":"td","d":5,"p":{},"v":"enet"},{"t":"td","d":5,"p":{},"v":"ce"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"102"},{"t":"td","d":5,"p":{},"v":"Ethernet1/2"},{"t":"td","d":5,"p":{},"v":"dev"},{"t":"td","d":5,"p":{},"v":"active"},{"t":"td","d":5,"p":{},"v":"False"},{"t":"td","d":5,"p":{},"v":"enet"},{"t":"td","d":5,"p":{},"v":"ce"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"103"},{"t":"td","d":5,"p":{},"v":"Port-channel11"},{"t":"td","d":5,"p":{},"v":"test"},{"t":"td","d":5,"p":{},"v":"active"},{"t":"td","d":5,"p":{},"v":"False"},{"t":"td","d":5,"p":{},"v":"enet"},{"t":"td","d":5,"p":{},"v":"ce"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"103"},{"t":"td","d":5,"p":{},"v":"Ethernet1/1"},{"t":"td","d":5,"p":{},"v":"test"},{"t":"td","d":5,"p":{},"v":"active"},{"t":"td","d":5,"p":{},"v":"False"},{"t":"td","d":5,"p":{},"v":"enet"},{"t":"td","d":5,"p":{},"v":"ce"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"103"},{"t":"td","d":5,"p":{},"v":"Ethernet1/2"},{"t":"td","d":5,"p":{},"v":"test"},{"t":"td","d":5,"p":{},"v":"active"},{"t":"td","d":5,"p":{},"v":"False"},{"t":"td","d":5,"p":{},"v":"enet"},{"t":"td","d":5,"p":{},"v":"ce"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"104"},{"t":"td","d":5,"p":{},"v":"Port-channel11"},{"t":"td","d":5,"p":{},"v":"security"},{"t":"td","d":5,"p":{},"v":"active"},{"t":"td","d":5,"p":{},"v":"False"},{"t":"td","d":5,"p":{},"v":"enet"},{"t":"td","d":5,"p":{},"v":"ce"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"104"},{"t":"td","d":5,"p":{},"v":"Ethernet1/1"},{"t":"td","d":5,"p":{},"v":"security"},{"t":"td","d":5,"p":{},"v":"active"},{"t":"td","d":5,"p":{},"v":"False"},{"t":"td","d":5,"p":{},"v":"enet"},{"t":"td","d":5,"p":{},"v":"ce"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"104"},{"t":"td","d":5,"p":{},"v":"Ethernet1/2"},{"t":"td","d":5,"p":{},"v":"security"},{"t":"td","d":5,"p":{},"v":"active"},{"t":"td","d":5,"p":{},"v":"False"},{"t":"td","d":5,"p":{},"v":"enet"},{"t":"td","d":5,"p":{},"v":"ce"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"105"},{"t":"td","d":5,"p":{},"v":"Port-channel11"},{"t":"td","d":5,"p":{},"v":"iot"},{"t":"td","d":5,"p":{},"v":"active"},{"t":"td","d":5,"p":{},"v":"False"},{"t":"td","d":5,"p":{},"v":"enet"},{"t":"td","d":5,"p":{},"v":"ce"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"105"},{"t":"td","d":5,"p":{},"v":"Ethernet1/1"},{"t":"td","d":5,"p":{},"v":"iot"},{"t":"td","d":5,"p":{},"v":"active"},{"t":"td","d":5,"p":{},"v":"False"},{"t":"td","d":5,"p":{},"v":"enet"},{"t":"td","d":5,"p":{},"v":"ce"}]},{"t":"tr","d":4,"p":{},"v":"","c":[{"t":"td","d":5,"p":{},"v":"105"},{"t":"td","d":5,"p":{},"v":"Ethernet1/2"},{"t":"td","d":5,"p":{},"v":"iot"},{"t":"td","d":5,"p":{},"v":"active"},{"t":"td","d":5,"p":{},"v":"False"},{"t":"td","d":5,"p":{},"v":"enet"},{"t":"td","d":5,"p":{},"v":"ce"}]}]}]})</script>
+</body>
+</html>

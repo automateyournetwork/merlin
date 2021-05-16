@@ -1,0 +1,66 @@
+{
+    "type": "NetworkGraph",
+    "label": "Learn dot1x",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for interface in to_parse_dot1x.interfaces %}{% set interface_loop = loop %}{% if to_parse_dot1x.interfaces[interface].clients is defined %}{% for client in to_parse_dot1x.interfaces[interface].clients %}{% set client_loop = loop %}{% for session in to_parse_dot1x.interfaces[interface].clients[client].session %}{% set session_loop = loop %}
+        { 
+            "id": "{{ interface }}"
+        },
+        { 
+            "id": "{{ client }}"
+        },
+        { 
+            "id": "Method: {{ to_parse_dot1x.interfaces[interface].clients[client].eap_method }}"
+        },
+        { 
+            "id": "Status: {{ to_parse_dot1x.interfaces[interface].clients[client].status }}"
+        },
+        { 
+            "id": "Session: {{ session }}"{% if (interface_loop.last) and (client_loop.last) and (session_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}{% else %}
+        { 
+            "id": "{{ interface }}"{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endif %}{% endfor %}
+    ],
+    "links": [{% for interface in to_parse_dot1x.interfaces %}{% set interface_loop = loop %}{% if to_parse_dot1x.interfaces[interface].clients is defined %}{% for client in to_parse_dot1x.interfaces[interface].clients %}{% set client_loop = loop %}{% for session in to_parse_dot1x.interfaces[interface].clients[client].session %}{% set session_loop = loop %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "{{ client }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Method: {{ to_parse_dot1x.interfaces[interface].clients[client].eap_method }}",
+            "cost": 2           
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Status: {{ to_parse_dot1x.interfaces[interface].clients[client].status }}",
+            "cost": 2
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Session: {{ session }}",
+            "cost": 1{% if (interface_loop.last) and (client_loop.last) and (session_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}{% else %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 1{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endif %}{% endfor %}
+    ]
+}

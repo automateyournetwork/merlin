@@ -1,0 +1,5 @@
+{% for interface in host_data_model.global_config.management_interface %}
+interface {{ interface }}
+  description {{ host_data_model.global_config.management_interface[interface].description }}
+  vrf member {{ host_data_model.global_config.management_interface[interface].vrf }}
+  ip address {{ host_data_model.global_config.management_interface[interface].ip_address }}{% endfor %}

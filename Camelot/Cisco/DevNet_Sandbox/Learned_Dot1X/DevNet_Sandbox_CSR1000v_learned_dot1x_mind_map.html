@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.1.6/dist/style.min.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@6.6.0"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.2.6"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.1.6/dist/index.umd.min.js"></script><script>(r => {
+          setTimeout(r);
+        })(() => {
+  const {
+    markmap,
+    mm
+  } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, data) => {
+        const {
+          Markmap
+        } = getMarkmap();
+        window.mm = Markmap.create('svg#mindmap', getOptions == null ? void 0 : getOptions(), data);
+      })(() => window.markmap,null,{"t":"heading","d":1,"p":{"lines":[1,2]},"v":"Learn Dot1x","c":[{"t":"thead","d":3,"p":{"lines":[2,3]},"v":"","c":[{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Interface"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Client"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"EAP Method"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"PAE"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Status"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Session"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Auth Bend"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Auth SM State"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Max Reauth"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Max Requests"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Last RX MAC"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"RX Invalid"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"RX Error"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"RX Logoff"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"RX Response"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"RX Start"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"RX Total"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"TX Requests"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"TX Request ID"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"TX Total"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Quiet Period"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Server Timeout"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"Supplicant Timeout"},{"t":"th","d":5,"p":{"lines":[2,3]},"v":"TX Period"}]},{"t":"tbody","d":3,"p":{"lines":[4,4]},"v":""}]})</script>
+</body>
+</html>

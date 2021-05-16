@@ -1,0 +1,26 @@
+{
+    "interfaces": {
+        "GigabitEthernet1": {
+            "ipv4": {
+                "neighbors": {
+                    "10.10.20.254": {
+                        "age": "20",
+                        "ip": "10.10.20.254",
+                        "link_layer_address": "0050.56bf.4a47",
+                        "origin": "dynamic",
+                        "protocol": "Internet",
+                        "type": "ARPA"
+                    },
+                    "10.10.20.48": {
+                        "age": "-",
+                        "ip": "10.10.20.48",
+                        "link_layer_address": "0050.56bf.08f1",
+                        "origin": "static",
+                        "protocol": "Internet",
+                        "type": "ARPA"
+                    }
+                }
+            }
+        }
+    }
+}

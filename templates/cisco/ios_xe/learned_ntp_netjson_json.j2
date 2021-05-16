@@ -1,0 +1,94 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show NTP Clock State",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },
+        { 
+            "id": "Association Address: {{ to_parse_ntp.system_status.associations_address }}"
+        },
+        { 
+            "id": "Local Mode: {{ to_parse_ntp.system_status.associations_local_mode }}"
+        },
+        { 
+            "id": "Clock Offset: {{ to_parse_ntp.system_status.clock_offset }}"
+        },
+        { 
+            "id": "Clock Precision: {{ to_parse_ntp.system_status.clock_precision }}"
+        },
+        { 
+            "id": "Clock Reference ID: {{ to_parse_ntp.system_status.clock_refid }}"
+        },
+        { 
+            "id": "Clock State: {{ to_parse_ntp.system_status.clock_state }}"
+        },
+        { 
+            "id": "Clock Stratum: {{ to_parse_ntp.system_status.clock_stratum }}"
+        },
+        { 
+            "id": "Reference Time: {{ to_parse_ntp.system_status.reference_time }}"
+        },
+        { 
+            "id": "Root Delay: {{ to_parse_ntp.system_status.root_delay }}"
+        },        
+        { 
+            "id": "Root Dispersion: {{ to_parse_ntp.system_status.root_dispersion }}"
+        }
+    ],
+    "links": [
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Association Address: {{ to_parse_ntp.system_status.associations_address }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Local Mode: {{ to_parse_ntp.system_status.associations_local_mode }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Clock Offset: {{ to_parse_ntp.system_status.clock_offset }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Clock Precision: {{ to_parse_ntp.system_status.clock_precision }}",
+            "cost": 1            
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Clock Reference ID: {{ to_parse_ntp.system_status.clock_refid }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Clock State: {{ to_parse_ntp.system_status.clock_state }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Clock Stratum: {{ to_parse_ntp.system_status.clock_stratum }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Reference Time: {{ to_parse_ntp.system_status.reference_time }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Root Delay: {{ to_parse_ntp.system_status.root_delay }}",
+            "cost": 1
+        },        
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Root Dispersion: {{ to_parse_ntp.system_status.root_dispersion }}",
+            "cost": 1            
+        }        
+    ]
+}

@@ -1,0 +1,16 @@
+{% if filetype_loop_jinja2 == "csv" %}{% for part in to_parse_inventory %}{% if part.serial is defined %}
+{{ hostname }},{{ part.vendorPartnum }},{{ part.vendor }},{{ part.moduleDescription }},{{ part.serial }},N/A,N/A,N/A,N/A,N/A,N/A{% endif %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}{% for part in to_parse_inventory %}{% if part.serial is defined %}
+| {{ hostname }} | {{ part.vendorPartnum }} |{{ part.vendor }} | {{ part.moduleDescription }} | {{ part.serial }} | N/A | N/A | N/A | N/A | N/A | N/A |{% endif %}{% endfor %}{% else %}{% for part in to_parse_inventory %}{% if part.serial is defined %}
+<tr>
+  <td>{{ hostname }}</td>
+  <td>{{ part.vendorPartnum }}</td>
+  <td>{{ part.vendor }}</td>
+  <td>{{ part.moduleDescription }}</td>
+  <td>{{ part.serial }}</td>
+  <td>N/A</td>
+  <td>N/A</td>
+  <td>N/A</td>
+  <td>N/A</td>
+  <td>N/A</td>
+  <td>N/A</td>
+</tr>{% endif %}{% endfor %}{% endif %}{% endif %}

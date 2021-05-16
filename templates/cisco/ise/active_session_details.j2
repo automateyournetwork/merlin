@@ -1,0 +1,27 @@
+{% if filetype_loop_jinja2 == "csv" %}User Name,MAC Address,Switch IP,Audit Session,ISE Server,IP Address{% for activeSession in to_parse_active_session_details.activeList.activeSession %}
+{{ activeSession.user_name | default("N/A") }},{{ activeSession.calling_station_id | default("N/A") }},{{ activeSession.nas_ip_address | default("N/A") }},{{ activeSession.audit_session_id | default("N/A") }},{{ activeSession.server | default("N/A") }},{{ activeSession.framed_ip_address | default("N/A") }}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Active Session Details
+| User Name | MAC Address | Switch IP | Audit Session | ISE Server | IP Address |
+| --------- | ----------- | --------- | ------------- | ---------- | ---------- |{% for activeSession in to_parse_active_session_details.activeList.activeSession %}
+| {{ activeSession.user_name | default("N/A") }} | {{ activeSession.calling_station_id | default("N/A") }} | {{ activeSession.nas_ip_address | default("N/A") }} | {{ activeSession.audit_session_id | default("N/A") }} | {{ activeSession.server | default("N/A") }} | {{ activeSession.framed_ip_address | default("N/A") }} |{% endfor %}{% else %}
+<html><body>
+<h1>Active Session Details</h1>
+<table style="width:100%">
+  <tr>
+    <th>User Name</th>
+    <th>MAC Address</th>
+    <th>Switch IP</th>
+    <th>Audit Session</th>
+    <th>ISE Server</th>
+    <th>IP Address</th>
+  </tr>{% for activeSession in to_parse_active_session_details.activeList.activeSession %}
+  <tr>
+    <td>{{ activeSession.user_name | default("N/A") }}</td>
+    <td>{{ activeSession.calling_station_id | default("N/A") }}</td>
+    <td>{{ activeSession.nas_ip_address | default("N/A") }}</td>
+    <td>{{ activeSession.audit_session_id | default("N/A") }}</td>
+    <td>{{ activeSession.server | default("N/A") }}</td>
+    <td>{{ activeSession.framed_ip_address | default("N/A") }}</td>
+  </tr>{% endfor %}
+</table>
+</body></html>{% endif %}{% endif %}

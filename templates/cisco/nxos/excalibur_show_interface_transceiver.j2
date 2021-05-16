@@ -1,0 +1,16 @@
+{% if filetype_loop_jinja2 == "csv" %}{% for part in to_parse_interface %}{% if to_parse_interface[part].transceiver_present %}
+{{ hostname }},{{ part }},{{ to_parse_interface[part].cis_product_id }},{{ to_parse_interface[part].transceiver_type }},{{ to_parse_interface[part].serial_number }},{{ to_parse_interface[part].cis_part_number }},N/A,N/A,N/A,N/A,N/A{% endif %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}{% for part in to_parse_interface %}{% if to_parse_interface[part].transceiver_present %}
+| {{ hostname }} | {{ part }} | {{ to_parse_interface[part].cis_product_id }} | {{ to_parse_interface[part].transceiver_type }} | {{ to_parse_interface[part].serial_number }} | {{ to_parse_interface[part].cis_part_number }} | N/A | N/A | N/A | N/A | N/A |{% endif %}{% endfor %}{% else %}{% for part in to_parse_interface %}{% if to_parse_interface[part].transceiver_present %}
+<tr>
+  <td>{{ hostname }}</td>
+  <td>{{ part }}</td>
+  <td>{{ to_parse_interface[part].cis_product_id }}</td>
+  <td>{{ to_parse_interface[part].transceiver_type }}</td>
+  <td>{{ to_parse_interface[part].serial_number }}</td>
+  <td>{{ to_parse_interface[part].cis_part_number }}</td>
+  <td>N/A</td>
+  <td>N/A</td>
+  <td>N/A</td>
+  <td>N/A</td>
+  <td>N/A</td>
+</tr>{% endif %}{% endfor %}{% endif %}{% endif %}

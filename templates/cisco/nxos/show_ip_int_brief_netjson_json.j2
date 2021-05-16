@@ -1,0 +1,40 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show IP Interface Brief",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for interface in to_parse_interfaces %}{% set outer_loop = loop %}
+        {
+            "id": "{{ interface }}"
+        },{% if to_parse_interfaces[interface].vlan_id is defined %}{% for vlan in to_parse_interfaces[interface].vlan_id %}
+        {
+            "id": "{{ to_parse_interfaces[interface].vlan_id[vlan].ip_address }}"
+        },{% endfor %}{% else %}
+        {
+            "id": "{{ to_parse_interfaces[interface].ip_address }}"{% if outer_loop.last %}
+        }{% else %}
+        },{% endif %}{% endif %}{% endfor %}
+    ],
+    "links": [{% for interface in to_parse_interfaces %}{% set outer_loop = loop %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 1
+        },{% if to_parse_interfaces[interface].vlan_id is defined %}{% for vlan in to_parse_interfaces[interface].vlan_id %}
+        {
+            "source": "{{ interface }}",
+            "target": "{{ to_parse_interfaces[interface].vlan_id[vlan].ip_address }}",
+            "cost": 1
+        },{% endfor %}{% else %}
+        {
+            "source": "{{ interface }}",
+            "target": "{{ to_parse_interfaces[interface].ip_address }}",
+            "cost": 1{% if outer_loop.last %}
+        }{% else %}
+        },{% endif %}{% endif %}{% endfor %}
+    ]    
+}

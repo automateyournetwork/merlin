@@ -1,0 +1,3 @@
+{% for vdc in host_data_model.host_vdcs %}vdc {{ vdc }} id {{ host_data_model.host_vdcs[vdc].id }}
+{% for resource in host_data_model.host_vdcs[vdc].limited_resources %}  limit-resource {{ resource }} minimum {{ host_data_model.host_vdcs[vdc].limited_resources[resource].minimum }} maximum {{ host_data_model.host_vdcs[vdc].limited_resources[resource].maximum }}
+{% endfor %}{% endfor %}

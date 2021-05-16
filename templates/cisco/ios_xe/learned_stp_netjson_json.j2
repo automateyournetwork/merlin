@@ -1,0 +1,54 @@
+{
+    "type": "NetworkGraph",
+    "label": "Learn STP Global",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },
+        { 
+            "id": "BPDU Filter: {{ to_parse_stp.bpdu_filter }}"
+        },
+        { 
+            "id": "BPDU Guard: {{ to_parse_stp.bpdu_guard }}"
+        },
+        { 
+            "id": "BPDU Timeout Recovery: {{ to_parse_stp.bpduguard_timeout_recovery }}"
+        },
+        { 
+            "id": "EtherChannel Misconfig Guard: {{ to_parse_stp.etherchannel_misconfig_guard }}"
+        },        
+        { 
+            "id": "Loop Guard: {{ to_parse_stp.loop_guard }}"
+        }        
+    ],
+    "links": [
+        { 
+            "source": "{{ device_alias }}",
+            "target": "BPDU Filter: {{ to_parse_stp.bpdu_filter }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "BPDU Guard: {{ to_parse_stp.bpdu_guard }}",
+            "cost": 1
+        },
+        { 
+            "source": "BPDU Guard: {{ to_parse_stp.bpdu_guard }}",
+            "target": "BPDU Timeout Recovery: {{ to_parse_stp.bpduguard_timeout_recovery }}",
+            "cost": 1                        
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "EtherChannel Misconfig Guard: {{ to_parse_stp.etherchannel_misconfig_guard }}",
+            "cost": 1
+        },        
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Loop Guard: {{ to_parse_stp.loop_guard }}",
+            "cost": 1            
+        }        
+    ]
+}

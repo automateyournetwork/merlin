@@ -1,0 +1,150 @@
+{
+    "type": "NetworkGraph",
+    "label": "Learned BGP",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_Nexus9k"
+        },
+        { 
+            "id": "Instance: default"
+        },
+        { 
+            "id": "BGP IP: 65535"
+        },
+        { 
+            "id": "Protocol State: running"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Router ID: 172.16.0.1"
+        },
+        { 
+            "id": "Cluster ID: 0.0.0.0"
+        },
+        { 
+            "id": "Confed ID: 0"
+        },
+        { 
+            "id": "Neighbor: 172.16.0.2"
+        },
+        { 
+            "id": "BGP Version: 4"
+        },
+        { 
+            "id": "Hold Time: 180"
+        },
+        { 
+            "id": "Keep Alive Interval: 60"
+        },
+        { 
+            "id": "Local AS Number: None"
+        },
+        { 
+            "id": "Remote AS Number: 65535"
+        },
+        { 
+            "id": "Messages Received: 0"
+        },
+        { 
+            "id": "Messages Sent: 0"
+        },
+        { 
+            "id": "Last Reset: never"
+        },
+        {
+            "id": "Reset Reason: no error"
+        }
+    ],
+    "links": [
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Instance: default",
+            "cost": 1
+        },
+        {
+            "source": "Instance: default",
+            "target": "BGP IP: 65535",
+            "cost": 2
+        },
+        {
+            "source": "Instance: default",
+            "target": "Protocol State: running",
+            "cost": 2
+        },
+        {
+            "source": "Instance: default",
+            "target": "VRF: default",
+            "cost": 2
+        },
+        {
+            "source": "VRF: default",
+            "target": "Router ID: 172.16.0.1",
+            "cost": 3
+        },
+        {
+            "source": "VRF: default",
+            "target": "Cluster ID: 0.0.0.0",
+            "cost": 3
+        },
+        {
+            "source": "VRF: default",
+            "target": "Confed ID: 0",
+            "cost": 3
+        },
+        {
+            "source": "VRF: default",
+            "target": "Neighbor: 172.16.0.2",
+            "cost": 3
+        },
+        {
+            "source": "Neighbor: 172.16.0.2",
+            "target": "BGP Version: 4",
+            "cost": 4
+        },
+        {
+            "source": "Neighbor: 172.16.0.2",
+            "target": "Hold Time: 180",
+            "cost": 4
+        },
+        {
+            "source": "Neighbor: 172.16.0.2",
+            "target": "Keep Alive Interval: 60",
+            "cost": 4
+        },
+        {
+            "source": "Neighbor: 172.16.0.2",
+            "target": "Local AS Number: None",
+            "cost": 4
+        },
+        {
+            "source": "Local AS Number: None",
+            "target": "Remote AS Number: 65535",
+            "cost": 5
+        },
+        {
+            "source": "Remote AS Number: 65535",
+            "target": "Messages Received: 0",
+            "cost": 6
+        },
+        {
+            "source": "Remote AS Number: 65535",
+            "target": "Messages Sent: 0",
+            "cost": 6
+        },
+        {
+            "source": "Remote AS Number: 65535",
+            "target": "Last Reset: never",
+            "cost": 6
+        },
+        {
+            "source": "Last Reset: never",
+            "target": "Reset Reason: no error",
+            "cost": 7
+        }
+    ]
+}

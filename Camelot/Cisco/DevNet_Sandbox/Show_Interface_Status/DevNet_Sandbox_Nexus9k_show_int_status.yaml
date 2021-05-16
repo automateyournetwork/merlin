@@ -1,0 +1,445 @@
+!!python/object/new:genie.conf.base.utils.QDict
+dictitems:
+  interfaces:
+    Ethernet1/1:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: trunk
+    Ethernet1/10:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/11:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/12:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/13:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/14:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/15:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/16:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/17:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/18:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/19:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/2:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: trunk
+    Ethernet1/20:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/21:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/22:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/23:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/24:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/25:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/26:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/27:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/28:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/29:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/3:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/30:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/31:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/32:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/33:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/34:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/35:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/36:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/37:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/38:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/39:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/4:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/40:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/41:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/42:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/43:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/44:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/45:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/46:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/47:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/48:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/49:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/5:
+      duplex_code: full
+      name: L3 Link
+      port_speed: '1000'
+      status: connected
+      type: 10g
+      vlan: routed
+    Ethernet1/50:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/51:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/52:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/53:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/54:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/55:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/56:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/57:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/58:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/59:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/6:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/60:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/61:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/62:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/63:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/64:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/7:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/8:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Ethernet1/9:
+      duplex_code: auto
+      port_speed: auto
+      status: disabled
+      type: 10g
+      vlan: routed
+    Loopback1:
+      duplex_code: auto
+      port_speed: auto
+      status: connected
+      vlan: routed
+    Port-channel11:
+      duplex_code: auto
+      port_speed: auto
+      status: noOperMem
+      vlan: '1'
+    Vlan1:
+      duplex_code: auto
+      port_speed: auto
+      status: down
+      vlan: routed
+    Vlan100:
+      duplex_code: auto
+      name: mgmt svi - DEMO PL
+      port_speed: auto
+      status: down
+      vlan: routed
+    Vlan101:
+      duplex_code: auto
+      name: prod svi - DEMO PL
+      port_speed: auto
+      status: down
+      vlan: routed
+    Vlan102:
+      duplex_code: auto
+      name: dev svi - DEMO PLE
+      port_speed: auto
+      status: down
+      vlan: routed
+    Vlan103:
+      duplex_code: auto
+      name: test svi - DEMO PL
+      port_speed: auto
+      status: down
+      vlan: routed
+    Vlan104:
+      duplex_code: auto
+      name: security svi - DEM
+      port_speed: auto
+      status: down
+      vlan: routed
+    Vlan105:
+      duplex_code: auto
+      name: iot svi - DEMO PLE
+      port_speed: auto
+      status: down
+      vlan: routed
+    mgmt0:
+      duplex_code: full
+      name: DO NOT TOUCH CONFI
+      port_speed: '1000'
+      status: connected
+      vlan: routed

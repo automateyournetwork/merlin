@@ -1,0 +1,2 @@
+{% for user in host_data_model.host_users %}username {{ user }} password {{ host_data_model.host_users[user].password }}  role {{ host_data_model.host_users[user].role }}
+{% endfor %}

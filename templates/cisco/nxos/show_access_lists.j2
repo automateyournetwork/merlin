@@ -1,0 +1,137 @@
+{% if filetype_loop_jinja2 == "csv" %}Access Control List,Access Control Entry,Permission,Logging,Source Network,Destination Network,L3 Protocol,L4 Protocol,Operator,Port{% for list in to_parse_access_list %}{% if to_parse_access_list[list].aces is defined %}{% for ace in to_parse_access_list[list].aces %}{% if to_parse_access_list[list].aces[ace].matches.l3 is defined %}{% if to_parse_access_list[list].aces[ace].matches.l3.ipv4 is defined %}{% if to_parse_access_list[list].aces[ace].matches.l3.ipv4.source_network is defined %}{% for source_network in to_parse_access_list[list].aces[ace].matches.l3.ipv4.source_network %}
+{{ list }},{{ ace }},{{ to_parse_access_list[list].aces[ace].actions.forwarding }},{{ to_parse_access_list[list].aces[ace].actions.logging | default ("No Logging") }},{{ to_parse_access_list[list].aces[ace].matches.l3.ipv4.source_network[source_network] | replace("{'source_network': ","") | replace("}","") | replace("'","") }},{{ to_parse_access_list[list].aces[ace].matches.l3.ipv4.destination_network | replace(" {'destination_network':","") | replace("}","") | replace("{","") | replace("'","") | replace(":","") | default("N/A") }},{{ to_parse_access_list[list].aces[ace].matches.l3.ipv4.protocol | default("N/A") }},N/A,N/A,N/A{% endfor %}{% else %}{% for destination_network in to_parse_access_list[list].aces[ace].matches.l3.ipv4.destination_network %}
+{{ list }},{{ ace }},{{ to_parse_access_list[list].aces[ace].actions.forwarding }},{{ to_parse_access_list[list].aces[ace].actions.logging | default("No Logging") }},N/A,{{ to_parse_access_list[list].aces[ace].matches.l3.ipv4.destination_network[destination_network]  | replace(" {'destination_network':","") | replace("}","") | replace("{","") | replace("'","") | replace(":","") | default("NA") }},{{ to_parse_access_list[list].aces[ace].matches.l3.ipv4.protocol | default("N/A") }},N/A,N/A,N/A{% endfor %}{% endif %}{% endif %}{% endif %}{% endfor %}{% else %}
+{{ list }},No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A{% endif %}{% endfor %}{% for list in to_parse_access_list %}{% if to_parse_access_list[list].aces is defined %}{% for ace in to_parse_access_list[list].aces %}{% if to_parse_access_list[list].aces[ace].matches.l4 is defined %}{% if to_parse_access_list[list].aces[ace].matches.l4.udp is defined %}{% if to_parse_access_list[list].aces[ace].matches.l4.udp.source_port is defined %}
+{{ list }},{{ ace }},{{ to_parse_access_list[list].aces[ace].actions.forwarding }},{{ to_parse_access_list[list].aces[ace].actions.logging | default ("No Logging") }},Source Protocol,N/A,N/A,UDP,{{ to_parse_access_list[list].aces[ace].matches.l4.udp.source_port.operator.operator }},{{ to_parse_access_list[list].aces[ace].matches.l4.udp.source_port.operator.port }}{% else %}{% if to_parse_access_list[list].aces[ace].matches.l4.udp.destination_port is defined%}  
+{{ list }},{{ ace }},{{ to_parse_access_list[list].aces[ace].actions.forwarding }},{{ to_parse_access_list[list].aces[ace].actions.logging | default ("No Logging") }},N/A,Destination Protocol,N/A,UDP,{{ to_parse_access_list[list].aces[ace].matches.l4.udp.destination_port.operator.operator }},{{ to_parse_access_list[list].aces[ace].matches.l4.udp.destination_port.operator.port }}{% endif %}{% endif %}{% else %}{% if to_parse_access_list[list].aces[ace].matches.l4.tcp is defined %}{% if to_parse_access_list[list].aces[ace].matches.l4.tcp.source_port is defined %}
+{{ list }},{{ ace }},{{ to_parse_access_list[list].aces[ace].actions.forwarding }},{{ to_parse_access_list[list].aces[ace].actions.logging | default ("No Logging") }},Source Protocol,N/A,N/A,TCP,{{ to_parse_access_list[list].aces[ace].matches.l4.tcp.source_port.operator.operator }},{{ to_parse_access_list[list].aces[ace].matches.l4.tcp.source_port.operator.port }}{% else %}{% if to_parse_access_list[list].aces[ace].matches.l4.tcp.destination_port is defined%}  
+{{ list }},{{ ace }},{{ to_parse_access_list[list].aces[ace].actions.forwarding }},{{ to_parse_access_list[list].aces[ace].actions.logging | default ("No Logging") }},N/A,Destination Protocol,N/A,TCP,{{ to_parse_access_list[list].aces[ace].matches.l4.tcp.destination_port.operator.operator }},{{ to_parse_access_list[list].aces[ace].matches.l4.tcp.destination_port.operator.port }}{% endif %}{% endif %}{% endif %}{% endif %}{% endif %}{% endfor %}{% else %}
+{{ list }},No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A{% endif %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show IP Access-Lists
+| Access Control List | Access Control Entry | Permission | Logging | Source Network | Destination Network | L3 Protocol | L4 Protocol | Operator | Port |
+| ------------------- | -------------------- | ---------- | ------- | -------------- | ------------------- | ----------- | ----------- | -------- | ---- |{% for list in to_parse_access_list %}{% if to_parse_access_list[list].aces is defined %}{% for ace in to_parse_access_list[list].aces %}{% if to_parse_access_list[list].aces[ace].matches.l3 is defined %}{% if to_parse_access_list[list].aces[ace].matches.l3.ipv4 is defined %}{% if to_parse_access_list[list].aces[ace].matches.l3.ipv4.source_network is defined %}{% for source_network in to_parse_access_list[list].aces[ace].matches.l3.ipv4.source_network %}
+| {{ list }} | {{ ace }} | {{ to_parse_access_list[list].aces[ace].actions.forwarding }} | {{ to_parse_access_list[list].aces[ace].actions.logging | default ("No Logging") }} | {{ to_parse_access_list[list].aces[ace].matches.l3.ipv4.source_network[source_network] | replace("{'source_network': ","") | replace("}","") | replace("'","") }} | {{ to_parse_access_list[list].aces[ace].matches.l3.ipv4.destination_network | replace(" {'destination_network':","") | replace("}","") | replace("{","") | replace("'","") | replace(":","") | default("N/A") }} | {{ to_parse_access_list[list].aces[ace].matches.l3.ipv4.protocol | default("N/A") }},N/A | N/A | N/A |{% endfor %}{% else %}{% for destination_network in to_parse_access_list[list].aces[ace].matches.l3.ipv4.destination_network %}
+| {{ list }} | {{ ace }} | {{ to_parse_access_list[list].aces[ace].actions.forwarding }} | {{ to_parse_access_list[list].aces[ace].actions.logging | default("No Logging") }},N/A,{{ to_parse_access_list[list].aces[ace].matches.l3.ipv4.destination_network[destination_network]  | replace(" {'destination_network':","") | replace("}","") | replace("{","") | replace("'","") | replace(":","") | default("NA") }} | {{ to_parse_access_list[list].aces[ace].matches.l3.ipv4.protocol | default("N/A") }},N/A | N/A | N/A |{% endfor %}{% endif %}{% endif %}{% endif %}{% endfor %}{% else %}
+| {{ list }} | No ACEs | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |{% endif %}{% endfor %}{% for list in to_parse_access_list %}{% if to_parse_access_list[list].aces is defined %}{% for ace in to_parse_access_list[list].aces %}{% if to_parse_access_list[list].aces[ace].matches.l4 is defined %}{% if to_parse_access_list[list].aces[ace].matches.l4.udp is defined %}{% if to_parse_access_list[list].aces[ace].matches.l4.udp.source_port is defined %}
+| {{ list }} | {{ ace }} | {{ to_parse_access_list[list].aces[ace].actions.forwarding }} | {{ to_parse_access_list[list].aces[ace].actions.logging | default ("No Logging") }},Source Protocol,N/A | N/A,UDP,{{ to_parse_access_list[list].aces[ace].matches.l4.udp.source_port.operator.operator }} | {{ to_parse_access_list[list].aces[ace].matches.l4.udp.source_port.operator.port }} |{% else %}{% if to_parse_access_list[list].aces[ace].matches.l4.udp.destination_port is defined%}  
+| {{ list }} | {{ ace }} | {{ to_parse_access_list[list].aces[ace].actions.forwarding }} | {{ to_parse_access_list[list].aces[ace].actions.logging | default ("No Logging") }},N/A,Destination Protocol,N/A,UDP,{{ to_parse_access_list[list].aces[ace].matches.l4.udp.destination_port.operator.operator }} | {{ to_parse_access_list[list].aces[ace].matches.l4.udp.destination_port.operator.port }} |{% endif %}{% endif %}{% else %}{% if to_parse_access_list[list].aces[ace].matches.l4.tcp is defined %}{% if to_parse_access_list[list].aces[ace].matches.l4.tcp.source_port is defined %}
+| {{ list }} | {{ ace }} | {{ to_parse_access_list[list].aces[ace].actions.forwarding }} | {{ to_parse_access_list[list].aces[ace].actions.logging | default ("No Logging") }},Source Protocol,N/A | N/A,TCP,{{ to_parse_access_list[list].aces[ace].matches.l4.tcp.source_port.operator.operator }} | {{ to_parse_access_list[list].aces[ace].matches.l4.tcp.source_port.operator.port }} |{% else %}{% if to_parse_access_list[list].aces[ace].matches.l4.tcp.destination_port is defined%}  
+| {{ list }} | {{ ace }} | {{ to_parse_access_list[list].aces[ace].actions.forwarding }} | {{ to_parse_access_list[list].aces[ace].actions.logging | default ("No Logging") }},N/A,Destination Protocol,N/A,TCP,{{ to_parse_access_list[list].aces[ace].matches.l4.tcp.destination_port.operator.operator }} | {{ to_parse_access_list[list].aces[ace].matches.l4.tcp.destination_port.operator.port }} |{% endif %}{% endif %}{% endif %}{% endif %}{% endif %}{% endfor %}{% else %}
+| {{ list }} | No ACEs | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |{% endif %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show Access-Lists</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Access Control List</th>
+    <th>Access Control Entry</th>
+    <th>Permission</th>
+    <th>Logging</th>
+    <th>Source Network</th>
+    <th>Destination Network</th>
+    <th>L3 Protocol</th>
+    <th>L4 Protocol</th>
+    <th>Operator</th>
+    <th>Port</th>
+  </tr>
+  </thead>
+  <tbody>{% for list in to_parse_access_list %}{% if to_parse_access_list[list].aces is defined %}{% for ace in to_parse_access_list[list].aces %}{% if to_parse_access_list[list].aces[ace].matches.l3 is defined %}{% if to_parse_access_list[list].aces[ace].matches.l3.ipv4 is defined %}{% if to_parse_access_list[list].aces[ace].matches.l3.ipv4.source_network is defined %}{% for source_network in to_parse_access_list[list].aces[ace].matches.l3.ipv4.source_network %}
+  <tr>
+    <td>{{ list }}</td>
+    <td>{{ ace }}</td>
+    <td>{{ to_parse_access_list[list].aces[ace].actions.forwarding }}</td>
+    <td>{{ to_parse_access_list[list].aces[ace].actions.logging | default ("No Logging") }}</td>
+    <td>{{ to_parse_access_list[list].aces[ace].matches.l3.ipv4.source_network[source_network] | replace("{'source_network': ","") | replace("}","") | replace("'","") }}</td>
+    <td>{{ to_parse_access_list[list].aces[ace].matches.l3.ipv4.destination_network | replace(" {'destination_network':","") | replace("}","") | replace("{","") | replace("'","") | replace(":","") | default("N/A") }}</td>
+    <td>{{ to_parse_access_list[list].aces[ace].matches.l3.ipv4.protocol | default("N/A") }}</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endfor %}{% else %}{% for destination_network in to_parse_access_list[list].aces[ace].matches.l3.ipv4.destination_network %}
+  <tr>
+    <td>{{ list }}</td>
+    <td>{{ ace }}</td>
+    <td>{{ to_parse_access_list[list].aces[ace].actions.forwarding }}</td>
+    <td>{{ to_parse_access_list[list].aces[ace].actions.logging | default ("No Logging") }}</td>
+    <td>N/A</td>
+    <td>{{ to_parse_access_list[list].aces[ace].matches.l3.ipv4.destination_network | replace(" {'destination_network':","") | replace("}","") | replace("{","") | replace("'","") | replace(":","") | default("N/A") }}</td>
+    <td>{{ to_parse_access_list[list].aces[ace].matches.l3.ipv4.protocol | default("N/A") }}</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endfor %}{% endif %}{% endif %}{% endif %}{% endfor %}{% else %}
+  <tr>
+    <td>{{ list }}</td>
+    <td>No ACEs</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endif %}{% endfor %}{% for list in to_parse_access_list %}{% if to_parse_access_list[list].aces is defined %}{% for ace in to_parse_access_list[list].aces %}{% if to_parse_access_list[list].aces[ace].matches.l4 is defined %}{% if to_parse_access_list[list].aces[ace].matches.l4.udp is defined %}{% if to_parse_access_list[list].aces[ace].matches.l4.udp.source_port is defined %}
+  <tr>
+    <td>{{ list }}</td>
+    <td>{{ ace }}</td>
+    <td>{{ to_parse_access_list[list].aces[ace].actions.forwarding }}</td>
+    <td>{{ to_parse_access_list[list].aces[ace].actions.logging | default ("No Logging") }}</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>UDP</td>
+    <td>{{ to_parse_access_list[list].aces[ace].matches.l4.udp.source_port.operator.operator }}</td>
+    <td>{{ to_parse_access_list[list].aces[ace].matches.l4.udp.source_port.operator.port }}</td>
+  </tr>{% else %}{% if to_parse_access_list[list].aces[ace].matches.l4.udp.destination_port is defined%}
+  <tr>
+    <td>{{ list }}</td>
+    <td>{{ ace }}</td>
+    <td>{{ to_parse_access_list[list].aces[ace].actions.forwarding }}</td>
+    <td>{{ to_parse_access_list[list].aces[ace].actions.logging | default ("No Logging") }}</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>
+    <td>UDP</td>
+    <td>{{ to_parse_access_list[list].aces[ace].matches.l4.udp.destination_port.operator.operator }}</td>
+    <td>{{ to_parse_access_list[list].aces[ace].matches.l4.udp.destination_port.operator.port }}</td>
+  </tr>{% endif %}{% endif %}{% else %}{% if to_parse_access_list[list].aces[ace].matches.l4.tcp is defined %}{% if to_parse_access_list[list].aces[ace].matches.l4.tcp.source_port is defined %}
+  <tr>
+    <td>{{ list }}</td>
+    <td>{{ ace }}</td>
+    <td>{{ to_parse_access_list[list].aces[ace].actions.forwarding }}</td>
+    <td>{{ to_parse_access_list[list].aces[ace].actions.logging | default ("No Logging") }}</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>
+    <td>{{ to_parse_access_list[list].aces[ace].matches.l4.tcp.source_port.operator.operator }}</td>
+    <td>{{ to_parse_access_list[list].aces[ace].matches.l4.tcp.source_port.operator.port }}</td>
+  </tr>{% else %}{% if to_parse_access_list[list].aces[ace].matches.l4.tcp.destination_port is defined%}
+  <tr>
+    <td>{{ list }}</td>
+    <td>{{ ace }}</td>
+    <td>{{ to_parse_access_list[list].aces[ace].actions.forwarding }}</td>
+    <td>{{ to_parse_access_list[list].aces[ace].actions.logging | default ("No Logging") }}</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>
+    <td>{{ to_parse_access_list[list].aces[ace].matches.l4.tcp.destination_port.operator.operator }}</td>
+    <td>{{ to_parse_access_list[list].aces[ace].matches.l4.tcp.destination_port.operator.port }}</td>
+  </tr>{% endif %}{% endif %}{% endif %}{% endif %}{% endif %}{% endfor %}{% else %}
+  <tr>
+    <td>{{ list }}</td>
+    <td>No ACEs</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endif %}{% endfor %}
+  </tbody>  
+</table>
+</body></html>{% endif %}{% endif %}

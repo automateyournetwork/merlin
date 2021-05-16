@@ -1,0 +1,4 @@
+Hostname,Slot,Part,Description,Serial Number,Virtual ID,Subslot,Subslot Part,Subslot Description,Subslot Serial Number,SubSlot Virtual ID
+DevNet_Sandbox_CSR1000v,CSR1000V,CSR1000V,Cisco CSR1000V Chassis,9ZBEJQO6OFH,V00,N/A,N/A,N/A,N/A,N/A
+DevNet_Sandbox_CSR1000v,CSR1000V,CSR1000V,Cisco CSR1000V Route Processor,JAB1303001C,V00,N/A,N/A,N/A,N/A,N/A
+DevNet_Sandbox_CSR1000v,CSR1000V,CSR1000V,Cisco CSR1000V Embedded Services Processor,,,N/A,N/A,N/A,N/A,N/A

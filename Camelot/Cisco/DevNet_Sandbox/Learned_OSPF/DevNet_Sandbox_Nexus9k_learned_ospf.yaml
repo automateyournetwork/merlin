@@ -1,0 +1,405 @@
+!!python/object/new:genie.ops.base.maker.CmdDict
+dictitems:
+  feature_ospf: true
+  vrf: !!python/object/new:genie.ops.base.maker.CmdDict
+    dictitems:
+      default: !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          address_family: !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              ipv4: !!python/object/new:genie.ops.base.maker.CmdDict
+                dictitems:
+                  instance: !!python/object/new:genie.ops.base.maker.CmdDict
+                    dictitems:
+                      '1': !!python/object/new:genie.ops.base.maker.CmdDict
+                        dictitems:
+                          areas: !!python/object/new:genie.ops.base.maker.CmdDict
+                            dictitems:
+                              0.0.0.0: !!python/object/new:genie.ops.base.maker.CmdDict
+                                dictitems:
+                                  area_id: 0.0.0.0
+                                  area_type: normal
+                                  database: !!python/object/new:genie.ops.base.maker.CmdDict
+                                    dictitems:
+                                      lsa_types: !!python/object/new:genie.ops.base.maker.CmdDict
+                                        dictitems:
+                                          1: !!python/object/new:genie.ops.base.maker.CmdDict
+                                            dictitems:
+                                              lsa_type: 1
+                                              lsas: !!python/object/new:genie.ops.base.maker.CmdDict
+                                                dictitems:
+                                                  172.16.0.1 172.16.0.1: !!python/object/new:genie.ops.base.maker.CmdDict
+                                                    dictitems:
+                                                      adv_router: 172.16.0.1
+                                                      lsa_id: 172.16.0.1
+                                                      ospfv2: !!python/object/new:genie.ops.base.maker.CmdDict
+                                                        dictitems:
+                                                          body: !!python/object/new:genie.ops.base.maker.CmdDict
+                                                            dictitems:
+                                                              router: !!python/object/new:genie.ops.base.maker.CmdDict
+                                                                dictitems:
+                                                                  links: !!python/object/new:genie.ops.base.maker.CmdDict
+                                                                    dictitems:
+                                                                      172.16.1.0: !!python/object/new:genie.ops.base.maker.CmdDict
+                                                                        dictitems:
+                                                                          link_data: 255.255.255.252
+                                                                          link_id: 172.16.1.0
+                                                                          topologies: !!python/object/new:genie.ops.base.maker.CmdDict
+                                                                            dictitems:
+                                                                              0: !!python/object/new:genie.ops.base.maker.CmdDict
+                                                                                dictitems:
+                                                                                  metric: 40
+                                                                                  mt_id: 0
+                                                                                state:
+                                                                                  leaf_dict:
+                                                                                    metric: &id001 !!python/name:genie.libs.parser.nxos.show_ospf.ShowIpOspfDatabaseRouterDetail ''
+                                                                                    mt_id: *id001
+                                                                            state:
+                                                                              leaf_dict: {}
+                                                                          type: stub
+                                                                            network
+                                                                        state:
+                                                                          leaf_dict:
+                                                                            link_data: *id001
+                                                                            link_id: *id001
+                                                                            type: *id001
+                                                                    state:
+                                                                      leaf_dict: {}
+                                                                  num_of_links: 1
+                                                                state:
+                                                                  leaf_dict:
+                                                                    num_of_links: *id001
+                                                            state:
+                                                              leaf_dict: {}
+                                                          header: !!python/object/new:genie.ops.base.maker.CmdDict
+                                                            dictitems:
+                                                              adv_router: 172.16.0.1
+                                                              age: 1680
+                                                              checksum: '0x876a'
+                                                              length: 36
+                                                              lsa_id: 172.16.0.1
+                                                              option: '0x2'
+                                                              seq_num: '0x80000004'
+                                                              type: 1
+                                                            state:
+                                                              leaf_dict:
+                                                                adv_router: *id001
+                                                                age: *id001
+                                                                checksum: *id001
+                                                                length: *id001
+                                                                lsa_id: *id001
+                                                                option: *id001
+                                                                seq_num: *id001
+                                                                type: *id001
+                                                        state:
+                                                          leaf_dict: {}
+                                                    state:
+                                                      leaf_dict:
+                                                        adv_router: *id001
+                                                        lsa_id: *id001
+                                                state:
+                                                  leaf_dict: {}
+                                            state:
+                                              leaf_dict:
+                                                lsa_type: *id001
+                                        state:
+                                          leaf_dict: {}
+                                    state:
+                                      leaf_dict: {}
+                                  interfaces: !!python/object/new:genie.ops.base.maker.CmdDict
+                                    dictitems:
+                                      Ethernet1/5: !!python/object/new:genie.ops.base.maker.CmdDict
+                                        dictitems:
+                                          bfd: !!python/object/new:genie.ops.base.maker.CmdDict
+                                            dictitems:
+                                              enable: false
+                                            state:
+                                              leaf_dict:
+                                                enable: &id002 !!python/name:genie.libs.parser.nxos.show_ospf.ShowIpOspfInterface ''
+                                          cost: 40
+                                          dead_interval: 40
+                                          dr_ip_addr: 172.16.1.1
+                                          dr_router_id: 172.16.0.1
+                                          enable: true
+                                          hello_interval: 10
+                                          hello_timer: 00:00:05
+                                          interface_type: broadcast
+                                          name: Ethernet1/5
+                                          passive: false
+                                          priority: 1
+                                          retransmit_interval: 5
+                                          state: dr
+                                          statistics: !!python/object/new:genie.ops.base.maker.CmdDict
+                                            dictitems:
+                                              link_scope_lsa_cksum_sum: 0
+                                              link_scope_lsa_count: 0
+                                            state:
+                                              leaf_dict:
+                                                link_scope_lsa_cksum_sum: *id002
+                                                link_scope_lsa_count: *id002
+                                          transmit_delay: 1
+                                        state:
+                                          leaf_dict:
+                                            cost: *id002
+                                            dead_interval: *id002
+                                            dr_ip_addr: *id002
+                                            dr_router_id: *id002
+                                            enable: *id002
+                                            hello_interval: *id002
+                                            hello_timer: *id002
+                                            interface_type: *id002
+                                            name: *id002
+                                            passive: *id002
+                                            priority: *id002
+                                            retransmit_interval: *id002
+                                            state: *id002
+                                            transmit_delay: *id002
+                                      Vlan100: !!python/object/new:genie.ops.base.maker.CmdDict
+                                        dictitems:
+                                          bfd: !!python/object/new:genie.ops.base.maker.CmdDict
+                                            dictitems:
+                                              enable: false
+                                            state:
+                                              leaf_dict:
+                                                enable: *id002
+                                          cost: 40
+                                          enable: true
+                                          interface_type: broadcast
+                                          name: Vlan100
+                                          passive: true
+                                          state: down
+                                        state:
+                                          leaf_dict:
+                                            cost: *id002
+                                            enable: *id002
+                                            interface_type: *id002
+                                            name: *id002
+                                            passive: *id002
+                                            state: *id002
+                                      Vlan101: !!python/object/new:genie.ops.base.maker.CmdDict
+                                        dictitems:
+                                          bfd: !!python/object/new:genie.ops.base.maker.CmdDict
+                                            dictitems:
+                                              enable: false
+                                            state:
+                                              leaf_dict:
+                                                enable: *id002
+                                          cost: 40
+                                          enable: true
+                                          interface_type: broadcast
+                                          name: Vlan101
+                                          passive: true
+                                          state: down
+                                        state:
+                                          leaf_dict:
+                                            cost: *id002
+                                            enable: *id002
+                                            interface_type: *id002
+                                            name: *id002
+                                            passive: *id002
+                                            state: *id002
+                                      Vlan102: !!python/object/new:genie.ops.base.maker.CmdDict
+                                        dictitems:
+                                          bfd: !!python/object/new:genie.ops.base.maker.CmdDict
+                                            dictitems:
+                                              enable: false
+                                            state:
+                                              leaf_dict:
+                                                enable: *id002
+                                          cost: 40
+                                          enable: true
+                                          interface_type: broadcast
+                                          name: Vlan102
+                                          passive: true
+                                          state: down
+                                        state:
+                                          leaf_dict:
+                                            cost: *id002
+                                            enable: *id002
+                                            interface_type: *id002
+                                            name: *id002
+                                            passive: *id002
+                                            state: *id002
+                                      Vlan103: !!python/object/new:genie.ops.base.maker.CmdDict
+                                        dictitems:
+                                          bfd: !!python/object/new:genie.ops.base.maker.CmdDict
+                                            dictitems:
+                                              enable: false
+                                            state:
+                                              leaf_dict:
+                                                enable: *id002
+                                          cost: 40
+                                          enable: true
+                                          interface_type: broadcast
+                                          name: Vlan103
+                                          passive: true
+                                          state: down
+                                        state:
+                                          leaf_dict:
+                                            cost: *id002
+                                            enable: *id002
+                                            interface_type: *id002
+                                            name: *id002
+                                            passive: *id002
+                                            state: *id002
+                                      Vlan104: !!python/object/new:genie.ops.base.maker.CmdDict
+                                        dictitems:
+                                          bfd: !!python/object/new:genie.ops.base.maker.CmdDict
+                                            dictitems:
+                                              enable: false
+                                            state:
+                                              leaf_dict:
+                                                enable: *id002
+                                          cost: 40
+                                          enable: true
+                                          interface_type: broadcast
+                                          name: Vlan104
+                                          passive: true
+                                          state: down
+                                        state:
+                                          leaf_dict:
+                                            cost: *id002
+                                            enable: *id002
+                                            interface_type: *id002
+                                            name: *id002
+                                            passive: *id002
+                                            state: *id002
+                                      Vlan105: !!python/object/new:genie.ops.base.maker.CmdDict
+                                        dictitems:
+                                          bfd: !!python/object/new:genie.ops.base.maker.CmdDict
+                                            dictitems:
+                                              enable: false
+                                            state:
+                                              leaf_dict:
+                                                enable: *id002
+                                          cost: 40
+                                          enable: true
+                                          interface_type: broadcast
+                                          name: Vlan105
+                                          passive: true
+                                          state: down
+                                        state:
+                                          leaf_dict:
+                                            cost: *id002
+                                            enable: *id002
+                                            interface_type: *id002
+                                            name: *id002
+                                            passive: *id002
+                                            state: *id002
+                                    state:
+                                      leaf_dict: {}
+                                  mpls: !!python/object/new:genie.ops.base.maker.CmdDict
+                                    dictitems:
+                                      ldp: !!python/object/new:genie.ops.base.maker.CmdDict
+                                        dictitems:
+                                          auto_config: false
+                                          sync: false
+                                        state:
+                                          leaf_dict:
+                                            auto_config: &id003 !!python/name:genie.libs.parser.nxos.show_ospf.ShowIpOspfMplsLdpInterface ''
+                                            sync: *id003
+                                    state:
+                                      leaf_dict: {}
+                                  statistics: !!python/object/new:genie.ops.base.maker.CmdDict
+                                    dictitems:
+                                      area_scope_lsa_cksum_sum: '1'
+                                      area_scope_lsa_count: 1
+                                      spf_runs_count: 1
+                                    state:
+                                      leaf_dict:
+                                        area_scope_lsa_cksum_sum: &id004 !!python/name:genie.libs.parser.nxos.show_ospf.ShowIpOspf ''
+                                        area_scope_lsa_count: *id004
+                                        spf_runs_count: *id004
+                                state:
+                                  leaf_dict:
+                                    area_id: *id004
+                                    area_type: *id004
+                            state:
+                              leaf_dict: {}
+                          auto_cost: !!python/object/new:genie.ops.base.maker.CmdDict
+                            dictitems:
+                              enable: false
+                              reference_bandwidth: 40000
+                            state:
+                              leaf_dict:
+                                enable: *id004
+                                reference_bandwidth: *id004
+                          enable: false
+                          graceful_restart: !!python/object/new:genie.ops.base.maker.CmdDict
+                            dictitems:
+                              ietf: !!python/object/new:genie.ops.base.maker.CmdDict
+                                dictitems:
+                                  enable: true
+                                  restart_interval: 60
+                                  type: ietf
+                                state:
+                                  leaf_dict:
+                                    enable: *id004
+                                    restart_interval: *id004
+                                    type: *id004
+                            state:
+                              leaf_dict: {}
+                          nsr: !!python/object/new:genie.ops.base.maker.CmdDict
+                            dictitems:
+                              enable: true
+                            state:
+                              leaf_dict:
+                                enable: *id004
+                          preference: !!python/object/new:genie.ops.base.maker.CmdDict
+                            dictitems:
+                              single_value: !!python/object/new:genie.ops.base.maker.CmdDict
+                                dictitems:
+                                  all: 110
+                                state:
+                                  leaf_dict:
+                                    all: *id004
+                            state:
+                              leaf_dict: {}
+                          router_id: 172.16.0.1
+                          spf_control: !!python/object/new:genie.ops.base.maker.CmdDict
+                            dictitems:
+                              paths: 8
+                              throttle: !!python/object/new:genie.ops.base.maker.CmdDict
+                                dictitems:
+                                  lsa: !!python/object/new:genie.ops.base.maker.CmdDict
+                                    dictitems:
+                                      hold: 5000
+                                      maximum: 5000
+                                      start: 0
+                                    state:
+                                      leaf_dict:
+                                        hold: *id004
+                                        maximum: *id004
+                                        start: *id004
+                                  spf: !!python/object/new:genie.ops.base.maker.CmdDict
+                                    dictitems:
+                                      hold: 1000
+                                      maximum: 5000
+                                      start: 200
+                                    state:
+                                      leaf_dict:
+                                        hold: *id004
+                                        maximum: *id004
+                                        start: *id004
+                                state:
+                                  leaf_dict: {}
+                            state:
+                              leaf_dict:
+                                paths: *id004
+                        state:
+                          leaf_dict:
+                            enable: *id004
+                            router_id: *id004
+                    state:
+                      leaf_dict: {}
+                state:
+                  leaf_dict: {}
+            state:
+              leaf_dict: {}
+        state:
+          leaf_dict: {}
+    state:
+      leaf_dict: {}
+state:
+  leaf_dict:
+    feature_ospf: !!python/name:genie.libs.parser.nxos.show_feature.ShowFeature ''

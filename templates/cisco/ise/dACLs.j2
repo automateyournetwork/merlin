@@ -1,0 +1,8 @@
+{% if filetype_loop_jinja2 == "csv" %}{% for resource in to_parse_dACLs.SearchResult.resources %}
+{{ resource.name }},{{ resource.description }},{{ resource.id }}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}{% for resource in to_parse_dACLs.SearchResult.resources %}
+| {{ resource.name }} | {{ resource.description }} | {{ resource.id }} |{% endfor %}{% else %}{% for resource in to_parse_dACLs.SearchResult.resources %}
+<tr>
+  <td>{{ resource.name }}</td>
+  <td>{{ resource.description }}</td>
+  <td>{{ resource.id }}</td>
+</tr>{% endfor %}{% endif %}{% endif %}

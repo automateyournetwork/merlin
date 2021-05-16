@@ -1,0 +1,21 @@
+{% if filetype_loop_jinja2 == "csv" %}VRF,Server Address,Preferred{% for vrf in to_parse_ntp %}{% for address in to_parse_ntp[vrf].unicast_configuration.address %}
+{{ vrf }},{{ address }},{{ to_parse_ntp[vrf].unicast_configuration.address[address].type.server.preferred }}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Learn NTP Unicast
+| VRF | Server Address | Preferred |
+| --- | -------------- | --------- |{% for vrf in to_parse_ntp %}{% for address in to_parse_ntp[vrf].unicast_configuration.address %}
+| {{ vrf }} | {{ address }} | {{ to_parse_ntp[vrf].unicast_configuration.address[address].type.server.preferred }} |{% endfor %}{% endfor %}{% else %}
+<html><body>
+<h1>Learn NTP Unicast</h1>
+<table style="width:100%">
+  <tr>
+    <th>VRF</th>
+    <th>Server Address</th>
+    <th>Preferred</th>
+  </tr>{% for vrf in to_parse_ntp %}{% for address in to_parse_ntp[vrf].unicast_configuration.address %}
+  <tr>
+    <td>{{ vrf }}</td>
+    <td>{{ address }}</td>
+    <td>{{ to_parse_ntp[vrf].unicast_configuration.address[address].type.server.preferred }}</td>
+  </tr>{% endfor %}{% endfor %}
+</table>
+</body></html>{% endif %}{% endif %}

@@ -1,0 +1,37 @@
+{% if filetype_loop_jinja2 == "csv" %}Server Address,Reference Clock, Stratum, Poll, Reach, Delay, Offset, Dispersion{% for peer in to_parse_ntp_associations.peer %}
+{{ peer }},{{ to_parse_ntp_associations['peer'][peer]['local_mode']['client']['refid'] }},{{ to_parse_ntp_associations['peer'][peer]['local_mode']['client']['stratum'] }},{{ to_parse_ntp_associations['peer'][peer]['local_mode']['client']['poll'] }},{{ to_parse_ntp_associations['peer'][peer]['local_mode']['client']['reach'] }},{{ to_parse_ntp_associations['peer'][peer]['local_mode']['client']['delay'] }},{{ to_parse_ntp_associations['peer'][peer]['local_mode']['client']['offset'] }},{{ to_parse_ntp_associations['peer'][peer]['local_mode']['client']['offset'] }}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show NTP Associations
+| Server Address | Reference Clock | Stratum | Poll | Reach | Delay | Offset | Dispersion |
+| ------- | --------------- | ------- | ---- | ----- | ----- | ------ | ---------- |{% for peer in to_parse_ntp_associations.peer %}
+| {{ peer }} | {{ to_parse_ntp_associations['peer'][peer]['local_mode']['client']['refid'] }} | {{ to_parse_ntp_associations['peer'][peer]['local_mode']['client']['stratum'] }} | {{ to_parse_ntp_associations['peer'][peer]['local_mode']['client']['poll'] }} | {{ to_parse_ntp_associations['peer'][peer]['local_mode']['client']['reach'] }} | {{ to_parse_ntp_associations['peer'][peer]['local_mode']['client']['delay'] }} | {{ to_parse_ntp_associations['peer'][peer]['local_mode']['client']['offset'] }} | {{ to_parse_ntp_associations['peer'][peer]['local_mode']['client']['jitter'] }} |{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show NTP Associations</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Server Address</th>
+    <th>Reference Clock</th>
+    <th>Stratum</th>
+    <th>Poll</th>   
+    <th>Reach</th>
+    <th>Delay</th>
+    <th>Offset</th>
+    <th>Dispersion</th>    
+  </tr>
+  </thead>
+
+  <tbody>
+  {% for peer in to_parse_ntp_associations.peer %}  
+  <tr>
+    <td>{{ peer }}</td>
+    <td>{{ to_parse_ntp_associations['peer'][peer]['local_mode']['client']['refid'] }}</td>
+    <td>{{ to_parse_ntp_associations['peer'][peer]['local_mode']['client']['stratum'] }}</td>
+    <td>{{ to_parse_ntp_associations['peer'][peer]['local_mode']['client']['poll'] }}</td>
+    <td>{{ to_parse_ntp_associations['peer'][peer]['local_mode']['client']['reach'] }}</td>
+    <td>{{ to_parse_ntp_associations['peer'][peer]['local_mode']['client']['delay'] }}</td>
+    <td>{{ to_parse_ntp_associations['peer'][peer]['local_mode']['client']['offset'] }}</td>
+    <td>{{ to_parse_ntp_associations['peer'][peer]['local_mode']['client']['jitter'] }}</td>
+  </tr>{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

@@ -1,0 +1,38 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show MAC Address-Table",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_Nexus9k"
+        },
+        {
+            "id": "VLAN: -"
+        },
+        {
+            "id": "MAC Address: 00bf.5774.1b08"
+        },
+        {
+            "id": "Interface: Sup-eth1(R)"
+        }
+    ],
+    "links": [
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VLAN: -",
+            "cost": 1
+        },
+        {
+            "source": "VLAN: -",
+            "target": "MAC Address: 00bf.5774.1b08",
+            "cost": 1
+        },
+        {
+            "source": "MAC Address: 00bf.5774.1b08",
+            "target": "Interface: Sup-eth1(R)",
+            "cost": 1
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{% if filetype_loop_jinja2 == "csv" %}Interface,Name,Status,Speed,Duplex,VLAN{% for interface in to_parse_interfaces %}
+{{ interface }},{{ to_parse_interfaces[interface].name | default("Not Named") }},{{ to_parse_interfaces[interface].status }},{{ to_parse_interfaces[interface].port_speed }},{{ to_parse_interfaces[interface].duplex_code }},{{ to_parse_interfaces[interface].vlan }}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show Interface Status
+| Interface | Name | Status | Speed | Duplex | VLAN |
+| --------- | ---- | ------ | ----- | ------ | ---- |{% for interface in to_parse_interfaces %}
+| {{ interface }} | {{ to_parse_interfaces[interface].name | default("Not Named") }} | {{ to_parse_interfaces[interface].status }} | {{ to_parse_interfaces[interface].port_speed }} | {{ to_parse_interfaces[interface].duplex_code }} | {{ to_parse_interfaces[interface].vlan }} |{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show Interfaces Status</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Interface</th>
+    <th>Name</th>
+    <th>Status</th>
+    <th>Duplex</th>
+    <th>VLAN</th>   
+  </tr>
+  </thead>
+  <tbody>{% for interface in to_parse_interfaces %}  
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ to_parse_interfaces[interface].name | default("Not Named") }}</td>
+    <td>{{ to_parse_interfaces[interface].status }}</td>
+    <td>{{ to_parse_interfaces[interface].port_speed }}</td>
+    <td>{{ to_parse_interfaces[interface].duplex_code }}</td>
+    <td>{{ to_parse_interfaces[interface].vlan }}</td>
+  </tr>{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

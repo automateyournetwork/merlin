@@ -1,0 +1,39 @@
+{% if filetype_loop_jinja2 == "csv" %}Name,Partition,Create Time,Created By,Expiration Date,Issuer,Serial Number,Subject,Subject Alternate Name,Updated By{% for cert in to_parse_ssl_cert %}
+{{ cert.name }},{{ cert.partition }},{{ cert.createTime }},{{ cert.createdBy }},{{ cert.expirationString }},{{ cert.issuer | replace(","," ") }},{{ cert.serialNumber | default("No Serial Number") }},{{ cert.subject | replace(","," ") }},{{ cert.subjectAlternativeName | default("No SAN") | replace(","," ") }},{{ cert.updatedBy }}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# SSL Certificates
+| Name | Partition | Create Time | Created By | Expiration Date | Issuer | Serial Number | Subject | Subject Alternate Name | Updated By |
+| ---- | --------- | ----------- | ---------- | --------------- | ------ | ------------- | ------- | ---------------------- | ---------- |{% for cert in to_parse_ssl_cert %}
+| {{ cert.name }} | {{ cert.partition }} | {{ cert.createTime }} | {{ cert.createdBy }} | {{ cert.expirationString }} | {{ cert.issuer | replace(","," ") }} | {{ cert.serialNumber | default("No Serial Number") }} | {{ cert.subject | replace(","," ") }} | {{ cert.subjectAlternativeName | default("No SAN") | replace(","," ") }} | {{ cert.updatedBy }} |{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>SSL Certificates</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Partition</th>
+    <th>Create Time</th>
+    <th>Created By</th>
+    <th>Expiration Date</th>
+    <th>Issuer</th>
+    <th>Serial Number</th>
+    <th>Subject</th>
+    <th>Subject Alternate Name</th>
+    <th>Updated By</th>
+  </tr>
+  </thead>
+  <tbody>{% for cert in to_parse_ssl_cert %}
+  <tr>
+    <td>{{ cert.name }}</td>
+    <td>{{ cert.partition }}</td>
+    <td>{{ cert.createTime }}</td>
+    <td>{{ cert.createdBy }}</td>
+    <td>{{ cert.expirationString }}</td>
+    <td>{{ cert.issuer | replace(","," ") }}</td>
+    <td>{{ cert.serialNumber | default("No Serial Number") }}</td>
+    <td>{{ cert.subject | replace(","," ") }}</td>
+    <td>{{ cert.subjectAlternativeName | default("No SAN") | replace(","," ") }}</td>
+    <td>{{ cert.updatedBy }}</td>
+  </tr>{% endfor %}
+  </tbody>  
+</table>
+</body></html>{% endif %}{% endif %}

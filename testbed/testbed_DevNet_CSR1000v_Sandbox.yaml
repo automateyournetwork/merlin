@@ -1,0 +1,17 @@
+devices:
+    csr1000v-1:
+      alias: 'DevNet_Sandbox_CSR1000v'
+      type: 'router'
+      os: 'iosxe'
+      platform: isr
+      credentials:
+        default:
+          username: developer
+          password: C1sco12345
+      connections:        
+        cli:
+          protocol: ssh
+          ip: 10.10.20.48
+          port: 22
+          arguments:
+            connection_timeout: 360            

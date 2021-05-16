@@ -1,0 +1,19 @@
+{
+    "interfaces": {
+        "Port-channel11": {
+            "bundle_id": 11,
+            "layer": "switched",
+            "members": {
+                "Ethernet1/1": {
+                    "flags": "D"
+                },
+                "Ethernet1/2": {
+                    "flags": "D"
+                }
+            },
+            "oper_status": "down",
+            "protocol": "none",
+            "type": "eth"
+        }
+    }
+}

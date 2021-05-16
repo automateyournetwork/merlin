@@ -1,0 +1,315 @@
+global_config:
+  hostname: sbx-n9kv
+  management_interface:
+    mgmt0:
+      description: "DO NOT TOUCH CONFIG ON THIS INTERFACE"
+      vrf: management
+      ip_address: 10.10.20.58/24
+  features:
+    - nxapi
+    -  bash-shell
+    -  scp-server
+    -  ospf
+    -  bgp
+    -  netconf
+    -  restconf
+    -  grpc
+    -  interface-vlan
+  ip_domain_lookup: false
+  radius_servers:
+    172.16.1.12:
+      key: VwritosWsgsziGio
+    172.16.1.13: 
+      key: VwritosWsgsziGio
+  aaa_radius_groups:
+    AAA-Radius-Group:
+      servers:
+        - 172.16.1.12 
+        - 172.16.1.13 
+      vrf: management
+      source_interface: mgmt0
+  snmp_server_users:
+    admin:
+      auth_key: "0x6e3f7802ad4401539b7624482a05a2c8"
+      priv_key: "0x6e3f7802ad4401539b7624482a05a2c8"
+      engineID: "128:0:0:9:3:0:191:13:31:27:1"
+  rmon_events:
+    1:
+      description: "FATAL(1)"
+      owner: "PMON@FATAL"
+    2:
+      description: "CRITICAL(2)"
+      owner: "PMON@CRITICAL"
+    3:
+      description: "ERROR(3)"
+      owner: "PMON@ERROR"
+    4:
+      description: "WARNING(4)"
+      owner: "PMON@WARNING"
+    5:
+      description: "INFORMATION(5)"
+      owner: "PMON@INFO"                  
+  icam_monitor: scale
+  line_console:
+    exec_timeout: 0
+  line_vty:
+    exec_timeout: 0
+  logging_console: false
+
+host_vdcs:
+  sbx-n9kv:
+    id: 1
+    limited_resources:
+      vlan: 
+        minimum: 16 
+        maximum: 4094
+      vrf: 
+        minimum: 2 
+        maximum: 4096
+      port-channel: 
+        minimum: 0 
+        maximum: 511
+      u4route-mem:
+        minimum: 248 
+        maximum: 248
+      u6route-mem:
+        minimum: 96 
+        maximum: 96
+      m4route-mem: 
+        minimum: 58 
+        maximum: 58
+      m6route-mem:
+        minimum: 8 
+        maximum: 8
+      vni_bd: 
+        minimum: 4096 
+        maximum: 4096    
+
+host_users:
+  admin:
+    password: "5 $5$NHJPMI$nAF5/Os4JZ/VEGa3bvsZ9DicHG4yh9XvDdRX4Rh7U03"
+    role: "network-admin"
+
+host_vlans:
+  100:
+    name: mgmt
+  101:
+    name: prod
+  102:
+    name: dev
+  103:
+    name: test
+  104:
+    name: security
+  105:
+    name: iot
+
+host_vrfs:
+  management:
+    domain_name: sj.ivt.net
+    name_servers:
+      - 10.10.2.18
+      - 10.10.2.20
+      - 128.107.212.175
+    routes: 
+      0.0.0.0/0:
+        next_hop: 10.10.20.254
+
+host_svis:
+  1:
+    enabled: false
+  100:
+    enabled: true
+    description: "mgmt svi - DEMO PLEASE DON'T TOUCH"
+    ip_address: 172.16.100.1/24
+    opsf_instance: 1
+    ospf_area: 0.0.0.0
+  101:
+    enabled: true
+    description: "prod svi - DEMO PLEASE DON'T TOUCH"
+    ip_address: 172.16.101.1/24
+    opsf_instance: 1
+    ospf_area: 0.0.0.0
+  102:
+    enabled: true
+    description: "dev svi - DEMO PLEASE DON'T TOUCH"
+    ip_address: 172.16.102.1/24
+    opsf_instance: 1
+    ospf_area: 0.0.0.0
+  103:
+    enabled: true
+    description: "test svi - DEMO PLEASE DON'T TOUCH"
+    ip_address: 172.16.103.1/24
+    opsf_instance: 1
+    ospf_area: 0.0.0.0
+  104:
+    enabled: true
+    description: "security svi - DEMO PLEASE DON'T TOUCH"
+    ip_address: 172.16.104.1/24
+    opsf_instance: 1
+    ospf_area: 0.0.0.0
+  105:
+    enabled: true
+    description: "iot svi - DEMO PLEASE DON'T TOUCH"
+    ip_address: 172.16.105.1/24
+    opsf_instance: 1
+    ospf_area: 0.0.0.0
+
+host_port_channels:
+  11:
+    switchport: true
+    switchport_mode: trunk
+    switchport_allowed_vlans: 100-110
+    members:
+      - Ethernet1/1
+      - Ethernet1/2
+
+host_interfaces:
+  Ethernet1/3:
+    enabled: false
+  Ethernet1/4:
+    enabled: false  
+  Ethernet1/5:
+    enabled: true
+    description: "L3 Link"
+    ip_address: 172.16.1.1/30
+    ospf_broadcast: true
+    no_ospf_passive_interface: true
+    ospf_instance: 1 
+    ospf_area: 0.0.0.0
+  Ethernet1/6:
+    enabled: false
+  Ethernet1/7:
+    enabled: false
+  Ethernet1/8:
+    enabled: false
+  Ethernet1/9:
+    enabled: false
+  Ethernet1/10:
+    enabled: false
+  Ethernet1/11:
+    enabled: false
+  Ethernet1/12:
+    enabled: false
+  Ethernet1/13:
+    enabled: false
+  Ethernet1/14:
+    enabled: false
+  Ethernet1/15:
+    enabled: false
+  Ethernet1/16:
+    enabled: false
+  Ethernet1/17:
+    enabled: false
+  Ethernet1/18:
+    enabled: false
+  Ethernet1/19:
+    enabled: false
+  Ethernet1/20:
+    enabled: false
+  Ethernet1/21:
+    enabled: false
+  Ethernet1/22:
+    enabled: false
+  Ethernet1/23:
+    enabled: false
+  Ethernet1/24:
+    enabled: false
+  Ethernet1/25:
+    enabled: false
+  Ethernet1/26:
+    enabled: false
+  Ethernet1/27:
+    enabled: false
+  Ethernet1/28:
+    enabled: false
+  Ethernet1/29:
+    enabled: false
+  Ethernet1/30:
+    enabled: false
+  Ethernet1/31:
+    enabled: false
+  Ethernet1/32:
+    enabled: false
+  Ethernet1/33:
+    enabled: false
+  Ethernet1/34:
+    enabled: false
+  Ethernet1/35:
+    enabled: false
+  Ethernet1/36:
+    enabled: false
+  Ethernet1/37:
+    enabled: false
+  Ethernet1/38:
+    enabled: false
+  Ethernet1/39:
+    enabled: false
+  Ethernet1/40:
+    enabled: false
+  Ethernet1/41:
+    enabled: false
+  Ethernet1/42:
+    enabled: false
+  Ethernet1/43:
+    enabled: false
+  Ethernet1/44:
+    enabled: false
+  Ethernet1/45:
+    enabled: false
+  Ethernet1/46:
+    enabled: false
+  Ethernet1/47:
+    enabled: false
+  Ethernet1/48:
+    enabled: false
+  Ethernet1/49:
+    enabled: false
+  Ethernet1/50:
+    enabled: false
+  Ethernet1/51:
+    enabled: false
+  Ethernet1/52:
+    enabled: false
+  Ethernet1/53:
+    enabled: false
+  Ethernet1/54:
+    enabled: false
+  Ethernet1/55:
+    enabled: false
+  Ethernet1/56:
+    enabled: false
+  Ethernet1/57:
+    enabled: false
+  Ethernet1/58:
+    enabled: false
+  Ethernet1/59:
+    enabled: false
+  Ethernet1/60:
+    enabled: false
+  Ethernet1/61:
+    enabled: false
+  Ethernet1/62:
+    enabled: false
+  Ethernet1/63:
+    enabled: false
+  Ethernet1/64:
+    enabled: false
+
+host_loopback_interfaces:
+  1:
+    ip_address: 172.16.0.1/32
+
+host_ospf:
+  1:
+    router_id: 172.16.0.1
+    passive_interface: default
+
+host_bgp:
+  65535:
+    address_families:
+      ipv4:
+        network: 172.16.0.0/16
+    neighbor: 
+      172.16.0.2:
+        remote_as: 65535    

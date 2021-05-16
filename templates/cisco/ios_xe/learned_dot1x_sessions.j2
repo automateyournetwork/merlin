@@ -1,0 +1,25 @@
+{% if filetype_loop_jinja2 == "csv" %}
+System Auth Control,Authorized Clients,Unauthorized Clients,Total Clients
+{{ to_parse_dot1x.system_auth_control }},{{ to_parse_dot1x.sessions.authorized_clients }},{{ to_parse_dot1x.sessions.unauthorized_clients }},{{ to_parse_dot1x.sessions.total }}
+{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Learn Dot1x Sessions
+| System Auth Control | Authorized Clients | Unauthorized Clients | Total Clients |
+| ------------------- | ------------------ | -------------------- | ------------- |
+| {{ to_parse_dot1x.system_auth_control }} | {{ to_parse_dot1x.sessions.authorized_clients }} | {{ to_parse_dot1x.sessions.unauthorized_clients }} | {{ to_parse_dot1x.sessions.total }} |{% else %}
+<html><body>
+<h1>Learn Dot1x/h1>
+<table style="width:100%">
+  <tr>
+    <th>System Auth Control</th>
+    <th>Authorized Clients</th>
+    <th>Unauthorized Clients</th>
+    <th>Total Clients</th>
+  </tr>
+  <tr>
+    <td>{{ to_parse_dot1x.system_auth_control }}</td>
+    <td>{{ to_parse_dot1x.sessions.authorized_clients }}</td>
+    <td>{{ to_parse_dot1x.sessions.unauthorized_clients }}</td>
+    <td>{{ to_parse_dot1x.sessions.total }}</td>
+  </tr>
+</table>
+</body></html>{% endif %}{% endif %}

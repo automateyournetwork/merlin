@@ -1,0 +1,102 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Interface Status",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_CSR1000v"
+        },
+        {
+            "id": "Total Entries: 2"
+        },
+        {
+            "id": "Input Drops: 0"
+        },
+        {
+            "id": "Input Replies: 1"
+        },
+        { 
+            "id": "Input Requests: 5"
+        },
+        {
+            "id": "Input Total: "
+        },
+        {
+            "id": "Incomplete Total: 0"
+        },
+        {
+            "id": "Output Drops: "
+        },
+        { 
+            "id": "Output Gratuitous: "
+        },
+        {
+            "id": "Output Replies: 6"
+        },
+        {
+            "id": "Output Requests: 1"
+        },
+        {
+            "id": "Output Total: "
+        }       
+    ],
+    "links": [
+        {
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "Total Entries: 2",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "Input Drops: 0",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "Input Replies: 1",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "Input Requests: 5",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "Input Total: ",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "Incomplete Total: 0",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "Output Drops: ",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "Output Gratuitous: ",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "Output Replies: 6",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "Output Requests: 1",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "Output Total: ",
+            "cost": 1
+        }      
+    ]
+}

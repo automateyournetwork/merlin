@@ -1,0 +1,152 @@
+{
+    "type": "NetworkGraph",
+    "label": "Learned BGP",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for instance in to_parse_bgp %}{% set instance_loop = loop %}{% for vrf in to_parse_bgp[instance].vrf %}{% set vrf_loop = loop %}{% for neighbor in to_parse_bgp[instance].vrf[vrf].neighbor %}{% set neighbor_loop = loop %}
+        { 
+            "id": "Instance: {{ instance }}"
+        },
+        { 
+            "id": "BGP IP: {{ to_parse_bgp[instance].bgp_id }}"
+        },
+        { 
+            "id": "Protocol State: {{ to_parse_bgp[instance].protocol_state }}"
+        },
+        { 
+            "id": "VRF: {{ vrf }}"
+        },
+        { 
+            "id": "Router ID: {{ to_parse_bgp[instance].vrf[vrf].router_id }}"
+        },
+        { 
+            "id": "Cluster ID: {{ to_parse_bgp[instance].vrf[vrf].cluster_id }}"
+        },
+        { 
+            "id": "Confed ID: {{ to_parse_bgp[instance].vrf[vrf].confederation_identifier }}"
+        },
+        { 
+            "id": "Neighbor: {{ neighbor }}"
+        },
+        { 
+            "id": "BGP Version: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_version }}"
+        },
+        { 
+            "id": "Hold Time: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].holdtime }}"
+        },
+        { 
+            "id": "Keep Alive Interval: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].keepalive_interval }}"
+        },
+        { 
+            "id": "Local AS Number: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].local_as_as_no }}"
+        },
+        { 
+            "id": "Remote AS Number: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].remote_as }}"
+        },
+        { 
+            "id": "Messages Received: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_neighbor_counters.messages.received.total }}"
+        },
+        { 
+            "id": "Messages Sent: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_neighbor_counters.messages.sent.total }}"
+        },
+        { 
+            "id": "Last Reset: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_session_transport.connection.last_reset }}"
+        },
+        {
+            "id": "Reset Reason: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_session_transport.connection.reset_reason }}"{% if (instance_loop.last) and (vrf_loop.last) and (neighbor_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}{% endfor %}
+    ],
+    "links": [{% for instance in to_parse_bgp %}{% set instance_loop = loop %}{% for vrf in to_parse_bgp[instance].vrf %}{% set vrf_loop = loop %}{% for neighbor in to_parse_bgp[instance].vrf[vrf].neighbor %}{% set neighbor_loop = loop %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "Instance: {{ instance }}",
+            "cost": 1
+        },
+        {
+            "source": "Instance: {{ instance }}",
+            "target": "BGP IP: {{ to_parse_bgp[instance].bgp_id }}",
+            "cost": 2
+        },
+        {
+            "source": "Instance: {{ instance }}",
+            "target": "Protocol State: {{ to_parse_bgp[instance].protocol_state }}",
+            "cost": 2
+        },
+        {
+            "source": "Instance: {{ instance }}",
+            "target": "VRF: {{ vrf }}",
+            "cost": 2
+        },
+        {
+            "source": "VRF: {{ vrf }}",
+            "target": "Router ID: {{ to_parse_bgp[instance].vrf[vrf].router_id }}",
+            "cost": 3
+        },
+        {
+            "source": "VRF: {{ vrf }}",
+            "target": "Cluster ID: {{ to_parse_bgp[instance].vrf[vrf].cluster_id }}",
+            "cost": 3
+        },
+        {
+            "source": "VRF: {{ vrf }}",
+            "target": "Confed ID: {{ to_parse_bgp[instance].vrf[vrf].confederation_identifier }}",
+            "cost": 3
+        },
+        {
+            "source": "VRF: {{ vrf }}",
+            "target": "Neighbor: {{ neighbor }}",
+            "cost": 3
+        },
+        {
+            "source": "Neighbor: {{ neighbor }}",
+            "target": "BGP Version: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_version }}",
+            "cost": 4
+        },
+        {
+            "source": "Neighbor: {{ neighbor }}",
+            "target": "Hold Time: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].holdtime }}",
+            "cost": 4
+        },
+        {
+            "source": "Neighbor: {{ neighbor }}",
+            "target": "Keep Alive Interval: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].keepalive_interval }}",
+            "cost": 4
+        },
+        {
+            "source": "Neighbor: {{ neighbor }}",
+            "target": "Local AS Number: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].local_as_as_no }}",
+            "cost": 4
+        },
+        {
+            "source": "Local AS Number: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].local_as_as_no }}",
+            "target": "Remote AS Number: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].remote_as }}",
+            "cost": 5
+        },
+        {
+            "source": "Remote AS Number: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].remote_as }}",
+            "target": "Messages Received: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_neighbor_counters.messages.received.total }}",
+            "cost": 6
+        },
+        {
+            "source": "Remote AS Number: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].remote_as }}",
+            "target": "Messages Sent: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_neighbor_counters.messages.sent.total }}",
+            "cost": 6
+        },
+        {
+            "source": "Remote AS Number: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].remote_as }}",
+            "target": "Last Reset: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_session_transport.connection.last_reset }}",
+            "cost": 6
+        },
+        {
+            "source": "Last Reset: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_session_transport.connection.last_reset }}",
+            "target": "Reset Reason: {{ to_parse_bgp[instance].vrf[vrf].neighbor[neighbor].bgp_session_transport.connection.reset_reason }}",
+            "cost": 7{% if (instance_loop.last) and (vrf_loop.last) and (neighbor_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}{% endfor %}
+    ]
+}

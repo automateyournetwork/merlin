@@ -1,0 +1,41 @@
+{% if filetype_loop_jinja2 == "csv" %}Total Entries,Input Drops,Input Reply Packets,Input Request Packets,Input Total,Incomplete Total,Output Drops,Output Gratuitous Packets,Output Reply Packets,Output Request Packets,Output Total
+{{ to_parse_arp.entries_total }},{{ to_parse_arp.in_drops }},{{ to_parse_arp.in_replies_pkts }},{{ to_parse_arp.in_requests_pkts }},{{ to_parse_arp.in_total | default("N/A") }},{{ to_parse_arp.incomplete_total }},{{ to_parse_arp.out_drops | default("N/A") }},{{ to_parse_arp.out_gratuitous_pkts | default("N/A") }},{{ to_parse_arp.out_replies_pkts }},{{ to_parse_arp.out_requests_pkts }},{{ to_parse_arp.out_total| default("N/A") }}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Learned ARP Statistics
+| Total Entries | Input Drops | Input Reply Packets | Input Request Packets | Input Total | Incomplete Total | Output Drops | Output Gratuitous Packets | Output Reply Packets | Output Request Packets | Output Total |
+| ------------- | ----------- | ------------------- | --------------------- | ----------- | ---------------- | ------------ | ------------------------- | -------------------- | ---------------------- | ------------ |
+| {{ to_parse_arp.entries_total }} | {{ to_parse_arp.in_drops }} | {{ to_parse_arp.in_replies_pkts }} | {{ to_parse_arp.in_requests_pkts }} | {{ to_parse_arp.in_total | default("N/A") }} | {{ to_parse_arp.incomplete_total }} | {{ to_parse_arp.out_drops | default("N/A") }} | {{ to_parse_arp.out_gratuitous_pkts | default("N/A") }} | {{ to_parse_arp.out_replies_pkts }} | {{ to_parse_arp.out_requests_pkts }} | {{ to_parse_arp.out_total| default("N/A") }} |{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Learned ARP Statistics</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Total Entries</th>
+    <th>Input Drops</th>
+    <th>Input Reply Packets</th>
+    <th>Input Request Packets</th>
+    <th>Input Total</th>
+    <th>Incomplete Total</th>
+    <th>Output Drops</th>
+    <th>Output Gratuitous Packets</th>
+    <th>Output Reply Packets</th>
+    <th>Output Request Packets</th>
+    <th>Output Total</th>
+  </tr>
+  </thead>
+  <tbody>  
+  <tr>
+    <td>{{ to_parse_arp.entries_total }}</td>
+    <td>{{ to_parse_arp.in_drops }}</td>
+    <td>{{ to_parse_arp.in_replies_pkts }}</td>
+    <td>{{ to_parse_arp.in_requests_pkts }}</td>
+    <td>{{ to_parse_arp.in_total | default("N/A") }}</td>
+    <td>{{ to_parse_arp.incomplete_total }}</td>
+    <td>{{ to_parse_arp.out_drops | default("N/A") }}</td>
+    <td>{{ to_parse_arp.out_gratuitous_pkts | default("N/A") }}</td>
+    <td>{{ to_parse_arp.out_replies_pkts }}</td>
+    <td>{{ to_parse_arp.out_requests_pkts }}</td>
+    <td>{{ to_parse_arp.out_total| default("N/A") }}</td>
+  </tr>
+  </tbody>  
+</table>
+</body></html>{% endif %}{% endif %}

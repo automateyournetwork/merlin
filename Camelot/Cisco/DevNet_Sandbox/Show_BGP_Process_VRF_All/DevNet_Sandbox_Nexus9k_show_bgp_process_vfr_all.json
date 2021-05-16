@@ -1,0 +1,69 @@
+{
+    "bgp_as_path_entries": 0,
+    "bgp_asformat": "asplain",
+    "bgp_isolate_mode": "No",
+    "bgp_memory_state": "ok",
+    "bgp_mmode": "Initialized",
+    "bgp_paths_per_hwm_attr": 1,
+    "bgp_performance_mode": "No",
+    "bgp_pid": 4670,
+    "bgp_protocol_started_reason": "configuration",
+    "bgp_protocol_state": "running",
+    "bgp_tag": "65535",
+    "bytes_used": 128,
+    "bytes_used_as_path_entries": 0,
+    "entries_pending_delete": 0,
+    "hwm_attr_entries": 1,
+    "hwm_entries_pending_delete": 0,
+    "num_attr_entries": 1,
+    "vrf": {
+        "default": {
+            "address_family": {
+                "ipv4 unicast": {
+                    "next_hop_trigger_delay": {
+                        "critical": 3000,
+                        "non_critical": 10000
+                    },
+                    "peers": {
+                        "0": {
+                            "active_peers": 0,
+                            "aggregates": 0,
+                            "networks": 1,
+                            "paths": 1,
+                            "routes": 1
+                        }
+                    },
+                    "table_id": "0x1",
+                    "table_state": "up"
+                },
+                "ipv6 unicast": {
+                    "next_hop_trigger_delay": {
+                        "critical": 3000,
+                        "non_critical": 10000
+                    },
+                    "peers": {
+                        "0": {
+                            "active_peers": 0,
+                            "aggregates": 0,
+                            "networks": 0,
+                            "paths": 0,
+                            "routes": 0
+                        }
+                    },
+                    "table_id": "0x80000001",
+                    "table_state": "up"
+                }
+            },
+            "cluster_id": "0.0.0.0",
+            "conf_router_id": "0.0.0.0",
+            "confed_id": 0,
+            "num_conf_peers": 1,
+            "num_established_peers": 0,
+            "num_pending_conf_peers": 0,
+            "router_id": "172.16.0.1",
+            "vrf_id": "1",
+            "vrf_rd": "not configured",
+            "vrf_state": "up"
+        }
+    }
+}

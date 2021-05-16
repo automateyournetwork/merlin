@@ -1,0 +1,37 @@
+{
+    "main": {
+        "chassis": {
+            "CSR1000V": {
+                "descr": "Cisco CSR1000V Chassis",
+                "name": "Chassis",
+                "pid": "CSR1000V",
+                "sn": "9ZBEJQO6OFH",
+                "vid": "V00"
+            }
+        }
+    },
+    "slot": {
+        "F0": {
+            "other": {
+                "CSR1000V": {
+                    "descr": "Cisco CSR1000V Embedded Services Processor",
+                    "name": "module F0",
+                    "pid": "CSR1000V",
+                    "sn": "",
+                    "vid": ""
+                }
+            }
+        },
+        "R0": {
+            "rp": {
+                "CSR1000V": {
+                    "descr": "Cisco CSR1000V Route Processor",
+                    "name": "module R0",
+                    "pid": "CSR1000V",
+                    "sn": "JAB1303001C",
+                    "vid": "V00"
+                }
+            }
+        }
+    }
+}

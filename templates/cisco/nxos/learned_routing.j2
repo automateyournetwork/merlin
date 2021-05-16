@@ -1,0 +1,50 @@
+{% if filetype_loop_jinja2 == "csv" %}VRF,Address Family,Route,Active,Metric,Next Hop Index,Next Hop,Outgoing Interface,Route Preference,Source Protocol,Source Protocol Code{% for vrf in to_parse_routing %}{% for address_family in to_parse_routing[vrf].address_family %}{% for route in to_parse_routing[vrf].address_family[address_family].routes %}{% if to_parse_routing[vrf].address_family[address_family].routes[route].next_hop.next_hop_list is defined %}{% for next_hop in to_parse_routing[vrf].address_family[address_family].routes[route].next_hop.next_hop_list %}
+{{ vrf }},{{ address_family }},{{ route }},{{ to_parse_routing[vrf].address_family[address_family].routes[route].active }},{{ to_parse_routing[vrf].address_family[address_family].routes[route].metric }},{{ next_hop }},{{ to_parse_routing[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].next_hop }},N/A,{{ to_parse_routing[vrf].address_family[address_family].routes[route].route_preference }},{{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol }},{{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol_codes }}{% endfor %}{% else %}{% for outgoing_interface in to_parse_routing[vrf].address_family[address_family].routes[route].next_hop.outgoing_interface %}
+{{ vrf }},{{ address_family }},{{ route }},{{ to_parse_routing[vrf].address_family[address_family].routes[route].active }},N/A,N/A,N/A,{{ outgoing_interface }},N/A,{{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol }},{{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol_codes }}{% endfor %}{% endif %}{% endfor %}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Learn Routing
+| VRF | Address Family | Route | Active | Metric | Next Hop Index | Next Hop | Outgoing Interface | Route Preference | Source Protocol | Source Protocol Code |
+| --- | -------------- | ----- | ------ | ------ | -------------- | -------- | -------------------| ---------------- | --------------- | -------------------- |{% for vrf in to_parse_routing %}{% for address_family in to_parse_routing[vrf].address_family %}{% for route in to_parse_routing[vrf].address_family[address_family].routes %}{% if to_parse_routing[vrf].address_family[address_family].routes[route].next_hop.next_hop_list is defined %}{% for next_hop in to_parse_routing[vrf].address_family[address_family].routes.next_hop %}
+| {{ vrf }} | {{ address_family }} | {{ route }} | {{ to_parse_routing[vrf].address_family[address_family].routes[route].active }} | {{ to_parse_routing[vrf].address_family[address_family].routes[route].metric }} | {{ next_hop }} | {{ to_parse_routing[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].next_hop }} | N/A | {{ to_parse_routing[vrf].address_family[address_family].routes[route].route_preference }} | {{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol }} | {{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol_codes }} |{% endfor %}{% else %}{% for outgoing_interface in to_parse_routing[vrf].address_family[address_family].routes[route].next_hop.outgoing_interface %}
+| {{ vrf }} | {{ address_family }} | {{ route }} | {{ to_parse_routing[vrf].address_family[address_family].routes[route].active }} | N/A | N/A | N/A | {{ outgoing_interface }} | N/A | {{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol }} | {{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol_codes }} |{% endfor %}{% endif %}{% endfor %}{% endfor %}{% endfor %}{% else %}
+<html><body>
+<h1>Learn Routing</h1>
+<table style="width:100%">
+  <tr>
+    <th>VRF</th>
+    <th>Address Family</th>
+    <th>Route</th>
+    <th>Active</th>
+    <th>Metric</th>
+    <th>Next Hop Index</th>
+    <th>Next Hop</th>
+    <th>Outgoing Interface</th>
+    <th>Route Preference</th>
+    <th>Source Protocol</th>
+    <th>Source Protocol Code</th>
+  </tr>{% for vrf in to_parse_routing %}{% for address_family in to_parse_routing[vrf].address_family %}{% for route in to_parse_routing[vrf].address_family[address_family].routes %}{% if to_parse_routing[vrf].address_family[address_family].routes[route].next_hop.next_hop_list is defined %}{% for next_hop in to_parse_routing[vrf].address_family[address_family].routes[route].next_hop.next_hop_list %}
+  <tr>
+    <td>{{ vrf }}</td>
+    <td>{{ address_family }}</td>
+    <td>{{ route }}</td>
+    <td>{{ to_parse_routing[vrf].address_family[address_family].routes[route].active }}</td>
+    <td>{{ to_parse_routing[vrf].address_family[address_family].routes[route].metric }}</td>
+    <td>{{ next_hop }}</td>
+    <td>{{ to_parse_routing[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].next_hop }}</td>
+    <td>N/A</td>
+    <td>{{ to_parse_routing[vrf].address_family[address_family].routes[route].route_preference }}</td>
+    <td>{{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol }}</td>
+    <td>{{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol_codes }}</td>{% endfor %}{% else %}{% for outgoing_interface in to_parse_routing[vrf].address_family[address_family].routes[route].next_hop.outgoing_interface %}
+    <td>{{ vrf }}</td>
+    <td>{{ address_family }}</td>
+    <td>{{ route }}</td>
+    <td>{{ to_parse_routing[vrf].address_family[address_family].routes[route].active }}</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>{{ outgoing_interface }}</td>
+    <td>N/A</td>
+    <td>{{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol }}</td>
+    <td>{{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol_codes }}</td> 
+  </tr>{% endfor %}{% endif %}{% endfor %}{% endfor %}{% endfor %}
+</table>
+</body></html>{% endif %}{% endif %}

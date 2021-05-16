@@ -1,0 +1,12 @@
+devices:
+    ISE:
+      alias: 'ISE'
+      type: 'ISE'
+      os: 'ISE'
+      platform: ISE
+      credentials:
+        default:
+          username: {{ your ISE API username }}
+          password: {{ your ISE API password }}
+      connections:
+          ip: "{{ your ISE IP }}"

@@ -1,0 +1,35 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Port-Channel Summary",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for interface in to_parse_etherchannel_summary %}
+        {
+            "id": "{{ interface }}"
+        },{% endfor %}
+        {% for interface in to_parse_etherchannel_summary %}{% set interface_loop = loop %}
+            {% for member in to_parse_etherchannel_summary[interface].members %}{% set member_loop = loop %}
+        {
+            "id": "{{ member }}"{% if (interface_loop.last) and (member_loop.last) %}
+        }{% else %}         
+        },{% endif %}{% endfor %}{% endfor %}
+    ],
+    "links": [{% for interface in to_parse_etherchannel_summary %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 1
+        },{% endfor %}{% for interface in to_parse_etherchannel_summary %}{% set interface_loop = loop %}
+            {% for member in to_parse_etherchannel_summary[interface].members %}{% set member_loop = loop %}
+        {
+            "source": "{{ interface }}",
+            "target": "{{ member }}",
+            "cost": 2{% if (interface_loop.last) and (member_loop.last) %}
+        }{% else %}         
+        },{% endif %}{% endfor %}{% endfor %}
+    ]
+}

@@ -1,0 +1,79 @@
+{% if filetype_loop_jinja2 == "csv" %}Forwarding Delay,Hello Time,Hold Count,Max Age,VLAN,Bridge Address,Bridge Priority,Configured Bridge Priority,Designated Root Address,Designated Root Priority,Forwarding Delay,Hello Time,Hold Count,Hold Time,Max Age,Last Topology Change,Total Topology Changes,Interface,Cost,BPDU Recieved,BPDU Sent,Designated Bridge Address,Designated Bridge Priority,Designated Cost,Designated Port Number,Designated Port Priority,Designated Root Address,Designated Root Priority,Forward Transtions,State,Role{% for id in to_parse_stp %}{% for vlan in to_parse_stp[id].vlans %}{% for interface in to_parse_stp[id].vlans[vlan].interfaces %}
+{{ to_parse_stp[id].forwarding_delay }},{{ to_parse_stp[id].hello_time }},{{ to_parse_stp[id].hold_count }},{{ to_parse_stp[id].max_age }},{{ vlan }},{{ to_parse_stp[id].vlans[vlan].bridge_address }},{{ to_parse_stp[id].vlans[vlan].bridge_priority }},{{ to_parse_stp[id].vlans[vlan].configured_bridge_priority }},{{ to_parse_stp[id].vlans[vlan].designated_root_address }},{{ to_parse_stp[id].vlans[vlan].designated_root_priority }},{{ to_parse_stp[id].vlans[vlan].forwarding_delay }},{{ to_parse_stp[id].vlans[vlan].hello_time }},{{ to_parse_stp[id].vlans[vlan].hold_count }},{{ to_parse_stp[id].vlans[vlan].hold_time }},{{ to_parse_stp[id].vlans[vlan].max_age }},{{ to_parse_stp[id].vlans[vlan].time_since_topology_change }},{{ to_parse_stp[id].vlans[vlan].topology_changes }},{{ interface }},{{ to_parse_stp[id].vlans[vlan].interfaces[interface].cost | default("N/A") }},{% if to_parse_stp[id].vlans[vlan].interfaces[interface].counters is defined %}{{ to_parse_stp[id].vlans[vlan].interfaces[interface].counters.bpdu_received }},{{ to_parse_stp[id].vlans[vlan].interfaces[interface].counters.bpdu_sent }}{% else %}N/A,N/A{% endif %},{{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_bridge_address | default("N/A") }},{{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_bridge_priority | default("N/A") }},{{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_cost | default("N/A") }},{{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_port_num }},{{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_port_priority }},{{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_root_address | default("N/A") }},{{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_root_priority | default("N/A") }},{{ to_parse_stp[id].vlans[vlan].interfaces[interface].forward_transitions | default("N/A") }},{{ to_parse_stp[id].vlans[vlan].interfaces[interface].port_state }},{{ to_parse_stp[id].vlans[vlan].interfaces[interface].role }}{% endfor %}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Learn STP Rapid PVST+
+| Forwarding Delay | Hello Time | Hold Count | Max Age | VLAN | Bridge Address | Bridge Priority | Configured Bridge Priority | Designated Root Address | Designated Root Priority | Forwarding Delay | Hello Time | Hold Count | Hold Time | Max Age | Last Topology Change | Total Topology Changes | Interface | Cost | BPDU Recieved | BPDU Sent | Designated Bridge Address | Designated Bridge Priority | Designated Cost | Designated Port Number | Designated Port Priority | Designated Root Address | Designated Root Priority | Forward Transtions | State | Role |
+| ---------------- | ---------- | ---------- | ------- | ---- | -------------- | --------------- | -------------------------- | ----------------------- | ------------------------ | ---------------- | ---------- | ---------- | --------- | ------- | -------------------- | ---------------------- | --------- | ---- | ------------- | --------- | ------------------------- | -------------------------- | --------------- | ---------------------- | ------------------------ | ----------------------- | ------------------------ | ------------------ | ----- | ---- |{% for id in to_parse_stp %}{% for vlan in to_parse_stp[id].vlans %}{% for interface in to_parse_stp[id].vlans[vlan].interfaces %}
+| {{ to_parse_stp[id].forwarding_delay }} | {{ to_parse_stp[id].hello_time }} | {{ to_parse_stp[id].hold_count }} | {{ to_parse_stp[id].max_age }} | {{ vlan }} | {{ to_parse_stp[id].vlans[vlan].bridge_address }} | {{ to_parse_stp[id].vlans[vlan].bridge_priority }} | {{ to_parse_stp[id].vlans[vlan].configured_bridge_priority }} | {{ to_parse_stp[id].vlans[vlan].designated_root_address }} | {{ to_parse_stp[id].vlans[vlan].designated_root_priority }} | {{ to_parse_stp[id].vlans[vlan].forwarding_delay }} | {{ to_parse_stp[id].vlans[vlan].hello_time }} | {{ to_parse_stp[id].vlans[vlan].hold_count }} | {{ to_parse_stp[id].vlans[vlan].hold_time }} | {{ to_parse_stp[id].vlans[vlan].max_age }} | {{ to_parse_stp[id].vlans[vlan].time_since_topology_change }} | {{ to_parse_stp[id].vlans[vlan].topology_changes }} | {{ interface }} | {{ to_parse_stp[id].vlans[vlan].interfaces[interface].cost | default("N/A") }} | {% if to_parse_stp[id].vlans[vlan].interfaces[interface].counters is defined %}{{ to_parse_stp[id].vlans[vlan].interfaces[interface].counters.bpdu_received }} | {{ to_parse_stp[id].vlans[vlan].interfaces[interface].counters.bpdu_sent }}{% else %}N/A | N/A {% endif %}| {{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_bridge_address | default("N/A") }} | {{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_bridge_priority | default("N/A") }} | {{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_cost | default("N/A") }} | {{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_port_num }} | {{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_port_priority }} | {{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_root_address | default("N/A") }} | {{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_root_priority | default("N/A") }} | {{ to_parse_stp[id].vlans[vlan].interfaces[interface].forward_transitions | default("N/A") }} | {{ to_parse_stp[id].vlans[vlan].interfaces[interface].port_state }} | {{ to_parse_stp[id].vlans[vlan].interfaces[interface].role }} |      {% endfor %}{% endfor %}{% endfor %}{% else %}
+<html><body>
+<h1>Learn STP Rapid PVST+</h1>
+<table style="width:100%">
+  <tr>
+    <th>Forwarding Delay</th>
+    <th>Hello Time</th>
+    <th>Hold Count</th>
+    <th>Max Age</th>
+    <th>VLAN</th>
+    <th>Bridge Address</th>
+    <th>Bridge Priority</th>
+    <th>Configured Bridge Priority</th>
+    <th>Designated Root Address</th>
+    <th>Designated Root Priority</th>
+    <th>Forwarding Delay</th>
+    <th>Hello Time</th>
+    <th>Hold Count</th>
+    <th>Hold Time</th>
+    <th>Max Age</th>
+    <th>Last Topology Change</th>
+    <th>Total Topology Changes</th>
+    <th>Interface</th>
+    <th>Cost</th>
+    <th>BPDU Recieved</th>
+    <th>BPDU Sent</th>
+    <th>Designated Bridge Address</th>
+    <th>Designated Bridge Priority</th>
+    <th>Designated Cost</th>
+    <th>Designated Port Number</th>
+    <th>Designated Port Priority</th>
+    <th>Designated Root Address</th>
+    <th>Designated Root Priority</th>
+    <th>Forward Transtions</th>
+    <th>State</th>
+    <th>Role</th>
+  </tr>{% for id in to_parse_stp %}{% for vlan in to_parse_stp[id].vlans %}{% for interface in to_parse_stp[id].vlans[vlan].interfaces %}
+  <tr>
+    <td>{{ to_parse_stp[id].forwarding_delay }}</td>
+    <td>{{ to_parse_stp[id].hello_time }}</td>
+    <td>{{ to_parse_stp[id].hold_count }}</td>
+    <td>{{ to_parse_stp[id].max_age }}</td>
+    <td>{{ vlan }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].bridge_address }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].bridge_priority }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].configured_bridge_priority }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].designated_root_address }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].designated_root_priority }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].forwarding_delay }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].hello_time }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].hold_count }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].hold_time }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].max_age }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].time_since_topology_change }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].topology_changes }}</td>
+    <td>{{ interface }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].interfaces[interface].cost | default("N/A") }}</td>{% if to_parse_stp[id].vlans[vlan].interfaces[interface].counters is defined %}
+    <td>{{ to_parse_stp[id].vlans[vlan].interfaces[interface].counters.bpdu_received }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].interfaces[interface].counters.bpdu_sent }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}
+    <td>{{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_bridge_address | default("N/A") }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_bridge_priority | default("N/A") }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_cost | default("N/A") }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_port_num }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_port_priority }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_root_address | default("N/A") }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_root_priority | default("N/A") }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].interfaces[interface].forward_transitions | default("N/A") }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].interfaces[interface].port_state }}</td>
+    <td>{{ to_parse_stp[id].vlans[vlan].interfaces[interface].role }}</td>
+  </tr>{% endfor %}{% endfor %}{% endfor %}  
+</table>
+</body></html>{% endif %}{% endif %}

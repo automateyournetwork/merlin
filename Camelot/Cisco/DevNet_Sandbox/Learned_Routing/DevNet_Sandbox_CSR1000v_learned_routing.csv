@@ -1,0 +1,4 @@
+VRF,Address Family,Route,Active,Metric,Next Hop Index,Next Hop,Outgoing Interface,Route Preference,Source Protocol,Source Protocol Code
+default,ipv4,10.10.20.48/32,True,N/A,N/A,N/A,GigabitEthernet1,N/A,local,L
+default,ipv4,10.10.20.0/24,True,N/A,N/A,N/A,GigabitEthernet1,N/A,connected,C
+default,ipv4,0.0.0.0/0,True,0,1,10.10.20.254,N/A,1,static,S*

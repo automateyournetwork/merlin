@@ -1,0 +1,33 @@
+{% if filetype_loop_jinja2 == "csv" %}Interface,Client,Domain,Method,Session ID,Status{% for interface in to_parse_access_session %}{% for client in to_parse_access_session[interface].client %}{% for session in to_parse_access_session[interface].client[client].session %}
+{{ interface }},{{ client }},{{ to_parse_access_session[interface].client[client].domain }},{{ to_parse_access_session[interface].client[client].method }},{{ session }},{{ to_parse_access_session[interface].client[client].status }}{% endfor %}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show Access Session
+| Interface | Client | Domain | Method | Session ID | Status |
+| --------- | ------ | ------ | ------ | ---------- | ------ |{% for interface in to_parse_access_session %}{% for client in to_parse_access_session[interface].client %}{% for session in to_parse_access_session[interface].client[client].session %}
+| {{ interface }} | {{ client }} | {{ to_parse_access_session[interface].client[client].domain }} | {{ to_parse_access_session[interface].client[client].method }} | {{ session }} | {{ to_parse_access_session[interface].client[client].status }} |{% endfor %}{% endfor %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show Access Sessions</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Interface</th>
+    <th>Client</th>
+    <th>Domain</th>
+    <th>Method</th>
+    <th>Session ID</th>
+    <th>Status</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  {% for interface in to_parse_access_session %}{% for client in to_parse_access_session[interface].client %}{% for session in to_parse_access_session[interface].client[client].session %}
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ client }}</td>
+    <td>{{ to_parse_access_session[interface].client[client].domain }}</td>
+    <td>{{ to_parse_access_session[interface].client[client].method }}</td>
+    <td>{{ session }}</td>
+    <td>{{ to_parse_access_session[interface].client[client].status }}</td>
+  </tr>{% endfor %}{% endfor %}{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

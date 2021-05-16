@@ -1,0 +1,105 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Version",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_Nexus9k"
+        },
+        {
+            "id": "Bootflash: 4287040 kB"
+        },
+        {
+            "id": "Chassis: Nexus9000 C9500v"
+        },
+        {
+            "id": "CPU: Intel(R) Xeon(R) CPU E5-4669 v4 @ 2.20GHz"
+        },
+        {
+            "id": "Device Name: sbx-n9kv"
+        },
+        {
+            "id": "Memory: 7939724 kB"
+        },
+        {
+            "id": "Processor ID: 9FJTZNHQ62X"
+        },
+        {
+            "id": "RP: Supervisor Module"
+        },
+        {
+            "id": "Slots: None"
+        },
+        {
+            "id": "Last Reload Reason: Unknown"
+        },
+        {
+            "id": "Compile Time: 7/20/2020 20:00:00 [07/21/2020 06:30:11]"
+        },
+        {
+            "id": "Image: bootflash:///nxos.9.3.5.bin"
+        },
+        {
+            "id": "Version: 9.3(5)"
+        }
+    ],
+    "links": [
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Bootflash: 4287040 kB",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Chassis: Nexus9000 C9500v",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "CPU: Intel(R) Xeon(R) CPU E5-4669 v4 @ 2.20GHz",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Memory: 7939724 kB",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Processor ID: 9FJTZNHQ62X",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "RP: Supervisor Module",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Slots: None",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Image: bootflash:///nxos.9.3.5.bin",
+            "cost": 1
+        },         
+        {
+            "source": "Image: bootflash:///nxos.9.3.5.bin",
+            "target": "Compile Time: 7/20/2020 20:00:00 [07/21/2020 06:30:11]",
+            "cost": 1
+        },
+        {
+            "source": "Image: bootflash:///nxos.9.3.5.bin",
+            "target": "Version: 9.3(5)",
+            "cost": 1
+        }        
+    ]
+}

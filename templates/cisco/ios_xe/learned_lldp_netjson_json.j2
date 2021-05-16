@@ -1,0 +1,94 @@
+{
+    "type": "NetworkGraph",
+    "label": "Learn LLDP Counters",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },
+        { 
+            "id": "Enabled: {{ to_parse_lldp.enabled }}"
+        },    
+        { 
+            "id": "Hello Timer: {{ to_parse_lldp.hello_timer }}"
+        },
+        { 
+            "id": "Hold Timer: {{ to_parse_lldp.hold_timer}}"
+        },
+        { 
+            "id": "Aged Out Entries: {{ to_parse_lldp.counters.entries_aged_out }}"
+        },
+        { 
+            "id": "Frame Discards: {{ to_parse_lldp.counters.frame_discard }}"
+        },
+        { 
+            "id": "Frame Input Errors: {{ to_parse_lldp.counters.frame_error_in }}"
+        },
+        { 
+            "id": "Input Frames: {{ to_parse_lldp.counters.frame_in }}"
+        },
+        { 
+            "id": "Output Frames: {{ to_parse_lldp.counters.frame_out }}"
+        },
+        { 
+            "id": "TLV Discards: {{ to_parse_lldp.counters.tlv_discard }}"
+        },
+        { 
+            "id": "TLV Unknown: {{ to_parse_lldp.counters.tlv_unknown }}"
+        }
+    ],
+    "links": [
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Enabled: {{ to_parse_lldp.enabled }}",
+            "cost": 1
+        },    
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Hello Timer: {{ to_parse_lldp.hello_timer }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Hold Timer: {{ to_parse_lldp.hold_timer}}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Aged Out Entries: {{ to_parse_lldp.counters.entries_aged_out }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Frame Discards: {{ to_parse_lldp.counters.frame_discard }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Frame Input Errors: {{ to_parse_lldp.counters.frame_error_in }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Input Frames: {{ to_parse_lldp.counters.frame_in }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Output Frames: {{ to_parse_lldp.counters.frame_out }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "TLV Discards: {{ to_parse_lldp.counters.tlv_discard }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "TLV Unknown: {{ to_parse_lldp.counters.tlv_unknown }}",
+            "cost": 1            
+        }        
+    ]
+}

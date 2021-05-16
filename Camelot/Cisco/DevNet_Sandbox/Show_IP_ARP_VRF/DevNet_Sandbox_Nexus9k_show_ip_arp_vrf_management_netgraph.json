@@ -1,0 +1,31 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show IP ARP VRF ",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_Nexus9k"
+        },
+        {
+            "id": "mgmt0"
+        },
+        {
+            "id": "10.10.20.254"
+        }
+    ],
+    "links": [
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "mgmt0",
+            "cost": 1
+        },
+        
+        {
+            "source": "mgmt0",
+            "target": "10.10.20.254",
+            "cost": 1
+        }
+    ]
+}

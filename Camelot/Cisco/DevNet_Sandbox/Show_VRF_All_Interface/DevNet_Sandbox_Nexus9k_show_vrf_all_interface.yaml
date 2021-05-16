@@ -1,0 +1,286 @@
+!!python/object/new:genie.conf.base.utils.QDict
+dictitems:
+  Ethernet1/10:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/11:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/12:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/13:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/14:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/15:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/16:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/17:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/18:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/19:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/20:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/21:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/22:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/23:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/24:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/25:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/26:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/27:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/28:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/29:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/3:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/30:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/31:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/32:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/33:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/34:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/35:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/36:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/37:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/38:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/39:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/4:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/40:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/41:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/42:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/43:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/44:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/45:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/46:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/47:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/48:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/49:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/5:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/50:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/51:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/52:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/53:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/54:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/55:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/56:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/57:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/58:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/59:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/6:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/60:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/61:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/62:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/63:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/64:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/7:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/8:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Ethernet1/9:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Vlan1:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Vlan100:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Vlan101:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Vlan102:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Vlan103:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Vlan104:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  Vlan105:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  loopback1:
+    site_of_origin: --
+    vrf: default
+    vrf_id: 1
+  mgmt0:
+    site_of_origin: --
+    vrf: management
+    vrf_id: 2

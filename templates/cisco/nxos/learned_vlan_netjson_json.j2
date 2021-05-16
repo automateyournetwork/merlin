@@ -1,0 +1,90 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show VLAN",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for vlan in to_parse_vlan %}{% set vlan_loop = loop %}{% if to_parse_vlan[vlan].interfaces is defined %}{% for interface in to_parse_vlan[vlan].interfaces %}{% set interface_loop = loop %}
+        { 
+            "id": "VLAN: {{ vlan }}"
+        },
+        { 
+            "id": "Name: {{ to_parse_vlan[vlan].name }}"
+        },
+        { 
+            "id": "State: {{ to_parse_vlan[vlan].state }}"
+        },
+        { 
+            "id": "Shutdown: {{ to_parse_vlan[vlan].shutdown }}"
+        },
+        { 
+            "id": "{{ interface }}"{% if (vlan_loop.last) and (interface_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% else %}
+        { 
+            "id": "VLAN: {{ vlan }}"
+        },
+        { 
+            "id": "Name: {{ to_parse_vlan[vlan].name }}"
+        },
+        { 
+            "id": "State: {{ to_parse_vlan[vlan].state }}"
+        },
+        { 
+            "id": "Shutdown: {{ to_parse_vlan[vlan].shutdown }}"{% if vlan_loop.last %}
+        }{% else %}
+        },{% endif %}{% endif %}{% endfor %}       
+    ],
+    "links": [{% for vlan in to_parse_vlan %}{% set vlan_loop = loop %}{% if to_parse_vlan[vlan].interfaces is defined %}{% for interface in to_parse_vlan[vlan].interfaces %}{% set interface_loop = loop %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "VLAN: {{ vlan }}",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: {{ vlan }}",
+            "target": "Name: {{ to_parse_vlan[vlan].name }}",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: {{ vlan }}",
+            "target": "State: {{ to_parse_vlan[vlan].state }}",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: {{ vlan }}",
+            "target": "Shutdown: {{ to_parse_vlan[vlan].shutdown }}",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: {{ vlan }}",
+            "target": "{{ interface }}",
+            "cost": 1{% if (vlan_loop.last) and (interface_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% else %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "VLAN: {{ vlan }}",
+            "cost": 1            
+        },
+        { 
+            "source": "VLAN: {{ vlan }}",
+            "target": "Name: {{ to_parse_vlan[vlan].name }}",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: {{ vlan }}",
+            "target": "State: {{ to_parse_vlan[vlan].state }}",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: {{ vlan }}",
+            "target": "Shutdown: {{ to_parse_vlan[vlan].shutdown }}",
+            "cost": 2{% if vlan_loop.last %}
+        }{% else %}
+        },{% endif %}{% endif %}{% endfor %}    
+    ]
+}

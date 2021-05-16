@@ -1,0 +1,39 @@
+!!python/object/new:genie.conf.base.utils.QDict
+dictitems:
+  interface:
+    Eth1/5:
+      interface_status: protocol-up/link-up/admin-up
+      ip_address: 172.16.1.1
+    Lo1:
+      interface_status: protocol-up/link-up/admin-up
+      ip_address: 172.16.0.1
+    Vlan100:
+      vlan_id:
+        '100':
+          interface_status: protocol-down/link-down/admin-up
+          ip_address: 172.16.100.1
+    Vlan101:
+      vlan_id:
+        '101':
+          interface_status: protocol-down/link-down/admin-up
+          ip_address: 172.16.101.1
+    Vlan102:
+      vlan_id:
+        '102':
+          interface_status: protocol-down/link-down/admin-up
+          ip_address: 172.16.102.1
+    Vlan103:
+      vlan_id:
+        '103':
+          interface_status: protocol-down/link-down/admin-up
+          ip_address: 172.16.103.1
+    Vlan104:
+      vlan_id:
+        '104':
+          interface_status: protocol-down/link-down/admin-up
+          ip_address: 172.16.104.1
+    Vlan105:
+      vlan_id:
+        '105':
+          interface_status: protocol-down/link-down/admin-up
+          ip_address: 172.16.105.1

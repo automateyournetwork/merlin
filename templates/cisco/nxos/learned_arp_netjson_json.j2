@@ -1,0 +1,40 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Interface Status",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for interface in to_parse_arp %}{% set outer_loop = loop %}{% if to_parse_arp[interface].ipv4 is defined %}{% for neighbor in to_parse_arp[interface].ipv4.neighbors %}{% set neighbor_loop = loop %}
+        {
+            "id": "{{ interface }}"
+        },
+        {
+            "id": "Neighbor IP: {{ neighbor }}"
+        },
+        {
+            "id": "Neighbor MAC: {{ to_parse_arp[interface].ipv4.neighbors[neighbor].link_layer_address }}"{% if (outer_loop.last) and (neighbor_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endif %}{% endfor %}
+    ],
+    "links": [{% for interface in to_parse_arp %}{% set outer_loop = loop %}{% if to_parse_arp[interface].ipv4 is defined %}{% for neighbor in to_parse_arp[interface].ipv4.neighbors %}{% set neighbor_loop = loop %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 1
+        },
+        {
+            "source": "{{ interface }}",
+            "target": "Neighbor IP: {{ neighbor }}",
+            "cost": 2
+        },
+        {
+            "source": "Neighbor IP: {{ neighbor }}",
+            "target": "Neighbor MAC: {{ to_parse_arp[interface].ipv4.neighbors[neighbor].link_layer_address }}",
+            "cost": 2{% if (outer_loop.last) and (neighbor_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endif %}{% endfor %}
+    ]
+}

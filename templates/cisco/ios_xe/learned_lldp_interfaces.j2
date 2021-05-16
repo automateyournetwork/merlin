@@ -1,0 +1,46 @@
+{% if filetype_loop_jinja2 == "csv" %}Interface,LLDP,Neighbor,Neighbor Port,Neighbor Port Description,Capabilities,Chassis ID,Management Address,System Description{% for interface in to_parse_lldp %}{% if to_parse_lldp[interface].port_id is defined %}{% for port in to_parse_lldp[interface].port_id %}{% for neighbor in to_parse_lldp[interface].port_id[port].neighbors %}{% for capability in to_parse_lldp[interface].port_id[port].neighbors[neighbor].capabilities %}{{ interface }},{{ to_parse_lldp[interface].enabled }},{{ neighbor }},{{ port }},{{ to_parse_lldp[interface].port_id[port].neighbors[neighbor].port_description }},{{ capability }},{{ to_parse_lldp[interface].port_id[port].neighbors[neighbor].chassis_id }},{{ to_parse_lldp[interface].port_id[port].neighbors[neighbor].management_address }},{{ to_parse_lldp[interface].port_id[port].neighbors[neighbor].system_description | replace(","," ") }}{% endfor %}{% endfor %}{% endfor %}{% else %}
+{{ interface }},{{ to_parse_lldp[interface].enabled }},No Neighbor,N/A,N/A,N/A,N/A,N/A,N/A{% endif  %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Learn LLDP Interfaces
+| Interface | LLDP | Neighbor | Neighbor Port | Neighbor Port Description | Capabilities | Chassis ID | Management Address | System Description |
+| --------- | ---- | -------- | ------------- | ------------------------- | ------------ | ---------- | ------------------ | ------------------ |{% for interface in to_parse_lldp %}{% if to_parse_lldp[interface].port_id is defined %}{% for port in to_parse_lldp[interface].port_id %}{% for neighbor in to_parse_lldp[interface].port_id[port].neighbors %}{% for capability in to_parse_lldp[interface].port_id[port].neighbors[neighbor].capabilities %}
+| {{ interface }} | {{ to_parse_lldp[interface].enabled }} | {{ neighbor }} | {{ port }} | {{ to_parse_lldp[interface].port_id[port].neighbors[neighbor].port_description }} | {{ capability }} | {{ to_parse_lldp[interface].port_id[port].neighbors[neighbor].chassis_id }} | {{ to_parse_lldp[interface].port_id[port].neighbors[neighbor].management_address }} | {{ to_parse_lldp[interface].port_id[port].neighbors[neighbor].system_description | replace(","," ") }} |{% endfor %}{% endfor %}{% endfor %}{% else %}
+| {{ interface }} | {{ to_parse_lldp[interface].enabled }} | No Neighbor | N/A | N/A | N/A | N/A | N/A | N/A |{% endif  %}{% endfor %}
+{% else %}
+<html><body>
+<h1>Learn LLDP Interfaces</h1>
+<table style="width:100%">
+  <tr>
+    <th>Interface</th>
+    <th>LLDP</th>
+    <th>Neighbor</th>
+    <th>Neighbor Port</th>
+    <th>Neighbor Port Description</th>
+    <th>Capabilities</th>
+    <th>Chassis ID</th>
+    <th>Management Address</th>
+    <th>System Description</th>
+  </tr>{% for interface in to_parse_lldp %}{% if to_parse_lldp[interface].port_id is defined %}{% for port in to_parse_lldp[interface].port_id %}{% for neighbor in to_parse_lldp[interface].port_id[port].neighbors %}{% for capability in to_parse_lldp[interface].port_id[port].neighbors[neighbor].capabilities %}
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ to_parse_lldp[interface].enabled }}</td>
+    <td>{{ neighbor }}</td>
+    <td>{{ port }}</td>
+    <td>{{ to_parse_lldp[interface].port_id[port].neighbors[neighbor].port_description }}</td>
+    <td>{{ capability }}</td>
+    <td>{{ to_parse_lldp[interface].port_id[port].neighbors[neighbor].chassis_id }}</td>
+    <td>{{ to_parse_lldp[interface].port_id[port].neighbors[neighbor].management_address }}</td>
+    <td>{{ to_parse_lldp[interface].port_id[port].neighbors[neighbor].system_description | replace(","," ") }}</td>
+  </tr>{% endfor %}{% endfor %}{% endfor %}{% else %}
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ to_parse_lldp[interface].enabled }}</td>
+    <td>No Neighbor</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endif  %}{% endfor %}
+</table>
+</body></html>{% endif %}{% endif %}

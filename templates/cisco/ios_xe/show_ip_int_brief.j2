@@ -1,0 +1,31 @@
+{% if filetype_loop_jinja2 == "csv" %}Interface,IP Address,Status,Protocol,Method,Interface is OK{% for interface in to_parse_interfaces %}
+{{ interface }},{{ to_parse_interfaces[interface].ip_address }},{{ to_parse_interfaces[interface].status }},{{ to_parse_interfaces[interface].protocol }},{{ to_parse_interfaces[interface].method }},{{ to_parse_interfaces[interface].interface_is_ok }}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show IP Interface Brief
+| Interface | IP Address | Status | Protocol | Method | Interface is OK |
+| --------- | ---------- | ------ | -------- | ------ | --------------- |{% for interface in to_parse_interfaces %}
+| {{ interface }} | {{ to_parse_interfaces[interface].ip_address }} | {{ to_parse_interfaces[interface].status }} | {{ to_parse_interfaces[interface].protocol }} | {{ to_parse_interfaces[interface].method }} | {{ to_parse_interfaces[interface].interface_is_ok }} |{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show IP Interface Brief</h1>
+<table class="merlin-table">
+  <thead>
+    <tr>
+      <th>Interface</th>
+      <th>IP Address</th>
+      <th>Status</th>
+      <th>Protocol</th>
+      <th>Method</th>   
+      <th>Interface is OK</th>   
+    </tr>
+  </thead>
+  <tbody>{% for interface in to_parse_interfaces %}  
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ to_parse_interfaces[interface].ip_address }}</td>
+    <td>{{ to_parse_interfaces[interface].status }}</td>
+    <td>{{ to_parse_interfaces[interface].protocol }}</td>
+    <td>{{ to_parse_interfaces[interface].method }}</td>
+    <td>{{ to_parse_interfaces[interface].interface_is_ok }}</td>
+  </tr>{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

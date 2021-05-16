@@ -1,0 +1,104 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show NTP Associations",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for vrf in to_parse_ntp %}{% set vrf_loop = loop %}{% for address in to_parse_ntp[vrf].associations.address %}{% set address_loop = loop %}{% for is_conf,value in to_parse_ntp[vrf].associations.address[address].local_mode.client.isconfigured.items() %}{% set is_conf_loop = loop %}
+        { 
+            "id": "VRF: {{ vrf }}"
+        },
+        { 
+            "id": "Association Address: {{ address }}"
+        },
+        { 
+            "id": "Delay: {{ value.delay }}"
+        },
+        { 
+            "id": "Configured: {{ value.isconfigured }}"
+        },
+        { 
+            "id": "Local Mode: {{ value.local_mode }}"
+        },
+        { 
+            "id": "Offset: {{ value.offset }}"
+        },
+        { 
+            "id": "Poll: {{ value.poll }}"
+        },
+        { 
+            "id": "Reach: {{ value.reach }}"
+        },
+        { 
+            "id": "Receive Time: {{ value.receive_time }}"
+        },
+        { 
+            "id": "Reference ID: {{ value.refid }}"
+        },    
+        { 
+            "id": "Stratum: {{ value.stratum }}"{% if (vrf_loop.last) and (address_loop.last) and (is_conf_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}{% endfor %}
+    ],
+    "links": [{% for vrf in to_parse_ntp %}{% set vrf_loop = loop %}{% for address in to_parse_ntp[vrf].associations.address %}{% set address_loop = loop %}{% for is_conf,value in to_parse_ntp[vrf].associations.address[address].local_mode.client.isconfigured.items() %}{% set is_conf_loop = loop %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "VRF: {{ vrf }}",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "Association Address: {{ address }}",
+            "cost": 1
+        },
+        { 
+            "source": "Association Address: {{ address }}",
+            "target": "Delay: {{ value.delay }}",
+            "cost": 1
+        },
+        { 
+            "source": "Association Address: {{ address }}",
+            "target": "Configured: {{ value.isconfigured }}",
+            "cost": 1
+        },
+        { 
+            "source": "Association Address: {{ address }}",
+            "target": "Local Mode: {{ value.local_mode }}",
+            "cost": 1
+        },
+        { 
+            "source": "Association Address: {{ address }}",
+            "target": "Offset: {{ value.offset }}",
+            "cost": 1
+        },
+        { 
+            "source": "Association Address: {{ address }}",
+            "target": "Poll: {{ value.poll }}",
+            "cost": 1
+        },
+        { 
+            "source": "Association Address: {{ address }}",
+            "target": "Reach: {{ value.reach }}",
+            "cost": 1
+        },
+        { 
+            "source": "Association Address: {{ address }}",
+            "target": "Receive Time: {{ value.receive_time }}",
+            "cost": 1
+        },
+        { 
+            "source": "Association Address: {{ address }}",
+            "target": "Reference ID: {{ value.refid }}",
+            "cost": 1
+        },    
+        { 
+            "source": "Association Address: {{ address }}",
+            "target": "Stratum: {{ value.stratum }}",
+            "cost": 1{% if (vrf_loop.last) and (address_loop.last) and (is_conf_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}{% endfor %}
+    ]
+}

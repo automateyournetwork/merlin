@@ -1,0 +1,10 @@
+devices:
+    F5:
+      alias: 'F5'
+      type: 'F5'
+      os: 'BIGIP'
+      platform: i2600
+      credentials:
+        default:
+          username: {{ your REST API Username }}
+          password: {{ your REST API Password }}

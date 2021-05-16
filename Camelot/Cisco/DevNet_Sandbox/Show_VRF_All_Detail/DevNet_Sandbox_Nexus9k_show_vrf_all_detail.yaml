@@ -1,0 +1,32 @@
+!!python/object/new:genie.conf.base.utils.QDict
+dictitems:
+  default:
+    address_family:
+      ipv4:
+        fwd_id: '0x00000001'
+        state: up
+        table_id: '0x00000001'
+      ipv6:
+        fwd_id: '0x80000001'
+        state: up
+        table_id: '0x80000001'
+    max_routes: 0
+    mid_threshold: 0
+    route_distinguisher: 0:0
+    state: up
+    vrf_id: 1
+  management:
+    address_family:
+      ipv4:
+        fwd_id: '0x00000002'
+        state: up
+        table_id: '0x00000002'
+      ipv6:
+        fwd_id: '0x80000002'
+        state: up
+        table_id: '0x80000002'
+    max_routes: 0
+    mid_threshold: 0
+    route_distinguisher: 0:0
+    state: up
+    vrf_id: 2

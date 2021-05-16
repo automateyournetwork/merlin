@@ -1,0 +1,32 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Interface Status",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for interface in to_parse_interfaces %}{% set outer_loop = loop %}{% if outer_loop.index > 0 %}
+        {
+            "id": "{{ interface }}"{% if outer_loop.last %}
+        }{% else %}
+        },{% endif %}{% else %}
+        {
+            "id": "{{ interface }}"
+        }{% endif %}{% endfor %}
+    ],
+    "links": [{% for interface in to_parse_interfaces %}{% set outer_loop = loop %}{% if outer_loop.index > 0 %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 1{% if outer_loop.last %}
+        }{% else %}
+        },{% endif %}{% else %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 1
+        }{% endif %}{% endfor %}
+    ]
+}

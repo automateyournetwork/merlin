@@ -1,0 +1,5 @@
+{% for vrf in host_data_model.host_vrfs %}vrf context {{ vrf }}
+  ip domain-name {{ host_data_model.host_vrfs[vrf].domain_name }}
+  ip name-server {% for server in host_data_model.host_vrfs[vrf].name_servers %}{{ server }} {% endfor %}{% for route in host_data_model.host_vrfs[vrf].routes %}
+  ip route {{ route }} {{ host_data_model.host_vrfs[vrf].routes[route].next_hop }}{% endfor %}
+  {% endfor %}

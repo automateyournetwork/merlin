@@ -1,0 +1,20 @@
+{
+    "interfaces": {
+        "mgmt0": {
+            "ipv4": {
+                "neighbors": {
+                    "10.10.20.254": {
+                        "age": "00:15:10",
+                        "ip": "10.10.20.254",
+                        "link_layer_address": "0050.56bf.dc37",
+                        "origin": "dynamic",
+                        "physical_interface": "mgmt0"
+                    }
+                }
+            }
+        }
+    },
+    "statistics": {
+        "entries_total": 1
+    }
+}

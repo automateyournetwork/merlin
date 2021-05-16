@@ -1,0 +1,24 @@
+{
+    "mac_table": {
+        "vlans": {
+            "-": {
+                "mac_addresses": {
+                    "00bf.5774.1b08": {
+                        "entry": "G",
+                        "interfaces": {
+                            "Sup-eth1(R)": {
+                                "age": "-",
+                                "interface": "Sup-eth1(R)",
+                                "mac_type": "static"
+                            }
+                        },
+                        "mac_address": "00bf.5774.1b08",
+                        "ntfy": "F",
+                        "secure": "F"
+                    }
+                },
+                "vlan": "-"
+            }
+        }
+    }
+}

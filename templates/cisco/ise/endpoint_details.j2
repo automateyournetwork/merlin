@@ -1,0 +1,15 @@
+{% if filetype_loop_jinja2 == "csv" %}{% for resource in to_parse_endpoint_details %}
+{{ to_parse_endpoint_details[resource].name }},{{ to_parse_endpoint_details[resource].mac }},{{ to_parse_endpoint_details[resource].groupId }},{{ to_parse_endpoint_details[resource].id }},{{ to_parse_endpoint_details[resource].identityStore | default ("No Identity Store") }},{{ to_parse_endpoint_details[resource].identityStoreId | default ("No Identity Store") }},{{ to_parse_endpoint_details[resource].portalUser | default ("Not a portal user") }},{{ to_parse_endpoint_details[resource].profileId }},{{ to_parse_endpoint_details[resource].staticGroupAssignment }},{{ to_parse_endpoint_details[resource].staticProfileAssignment }}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}{% for resource in to_parse_endpoint_details %}
+| {{ to_parse_endpoint_details[resource].name }} | {{ to_parse_endpoint_details[resource].mac }} | {{ to_parse_endpoint_details[resource].groupId }} | {{ to_parse_endpoint_details[resource].id }} | {{ to_parse_endpoint_details[resource].identityStore | default ("No Identity Store") }} | {{ to_parse_endpoint_details[resource].identityStoreId | default ("No Identity Store") }} | {{ to_parse_endpoint_details[resource].portalUser | default ("Not a portal user") }} | {{ to_parse_endpoint_details[resource].profileId }} | {{ to_parse_endpoint_details[resource].staticGroupAssignment }} | {{ to_parse_endpoint_details[resource].staticProfileAssignment }} |{% endfor %}{% else %}{% for resource in to_parse_endpoint_details %}
+<tr>
+  <td>{{ to_parse_endpoint_details[resource].name }}</td>
+  <td>{{ to_parse_endpoint_details[resource].mac }}</td>
+  <td>{{ to_parse_endpoint_details[resource].groupId }}</td>
+  <td>{{ to_parse_endpoint_details[resource].id }}</td>
+  <td>{{ to_parse_endpoint_details[resource].identityStore | default ("No Identity Store") }}</td>
+  <td>{{ to_parse_endpoint_details[resource].identityStoreId | default ("No Identity Store") }}</td>
+  <td>{{ to_parse_endpoint_details[resource].portalUser | default ("Not a portal user") }}</td>
+  <td>{{ to_parse_endpoint_details[resource].profileId }}</td>
+  <td>{{ to_parse_endpoint_details[resource].staticGroupAssignment }}</td>
+  <td>{{ to_parse_endpoint_details[resource].staticProfileAssignment }}</td>
+</tr>{% endfor %}{% endif %}{% endif %}

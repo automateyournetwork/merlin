@@ -1,0 +1,21 @@
+{% if filetype_loop_jinja2 == "csv" %}{% for serial_number in to_parse_serial_2_info %}{% for pid in serial_number.base_pid_list %}{% for orderable_pid in serial_number.orderable_pid_list %}
+{{ hostname }},{{ pid.base_pid }},{{ serial_number.service_contract_number }},{{ serial_number.sr_no }},{{ serial_number.parent_sr_no }},{{ serial_number.is_covered }},{{ orderable_pid.item_description | replace(","," ")}},{{ orderable_pid.item_type }},{{ serial_number.warranty_type }},{{ serial_number.covered_product_line_end_date }},{{ serial_number.warranty_end_date }},{{ serial_number.contract_site_customer_name }},{{ serial_number.contract_site_address1 }},{{ serial_number.contract_site_city }},{{ serial_number.contract_site_state_province }},{{ serial_number.contract_site_country }}{% endfor %}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}{% for serial_number in to_parse_serial_2_info %}{% for pid in serial_number.base_pid_list %}{% for orderable_pid in serial_number.orderable_pid_list %}
+| {{ hostname }} | {{ pid.base_pid }} | {{ serial_number.service_contract_number }} | {{ serial_number.sr_no }} | {{ serial_number.parent_sr_no }} | {{ serial_number.is_covered }} | {{ orderable_pid.item_description | replace(","," ") }} | {{ orderable_pid.item_type }} | {{ serial_number.type }} | {{ serial_number.covered_product_line_end_date }} | {{ serial_number.warranty_end_date }} | {{ serial_number.contract_site_customer_name }} | {{ serial_number.contract_site_address1 }} | {{ serial_number.contract_site_city }} | {{ serial_number.contract_site_state_province }} | {{ serial_number.contract_site_country }} |{% endfor %}{% endfor %}{% endfor %}{% else %}{% for serial_number in to_parse_serial_2_info %}{% for pid in serial_number.base_pid_list %}{% for orderable_pid in serial_number.orderable_pid_list %}
+<tr>
+  <td>{{ hostname }}</td>
+  <td>{{ pid.base_pid }}</td>
+  <td>{{ serial_number.service_contract_number }}</td>
+  <td>{{ serial_number.sr_no }}</td>
+  <td>{{ serial_number.parent_sr_no }}</td>
+  <td>{{ serial_number.is_covered }}</td>
+  <td>{{ orderable_pid.item_description | replace(","," ")}}</td>   
+  <td>{{ orderable_pid.item_type }}</td>
+  <td>{{ serial_number.warranty_type }}</td>
+  <td>{{ serial_number.covered_product_line_end_date }}</td>
+  <td>{{ serial_number.warranty_end_date }}</td>
+  <td>{{ serial_number.contract_site_customer_name }}</td>
+  <td>{{ serial_number.contract_site_address1 }}</td>
+  <td>{{ serial_number.contract_site_city }}</td>
+  <td>{{ serial_number.contract_site_state_province }}</td>
+  <td>{{ serial_number.contract_site_country }}</td>
+</tr>{% endfor %}{% endfor %}{% endfor %}{% endif %}{% endif %}

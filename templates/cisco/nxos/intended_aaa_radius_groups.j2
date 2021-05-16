@@ -1,0 +1,5 @@
+{% for group in host_data_model.global_config.aaa_radius_groups %}aaa group server radius {{ group }}{% for server in host_data_model.global_config.aaa_radius_groups[group].servers %}
+    server {{ server }}{% endfor %}
+    use-vrf {{ host_data_model.global_config.aaa_radius_groups[group].vrf }}
+    source-interface {{ host_data_model.global_config.aaa_radius_groups[group].source_interface }}
+{% endfor %}

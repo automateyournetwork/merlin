@@ -1,0 +1,62 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Interface Status",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_CSR1000v"
+        },
+        {
+            "id": "GigabitEthernet1"
+        },
+        {
+            "id": "Neighbor IP: 10.10.20.254"
+        },
+        {
+            "id": "Neighbor MAC: 0050.56bf.4a47"
+        },
+        {
+            "id": "GigabitEthernet1"
+        },
+        {
+            "id": "Neighbor IP: 10.10.20.48"
+        },
+        {
+            "id": "Neighbor MAC: 0050.56bf.08f1"
+        }
+    ],
+    "links": [
+        {
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "GigabitEthernet1",
+            "cost": 1
+        },
+        {
+            "source": "GigabitEthernet1",
+            "target": "Neighbor IP: 10.10.20.254",
+            "cost": 2
+        },
+        {
+            "source": "Neighbor IP: 10.10.20.254",
+            "target": "Neighbor MAC: 0050.56bf.4a47",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "GigabitEthernet1",
+            "cost": 1
+        },
+        {
+            "source": "GigabitEthernet1",
+            "target": "Neighbor IP: 10.10.20.48",
+            "cost": 2
+        },
+        {
+            "source": "Neighbor IP: 10.10.20.48",
+            "target": "Neighbor MAC: 0050.56bf.08f1",
+            "cost": 2
+        }
+    ]
+}

@@ -1,0 +1,2 @@
+{% for user in host_data_model.global_config.snmp_server_users %}snmp-server user {{ user }} auth md5 {{ host_data_model.global_config.snmp_server_users[user].auth_key }} priv {{ host_data_model.global_config.snmp_server_users[user].priv_key }} localizedkey engineID {{ host_data_model.global_config.snmp_server_users[user].engineID }}
+{% endfor %}

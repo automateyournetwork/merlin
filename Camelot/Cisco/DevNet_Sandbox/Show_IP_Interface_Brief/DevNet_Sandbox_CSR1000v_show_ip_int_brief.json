@@ -1,0 +1,7 @@
+{
+    "meraki-fqdn-dns": {
+        "acl_type": "extended",
+        "name": "meraki-fqdn-dns",
+        "type": "ipv4-acl-type"
+    }
+}

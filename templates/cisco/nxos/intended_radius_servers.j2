@@ -1,0 +1,2 @@
+{% for radius_server in host_data_model.global_config.radius_servers %}
+radius-server host {{ radius_server}} key 7 "{{ host_data_model.global_config.radius_servers[radius_server].key }}" authentication accounting{% endfor %}

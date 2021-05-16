@@ -1,0 +1,579 @@
+{
+    "type": "NetworkGraph",
+    "label": "Learn Interfaces",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for vrf in to_parse_ospf %}{% set vrf_loop = loop %}{% if vrf == "default" %}{% for address_family in to_parse_ospf[vrf].address_family %}{% set address_loop = loop %}{% for instance in to_parse_ospf[vrf].address_family[address_family].instance %}{% set instance_loop = loop %}{% for area in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas %}{% set area_loop = loop %}{% for lsa_type in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types %}{% set lsa_type_loop = loop %}{% for lsa in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas %}{% set lsa_loop = loop %}{% if to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router is defined %}{% for link in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router.links %}{% set link_loop = loop %}{% for topology in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router.links[link].topologies %}{% set topology_loop = loop %}{% for interface in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces %}{% set interface_loop = loop %}{% if to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors is defined %}{% for neighbor in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors %}{% set neighbor_loop = loop %}
+        { 
+            "id": "VRF: {{ vrf }}"
+        },
+        { 
+            "id": "{{ address_family }}"
+        },
+        { 
+            "id": "OSPF Instance: {{ instance }}"
+        },
+        { 
+            "id": "Router ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].router_id }}"
+        },
+        { 
+            "id": "Area: {{ area }}"
+        },
+        { 
+            "id": "Area Type: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].area_type }}"
+        }, 
+        { 
+            "id": "LSA Type: {{ lsa_type }}"
+        },               
+        { 
+            "id": "Advertising Router: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].adv_router }}"
+        },      
+        { 
+            "id": "LSA ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].lsa_id }}"
+        },
+        { 
+            "id": "Link: {{ link }}"
+        },           
+        { 
+            "id": "Link ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router.links[link].link_id }}"
+        },            
+        { 
+            "id": "Topology: {{ topology }}"
+        },      
+        { 
+            "id": "{{ interface }}"
+        },
+        { 
+            "id": "Enabled: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].enable }}"
+        },{% if to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive is defined %}
+        { 
+            "id": "Passive: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive }}"
+        },{% endif %}
+        { 
+            "id": "State: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].state }}"
+        },
+        { 
+            "id": "Neighbor: {{ neighbor }}"
+        },
+        { 
+            "id": "Address: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].address }}"
+        },
+        { 
+            "id": "BDR IP: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].bdr_ip_addr }}"
+        },
+        { 
+            "id": "DR IP: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].dr_ip_addr }}"
+        },
+        { 
+            "id": "Router ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].neighbor_router_id }}"
+        },
+        { 
+            "id": "State: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].state }}"{% if (vrf_loop.last) and (address_loop.last) and (instance_loop.last) and (area_loop.last) and (lsa_type_loop.last) and (lsa_loop.last) and (link_loop.last) and (topology_loop.last) and (interface_loop.last) and (neighbor_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% else %}
+        { 
+            "id": "VRF: {{ vrf }}"
+        },
+        { 
+            "id": "{{ address_family }}"
+        },
+        { 
+            "id": "OSPF Instance: {{ instance }}"
+        },
+        { 
+            "id": "Router ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].router_id }}"
+        },
+        { 
+            "id": "Area: {{ area }}"
+        },
+        { 
+            "id": "Area Type: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].area_type }}"
+        }, 
+        { 
+            "id": "LSA Type: {{ lsa_type }}"
+        },                
+        { 
+            "id": "Advertising Router: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].adv_router }}"
+        },      
+        { 
+            "id": "LSA ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].lsa_id }}"
+        },
+        { 
+            "id": "Link: {{ link }}"
+        },           
+        { 
+            "id": "Link ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router.links[link].link_id }}"
+        },            
+        { 
+            "id": "Topology: {{ topology }}"
+        },      
+        { 
+            "id": "{{ interface }}"
+        },
+        { 
+            "id": "Enabled: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].enable }}"
+        },{% if to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive is defined %}
+        { 
+            "id": "Passive: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive }}"
+        },{% endif %}
+        { 
+            "id": "State: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].state }}"{% if (vrf_loop.last) and (address_loop.last) and (instance_loop.last) and (area_loop.last) and (lsa_type_loop.last) and (lsa_loop.last) and (link_loop.last) and (topology_loop.last) and (interface_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endif %}{% endfor %}{% endfor %}{% endfor %}{% else %}{% if to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.summary is defined %}{% for topology in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.summary.topologies %}{% set topology_loop = loop %}  
+        { 
+            "id": "VRF: {{ vrf }}"
+        },
+        { 
+            "id": "{{ address_family }}"
+        },
+        { 
+            "id": "OSPF Instance: {{ instance }}"
+        },
+        { 
+            "id": "Router ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].router_id }}"
+        },
+        { 
+            "id": "Area: {{ area }}"
+        },
+        { 
+            "id": "Area Type: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].area_type }}"
+        }, 
+        { 
+            "id": "LSA Type: {{ lsa_type }}"
+        },                
+        { 
+            "id": "Advertising Router: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].adv_router }}"
+        },      
+        { 
+            "id": "LSA ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].lsa_id }}"
+        },
+        { 
+            "id": "Topology: {{ topology }}"{% if (vrf_loop.last) and (address_loop.last) and (instance_loop.last) and (area_loop.last) and (lsa_type_loop.last) and (lsa_loop.last) and (topology_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endif %}{% endif %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% else %}{% for address_family in to_parse_ospf[vrf].address_family %}{% set address_loop = loop %}{% for instance in to_parse_ospf[vrf].address_family[address_family].instance %}{% set instance_loop = loop %}{% for area in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas %}{% set area_loop = loop %}{% for interface in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces %}{% set interface_loop = loop %}{% if to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors is defined %}{% for neighbor in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors %}{% set neighbor_loop = loop %}
+        { 
+            "id": "VRF: {{ vrf }}"
+        },
+        { 
+            "id": "{{ address_family }}"
+        },
+        { 
+            "id": "OSPF Instance: {{ instance }}"
+        },
+        { 
+            "id": "Area: {{ area }}"
+        },
+        { 
+            "id": "{{ interface }}"
+        },
+        { 
+            "id": "Enabled: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].enable }}"
+        },{% if to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive is defined %}
+        { 
+            "id": "Passive: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive }}"
+        },{% endif %}
+        { 
+            "id": "State: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].state }}"
+        },
+        { 
+            "id": "Neighbor: {{ neighbor }}"
+        },
+        { 
+            "id": "Address: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].address }}"
+        },
+        { 
+            "id": "BDR IP: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].bdr_ip_addr }}"
+        },
+        { 
+            "id": "DR IP: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].dr_ip_addr }}"
+        },
+        { 
+            "id": "Router ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].neighbor_router_id }}"
+        },
+        { 
+            "id": "State: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].state }}"{% if (vrf_loop.last) and (address_loop.last) and (instance_loop.last) and (area_loop.last) and (interface_loop.last) and (neighbor_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% else %}
+        { 
+            "id": "VRF: {{ vrf }}"
+        },
+        { 
+            "id": "{{ address_family }}"
+        },
+        { 
+            "id": "OSPF Instance: {{ instance }}"
+        },
+        { 
+            "id": "Area: {{ area }}"
+        },
+        { 
+            "id": "{{ interface }}"
+        },
+        { 
+            "id": "Enabled: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].enable }}"
+        },{% if to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive is defined %}
+        { 
+            "id": "Passive: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive }}"
+        },{% endif %}
+        { 
+            "id": "State: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].state }}"{% if (vrf_loop.last) and (address_loop.last) and (instance_loop.last) and (area_loop.last) and (interface_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endif %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endif %}{% endfor %}
+    ],
+    "links": [{% for vrf in to_parse_ospf %}{% set vrf_loop = loop %}{% if vrf == "default" %}{% for address_family in to_parse_ospf[vrf].address_family %}{% set address_loop = loop %}{% for instance in to_parse_ospf[vrf].address_family[address_family].instance %}{% set instance_loop = loop %}{% for area in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas %}{% set area_loop = loop %}{% for lsa_type in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types %}{% set lsa_type_loop = loop %}{% for lsa in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas %}{% set lsa_loop = loop %}{% if to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router is defined %}{% for link in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router.links %}{% set link_loop = loop %}{% for topology in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router.links[link].topologies %}{% set topology_loop = loop %}{% for interface in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces %}{% set interface_loop = loop %}{% if to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors is defined %}{% for neighbor in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors %}{% set neighbor_loop = loop %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "VRF: {{ vrf }}",
+            "cost": 1            
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "{{ address_family }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ address_family }}",
+            "target": "OSPF Instance: {{ instance }}",
+            "cost": 1
+        },
+        { 
+            "source": "OSPF Instance: {{ instance }}",
+            "target": "Router ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].router_id }}",
+            "cost": 2            
+        },
+        { 
+            "source": "OSPF Instance: {{ instance }}",
+            "target": "Area: {{ area }}",
+            "cost": 1
+        },
+        { 
+            "source": "Area: {{ area }}",
+            "target": "Area Type: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].area_type }}",
+            "cost": 2
+        }, 
+        { 
+            "source": "Area: {{ area }}",
+            "target": "LSA Type: {{ lsa_type }}",
+            "cost": 1
+        },               
+        { 
+            "source": "LSA Type: {{ lsa_type }}",
+            "target": "LSA ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].lsa_id }}",
+            "cost": 1                        
+        },
+        { 
+            "source": "LSA ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].lsa_id }}",
+            "target": "Advertising Router: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].adv_router }}",
+            "cost": 2            
+        },      
+        { 
+            "source": "LSA ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].lsa_id }}",
+            "target": "Link: {{ link }}",
+            "cost": 1
+        },           
+        { 
+            "source": "Link: {{ link }}",
+            "target": "Link ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router.links[link].link_id }}",
+            "cost": 2
+        },            
+        { 
+            "source": "Link: {{ link }}",
+            "target": "Topology: {{ topology }}",
+            "cost": 1         
+        },      
+        { 
+            "source": "Topology: {{ topology }}",
+            "target": "{{ interface }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Enabled: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].enable }}",
+            "cost": 2           
+        },{% if to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Passive: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive }}",
+            "cost": 2
+        },{% endif %}
+        { 
+            "source": "{{ interface }}",
+            "target": "State: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].state }}",
+            "cost": 2
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Neighbor: {{ neighbor }}",
+            "cost": 1
+        },
+        { 
+            "source": "Neighbor: {{ neighbor }}",
+            "target": "Address: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].address }}",
+            "cost": 2
+        },
+        { 
+            "source": "Neighbor: {{ neighbor }}",
+            "target": "BDR IP: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].bdr_ip_addr }}",
+            "cost": 2
+        },
+        { 
+            "source": "Neighbor: {{ neighbor }}",
+            "target": "DR IP: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].dr_ip_addr }}",
+            "cost": 2
+        },
+        { 
+            "source": "Neighbor: {{ neighbor }}",
+            "target": "Router ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].neighbor_router_id }}",
+            "cost": 2
+        },
+        { 
+            "source": "Neighbor: {{ neighbor }}",
+            "target": "State: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].state }}",
+            "cost": 2{% if (vrf_loop.last) and (address_loop.last) and (instance_loop.last) and (area_loop.last) and (lsa_type_loop.last) and (lsa_loop.last) and (link_loop.last) and (topology_loop.last) and (interface_loop.last) and (neighbor_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% else %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "VRF: {{ vrf }}",
+            "cost": 1            
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "{{ address_family }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ address_family }}",
+            "target": "OSPF Instance: {{ instance }}",
+            "cost": 1
+        },
+        { 
+            "source": "OSPF Instance: {{ instance }}",
+            "target": "Router ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].router_id }}",
+            "cost": 2            
+        },
+        { 
+            "source": "OSPF Instance: {{ instance }}",
+            "target": "Area: {{ area }}",
+            "cost": 1
+        },
+        { 
+            "source": "Area: {{ area }}",
+            "target": "Area Type: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].area_type }}",
+            "cost": 2
+        }, 
+        { 
+            "source": "Area: {{ area }}",
+            "target": "LSA Type: {{ lsa_type }}",
+            "cost": 1
+        },               
+        { 
+            "source": "LSA Type: {{ lsa_type }}",
+            "target": "LSA ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].lsa_id }}",
+            "cost": 1                        
+        },
+        { 
+            "source": "LSA ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].lsa_id }}",
+            "target": "Advertising Router: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].adv_router }}",
+            "cost": 2            
+        },      
+        { 
+            "source": "LSA ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].lsa_id }}",
+            "target": "Link: {{ link }}",
+            "cost": 1
+        },           
+        { 
+            "source": "Link: {{ link }}",
+            "target": "Link ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router.links[link].link_id }}",
+            "cost": 2
+        },            
+        { 
+            "source": "Link: {{ link }}",
+            "target": "Topology: {{ topology }}",
+            "cost": 1         
+        },      
+        { 
+            "source": "Topology: {{ topology }}",
+            "target": "{{ interface }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Enabled: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].enable }}",
+            "cost": 2           
+        },{% if to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Passive: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive }}",
+            "cost": 2
+        },{% endif %}
+        { 
+            "source": "{{ interface }}",
+            "target": "State: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].state }}",
+            "cost": 2{% if (vrf_loop.last) and (address_loop.last) and (instance_loop.last) and (area_loop.last) and (lsa_type_loop.last) and (lsa_loop.last) and (link_loop.last) and (topology_loop.last) and (interface_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endif %}{% endfor %}{% endfor %}{% endfor %}{% else %}{% if to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.summary is defined %}{% for topology in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.summary.topologies %}{% set topology_loop = loop %}  
+        {
+            "source": "{{ device_alias }}",
+            "target": "VRF: {{ vrf }}",
+            "cost": 1            
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "{{ address_family }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ address_family }}",
+            "target": "OSPF Instance: {{ instance }}",
+            "cost": 1
+        },
+        { 
+            "source": "OSPF Instance: {{ instance }}",
+            "target": "Router ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].router_id }}",
+            "cost": 2            
+        },
+        { 
+            "source": "OSPF Instance: {{ instance }}",
+            "target": "Area: {{ area }}",
+            "cost": 1
+        },
+        { 
+            "source": "Area: {{ area }}",
+            "target": "Area Type: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].area_type }}",
+            "cost": 2
+        }, 
+        { 
+            "source": "Area: {{ area }}",
+            "target": "LSA Type: {{ lsa_type }}",
+            "cost": 1
+        },               
+        { 
+            "source": "LSA Type: {{ lsa_type }}",
+            "target": "LSA ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].lsa_id }}",
+            "cost": 1                        
+        },
+        { 
+            "source": "LSA ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].lsa_id }}",
+            "target": "Advertising Router: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].adv_router }}",
+            "cost": 2{% if (vrf_loop.last) and (address_loop.last) and (instance_loop.last) and (area_loop.last) and (lsa_type_loop.last) and (lsa_loop.last) and (topology_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endif %}{% endif %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% else %}{% for address_family in to_parse_ospf[vrf].address_family %}{% set address_loop = loop %}{% for instance in to_parse_ospf[vrf].address_family[address_family].instance %}{% set instance_loop = loop %}{% for area in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas %}{% set area_loop = loop %}{% for interface in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces %}{% set interface_loop = loop %}{% if to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors is defined %}{% for neighbor in to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors %}{% set neighbor_loop = loop %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "VRF: {{ vrf }}",
+            "cost": 1            
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "{{ address_family }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ address_family }}",
+            "target": "OSPF Instance: {{ instance }}",
+            "cost": 1
+        },
+        { 
+            "source": "OSPF Instance: {{ instance }}",
+            "target": "Area: {{ area }}",
+            "cost": 1
+        },
+        { 
+            "source": "Area: {{ area }}",
+            "target": "{{ interface }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Enabled: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].enable }}",
+            "cost": 2
+        },{% if to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Passive: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive }}",
+            "cost": 2            
+        },{% endif %}
+        { 
+            "source": "{{ interface }}",
+            "target": "State: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].state }}",
+            "cost": 2                        
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Neighbor: {{ neighbor }}",
+            "cost": 1                                    
+        },
+        { 
+            "source": "Neighbor: {{ neighbor }}",
+            "target": "Address: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].address }}",
+            "cost": 2             
+        },
+        { 
+            "source": "Neighbor: {{ neighbor }}",
+            "target": "BDR IP: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].bdr_ip_addr }}",
+            "cost": 2
+        },
+        { 
+            "source": "Neighbor: {{ neighbor }}",
+            "target": "DR IP: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].dr_ip_addr }}",
+            "cost": 2            
+        },
+        { 
+            "source": "Neighbor: {{ neighbor }}",
+            "target": "Router ID: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].neighbor_router_id }}",
+            "cost": 2
+        },
+        { 
+            "source": "Neighbor: {{ neighbor }}",
+            "target": "State: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].state }}",
+            "cost": 2{% if (vrf_loop.last) and (address_loop.last) and (instance_loop.last) and (area_loop.last) and (interface_loop.last) and (neighbor_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% else %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "VRF: {{ vrf }}",
+            "cost": 1            
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "{{ address_family }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ address_family }}",
+            "target": "OSPF Instance: {{ instance }}",
+            "cost": 1
+        },
+        { 
+            "source": "OSPF Instance: {{ instance }}",
+            "target": "Area: {{ area }}",
+            "cost": 1
+        },
+        { 
+            "source": "Area: {{ area }}",
+            "target": "{{ interface }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Enabled: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].enable }}",
+            "cost": 2
+        },{% if to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Passive: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive }}",
+            "cost": 2  
+        },{% endif %}
+        { 
+            "source": "{{ interface }}",
+            "target": "State: {{ to_parse_ospf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].state }}",
+            "cost": 2 {% if (vrf_loop.last) and (address_loop.last) and (instance_loop.last) and (area_loop.last) and (interface_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endif %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endif %}{% endfor %}
+    ]
+}

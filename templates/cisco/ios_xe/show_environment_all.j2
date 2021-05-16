@@ -1,0 +1,61 @@
+{% if filetype_loop_jinja2 == "csv" %}Switch,Temperature State,Inlet Temperature State,Inlet Temp Value,Inlet Temp Yellow,Inlet Temp Red,Hot Spot Temperature State,Hot Temp Value,Hot Temp Yellow,Hot Temp Red,Power Supply,Power Supply PID,PoE Power,Serial Number,State,Status,System Power,Watts,Fan,Fan State{% for switch in to_parse_environment %}{% for fan in to_parse_environment[switch].fan %}{% for power_supply in to_parse_environment[switch].power_supply %}
+{{ switch }},{{ to_parse_environment[switch].system_temperature_state }},{{ to_parse_environment[switch].inlet_temperature.state }},{{ to_parse_environment[switch].inlet_temperature.value }},{{ to_parse_environment[switch].inlet_temperature.yellow_threshold }},{{ to_parse_environment[switch].inlet_temperature.red_threshold }},{{ to_parse_environment[switch].hotspot_temperature.state }},{{ to_parse_environment[switch].hotspot_temperature.value }},{{ to_parse_environment[switch].hotspot_temperature.yellow_threshold }},{{ to_parse_environment[switch].hotspot_temperature.red_threshold }},{{ power_supply }},{{ to_parse_environment[switch].power_supply[power_supply].pid | default("N/A") }},{{ to_parse_environment[switch].power_supply[power_supply].poe_power | default("N/A") }},{{ to_parse_environment[switch].power_supply[power_supply].serial_number | default("N/A") }},{{ to_parse_environment[switch].power_supply[power_supply].state }},{{ to_parse_environment[switch].power_supply[power_supply].status }},{{ to_parse_environment[switch].power_supply[power_supply].system_power | default("N/A") }},{{ to_parse_environment[switch].power_supply[power_supply].watts | default("N/A") }},{{ fan }},{{ to_parse_environment[switch].fan[fan].state }}{% endfor %}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show Environment All
+| Switch | Temperature State | Inlet Temperature State | Inlet Temp Value | Inlet Temp Yellow | Inlet Temp Red | Hot Spot Temperature State | Hot Temp Value | Hot Temp Yellow | Hot Temp Red | Power Supply | Power Supply PID | PoE Power | Serial Number | State | Status | System Power | Watts | Fan | Fan State |
+| ------ | ----------------- | ----------------------- | ---------------- | ----------------- | -------------- | -------------------------- | -------------- | --------------- | ------------ | ------------ | ---------------- | --------- | ------------- | ----- | ------ | ------------ | ----- | --- | --------- |{% for switch in to_parse_environment %}{% for fan in to_parse_environment[switch].fan %}{% for power_supply in to_parse_environment[switch].power_supply %}
+| {{ switch }} | {{ to_parse_environment[switch].system_temperature_state }} | {{ to_parse_environment[switch].inlet_temperature.state }} | {{ to_parse_environment[switch].inlet_temperature.value }} | {{ to_parse_environment[switch].inlet_temperature.yellow_threshold }} | {{ to_parse_environment[switch].inlet_temperature.red_threshold }} | {{ to_parse_environment[switch].hotspot_temperature.state }} | {{ to_parse_environment[switch].hotspot_temperature.value }} | {{ to_parse_environment[switch].hotspot_temperature.yellow_threshold }} | {{ to_parse_environment[switch].hotspot_temperature.red_threshold }} | {{ power_supply }} | {{ to_parse_environment[switch].power_supply[power_supply].pid | default("N/A") }} | {{ to_parse_environment[switch].power_supply[power_supply].poe_power | default("N/A") }} | {{ to_parse_environment[switch].power_supply[power_supply].serial_number | default("N/A") }} | {{ to_parse_environment[switch].power_supply[power_supply].state }} | {{ to_parse_environment[switch].power_supply[power_supply].status }} | {{ to_parse_environment[switch].power_supply[power_supply].system_power | default("N/A") }} | {{ to_parse_environment[switch].power_supply[power_supply].watts | default("N/A") }} | {{ fan }} | {{ to_parse_environment[switch].fan[fan].state }} |{% endfor %}{% endfor %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show Environment All</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Switch</th>
+    <th>Temperature State</th>
+    <th>Inlet Temperature State</th>
+    <th>Inlet Temp Value</th>
+    <th>Inlet Temp Yellow</th>
+    <th>Inlet Temp Red</th>
+    <th>Hot Spot Temperature State</th>
+    <th>Hot Temp Value</th>
+    <th>Hot Temp Yellow</th>
+    <th>Hot Temp Red</th>
+    <th>Power Supply</th>
+    <th>Power Supply PID</th>
+    <th>PoE Power</th>
+    <th>Serial Number</th>
+    <th>State</th>
+    <th>Status</th>
+    <th>System Power</th>
+    <th>Watts</th>
+    <th>Fan</th>
+    <th>Fan State</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  {% for switch in to_parse_environment %}{% for fan in to_parse_environment[switch].fan %}{% for power_supply in to_parse_environment[switch].power_supply %}
+  <tr>
+    <td>{{ switch }}</td>
+    <td>{{ to_parse_environment[switch].system_temperature_state }}</td>
+    <td>{{ to_parse_environment[switch].inlet_temperature.state }}</td>
+    <td>{{ to_parse_environment[switch].inlet_temperature.value }}</td>
+    <td>{{ to_parse_environment[switch].inlet_temperature.yellow_threshold }}</td>
+    <td>{{ to_parse_environment[switch].inlet_temperature.red_threshold }}</td>
+    <td>{{ to_parse_environment[switch].hotspot_temperature.state }}</td>
+    <td>{{ to_parse_environment[switch].hotspot_temperature.value }}</td>
+    <td>{{ to_parse_environment[switch].hotspot_temperature.yellow_threshold }}</td>
+    <td>{{ to_parse_environment[switch].hotspot_temperature.red_threshold }}</td>
+    <td>{{ power_supply }}</td>
+    <td>{{ to_parse_environment[switch].power_supply[power_supply].pid | default("N/A") }}</td>
+    <td>{{ to_parse_environment[switch].power_supply[power_supply].poe_power | default("N/A") }}</td>
+    <td>{{ to_parse_environment[switch].power_supply[power_supply].serial_number | default("N/A") }}</td>
+    <td>{{ to_parse_environment[switch].power_supply[power_supply].state }}</td>
+    <td>{{ to_parse_environment[switch].power_supply[power_supply].status }}</td>
+    <td>{{ to_parse_environment[switch].power_supply[power_supply].system_power | default("N/A") }}</td>
+    <td>{{ to_parse_environment[switch].power_supply[power_supply].watts | default("N/A") }}</td>
+    <td>{{ fan }}</td>
+    <td>{{ to_parse_environment[switch].fan[fan].state }}</td>
+  </tr>{% endfor %}{% endfor %}{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

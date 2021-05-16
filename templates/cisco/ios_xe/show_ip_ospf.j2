@@ -1,0 +1,76 @@
+{% if filetype_loop_jinja2 == "csv" %}VRF,Address Family,Instance,Router ID,Area,Area Transit,Area Type,Summary,NSSA,Enabled,Interface Count,SPF Last Executed,Total SPF,Area LSA Count,Auto Cost Enable,Reference Bandwidth,BFD Enabled,Elapsed Time,Event Log Enabled,Graceful Restart Type,Graceful Restart Enabled,LLS,NSR Enable,External LSA,Total Areas,Total Normal Areas,Total NSSA Areas,Total Stub Areas{% for vrf in to_parse_ip_ospf %}{% for address_family in to_parse_ip_ospf[vrf].address_family %}{% for instance in to_parse_ip_ospf[vrf].address_family[address_family].instance %}{% for area in to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].areas %}{% for graceful_restart in to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].graceful_restart %}
+{{ vrf }},{{ address_family }},{{ instance }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].router_id }},{{ area }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].area_transit }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].areas[area].area_type }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].areas[area].summary }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].nssa }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].enable }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].areas[area].statistics.interfaces_count }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].areas[area].statistics.spf_last_executed }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].areas[area].statistics.spf_runs_count }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].areas[area].statistics.area_scope_lsa_count }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].auto_cost.enable }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].auto_cost.reference_bandwidth }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].bfd.enable }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].elapsed_time }},{% if to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].event_log is defined %}YES{% else %}NO{% endif %},{{ graceful_restart }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].graceful_restart[graceful_restart].enable }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].lls }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].nsr.enable }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].numbers.external_lsa }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].total_areas }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].total_normal_areas }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].total_nssa_areas }},{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].total_stub_areas }}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show IP OPSF 
+| VRF | Address Family | Instance | Router ID | Area | Area Transit | Area Type | Summary | NSSA | Enabled | Interface Count | SPF Last Executed | Total SPF | Area LSA Count | Auto Cost Enable | Reference Bandwidth | BFD Enabled | Elapsed Time | Event Log Enabled | Graceful Restart Type | Graceful Restart Enabled | LLS | NSR Enable | External LSA | Total Areas | Total Normal Areas | Total NSSA Areas | Total Stub Areas |
+| --- | -------------- | -------- | --------- | ---- | ------------ | --------- | ------- | ---- | ------- | --------------- | ----------------- | --------- | -------------- | ---------------- | ------------------- | ----------- | ------------ | ----------------- | --------------------- | ------------------------ | --- | ---------- | ------------ | ----------- | ------------------ | ---------------- | ---------------- |{% for vrf in to_parse_ip_ospf %}{% for address_family in to_parse_ip_ospf[vrf].address_family %}{% for instance in to_parse_ip_ospf[vrf].address_family[address_family].instance %}{% for area in to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].areas %}{% for graceful_restart in to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].graceful_restart %}
+| {{ vrf }} | {{ address_family }} | {{ instance }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].router_id }} | {{ area }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].area_transit }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].areas[area].area_type }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].areas[area].summary }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].nssa }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].enable }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].areas[area].statistics.interfaces_count }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].areas[area].statistics.spf_last_executed }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].areas[area].statistics.spf_runs_count }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].areas[area].statistics.area_scope_lsa_count }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].auto_cost.enable }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].auto_cost.reference_bandwidth }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].bfd.enable }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].elapsed_time }} | {% if to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].event_log is defined %}YES{% else %}NO{% endif %} | {{ graceful_restart }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].graceful_restart[graceful_restart].enable }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].lls }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].nsr.enable }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].numbers.external_lsa }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].total_areas }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].total_normal_areas }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].total_nssa_areas }} | {{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].total_stub_areas }} |{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show IP OSPF </h1>
+<table style="merlin-table">
+  <thead>
+  <tr>
+    <th>VRF</th>
+    <th>Address Family</th>
+    <th>Instance</th>
+    <th>Router ID</th>
+    <th>Neighbor</th>
+    <th>Area</th>
+    <th>Area Transit</th>
+    <th>Area Type</th>
+    <th>Summary</th>
+    <th>NSSA</th>
+    <th>Enabled</th>
+    <th>Interface Count</th>
+    <th>SPF Last Executed</th>
+    <th>Total SPF</th>
+    <th>Area LSA Count</th>
+    <th>Auto Cost Enable</th>
+    <th>Reference Bandwidth</th>
+    <th>BFD Enabled</th>
+    <th>Elapsed Time</th>
+    <th>Event Log Enabled</th>
+    <th>Graceful Restart Type</th>
+    <th>Graceful Restart Enabled</th>
+    <th>LLS</th>
+    <th>NSR Enable</th>
+    <th>External LSA</th>
+    <th>Total Areas</th>
+    <th>Total Normal Areas</th>
+    <th>Total NSSA Areas</th>
+    <th>Total Stub Areas</th>
+  </tr>
+  </thead>
+  <tbody>{% for vrf in to_parse_ip_ospf %}{% for address_family in to_parse_ip_ospf[vrf].address_family %}{% for instance in to_parse_ip_ospf[vrf].address_family[address_family].instance %}{% for area in to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].areas %}{% for graceful_restart in to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].graceful_restart %}
+  <tr>
+    <td>{{ vrf }}</td>
+    <td>{{ address_family }}</td>
+    <td>{{ instance }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].router_id }}</td>
+    <td>{{ area }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].area_transit }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].areas[area].area_type }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].areas[area].summary }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].nssa }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].enable }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].areas[area].statistics.interfaces_count }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].areas[area].statistics.spf_last_executed }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].areas[area].statistics.spf_runs_count }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].areas[area].statistics.area_scope_lsa_count }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].auto_cost.enable }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].auto_cost.reference_bandwidth }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].bfd.enable }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].elapsed_time }}</td>
+    <td>{% if to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].event_log is defined %}YES{% else %}NO{% endif %}</td>
+    <td>{{ graceful_restart }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].graceful_restart[graceful_restart].enable }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].lls }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].nsr.enable }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].numbers.external_lsa }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].total_areas }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].total_normal_areas }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].total_nssa_areas }}</td>
+    <td>{{ to_parse_ip_ospf[vrf].address_family[address_family].instance[instance].total_stub_areas }}</td>
+  </tr>{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

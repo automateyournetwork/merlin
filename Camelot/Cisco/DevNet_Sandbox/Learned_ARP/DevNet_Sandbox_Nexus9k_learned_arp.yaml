@@ -1,0 +1,142 @@
+!!python/object/new:genie.ops.base.maker.CmdDict
+dictitems:
+  interfaces: !!python/object/new:genie.ops.base.maker.CmdDict
+    dictitems:
+      Ethernet1/5: !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          arp_dynamic_learning: !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              local_proxy_enable: false
+              proxy_enable: false
+            state:
+              leaf_dict:
+                local_proxy_enable: &id001 !!python/name:genie.libs.parser.nxos.show_interface.ShowIpInterfaceVrfAll ''
+                proxy_enable: *id001
+        state:
+          leaf_dict: {}
+      Vlan100: !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          arp_dynamic_learning: !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              local_proxy_enable: false
+              proxy_enable: false
+            state:
+              leaf_dict:
+                local_proxy_enable: *id001
+                proxy_enable: *id001
+        state:
+          leaf_dict: {}
+      Vlan101: !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          arp_dynamic_learning: !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              local_proxy_enable: false
+              proxy_enable: false
+            state:
+              leaf_dict:
+                local_proxy_enable: *id001
+                proxy_enable: *id001
+        state:
+          leaf_dict: {}
+      Vlan102: !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          arp_dynamic_learning: !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              local_proxy_enable: false
+              proxy_enable: false
+            state:
+              leaf_dict:
+                local_proxy_enable: *id001
+                proxy_enable: *id001
+        state:
+          leaf_dict: {}
+      Vlan103: !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          arp_dynamic_learning: !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              local_proxy_enable: false
+              proxy_enable: false
+            state:
+              leaf_dict:
+                local_proxy_enable: *id001
+                proxy_enable: *id001
+        state:
+          leaf_dict: {}
+      Vlan104: !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          arp_dynamic_learning: !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              local_proxy_enable: false
+              proxy_enable: false
+            state:
+              leaf_dict:
+                local_proxy_enable: *id001
+                proxy_enable: *id001
+        state:
+          leaf_dict: {}
+      Vlan105: !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          arp_dynamic_learning: !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              local_proxy_enable: false
+              proxy_enable: false
+            state:
+              leaf_dict:
+                local_proxy_enable: *id001
+                proxy_enable: *id001
+        state:
+          leaf_dict: {}
+      loopback1: !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          arp_dynamic_learning: !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              local_proxy_enable: false
+              proxy_enable: false
+            state:
+              leaf_dict:
+                local_proxy_enable: *id001
+                proxy_enable: *id001
+        state:
+          leaf_dict: {}
+      mgmt0: !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          arp_dynamic_learning: !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              local_proxy_enable: false
+              proxy_enable: false
+            state:
+              leaf_dict:
+                local_proxy_enable: *id001
+                proxy_enable: *id001
+        state:
+          leaf_dict: {}
+    state:
+      leaf_dict: {}
+  statistics: !!python/object/new:genie.ops.base.maker.CmdDict
+    dictitems:
+      entries_total: 0
+      in_drops: 0
+      in_replies_pkts: 0
+      in_requests_pkts: 0
+      in_total: 0
+      incomplete_total: 0
+      out_drops: 0
+      out_gratuitous_pkts: 2
+      out_replies_pkts: 0
+      out_requests_pkts: 2
+      out_total: 4
+    state:
+      leaf_dict:
+        entries_total: &id003 !!python/name:genie.libs.parser.nxos.show_arp.ShowIpArpSummaryVrfAll ''
+        in_drops: &id002 !!python/name:genie.libs.parser.nxos.show_arp.ShowIpArpstatisticsVrfAll ''
+        in_replies_pkts: *id002
+        in_requests_pkts: *id002
+        in_total: *id002
+        incomplete_total: *id003
+        out_drops: *id002
+        out_gratuitous_pkts: *id002
+        out_replies_pkts: *id002
+        out_requests_pkts: *id002
+        out_total: *id002
+state:
+  leaf_dict: {}

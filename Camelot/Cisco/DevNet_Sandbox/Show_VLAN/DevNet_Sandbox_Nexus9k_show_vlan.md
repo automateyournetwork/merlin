@@ -1,0 +1,22 @@
+
+# Show VLAN
+| VLAN | Interface | Name | State | Shutdown | Type | Mode |
+| ---- | --------- | ---- | ----- | -------- | ---- | ---- |
+| 100 | Port-channel11 | mgmt | active | False | enet | ce |
+| 100 | Ethernet1/1 | mgmt | active | False | enet | ce |
+| 100 | Ethernet1/2 | mgmt | active | False | enet | ce |
+| 101 | Port-channel11 | prod | active | False | enet | ce |
+| 101 | Ethernet1/1 | prod | active | False | enet | ce |
+| 101 | Ethernet1/2 | prod | active | False | enet | ce |
+| 102 | Port-channel11 | dev | active | False | enet | ce |
+| 102 | Ethernet1/1 | dev | active | False | enet | ce |
+| 102 | Ethernet1/2 | dev | active | False | enet | ce |
+| 103 | Port-channel11 | test | active | False | enet | ce |
+| 103 | Ethernet1/1 | test | active | False | enet | ce |
+| 103 | Ethernet1/2 | test | active | False | enet | ce |
+| 104 | Port-channel11 | security | active | False | enet | ce |
+| 104 | Ethernet1/1 | security | active | False | enet | ce |
+| 104 | Ethernet1/2 | security | active | False | enet | ce |
+| 105 | Port-channel11 | iot | active | False | enet | ce |
+| 105 | Ethernet1/1 | iot | active | False | enet | ce |
+| 105 | Ethernet1/2 | iot | active | False | enet | ce |

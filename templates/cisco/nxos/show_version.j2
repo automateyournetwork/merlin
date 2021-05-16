@@ -1,0 +1,51 @@
+{% if filetype_loop_jinja2 == "csv" %}Device Name,Chassis,Model,CPU,Memory,RP,Bootflash,Processor Board ID,Slots,Kernel Uptime Days,Hours,Minutes,Seconds,System Version,Image File,Compile Time
+{{ to_parse_version.hardware.device_name }},{{ to_parse_version.hardware.chassis }},{{ to_parse_version.hardware.model }},{{ to_parse_version.hardware.cpu }},{{ to_parse_version.hardware.memory }},{{ to_parse_version.hardware.rp }},{{ to_parse_version.hardware.bootflash }},{{ to_parse_version.hardware.processor_board_id }},{{ to_parse_version.hardware.slots }},{{ to_parse_version.kernel_uptime.days }},{{ to_parse_version.kernel_uptime.hours }},{{ to_parse_version.kernel_uptime.minutes }},{{ to_parse_version.kernel_uptime.seconds }},{{ to_parse_version.software.system_version }},{{ to_parse_version.software.system_image_file }},{{ to_parse_version.software.system_compile_time }}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show Version
+| Device Name | Chassis | Model | CPU | Memory | RP | Bootflash | Processor Board ID | Slots | Kernel Uptime Days | Hours | Minutes | Seconds | System Version | Image File | Compile Time |
+| ----------- | ------- | ----- | --- | ------ | -- | --------- | ------------------ | ----- | ------------------ | ----- | ------- | ------- | -------------- | ---------- | ------------ |
+| {{ to_parse_version.hardware.device_name }} | {{ to_parse_version.hardware.chassis }} | {{ to_parse_version.hardware.model }} | {{ to_parse_version.hardware.cpu }} | {{ to_parse_version.hardware.memory }} | {{ to_parse_version.hardware.rp }} | {{ to_parse_version.hardware.bootflash }} | {{ to_parse_version.hardware.processor_board_id }} | {{ to_parse_version.hardware.slots }} | {{ to_parse_version.kernel_uptime.days }} | {{ to_parse_version.kernel_uptime.hours }} | {{ to_parse_version.kernel_uptime.minutes }} | {{ to_parse_version.kernel_uptime.seconds }} | {{ to_parse_version.software.system_version }} | {{ to_parse_version.software.system_image_file }} | {{ to_parse_version.software.system_compile_time }} |{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show Version</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Device Name</th>
+    <th>Chassis</th>
+    <th>Model</th>
+    <th>CPU</th>
+    <th>Memory</th>
+    <th>RP</th>   
+    <th>Bootflash</th>
+    <th>Processor Board ID</th>
+    <th>Slots</th>
+    <th>Kernel Uptime Days</th>
+    <th>Hours</th>
+    <th>Minutes</th>
+    <th>Seconds</th>
+    <th>System Version</th>
+    <th>Image File</th>
+    <th>Compile Time</th>
+  </tr>
+  </thead>
+  <tbody>  
+  <tr>
+    <td>{{ to_parse_version.hardware.device_name }}</td>
+    <td>{{ to_parse_version.hardware.chassis }}</td>
+    <td>{{ to_parse_version.hardware.model }}</td>
+    <td>{{ to_parse_version.hardware.cpu }}</td>
+    <td>{{ to_parse_version.hardware.memory }}</td>
+    <td>{{ to_parse_version.hardware.rp }}</td>   
+    <td>{{ to_parse_version.hardware.bootflash }}</td>
+    <td>{{ to_parse_version.hardware.processor_board_id }}</td>
+    <td>{{ to_parse_version.hardware.slots }}</td>
+    <td>{{ to_parse_version.kernel_uptime.days }}</td>
+    <td>{{ to_parse_version.kernel_uptime.hours }}</td>
+    <td>{{ to_parse_version.kernel_uptime.minutes }}</td>
+    <td>{{ to_parse_version.kernel_uptime.seconds }}</td>
+    <td>{{ to_parse_version.software.system_version }}</td>
+    <td>{{ to_parse_version.software.system_image_file }}</td>
+    <td>{{ to_parse_version.software.system_compile_time }}</td>
+  </tr>
+</tbody>  
+</table>
+</body></html>{% endif %}{% endif %}

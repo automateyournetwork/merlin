@@ -1,0 +1,32 @@
+{% if filetype_loop_jinja2 == "csv" %}Interface,IP Address,Status{% for interface in to_parse_interfaces %}{% if to_parse_interfaces[interface].vlan_id is defined %}{% for vlan_id in to_parse_interfaces[interface].vlan_id %}
+{{ interface }},{{ to_parse_interfaces[interface].vlan_id[vlan_id].ip_address }},{{ to_parse_interfaces[interface].vlan_id[vlan_id].interface_status }}{% endfor %}{% else %}
+{{ interface }},{{ to_parse_interfaces[interface].ip_address }},{{ to_parse_interfaces[interface].interface_status }}{% endif %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %} 
+# Show IP Interface Brief
+| Interface | IP Address | Status | 
+| --------- | ---------- | ------ |{% for interface in to_parse_interfaces %}{% if to_parse_interfaces[interface].vlan_id is defined %}{% for vlan_id in to_parse_interfaces[interface].vlan_id %}
+| {{ interface }} | {{ to_parse_interfaces[interface].vlan_id[vlan_id].ip_address }} | {{ to_parse_interfaces[interface].vlan_id[vlan_id].interface_status }} |{% endfor %}{% else %}
+| {{ interface }} | {{ to_parse_interfaces[interface].ip_address }} | {{ to_parse_interfaces[interface].interface_status }} |{% endif %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show IP Interface Brief</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Interface</th>
+    <th>IP Address</th>
+    <th>Status</th>
+  </tr>
+  </thead>
+  <tbody>{% for interface in to_parse_interfaces %}{% if to_parse_interfaces[interface].vlan_id is defined %}{% for vlan_id in to_parse_interfaces[interface].vlan_id %}
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ to_parse_interfaces[interface].vlan_id[vlan_id].ip_address }}</td>
+    <td>{{ to_parse_interfaces[interface].vlan_id[vlan_id].interface_status }}</td>
+  </tr>{% endfor %}{% else %}
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ to_parse_interfaces[interface].ip_address }}</td>
+    <td>{{ to_parse_interfaces[interface].interface_status }}</td>
+  </tr>{% endif %}{% endfor %}
+  </tbody>  
+</table>
+</body></html>{% endif %}{% endif %}

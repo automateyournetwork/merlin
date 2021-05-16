@@ -1,0 +1,102 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Interface Status",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_Nexus9k"
+        },
+        {
+            "id": "Total Entries: 0"
+        },
+        {
+            "id": "Input Drops: 0"
+        },
+        {
+            "id": "Input Replies: 0"
+        },
+        { 
+            "id": "Input Requests: 0"
+        },
+        {
+            "id": "Input Total: 0"
+        },
+        {
+            "id": "Incomplete Total: 0"
+        },
+        {
+            "id": "Output Drops: 0"
+        },
+        { 
+            "id": "Output Gratuitous: 2"
+        },
+        {
+            "id": "Output Replies: 0"
+        },
+        {
+            "id": "Output Requests: 2"
+        },
+        {
+            "id": "Output Total: 4"
+        }       
+    ],
+    "links": [
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Total Entries: 0",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Input Drops: 0",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Input Replies: 0",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Input Requests: 0",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Input Total: 0",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Incomplete Total: 0",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Output Drops: 0",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Output Gratuitous: 2",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Output Replies: 0",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Output Requests: 2",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Output Total: 4",
+            "cost": 1
+        }      
+    ]
+}

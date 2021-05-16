@@ -1,0 +1,71 @@
+{% if filetype_loop_jinja2 == "csv" %}VRF,Address Family,Instance,Area,Interface,Name,Interface Type,Passive,IP Address,Router ID,Authentication Algorithm,BFD,Cost,Dead Interval,Enabled,Graceful Restart Type,GR Helper,Hello Interval,Hello Timer,Index,Retransmit Interval,State,Neighbor Count,Transmit Delay,Wait Interval{% for vrf in to_parse_ip_ospf_interface %}{% for address_family in to_parse_ip_ospf_interface[vrf].address_family %}{% for instance in to_parse_ip_ospf_interface[vrf].address_family[address_family].instance %}{% for area in to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas %}{% for interface in to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces %}{% for graceful_restart in to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].graceful_restart %}
+{{ vrf }},{{ address_family }},{{ instance }},{{ area }},{{ interface }},{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].name }},{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].interface_type }},{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive }},{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].ip_address }},{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].router_id }},{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].authentication.auth_trailer_key.crypto_algorithm }},{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].bfd.enable }},{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].cost }},{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].dead_interval }},{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].enable }},{{ graceful_restart }},{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].graceful_restart[graceful_restart].helper }},{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].hello_interval }},{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].hello_timer }},{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].index }},{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].retransmit_interval }},{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].state }},{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].statistics.nbr_count }},{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].transmit_delay }},{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].wait_interval }}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show IP OPSF Interface
+| VRF | Address Family | Instance | Area | Interface | Name | Interface Type | Passive | IP Address | Router ID | Authentication Algorithm | BFD | Cost | Dead Interval | Enabled | Graceful Restart Type | GR Helper | Hello Interval | Hello Timer | Index | Retransmit Interval | State | Neighbor Count | Transmit Delay | Wait Interval |
+| --- | -------------- | -------- | ---- | --------- | ---- | -------------- | ------- | ---------- | --------- | ------------------------ | --- | ---- | ------------- | ------- | --------------------- | --------- | -------------- | ----------- | ----- | ------------------- | ----- | -------------- | -------------- | ------------- |{% for vrf in to_parse_ip_ospf_interface %}{% for address_family in to_parse_ip_ospf_interface[vrf].address_family %}{% for instance in to_parse_ip_ospf_interface[vrf].address_family[address_family].instance %}{% for area in to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas %}{% for interface in to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces %}{% for graceful_restart in to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].graceful_restart %}
+| {{ vrf }} | {{ address_family }} | {{ instance }} | {{ area }} | {{ interface }} | {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].name }} | {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].interface_type }} | {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive }} | {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].ip_address }} | {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].router_id }} | {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].authentication.auth_trailer_key.crypto_algorithm }} | {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].bfd.enable }} | {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].cost }} | {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].dead_interval }} | {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].enable }} | {{ graceful_restart }} | {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].graceful_restart[graceful_restart].helper }} | {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].hello_interval }} | {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].hello_timer }} | {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].index }} | {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].retransmit_interval }} | {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].state }} | {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].statistics.nbr_count }} | {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].transmit_delay }} | {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].wait_interval }} |{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show IP OSPF Interface</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>VRF</th>
+    <th>Address Family</th>
+    <th>Instance</th>
+    <th>Area</th>
+    <th>Interface</th>
+    <th>Name</th>
+    <th>Interface Type</th>
+    <th>Passive</th>
+    <th>IP Address</th>
+    <th>Router ID</th>
+    <th>Authentication Algorithm</th>
+    <th>BFD</th>
+    <th>Cost</th>
+    <th>Dead Interval</th>
+    <th>Enabled</th>
+    <th>Graceful Restart Type</th>
+    <th>GR Helper</th>
+    <th>Hello Interval</th>
+    <th>Hello Timer</th>
+    <th>Index</th>
+    <th>Retransmit Interval</th>
+    <th>State</th>
+    <th>Neighbor Count</th>
+    <th>Transmit Delay</th>
+    <th>Wait Interval</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  {% for vrf in to_parse_ip_ospf_interface %}{% for address_family in to_parse_ip_ospf_interface[vrf].address_family %}{% for instance in to_parse_ip_ospf_interface[vrf].address_family[address_family].instance %}{% for area in to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas %}{% for interface in to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces %}{% for graceful_restart in to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].graceful_restart %}
+  <tr>
+    <td>{{ vrf }}</td>
+    <td>{{ address_family }}</td>
+    <td>{{ instance }}</td>
+    <td>{{ area }}</td>
+    <td>{{ interface }}</td>
+    <td>{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].name }}</td>
+    <td>{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].interface_type }}</td>
+    <td>{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive }}</td>
+    <td>{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].ip_address }}</td>
+    <td>{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].router_id }}</td>
+    <td>{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].authentication.auth_trailer_key.crypto_algorithm }}</td>
+    <td>{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].bfd.enable }}</td>
+    <td>{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].cost }}</td>
+    <td>{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].dead_interval }}</td>
+    <td>{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].enable }}</td>
+    <td>{{ graceful_restart }}</td>
+    <td>{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].graceful_restart[graceful_restart].helper }}</td>
+    <td>{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].hello_interval }}</td>
+    <td>{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].hello_timer }}</td>
+    <td>{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].index }}</td>
+    <td>{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].retransmit_interval }}</td>
+    <td>{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].state }}</td>
+    <td>{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].statistics.nbr_count }}</td>
+    <td>{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].transmit_delay }}</td>
+    <td>{{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].wait_interval }}</td>
+  </tr>{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

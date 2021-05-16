@@ -1,0 +1,33 @@
+{% if filetype_loop_jinja2 == "csv" %}Interface,Neighbor,Address,Dead Time,Priority,State{% for interface in to_parse_ip_ospf_neighbor %}{% for neighbor in to_parse_ip_ospf_neighbor[interface].neighbors %}
+{{ interface }},{{ neighbor }},{{ to_parse_ip_ospf_neighbor[interface].neighbors[neighbor].address }},{{ to_parse_ip_ospf_neighbor[interface].neighbors[neighbor].dead_time }},{{ to_parse_ip_ospf_neighbor[interface].neighbors[neighbor].priority }},{{ to_parse_ip_ospf_neighbor[interface].neighbors[neighbor].state }}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show IP OPSF Neighbor
+| Interface | Neighbor | Address | Dead Time | Priority | State |
+| --------- | -------- | ------- | --------- | ---------| ----- |{% for interface in to_parse_ip_ospf_neighbor %}{% for neighbor in to_parse_ip_ospf_neighbor[interface].neighbors %}
+| {{ interface }} | {{ neighbor }} | {{ to_parse_ip_ospf_neighbor[interface].neighbors[neighbor].address }} | {{ to_parse_ip_ospf_neighbor[interface].neighbors[neighbor].dead_time }} | {{ to_parse_ip_ospf_neighbor[interface].neighbors[neighbor].priority }} | {{ to_parse_ip_ospf_neighbor[interface].neighbors[neighbor].state }} |{% endfor %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show IP OSPF Neighbor</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Interface</th>
+    <th>Neighbor</th>
+    <th>Address</th>
+    <th>Dead Time</th>
+    <th>Priority</th>
+    <th>State</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  {% for interface in to_parse_ip_ospf_neighbor %}{% for neighbor in to_parse_ip_ospf_neighbor[interface].neighbors %}
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ neighbor }}</td>
+    <td>{{ to_parse_ip_ospf_neighbor[interface].neighbors[neighbor].address }}</td>
+    <td>{{ to_parse_ip_ospf_neighbor[interface].neighbors[neighbor].dead_time }}</td>
+    <td>{{ to_parse_ip_ospf_neighbor[interface].neighbors[neighbor].priority }}</td>
+    <td>{{ to_parse_ip_ospf_neighbor[interface].neighbors[neighbor].state }}</td>
+  </tr>{% endfor %}{% endfor %}
+  </tbody>
+</table>
+</body></html>{% endif %}{% endif %}

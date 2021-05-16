@@ -1,0 +1,22 @@
+{% if filetype_loop_jinja2 == "csv" %}{% for result in to_parse_allowed_protocol_details %}
+{{ to_parse_allowed_protocol_details[result].name }},{{ to_parse_allowed_protocol_details[result].description }},{{ to_parse_allowed_protocol_details[result].processHostLookup }},{{ to_parse_allowed_protocol_details[result].requireMessageAuth }},{{ to_parse_allowed_protocol_details[result].allowChap }},{{ to_parse_allowed_protocol_details[result].allowEapFast }},{{ to_parse_allowed_protocol_details[result].allowEapMd5 }},{{ to_parse_allowed_protocol_details[result].allowEapTls }},{{ to_parse_allowed_protocol_details[result].allowEapTtls }},{{ to_parse_allowed_protocol_details[result].allowLeap }},{{ to_parse_allowed_protocol_details[result].allowMsChapV1 }},{{ to_parse_allowed_protocol_details[result].allowMsChapV2 }},{{ to_parse_allowed_protocol_details[result].allowPapAscii }},{{ to_parse_allowed_protocol_details[result].allowPeap }},{{ to_parse_allowed_protocol_details[result].allowPreferredEapProtocol }},{{ to_parse_allowed_protocol_details[result].allowWeakCiphersForEap }},{{ to_parse_allowed_protocol_details[result].eapTlsLBit }}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}{% for result in to_parse_allowed_protocol_details %}
+| {{ to_parse_allowed_protocol_details[result].name }} | {{ to_parse_allowed_protocol_details[result].description }} | {{ to_parse_allowed_protocol_details[result].processHostLookup }} | {{ to_parse_allowed_protocol_details[result].requireMessageAuth }} | {{ to_parse_allowed_protocol_details[result].allowChap }} | {{ to_parse_allowed_protocol_details[result].allowEapFast }} | {{ to_parse_allowed_protocol_details[result].allowEapMd5 }} | {{ to_parse_allowed_protocol_details[result].allowEapTls }} | {{ to_parse_allowed_protocol_details[result].allowEapTtls }} | {{ to_parse_allowed_protocol_details[result].allowLeap }} | {{ to_parse_allowed_protocol_details[result].allowMsChapV1 }} | {{ to_parse_allowed_protocol_details[result].allowMsChapV2 }} | {{ to_parse_allowed_protocol_details[result].allowPapAscii }} | {{ to_parse_allowed_protocol_details[result].allowPeap }} | {{ to_parse_allowed_protocol_details[result].allowPreferredEapProtocol }} | {{ to_parse_allowed_protocol_details[result].allowWeakCiphersForEap }} | {{ to_parse_allowed_protocol_details[result].eapTlsLBit }} |{% endfor %}{% else %}{% for result in to_parse_allowed_protocol_details %}
+<tr>
+  <td>{{ to_parse_allowed_protocol_details[result].name }}</td>
+  <td>{{ to_parse_allowed_protocol_details[result].description }}</td>
+  <td>{{ to_parse_allowed_protocol_details[result].processHostLookup }}</td>
+  <td>{{ to_parse_allowed_protocol_details[result].requireMessageAuth }}</td>
+  <td>{{ to_parse_allowed_protocol_details[result].allowChap }}</td>
+  <td>{{ to_parse_allowed_protocol_details[result].allowEapFast }}</td>
+  <td>{{ to_parse_allowed_protocol_details[result].allowEapMd5 }}</td>
+  <td>{{ to_parse_allowed_protocol_details[result].allowEapTls }}</td>
+  <td>{{ to_parse_allowed_protocol_details[result].allowEapTtls }}</td>
+  <td>{{ to_parse_allowed_protocol_details[result].allowLeap }}</td>
+  <td>{{ to_parse_allowed_protocol_details[result].allowMsChapV1 }}</td>
+  <td>{{ to_parse_allowed_protocol_details[result].allowMsChapV2 }}</td>
+  <td>{{ to_parse_allowed_protocol_details[result].allowPapAscii }}</td>
+  <td>{{ to_parse_allowed_protocol_details[result].allowPeap }}</td>
+  <td>{{ to_parse_allowed_protocol_details[result].allowPreferredEapProtocol }}</td>
+  <td>{{ to_parse_allowed_protocol_details[result].allowWeakCiphersForEap }}</td>
+  <td>{{ to_parse_allowed_protocol_details[result].eapTlsLBit }}</td>
+</tr>{% endfor %}{% endif %}{% endif %}

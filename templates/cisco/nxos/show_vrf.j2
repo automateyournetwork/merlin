@@ -1,0 +1,27 @@
+{% if filetype_loop_jinja2 == "csv" %}VRF,Reason,ID,State{% for vrf in to_parse_vrf %}
+{{ vrf }},{{ to_parse_vrf[vrf].reason }},{{ to_parse_vrf[vrf].vrf_id }},{{ to_parse_vrf[vrf].vrf_state }}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show VRF
+| VRF | Reason | ID | State |
+| --- | ------ | -- | ----- |{% for vrf in to_parse_vrf %}
+| {{ vrf }} | {{ to_parse_vrf[vrf].reason }} | {{ to_parse_vrf[vrf].vrf_id }} | {{ to_parse_vrf[vrf].vrf_state }} |{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show VRF</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>VRF</th>
+    <th>Reason</th>
+    <th>ID</th>
+    <th>State</th>
+  </tr>
+  </thead>
+  <tbody>{% for vrf in to_parse_vrf %}
+  <tr>
+    <td>{{ vrf }}</td>
+    <td>{{ to_parse_vrf[vrf].reason }}</td>
+    <td>{{ to_parse_vrf[vrf].vrf_id }}</td>
+    <td>{{ to_parse_vrf[vrf].vrf_state }}</td>
+  </tr>{% endfor %}
+  </tbody>  
+</table>
+</body></html>{% endif %}{% endif %}

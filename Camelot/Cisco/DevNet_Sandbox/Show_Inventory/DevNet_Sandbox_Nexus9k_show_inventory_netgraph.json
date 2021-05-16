@@ -1,0 +1,39 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Inventory",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_Nexus9k"
+        },
+        
+        {
+            "id": "Nexus9000 C9500v Chassis"
+        },
+        {
+            "id": "Nexus 9000v 64 port Ethernet Module"
+        },
+        {
+            "id": "Supervisor Module"
+        }
+    ],
+    "links": [
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Nexus9000 C9500v Chassis",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Nexus 9000v 64 port Ethernet Module",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Supervisor Module",
+            "cost": 1
+        }
+    ]
+}
