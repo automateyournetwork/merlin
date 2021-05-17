@@ -3,6 +3,14 @@
 ![Merlin](images/Merlin_logo.png)
 ## Simply a better way; a magical way; to collect, transform, and configure network state information from the CLI or REST API
 
+# What is Network Automation, Infrastructure as Code, and Merlin? 
+
+Watch these videos for an introduction and live demo of the Merlin, Excalibur, and Lancelot features
+
+What Is Network Automation using Infrastructure As Code?: <https://www.youtube.com/embed/Wo6GmvwdSdY>
+
+Learn Genie Learn: <https://youtu.be/-Ns5sGIKRPI>
+
 Powered by Genie
 
 ![Genie](images/genie.png)
