@@ -1,0 +1,2742 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Platform",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_Nexus9k"
+        },
+        { 
+            "id": "Type: Nexus9000 C9500v"
+        },          
+        { 
+            "id": "Chassis: Nexus9000 C9500v Chassis"
+        },
+        { 
+            "id": "Serial Number: 91OMZP37WBR"
+        },
+        { 
+            "id": "Uptime: 3791"
+        },
+        { 
+            "id": "Directory: bootflash:"
+        },    
+        { 
+            "id": "Total Space: 4186710016"
+        },    
+        { 
+            "id": "Used Space: 1990119424"
+        },    
+        { 
+            "id": "Free Space: 2196590592"
+        },
+        { 
+            "id": "Image: bootflash:///nxos.9.3.5.bin"
+        },
+        { 
+            "id": "Memory: 7939724 kB"
+        },    
+        { 
+            "id": "OS: NX-OS"
+        },    
+        { 
+            "id": "Version: 9.3(5)"
+        },
+        { 
+            "id": "Sub_Slot Name: N9K-vSUP"
+        },
+        { 
+            "id": "Sub_Slot Serial Number: 9FJTZNHQ62X"
+        },
+        { 
+            "id": "Sub_Slot State: active"
+        },
+        { 
+            "id": "Redundancy State: active"
+        },
+        { 
+            "id": "Boot Image: bootflash:/nxos.9.3.5.bin"
+        },
+        { 
+            "id": "Uptime: 3791"
+        },
+        { 
+            "id": "Sub_Slot Name: Nexus 9000v 64 port Ethernet Module"
+        },
+        { 
+            "id": "Sub_Slot Serial Number: 9OW8JB5XF53"
+        },
+        { 
+            "id": "Sub_Slot State: ok"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/64"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/63"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/62"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/61"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/60"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/59"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/58"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/57"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/56"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/55"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/54"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/53"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/52"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/51"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/50"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/49"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/48"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/47"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/46"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/45"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/44"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/43"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/42"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/41"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/40"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/39"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/38"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/37"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/36"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/35"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/34"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/33"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/32"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/31"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/30"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/29"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/28"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/27"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/26"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/25"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/24"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/23"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/22"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/21"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/20"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/19"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/18"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/17"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/16"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/15"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/14"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/13"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/12"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/11"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/10"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/9"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/8"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/7"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/6"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/5"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/4"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/3"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/2"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        },
+        { 
+            "id": "Virtual Device Name: sbx-n9kv"
+        },
+        { 
+            "id": "Virtual Device Status: active"
+        },
+        { 
+            "id": "Eth1/1"
+        },
+        { 
+            "id": "Interface Type: Ethernet"
+        },    
+        { 
+            "id": "Interface Status: OK"
+        }              
+    ],
+    "links": [
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Type: Nexus9000 C9500v",
+            "cost": 1
+        },          
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Chassis: Nexus9000 C9500v Chassis",
+            "cost": 1             
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Serial Number: 91OMZP37WBR",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Uptime: 3791",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Directory: bootflash:",
+            "cost": 1
+        },    
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Total Space: 4186710016",
+            "cost": 1
+        },    
+        {
+            "source": "Total Space: 4186710016",
+            "target": "Used Space: 1990119424",
+            "cost": 1
+        },    
+        { 
+            "source": "Total Space: 4186710016",
+            "target": "Free Space: 2196590592",
+            "cost": 1
+        },
+        { 
+            "source": "Directory: bootflash:",
+            "target": "Image: bootflash:///nxos.9.3.5.bin",
+            "cost": 1            
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Memory: 7939724 kB",
+            "cost": 1            
+        },    
+        { 
+            "source": "Image: bootflash:///nxos.9.3.5.bin",
+            "target": "OS: NX-OS",
+            "cost": 1            
+        },    
+        { 
+            "source": "Image: bootflash:///nxos.9.3.5.bin",
+            "target": "Version: 9.3(5)",
+            "cost": 1                        
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Sub_Slot Name: N9K-vSUP",
+            "cost": 1            
+        },
+        { 
+            "source": "Sub_Slot Name: N9K-vSUP",
+            "target": "Sub_Slot Serial Number: 9FJTZNHQ62X",
+            "cost": 1                        
+        },
+        { 
+            "source": "Sub_Slot Name: N9K-vSUP",
+            "target": "Sub_Slot State: active",
+            "cost": 1              
+        },
+        { 
+            "source": "Sub_Slot Name: N9K-vSUP",
+            "target": "Redundancy State: active",
+            "cost": 1                          
+        },
+        { 
+            "source": "Sub_Slot Name: N9K-vSUP",
+            "target": "Boot Image: bootflash:/nxos.9.3.5.bin",
+            "cost": 1
+        },
+        { 
+            "source": "Sub_Slot Name: N9K-vSUP",
+            "target": "Uptime: 3791",
+            "cost": 1            
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Sub_Slot Name: Nexus 9000v 64 port Ethernet Module",
+            "cost": 1            
+        },
+        { 
+            "source": "Sub_Slot Name: Nexus 9000v 64 port Ethernet Module",
+            "target": "Sub_Slot Serial Number: 9OW8JB5XF53",
+            "cost": 1                        
+        },
+        { 
+            "source": "Sub_Slot Name: Nexus 9000v 64 port Ethernet Module",
+            "target": "Sub_Slot State: ok",
+            "cost": 1              
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/64",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/64",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/64",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/63",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/63",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/63",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/62",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/62",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/62",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/61",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/61",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/61",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/60",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/60",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/60",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/59",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/59",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/59",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/58",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/58",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/58",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/57",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/57",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/57",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/56",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/56",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/56",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/55",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/55",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/55",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/54",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/54",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/54",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/53",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/53",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/53",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/52",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/52",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/52",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/51",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/51",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/51",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/50",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/50",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/50",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/49",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/49",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/49",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/48",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/48",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/48",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/47",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/47",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/47",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/46",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/46",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/46",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/45",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/45",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/45",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/44",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/44",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/44",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/43",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/43",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/43",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/42",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/42",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/42",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/41",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/41",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/41",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/40",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/40",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/40",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/39",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/39",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/39",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/38",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/38",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/38",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/37",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/37",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/37",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/36",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/36",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/36",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/35",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/35",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/35",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/34",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/34",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/34",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/33",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/33",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/33",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/32",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/32",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/32",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/31",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/31",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/31",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/30",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/30",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/30",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/29",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/29",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/29",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/28",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/28",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/28",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/27",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/27",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/27",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/26",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/26",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/26",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/25",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/25",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/25",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/24",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/24",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/24",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/23",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/23",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/23",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/22",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/22",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/22",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/21",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/21",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/21",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/20",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/20",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/20",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/19",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/19",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/19",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/18",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/18",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/18",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/17",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/17",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/17",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/16",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/16",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/16",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/15",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/15",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/15",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/14",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/14",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/14",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/13",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/13",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/13",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/12",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/12",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/12",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/11",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/11",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/11",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/10",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/10",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/10",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/9",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/9",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/9",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/8",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/8",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/8",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/7",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/7",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/7",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/6",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/6",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/6",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/5",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/5",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/5",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/4",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/4",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/4",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/3",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/3",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/3",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/2",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/2",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/2",
+            "target": "Interface Status: OK",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Name: sbx-n9kv",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Virtual Device Status: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Eth1/1",
+            "cost": 1
+        },
+        { 
+            "source": "Eth1/1",
+            "target": "Interface Type: Ethernet",
+            "cost": 1
+        },    
+        { 
+            "source": "Eth1/1",
+            "target": "Interface Status: OK",
+            "cost": 1
+        }                          
+    ]
+}

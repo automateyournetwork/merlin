@@ -23,7 +23,7 @@ from pyats import topology
 from pyats.log.utils import banner
 from jinja2 import Environment, FileSystemLoader
 from ascii_art import GREETING, LEARN, RUNNING, WRITING, FINISHED
-from general_functionalities import ParseShowCommandFunction, ParseLearnFunction
+from general_functionalities import ParseShowCommandFunction, ParseLearnFunction, ParseConfigFunction, ParseDictFunction
 from tinydb import TinyDB, Query
 
 # ----------------
@@ -99,6 +99,8 @@ class Collect_Information(aetest.Testcase):
             self.learned_interface = ParseLearnFunction.parse_learn(steps, device, "interface")
             # OSPF
             self.learned_ospf = ParseLearnFunction.parse_learn(steps, device, "ospf")
+            # Platform
+            self.learned_platform = ParseDictFunction.parse_learn(steps, device, "platform")             
             # Routing
             self.learned_routing = ParseLearnFunction.parse_learn(steps, device, "routing")
             # VLAN
@@ -340,6 +342,41 @@ class Collect_Information(aetest.Testcase):
                     # ----------------
 
                     table.insert(self.learned_ospf)
+
+                # Learned Platform
+                if self.learned_platform is not None:
+                    learned_platform_template = env.get_template('learned_platform.j2')
+                    learned_platform_netjson_json_template = env.get_template('learned_platform_netjson_json.j2')
+                    learned_platform_netjson_html_template = env.get_template('learned_platform_netjson_html.j2')
+                    directory = "Learned_Platform"
+                    file_name = "learned_platform"
+
+                    self.save_to_json_file(device, directory, file_name, self.learned_platform)
+                    self.save_to_yaml_file(device, directory, file_name, self.learned_platform)            
+
+                    for filetype in filetype_loop:
+                        parsed_output_type = learned_platform_template.render(to_parse_platform=self.learned_platform,filetype_loop_jinja2=filetype)
+
+                        with open("Camelot/Cisco/DevNet_Sandbox/Learned_Platform/%s_learned_platform.%s" % (device.alias,filetype), "w") as fh:
+                            fh.write(parsed_output_type) 
+                    
+                    if os.path.exists("Camelot/Cisco/DevNet_Sandbox/Learned_Platform/%s_learned_platform.md" % device.alias):
+                        os.system("markmap --no-open Camelot/Cisco/DevNet_Sandbox/Learned_Platform/%s_learned_platform.md --output Camelot/Cisco/DevNet_Sandbox/Learned_Platform/%s_learned_platform_mind_map.html" % (device.alias,device.alias))
+
+                    parsed_output_netjson_json = learned_platform_netjson_json_template.render(to_parse_platform=self.learned_platform,device_alias = device.alias)
+                    parsed_output_netjson_html = learned_platform_netjson_html_template.render(device_alias = device.alias)
+
+                    with open("Camelot/Cisco/DevNet_Sandbox/Learned_Platform/%s_learned_platform_netgraph.json" % device.alias, "w") as fh:
+                        fh.write(parsed_output_netjson_json)               
+
+                    with open("Camelot/Cisco/DevNet_Sandbox/Learned_Platform/%s_learned_platform_netgraph.html" % device.alias, "w") as fh:
+                        fh.write(parsed_output_netjson_html)
+
+                    # ----------------
+                    # Store Platform in Device Table in Database
+                    # ----------------
+
+                    table.insert(self.learned_platform)
 
                 # Learned Routing
                 if self.learned_routing is not None:
