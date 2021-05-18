@@ -3,6 +3,8 @@
 ![Merlin](images/Merlin_logo.png)
 ## Simply a better way; a magical way; to collect, transform, and configure network state information from the CLI or REST API
 
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/automateyournetwork/merlin)
+
 # What is Network Automation, Infrastructure as Code, and Merlin? 
 
 Watch these videos for an introduction and live demo of the Merlin, Excalibur, and Lancelot features
