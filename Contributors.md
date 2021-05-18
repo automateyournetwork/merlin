@@ -11,6 +11,8 @@ John Capobianco
         learn('arp')
         
         learn('bgp')
+
+        learn('config')
         
         learn('dot1x')
 
@@ -27,6 +29,8 @@ John Capobianco
         learn('stp')
         
         learn('vlan')
+
+        learn('vrf')
     
         show access lists
 
@@ -96,9 +100,17 @@ John Capobianco
 
         learn('bgp')
 
+        learn('config')
+
         learn('interface')
+
+        learn('ospf')
+
+        learn('platform')
         
         learn('vlan')
+
+        learn('vrf')
 
         show access lists
        

@@ -409,6 +409,8 @@ Cisco IOS-XE:
     learn ARP
 
     learn BGP
+
+    learn CONFIG
     
     learn Dot1X
     
@@ -425,6 +427,8 @@ Cisco IOS-XE:
     learn STP
 
     learn VLAN
+
+    learn VRF
 
     show access lists
 
@@ -495,6 +499,8 @@ Cisco NXOS:
     learn ARP
 
     learn BGP
+
+    learn CONFIG
     
     learn Dot1X
     
@@ -506,11 +512,15 @@ Cisco NXOS:
 
     learn OSPF
 
+    learn PLATFORM
+
     learn Routes
 
     learn STP
 
     learn VLAN
+
+    learn VRF
 
     show access lists
     
