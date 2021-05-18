@@ -1,0 +1,200 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Platform",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },
+        { 
+            "id": "Type: {{ to_parse_platform.rtr_type | default("N/A") }}"
+        },          
+        { 
+            "id": "Chassis: {{ to_parse_platform.chassis | default("N/A") }}"
+        },
+        { 
+            "id": "Serial Number: {{ to_parse_platform.chassis_sn | default("N/A") }}"
+        },
+        { 
+            "id": "Uptime: {{ to_parse_platform.rp_uptime | default("N/A") }}"
+        },
+        { 
+            "id": "Directory: {{ to_parse_platform.dir | default("N/A") }}"
+        },    
+        { 
+            "id": "Total Space: {{ to_parse_platform.disk_total_space | default("N/A") }}"
+        },    
+        { 
+            "id": "Used Space: {{ to_parse_platform.disk_used_space | default("N/A") }}"
+        },    
+        { 
+            "id": "Free Space: {{ to_parse_platform.disk_free_space | default("N/A") }}"
+        },
+        { 
+            "id": "Image: {{ to_parse_platform.image | default("N/A") }}"
+        },
+        { 
+            "id": "Memory: {{ to_parse_platform.main_mem | default("N/A") }}"
+        },    
+        { 
+            "id": "OS: {{ to_parse_platform.os | default("N/A") }}"
+        },    
+        { 
+            "id": "Version: {{ to_parse_platform.version | default("N/A") }}"
+        },{% for slot in to_parse_platform.slot %}{% for sub_slot in to_parse_platform.slot[slot] %}
+        { 
+            "id": "Sub_Slot Name: {{ to_parse_platform.slot[slot][sub_slot].name | default("N/A") }}"
+        },
+        { 
+            "id": "Sub_Slot Serial Number: {{ to_parse_platform.slot[slot][sub_slot].sn | default("N/A") }}"
+        },
+        { 
+            "id": "Sub_Slot State: {{ to_parse_platform.slot[slot][sub_slot].state | default("N/A") }}"
+        },{% if slot == "rp" %}
+        { 
+            "id": "Redundancy State: {{ to_parse_platform.slot[slot][sub_slot].redundancy_state | default("N/A") }}"
+        },
+        { 
+            "id": "Boot Image: {{ to_parse_platform.slot[slot][sub_slot].rp_boot_image | default("N/A") }}"
+        },
+        { 
+            "id": "Uptime: {{ to_parse_platform.slot[slot][sub_slot].rp_uptime | default("N/A") }}"
+        },{% endif %}{% endfor %}{% endfor %}{% for virtual_device in to_parse_platform.virtual_device %}{% set virtual_loop = loop %}{% for interface in to_parse_platform.virtual_device[virtual_device].membership %}{% set interface_loop = loop %}
+        { 
+            "id": "Virtual Device Name: {{ to_parse_platform.virtual_device[virtual_device].vd_name | default("N/A") }}"
+        },
+        { 
+            "id": "Virtual Device Status: {{ to_parse_platform.virtual_device[virtual_device].vd_status | default("N/A") }}"
+        },
+        { 
+            "id": "{{ interface }}"
+        },
+        { 
+            "id": "Interface Type: {{ to_parse_platform.virtual_device[virtual_device].membership[interface].type | default("N/A") }}"
+        },    
+        { 
+            "id": "Interface Status: {{ to_parse_platform.virtual_device[virtual_device].membership[interface].status | default("N/A") }}"{% if (virtual_loop.last) and (interface_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}              
+    ],
+    "links": [
+        {
+            "source": "{{ device_alias }}",
+            "target": "Type: {{ to_parse_platform.rtr_type | default("N/A") }}",
+            "cost": 1
+        },          
+        {
+            "source": "{{ device_alias }}",
+            "target": "Chassis: {{ to_parse_platform.chassis | default("N/A") }}",
+            "cost": 1             
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Serial Number: {{ to_parse_platform.chassis_sn | default("N/A") }}",
+            "cost": 1
+        },
+        {
+            "source": "{{ device_alias }}",
+            "target": "Uptime: {{ to_parse_platform.rp_uptime | default("N/A") }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Directory: {{ to_parse_platform.dir | default("N/A") }}",
+            "cost": 1
+        },    
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Total Space: {{ to_parse_platform.disk_total_space | default("N/A") }}",
+            "cost": 1
+        },    
+        {
+            "source": "Total Space: {{ to_parse_platform.disk_total_space | default("N/A") }}",
+            "target": "Used Space: {{ to_parse_platform.disk_used_space | default("N/A") }}",
+            "cost": 1
+        },    
+        { 
+            "source": "Total Space: {{ to_parse_platform.disk_total_space | default("N/A") }}",
+            "target": "Free Space: {{ to_parse_platform.disk_free_space | default("N/A") }}",
+            "cost": 1
+        },
+        { 
+            "source": "Directory: {{ to_parse_platform.dir | default("N/A") }}",
+            "target": "Image: {{ to_parse_platform.image | default("N/A") }}",
+            "cost": 1            
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Memory: {{ to_parse_platform.main_mem | default("N/A") }}",
+            "cost": 1            
+        },    
+        { 
+            "source": "Image: {{ to_parse_platform.image | default("N/A") }}",
+            "target": "OS: {{ to_parse_platform.os | default("N/A") }}",
+            "cost": 1            
+        },    
+        { 
+            "source": "Image: {{ to_parse_platform.image | default("N/A") }}",
+            "target": "Version: {{ to_parse_platform.version | default("N/A") }}",
+            "cost": 1                        
+        },{% for slot in to_parse_platform.slot %}{% for sub_slot in to_parse_platform.slot[slot] %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Sub_Slot Name: {{ to_parse_platform.slot[slot][sub_slot].name | default("N/A") }}",
+            "cost": 1            
+        },
+        { 
+            "source": "Sub_Slot Name: {{ to_parse_platform.slot[slot][sub_slot].name | default("N/A") }}",
+            "target": "Sub_Slot Serial Number: {{ to_parse_platform.slot[slot][sub_slot].sn | default("N/A") }}",
+            "cost": 1                        
+        },
+        { 
+            "source": "Sub_Slot Name: {{ to_parse_platform.slot[slot][sub_slot].name | default("N/A") }}",
+            "target": "Sub_Slot State: {{ to_parse_platform.slot[slot][sub_slot].state | default("N/A") }}",
+            "cost": 1              
+        },{% if slot == "rp" %}
+        { 
+            "source": "Sub_Slot Name: {{ to_parse_platform.slot[slot][sub_slot].name | default("N/A") }}",
+            "target": "Redundancy State: {{ to_parse_platform.slot[slot][sub_slot].redundancy_state | default("N/A") }}",
+            "cost": 1                          
+        },
+        { 
+            "source": "Sub_Slot Name: {{ to_parse_platform.slot[slot][sub_slot].name | default("N/A") }}",
+            "target": "Boot Image: {{ to_parse_platform.slot[slot][sub_slot].rp_boot_image | default("N/A") }}",
+            "cost": 1
+        },
+        { 
+            "source": "Sub_Slot Name: {{ to_parse_platform.slot[slot][sub_slot].name | default("N/A") }}",
+            "target": "Uptime: {{ to_parse_platform.slot[slot][sub_slot].rp_uptime | default("N/A") }}",
+            "cost": 1            
+        },{% endif %}{% endfor %}{% endfor %}{% for virtual_device in to_parse_platform.virtual_device %}{% set virtual_loop = loop %}{% for interface in to_parse_platform.virtual_device[virtual_device].membership %}{% set interface_loop = loop %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Virtual Device Name: {{ to_parse_platform.virtual_device[virtual_device].vd_name | default("N/A") }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Virtual Device Status: {{ to_parse_platform.virtual_device[virtual_device].vd_status | default("N/A") }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Interface Type: {{ to_parse_platform.virtual_device[virtual_device].membership[interface].type | default("N/A") }}",
+            "cost": 1
+        },    
+        { 
+            "source": "{{ interface }}",
+            "target": "Interface Status: {{ to_parse_platform.virtual_device[virtual_device].membership[interface].status | default("N/A") }}",
+            "cost": 1{% if (virtual_loop.last) and (interface_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}                          
+    ]
+}
