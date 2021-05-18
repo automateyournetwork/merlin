@@ -75,12 +75,12 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.0101
+      mac_address: 00bf.5110.0101
       medium: broadcast
       mtu: 1500
       native_vlan: 1
       oper_status: down
-      phys_address: 00bf.5774.0101
+      phys_address: 00bf.5110.0101
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_int: Port-channel11
@@ -184,11 +184,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.010a
+      phys_address: 00bf.5110.010a
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -284,11 +284,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.010b
+      phys_address: 00bf.5110.010b
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -384,11 +384,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.010c
+      phys_address: 00bf.5110.010c
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -484,11 +484,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.010d
+      phys_address: 00bf.5110.010d
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -584,11 +584,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.010e
+      phys_address: 00bf.5110.010e
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -684,11 +684,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.010f
+      phys_address: 00bf.5110.010f
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -784,11 +784,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0110
+      phys_address: 00bf.5110.0110
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -884,11 +884,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0111
+      phys_address: 00bf.5110.0111
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -984,11 +984,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0112
+      phys_address: 00bf.5110.0112
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -1084,11 +1084,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0113
+      phys_address: 00bf.5110.0113
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -1185,12 +1185,12 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.0102
+      mac_address: 00bf.5110.0102
       medium: broadcast
       mtu: 1500
       native_vlan: 1
       oper_status: down
-      phys_address: 00bf.5774.0102
+      phys_address: 00bf.5110.0102
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_int: Port-channel11
@@ -1294,11 +1294,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0114
+      phys_address: 00bf.5110.0114
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -1394,11 +1394,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0115
+      phys_address: 00bf.5110.0115
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -1494,11 +1494,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0116
+      phys_address: 00bf.5110.0116
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -1594,11 +1594,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0117
+      phys_address: 00bf.5110.0117
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -1694,11 +1694,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0118
+      phys_address: 00bf.5110.0118
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -1794,11 +1794,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0119
+      phys_address: 00bf.5110.0119
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -1894,11 +1894,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.011a
+      phys_address: 00bf.5110.011a
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -1994,11 +1994,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.011b
+      phys_address: 00bf.5110.011b
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -2094,11 +2094,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.011c
+      phys_address: 00bf.5110.011c
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -2194,11 +2194,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.011d
+      phys_address: 00bf.5110.011d
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -2294,11 +2294,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0103
+      phys_address: 00bf.5110.0103
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -2394,11 +2394,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.011e
+      phys_address: 00bf.5110.011e
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -2494,11 +2494,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.011f
+      phys_address: 00bf.5110.011f
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -2594,11 +2594,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0120
+      phys_address: 00bf.5110.0120
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -2694,11 +2694,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0121
+      phys_address: 00bf.5110.0121
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -2794,11 +2794,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0122
+      phys_address: 00bf.5110.0122
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -2894,11 +2894,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0123
+      phys_address: 00bf.5110.0123
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -2994,11 +2994,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0124
+      phys_address: 00bf.5110.0124
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -3094,11 +3094,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0125
+      phys_address: 00bf.5110.0125
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -3194,11 +3194,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0126
+      phys_address: 00bf.5110.0126
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -3294,11 +3294,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0127
+      phys_address: 00bf.5110.0127
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -3394,11 +3394,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0104
+      phys_address: 00bf.5110.0104
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -3494,11 +3494,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0128
+      phys_address: 00bf.5110.0128
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -3594,11 +3594,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0129
+      phys_address: 00bf.5110.0129
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -3694,11 +3694,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.012a
+      phys_address: 00bf.5110.012a
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -3794,11 +3794,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.012b
+      phys_address: 00bf.5110.012b
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -3894,11 +3894,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.012c
+      phys_address: 00bf.5110.012c
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -3994,11 +3994,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.012d
+      phys_address: 00bf.5110.012d
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -4094,11 +4094,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.012e
+      phys_address: 00bf.5110.012e
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -4194,11 +4194,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.012f
+      phys_address: 00bf.5110.012f
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -4294,11 +4294,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0130
+      phys_address: 00bf.5110.0130
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -4394,11 +4394,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0131
+      phys_address: 00bf.5110.0131
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -4439,9 +4439,9 @@ dictitems:
           out_discard: 0
           out_errors: 0
           out_mac_pause_frames: 0
-          out_multicast_pkts: 698
-          out_octets: 70307
-          out_pkts: 700
+          out_multicast_pkts: 403
+          out_octets: 40723
+          out_pkts: 405
           out_unicast_pkts: 0
           rate: !!python/object/new:genie.ops.base.maker.CmdDict
             dictitems:
@@ -4507,12 +4507,12 @@ dictitems:
                 prefix_length: *id004
         state:
           leaf_dict: {}
-      last_change: 01:28:24
-      mac_address: 00bf.5774.1b08
+      last_change: 00:50:56
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: up
-      phys_address: 00bf.5774.0105
+      phys_address: 00bf.5110.0105
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -4612,11 +4612,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0132
+      phys_address: 00bf.5110.0132
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -4712,11 +4712,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0133
+      phys_address: 00bf.5110.0133
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -4812,11 +4812,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0134
+      phys_address: 00bf.5110.0134
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -4912,11 +4912,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0135
+      phys_address: 00bf.5110.0135
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -5012,11 +5012,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0136
+      phys_address: 00bf.5110.0136
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -5112,11 +5112,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0137
+      phys_address: 00bf.5110.0137
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -5212,11 +5212,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0138
+      phys_address: 00bf.5110.0138
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -5312,11 +5312,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0139
+      phys_address: 00bf.5110.0139
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -5412,11 +5412,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.013a
+      phys_address: 00bf.5110.013a
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -5512,11 +5512,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.013b
+      phys_address: 00bf.5110.013b
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -5612,11 +5612,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0106
+      phys_address: 00bf.5110.0106
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -5712,11 +5712,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.013c
+      phys_address: 00bf.5110.013c
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -5812,11 +5812,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.013d
+      phys_address: 00bf.5110.013d
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -5912,11 +5912,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.013e
+      phys_address: 00bf.5110.013e
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -6012,11 +6012,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.013f
+      phys_address: 00bf.5110.013f
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -6112,11 +6112,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0140
+      phys_address: 00bf.5110.0140
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -6212,11 +6212,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0107
+      phys_address: 00bf.5110.0107
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -6312,11 +6312,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0108
+      phys_address: 00bf.5110.0108
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -6412,11 +6412,11 @@ dictitems:
             receive: *id001
             send: *id001
       last_change: never
-      mac_address: 00bf.5774.1b08
+      mac_address: 00bf.5110.1b08
       medium: broadcast
       mtu: 1500
       oper_status: down
-      phys_address: 00bf.5774.0109
+      phys_address: 00bf.5110.0109
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false
@@ -6489,16 +6489,16 @@ dictitems:
         dictitems:
           in_broadcast_pkts: 8
           in_multicast_pkts: 0
-          in_octets: 1985412
-          in_pkts: 5406
-          in_unicast_pkts: 5404
+          in_octets: 1234319
+          in_pkts: 2953
+          in_unicast_pkts: 2951
           rate: !!python/object/new:genie.ops.base.maker.CmdDict
             dictitems:
-              in_rate: 40
-              in_rate_pkts: 0
+              in_rate: 1672
+              in_rate_pkts: 2
               load_interval: 1
-              out_rate: 216
-              out_rate_pkts: 0
+              out_rate: 5400
+              out_rate_pkts: 2
             state:
               leaf_dict:
                 in_rate: *id001
@@ -6535,11 +6535,11 @@ dictitems:
                 prefix_length: *id004
         state:
           leaf_dict: {}
-      mac_address: 0050.56bf.5774
+      mac_address: 0050.56bf.5110
       medium: broadcast
       mtu: 1500
       oper_status: up
-      phys_address: 0050.56bf.5774
+      phys_address: 0050.56bf.5110
       port_channel: !!python/object/new:genie.ops.base.maker.CmdDict
         dictitems:
           port_channel_member: false

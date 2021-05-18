@@ -10,7 +10,7 @@
                                     "area_id": "0.0.0.0",
                                     "area_type": "normal",
                                     "authentication": "none",
-                                    "existed": "01:29:48",
+                                    "existed": "00:52:20",
                                     "numbers": {
                                         "active_interfaces": 1,
                                         "interfaces": 7,
@@ -20,7 +20,7 @@
                                     "statistics": {
                                         "area_scope_lsa_cksum_sum": "1",
                                         "area_scope_lsa_count": 1,
-                                        "spf_last_run_time": 0.0346,
+                                        "spf_last_run_time": 0.006935,
                                         "spf_runs_count": 1
                                     }
                                 }

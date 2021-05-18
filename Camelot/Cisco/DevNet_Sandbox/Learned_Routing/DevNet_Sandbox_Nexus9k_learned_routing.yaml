@@ -23,7 +23,7 @@ dictitems:
                                       index: 1
                                       next_hop: 172.16.0.1
                                       outgoing_interface: Loopback1
-                                      updated: 01:29:43
+                                      updated: 00:52:15
                                     state:
                                       leaf_dict:
                                         index: &id001 !!python/name:genie.libs.parser.nxos.show_routing.ShowIpRoute ''
@@ -35,7 +35,7 @@ dictitems:
                                       index: 2
                                       next_hop: 172.16.0.1
                                       outgoing_interface: Loopback1
-                                      updated: 01:29:43
+                                      updated: 00:52:15
                                     state:
                                       leaf_dict:
                                         index: *id001
@@ -69,7 +69,7 @@ dictitems:
                                       index: 1
                                       next_hop: 172.16.1.1
                                       outgoing_interface: Ethernet1/5
-                                      updated: 01:28:43
+                                      updated: 00:51:11
                                     state:
                                       leaf_dict:
                                         index: *id001
@@ -103,7 +103,7 @@ dictitems:
                                       index: 1
                                       next_hop: 172.16.1.1
                                       outgoing_interface: Ethernet1/5
-                                      updated: 01:28:43
+                                      updated: 00:51:11
                                     state:
                                       leaf_dict:
                                         index: *id001
@@ -152,7 +152,7 @@ dictitems:
                                     dictitems:
                                       index: 1
                                       next_hop: 10.10.20.254
-                                      updated: 01:29:43
+                                      updated: 00:52:15
                                     state:
                                       leaf_dict:
                                         index: *id001
@@ -185,7 +185,7 @@ dictitems:
                                       index: 1
                                       next_hop: 10.10.20.58
                                       outgoing_interface: mgmt0
-                                      updated: 01:29:43
+                                      updated: 00:52:15
                                     state:
                                       leaf_dict:
                                         index: *id001
@@ -219,7 +219,7 @@ dictitems:
                                       index: 1
                                       next_hop: 10.10.20.58
                                       outgoing_interface: mgmt0
-                                      updated: 01:29:43
+                                      updated: 00:52:15
                                     state:
                                       leaf_dict:
                                         index: *id001

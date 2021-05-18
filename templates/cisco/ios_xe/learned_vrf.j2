@@ -1,0 +1,25 @@
+{% if filetype_loop_jinja2 == "csv" %}VRF,Address Family,Route Distinguisher{% for vrf in to_parse_vrf %}{% for address_family in to_parse_vrf[vrf].address_family %}
+{{ vrf }},{{ address_family }},{{ to_parse_vrf[vrf].route_distinguisher }}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Learn VRF
+| VRF | Address Family | Route Distinguisher |
+| --- | -------------- | ------------------- |{% for vrf in to_parse_vrf %}{% for address_family in to_parse_vrf[vrf].address_family %}
+| {{ vrf }} | {{ address_family }} | {{ to_parse_vrf[vrf].route_distinguisher }} |{% endfor %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Learn VRF</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>VRF</th>
+    <th>Address Family</th>
+    <th>Route Distinguisher</th>
+  </tr>
+  </thead>
+  <tbody>{% for vrf in to_parse_vrf %}{% for address_family in to_parse_vrf[vrf].address_family %}
+  <tr>
+    <td>{{ vrf }}</td>
+    <td>{{ address_family }}</td>
+    <td>{{ to_parse_vrf[vrf].route_distinguisher }}</td>
+  </tr>{% endfor %}{% endfor %}
+  </tbody>  
+</table>
+</body></html>{% endif %}{% endif %}

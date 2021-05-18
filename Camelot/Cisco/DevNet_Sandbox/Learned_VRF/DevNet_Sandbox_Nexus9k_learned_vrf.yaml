@@ -1,0 +1,36 @@
+!!python/object/new:genie.ops.base.maker.CmdDict
+dictitems:
+  vrfs: !!python/object/new:genie.ops.base.maker.CmdDict
+    dictitems:
+      default: !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          address_family: !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              ipv4: !!python/object:genie.ops.base.maker.CmdDict
+                leaf_dict: {}
+              ipv6: !!python/object:genie.ops.base.maker.CmdDict
+                leaf_dict: {}
+            state:
+              leaf_dict: {}
+          route_distinguisher: 0:0
+        state:
+          leaf_dict:
+            route_distinguisher: &id001 !!python/name:genie.libs.parser.nxos.show_vrf.ShowVrfDetail ''
+      management: !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          address_family: !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              ipv4: !!python/object:genie.ops.base.maker.CmdDict
+                leaf_dict: {}
+              ipv6: !!python/object:genie.ops.base.maker.CmdDict
+                leaf_dict: {}
+            state:
+              leaf_dict: {}
+          route_distinguisher: 0:0
+        state:
+          leaf_dict:
+            route_distinguisher: *id001
+    state:
+      leaf_dict: {}
+state:
+  leaf_dict: {}

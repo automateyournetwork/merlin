@@ -1,0 +1,110 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show VRF",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "DevNet_Sandbox_Nexus9k"
+        },
+        { 
+            "id": "VRF: management"
+        },  
+        { 
+            "id": "Address Family: ipv6"
+        },
+        { 
+            "id": "RD: 0:0"
+        },
+        { 
+            "id": "VRF: management"
+        },  
+        { 
+            "id": "Address Family: ipv4"
+        },
+        { 
+            "id": "RD: 0:0"
+        },
+        { 
+            "id": "VRF: default"
+        },  
+        { 
+            "id": "Address Family: ipv6"
+        },
+        { 
+            "id": "RD: 0:0"
+        },
+        { 
+            "id": "VRF: default"
+        },  
+        { 
+            "id": "Address Family: ipv4"
+        },
+        { 
+            "id": "RD: 0:0"
+        }              
+    ],
+    "links": [ 
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VRF: management",
+            "cost": 1            
+        },
+        { 
+            "source": "VRF: management",
+            "target": "Address Family: ipv6",
+            "cost": 1            
+        },
+        { 
+            "source": "VRF: management",
+            "target": "RD: 0:0",
+            "cost": 1
+        }, 
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VRF: management",
+            "cost": 1            
+        },
+        { 
+            "source": "VRF: management",
+            "target": "Address Family: ipv4",
+            "cost": 1            
+        },
+        { 
+            "source": "VRF: management",
+            "target": "RD: 0:0",
+            "cost": 1
+        }, 
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VRF: default",
+            "cost": 1            
+        },
+        { 
+            "source": "VRF: default",
+            "target": "Address Family: ipv6",
+            "cost": 1            
+        },
+        { 
+            "source": "VRF: default",
+            "target": "RD: 0:0",
+            "cost": 1
+        }, 
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VRF: default",
+            "cost": 1            
+        },
+        { 
+            "source": "VRF: default",
+            "target": "Address Family: ipv4",
+            "cost": 1            
+        },
+        { 
+            "source": "VRF: default",
+            "target": "RD: 0:0",
+            "cost": 1
+        }                     
+    ]
+}
