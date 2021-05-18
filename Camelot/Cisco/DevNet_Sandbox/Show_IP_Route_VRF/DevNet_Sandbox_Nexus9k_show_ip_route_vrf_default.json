@@ -19,7 +19,7 @@
                                         "outgoing_interface": "Loopback1",
                                         "route_preference": 0,
                                         "source_protocol": "local",
-                                        "updated": "01:30:07"
+                                        "updated": "00:52:41"
                                     },
                                     "2": {
                                         "best_ucast_nexthop": true,
@@ -29,7 +29,7 @@
                                         "outgoing_interface": "Loopback1",
                                         "route_preference": 0,
                                         "source_protocol": "direct",
-                                        "updated": "01:30:07"
+                                        "updated": "00:52:41"
                                     }
                                 }
                             },
@@ -53,7 +53,7 @@
                                         "outgoing_interface": "Ethernet1/5",
                                         "route_preference": 0,
                                         "source_protocol": "direct",
-                                        "updated": "01:29:07"
+                                        "updated": "00:51:37"
                                     }
                                 }
                             },
@@ -77,7 +77,7 @@
                                         "outgoing_interface": "Ethernet1/5",
                                         "route_preference": 0,
                                         "source_protocol": "local",
-                                        "updated": "01:29:07"
+                                        "updated": "00:51:37"
                                     }
                                 }
                             },

@@ -1,0 +1,18 @@
+{
+    "vrfs": {
+        "default": {
+            "address_family": {
+                "ipv4": {},
+                "ipv6": {}
+            },
+            "route_distinguisher": "0:0"
+        },
+        "management": {
+            "address_family": {
+                "ipv4": {},
+                "ipv6": {}
+            },
+            "route_distinguisher": "0:0"
+        }
+    }
+}

@@ -74,12 +74,12 @@ dictitems:
                                                           header: !!python/object/new:genie.ops.base.maker.CmdDict
                                                             dictitems:
                                                               adv_router: 172.16.0.1
-                                                              age: 1680
-                                                              checksum: '0x876a'
+                                                              age: 1251
+                                                              checksum: '0x8969'
                                                               length: 36
                                                               lsa_id: 172.16.0.1
                                                               option: '0x2'
-                                                              seq_num: '0x80000004'
+                                                              seq_num: '0x80000003'
                                                               type: 1
                                                             state:
                                                               leaf_dict:
@@ -122,7 +122,7 @@ dictitems:
                                           dr_router_id: 172.16.0.1
                                           enable: true
                                           hello_interval: 10
-                                          hello_timer: 00:00:05
+                                          hello_timer: 00:00:06
                                           interface_type: broadcast
                                           name: Ethernet1/5
                                           passive: false

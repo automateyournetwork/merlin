@@ -1,0 +1,40 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show VRF",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for vrf in to_parse_vrf %}{% set vrf_loop = loop %}{% for address_family in to_parse_vrf[vrf].address_family %}{% set address_loop = loop %}
+        { 
+            "id": "VRF: {{ vrf }}"
+        },  
+        { 
+            "id": "Address Family: {{ address_family }}"
+        },
+        { 
+            "id": "RD: {{ to_parse_vrf[vrf].route_distinguisher }}"{% if (vrf_loop.last) and (address_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}              
+    ],
+    "links": [{% for vrf in to_parse_vrf %}{% set vrf_loop = loop %}{% for address_family in to_parse_vrf[vrf].address_family %}{% set address_loop = loop %} 
+        { 
+            "source": "{{ device_alias }}",
+            "target": "VRF: {{ vrf }}",
+            "cost": 1            
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "Address Family: {{ address_family }}",
+            "cost": 1            
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "RD: {{ to_parse_vrf[vrf].route_distinguisher }}",
+            "cost": 1{% if (vrf_loop.last) and (address_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}                     
+    ]
+}
