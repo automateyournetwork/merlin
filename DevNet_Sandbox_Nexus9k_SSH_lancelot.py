@@ -58,9 +58,9 @@ class Collect_Information(aetest.Testcase):
         # ---------------------------------------
         for device in testbed:
 
-        # ---------------------------------------
-        # Load Data Model
-        # ---------------------------------------           
+            # ---------------------------------------
+            # Load Data Model
+            # ---------------------------------------           
             with open("data_models/%s.yaml" % device.alias) as stream:
                 data_model = yaml.safe_load(stream)
             # ---------------------------------------
@@ -77,7 +77,7 @@ class Collect_Information(aetest.Testcase):
             with steps.start('Store Original Golden Image',continue_=True) as step:
                 print(Panel.fit(Text.from_markup(WRITING)))
                 
-                original_config_filename = "%s_Original_Golden_Image_%s.json" % (timestr,device.alias)
+                original_config_filename = "%s_Original_Golden_SSH_Image_%s.json" % (timestr,device.alias)
                 # Write Original Learned Config as JSON
                 if hasattr(self, 'learned_config'):
                     with open("Camelot/Cisco/DevNet_Sandbox/Lancelot/Golden_Image/%s" % original_config_filename, "w") as fid:
@@ -89,10 +89,10 @@ class Collect_Information(aetest.Testcase):
             # ---------------------------------------
             with steps.start('Generating Intent From Data Model and Template',continue_=True) as step:
                 print(Panel.fit(Text.from_markup(RUNNING)))
-                intended_config_template = env.get_template('intended_config.j2')
+                intended_config_template = env.get_template('intended_ssh_config.j2')
                 rendered_intended_config = intended_config_template.render(host_data_model=data_model)
 
-                with open("Camelot/Cisco/DevNet_Sandbox/Lancelot/Intended_Config/%s_Intended_Config.txt" % timestr, "w") as fid:
+                with open("Camelot/Cisco/DevNet_Sandbox/Lancelot/Intended_Config/%s_Intended_SSH_Config.txt" % timestr, "w") as fid:
                     fid.write(rendered_intended_config)
                     fid.close()
                 
@@ -117,9 +117,9 @@ class Collect_Information(aetest.Testcase):
             with steps.start('Store New Golden Image',continue_=True) as step:
                 print(Panel.fit(Text.from_markup(WRITING)))
                 
-                new_config_filename = "%s_Golden_Image_%s.json" % (timestr,device.alias)
+                new_config_filename = "%s_Golden_SSH_Image_%s.json" % (timestr,device.alias)
 
-                # Write Original Learned Config as JSON
+                # Write New Learned Config as JSON
                 if hasattr(self, 'learned_config'):
                     with open("Camelot/Cisco/DevNet_Sandbox/Lancelot/Golden_Image/%s" % new_config_filename, "w") as fid:
                         json.dump(self.learned_config, fid, indent=4, sort_keys=True)
@@ -136,7 +136,7 @@ class Collect_Information(aetest.Testcase):
                     print(Panel.fit(Text.from_markup(DIFF)))
                     print(config_diff)
                 
-                    with open('Camelot/Cisco/DevNet_Sandbox/Lancelot/Changes/%s_Changes.txt' % timestr, 'w') as f:
+                    with open('Camelot/Cisco/DevNet_Sandbox/Lancelot/Changes/%s_SSH_Changes.txt' % timestr, 'w') as f:
                         with redirect_stdout(f):
                             print(config_diff)
                             f.close()
@@ -144,6 +144,6 @@ class Collect_Information(aetest.Testcase):
                 else:
                     print(Panel.fit(Text.from_markup(NO_DIFF)))
                     
-                    with open('Camelot/Cisco/DevNet_Sandbox/Lancelot/Changes/%s_Changes.txt' % timestr, 'w') as f:
+                    with open('Camelot/Cisco/DevNet_Sandbox/Lancelot/Changes/%s_SSH_Changes.txt' % timestr, 'w') as f:
                         f.write("IDEMPOTENT - NO CHANGES")
                         f.close()

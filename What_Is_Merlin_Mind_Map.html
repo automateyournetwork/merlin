@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Markmap</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+#mindmap {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.1.6/dist/style.min.css">
+</head>
+<body>
+<svg id="mindmap"></svg>
+<script src="https://cdn.jsdelivr.net/npm/d3@6.6.0"></script><script src="https://cdn.jsdelivr.net/npm/markmap-view@0.2.6"></script><script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.1.6/dist/index.umd.min.js"></script><script>(r => {
+          setTimeout(r);
+        })(() => {
+  const {
+    markmap,
+    mm
+  } = window;
+  const toolbar = new markmap.Toolbar();
+  toolbar.attach(mm);
+  const el = toolbar.render();
+  el.setAttribute('style', 'position:absolute;bottom:20px;right:20px');
+  document.body.append(el);
+})</script><script>((getMarkmap, getOptions, data) => {
+        const {
+          Markmap
+        } = getMarkmap();
+        window.mm = Markmap.create('svg#mindmap', getOptions == null ? void 0 : getOptions(), data);
+      })(() => window.markmap,null,{"t":"heading","d":1,"p":{"lines":[0,1]},"v":"Merlin","c":[{"t":"heading","d":2,"p":{"lines":[3,4]},"v":"State Capture And Transformation","c":[{"t":"heading","d":3,"p":{"lines":[5,6]},"v":"Capture network state information and transform it into business ready CSV, Markdown, HTML, Mind Map, and Network Graphs"},{"t":"heading","d":3,"p":{"lines":[7,8]},"v":"SSH","c":[{"t":"heading","d":4,"p":{"lines":[9,10]},"v":"Using the pyATS Learn and Parse functions we can transform CLI standard output"},{"t":"heading","d":4,"p":{"lines":[11,12]},"v":"Platforms","c":[{"t":"thead","d":6,"p":{"lines":[12,13]},"v":"","c":[{"t":"th","d":8,"p":{"lines":[12,13]},"v":"IOS"},{"t":"th","d":8,"p":{"lines":[12,13]},"v":"Platform"}]},{"t":"tbody","d":6,"p":{"lines":[14,27]},"v":"","c":[{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"IOS"},{"t":"td","d":8,"p":{},"v":"Cisco Catalyst ISR 891"}]},{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"IOS"},{"t":"td","d":8,"p":{},"v":"Cisco Catalyst 2960"}]},{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"IOS"},{"t":"td","d":8,"p":{},"v":"Cisco Catalyst 3560"}]},{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"IOS"},{"t":"td","d":8,"p":{},"v":"Cisco Catalyst 3750"}]},{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"IOS"},{"t":"td","d":8,"p":{},"v":"Cisco Catalyst 6500"}]},{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"IOS-XE"},{"t":"td","d":8,"p":{},"v":"Cisco Catalyst ISR 4400"}]},{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"IOS-XE"},{"t":"td","d":8,"p":{},"v":"Cisco Catalyst 3850"}]},{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"IOS-XE"},{"t":"td","d":8,"p":{},"v":"Cisco Catalyst 4500"}]},{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"IOS-XE"},{"t":"td","d":8,"p":{},"v":"Cisco Catalyst 9300"}]},{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"NXOS"},{"t":"td","d":8,"p":{},"v":"Cisco Nexus 2K FEX"}]},{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"NXOS"},{"t":"td","d":8,"p":{},"v":"Cisco Nexus 5K"}]},{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"NXOS"},{"t":"td","d":8,"p":{},"v":"Cisco Nexus 7k"}]},{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"NXOS"},{"t":"td","d":8,"p":{},"v":"Cisco Nexus 9k"}]}]}]}]},{"t":"heading","d":3,"p":{"lines":[28,29]},"v":"REST API","c":[{"t":"heading","d":4,"p":{"lines":[30,31]},"v":"Supports any platform with a RESTful API"},{"t":"heading","d":4,"p":{"lines":[32,33]},"v":"Platforms","c":[{"t":"thead","d":6,"p":{"lines":[34,35]},"v":"","c":[{"t":"th","d":8,"p":{"lines":[34,35]},"v":"IOS"},{"t":"th","d":8,"p":{"lines":[34,35]},"v":"Platform"}]},{"t":"tbody","d":6,"p":{"lines":[36,45]},"v":"","c":[{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"IOS-XE"},{"t":"td","d":8,"p":{},"v":"Cisco Catalyst 3850"}]},{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"IOS-XE"},{"t":"td","d":8,"p":{},"v":"Cisco Catalyst 9300"}]},{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"NXOS"},{"t":"td","d":8,"p":{},"v":"Cisco Nexus 2K FEX"}]},{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"NXOS"},{"t":"td","d":8,"p":{},"v":"Cisco Nexus 5K"}]},{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"NXOS"},{"t":"td","d":8,"p":{},"v":"Cisco Nexus 7k"}]},{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"NXOS"},{"t":"td","d":8,"p":{},"v":"Cisco Nexus 9k"}]},{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"ISE"},{"t":"td","d":8,"p":{},"v":"Cisco Identity Services Engine"}]},{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"PI"},{"t":"td","d":8,"p":{},"v":"Cisco Prime Infrastructure"}]},{"t":"tr","d":7,"p":{},"v":"","c":[{"t":"td","d":8,"p":{},"v":"BIG-IP"},{"t":"td","d":8,"p":{},"v":"F5 - All Platforms"}]}]}]}]}]},{"t":"heading","d":2,"p":{"lines":[46,47]},"v":"Asset Management","c":[{"t":"heading","d":3,"p":{"lines":[48,49]},"v":"Normalized Serial Number Based Inventory Report"},{"t":"heading","d":3,"p":{"lines":[50,51]},"v":"Platforms","c":[{"t":"thead","d":5,"p":{"lines":[51,52]},"v":"","c":[{"t":"th","d":7,"p":{"lines":[51,52]},"v":"IOS"},{"t":"th","d":7,"p":{"lines":[51,52]},"v":"Platform"}]},{"t":"tbody","d":5,"p":{"lines":[53,67]},"v":"","c":[{"t":"tr","d":6,"p":{},"v":"","c":[{"t":"td","d":7,"p":{},"v":"IOS"},{"t":"td","d":7,"p":{},"v":"Cisco Catalyst ISR 891"}]},{"t":"tr","d":6,"p":{},"v":"","c":[{"t":"td","d":7,"p":{},"v":"IOS"},{"t":"td","d":7,"p":{},"v":"Cisco Catalyst 2960"}]},{"t":"tr","d":6,"p":{},"v":"","c":[{"t":"td","d":7,"p":{},"v":"IOS"},{"t":"td","d":7,"p":{},"v":"Cisco Catalyst 3560"}]},{"t":"tr","d":6,"p":{},"v":"","c":[{"t":"td","d":7,"p":{},"v":"IOS"},{"t":"td","d":7,"p":{},"v":"Cisco Catalyst 3750"}]},{"t":"tr","d":6,"p":{},"v":"","c":[{"t":"td","d":7,"p":{},"v":"IOS"},{"t":"td","d":7,"p":{},"v":"Cisco Catalyst 6500"}]},{"t":"tr","d":6,"p":{},"v":"","c":[{"t":"td","d":7,"p":{},"v":"IOS-XE"},{"t":"td","d":7,"p":{},"v":"Cisco Catalyst ISR 4400"}]},{"t":"tr","d":6,"p":{},"v":"","c":[{"t":"td","d":7,"p":{},"v":"IOS-XE"},{"t":"td","d":7,"p":{},"v":"Cisco Catalyst 3850"}]},{"t":"tr","d":6,"p":{},"v":"","c":[{"t":"td","d":7,"p":{},"v":"IOS-XE"},{"t":"td","d":7,"p":{},"v":"Cisco Catalyst 4500"}]},{"t":"tr","d":6,"p":{},"v":"","c":[{"t":"td","d":7,"p":{},"v":"IOS-XE"},{"t":"td","d":7,"p":{},"v":"Cisco Catalyst 9300"}]},{"t":"tr","d":6,"p":{},"v":"","c":[{"t":"td","d":7,"p":{},"v":"NXOS"},{"t":"td","d":7,"p":{},"v":"Cisco Nexus 2K FEX"}]},{"t":"tr","d":6,"p":{},"v":"","c":[{"t":"td","d":7,"p":{},"v":"NXOS"},{"t":"td","d":7,"p":{},"v":"Cisco Nexus 5K"}]},{"t":"tr","d":6,"p":{},"v":"","c":[{"t":"td","d":7,"p":{},"v":"NXOS"},{"t":"td","d":7,"p":{},"v":"Cisco Nexus 7k"}]},{"t":"tr","d":6,"p":{},"v":"","c":[{"t":"td","d":7,"p":{},"v":"NXOS"},{"t":"td","d":7,"p":{},"v":"Cisco Nexus 9k"}]},{"t":"tr","d":6,"p":{},"v":"","c":[{"t":"td","d":7,"p":{},"v":"BIG-IP"},{"t":"td","d":7,"p":{},"v":"F5 - All Platforms"}]}]}]},{"t":"heading","d":3,"p":{"lines":[68,69]},"v":"Cisco Serial2API","c":[{"t":"thead","d":5,"p":{"lines":[69,70]},"v":"","c":[{"t":"th","d":7,"p":{"lines":[69,70]},"v":"Simple Cisco Contract Management"}]},{"t":"tbody","d":5,"p":{"lines":[71,72]},"v":"","c":[{"t":"td","d":7,"p":{},"v":"Send every serial number to the cloud and get your contract information, per part, at scale"}]}]}]},{"t":"heading","d":2,"p":{"lines":[73,74]},"v":"Security Posture"},{"t":"heading","d":2,"p":{"lines":[75,76]},"v":"Configuration Management"},{"t":"heading","d":2,"p":{"lines":[77,78]},"v":"ChatBots"},{"t":"heading","d":2,"p":{"lines":[79,80]},"v":"VoiceBots"}]})</script>
+</body>
+</html>

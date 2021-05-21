@@ -1,0 +1,2 @@
+{% for event in host_data_model.global_config.rmon_events %}rmon event {{ event }} log trap public description {{ host_data_model.global_config.rmon_events[event].description }} owner {{ host_data_model.global_config.rmon_events[event].owner }}
+{% endfor %}

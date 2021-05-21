@@ -91,6 +91,10 @@ host_users:
     role: "network-admin"
 
 host_vlans:
+  1:
+    name: false
+  10:
+    name: Ethan
   100:
     name: mgmt
   101:
