@@ -1,0 +1,27 @@
+{
+    "bdEntity": {
+        "attributes": {
+            "dn": "sys/bd"
+        },
+        "children": [
+            {
+                "resmgrResVlan": {
+                    "attributes": {
+                        "rn": "resvlan"
+                    }
+                }
+            },{% for vlan in host_data_model.host_vlans %}{% set vlan_loop = loop %}
+            {
+                "l2BD": {
+                    "attributes": {
+                        "fabEncap": "vlan-{{ vlan }}",
+                        "id": "{{ vlan }}",{% if host_data_model.host_vlans[vlan].name %}
+                        "name": "{{ host_data_model.host_vlans[vlan].name }}",{% endif %}
+                        "rn": "bd-[vlan-{{ vlan }}]"
+                    }
+                }{% if vlan_loop.last %}
+            }{% else %}
+            },{% endif %}{% endfor %}
+       ]
+    }
+}
