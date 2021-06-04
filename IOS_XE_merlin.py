@@ -1222,7 +1222,7 @@ class Collect_Information(aetest.Testcase):
                     # 3850
                     sh_inventory_3850_template = env.get_template('show_inventory_3850.j2')
 
-                    9300
+                    # 9300
                     sh_inventory_9300_template = env.get_template('show_inventory_9300.j2')
 
                     directory_names = "Show_Inventory"
@@ -1294,8 +1294,8 @@ class Collect_Information(aetest.Testcase):
                     directory_names = "Show_IP_Interface_Brief"
                     file_names = "show_ip_int_brief"                    
 
-                    self.save_to_json_file(device, directory_names, file_names, self.parsed_show_access_lists)
-                    self.save_to_yaml_file(device, directory_names, file_names, self.parsed_show_access_lists)               
+                    self.save_to_json_file(device, directory_names, file_names, self.parsed_show_ip_int_brief)
+                    self.save_to_yaml_file(device, directory_names, file_names, self.parsed_show_ip_int_brief)               
         
                     for filetype in filetype_loop:
                         parsed_output_type = sh_ip_int_brief_template.render(to_parse_interfaces=self.parsed_show_ip_int_brief['interface'],filetype_loop_jinja2=filetype)
