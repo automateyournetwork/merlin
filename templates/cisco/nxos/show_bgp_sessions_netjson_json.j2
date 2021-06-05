@@ -7,35 +7,66 @@
     "nodes": [
         {
             "id": "{{ device_alias }}"
-        },{% for vrf in to_parse_bgp.vrf %}
-        { 
+        },{% for vrf in to_parse_bgp.vrf %}{% set vrf_loop = loop %}
+        {
+            "id": "Local AS: {{ to_parse_bgp.local_as }}"
+        },
+        {
+            "id": "Total Established Peers: {{ to_parse_bgp.total_established_peers }}"
+        },
+        {
+            "id": "Total Peers: {{ to_parse_bgp.total_peers }}"
+        },
+        {
+            "id": "VRF: {{ vrf }}"
+        },
+        {
             "id": "Router ID: {{ to_parse_bgp.vrf[vrf].router_id }}"
-        },{% endfor %}
-        {% for vrf in to_parse_bgp.vrf %}{% for neighbor in to_parse_bgp.vrf[vrf].neighbor %}{% set outer_loop = loop %}{% if outer_loop.index > 0 %}
+        },
         {
-            "id": "Neighbor: {{ neighbor }}"{% if outer_loop.last %}
+            "id": "VRF Established Peers: {{ to_parse_bgp.vrf[vrf].vrf_established_peers }}"
+        },
+        {
+            "id": "VRF Peers: {{ to_parse_bgp.vrf[vrf].vrf_peers }}"{% if vrf_loop.last %}
         }{% else %}
-        },{% endif %}{% else %}
-        {
-            "id": "Neighbor: {{ neighbor }}"
-        }{% endif %}{% endfor %}{% endfor %}
+        },{% endif %}{% endfor %}
     ],
-    "links": [{% for vrf in to_parse_bgp.vrf %}{% for neighbor in to_parse_bgp.vrf[vrf].neighbor %}{% set outer_loop = loop %}{% if outer_loop.index > 0 %}
+    "links": [{% for vrf in to_parse_bgp.vrf %}{% set vrf_loop = loop %}
         {
             "source": "{{ device_alias  }}",
+            "target": "Local AS: {{ to_parse_bgp.local_as }}",
+            "cost": 1
+        },
+        {
+            "source": "{{ device_alias  }}",
+            "target": "Total Established Peers: {{ to_parse_bgp.total_established_peers }}",
+            "cost": 1
+        },
+        {
+            "source": "{{ device_alias  }}",
+            "target": "Total Peers: {{ to_parse_bgp.total_peers }}",
+            "cost": 1
+        },
+        {
+            "source": "{{ device_alias  }}",
+            "target": "VRF: {{ vrf }}",
+            "cost": 1
+        },
+        {
+            "source": "VRF: {{ vrf }}",
             "target": "Router ID: {{ to_parse_bgp.vrf[vrf].router_id }}",
             "cost": 1
         },
         {
-            "source": "Router ID: {{ to_parse_bgp.vrf[vrf].router_id }}",
-            "target": "Neighbor: {{ neighbor }}",
-            "cost": 1{% if outer_loop.last %}
-        }{% else %}
-        },{% endif %}{% else %}
-        {
-            "source": "Router ID: {{ to_parse_bgp.vrf[vrf].router_id }}",
-            "target": "Neighbor: {{ neighbor }}",
+            "source": "VRF: {{ vrf }}",
+            "target": "VRF Established Peers: {{ to_parse_bgp.vrf[vrf].vrf_established_peers }}",
             "cost": 1
-        }{% endif %}{% endfor %}{% endfor %}
+        },
+        {
+            "source": "VRF: {{ vrf }}",
+            "target": "VRF Peers: {{ to_parse_bgp.vrf[vrf].vrf_peers }}",
+            "cost": 1{% if vrf_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}        
     ]
 }

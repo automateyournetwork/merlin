@@ -1,0 +1,96 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show VRF Detail",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for vrf in to_parse_vrf %}{% set vrf_loop = loop %}{% for address_family in to_parse_vrf[vrf].address_family %}{% set address_family_loop = loop %}
+        { 
+            "id": "VRF: {{ vrf }}"
+        },
+        { 
+            "id": "ID: {{ to_parse_vrf[vrf].vrf_id }}"
+        },
+        { 
+            "id": "VRF State: {{ to_parse_vrf[vrf].state }}"
+        },
+        { 
+            "id": "Address Family: {{ address_family }}"
+        },
+        { 
+            "id": "Address Family State: {{ to_parse_vrf[vrf].address_family[address_family].state }}"
+        },
+        { 
+            "id": "FWD ID: {{ to_parse_vrf[vrf].address_family[address_family].fwd_id }}"
+        },
+        { 
+            "id": "Table ID: {{ to_parse_vrf[vrf].address_family[address_family].table_id }}"
+        },
+        { 
+            "id": "Max Routes: {{ to_parse_vrf[vrf].max_routes }}"
+        },
+        { 
+            "id": "Mid Threshhold: {{ to_parse_vrf[vrf].mid_threshold }}"
+        },
+        { 
+            "id": "Route Distinguisher: {{ to_parse_vrf[vrf].route_distinguisher }}"{% if (vrf_loop.last) and (address_family_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}
+    ],
+    "links": [{% for vrf in to_parse_vrf %}{% set vrf_loop = loop %}{% for address_family in to_parse_vrf[vrf].address_family %}{% set address_family_loop = loop %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "VRF: {{ vrf }}",
+            "cost": 1             
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "ID: {{ to_parse_vrf[vrf].vrf_id }}",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "VRF State: {{ to_parse_vrf[vrf].state }}",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "Address Family: {{ address_family }}",
+            "cost": 1            
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "Address Family State: {{ to_parse_vrf[vrf].address_family[address_family].state }}",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "FWD ID: {{ to_parse_vrf[vrf].address_family[address_family].fwd_id }}",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "Table ID: {{ to_parse_vrf[vrf].address_family[address_family].table_id }}",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "Max Routes: {{ to_parse_vrf[vrf].max_routes }}",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "Mid Threshhold: {{ to_parse_vrf[vrf].mid_threshold }}",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "Route Distinguisher: {{ to_parse_vrf[vrf].route_distinguisher }}",
+            "cost": 1{% if (vrf_loop.last) and (address_family_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}
+    ]
+}

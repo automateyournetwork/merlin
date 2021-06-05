@@ -7,27 +7,42 @@
     "nodes": [
         { 
             "id": "{{ device_alias }}"
+        },{% for vrf in to_parse_vrf %}{% set vrf_loop = loop %}
+        { 
+            "id": "VRF: {{ vrf }}"
         },
-        {% for vrf in to_parse_vrf %}{% set outer_loop = loop %}{% if outer_loop.index > 0 %}
-        {
-            "id": "{{ vrf }}"{% if outer_loop.last %}
+        { 
+            "id": "Reason: {{ to_parse_vrf[vrf].reason }}"
+        },        
+        { 
+            "id": "ID: {{ to_parse_vrf[vrf].vrf_id }}"
+        },
+        { 
+            "id": "State: {{ to_parse_vrf[vrf].vrf_state }}"{% if vrf_loop.last %}
         }{% else %}
-        },{% endif %}{% else %}
-        {
-            "id": "{{ vrf }}"
-        }{% endif %}{% endfor %}
+        },{% endif %}{% endfor %}
     ],
-    "links": [{% for vrf in to_parse_vrf %}{% set outer_loop = loop %}{% if outer_loop.index > 0 %}
+    "links": [{% for vrf in to_parse_vrf %}{% set vrf_loop = loop %}
         {
             "source": "{{ device_alias }}",
-            "target": "{{ vrf }}",
-            "cost": 1{% if outer_loop.last %}
-        }{% else %}
-        },{% endif %}{% else %}
-        {
-            "source": "{{ device_alias }}",
-            "target": "{{ vrf }}",
+            "target": "VRF: {{ vrf }}",
             "cost": 1
-        }{% endif %}{% endfor %}
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "Reason: {{ to_parse_vrf[vrf].reason }}",
+            "cost": 1
+        },        
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "ID: {{ to_parse_vrf[vrf].vrf_id }}",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "State: {{ to_parse_vrf[vrf].vrf_state }}",
+            "cost": 1{% if vrf_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}
     ]
 }

@@ -1,0 +1,64 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show CDP Neighbor NETJSON Netgraph",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for neighbor in to_parse_cdp_neighbors.index %}{% set neighbor_loop = loop %}
+        { 
+            "id": "Device ID: {{ to_parse_cdp_neighbors.index[neighbor].device_id }}"
+        },    
+        { 
+            "id": "Platform: {{ to_parse_cdp_neighbors.index[neighbor].platform }}"
+        },    
+        { 
+            "id": "Local Interface: {{ to_parse_cdp_neighbors.index[neighbor].local_interface }}"
+        },
+        { 
+            "id": "Port ID: {{ to_parse_cdp_neighbors.index[neighbor].port_id }}"
+        },
+        { 
+            "id": "Capability: {{ to_parse_cdp_neighbors.index[neighbor].capability }}"
+        },
+        { 
+            "id": "Hold Time: {{ to_parse_cdp_neighbors.index[neighbor].hold_time }}"{% if neighbor_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}    
+    ],
+    "links": [{% for neighbor in to_parse_cdp_neighbors.index %}{% set neighbor_loop = loop %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "Local Interface: {{ to_parse_cdp_neighbors.index[neighbor].local_interface }}",
+            "cost": 1
+        },
+        {
+            "source": "Local Interface: {{ to_parse_cdp_neighbors.index[neighbor].local_interface }}",
+            "target": "Port ID: {{ to_parse_cdp_neighbors.index[neighbor].port_id }}",
+            "cost": 1
+        },
+        {
+            "source": "Port ID: {{ to_parse_cdp_neighbors.index[neighbor].port_id }}",
+            "target": "Device ID: {{ to_parse_cdp_neighbors.index[neighbor].device_id }}",
+            "cost": 1
+        },
+        {
+            "source": "Device ID: {{ to_parse_cdp_neighbors.index[neighbor].device_id }}",
+            "target": "Platform: {{ to_parse_cdp_neighbors.index[neighbor].platform }}",
+            "cost": 1
+        },
+        {
+            "source": "Device ID: {{ to_parse_cdp_neighbors.index[neighbor].device_id }}",
+            "target": "Capability: {{ to_parse_cdp_neighbors.index[neighbor].capability }}",
+            "cost": 1        
+        },
+        {
+            "source": "Device ID: {{ to_parse_cdp_neighbors.index[neighbor].device_id }}",
+            "target": "Hold Time: {{ to_parse_cdp_neighbors.index[neighbor].hold_time }}",
+            "cost": 1{% if neighbor_loop.last %}
+        }{% else %}        
+        },{% endif %}{% endfor %}
+    ]
+}

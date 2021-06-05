@@ -1,0 +1,17 @@
+{% if filetype_loop_jinja2 == "csv" %}Total CDP Neighbors
+{{ to_parse_cdp_neighbors.total_entries_displayed }}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Total CD Neighbors
+| Local Interface | 
+| --------------- |
+| {{ to_parse_cdp_neighbors.total_entries_displayed }} |{% else %}
+<html><body>
+<h1>Total CDP Neighbors</h1>
+<table style="width:100%">
+  <tr>
+    <th>Total CDP Neighbors</th>
+  </tr>
+  <tr>
+    <td>{{ to_parse_cdp_neighbors.total_entries_displayed }}</td>
+  </tr>
+</table>
+</body></html>{% endif %}{% endif %}

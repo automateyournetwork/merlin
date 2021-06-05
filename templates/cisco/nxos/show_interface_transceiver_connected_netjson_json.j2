@@ -1,0 +1,72 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Interface Transceiver - Connected",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for interface in to_parse_interface if to_parse_interface[interface].transceiver_present %}{% set interface_loop = loop %}
+        { 
+            "id": "{{ interface }}"
+        },
+        { 
+            "id": "Transceiver Type: {{ to_parse_interface[interface].transceiver_type }}"
+        },
+        { 
+            "id": "Name: {{ to_parse_interface[interface].name }}"
+        },
+        { 
+            "id": "Nominal Bitrate: {{ to_parse_interface[interface].nominal_bitrate }}"
+        },
+        { 
+            "id": "Part Number: {{ to_parse_interface[interface].part_number }}"
+        },
+        { 
+            "id": "Revision: {{ to_parse_interface[interface].revision }}"
+        },
+        { 
+            "id": "Serial Number: {{ to_parse_interface[interface].serial_number }}"{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}
+    ],
+    "links": [{% for interface in to_parse_interface if to_parse_interface[interface].transceiver_present %}{% set interface_loop = loop %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Transceiver Type: {{ to_parse_interface[interface].transceiver_type }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Name: {{ to_parse_interface[interface].name }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Nominal Bitrate: {{ to_parse_interface[interface].nominal_bitrate }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Part Number: {{ to_parse_interface[interface].part_number }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Revision: {{ to_parse_interface[interface].revision }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Serial Number: {{ to_parse_interface[interface].serial_number }}",
+            "cost": 1{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}
+    ]
+}

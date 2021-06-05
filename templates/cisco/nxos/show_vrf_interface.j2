@@ -1,0 +1,28 @@
+{% if filetype_loop_jinja2 == "csv" %}
+Interface,VRF,VRF ID,Site of Origin{% for interface in to_parse_vrf %}
+{{ interface }},{{ to_parse_vrf[interface].vrf }},{{ to_parse_vrf[interface].vrf_id }},{{ to_parse_vrf[interface].site_of_origin }}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show VRF Interface
+| Interface | VRF | VRF ID | Site of Origin |
+| --------- | --- | ------ | -------------- |{% for interface in to_parse_vrf %}
+| {{ interface }} | {{ to_parse_vrf[interface].vrf }},{{ to_parse_vrf[interface].vrf_id }} | {{ to_parse_vrf[interface].site_of_origin }} |{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show VRF Interface</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Interface</th>
+    <th>VRF</th>
+    <th>VRF ID</th>
+    <th>Site of Origin</th>
+  </tr>
+  </thead>
+  <tbody>{% for interface in to_parse_vrf %}
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ to_parse_vrf[interface].vrf }}</td>
+    <td>{{ to_parse_vrf[interface].vrf_id }}</td>
+    <td>{{ to_parse_vrf[interface].site_of_origin }}</td>
+  </tr>{% endfor %}
+  </tbody>  
+</table>
+</body></html>{% endif %}{% endif %}

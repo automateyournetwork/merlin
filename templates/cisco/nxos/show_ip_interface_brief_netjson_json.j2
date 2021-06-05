@@ -1,0 +1,66 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show IP Interface Brief",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for interface in to_parse_interfaces %}{% set interface_loop = loop %}{% if to_parse_interfaces[interface].vlan_id is defined %}{% for vlan_id in to_parse_interfaces[interface].vlan_id %}
+        { 
+            "id": "{{ interface }}"
+        },
+        { 
+            "id": "IP Address: {{ to_parse_interfaces[interface].vlan_id[vlan_id].ip_address }}"
+        },
+        { 
+            "id": "Status: {{ to_parse_interfaces[interface].vlan_id[vlan_id].interface_status }}"{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% else %}
+        { 
+            "id": "{{ interface }}"
+        },
+        { 
+            "id": "IP Address: {{ to_parse_interfaces[interface].ip_address }}"
+        },        
+        { 
+            "id": "Status: {{ to_parse_interfaces[interface].interface_status }}"{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endif %}{% endfor %}
+    ],
+    "links": [{% for interface in to_parse_interfaces %}{% set interface_loop = loop %}{% if to_parse_interfaces[interface].vlan_id is defined %}{% for vlan_id in to_parse_interfaces[interface].vlan_id %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 1
+        },       
+        { 
+            "source": "{{ interface }}",
+            "target": "IP Address: {{ to_parse_interfaces[interface].vlan_id[vlan_id].ip_address }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Status: {{ to_parse_interfaces[interface].vlan_id[vlan_id].interface_status }}",
+            "cost": 1{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% else %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "IP Address: {{ to_parse_interfaces[interface].ip_address }}",
+            "cost": 1            
+        },        
+        { 
+            "source": "{{ interface }}",
+            "target": "Status: {{ to_parse_interfaces[interface].interface_status }}",
+            "cost": 1{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endif %}{% endfor %}
+    ]    
+}

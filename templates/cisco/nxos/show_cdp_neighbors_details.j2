@@ -1,0 +1,45 @@
+{% if filetype_loop_jinja2 == "csv" %}Local Interface,Neighbor,Platform,Remote Interface,Remote Interface Address,Neighbor Management Address,Neighbor Capabilities,Duplex Mode,Hold Time,Native VLAN,Software Version,System Name,VTP Domain,Physical Location,Advertisement Version{% for neighbor in to_parse_cdp_neighbors %}
+{{ to_parse_cdp_neighbors[neighbor].local_interface }},{{ to_parse_cdp_neighbors[neighbor].device_id }},{{ to_parse_cdp_neighbors[neighbor].platform }},{{ to_parse_cdp_neighbors[neighbor].port_id }},{{ to_parse_cdp_neighbors[neighbor].interface_addresses | replace("{'","") | replace("'","") | replace(":","") | replace("{}}","") | replace(",","") }},{{ to_parse_cdp_neighbors[neighbor].management_addresses | replace("{'","") | replace("'","") | replace(":","") | replace("}","") | replace("{}","") | replace("{","") }},{{ to_parse_cdp_neighbors[neighbor].capabilities }},{{ to_parse_cdp_neighbors[neighbor].duplex_mode }},{{ to_parse_cdp_neighbors[neighbor].hold_time }},{{ to_parse_cdp_neighbors[neighbor].native_vlan }},{{ to_parse_cdp_neighbors[neighbor].software_version | replace(","," ") | replace("\n"," ") }},{{ to_parse_cdp_neighbors[neighbor].system_name | default("N/A") }},{{ to_parse_cdp_neighbors[neighbor].vtp_management_domain | default("N/A") }},{{ to_parse_cdp_neighbors[neighbor].physical_location | default("N/A") }},{{ to_parse_cdp_neighbors[neighbor].advertisement_ver }}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show CDP Neighbors Details
+| Local Interface | Neighbor | Platform | Remote Interface | Remote Interface Address | Neighbor Management Address | Neighbor Capabilities | Duplex Mode | Hold Time | Native VLAN | Software Version | System Name | VTP Domain | Physical Location | Advertisement Version |
+| --------------- | -------- | -------- | ---------------- | ------------------------ | --------------------------- | --------------------- | ----------- | --------- | ----------- | ---------------- | ----------- | ---------- | ----------------- | --------------------- |{% for neighbor in to_parse_cdp_neighbors %}
+| {{ to_parse_cdp_neighbors[neighbor].local_interface }} | {{ to_parse_cdp_neighbors[neighbor].device_id }} | {{ to_parse_cdp_neighbors[neighbor].platform }} | {{ to_parse_cdp_neighbors[neighbor].port_id }} | {{ to_parse_cdp_neighbors[neighbor].interface_addresses | replace("{'","") | replace("\': {}},{}","") }} | {{ to_parse_cdp_neighbors[neighbor].interface_addresses | replace("{'","") | replace("'","") | replace(":","") | replace("{}}","") | replace(",","") }} | {{ to_parse_cdp_neighbors[neighbor].management_addresses | replace("{'","") | replace("'","") | replace(":","") | replace("}","") | replace("{}","") | replace("{","") }} | {{ to_parse_cdp_neighbors[neighbor].capabilities }} | {{ to_parse_cdp_neighbors[neighbor].duplex_mode }} | {{ to_parse_cdp_neighbors[neighbor].hold_time }} | {{ to_parse_cdp_neighbors[neighbor].native_vlan }} | {{ to_parse_cdp_neighbors[neighbor].software_version | replace(","," ") | replace("\n"," ") }} | {{ to_parse_cdp_neighbors[neighbor].system_name | default("N/A") }} | {{ to_parse_cdp_neighbors[neighbor].vtp_management_domain | default("N/A") }} | {{ to_parse_cdp_neighbors[neighbor].physical_location | default("N/A") }} | {{ to_parse_cdp_neighbors[neighbor].advertisement_ver }} |{% endfor %}{% else %}
+<html><body>
+<h1>Show CDP Neighbors Details</h1>
+<table style="width:100%">
+  <tr>
+    <th>Local Interface</th>
+    <th>Neighbor</th>
+    <th>Platform</th>
+    <th>Remote Interface</th>
+    <th>Remote Interface Address</th>
+    <th>Neighbor Management Address</th>
+    <th>Neighbor Capabilities</th>
+    <th>Duplex Mode</th>
+    <th>Hold Time</th>
+    <th>Native VLAN</th>
+    <th>Software Version</th>
+    <th>System Name</th>
+    <th>VTP Domain</th>
+    <th>Physical Location</th>
+    <th>Advertisement Version</th>
+  </tr>{% for neighbor in to_parse_cdp_neighbors %}
+  <tr>
+    <td>{{ to_parse_cdp_neighbors[neighbor].local_interface }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].device_id }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].platform }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].port_id }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].interface_addresses | replace("{'","") | replace("'","") | replace(":","") | replace("{}}","") | replace(",","") }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].management_addresses | replace("{'","") | replace("'","") | replace(":","") | replace("}","") | replace("{}","") | replace("{","") }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].capabilities }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].duplex_mode }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].hold_time }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].native_vlan }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].software_version | replace(","," ") | replace("\n"," ") }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].system_name | default("N/A") }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].vtp_management_domain | default("N/A") }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].physical_location | default("N/A") }}</td>
+    <td>{{ to_parse_cdp_neighbors[neighbor].advertisement_ver }}</td>
+  </tr>{% endfor %}
+</table>
+</body></html>{% endif %}{% endif %}

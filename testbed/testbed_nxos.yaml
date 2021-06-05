@@ -1,0 +1,46 @@
+devices:
+    Nexus_9k_Hostname:
+      alias: 'Nexus_9k_Alias'
+      type: 'router'
+      os: 'nxos'
+      platform: n9k
+      credentials:
+        default:
+          username: {{ username }}
+          password: {{ password }}
+      connections:        
+        cli:
+          protocol: ssh
+          ip: "{{ ip address }}"
+          arguments:
+            connection_timeout: 360  
+    Nexus_7k_Hostname:
+      alias: 'Nexus_7k_Alias'
+      type: 'router'
+      os: 'nxos'
+      platform: n7k
+      credentials:
+        default:
+          username: {{ username }}
+          password: {{ password }}
+      connections:        
+        cli:
+          protocol: ssh
+          ip: "{{ ip address }}"
+          arguments:
+            connection_timeout: 360 
+    Nexus_5k_Hostname:
+      alias: 'Nexus_5k_Alias'
+      type: 'switch'
+      os: 'nxos'
+      platform: n5k
+      credentials:
+        default:
+          username: {{ username }}
+          password: {{ password }}
+      connections:        
+        cli:
+          protocol: ssh
+          ip: "{{ ip address }}"
+          arguments:
+            connection_timeout: 360

@@ -1,51 +1,61 @@
-{% if filetype_loop_jinja2 == "csv" %}Device Name,Chassis,Model,CPU,Memory,RP,Bootflash,Processor Board ID,Slots,Kernel Uptime Days,Hours,Minutes,Seconds,System Version,Image File,Compile Time
-{{ to_parse_version.hardware.device_name }},{{ to_parse_version.hardware.chassis }},{{ to_parse_version.hardware.model }},{{ to_parse_version.hardware.cpu }},{{ to_parse_version.hardware.memory }},{{ to_parse_version.hardware.rp }},{{ to_parse_version.hardware.bootflash }},{{ to_parse_version.hardware.processor_board_id }},{{ to_parse_version.hardware.slots }},{{ to_parse_version.kernel_uptime.days }},{{ to_parse_version.kernel_uptime.hours }},{{ to_parse_version.kernel_uptime.minutes }},{{ to_parse_version.kernel_uptime.seconds }},{{ to_parse_version.software.system_version }},{{ to_parse_version.software.system_image_file }},{{ to_parse_version.software.system_compile_time }}{% else %}{% if filetype_loop_jinja2 == "md" %}
+{% if filetype_loop_jinja2 == "csv" %}Bootflash,Chassis,CPU,Device Name,Memory,Model,Processor Board ID,RP,Slots,Kernel Uptime,Name,OS,Last Reload Reason,BIOS Compile Time,BIOS Version,Kickstart Compile Time,Kickstart Image,Kickstart Version,System Compile Time,System Image File,System Version
+{{ to_parse_version.hardware.bootflash }},{{ to_parse_version.hardware.chassis }},{{ to_parse_version.hardware.cpu }},{{ to_parse_version.hardware.device_name }},{{ to_parse_version.hardware.memory }},{{ to_parse_version.hardware.model }},{{ to_parse_version.hardware.processor_board_id }},{{ to_parse_version.hardware.rp }},{{ to_parse_version.hardware.slots }},{{ to_parse_version.kernel_uptime.days }} {{ to_parse_version.kernel_uptime.hours }} {{ to_parse_version.kernel_uptime.minutes }} {{ to_parse_version.kernel_uptime.seconds }},{{ to_parse_version.name }},{{ to_parse_version.os }},{{ to_parse_version.reason }},{{ to_parse_version.software.bios_compile_time }},{{ to_parse_version.software.bios_version }},{{ to_parse_version.software.kickstart_compile_time }},{{ to_parse_version.software.kickstart_image_file }},{{ to_parse_version.software.kickstart_version }},{{ to_parse_version.software.system_compile_time }},{{ to_parse_version.software.system_image_file }},{{ to_parse_version.software.system_version }}{% else %}{% if filetype_loop_jinja2 == "md" %}
 # Show Version
-| Device Name | Chassis | Model | CPU | Memory | RP | Bootflash | Processor Board ID | Slots | Kernel Uptime Days | Hours | Minutes | Seconds | System Version | Image File | Compile Time |
-| ----------- | ------- | ----- | --- | ------ | -- | --------- | ------------------ | ----- | ------------------ | ----- | ------- | ------- | -------------- | ---------- | ------------ |
-| {{ to_parse_version.hardware.device_name }} | {{ to_parse_version.hardware.chassis }} | {{ to_parse_version.hardware.model }} | {{ to_parse_version.hardware.cpu }} | {{ to_parse_version.hardware.memory }} | {{ to_parse_version.hardware.rp }} | {{ to_parse_version.hardware.bootflash }} | {{ to_parse_version.hardware.processor_board_id }} | {{ to_parse_version.hardware.slots }} | {{ to_parse_version.kernel_uptime.days }} | {{ to_parse_version.kernel_uptime.hours }} | {{ to_parse_version.kernel_uptime.minutes }} | {{ to_parse_version.kernel_uptime.seconds }} | {{ to_parse_version.software.system_version }} | {{ to_parse_version.software.system_image_file }} | {{ to_parse_version.software.system_compile_time }} |{% else %}
+| Bootflash | Chassis | CPU | Device Name | Memory | Model | Processor Board ID | RP | Slots | Kernel Uptime | Name | OS | Last Reload Reason | BIOS Compile Time | BIOS Version | Kickstart Compile Time | Kickstart Image | Kickstart Version | System Compile Time | System Image File | System Version |
+| --------- | ------- | --- | ----------- | ------ | ----- | ------------------ | -- | ----- | ------------- | ---- | -- | ------------------ | ----------------- | ------------ | ---------------------- | --------------- | ----------------- | ------------------- | ----------------- | -------------- |
+| {{ to_parse_version.hardware.bootflash }} | {{ to_parse_version.hardware.chassis }} | {{ to_parse_version.hardware.cpu }} | {{ to_parse_version.hardware.device_name }} | {{ to_parse_version.hardware.memory }} | {{ to_parse_version.hardware.model }} | {{ to_parse_version.hardware.processor_board_id }} | {{ to_parse_version.hardware.rp }} | {{ to_parse_version.hardware.slots }} | {{ to_parse_version.kernel_uptime.days }} {{ to_parse_version.kernel_uptime.hours }} {{ to_parse_version.kernel_uptime.minutes }} {{ to_parse_version.kernel_uptime.seconds }} | {{ to_parse_version.name }} | {{ to_parse_version.os }} | {{ to_parse_version.reason }} | {{ to_parse_version.software.bios_compile_time }} | {{ to_parse_version.software.bios_version }} | {{ to_parse_version.software.kickstart_compile_time }} | {{ to_parse_version.software.kickstart_image_file }} | {{ to_parse_version.software.kickstart_version }} | {{ to_parse_version.software.system_compile_time }} | {{ to_parse_version.software.system_image_file }} | {{ to_parse_version.software.system_version }} |{% else %}
 <html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
 <h1>Show Version</h1>
 <table class="merlin-table">
   <thead>
   <tr>
-    <th>Device Name</th>
-    <th>Chassis</th>
-    <th>Model</th>
-    <th>CPU</th>
-    <th>Memory</th>
-    <th>RP</th>   
     <th>Bootflash</th>
+    <th>Chassis</th>
+    <th>CPU</th>
+    <th>Device Name</th>
+    <th>Memory</th>
+    <th>Model</th>
     <th>Processor Board ID</th>
+    <th>RP</th>
     <th>Slots</th>
-    <th>Kernel Uptime Days</th>
-    <th>Hours</th>
-    <th>Minutes</th>
-    <th>Seconds</th>
+    <th>Kernel Uptime</th>
+    <th>Name</th>
+    <th>OS</th>
+    <th>Last Reload Reason</th>
+    <th>BIOS Compile Time</th>
+    <th>BIOS Version</th>
+    <th>Kickstart Compile Time</th>
+    <th>Kickstart Image</th>
+    <th>Kickstart Version</th>
+    <th>System Compile Time</th>
+    <th>System Image File</th>
     <th>System Version</th>
-    <th>Image File</th>
-    <th>Compile Time</th>
   </tr>
   </thead>
-  <tbody>  
+  <tbody>
   <tr>
-    <td>{{ to_parse_version.hardware.device_name }}</td>
-    <td>{{ to_parse_version.hardware.chassis }}</td>
-    <td>{{ to_parse_version.hardware.model }}</td>
-    <td>{{ to_parse_version.hardware.cpu }}</td>
-    <td>{{ to_parse_version.hardware.memory }}</td>
-    <td>{{ to_parse_version.hardware.rp }}</td>   
     <td>{{ to_parse_version.hardware.bootflash }}</td>
+    <td>{{ to_parse_version.hardware.chassis }}</td>
+    <td>{{ to_parse_version.hardware.cpu }}</td>
+    <td>{{ to_parse_version.hardware.device_name }}</td>
+    <td>{{ to_parse_version.hardware.memory }}</td>
+    <td>{{ to_parse_version.hardware.model }}</td>
     <td>{{ to_parse_version.hardware.processor_board_id }}</td>
+    <td>{{ to_parse_version.hardware.rp }}</td>
     <td>{{ to_parse_version.hardware.slots }}</td>
-    <td>{{ to_parse_version.kernel_uptime.days }}</td>
-    <td>{{ to_parse_version.kernel_uptime.hours }}</td>
-    <td>{{ to_parse_version.kernel_uptime.minutes }}</td>
-    <td>{{ to_parse_version.kernel_uptime.seconds }}</td>
-    <td>{{ to_parse_version.software.system_version }}</td>
-    <td>{{ to_parse_version.software.system_image_file }}</td>
+    <td>{{ to_parse_version.kernel_uptime.days }} {{ to_parse_version.kernel_uptime.hours }} {{ to_parse_version.kernel_uptime.minutes }} {{ to_parse_version.kernel_uptime.seconds }}</td>
+    <td>{{ to_parse_version.name }}</td>
+    <td>{{ to_parse_version.os }}</td>
+    <td>{{ to_parse_version.reason }}</td>
+    <td>{{ to_parse_version.software.bios_compile_time }}</td>
+    <td>{{ to_parse_version.software.bios_version }}</td>
+    <td>{{ to_parse_version.software.kickstart_compile_time }}</td>
+    <td>{{ to_parse_version.software.kickstart_image_file }}</td>
+    <td>{{ to_parse_version.software.kickstart_version }}</td>
     <td>{{ to_parse_version.software.system_compile_time }}</td>
+    <td>{{ to_parse_version.software.system_image_file }}</td>
+    <td>{{ to_parse_version.software.system_version }}</td>
   </tr>
-</tbody>  
+  </tbody>  
 </table>
 </body></html>{% endif %}{% endif %}

@@ -42,26 +42,7 @@
             "id": "OS: {{ to_parse_platform.os | default("N/A") }}"
         },    
         { 
-            "id": "Version: {{ to_parse_platform.version | default("N/A") }}"
-        },{% for slot in to_parse_platform.slot %}{% for sub_slot in to_parse_platform.slot[slot] %}
-        { 
-            "id": "Sub_Slot Name: {{ to_parse_platform.slot[slot][sub_slot].name | default("N/A") }}"
-        },
-        { 
-            "id": "Sub_Slot Serial Number: {{ to_parse_platform.slot[slot][sub_slot].sn | default("N/A") }}"
-        },
-        { 
-            "id": "Sub_Slot State: {{ to_parse_platform.slot[slot][sub_slot].state | default("N/A") }}"
-        },{% if slot == "rp" %}
-        { 
-            "id": "Redundancy State: {{ to_parse_platform.slot[slot][sub_slot].redundancy_state | default("N/A") }}"
-        },
-        { 
-            "id": "Boot Image: {{ to_parse_platform.slot[slot][sub_slot].rp_boot_image | default("N/A") }}"
-        },
-        { 
-            "id": "Uptime: {{ to_parse_platform.slot[slot][sub_slot].rp_uptime | default("N/A") }}"
-        },{% endif %}{% endfor %}{% endfor %}{% for virtual_device in to_parse_platform.virtual_device %}{% set virtual_loop = loop %}{% for interface in to_parse_platform.virtual_device[virtual_device].membership %}{% set interface_loop = loop %}
+            "id": "Version: {{ to_parse_platform.version | default("N/A") }}"{% for virtual_device in to_parse_platform.virtual_device %}{% for interface in to_parse_platform.virtual_device[virtual_device].membership %}
         { 
             "id": "Virtual Device Name: {{ to_parse_platform.virtual_device[virtual_device].vd_name | default("N/A") }}"
         },
@@ -75,9 +56,28 @@
             "id": "Interface Type: {{ to_parse_platform.virtual_device[virtual_device].membership[interface].type | default("N/A") }}"
         },    
         { 
-            "id": "Interface Status: {{ to_parse_platform.virtual_device[virtual_device].membership[interface].status | default("N/A") }}"{% if (virtual_loop.last) and (interface_loop.last) %}
+            "id": "Interface Status: {{ to_parse_platform.virtual_device[virtual_device].membership[interface].status | default("N/A") }}"
+        },{% endfor %}{% endfor %}            
+        },{% for slot in to_parse_platform.slot %}{% set slot_loop = loop %}{% for sub_slot in to_parse_platform.slot[slot] %}{% set sub_slot_loop = loop %}{% if slot == "rp" %}
+        { 
+            "id": "Redundancy State: {{ to_parse_platform.slot[slot][sub_slot].redundancy_state | default("N/A") }}"
+        },
+        { 
+            "id": "Boot Image: {{ to_parse_platform.slot[slot][sub_slot].rp_boot_image | default("N/A") }}"
+        },
+        { 
+            "id": "Uptime: {{ to_parse_platform.slot[slot][sub_slot].rp_uptime | default("N/A") }}"
+        },{% endif %}
+        { 
+            "id": "Sub_Slot Name: {{ to_parse_platform.slot[slot][sub_slot].name | default("N/A") }}"
+        },
+        { 
+            "id": "Sub_Slot Serial Number: {{ to_parse_platform.slot[slot][sub_slot].sn | default("N/A") }}"
+        },
+        { 
+            "id": "Sub_Slot State: {{ to_parse_platform.slot[slot][sub_slot].state | default("N/A") }}"{% if (slot_loop.last) and (sub_slot_loop.last) %}
         }{% else %}
-        },{% endif %}{% endfor %}{% endfor %}              
+        },{% endif %}{% endfor %}{% endfor %}        
     ],
     "links": [
         {
@@ -138,38 +138,7 @@
         { 
             "source": "Image: {{ to_parse_platform.image | default("N/A") }}",
             "target": "Version: {{ to_parse_platform.version | default("N/A") }}",
-            "cost": 1                        
-        },{% for slot in to_parse_platform.slot %}{% for sub_slot in to_parse_platform.slot[slot] %}
-        { 
-            "source": "{{ device_alias }}",
-            "target": "Sub_Slot Name: {{ to_parse_platform.slot[slot][sub_slot].name | default("N/A") }}",
-            "cost": 1            
-        },
-        { 
-            "source": "Sub_Slot Name: {{ to_parse_platform.slot[slot][sub_slot].name | default("N/A") }}",
-            "target": "Sub_Slot Serial Number: {{ to_parse_platform.slot[slot][sub_slot].sn | default("N/A") }}",
-            "cost": 1                        
-        },
-        { 
-            "source": "Sub_Slot Name: {{ to_parse_platform.slot[slot][sub_slot].name | default("N/A") }}",
-            "target": "Sub_Slot State: {{ to_parse_platform.slot[slot][sub_slot].state | default("N/A") }}",
-            "cost": 1              
-        },{% if slot == "rp" %}
-        { 
-            "source": "Sub_Slot Name: {{ to_parse_platform.slot[slot][sub_slot].name | default("N/A") }}",
-            "target": "Redundancy State: {{ to_parse_platform.slot[slot][sub_slot].redundancy_state | default("N/A") }}",
-            "cost": 1                          
-        },
-        { 
-            "source": "Sub_Slot Name: {{ to_parse_platform.slot[slot][sub_slot].name | default("N/A") }}",
-            "target": "Boot Image: {{ to_parse_platform.slot[slot][sub_slot].rp_boot_image | default("N/A") }}",
-            "cost": 1
-        },
-        { 
-            "source": "Sub_Slot Name: {{ to_parse_platform.slot[slot][sub_slot].name | default("N/A") }}",
-            "target": "Uptime: {{ to_parse_platform.slot[slot][sub_slot].rp_uptime | default("N/A") }}",
-            "cost": 1            
-        },{% endif %}{% endfor %}{% endfor %}{% for virtual_device in to_parse_platform.virtual_device %}{% set virtual_loop = loop %}{% for interface in to_parse_platform.virtual_device[virtual_device].membership %}{% set interface_loop = loop %}
+            "cost": 1{% for virtual_device in to_parse_platform.virtual_device %}{% set virtual_loop = loop %}{% for interface in to_parse_platform.virtual_device[virtual_device].membership %}{% set interface_loop = loop %}
         { 
             "source": "{{ device_alias }}",
             "target": "Virtual Device Name: {{ to_parse_platform.virtual_device[virtual_device].vd_name | default("N/A") }}",
@@ -193,8 +162,39 @@
         { 
             "source": "{{ interface }}",
             "target": "Interface Status: {{ to_parse_platform.virtual_device[virtual_device].membership[interface].status | default("N/A") }}",
-            "cost": 1{% if (virtual_loop.last) and (interface_loop.last) %}
+            "cost": 1
+        },{% endfor %}{% endfor %}                                                  
+        },{% for slot in to_parse_platform.slot %}{% set slot_loop = loop %}{% for sub_slot in to_parse_platform.slot[slot] %}{% set sub_slot_loop = loop %}{% if slot == "rp" %}
+        { 
+            "source": "Sub_Slot Name: {{ to_parse_platform.slot[slot][sub_slot].name | default("N/A") }}",
+            "target": "Redundancy State: {{ to_parse_platform.slot[slot][sub_slot].redundancy_state | default("N/A") }}",
+            "cost": 1                          
+        },
+        { 
+            "source": "Sub_Slot Name: {{ to_parse_platform.slot[slot][sub_slot].name | default("N/A") }}",
+            "target": "Boot Image: {{ to_parse_platform.slot[slot][sub_slot].rp_boot_image | default("N/A") }}",
+            "cost": 1
+        },
+        { 
+            "source": "Sub_Slot Name: {{ to_parse_platform.slot[slot][sub_slot].name | default("N/A") }}",
+            "target": "Uptime: {{ to_parse_platform.slot[slot][sub_slot].rp_uptime | default("N/A") }}",
+            "cost": 1
+        },{% endif %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Sub_Slot Name: {{ to_parse_platform.slot[slot][sub_slot].name | default("N/A") }}",
+            "cost": 1            
+        },
+        { 
+            "source": "Sub_Slot Name: {{ to_parse_platform.slot[slot][sub_slot].name | default("N/A") }}",
+            "target": "Sub_Slot Serial Number: {{ to_parse_platform.slot[slot][sub_slot].sn | default("N/A") }}",
+            "cost": 1                        
+        },
+        { 
+            "source": "Sub_Slot Name: {{ to_parse_platform.slot[slot][sub_slot].name | default("N/A") }}",
+            "target": "Sub_Slot State: {{ to_parse_platform.slot[slot][sub_slot].state | default("N/A") }}",
+            "cost": 1{% if (slot_loop.last) and (sub_slot_loop.last) %}              
         }{% else %}
-        },{% endif %}{% endfor %}{% endfor %}                          
+        },{% endif %}{% endfor %}{% endfor %}
     ]
 }

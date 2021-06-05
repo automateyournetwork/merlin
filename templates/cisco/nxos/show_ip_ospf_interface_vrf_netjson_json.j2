@@ -1,0 +1,120 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show IP OSPF Interface VRF",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for vrf in to_parse_ip_ospf_interface %}{% set vrf_loop = loop %}{% for address_family in to_parse_ip_ospf_interface[vrf].address_family %}{% set address_family_loop = loop %}{% for instance in to_parse_ip_ospf_interface[vrf].address_family[address_family].instance %}{% set instance_loop = loop %}{% for area in to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas %}{% set area_loop = loop %}{% for interface in to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces %}{% set interface_loop = loop %}
+        { 
+            "id": "Address Family: {{ address_family }}"
+        },
+        { 
+            "id": "Instance: {{ instance }}"
+        },
+        { 
+            "id": "Area: {{ area }}"
+        },
+        { 
+            "id": "{{ interface }}"
+        },
+        { 
+            "id": "BFD: {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].bfd.enable }}"
+        },  
+        { 
+            "id": "Cost: {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].cost }}"
+        },
+        { 
+            "id": "Enable: {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].enable }}"
+        },
+        { 
+            "id": "Interface Type: {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].interface_type }}"
+        },{% if to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].ip_address is defined %}
+        { 
+            "id": "IP Address: {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].ip_address }}"
+        },{% endif %}
+        { 
+            "id": "Line Protocol: {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].line_protocol }}"
+        },
+        { 
+            "id": "Passive: {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive }}"
+        },
+        { 
+            "id": "State: {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].state }}"
+        },
+        { 
+            "id": "VRF: {{ vrf }}"{% if (vrf_loop.last) and (address_family_loop.last) and (instance_loop.last) and (area_loop.last) and (interface_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}
+    ],
+    "links": [{% for vrf in to_parse_ip_ospf_interface %}{% set vrf_loop = loop %}{% for address_family in to_parse_ip_ospf_interface[vrf].address_family %}{% set address_family_loop = loop %}{% for instance in to_parse_ip_ospf_interface[vrf].address_family[address_family].instance %}{% set instance_loop = loop %}{% for area in to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas %}{% set area_loop = loop %}{% for interface in to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces %}{% set interface_loop = loop %}
+        {
+            "source": "VRF: {{ vrf }}",
+            "target": "Address Family: {{ address_family }}",
+            "cost": 1
+        },
+        { 
+            "source": "Address Family: {{ address_family }}",
+            "target": "Instance: {{ instance }}",
+            "cost": 1
+        },
+        { 
+            "source": "Instance: {{ instance }}",
+            "target": "Area: {{ area }}",
+            "cost": 1
+        },
+        { 
+            "source": "Area: {{ area }}",
+            "target": "{{ interface }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "BFD: {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].bfd.enable }}",
+            "cost": 1
+        },  
+        { 
+            "source": "{{ interface }}",
+            "target": "Cost: {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].cost }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Enable: {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].enable }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Interface Type: {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].interface_type }}",
+            "cost": 1            
+        },{% if to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].ip_address is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "IP Address: {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].ip_address }}",
+            "cost": 1
+        },{% endif %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Line Protocol: {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].line_protocol }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Passive: {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "State: {{ to_parse_ip_ospf_interface[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].state }}",
+            "cost": 1
+        },
+        {
+            "source": "{{ device_alias }}",
+            "target": "VRF: {{ vrf }}",
+            "cost": 1{% if (vrf_loop.last) and (address_family_loop.last) and (instance_loop.last) and (area_loop.last) and (interface_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}
+    ]
+}

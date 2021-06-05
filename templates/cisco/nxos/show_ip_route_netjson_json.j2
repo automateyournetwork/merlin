@@ -7,35 +7,125 @@
     "nodes": [
         { 
             "id": "{{ device_alias }}"
-        },{% for vrf in to_parse_ip_route %}{% for address_family in to_parse_ip_route[vrf].address_family %}{% for route in to_parse_ip_route[vrf].address_family[address_family].routes %}
-        {
-            "id": "Route: {{ route }}"
-        },{% endfor %}{% endfor %}{% endfor %}{% for vrf in to_parse_ip_route %}{% set vrf_loop = loop %}{% for address_family in to_parse_ip_route[vrf].address_family %}{% for route in to_parse_ip_route[vrf].address_family[address_family].routes %}{% set route_loop = loop %}{% for next_hop in to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list %}{% set next_hop_loop = loop %}
-        {
-            "id": "Outgoing Interface: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].outgoing_interface }}"
+        },{% for vrf in to_parse_ip_route %}{% set vrf_loop = loop %}{% for address_family in to_parse_ip_route[vrf].address_family %}{% set address_family_loop = loop %}{% for route in to_parse_ip_route[vrf].address_family[address_family].routes %}{% set route_loop = loop %}{% for next_hop in to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list %}{% set next_hop_loop = loop %}
+        { 
+            "id": "VRF: {{ vrf }}"
         },
-        {
-            "id": "Next Hop: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].next_hop }}"{% if (vrf_loop.last) and (route_loop.last) and (next_hop_loop.last) %}
-        }{% else %}         
-        },{% endif %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}
+        { 
+            "id": "Address Family: {{ address_family }}"
+        },
+        { 
+            "id": "Route: {{ route }}"
+        },
+        { 
+            "id": "Active: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].active }}"
+        },
+        { 
+            "id": "Metric: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].metric }}"
+        },
+        { 
+            "id": "Preference: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].route_preference }}"
+        },
+        { 
+            "id": "Source Protocol: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].source_protocol }}"
+        },
+        { 
+            "id": "Next Hop Number: {{ next_hop }}"
+        },
+        { 
+            "id": "Next Hop: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].next_hop }}"
+        },
+        { 
+            "id": "Best Unicast Next Hop: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].best_ucast_nexthop }}"
+        },
+        { 
+            "id": "Metric: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].metric }}"
+        },
+        { 
+            "id": "Next Hop Preference: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].route_preference }}"
+        },
+        { 
+            "id": "Source Protocol: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].source_protocol }}"
+        },
+        { 
+            "id": "Updated: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].updated }}"
+        },
+        { 
+            "id": "VRF: {{ vrf }}"{% if (vrf_loop.last) and (address_family_loop.last) and (route_loop.last) and (next_hop_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}  
     ],
-    "links": [{% for vrf in to_parse_ip_route %}{% for address_family in to_parse_ip_route[vrf].address_family %}{% for route in to_parse_ip_route[vrf].address_family[address_family].routes %}
+    "links": [{% for vrf in to_parse_ip_route %}{% set vrf_loop = loop %}{% for address_family in to_parse_ip_route[vrf].address_family %}{% set address_family_loop = loop %}{% for route in to_parse_ip_route[vrf].address_family[address_family].routes %}{% set route_loop = loop %}{% for next_hop in to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list %}{% set next_hop_loop = loop %}
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "Address Family: {{ address_family }}",
+            "cost": 1
+        },
+        { 
+            "source": "Address Family: {{ address_family }}",
+            "target": "Route: {{ route }}",
+            "cost": 1
+        },
+        { 
+            "source": "Route: {{ route }}",
+            "target": "Active: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].active }}",
+            "cost": 1
+        },
+        { 
+            "source": "Route: {{ route }}",
+            "target": "Metric: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].metric }}",
+            "cost": 1
+        },
+        { 
+            "source": "Route: {{ route }}",
+            "target": "Preference: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].route_preference }}",
+            "cost": 1
+        },
+        { 
+            "source": "Route: {{ route }}",
+            "target": "Source Protocol: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].source_protocol }}",
+            "cost": 1
+        },
+        { 
+            "source": "Route: {{ route }}",
+            "target": "Next Hop Number: {{ next_hop }}",
+            "cost": 1            
+        },
+        { 
+            "source": "Next Hop Number: {{ next_hop }}",
+            "target": "Next Hop: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].next_hop }}",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].next_hop }}",
+            "target": "Best Unicast Next Hop: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].best_ucast_nexthop }}",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].next_hop }}",
+            "target": "Metric: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].metric }}",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].next_hop }}",
+            "target": "Next Hop Preference: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].route_preference }}",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].next_hop }}",
+            "target": "Source Protocol: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].source_protocol }}",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].next_hop }}",
+            "target": "Updated: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].updated }}",
+            "cost": 1
+        },
         {
             "source": "{{ device_alias }}",
-            "target": "Route: {{ route }}",
-            "cost": 2
-        },{% endfor %}{% endfor %}{% endfor %}{% for vrf in to_parse_ip_route %}{% set vrf_loop = loop %}{% for address_family in to_parse_ip_route[vrf].address_family %}{% for route in to_parse_ip_route[vrf].address_family[address_family].routes %}{% set route_loop = loop %}{% for next_hop in to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list %}{% set next_hop_loop = loop %}
-        {
-            "source": "Route: {{ route }}",
-            "target": "Outgoing Interface: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].outgoing_interface }}",
-            "cost": 2
-        },
-        {
-            "source": "Outgoing Interface: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].outgoing_interface }}",
-            "target": "Next Hop: {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].next_hop }}",
-            "cost": 3{% if (vrf_loop.last) and (route_loop.last) and (next_hop_loop.last) %}
-        }
-        {% else %}
-        },{% endif %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}
+            "target": "VRF: {{ vrf }}",
+            "cost": 1{% if (vrf_loop.last) and (address_family_loop.last) and (route_loop.last) and (next_hop_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}  
     ]
 }

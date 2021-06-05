@@ -1,0 +1,136 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show CDP Neighbor NETJSON Netgraph",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for neighbor in to_parse_cdp_neighbors %}{% set neighbor_loop = loop %}
+        { 
+            "id": "Local Interface: {{ to_parse_cdp_neighbors[neighbor].local_interface }}"
+        },  
+        { 
+            "id": "Neighbor: {{ to_parse_cdp_neighbors[neighbor].device_id }}"
+        },
+        { 
+            "id": "Platform: {{ to_parse_cdp_neighbors[neighbor].platform }}"
+        },
+        { 
+            "id": "Neighbor Interface: {{ to_parse_cdp_neighbors[neighbor].local_interface }}"
+        },
+        { 
+            "id": "Neighbor Interface Address: {{ to_parse_cdp_neighbors[neighbor].interface_addresses | replace("{'","") | replace("'","") | replace(":","") | replace("{}}","") | replace(",","") }}"
+        },
+        { 
+            "id": "Neighbor Management Address: {{ to_parse_cdp_neighbors[neighbor].management_addresses | replace("{'","") | replace("'","") | replace(":","") | replace("}","") | replace("{}","") | replace("{","") }}"
+        },
+        { 
+            "id": "Capabilities: {{ to_parse_cdp_neighbors[neighbor].capabilities }}"
+        },
+        { 
+            "id": "Duplex Mode: {{ to_parse_cdp_neighbors[neighbor].duplex_mode }}"
+        },                                                    
+        { 
+            "id": "Hold Time: {{ to_parse_cdp_neighbors[neighbor].hold_time }}"
+        },    
+        { 
+            "id": "Native VLAN: {{ to_parse_cdp_neighbors[neighbor].native_vlan }}"
+        },
+        { 
+            "id": "Software Version: {{ to_parse_cdp_neighbors[neighbor].software_version | replace(","," ") | replace("\n"," ") }}"
+        },
+        { 
+            "id": "System Name: {{ to_parse_cdp_neighbors[neighbor].system_name | default("N/A") }}"
+        },
+        { 
+            "id": "VTP Domain: {{ to_parse_cdp_neighbors[neighbor].vtp_management_domain | default("N/A") }}"
+        },
+        { 
+            "id": "Physical Location: {{ to_parse_cdp_neighbors[neighbor].physical_location | default("N/A") }}"
+        },
+        { 
+            "id": "Advertisement Version: {{ to_parse_cdp_neighbors[neighbor].advertisement_ver }}"{% if neighbor_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}
+    ],
+    "links": [{% for neighbor in to_parse_cdp_neighbors %}{% set neighbor_loop = loop %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "Local Interface: {{ to_parse_cdp_neighbors[neighbor].local_interface }}",
+            "cost": 1
+        },
+        { 
+            "source": "Local Interface: {{ to_parse_cdp_neighbors[neighbor].local_interface }}",
+            "target": "Neighbor Interface: {{ to_parse_cdp_neighbors[neighbor].local_interface }}",
+            "cost": 1
+        },
+        { 
+            "source": "Neighbor Interface: {{ to_parse_cdp_neighbors[neighbor].local_interface }}",
+            "target": "Neighbor: {{ to_parse_cdp_neighbors[neighbor].device_id }}",
+            "cost": 1            
+        },
+        { 
+            "source": "Neighbor: {{ to_parse_cdp_neighbors[neighbor].device_id }}",
+            "target": "Platform: {{ to_parse_cdp_neighbors[neighbor].platform }}",
+            "cost": 1
+        },
+        { 
+            "source": "Neighbor Interface: {{ to_parse_cdp_neighbors[neighbor].local_interface }}",
+            "target": "Neighbor Interface Address: {{ to_parse_cdp_neighbors[neighbor].interface_addresses | replace("{'","") | replace("'","") | replace(":","") | replace("{}}","") | replace(",","") }}",
+            "cost": 1                        
+        },
+        { 
+            "source": "Neighbor: {{ to_parse_cdp_neighbors[neighbor].device_id }}",
+            "target": "Neighbor Management Address: {{ to_parse_cdp_neighbors[neighbor].management_addresses | replace("{'","") | replace("'","") | replace(":","") | replace("}","") | replace("{}","") | replace("{","") }}",
+            "cost": 1
+        },
+        { 
+            "source": "Neighbor: {{ to_parse_cdp_neighbors[neighbor].device_id }}",
+            "target": "Capabilities: {{ to_parse_cdp_neighbors[neighbor].capabilities }}",
+            "cost": 1            
+        },
+        { 
+            "source": "Neighbor Interface: {{ to_parse_cdp_neighbors[neighbor].local_interface }}",
+            "target": "Duplex Mode: {{ to_parse_cdp_neighbors[neighbor].duplex_mode }}",
+            "cost": 1                                    
+        },                                                    
+        { 
+            "source": "Neighbor: {{ to_parse_cdp_neighbors[neighbor].device_id }}",
+            "target": "Hold Time: {{ to_parse_cdp_neighbors[neighbor].hold_time }}",
+            "cost": 1
+        },    
+        { 
+            "source": "Neighbor Interface: {{ to_parse_cdp_neighbors[neighbor].local_interface }}",
+            "target": "Native VLAN: {{ to_parse_cdp_neighbors[neighbor].native_vlan }}",
+            "cost": 1              
+        },
+        {
+            "source": "Neighbor: {{ to_parse_cdp_neighbors[neighbor].device_id }}",
+            "target": "Software Version: {{ to_parse_cdp_neighbors[neighbor].software_version | replace(","," ") | replace("\n"," ") }}",
+            "cost": 1
+        },
+        { 
+            "source": "Neighbor: {{ to_parse_cdp_neighbors[neighbor].device_id }}",
+            "target": "System Name: {{ to_parse_cdp_neighbors[neighbor].system_name | default("N/A") }}",
+            "cost": 1
+        },
+        { 
+            "source": "Neighbor: {{ to_parse_cdp_neighbors[neighbor].device_id }}",
+            "target": "VTP Domain: {{ to_parse_cdp_neighbors[neighbor].vtp_management_domain | default("N/A") }}",
+            "cost": 1
+        },
+        { 
+            "source": "Neighbor: {{ to_parse_cdp_neighbors[neighbor].device_id }}",
+            "target": "Physical Location: {{ to_parse_cdp_neighbors[neighbor].physical_location | default("N/A") }}",
+            "cost": 1
+        },
+        { 
+            "source": "Neighbor: {{ to_parse_cdp_neighbors[neighbor].device_id }}",
+            "target": "Advertisement Version: {{ to_parse_cdp_neighbors[neighbor].advertisement_ver }}",
+            "cost": 1{% if neighbor_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}
+    ]
+}

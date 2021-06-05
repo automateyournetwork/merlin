@@ -1,0 +1,40 @@
+{% if filetype_loop_jinja2 == "csv" %}VRF,ID,VRF State,Address Family,Address Family State,Foward ID,Table ID,Max Routes,Mid Threshold,Route Distinguisher{% for vrf in to_parse_vrf %}{% for address_family in to_parse_vrf[vrf].address_family %}
+{{ vrf }},{{ to_parse_vrf[vrf].vrf_id }},{{ to_parse_vrf[vrf].state }},{{ address_family }},{{ to_parse_vrf[vrf].address_family[address_family].state }},{{ to_parse_vrf[vrf].address_family[address_family].fwd_id }},{{ to_parse_vrf[vrf].address_family[address_family].table_id }},{{ to_parse_vrf[vrf].max_routes }},{{ to_parse_vrf[vrf].mid_threshold }},{{ to_parse_vrf[vrf].route_distinguisher }}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show VRF All Detail
+| VRF | ID | VRF State | Address Family | Address Family State | Foward ID | Table ID | Max Routes | Mid Threshold | Route Distinguisher |
+| --- | -- | --------- | -------------- | -------------------- | --------- | -------- | ---------- | ------------- | ------------------- |{% for vrf in to_parse_vrf %}{% for address_family in to_parse_vrf[vrf].address_family %}
+| {{ vrf }} | {{ to_parse_vrf[vrf].vrf_id }} | {{ to_parse_vrf[vrf].state }} | {{ address_family }} | {{ to_parse_vrf[vrf].address_family[address_family].state }} | {{ to_parse_vrf[vrf].address_family[address_family].fwd_id }} | {{ to_parse_vrf[vrf].address_family[address_family].table_id }} | {{ to_parse_vrf[vrf].max_routes }} | {{ to_parse_vrf[vrf].mid_threshold }} | {{ to_parse_vrf[vrf].route_distinguisher }} |{% endfor %}{% endfor %}
+{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show VRF All Detail</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>VRF</th>
+    <th>ID</th>
+    <th>VRF State</th>
+    <th>Address Family</th>
+    <th>Address Family State</th>
+    <th>Forward ID</th>
+    <th>Table ID</th>
+    <th>Max Routes</th>
+    <th>Mid Threshold</th>
+    <th>Route Distinguisher</th>
+  </tr>
+  </thead>
+  <tbody>{% for vrf in to_parse_vrf %}{% for address_family in to_parse_vrf[vrf].address_family %}
+  <tr>
+    <td>{{ vrf }}</td>
+    <td>{{ to_parse_vrf[vrf].vrf_id }}</td>
+    <td>{{ to_parse_vrf[vrf].state }}</td>
+    <td>{{ address_family }}</td>
+    <td>{{ to_parse_vrf[vrf].address_family[address_family].state }}</td>
+    <td>{{ to_parse_vrf[vrf].address_family[address_family].fwd_id }}</td>
+    <td>{{ to_parse_vrf[vrf].address_family[address_family].table_id }}</td>
+    <td>{{ to_parse_vrf[vrf].max_routes }}</td>
+    <td>{{ to_parse_vrf[vrf].mid_threshold }}</td>
+    <td>{{ to_parse_vrf[vrf].route_distinguisher }}</td>
+  </tr>{% endfor %}{% endfor %}
+  </tbody>  
+</table>
+</body></html>{% endif %}{% endif %}

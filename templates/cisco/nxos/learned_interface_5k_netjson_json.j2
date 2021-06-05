@@ -1,0 +1,64 @@
+{
+    "type": "NetworkGraph",
+    "label": "Learn Interfaces",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for interface in to_parse_interface %}{% set interface_loop = loop %}
+        { 
+            "id": "{{ interface }}"
+        },
+        { 
+            "id": "Access VLAN: {{ to_parse_interface[interface].access_vlan | default("N/A") }}"
+        },
+        { 
+            "id": "Native VLAN: {{ to_parse_interface[interface].native_vlan | default("N/A") }}"
+        },
+        { 
+            "id": "Switchport: {{ to_parse_interface[interface].switchport_enable | default("N/A") }}"
+        },
+        { 
+            "id": "Switchport Mode: {{ to_parse_interface[interface].switchport_mode | default("N/A") }}"
+        },
+        { 
+            "id": "Trunk VLANs: {{ to_parse_interface[interface].trunk_vlans | default("N/A") }}"{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}
+    ],
+    "links": [{% for interface in to_parse_interface %}{% set interface_loop = loop %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 1            
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Access VLAN: {{ to_parse_interface[interface].access_vlan | default("N/A") }}",
+            "cost": 1                        
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Native VLAN: {{ to_parse_interface[interface].native_vlan | default("N/A") }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Switchport: {{ to_parse_interface[interface].switchport_enable | default("N/A") }}",
+            "cost": 1
+        },
+        { 
+            "source": "Switchport: {{ to_parse_interface[interface].switchport_enable | default("N/A") }}",
+            "target": "Switchport Mode: {{ to_parse_interface[interface].switchport_mode | default("N/A") }}",
+            "cost": 1            
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Trunk VLANs: {{ to_parse_interface[interface].trunk_vlans | default("N/A") }}",
+            "cost": 1{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}
+    ]
+}

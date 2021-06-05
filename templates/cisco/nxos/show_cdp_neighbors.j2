@@ -1,0 +1,28 @@
+{% if filetype_loop_jinja2 == "csv" %}Neighbor,Platform,Local Interface,Remote Interface,Capability,Hold Time{% for neighbor in to_parse_cdp_neighbors.index %}
+{{ to_parse_cdp_neighbors.index[neighbor].device_id }},{{ to_parse_cdp_neighbors.index[neighbor].platform }},{{ to_parse_cdp_neighbors.index[neighbor].local_interface }},{{ to_parse_cdp_neighbors.index[neighbor].port_id }},{{ to_parse_cdp_neighbors.index[neighbor].capability }},{{ to_parse_cdp_neighbors.index[neighbor].hold_time }}
+{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show CDP Neighbors
+| Neighbor | Platform | Local Interface | Remote Interface | Capability | Hold Time |
+| -------- | -------- | --------------- | ---------------- | ---------- | --------- |{% for neighbor in to_parse_cdp_neighbors.index %}
+| {{ to_parse_cdp_neighbors.index[neighbor].device_id }} | {{ to_parse_cdp_neighbors.index[neighbor].platform }} | {{ to_parse_cdp_neighbors.index[neighbor].local_interface }} | {{ to_parse_cdp_neighbors.index[neighbor].port_id }} | {{ to_parse_cdp_neighbors.index[neighbor].capability }} | {{ to_parse_cdp_neighbors.index[neighbor].hold_time }} |{% endfor %}{% else %}
+<html><body>
+<h1>Show CDP Neighbors</h1>
+<table style="width:100%">
+  <tr>
+    <th>Neighbor</th>
+    <th>Platform</th>
+    <th>Local Interface</th>
+    <th>Remote Interface</th>
+    <th>Capability</th>
+    <th>Hold Time</th>
+  </tr>{% for neighbor in to_parse_cdp_neighbors.index %}
+  <tr>
+    <td>{{ to_parse_cdp_neighbors.index[neighbor].device_id }}</td>
+    <td>{{ to_parse_cdp_neighbors.index[neighbor].platform }}</td>
+    <td>{{ to_parse_cdp_neighbors.index[neighbor].local_interface }}</td>
+    <td>{{ to_parse_cdp_neighbors.index[neighbor].port_id }}</td>
+    <td>{{ to_parse_cdp_neighbors.index[neighbor].capability }}</td>
+    <td>{{ to_parse_cdp_neighbors.index[neighbor].hold_time }}</td>
+  </tr>{% endfor %}
+</table>
+</body></html>{% endif %}{% endif %}

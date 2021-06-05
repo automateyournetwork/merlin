@@ -1,10 +1,10 @@
 {% if filetype_loop_jinja2 == "csv" %}Total Entries
-{{ to_parse_ip_arp.entries_total }}
+{{ to_parse_ip_arp.statistics.entries_total }}
 {% else %}{% if filetype_loop_jinja2 == "md" %}
 # Show IP ARP (VRF) Statistics
 | Total Entries |
 | ------------- |
-| {{ to_parse_ip_arp.entries_total }} |{% else %}
+| {{ to_parse_ip_arp.statistics.entries_total }} |{% else %}
 <html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
 <h1>Show IP ARP VRF STATSITICS</h1>
 <table class="merlin-table">
@@ -15,7 +15,7 @@
   </thead>
   <tbody>  
   <tr>
-    <td>{{ to_parse_ip_arp.entries_total }}</td>
+    <td>{{ to_parse_ip_arp.statistics.entries_total }}</td>
   </tr>
   </tbody>  
 </table>

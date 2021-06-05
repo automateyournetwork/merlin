@@ -7,27 +7,242 @@
     "nodes": [
         { 
             "id": "{{ device_alias }}"
+        },{% for vrf in to_parse_bgp.vrf %}{% for address_family in to_parse_bgp.vrf[vrf].address_family %}{% set address_family_loop = loop %}{% for peer in to_parse_bgp.vrf[vrf].address_family[address_family].peers %}
+        { 
+            "id": "BGP Tag: {{ to_parse_bgp.bgp_tag }}"
         },
-        {% for vrf in to_parse_bgp.vrf %}{% set outer_loop = loop %}{% if outer_loop.index > 0 %}
-        {
-            "id": "Router ID: {{ to_parse_bgp.vrf[vrf].router_id }}"{% if outer_loop.last %}
-        }{% else %}
-        },{% endif %}{% else %}
-        {
+        { 
             "id": "Router ID: {{ to_parse_bgp.vrf[vrf].router_id }}"
-        }{% endif %}{% endfor %}
-    ],
-    "links": [{% for vrf in to_parse_bgp.vrf %}{% set outer_loop = loop %}{% if outer_loop.index > 0 %}
-        {
-            "source": "{{ device_alias }}",
-            "target": "Router ID: {{ to_parse_bgp.vrf[vrf].router_id }}",
-            "cost": 1{% if outer_loop.last %}
+        },
+        { 
+            "id": "BGP PID: {{ to_parse_bgp.bgp_pid }}"
+        },
+        { 
+            "id": "BGP State: {{ to_parse_bgp.bgp_protocol_state }}"
+        },
+        { 
+            "id": "Started Reason: {{ to_parse_bgp.bgp_protocol_started_reason }}"
+        },
+        { 
+            "id": "AS Path Entries: {{ to_parse_bgp.bgp_as_path_entries }}"
+        },
+        { 
+            "id": "AS Format: {{ to_parse_bgp.bgp_asformat }}"
+        },
+        { 
+            "id": "Memory State: {{ to_parse_bgp.bgp_memory_state }}"
+        },
+        { 
+            "id": "Mode: {{ to_parse_bgp.bgp_mmode }}"
+        },
+        { 
+            "id": "Paths Per Attribute: {{ to_parse_bgp.bgp_paths_per_hwm_attr }}"
+        },
+        { 
+            "id": "Bytes Used: {{ to_parse_bgp.bytes_used }}"
+        },
+        { 
+            "id": "Entries Pending Delete: {{ to_parse_bgp.entries_pending_delete }}"
+        },
+        { 
+            "id": "VRF: {{ vrf }}"
+        },
+        { 
+            "id": "Cluster ID: {{ to_parse_bgp.vrf[vrf].cluster_id }}"
+        },
+        { 
+            "id": "Configured Router ID: {{ to_parse_bgp.vrf[vrf].conf_router_id }}"
+        },
+        { 
+            "id": "Configured Peers: {{ to_parse_bgp.vrf[vrf].num_conf_peers }}"
+        },
+        { 
+            "id": "Established Peers: {{ to_parse_bgp.vrf[vrf].num_established_peers }}"
+        },
+        { 
+            "id": "Pending Peers: {{ to_parse_bgp.vrf[vrf].num_pending_conf_peers }}"
+        },
+        { 
+            "id": "VRF ID: {{ to_parse_bgp.vrf[vrf].vrf_id }}"
+        },
+        { 
+            "id": "State: {{ to_parse_bgp.vrf[vrf].vrf_state }}"
+        },
+        { 
+            "id": "Address Family: {{ address_family }}"
+        },
+        { 
+            "id": "Peer: {{ peer }}"
+        },
+        { 
+            "id": "Active Peers: {{ to_parse_bgp.vrf[vrf].address_family[address_family].peers[peer].active_peers }}"
+        },
+        { 
+            "id": "Aggregates: {{ to_parse_bgp.vrf[vrf].address_family[address_family].peers[peer].aggregates }}"
+        },
+        { 
+            "id": "Networks: {{ to_parse_bgp.vrf[vrf].address_family[address_family].peers[peer].networks }}"
+        },
+        { 
+            "id": "Paths: {{ to_parse_bgp.vrf[vrf].address_family[address_family].peers[peer].paths }}"
+        },
+        { 
+            "id": "Routes: {{ to_parse_bgp.vrf[vrf].address_family[address_family].peers[peer].routes }}"
+        },
+        { 
+            "id": "Table ID: {{ to_parse_bgp.vrf[vrf].address_family[address_family].table_id }}"
+        },
+        { 
+            "id": "Table State: {{ to_parse_bgp.vrf[vrf].address_family[address_family].table_state }}"{% if address_family_loop.last %}
         }{% else %}
-        },{% endif %}{% else %}
+        },{% endif %}{% endfor %}{% endfor %}{% endfor %}
+    ],
+    "links": [
         {
             "source": "{{ device_alias }}",
+            "target": "BGP Tag: {{ to_parse_bgp.bgp_tag }}",
+            "cost": 1             
+        },{% for vrf in to_parse_bgp.vrf %}{% for address_family in to_parse_bgp.vrf[vrf].address_family %}{% set address_family_loop = loop %}{% for peer in to_parse_bgp.vrf[vrf].address_family[address_family].peers %}
+        { 
+            "source": "BGP Tag: {{ to_parse_bgp.bgp_tag }}",
+            "target": "BGP PID: {{ to_parse_bgp.bgp_pid }}",
+            "cost": 1
+        },
+        { 
+            "source": "BGP Tag: {{ to_parse_bgp.bgp_tag }}",
+            "target": "BGP State: {{ to_parse_bgp.bgp_protocol_state }}",
+            "cost": 1
+        },
+        { 
+            "source": "BGP Tag: {{ to_parse_bgp.bgp_tag }}",
+            "target": "Started Reason: {{ to_parse_bgp.bgp_protocol_started_reason }}",
+            "cost": 1
+        },
+        { 
+            "source": "BGP Tag: {{ to_parse_bgp.bgp_tag }}",
+            "target": "AS Path Entries: {{ to_parse_bgp.bgp_as_path_entries }}",
+            "cost": 1
+        },
+        { 
+            "source": "BGP Tag: {{ to_parse_bgp.bgp_tag }}",
+            "target": "AS Format: {{ to_parse_bgp.bgp_asformat }}",
+            "cost": 1
+        },
+        { 
+            "source": "BGP Tag: {{ to_parse_bgp.bgp_tag }}",
+            "target": "Memory State: {{ to_parse_bgp.bgp_memory_state }}",
+            "cost": 1
+        },
+        { 
+            "source": "BGP Tag: {{ to_parse_bgp.bgp_tag }}",
+            "target": "Mode: {{ to_parse_bgp.bgp_mmode }}",
+            "cost": 1
+        },
+        { 
+            "source": "BGP Tag: {{ to_parse_bgp.bgp_tag }}",
+            "target": "Paths Per Attribute: {{ to_parse_bgp.bgp_paths_per_hwm_attr }}",
+            "cost": 1
+        },
+        { 
+            "source": "BGP Tag: {{ to_parse_bgp.bgp_tag }}",
+            "target": "Bytes Used: {{ to_parse_bgp.bytes_used }}",
+            "cost": 1
+        },
+        { 
+            "source": "BGP Tag: {{ to_parse_bgp.bgp_tag }}",
+            "target": "Entries Pending Delete: {{ to_parse_bgp.entries_pending_delete }}",
+            "cost": 1
+        },
+        { 
+            "source": "BGP Tag: {{ to_parse_bgp.bgp_tag }}",
+            "target": "VRF: {{ vrf }}",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
             "target": "Router ID: {{ to_parse_bgp.vrf[vrf].router_id }}",
             "cost": 1
-        }{% endif %}{% endfor %}
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "Cluster ID: {{ to_parse_bgp.vrf[vrf].cluster_id }}",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "Configured Router ID: {{ to_parse_bgp.vrf[vrf].conf_router_id }}",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "Configured Peers: {{ to_parse_bgp.vrf[vrf].num_conf_peers }}",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "Established Peers: {{ to_parse_bgp.vrf[vrf].num_established_peers }}",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "Pending Peers: {{ to_parse_bgp.vrf[vrf].num_pending_conf_peers }}",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "VRF ID: {{ to_parse_bgp.vrf[vrf].vrf_id }}",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "State: {{ to_parse_bgp.vrf[vrf].vrf_state }}",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "Address Family: {{ address_family }}",
+            "cost": 1
+        },
+        { 
+            "source": "Address Family: {{ address_family }}",
+            "target": "Peer: {{ peer }}",
+            "cost": 1
+        },
+        { 
+            "source": "Address Family: {{ address_family }}",
+            "target": "Table ID: {{ to_parse_bgp.vrf[vrf].address_family[address_family].table_id }}",
+            "cost": 1
+        },
+        { 
+            "source": "Address Family: {{ address_family }}",
+            "target": "Table State: {{ to_parse_bgp.vrf[vrf].address_family[address_family].table_state }}",
+            "cost": 1
+        },        
+        { 
+            "source": "Peer: {{ peer }}",
+            "target": "Active Peers: {{ to_parse_bgp.vrf[vrf].address_family[address_family].peers[peer].active_peers }}",
+            "cost": 1
+        },
+        { 
+            "source": "Peer: {{ peer }}",
+            "target": "Aggregates: {{ to_parse_bgp.vrf[vrf].address_family[address_family].peers[peer].aggregates }}",
+            "cost": 1
+        },
+        { 
+            "source": "Peer: {{ peer }}",
+            "target": "Networks: {{ to_parse_bgp.vrf[vrf].address_family[address_family].peers[peer].networks }}",
+            "cost": 1
+        },
+        { 
+            "source": "Peer: {{ peer }}",
+            "target": "Paths: {{ to_parse_bgp.vrf[vrf].address_family[address_family].peers[peer].paths }}",
+            "cost": 1
+        },
+        { 
+            "source": "Peer: {{ peer }}",
+            "target": "Routes: {{ to_parse_bgp.vrf[vrf].address_family[address_family].peers[peer].routes }}",
+            "cost": 1{% if address_family_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}{% endfor %}
     ]
 }
