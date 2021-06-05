@@ -1,0 +1,152 @@
+{
+    "type": "NetworkGraph",
+    "label": "Learned BGP",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for vlan in to_parse_hsrp %}{% set vlan_loop = loop %}{% for address_family in to_parse_hsrp[vlan].address_family %}{% set address_loop = loop %}{% for version in to_parse_hsrp[vlan].address_family[address_family].version %}{% set version_loop = loop %}{% for group in to_parse_hsrp[vlan].address_family[address_family].version[version].groups %}{% set group_loop = loop %}
+        { 
+            "id": "VLAN: {{ vlan }}"
+        },
+        { 
+            "id": "Address Family: {{ address_family }}"
+        },
+        { 
+            "id": "HSRP Version: {{ version }}"
+        },
+        { 
+            "id": "Group: {{ group }}"
+        },
+        { 
+            "id": "Active Route: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].active_route }}"
+        },           
+        { 
+            "id": "Router State: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].hsrp_router_state }}"
+        },
+        { 
+            "id": "Preempt: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].preempt }}"
+        },
+        { 
+            "id": "IP Address: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].primary_ipv4_address.address }}"
+        },
+        { 
+            "id": "Learn IP: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].primary_ipv4_address.virtual_ip_learn }}"
+        },
+        { 
+            "id": "Priority: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].priority }}"
+        },        
+        { 
+            "id": "Session Name: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].session_name }}"
+        },
+        { 
+            "id": "Standby IP: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].standby_ip_address }}"
+        },
+        { 
+            "id": "Standby Router: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].standby_router }}"
+        },
+        { 
+            "id": "Hello Timer: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].timers.hello_sec }}"
+        },
+        { 
+            "id": "Hold Timer: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].timers.hold_sec }}"
+        },    
+        { 
+            "id": "Virtual MAC: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].virtual_mac_address }}"
+        },
+        { 
+            "id": "Use BIA: {{ to_parse_hsrp[vlan].use_bia }}"{% if (vlan_loop.last) and (address_loop.last) and (version_loop.last) and (group_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}
+    ],
+    "links": [{% for vlan in to_parse_hsrp %}{% set vlan_loop = loop %}{% for address_family in to_parse_hsrp[vlan].address_family %}{% set address_loop = loop %}{% for version in to_parse_hsrp[vlan].address_family[address_family].version %}{% set version_loop = loop %}{% for group in to_parse_hsrp[vlan].address_family[address_family].version[version].groups %}{% set group_loop = loop %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "VLAN: {{ vlan }}",
+            "cost": 1
+        },
+        { 
+            "source": "VLAN: {{ vlan }}",
+            "target": "Address Family: {{ address_family }}",
+            "cost": 1            
+        },
+        { 
+            "source": "Address Family: {{ address_family }}",
+            "target": "HSRP Version: {{ version }}",
+            "cost": 1
+        },
+        { 
+            "source": "HSRP Version: {{ version }}",
+            "target": "Group: {{ group }}",
+            "cost": 1
+        },
+        { 
+            "source": "Group: {{ group }}",
+            "target": "Active Route: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].active_route }}",
+            "cost": 1
+        },           
+        { 
+            "source": "Group: {{ group }}",
+            "target": "Router State: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].hsrp_router_state }}",
+            "cost": 1            
+        },
+        { 
+            "source": "Group: {{ group }}",
+            "target": "Preempt: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].preempt }}",
+            "cost": 1                        
+        },
+        { 
+            "source": "Group: {{ group }}",
+            "target": "IP Address: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].primary_ipv4_address.address }}",
+            "cost": 1
+        },
+        { 
+            "source": "Group: {{ group }}",
+            "target": "Learn IP: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].primary_ipv4_address.virtual_ip_learn }}",
+            "cost": 1
+        },
+        { 
+            "source": "Group: {{ group }}",
+            "target": "Priority: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].priority }}",
+            "cost": 1
+        },        
+        { 
+            "source": "Group: {{ group }}",
+            "target": "Session Name: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].session_name }}",
+            "cost": 1
+        },
+        { 
+            "source": "Group: {{ group }}",
+            "target": "Standby IP: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].standby_ip_address }}",
+            "cost": 1
+        },
+        { 
+            "source": "Group: {{ group }}",
+            "target": "Standby Router: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].standby_router }}",
+            "cost": 1
+        },
+        { 
+            "source": "Group: {{ group }}",
+            "target": "Hello Timer: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].timers.hello_sec }}",
+            "cost": 1
+        },
+        { 
+            "source": "Group: {{ group }}",
+            "target": "Hold Timer: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].timers.hold_sec }}",
+            "cost": 1
+        },    
+        { 
+            "source": "Group: {{ group }}",
+            "target": "Virtual MAC: {{ to_parse_hsrp[vlan].address_family[address_family].version[version].groups[group].virtual_mac_address }}",
+            "cost": 1
+        },
+        { 
+            "source": "Group: {{ group }}",
+            "target": "Use BIA: {{ to_parse_hsrp[vlan].use_bia }}",
+            "cost": 1{% if (vlan_loop.last) and (address_loop.last) and (version_loop.last) and (group_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}
+       ]
+}

@@ -1,0 +1,64 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Interface Status - Connected",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for interface in to_parse_interface.interfaces if to_parse_interface.interfaces[interface].status == "connected" %}{% set interface_loop = loop %}
+        { 
+            "id": "{{ interface }}"
+        },
+        { 
+            "id": "Status: {{ to_parse_interface.interfaces[interface].status }}"
+        },
+        { 
+            "id": "Type: {{ to_parse_interface.interfaces[interface].type }}"
+        },
+        { 
+            "id": "VLAN: {{ to_parse_interface.interfaces[interface].vlan }}"
+        },
+        { 
+            "id": "Port Speed: {{ to_parse_interface.interfaces[interface].port_speed }}"
+        },
+        { 
+            "id": "Duplex: {{ to_parse_interface.interfaces[interface].duplex_code }}"{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}
+    ],
+    "links": [{% for interface in to_parse_interface.interfaces if to_parse_interface.interfaces[interface].status == "connected" %}{% set interface_loop = loop %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Status: {{ to_parse_interface.interfaces[interface].status }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Type: {{ to_parse_interface.interfaces[interface].type }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "VLAN: {{ to_parse_interface.interfaces[interface].vlan }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Port Speed: {{ to_parse_interface.interfaces[interface].port_speed }}",
+            "cost": 1            
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Duplex: {{ to_parse_interface.interfaces[interface].duplex_code }}",
+            "cost": 1{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}
+    ]
+}

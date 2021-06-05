@@ -1,0 +1,29 @@
+{% if filetype_loop_jinja2 == "csv" %}Voltage,Current Celsius Temp,Major Celsius,Minor Celsius,Status{% for temp in to_parse_environment.temperature %}
+{{ to_parse_environment.power.voltage }},{{ to_parse_environment.temperature[temp].Control.current_temp_celsius }},{{ to_parse_environment.temperature[temp].Control.major_threshold_celsius }},{{ to_parse_environment.temperature[temp].Control.minor_threshold_celsius }},{{ to_parse_environment.temperature[temp].Control.status }}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show Environment All
+| Voltage | Current Celsius Temp | Major Celsius | Minor Celsius | Status |
+| ------- | -------------------- | ------------- | ------------- | ------ |{% for temp in to_parse_environment.temperature %}
+| {{ to_parse_environment.power.voltage }} | {{ to_parse_environment.temperature[temp].Control.current_temp_celsius }} | {{ to_parse_environment.temperature[temp].Control.major_threshold_celsius }} | {{ to_parse_environment.temperature[temp].Control.minor_threshold_celsius }},{{ to_parse_environment.temperature[temp].Control.status }} |{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show Environment All</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Voltage</th>
+    <th>Current Celsius Temp</th>
+    <th>Major Celsius</th>
+    <th>Minor Celsius</th>
+    <th>Status</th>
+  </tr>
+  </thead>
+  <tbody>{% for temp in to_parse_environment.temperature %}
+  <tr>
+    <td>{{ to_parse_environment.power.voltage }}</td>
+    <td>{{ to_parse_environment.temperature[temp].Control.current_temp_celsius }}</td>
+    <td>{{ to_parse_environment.temperature[temp].Control.major_threshold_celsius }}</td>
+    <td>{{ to_parse_environment.temperature[temp].Control.minor_threshold_celsius }}</td>
+    <td>{{ to_parse_environment.temperature[temp].Control.status }}</td>
+  </tr>{% endfor %}
+  </tbody>  
+</table>
+</body></html>{% endif %}{% endif %}

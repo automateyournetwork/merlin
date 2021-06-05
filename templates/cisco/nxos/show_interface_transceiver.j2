@@ -1,0 +1,45 @@
+{% if filetype_loop_jinja2 == "csv" %}Interface,Transceiver Present,Transceiver Type,Name,Nominal Bitrate,Part Number,Revision,Serial Number{% for interface in to_parse_interface %}{% if to_parse_interface[interface].transceiver_present %}
+{{ interface }},{{ to_parse_interface[interface].transceiver_present }},{{ to_parse_interface[interface].transceiver_type }},{{ to_parse_interface[interface].name }},{{ to_parse_interface[interface].nominal_bitrate }},{{ to_parse_interface[interface].part_number }},{{ to_parse_interface[interface].revision }},{{ to_parse_interface[interface].serial_number }}{% else %}
+{{ interface }},{{ to_parse_interface[interface].transceiver_present }},N/A,N/A,N/A,N/A,N/A,N/A{% endif %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show Interface Transceiver
+| Interface | Transceiver Present | Transceiver Type | Name | Nominal Bitrate | Part Number | Revision | Serial Number |
+| ----------| ------------------- | ---------------- | ---- | --------------- | ----------- | -------- | ------------- |{% for interface in to_parse_interface %}{% if to_parse_interface[interface].transceiver_present %}
+| {{ interface }} | {{ to_parse_interface[interface].transceiver_present }} | {{ to_parse_interface[interface].transceiver_type }} | {{ to_parse_interface[interface].name }} | {{ to_parse_interface[interface].nominal_bitrate }} | {{ to_parse_interface[interface].part_number }} | {{ to_parse_interface[interface].revision }} | {{ to_parse_interface[interface].serial_number }} |{% else %}
+| {{ interface }} | {{ to_parse_interface[interface].transceiver_present }} | N/A | N/A | N/A | N/A | N/A | N/A |{% endif %}{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Show Interfaces Status</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Interface</th>
+    <th>Transceiver Present</th>
+    <th>Transceiver Type</th>
+    <th>Name</th>
+    <th>Nominal Bitrate</th>
+    <th>Part Number</th>
+    <th>Revision</th>
+    <th>Serial Number</th>
+  </tr>
+  </thead>
+  <tbody>{% for interface in to_parse_interface %}{% if to_parse_interface[interface].transceiver_present %}
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ to_parse_interface[interface].transceiver_present }}</td>
+    <td>{{ to_parse_interface[interface].transceiver_type }}</td>
+    <td>{{ to_parse_interface[interface].name }}</td>
+    <td>{{ to_parse_interface[interface].nominal_bitrate }}</td>
+    <td>{{ to_parse_interface[interface].part_number }}</td>
+    <td>{{ to_parse_interface[interface].revision }}</td>
+    <td>{{ to_parse_interface[interface].serial_number }}{% else %}
+    <td>{{ interface }}</td>
+    <td>{{ to_parse_interface[interface].transceiver_present }}</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}
+  </tr>{% endfor %}
+  </tbody>  
+</table>
+</body></html>{% endif %}{% endif %}

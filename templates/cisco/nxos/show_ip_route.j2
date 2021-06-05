@@ -1,10 +1,10 @@
-{% if filetype_loop_jinja2 == "csv" %}
-VRF,Address Family,Route,Active,Metric,Route Preference,Source Protocol,Source Protocol Code,Next Hop Number,Next Hop,Outgoing Interface,Updated{% for vrf in to_parse_ip_route %}{% for address_family in to_parse_ip_route[vrf].address_family %}{% for route in to_parse_ip_route[vrf].address_family[address_family].routes %}{% for next_hop in to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list %}
-{{ vrf }},{{ address_family }},{{ route }},{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].active }},{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].metric }},{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].route_preference }},{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].source_protocol }},{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].source_protocol_codes }},{{ next_hop }},{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].next_hop }},{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].outgoing_interface }},{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].updated }}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
-# Show IP Route (Global Routing Table)
-| VRF | Address Family | Route | Active | Metric | Route Preference | Source Protocol | Source Protocol Code | Next Hop Number | Next Hop | Outgoing Interface | Updated |
-| --- | -------------- | ----- | ------ | ------ | ---------------- | --------------- | -------------------- | --------------- | -------- | ------------------ | ------- |{% for vrf in to_parse_ip_route %}{% for address_family in to_parse_ip_route[vrf].address_family %}{% for route in to_parse_ip_route[vrf].address_family[address_family].routes %}{% for next_hop in to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list %}
-| {{ vrf }} | {{ address_family }} | {{ route }} | {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].active }} | {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].metric }} | {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].route_preference }} | {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].source_protocol }} | {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].source_protocol_codes }} | {{ next_hop }} | {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].next_hop }} | {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].outgoing_interface }} | {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].updated }} |{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% else %}
+{% if filetype_loop_jinja2 == "csv" %}VRF,Address Family,Route,Active,Metric,Route Preference,Source Protocol,M Best,U Best,Next Hop Index,Next Hop,Best Unicast Nexthop,Metric,Route Preference,Source Protocol,Updated{% for vrf in to_parse_ip_route %}{% for address_family in to_parse_ip_route[vrf].address_family %}{% for route in to_parse_ip_route[vrf].address_family[address_family].routes %}{% for next_hop in to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list %}
+{{ vrf }},{{ address_family }},{{ route }},{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].active }},{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].metric }},{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].route_preference }},{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].source_protocol }},{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].mbest }},{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].ubest }},{{ next_hop }},{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].next_hop }},{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].best_ucast_nexthop }},{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].metric }},{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].route_preference }},{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].source_protocol }},{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].updated }}{% endfor %}{% endfor %}{% endfor %}{% endfor %}
+{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Show IP Route
+| VRF | Address Family | Route | Active | Metric | Route Preference | Source Protocol | M Best | U Best | Next Hop Index | Next Hop | Best Unicast Nexthop | Metric | Route Preference | Source Protocol | Updated |
+| --- | -------------- | ----- | ------ | ------ | ---------------- | --------------- | ------ | ------ | -------------- | -------- | -------------------- | ------ | ---------------- | --------------- | ------- |{% for vrf in to_parse_ip_route %}{% for address_family in to_parse_ip_route[vrf].address_family %}{% for route in to_parse_ip_route[vrf].address_family[address_family].routes %}{% for next_hop in to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list %}
+| {{ vrf }} | {{ address_family }} | {{ route }} | {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].active }} | {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].metric }} | {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].route_preference }} | {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].source_protocol }} | {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].mbest }} | {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].ubest }} | {{ next_hop }} | {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].next_hop }} | {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].best_ucast_nexthop }} | {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].metric }} | {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].route_preference }} | {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].source_protocol }} | {{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].updated }} |{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% else %}
 <html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
 <h1>Show IP Route</h1>
 <table class="merlin-table">
@@ -15,11 +15,16 @@ VRF,Address Family,Route,Active,Metric,Route Preference,Source Protocol,Source P
     <th>Route</th>
     <th>Active</th>
     <th>Metric</th>
-    <th>Route Preference</th>   
+    <th>Route Preference</th>
     <th>Source Protocol</th>
-    <th>Source Protocol Code</th>
-    <th>Next Hop Number</th>
-    <th>Outgoing Interface</th>
+    <th>M Best</th>
+    <th>U Best</th>
+    <th>Next Hop Index</th>
+    <th>Next Hop</th>
+    <th>Best Unicast Nexthop</th>
+    <th>Metric</th>
+    <th>Route Preference</th>
+    <th>Source Protocol</th>
     <th>Updated</th>
   </tr>
   </thead>
@@ -29,16 +34,19 @@ VRF,Address Family,Route,Active,Metric,Route Preference,Source Protocol,Source P
     <td>{{ address_family }}</td>
     <td>{{ route }}</td>
     <td>{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].active }}</td>
-    <td>{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].metric }}</td>   
+    <td>{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].metric }}</td>
     <td>{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].route_preference }}</td>
     <td>{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].source_protocol }}</td>
-    <td>{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].source_protocol_codes }}</td>
+    <td>{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].mbest }}</td>
+    <td>{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].ubest }}</td>
     <td>{{ next_hop }}</td>
     <td>{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].next_hop }}</td>
-    <td>{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].outgoing_interface }}</td>
-    <td>{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].outgoing_interface }}</td>
+    <td>{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].best_ucast_nexthop }}</td>
+    <td>{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].metric }}</td>
+    <td>{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].route_preference }}</td>
+    <td>{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].source_protocol }}</td>
     <td>{{ to_parse_ip_route[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].updated }}</td>
-  </tr>{% endfor %}{% endfor %}{% endfor %}{% endfor %}
-  </tbody>  
+  </tr>
+  </tbody>{% endfor %}{% endfor %}{% endfor %}{% endfor %}  
 </table>
 </body></html>{% endif %}{% endif %}

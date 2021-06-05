@@ -1,0 +1,104 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show IP OSPF Neighbor Detail VRF",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for vrf in to_parse_ip_ospf_neighbor %}{% set vrf_loop = loop %}{% for address_family in to_parse_ip_ospf_neighbor[vrf].address_family %}{% set address_family_loop = loop %}{% for instance in to_parse_ip_ospf_neighbor[vrf].address_family[address_family].instance %}{% set instance_loop = loop %}{% for area in to_parse_ip_ospf_neighbor[vrf].address_family[address_family].instance[instance].areas %}{% set area_loop = loop %}{% for interface in to_parse_ip_ospf_neighbor[vrf].address_family[address_family].instance[instance].areas[area].interfaces %}{% set interface_loop = loop %}{% for neighbor in to_parse_ip_ospf_neighbor[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors %}{% set neighbor_loop = loop %}
+        { 
+            "id": "VRF: {{ vrf }}"
+        },
+        { 
+            "id": "Address Family: {{ address_family }}"
+        },
+        { 
+            "id": "Instance: {{ instance }}"
+        },
+        { 
+            "id": "Area: {{ area }}"
+        },
+        { 
+            "id": "{{ interface }}"
+        },
+        { 
+            "id": "Neighbor: {{ neighbor }}"
+        },
+        { 
+            "id": "Neighbor Address: {{ to_parse_ip_ospf_neighbor[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].address }}"
+        },
+        { 
+            "id": "Neighbor Events: {{ to_parse_ip_ospf_neighbor[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].statistics.nbr_event_count }}"
+        },
+        { 
+            "id": "Last State Change: {{ to_parse_ip_ospf_neighbor[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].last_state_change }}"
+        },
+        { 
+            "id": "Router ID: {{ to_parse_ip_ospf_neighbor[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].neighbor_router_id }}"
+        },        
+        { 
+            "id": "State: {{ to_parse_ip_ospf_neighbor[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].state }}"{% if (vrf_loop.last) and (address_family_loop.last) and (instance_loop.last) and (area_loop.last) and (interface_loop.last) and (neighbor_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}
+    ],
+    "links": [{% for vrf in to_parse_ip_ospf_neighbor %}{% set vrf_loop = loop %}{% for address_family in to_parse_ip_ospf_neighbor[vrf].address_family %}{% set address_family_loop = loop %}{% for instance in to_parse_ip_ospf_neighbor[vrf].address_family[address_family].instance %}{% set instance_loop = loop %}{% for area in to_parse_ip_ospf_neighbor[vrf].address_family[address_family].instance[instance].areas %}{% set area_loop = loop %}{% for interface in to_parse_ip_ospf_neighbor[vrf].address_family[address_family].instance[instance].areas[area].interfaces %}{% set interface_loop = loop %}{% for neighbor in to_parse_ip_ospf_neighbor[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors %}{% set neighbor_loop = loop %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "VRF: {{ vrf }}",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: {{ vrf }}",
+            "target": "Address Family: {{ address_family }}",
+            "cost": 1
+        },
+        { 
+            "source": "Address Family: {{ address_family }}",
+            "target": "Instance: {{ instance }}",
+            "cost": 1
+        },
+        { 
+            "source": "Instance: {{ instance }}",
+            "target": "Area: {{ area }}",
+            "cost": 1
+        },
+        { 
+            "source": "Area: {{ area }}",
+            "target": "{{ interface }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Neighbor: {{ neighbor }}",
+            "cost": 1
+        },
+        { 
+            "source": "Neighbor: {{ neighbor }}",
+            "target": "Neighbor Address: {{ to_parse_ip_ospf_neighbor[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].address }}",
+            "cost": 1
+        },
+        { 
+            "source": "Neighbor: {{ neighbor }}",
+            "target": "Neighbor Events: {{ to_parse_ip_ospf_neighbor[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].statistics.nbr_event_count }}",
+            "cost": 1
+        },
+        { 
+            "source": "Neighbor: {{ neighbor }}",
+            "target": "Last State Change: {{ to_parse_ip_ospf_neighbor[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].last_state_change }}",
+            "cost": 1
+        },
+        { 
+            "source": "Neighbor: {{ neighbor }}",
+            "target": "Router ID: {{ to_parse_ip_ospf_neighbor[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].neighbor_router_id }}",
+            "cost": 1
+        },        
+        { 
+            "source": "Neighbor: {{ neighbor }}",
+            "target": "State: {{ to_parse_ip_ospf_neighbor[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].state }}",
+            "cost": 1{% if (vrf_loop.last) and (address_family_loop.last) and (instance_loop.last) and (area_loop.last) and (interface_loop.last) and (neighbor_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}
+    ]
+}

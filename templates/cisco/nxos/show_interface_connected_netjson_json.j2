@@ -1,0 +1,200 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show Interface",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for interface in to_parse_interface if to_parse_interface[interface].oper_status == "up" %}{% set interface_loop = loop %}{% if to_parse_interface[interface].description is defined %}
+        { 
+            "id": "Description: {{ to_parse_interface[interface].description }}"
+        },{% endif %}{% if to_parse_interface[interface].mac_address is defined %}
+        { 
+            "id": "MAC Address: {{ to_parse_interface[interface].mac_address }}"
+        },{% endif %}{% if to_parse_interface[interface].phys_address is defined %}
+        { 
+            "id": "Physical Address: {{ to_parse_interface[interface].phys_address }}"
+        },{% endif %}{% if to_parse_interface[interface].ipv4 is defined %}{% for ip in to_parse_interface[interface].ipv4 %}
+        { 
+            "id": "IP Address: {{ ip }}"
+        },{% endfor%}{% endif %}{% if to_parse_interface[interface].port_speed is defined %}
+        { 
+            "id": "Port Speed: {{ to_parse_interface[interface].port_speed }}"
+        },{% endif %}{% if to_parse_interface[interface].duplex_mode is defined %}
+        { 
+            "id": "Duplex: {{ to_parse_interface[interface].duplex_mode }}"
+        },{% endif %}{% if to_parse_interface[interface].bandwidth is defined %}
+        { 
+            "id": "Bandwidth: {{ to_parse_interface[interface].bandwidth }}"
+        },{% endif %}{% if to_parse_interface[interface].delay is defined %}
+        { 
+            "id": "Delay: {{ to_parse_interface[interface].delay }}"
+        },{% endif %}{% if to_parse_interface[interface].media_type is defined %}
+        { 
+            "id": "Media Type: {{ to_parse_interface[interface].media_type }}"
+        },{% endif %}{% if to_parse_interface[interface].ethertype is defined %}
+        { 
+            "id": "Ether Type: {{ to_parse_interface[interface].ethertype }}"
+        },{% endif %}{% if to_parse_interface[interface].medium is defined %}
+        { 
+            "id": "Medium: {{ to_parse_interface[interface].medium }}"
+        },{% endif %}{% if to_parse_interface[interface].mtu is defined %}
+        { 
+            "id": "MTU: {{ to_parse_interface[interface].mtu }}"
+        },{% endif %}{% if to_parse_interface[interface].port_mode is defined %}
+        { 
+            "id": "Port Mode: {{ to_parse_interface[interface].port_mode }}"
+        },{% endif %}{% if to_parse_interface[interface].types is defined %}
+        { 
+            "id": "Type: {{ to_parse_interface[interface].types }}"
+        },{% endif %}{% if (to_parse_interface[interface].port_channel) and (to_parse_interface[interface].port_channel.port_channel_int) is defined %}
+        { 
+            "id": "Port Channel: {{ to_parse_interface[interface].port_channel.port_channel_int }}"
+        },{% else %}{% if (to_parse_interface[interface].port_channel) and (to_parse_interface[interface].port_channel.port_channel_member_intfs) is defined %}
+        { 
+            "id": "Port Channel: {{ interface }}"
+        },{% endif %}{% endif %}{% if (to_parse_interface[interface].port_channel) and (to_parse_interface[interface].port_channel.port_channel_member) is defined %}
+        { 
+            "id": "Port Channel Member: {{ to_parse_interface[interface].port_channel.port_channel_member }}"
+        },{% else %}{% if (to_parse_interface[interface].port_channel) and (to_parse_interface[interface].port_channel.port_channel_member_intfs) is defined %}{% for member in to_parse_interface[interface].port_channel.port_channel_member_intfs %}
+        { 
+            "id": "Port Channel Member: {{ member }}"
+        },{% endfor %}{% endif %}{% endif %}{% if to_parse_interface[interface].last_link_flapped is defined %}
+        { 
+            "id": "Last Flap: {{ to_parse_interface[interface].last_link_flapped }}"
+        },{% endif %}{% if to_parse_interface[interface].interface_reset is defined %}
+        { 
+            "id": "Last Reset: {{ to_parse_interface[interface].interface_reset }}"
+        },{% endif %}{% if to_parse_interface[interface].rxload is defined %}
+        { 
+            "id": "RX: {{ to_parse_interface[interface].rxload }}"
+        },{% endif %}{% if to_parse_interface[interface].txload is defined %}
+        { 
+            "id": "TX: {{ to_parse_interface[interface].txload }}"
+        },{% endif %}
+        { 
+            "id": "{{ interface }}"{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}
+    ],
+    "links": [{% for interface in to_parse_interface if to_parse_interface[interface].oper_status == "up" %}{% set interface_loop = loop %}{% if to_parse_interface[interface].description is defined %}
+        {
+            "source": "{{ interface }}",
+            "target": "Description: {{ to_parse_interface[interface].description }}",
+            "cost": 1
+        },{% endif %}{% if to_parse_interface[interface].mac_address is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "MAC Address: {{ to_parse_interface[interface].mac_address }}",
+            "cost": 1
+        },{% endif %}{% if to_parse_interface[interface].phys_address is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Physical Address: {{ to_parse_interface[interface].phys_address }}",
+            "cost": 1
+        },{% endif %}{% if to_parse_interface[interface].ipv4 is defined %}{% for ip in to_parse_interface[interface].ipv4 %}
+        { 
+            "source": "{{ interface }}",
+            "target": "IP Address: {{ ip }}",
+            "cost": 1
+        },{% endfor%}{% endif %}{% if to_parse_interface[interface].port_speed is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Port Speed: {{ to_parse_interface[interface].port_speed }}",
+            "cost": 1
+        },{% endif %}{% if to_parse_interface[interface].duplex_mode is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Duplex: {{ to_parse_interface[interface].duplex_mode }}",
+            "cost": 1
+        },{% endif %}{% if to_parse_interface[interface].bandwidth is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Bandwidth: {{ to_parse_interface[interface].bandwidth }}",
+            "cost": 1
+        },{% endif %}{% if to_parse_interface[interface].delay is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Delay: {{ to_parse_interface[interface].delay }}",
+            "cost": 1
+        },{% endif %}{% if to_parse_interface[interface].media_type is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Media Type: {{ to_parse_interface[interface].media_type }}",
+            "cost": 1
+        },{% endif %}{% if to_parse_interface[interface].ethertype is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Ether Type: {{ to_parse_interface[interface].ethertype }}",
+            "cost": 1            
+        },{% endif %}{% if to_parse_interface[interface].medium is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Medium: {{ to_parse_interface[interface].medium }}",
+            "cost": 1
+        },{% endif %}{% if to_parse_interface[interface].mtu is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "MTU: {{ to_parse_interface[interface].mtu }}",
+            "cost": 1
+        },{% endif %}{% if to_parse_interface[interface].port_mode is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Port Mode: {{ to_parse_interface[interface].port_mode }}",
+            "cost": 1            
+        },{% endif %}{% if to_parse_interface[interface].types is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Type: {{ to_parse_interface[interface].types }}",
+            "cost": 1
+        },{% endif %}{% if (to_parse_interface[interface].port_channel) and (to_parse_interface[interface].port_channel.port_channel_int) is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Port Channel: {{ to_parse_interface[interface].port_channel.port_channel_int }}",
+            "cost": 1
+        },{% else %}{% if (to_parse_interface[interface].port_channel) and (to_parse_interface[interface].port_channel.port_channel_member_intfs) is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Port Channel: {{ interface }}",
+            "cost": 1
+        },{% endif %}{% endif %}{% if (to_parse_interface[interface].port_channel) and (to_parse_interface[interface].port_channel.port_channel_member) is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Port Channel Member: {{ to_parse_interface[interface].port_channel.port_channel_member }}",
+            "cost": 1
+        },{% else %}{% if (to_parse_interface[interface].port_channel) and (to_parse_interface[interface].port_channel.port_channel_member_intfs) is defined %}{% for member in to_parse_interface[interface].port_channel.port_channel_member_intfs %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Port Channel Member: {{ member }}",
+            "cost": 1
+        },{% endfor %}{% endif %}{% endif %}{% if to_parse_interface[interface].last_link_flapped is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Last Flap: {{ to_parse_interface[interface].last_link_flapped }}",
+            "cost": 1
+        },{% endif %}{% if to_parse_interface[interface].interface_reset is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "Last Reset: {{ to_parse_interface[interface].interface_reset }}",
+            "cost": 1
+        },{% endif %}{% if to_parse_interface[interface].rxload is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "RX: {{ to_parse_interface[interface].rxload }}",
+            "cost": 1
+        },{% endif %}{% if to_parse_interface[interface].txload is defined %}
+        { 
+            "source": "{{ interface }}",
+            "target": "TX: {{ to_parse_interface[interface].txload }}",
+            "cost": 1            
+        },{% endif %}
+        {
+            "source": "{{ device_alias }}",
+            "target": "{{ interface }}",
+            "cost": 1{% if interface_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}
+    ]
+}

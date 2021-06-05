@@ -1,0 +1,112 @@
+{
+    "type": "NetworkGraph",
+    "label": "Learn STP Rapid PVST+",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for id in to_parse_stp %}{% set id_loop = loop %}{% for vlan in to_parse_stp[id].vlans %}{% set vlan_loop = loop %}{% for interface in to_parse_stp[id].vlans[vlan].interfaces %}{% set interface_loop = loop %}
+        { 
+            "id": "VLAN: {{ vlan }}"
+        },
+        { 
+            "id": "Bridge Address: {{ to_parse_stp[id].vlans[vlan].bridge_address }}"
+        },
+        { 
+            "id": "Bridge Priority: {{ to_parse_stp[id].vlans[vlan].bridge_priority }}"
+        },
+        { 
+            "id": "Designated Root: {{ to_parse_stp[id].vlans[vlan].designated_root_address }}"
+        },
+        { 
+            "id": "Designated Root Priority: {{ to_parse_stp[id].vlans[vlan].designated_root_priority }}"
+        },
+        { 
+            "id": "Last Topology Change: {{ to_parse_stp[id].vlans[vlan].time_since_topology_change }}"
+        },
+        { 
+            "id": "Topology Changes: {{ to_parse_stp[id].vlans[vlan].topology_changes }}"
+        },
+        { 
+            "id": "{{ interface }}"
+        },
+        { 
+            "id": "Designated Bridge: {{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_bridge_address | default("N/A") }}"
+        },
+        { 
+            "id": "Bridge Priority: {{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_bridge_priority | default("N/A") }}"
+        },
+        { 
+            "id": "Port State: {{ to_parse_stp[id].vlans[vlan].interfaces[interface].port_state }}"
+        },
+        { 
+            "id": "Role: {{ to_parse_stp[id].vlans[vlan].interfaces[interface].role }}"{% if (id_loop.last) and (vlan_loop.last) and (interface_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}{% endfor %}
+    ],
+    "links": [{% for id in to_parse_stp %}{% set id_loop = loop %}{% for vlan in to_parse_stp[id].vlans %}{% set vlan_loop = loop %}{% for interface in to_parse_stp[id].vlans[vlan].interfaces %}{% set interface_loop = loop %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "VLAN: {{ vlan }}",
+            "cost": 1
+        },
+        { 
+            "source": "VLAN: {{ vlan }}",
+            "target": "Bridge Address: {{ to_parse_stp[id].vlans[vlan].bridge_address }}",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: {{ vlan }}",
+            "target": "Bridge Priority: {{ to_parse_stp[id].vlans[vlan].bridge_priority }}",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: {{ vlan }}",
+            "target": "Designated Root: {{ to_parse_stp[id].vlans[vlan].designated_root_address }}",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: {{ vlan }}",
+            "target": "Designated Root Priority: {{ to_parse_stp[id].vlans[vlan].designated_root_priority }}",
+            "cost": 2
+        },
+        { 
+            "source": "VLAN: {{ vlan }}",
+            "target": "Last Topology Change: {{ to_parse_stp[id].vlans[vlan].time_since_topology_change }}",
+            "cost": 2
+        },
+        { 
+            "source": "Last Topology Change: {{ to_parse_stp[id].vlans[vlan].time_since_topology_change }}",
+            "target": "Topology Changes: {{ to_parse_stp[id].vlans[vlan].topology_changes }}",
+            "cost": 1
+        },
+        { 
+            "source": "VLAN: {{ vlan }}",
+            "target": "{{ interface }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Designated Bridge: {{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_bridge_address | default("N/A") }}",
+            "cost": 2
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Bridge Priority: {{ to_parse_stp[id].vlans[vlan].interfaces[interface].designated_bridge_priority | default("N/A") }}",
+            "cost": 2            
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Port State: {{ to_parse_stp[id].vlans[vlan].interfaces[interface].port_state }}",
+            "cost": 2
+        },
+        { 
+            "source": "{{ interface }}",
+            "target": "Role: {{ to_parse_stp[id].vlans[vlan].interfaces[interface].role }}",
+            "cost": 2{% if (id_loop.last) and (vlan_loop.last) and (interface_loop.last) %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}{% endfor %}
+    ]
+}

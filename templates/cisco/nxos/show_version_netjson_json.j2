@@ -8,41 +8,68 @@
         { 
             "id": "{{ device_alias }}"
         },
-        {
+        { 
             "id": "Bootflash: {{ to_parse_version.hardware.bootflash }}"
         },
-        {
+        { 
             "id": "Chassis: {{ to_parse_version.hardware.chassis }}"
         },
-        {
+        { 
             "id": "CPU: {{ to_parse_version.hardware.cpu }}"
         },
-        {
+        { 
             "id": "Device Name: {{ to_parse_version.hardware.device_name }}"
         },
-        {
+        { 
             "id": "Memory: {{ to_parse_version.hardware.memory }}"
         },
-        {
-            "id": "Processor ID: {{ to_parse_version.hardware.processor_board_id }}"
+        { 
+            "id": "Model: {{ to_parse_version.hardware.model }}"
         },
-        {
+        { 
+            "id": "Processor Board ID: {{ to_parse_version.hardware.processor_board_id }}"
+        },
+        { 
             "id": "RP: {{ to_parse_version.hardware.rp }}"
         },
-        {
+        { 
             "id": "Slots: {{ to_parse_version.hardware.slots }}"
         },
-        {
+        { 
+            "id": "Kernel Uptime: {{ to_parse_version.kernel_uptime.days }} {{ to_parse_version.kernel_uptime.hours }} {{ to_parse_version.kernel_uptime.minutes }} {{ to_parse_version.kernel_uptime.seconds }}"
+        },
+        { 
+            "id": "Name: {{ to_parse_version.name }}"
+        },                                              
+        { 
+            "id": "OS: {{ to_parse_version.os }}"
+        },
+        { 
             "id": "Last Reload Reason: {{ to_parse_version.reason }}"
         },
-        {
-            "id": "Compile Time: {{ to_parse_version.software.system_compile_time }}"
+        { 
+            "id": "BIOS Compile Time: {{ to_parse_version.software.bios_compile_time }}"
         },
-        {
-            "id": "Image: {{ to_parse_version.software.system_image_file }}"
+        { 
+            "id": "BIOS Version: {{ to_parse_version.software.bios_version }}"
         },
-        {
-            "id": "Version: {{ to_parse_version.software.system_version }}"
+        { 
+            "id": "Kickstart Compile Time: {{ to_parse_version.software.kickstart_compile_time }}"
+        },
+        { 
+            "id": "Kickstart Image File: {{ to_parse_version.software.kickstart_image_file }}"
+        },
+        { 
+            "id": "Kickstart Version: {{ to_parse_version.software.kickstart_version }}"
+        },
+        { 
+            "id": "System Compile Time: {{ to_parse_version.software.system_compile_time }}"
+        },
+        { 
+            "id": "System Image: {{ to_parse_version.software.system_image_file }}"
+        },
+        { 
+            "id": "System Version: {{ to_parse_version.software.system_version }}"
         }
     ],
     "links": [
@@ -51,55 +78,105 @@
             "target": "Bootflash: {{ to_parse_version.hardware.bootflash }}",
             "cost": 1
         },
-        {
+        { 
             "source": "{{ device_alias }}",
             "target": "Chassis: {{ to_parse_version.hardware.chassis }}",
             "cost": 1
         },
-        {
+        { 
             "source": "{{ device_alias }}",
             "target": "CPU: {{ to_parse_version.hardware.cpu }}",
             "cost": 1
         },
-        {
+        { 
             "source": "{{ device_alias }}",
             "target": "Device Name: {{ to_parse_version.hardware.device_name }}",
             "cost": 1
         },
-        {
+        { 
             "source": "{{ device_alias }}",
             "target": "Memory: {{ to_parse_version.hardware.memory }}",
             "cost": 1
         },
-        {
+        { 
             "source": "{{ device_alias }}",
-            "target": "Processor ID: {{ to_parse_version.hardware.processor_board_id }}",
+            "target": "Model: {{ to_parse_version.hardware.model }}",
             "cost": 1
         },
-        {
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Processor Board ID: {{ to_parse_version.hardware.processor_board_id }}",
+            "cost": 1
+        },
+        { 
             "source": "{{ device_alias }}",
             "target": "RP: {{ to_parse_version.hardware.rp }}",
             "cost": 1
         },
-        {
+        { 
             "source": "{{ device_alias }}",
             "target": "Slots: {{ to_parse_version.hardware.slots }}",
             "cost": 1
         },
-        {
+        { 
             "source": "{{ device_alias }}",
-            "target": "Image: {{ to_parse_version.software.system_image_file }}",
-            "cost": 1
-        },         
-        {
-            "source": "Image: {{ to_parse_version.software.system_image_file }}",
-            "target": "Compile Time: {{ to_parse_version.software.system_compile_time }}",
+            "target": "Kernel Uptime: {{ to_parse_version.kernel_uptime.days }} {{ to_parse_version.kernel_uptime.hours }} {{ to_parse_version.kernel_uptime.minutes }} {{ to_parse_version.kernel_uptime.seconds }}",
             "cost": 1
         },
-        {
-            "source": "Image: {{ to_parse_version.software.system_image_file }}",
-            "target": "Version: {{ to_parse_version.software.system_version }}",
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Name: {{ to_parse_version.name }}",
             "cost": 1
+        },                                              
+        { 
+            "source": "{{ device_alias }}",
+            "target": "OS: {{ to_parse_version.os }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Last Reload Reason: {{ to_parse_version.reason }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "BIOS Compile Time: {{ to_parse_version.software.bios_compile_time }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "BIOS Version: {{ to_parse_version.software.bios_version }}",
+            "cost": 1            
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Kickstart Compile Time: {{ to_parse_version.software.kickstart_compile_time }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Kickstart Image File: {{ to_parse_version.software.kickstart_image_file }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Kickstart Version: {{ to_parse_version.software.kickstart_version }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "System Compile Time: {{ to_parse_version.software.system_compile_time }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "System Image: {{ to_parse_version.software.system_image_file }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "System Version: {{ to_parse_version.software.system_version }}",
+            "cost": 1            
         }        
     ]
 }

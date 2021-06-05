@@ -1,0 +1,54 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show CDP Neighbor NETJSON Netgraph",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for temp in to_parse_environment.temperature %}
+        { 
+            "id": "Voltage: {{ to_parse_environment.power.voltage }}"
+        },    
+        { 
+            "id": "Current Celsius Temp: {{ to_parse_environment.temperature[temp].Control.current_temp_celsius }}"
+        },    
+        { 
+            "id": "Major Celsius: {{ to_parse_environment.temperature[temp].Control.major_threshold_celsius }}"
+        },
+        { 
+            "id": "Minor Celsius: {{ to_parse_environment.temperature[temp].Control.minor_threshold_celsius }}"
+        },
+        { 
+            "id": "Status: {{ to_parse_environment.temperature[temp].Control.status }}"
+        }{% endfor %}
+    ],
+    "links": [
+        {
+            "source": "{{ device_alias }}",
+            "target": "Voltage: {{ to_parse_environment.power.voltage }}",
+            "cost": 1
+        },{% for temp in to_parse_environment.temperature %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Current Celsius Temp: {{ to_parse_environment.temperature[temp].Control.current_temp_celsius }}",
+            "cost": 1
+        },    
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Major Celsius: {{ to_parse_environment.temperature[temp].Control.major_threshold_celsius }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Minor Celsius: {{ to_parse_environment.temperature[temp].Control.minor_threshold_celsius }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Status: {{ to_parse_environment.temperature[temp].Control.status }}",
+            "cost": 1            
+        }{% endfor %}
+    ]
+}

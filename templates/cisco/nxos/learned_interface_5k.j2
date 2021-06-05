@@ -1,0 +1,31 @@
+{% if filetype_loop_jinja2 == "csv" %}Interface,Access VLAN,Native VLAN,Switchport,Switchport Mode,Trunk VLANs{% for interface in to_parse_interface %}
+{{ interface }},{{ to_parse_interface[interface].access_vlan | default("N/A") }},{{ to_parse_interface[interface].native_vlan | default("N/A") }},{{ to_parse_interface[interface].switchport_enable | default("N/A") }},{{ to_parse_interface[interface].switchport_mode | default("N/A") }},{{ to_parse_interface[interface].trunk_vlans | replace(","," ") | default("N/A") }}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
+# Learn Interface
+| Interface | Access VLAN | Native VLAN | Switchport | Switchport Mode | Trunk VLANs |
+| --------- | ----------- | ----------- | ---------- | --------------- | ----------- |{% for interface in to_parse_interface %}
+| {{ interface }} | {{ to_parse_interface[interface].access_vlan | default("N/A") }} | {{ to_parse_interface[interface].native_vlan | default("N/A") }} | {{ to_parse_interface[interface].switchport_enable | default("N/A") }} | {{ to_parse_interface[interface].switchport_mode | default("N/A") }} | {{ to_parse_interface[interface].trunk_vlans | default("N/A") }} |{% endfor %}{% else %}
+<html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
+<h1>Learn Interface</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Interface</th>
+    <th>Access VLAN</th>
+    <th>Native VLAN</th>
+    <th>Switchport</th>
+    <th>Switchport Mode</th>
+    <th>Trunk VLANs</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>{% for interface in to_parse_interface %}
+    <td>{{ interface }}</td>
+    <td>{{ to_parse_interface[interface].access_vlan | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].native_vlan | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].switchport_enable | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].switchport_mode | default("N/A") }}</td>
+    <td>{{ to_parse_interface[interface].trunk_vlans | default("N/A") }}</td>
+  </tr>{% endfor %}
+  </tbody>  
+</table>
+</body></html>{% endif %}{% endif %}

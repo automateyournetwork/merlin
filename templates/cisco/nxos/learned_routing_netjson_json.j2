@@ -1,6 +1,6 @@
 {
     "type": "NetworkGraph",
-    "label": "Show Routing",
+    "label": "Learn Routing",
     "protocol": "OLSR",
     "version": "0.6.6.2",
     "metric": "ETX",
@@ -28,10 +28,7 @@
         },
         { 
             "id": "Source Protocol: {{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol }}"
-        },        
-        { 
-            "id": "Code: {{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol_codes }}"
-        },        
+        },              
         { 
             "id": "Hop: {{ next_hop }}"
         },
@@ -55,10 +52,7 @@
             "id": "Outgoing Interface: {{ outgoing_interface }}"
         },
         { 
-            "id": "Source Protocol: {{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol }}"
-        },
-        { 
-            "id": "Code: {{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol_codes }}"{% if (vrf_loop.last) and (address_family_loop.last) and (route_loop.last) and (outgoing_loop.last) %}
+            "id": "Source Protocol: {{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol }}"{% if (vrf_loop.last) and (address_family_loop.last) and (route_loop.last) and (outgoing_loop.last) %}
         }{% else %}
         },{% endif %}{% endfor %}{% endif %}{% endfor %}{% endfor %}{% endfor %}
     ],
@@ -97,12 +91,7 @@
             "source": "Route: {{ route }}",
             "target": "Source Protocol: {{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol }}",
             "cost": 2
-        },          
-        { 
-            "source": "Route: {{ route }}",
-            "target": "Code: {{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol_codes }}",
-            "cost": 2
-        },        
+        },                 
         { 
             "source": "Route: {{ route }}",
             "target": "Hop: {{ next_hop }}",
@@ -142,11 +131,6 @@
         { 
             "source": "Route: {{ route }}",
             "target": "Source Protocol: {{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol }}",
-            "cost": 2
-        },          
-        { 
-            "source": "Route: {{ route }}",
-            "target": "Code: {{ to_parse_routing[vrf].address_family[address_family].routes[route].source_protocol_codes }}",
             "cost": 2{% if (vrf_loop.last) and (address_family_loop.last) and (route_loop.last) and (outgoing_loop.last) %}           
         }{% else %}
         },{% endif %}{% endfor %}{% endif %}{% endfor %}{% endfor %}{% endfor %}   

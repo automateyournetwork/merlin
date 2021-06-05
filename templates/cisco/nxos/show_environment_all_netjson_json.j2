@@ -1,0 +1,224 @@
+{
+    "type": "NetworkGraph",
+    "label": "Show CDP Neighbor NETJSON Netgraph",
+    "protocol": "OLSR",
+    "version": "0.6.6.2",
+    "metric": "ETX",
+    "nodes": [
+        { 
+            "id": "{{ device_alias }}"
+        },{% for fan in to_parse_environment.fans %}{% if (fan != "fan_air_filter") and (fan != "fan_zone_speed") %}
+        { 
+            "id": "Fan: {{ fan }}"
+        },
+        { 
+            "id": "Direction: {{ to_parse_environment.fans[fan].direction }}"
+        },{% if to_parse_environment.fans[fan].model is defined %}
+        { 
+            "id": "Model: {{ to_parse_environment.fans[fan].model }}"
+        },{% endif %}
+        { 
+            "id": "Status: {{ to_parse_environment.fans[fan].status }}"
+        },
+        { 
+            "id": "Air Filter: {{ to_parse_environment.fans.fan_air_filter }}"
+        },
+        { 
+            "id": "Zone Speed: {{ to_parse_environment.fans.fan_zone_speed }}"
+        },{% endif %}{% endfor %}{% for power_supply in to_parse_environment.power.power_supply %}
+        {       
+            "id": "Power Supply: {{ power_supply }}"
+        },
+        {       
+            "id": "Input: {{ to_parse_environment.power.power_supply[power_supply].actual_input_watts }}"
+        },
+        {       
+            "id": "Output: {{ to_parse_environment.power.power_supply[power_supply].actual_output_watts }}"
+        },
+        {       
+            "id": "Model: {{ to_parse_environment.power.power_supply[power_supply].model }}"
+        },    
+        {       
+            "id": "Status: {{ to_parse_environment.power.power_supply[power_supply].status }}"
+        },
+        {       
+            "id": "Total Capacity: {{ to_parse_environment.power.power_supply[power_supply].total_capacity_watts }}"
+        },
+        {       
+            "id": "Voltage: {{ to_parse_environment.power.voltage }}"
+        },
+        {       
+            "id": "Config Mode: {{ to_parse_environment.power.power_supply_mode.config_mode }}"
+        },
+        {       
+            "id": "Oper Mode: {{ to_parse_environment.power.power_supply_mode.oper_mode }}"
+        },
+        {       
+            "id": "Total Grid A: {{ to_parse_environment.power.power_usage_summary.total_grid_a_power_watts }}"
+        },
+        {       
+            "id": "Total Grid B: {{ to_parse_environment.power.power_usage_summary.total_grid_b_power_watts }}"
+        },
+        {       
+            "id": "Total Capacity: {{ to_parse_environment.power.power_usage_summary.total_power_capacity_watts }}"
+        },
+        {       
+            "id": "Total Cumulative: {{ to_parse_environment.power.power_usage_summary.total_power_cumulative_watts }}"
+        },
+        {       
+            "id": "Total Input: {{ to_parse_environment.power.power_usage_summary.total_power_input_watts }}"
+        },
+        {       
+            "id": "Total Output: {{ to_parse_environment.power.power_usage_summary.total_power_output_watts }}"
+        },{% endfor %}{% for temp_number in to_parse_environment.temperature %}{% for area in to_parse_environment.temperature[temp_number] %}{% set temp_loop = loop %}
+        {       
+            "id": "Area: {{ area }}"
+        },
+        {       
+            "id": "Current Temp: {{ to_parse_environment.temperature[temp_number][area].current_temp_celsius }}"
+        },
+        {       
+            "id": "Major Threshold: {{ to_parse_environment.temperature[temp_number][area].major_threshold_celsius }}"
+        },
+        {       
+            "id": "Minor Threshold: {{ to_parse_environment.temperature[temp_number][area].minor_threshold_celsius }}"
+        },
+        {       
+            "id": "Status: {{ to_parse_environment.temperature[temp_number][area].status }}"{% if temp_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}
+    ],
+    "links": [{% for fan in to_parse_environment.fans %}{% if (fan != "fan_air_filter") and (fan != "fan_zone_speed") %}
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Fan: {{ fan }}",
+            "cost": 1
+        },
+        { 
+            "source": "Fan: {{ fan }}",
+            "target": "Direction: {{ to_parse_environment.fans[fan].direction }}",
+            "cost": 1
+        },{% if to_parse_environment.fans[fan].model is defined %}
+        { 
+            "source": "Fan: {{ fan }}",
+            "target": "Model: {{ to_parse_environment.fans[fan].model }}",
+            "cost": 1
+        },{% endif %}
+        { 
+            "source": "Fan: {{ fan }}",
+            "target": "Status: {{ to_parse_environment.fans[fan].status }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Air Filter: {{ to_parse_environment.fans.fan_air_filter }}",
+            "cost": 1
+        },
+        { 
+            "source": "{{ device_alias }}",
+            "target": "Zone Speed: {{ to_parse_environment.fans.fan_zone_speed }}",
+            "cost": 1            
+        },{% endif %}{% endfor %}{% for power_supply in to_parse_environment.power.power_supply %}
+        {  
+            "source": "{{ device_alias }}",
+            "target": "Power Supply: {{ power_supply }}",
+            "cost": 1
+        },
+        {       
+            "source": "Power Supply: {{ power_supply }}",
+            "target": "Input: {{ to_parse_environment.power.power_supply[power_supply].actual_input_watts }}",
+            "cost": 1
+        },
+        {       
+            "source": "Power Supply: {{ power_supply }}",
+            "target": "Output: {{ to_parse_environment.power.power_supply[power_supply].actual_output_watts }}",
+            "cost": 1
+        },
+        {       
+            "source": "Power Supply: {{ power_supply }}",
+            "target": "Model: {{ to_parse_environment.power.power_supply[power_supply].model }}",
+            "cost": 1
+        },    
+        {       
+            "source": "Power Supply: {{ power_supply }}",
+            "target": "Status: {{ to_parse_environment.power.power_supply[power_supply].status }}",
+            "cost": 1            
+        },
+        {       
+            "source": "{{ device_alias }}",
+            "target": "Total Capacity: {{ to_parse_environment.power.power_supply[power_supply].total_capacity_watts }}",
+            "cost": 1
+        },
+        {       
+            "source": "{{ device_alias }}",
+            "target": "Voltage: {{ to_parse_environment.power.voltage }}",
+            "cost": 1            
+        },
+        {       
+            "source": "{{ device_alias }}",
+            "target": "Config Mode: {{ to_parse_environment.power.power_supply_mode.config_mode }}",
+            "cost": 1            
+        },
+        {       
+            "source": "{{ device_alias }}",
+            "target": "Oper Mode: {{ to_parse_environment.power.power_supply_mode.oper_mode }}",
+            "cost": 1
+        },
+        {       
+            "source": "{{ device_alias }}",
+            "target": "Total Grid A: {{ to_parse_environment.power.power_usage_summary.total_grid_a_power_watts }}",
+            "cost": 1
+        },
+        {       
+            "source": "{{ device_alias }}",
+            "target": "Total Grid B: {{ to_parse_environment.power.power_usage_summary.total_grid_b_power_watts }}",
+            "cost": 1
+        },
+        {       
+            "source": "{{ device_alias }}",
+            "target": "Total Capacity: {{ to_parse_environment.power.power_usage_summary.total_power_capacity_watts }}",
+            "cost": 1
+        },
+        {       
+            "source": "{{ device_alias }}",
+            "target": "Total Cumulative: {{ to_parse_environment.power.power_usage_summary.total_power_cumulative_watts }}",
+            "cost": 1
+        },
+        {       
+            "source": "{{ device_alias }}",
+            "target": "Total Input: {{ to_parse_environment.power.power_usage_summary.total_power_input_watts }}",
+            "cost": 1
+        },
+        {       
+            "source": "{{ device_alias }}",
+            "target": "Total Output: {{ to_parse_environment.power.power_usage_summary.total_power_output_watts }}",
+            "cost": 1            
+        },{% endfor %}{% for temp_number in to_parse_environment.temperature %}{% for area in to_parse_environment.temperature[temp_number] %}{% set temp_loop = loop %}
+        {  
+            "source": "{{ device_alias }}",
+            "target": "Area: {{ area }}",
+            "cost": 1
+        },
+        {       
+            "source": "Area: {{ area }}",
+            "target": "Current Temp: {{ to_parse_environment.temperature[temp_number][area].current_temp_celsius }}",
+            "cost": 1
+        },
+        {       
+            "source": "Area: {{ area }}",
+            "target": "Major Threshold: {{ to_parse_environment.temperature[temp_number][area].major_threshold_celsius }}",
+            "cost": 1
+        },
+        {       
+            "source": "Area: {{ area }}",
+            "target": "Minor Threshold: {{ to_parse_environment.temperature[temp_number][area].minor_threshold_celsius }}",
+            "cost": 1
+        },
+        {       
+            "source": "Area: {{ area }}",
+            "target": "Status: {{ to_parse_environment.temperature[temp_number][area].status }}",
+            "cost": 1{% if temp_loop.last %}
+        }{% else %}
+        },{% endif %}{% endfor %}{% endfor %}
+    ]
+}

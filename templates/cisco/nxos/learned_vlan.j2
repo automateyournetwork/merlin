@@ -3,7 +3,7 @@
 {{ vlan }},{{ to_parse_vlan[vlan].name }},{{ to_parse_vlan[vlan].state }},{{ to_parse_vlan[vlan].shutdown }},N/A{% endif %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
 # Learn VLAN
 | VLAN | Name | State | Shutdown | Interface |
-| |{% for vlan in to_parse_vlan %}{% if to_parse_vlan[vlan].interfaces is defined %}{% for interface in to_parse_vlan[vlan].interfaces %}
+| ---- | ---- | ----- | -------- | --------- |{% for vlan in to_parse_vlan %}{% if to_parse_vlan[vlan].interfaces is defined %}{% for interface in to_parse_vlan[vlan].interfaces %}
 | {{ vlan }} | {{ to_parse_vlan[vlan].name }} | {{ to_parse_vlan[vlan].state }} | {{ to_parse_vlan[vlan].shutdown }} | {{ interface }} |{% endfor %}{% else %}
 | {{ vlan }} | {{ to_parse_vlan[vlan].name }} | {{ to_parse_vlan[vlan].state }} | {{ to_parse_vlan[vlan].shutdown }} | N/A |{% endif %}{% endfor %}{% else %}
 <html><head><link rel="stylesheet" href="../../../styles.css"></head><body>
