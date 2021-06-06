@@ -8,24 +8,63 @@
         {
             "id": "DevNet_Sandbox_Nexus9k"
         },
-        { 
+        {
+            "id": "Local AS: 65535"
+        },
+        {
+            "id": "Total Established Peers: 0"
+        },
+        {
+            "id": "Total Peers: 1"
+        },
+        {
+            "id": "VRF: default"
+        },
+        {
             "id": "Router ID: 172.16.0.1"
         },
-        
         {
-            "id": "Neighbor: 172.16.0.2"
+            "id": "VRF Established Peers: 0"
+        },
+        {
+            "id": "VRF Peers: 1"
         }
     ],
     "links": [
         {
             "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Local AS: 65535",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Total Established Peers: 0",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Total Peers: 1",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VRF: default",
+            "cost": 1
+        },
+        {
+            "source": "VRF: default",
             "target": "Router ID: 172.16.0.1",
             "cost": 1
         },
         {
-            "source": "Router ID: 172.16.0.1",
-            "target": "Neighbor: 172.16.0.2",
+            "source": "VRF: default",
+            "target": "VRF Established Peers: 0",
             "cost": 1
-        }
+        },
+        {
+            "source": "VRF: default",
+            "target": "VRF Peers: 1",
+            "cost": 1
+        }        
     ]
 }

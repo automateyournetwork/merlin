@@ -3,7 +3,7 @@
         "vlans": {
             "-": {
                 "mac_addresses": {
-                    "00bf.6a67.1b08": {
+                    "00bf.aee0.1b08": {
                         "entry": "G",
                         "interfaces": {
                             "Sup-eth1(R)": {
@@ -12,7 +12,7 @@
                                 "mac_type": "static"
                             }
                         },
-                        "mac_address": "00bf.6a67.1b08",
+                        "mac_address": "00bf.aee0.1b08",
                         "ntfy": "F",
                         "secure": "F"
                     }

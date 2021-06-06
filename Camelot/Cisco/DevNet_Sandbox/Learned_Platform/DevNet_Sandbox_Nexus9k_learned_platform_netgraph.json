@@ -18,7 +18,7 @@
             "id": "Serial Number: 91OMZP37WBR"
         },
         { 
-            "id": "Uptime: 3791"
+            "id": "Uptime: 26575"
         },
         { 
             "id": "Directory: bootflash:"
@@ -36,41 +36,13 @@
             "id": "Image: bootflash:///nxos.9.3.5.bin"
         },
         { 
-            "id": "Memory: 7939724 kB"
+            "id": "Memory: 7939720 kB"
         },    
         { 
             "id": "OS: NX-OS"
         },    
         { 
             "id": "Version: 9.3(5)"
-        },
-        { 
-            "id": "Sub_Slot Name: N9K-vSUP"
-        },
-        { 
-            "id": "Sub_Slot Serial Number: 9FJTZNHQ62X"
-        },
-        { 
-            "id": "Sub_Slot State: active"
-        },
-        { 
-            "id": "Redundancy State: active"
-        },
-        { 
-            "id": "Boot Image: bootflash:/nxos.9.3.5.bin"
-        },
-        { 
-            "id": "Uptime: 3791"
-        },
-        { 
-            "id": "Sub_Slot Name: Nexus 9000v 64 port Ethernet Module"
-        },
-        { 
-            "id": "Sub_Slot Serial Number: 9OW8JB5XF53"
-        },
-        { 
-            "id": "Sub_Slot State: ok"
-        },
         { 
             "id": "Virtual Device Name: sbx-n9kv"
         },
@@ -1030,7 +1002,35 @@
         },    
         { 
             "id": "Interface Status: OK"
-        }              
+        },            
+        },
+        { 
+            "id": "Redundancy State: active"
+        },
+        { 
+            "id": "Boot Image: bootflash:/nxos.9.3.5.bin"
+        },
+        { 
+            "id": "Uptime: 26575"
+        },
+        { 
+            "id": "Sub_Slot Name: N9K-vSUP"
+        },
+        { 
+            "id": "Sub_Slot Serial Number: 9FJTZNHQ62X"
+        },
+        { 
+            "id": "Sub_Slot State: active"
+        },
+        { 
+            "id": "Sub_Slot Name: Nexus 9000v 64 port Ethernet Module"
+        },
+        { 
+            "id": "Sub_Slot Serial Number: 9OW8JB5XF53"
+        },
+        { 
+            "id": "Sub_Slot State: ok"
+        }        
     ],
     "links": [
         {
@@ -1050,7 +1050,7 @@
         },
         {
             "source": "DevNet_Sandbox_Nexus9k",
-            "target": "Uptime: 3791",
+            "target": "Uptime: 26575",
             "cost": 1
         },
         { 
@@ -1080,7 +1080,7 @@
         },
         { 
             "source": "DevNet_Sandbox_Nexus9k",
-            "target": "Memory: 7939724 kB",
+            "target": "Memory: 7939720 kB",
             "cost": 1            
         },    
         { 
@@ -1091,53 +1091,7 @@
         { 
             "source": "Image: bootflash:///nxos.9.3.5.bin",
             "target": "Version: 9.3(5)",
-            "cost": 1                        
-        },
-        { 
-            "source": "DevNet_Sandbox_Nexus9k",
-            "target": "Sub_Slot Name: N9K-vSUP",
-            "cost": 1            
-        },
-        { 
-            "source": "Sub_Slot Name: N9K-vSUP",
-            "target": "Sub_Slot Serial Number: 9FJTZNHQ62X",
-            "cost": 1                        
-        },
-        { 
-            "source": "Sub_Slot Name: N9K-vSUP",
-            "target": "Sub_Slot State: active",
-            "cost": 1              
-        },
-        { 
-            "source": "Sub_Slot Name: N9K-vSUP",
-            "target": "Redundancy State: active",
-            "cost": 1                          
-        },
-        { 
-            "source": "Sub_Slot Name: N9K-vSUP",
-            "target": "Boot Image: bootflash:/nxos.9.3.5.bin",
             "cost": 1
-        },
-        { 
-            "source": "Sub_Slot Name: N9K-vSUP",
-            "target": "Uptime: 3791",
-            "cost": 1            
-        },
-        { 
-            "source": "DevNet_Sandbox_Nexus9k",
-            "target": "Sub_Slot Name: Nexus 9000v 64 port Ethernet Module",
-            "cost": 1            
-        },
-        { 
-            "source": "Sub_Slot Name: Nexus 9000v 64 port Ethernet Module",
-            "target": "Sub_Slot Serial Number: 9OW8JB5XF53",
-            "cost": 1                        
-        },
-        { 
-            "source": "Sub_Slot Name: Nexus 9000v 64 port Ethernet Module",
-            "target": "Sub_Slot State: ok",
-            "cost": 1              
-        },
         { 
             "source": "DevNet_Sandbox_Nexus9k",
             "target": "Virtual Device Name: sbx-n9kv",
@@ -2737,6 +2691,52 @@
             "source": "Eth1/1",
             "target": "Interface Status: OK",
             "cost": 1
-        }                          
+        },                                                  
+        },
+        { 
+            "source": "Sub_Slot Name: N9K-vSUP",
+            "target": "Redundancy State: active",
+            "cost": 1                          
+        },
+        { 
+            "source": "Sub_Slot Name: N9K-vSUP",
+            "target": "Boot Image: bootflash:/nxos.9.3.5.bin",
+            "cost": 1
+        },
+        { 
+            "source": "Sub_Slot Name: N9K-vSUP",
+            "target": "Uptime: 26575",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Sub_Slot Name: N9K-vSUP",
+            "cost": 1            
+        },
+        { 
+            "source": "Sub_Slot Name: N9K-vSUP",
+            "target": "Sub_Slot Serial Number: 9FJTZNHQ62X",
+            "cost": 1                        
+        },
+        { 
+            "source": "Sub_Slot Name: N9K-vSUP",
+            "target": "Sub_Slot State: active",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Sub_Slot Name: Nexus 9000v 64 port Ethernet Module",
+            "cost": 1            
+        },
+        { 
+            "source": "Sub_Slot Name: Nexus 9000v 64 port Ethernet Module",
+            "target": "Sub_Slot Serial Number: 9OW8JB5XF53",
+            "cost": 1                        
+        },
+        { 
+            "source": "Sub_Slot Name: Nexus 9000v 64 port Ethernet Module",
+            "target": "Sub_Slot State: ok",
+            "cost": 1              
+        }
     ]
 }

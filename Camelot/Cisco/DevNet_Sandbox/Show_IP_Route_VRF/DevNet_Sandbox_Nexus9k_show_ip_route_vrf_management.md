@@ -1,7 +1,7 @@
 
-# Show IP Route (Global Routing Table)
-| VRF | Address Family | Route | Active | Metric | Route Preference | Source Protocol | Source Protocol Code | Next Hop Number | Next Hop | Outgoing Interface | Updated |
-| --- | -------------- | ----- | ------ | ------ | ---------------- | --------------- | -------------------- | --------------- | -------- | ------------------ | ------- |
-| management | ipv4 | 0.0.0.0/0 | True | 0 | 1 | static |  | 1 | 10.10.20.254 |  | 01:03:35 |
-| management | ipv4 | 10.10.20.0/24 | True | 0 | 0 | direct |  | 1 | 10.10.20.58 | mgmt0 | 01:03:35 |
-| management | ipv4 | 10.10.20.58/32 | True | 0 | 0 | local |  | 1 | 10.10.20.58 | mgmt0 | 01:03:35 |
+# Show IP Route
+| VRF | Address Family | Route | Active | Metric | Route Preference | Source Protocol | M Best | U Best | Next Hop Index | Next Hop | Best Unicast Nexthop | Metric | Route Preference | Source Protocol | Updated |
+| --- | -------------- | ----- | ------ | ------ | ---------------- | --------------- | ------ | ------ | -------------- | -------- | -------------------- | ------ | ---------------- | --------------- | ------- |
+| management | ipv4 | 0.0.0.0/0 | True | 0 | 1 | static | 0 | 1 | 1 | 10.10.20.254 | True | 0 | 1 | static | 07:23:23 |
+| management | ipv4 | 10.10.20.0/24 | True | 0 | 0 | direct | 0 | 1 | 1 | 10.10.20.58 | True | 0 | 0 | direct | 07:23:23 |
+| management | ipv4 | 10.10.20.58/32 | True | 0 | 0 | local | 0 | 1 | 1 | 10.10.20.58 | True | 0 | 0 | local | 07:23:23 |

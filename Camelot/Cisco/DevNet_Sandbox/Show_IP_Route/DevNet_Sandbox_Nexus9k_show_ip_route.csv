@@ -1,9 +1,8 @@
-
-VRF,Address Family,Route,Active,Metric,Route Preference,Source Protocol,Source Protocol Code,Next Hop Number,Next Hop,Outgoing Interface,Updated
-default,ipv4,172.16.0.1/32,True,0,0,direct,,1,172.16.0.1,Loopback1,01:03:13
-default,ipv4,172.16.0.1/32,True,0,0,direct,,2,172.16.0.1,Loopback1,01:03:13
-default,ipv4,172.16.1.0/30,True,0,0,direct,,1,172.16.1.1,Ethernet1/5,01:02:11
-default,ipv4,172.16.1.1/32,True,0,0,local,,1,172.16.1.1,Ethernet1/5,01:02:11
-management,ipv4,0.0.0.0/0,True,0,1,static,,1,10.10.20.254,,01:03:13
-management,ipv4,10.10.20.0/24,True,0,0,direct,,1,10.10.20.58,mgmt0,01:03:13
-management,ipv4,10.10.20.58/32,True,0,0,local,,1,10.10.20.58,mgmt0,01:03:13
+VRF,Address Family,Route,Active,Metric,Route Preference,Source Protocol,M Best,U Best,Next Hop Index,Next Hop,Best Unicast Nexthop,Metric,Route Preference,Source Protocol,Updated
+default,ipv4,172.16.0.1/32,True,0,0,direct,0,2,1,172.16.0.1,True,0,0,local,07:22:56
+default,ipv4,172.16.0.1/32,True,0,0,direct,0,2,2,172.16.0.1,True,0,0,direct,07:22:56
+default,ipv4,172.16.1.0/30,True,0,0,direct,0,1,1,172.16.1.1,True,0,0,direct,07:21:59
+default,ipv4,172.16.1.1/32,True,0,0,local,0,1,1,172.16.1.1,True,0,0,local,07:21:59
+management,ipv4,0.0.0.0/0,True,0,1,static,0,1,1,10.10.20.254,True,0,1,static,07:22:56
+management,ipv4,10.10.20.0/24,True,0,0,direct,0,1,1,10.10.20.58,True,0,0,direct,07:22:56
+management,ipv4,10.10.20.58/32,True,0,0,local,0,1,1,10.10.20.58,True,0,0,local,07:22:56

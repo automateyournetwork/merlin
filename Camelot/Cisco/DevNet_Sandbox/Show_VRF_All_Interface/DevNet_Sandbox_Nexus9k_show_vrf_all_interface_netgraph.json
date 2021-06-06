@@ -1,6 +1,6 @@
 {
     "type": "NetworkGraph",
-    "label": "Show Interface Status",
+    "label": "Show VRF All Interface",
     "protocol": "OLSR",
     "version": "0.6.6.2",
     "metric": "ETX",

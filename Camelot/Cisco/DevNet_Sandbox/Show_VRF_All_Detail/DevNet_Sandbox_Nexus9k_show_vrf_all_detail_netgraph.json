@@ -1,6 +1,6 @@
 {
     "type": "NetworkGraph",
-    "label": "Show VRF",
+    "label": "Show VRF All Detail",
     "protocol": "OLSR",
     "version": "0.6.6.2",
     "metric": "ETX",
@@ -8,23 +8,326 @@
         { 
             "id": "DevNet_Sandbox_Nexus9k"
         },
-        
-        {
-            "id": "default"
+        { 
+            "id": "VRF: default"
         },
-        {
-            "id": "management"
+        { 
+            "id": "ID: 1"
+        },
+        { 
+            "id": "VRF State: up"
+        },
+        { 
+            "id": "Address Family: ipv6"
+        },
+        { 
+            "id": "Address Family State: up"
+        },
+        { 
+            "id": "FWD ID: 0x80000001"
+        },
+        { 
+            "id": "Table ID: 0x80000001"
+        },
+        { 
+            "id": "Max Routes: 0"
+        },
+        { 
+            "id": "Mid Threshhold: 0"
+        },
+        { 
+            "id": "Route Distinguisher: 0:0"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "ID: 1"
+        },
+        { 
+            "id": "VRF State: up"
+        },
+        { 
+            "id": "Address Family: ipv4"
+        },
+        { 
+            "id": "Address Family State: up"
+        },
+        { 
+            "id": "FWD ID: 0x00000001"
+        },
+        { 
+            "id": "Table ID: 0x00000001"
+        },
+        { 
+            "id": "Max Routes: 0"
+        },
+        { 
+            "id": "Mid Threshhold: 0"
+        },
+        { 
+            "id": "Route Distinguisher: 0:0"
+        },
+        { 
+            "id": "VRF: management"
+        },
+        { 
+            "id": "ID: 2"
+        },
+        { 
+            "id": "VRF State: up"
+        },
+        { 
+            "id": "Address Family: ipv6"
+        },
+        { 
+            "id": "Address Family State: up"
+        },
+        { 
+            "id": "FWD ID: 0x80000002"
+        },
+        { 
+            "id": "Table ID: 0x80000002"
+        },
+        { 
+            "id": "Max Routes: 0"
+        },
+        { 
+            "id": "Mid Threshhold: 0"
+        },
+        { 
+            "id": "Route Distinguisher: 0:0"
+        },
+        { 
+            "id": "VRF: management"
+        },
+        { 
+            "id": "ID: 2"
+        },
+        { 
+            "id": "VRF State: up"
+        },
+        { 
+            "id": "Address Family: ipv4"
+        },
+        { 
+            "id": "Address Family State: up"
+        },
+        { 
+            "id": "FWD ID: 0x00000002"
+        },
+        { 
+            "id": "Table ID: 0x00000002"
+        },
+        { 
+            "id": "Max Routes: 0"
+        },
+        { 
+            "id": "Mid Threshhold: 0"
+        },
+        { 
+            "id": "Route Distinguisher: 0:0"
         }
     ],
     "links": [
         {
             "source": "DevNet_Sandbox_Nexus9k",
-            "target": "default",
+            "target": "VRF: default",
+            "cost": 1             
+        },
+        { 
+            "source": "VRF: default",
+            "target": "ID: 1",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: default",
+            "target": "VRF State: up",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: default",
+            "target": "Address Family: ipv6",
+            "cost": 1            
+        },
+        { 
+            "source": "VRF: default",
+            "target": "Address Family State: up",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: default",
+            "target": "FWD ID: 0x80000001",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: default",
+            "target": "Table ID: 0x80000001",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: default",
+            "target": "Max Routes: 0",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: default",
+            "target": "Mid Threshhold: 0",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: default",
+            "target": "Route Distinguisher: 0:0",
             "cost": 1
         },
         {
             "source": "DevNet_Sandbox_Nexus9k",
-            "target": "management",
+            "target": "VRF: default",
+            "cost": 1             
+        },
+        { 
+            "source": "VRF: default",
+            "target": "ID: 1",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: default",
+            "target": "VRF State: up",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: default",
+            "target": "Address Family: ipv4",
+            "cost": 1            
+        },
+        { 
+            "source": "VRF: default",
+            "target": "Address Family State: up",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: default",
+            "target": "FWD ID: 0x00000001",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: default",
+            "target": "Table ID: 0x00000001",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: default",
+            "target": "Max Routes: 0",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: default",
+            "target": "Mid Threshhold: 0",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: default",
+            "target": "Route Distinguisher: 0:0",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VRF: management",
+            "cost": 1             
+        },
+        { 
+            "source": "VRF: management",
+            "target": "ID: 2",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: management",
+            "target": "VRF State: up",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: management",
+            "target": "Address Family: ipv6",
+            "cost": 1            
+        },
+        { 
+            "source": "VRF: management",
+            "target": "Address Family State: up",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: management",
+            "target": "FWD ID: 0x80000002",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: management",
+            "target": "Table ID: 0x80000002",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: management",
+            "target": "Max Routes: 0",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: management",
+            "target": "Mid Threshhold: 0",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: management",
+            "target": "Route Distinguisher: 0:0",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VRF: management",
+            "cost": 1             
+        },
+        { 
+            "source": "VRF: management",
+            "target": "ID: 2",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: management",
+            "target": "VRF State: up",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: management",
+            "target": "Address Family: ipv4",
+            "cost": 1            
+        },
+        { 
+            "source": "VRF: management",
+            "target": "Address Family State: up",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: management",
+            "target": "FWD ID: 0x00000002",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: management",
+            "target": "Table ID: 0x00000002",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: management",
+            "target": "Max Routes: 0",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: management",
+            "target": "Mid Threshhold: 0",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: management",
+            "target": "Route Distinguisher: 0:0",
             "cost": 1
         }
     ]

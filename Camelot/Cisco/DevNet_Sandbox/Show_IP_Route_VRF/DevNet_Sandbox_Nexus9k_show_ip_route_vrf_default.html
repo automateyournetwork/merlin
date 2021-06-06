@@ -9,11 +9,16 @@
     <th>Route</th>
     <th>Active</th>
     <th>Metric</th>
-    <th>Route Preference</th>   
+    <th>Route Preference</th>
     <th>Source Protocol</th>
-    <th>Source Protocol Code</th>
-    <th>Next Hop Number</th>
-    <th>Outgoing Interface</th>
+    <th>M Best</th>
+    <th>U Best</th>
+    <th>Next Hop Index</th>
+    <th>Next Hop</th>
+    <th>Best Unicast Nexthop</th>
+    <th>Metric</th>
+    <th>Route Preference</th>
+    <th>Source Protocol</th>
     <th>Updated</th>
   </tr>
   </thead>
@@ -23,60 +28,75 @@
     <td>ipv4</td>
     <td>172.16.0.1/32</td>
     <td>True</td>
-    <td>0</td>   
+    <td>0</td>
     <td>0</td>
     <td>direct</td>
-    <td></td>
+    <td>0</td>
+    <td>2</td>
     <td>1</td>
     <td>172.16.0.1</td>
-    <td>Loopback1</td>
-    <td>Loopback1</td>
-    <td>01:03:33</td>
+    <td>True</td>
+    <td>0</td>
+    <td>0</td>
+    <td>local</td>
+    <td>07:23:21</td>
   </tr>
+  </tbody>
   <tr>
     <td>default</td>
     <td>ipv4</td>
     <td>172.16.0.1/32</td>
     <td>True</td>
-    <td>0</td>   
+    <td>0</td>
     <td>0</td>
     <td>direct</td>
-    <td></td>
+    <td>0</td>
+    <td>2</td>
     <td>2</td>
     <td>172.16.0.1</td>
-    <td>Loopback1</td>
-    <td>Loopback1</td>
-    <td>01:03:33</td>
+    <td>True</td>
+    <td>0</td>
+    <td>0</td>
+    <td>direct</td>
+    <td>07:23:21</td>
   </tr>
+  </tbody>
   <tr>
     <td>default</td>
     <td>ipv4</td>
     <td>172.16.1.0/30</td>
     <td>True</td>
-    <td>0</td>   
+    <td>0</td>
     <td>0</td>
     <td>direct</td>
-    <td></td>
+    <td>0</td>
+    <td>1</td>
     <td>1</td>
     <td>172.16.1.1</td>
-    <td>Ethernet1/5</td>
-    <td>Ethernet1/5</td>
-    <td>01:02:31</td>
+    <td>True</td>
+    <td>0</td>
+    <td>0</td>
+    <td>direct</td>
+    <td>07:22:24</td>
   </tr>
+  </tbody>
   <tr>
     <td>default</td>
     <td>ipv4</td>
     <td>172.16.1.1/32</td>
     <td>True</td>
-    <td>0</td>   
+    <td>0</td>
     <td>0</td>
     <td>local</td>
-    <td></td>
+    <td>0</td>
+    <td>1</td>
     <td>1</td>
     <td>172.16.1.1</td>
-    <td>Ethernet1/5</td>
-    <td>Ethernet1/5</td>
-    <td>01:02:31</td>
+    <td>True</td>
+    <td>0</td>
+    <td>0</td>
+    <td>local</td>
+    <td>07:22:24</td>
   </tr>
   </tbody>  
 </table>
