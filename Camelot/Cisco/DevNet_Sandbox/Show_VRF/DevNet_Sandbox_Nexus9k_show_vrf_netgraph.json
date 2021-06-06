@@ -8,23 +8,70 @@
         { 
             "id": "DevNet_Sandbox_Nexus9k"
         },
-        
-        {
-            "id": "default"
+        { 
+            "id": "VRF: default"
         },
-        {
-            "id": "management"
+        { 
+            "id": "Reason: --"
+        },        
+        { 
+            "id": "ID: 1"
+        },
+        { 
+            "id": "State: Up"
+        },
+        { 
+            "id": "VRF: management"
+        },
+        { 
+            "id": "Reason: --"
+        },        
+        { 
+            "id": "ID: 2"
+        },
+        { 
+            "id": "State: Up"
         }
     ],
     "links": [
         {
             "source": "DevNet_Sandbox_Nexus9k",
-            "target": "default",
+            "target": "VRF: default",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: default",
+            "target": "Reason: --",
+            "cost": 1
+        },        
+        { 
+            "source": "VRF: default",
+            "target": "ID: 1",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: default",
+            "target": "State: Up",
             "cost": 1
         },
         {
             "source": "DevNet_Sandbox_Nexus9k",
-            "target": "management",
+            "target": "VRF: management",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: management",
+            "target": "Reason: --",
+            "cost": 1
+        },        
+        { 
+            "source": "VRF: management",
+            "target": "ID: 2",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: management",
+            "target": "State: Up",
             "cost": 1
         }
     ]

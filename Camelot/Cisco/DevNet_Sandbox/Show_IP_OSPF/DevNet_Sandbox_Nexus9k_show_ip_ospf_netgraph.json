@@ -8,31 +8,7 @@
         { 
             "id": "DevNet_Sandbox_Nexus9k"
         },
-        {
-            "id": "VRF: default"
-        },
-        {
-            "id": "Router ID: 172.16.0.1"
-        },
-        {
-            "id": "Area: 0.0.0.0"          
-        }
     ],
-    "links": [
-        {
-            "source": "DevNet_Sandbox_Nexus9k",
-            "target": "VRF: default",
-            "cost": 1
-        },
-        {
-            "source": "VRF: default",
-            "target": "Router ID: 172.16.0.1",
-            "cost": 2
-        },
-        {
-            "source": "Router ID: 172.16.0.1",
-            "target": "Area: 0.0.0.0",
-            "cost": 3          
-        }        
+    "links": [     
     ]
 }

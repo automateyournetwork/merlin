@@ -1,6 +1,6 @@
 {
     "type": "NetworkGraph",
-    "label": "Show Routing",
+    "label": "Learn Routing",
     "protocol": "OLSR",
     "version": "0.6.6.2",
     "metric": "ETX",
@@ -28,10 +28,7 @@
         },
         { 
             "id": "Source Protocol: local"
-        },        
-        { 
-            "id": "Code: "
-        },        
+        },              
         { 
             "id": "Hop: 1"
         },
@@ -58,10 +55,7 @@
         },
         { 
             "id": "Source Protocol: direct"
-        },        
-        { 
-            "id": "Code: "
-        },        
+        },              
         { 
             "id": "Hop: 1"
         },
@@ -88,10 +82,7 @@
         },
         { 
             "id": "Source Protocol: static"
-        },        
-        { 
-            "id": "Code: "
-        },        
+        },              
         { 
             "id": "Hop: 1"
         },
@@ -118,10 +109,7 @@
         },
         { 
             "id": "Source Protocol: local"
-        },        
-        { 
-            "id": "Code: "
-        },        
+        },              
         { 
             "id": "Hop: 1"
         },
@@ -148,10 +136,7 @@
         },
         { 
             "id": "Source Protocol: direct"
-        },        
-        { 
-            "id": "Code: "
-        },        
+        },              
         { 
             "id": "Hop: 1"
         },
@@ -178,10 +163,7 @@
         },
         { 
             "id": "Source Protocol: direct"
-        },        
-        { 
-            "id": "Code: "
-        },        
+        },              
         { 
             "id": "Hop: 2"
         },
@@ -208,10 +190,7 @@
         },
         { 
             "id": "Source Protocol: direct"
-        },        
-        { 
-            "id": "Code: "
-        },        
+        },              
         { 
             "id": "Hop: 1"
         },
@@ -254,12 +233,7 @@
             "source": "Route: 10.10.20.58/32",
             "target": "Source Protocol: local",
             "cost": 2
-        },          
-        { 
-            "source": "Route: 10.10.20.58/32",
-            "target": "Code: ",
-            "cost": 2
-        },        
+        },                 
         { 
             "source": "Route: 10.10.20.58/32",
             "target": "Hop: 1",
@@ -304,12 +278,7 @@
             "source": "Route: 10.10.20.0/24",
             "target": "Source Protocol: direct",
             "cost": 2
-        },          
-        { 
-            "source": "Route: 10.10.20.0/24",
-            "target": "Code: ",
-            "cost": 2
-        },        
+        },                 
         { 
             "source": "Route: 10.10.20.0/24",
             "target": "Hop: 1",
@@ -354,12 +323,7 @@
             "source": "Route: 0.0.0.0/0",
             "target": "Source Protocol: static",
             "cost": 2
-        },          
-        { 
-            "source": "Route: 0.0.0.0/0",
-            "target": "Code: ",
-            "cost": 2
-        },        
+        },                 
         { 
             "source": "Route: 0.0.0.0/0",
             "target": "Hop: 1",
@@ -404,12 +368,7 @@
             "source": "Route: 172.16.1.1/32",
             "target": "Source Protocol: local",
             "cost": 2
-        },          
-        { 
-            "source": "Route: 172.16.1.1/32",
-            "target": "Code: ",
-            "cost": 2
-        },        
+        },                 
         { 
             "source": "Route: 172.16.1.1/32",
             "target": "Hop: 1",
@@ -454,12 +413,7 @@
             "source": "Route: 172.16.1.0/30",
             "target": "Source Protocol: direct",
             "cost": 2
-        },          
-        { 
-            "source": "Route: 172.16.1.0/30",
-            "target": "Code: ",
-            "cost": 2
-        },        
+        },                 
         { 
             "source": "Route: 172.16.1.0/30",
             "target": "Hop: 1",
@@ -504,12 +458,7 @@
             "source": "Route: 172.16.0.1/32",
             "target": "Source Protocol: direct",
             "cost": 2
-        },          
-        { 
-            "source": "Route: 172.16.0.1/32",
-            "target": "Code: ",
-            "cost": 2
-        },        
+        },                 
         { 
             "source": "Route: 172.16.0.1/32",
             "target": "Hop: 2",
@@ -554,12 +503,7 @@
             "source": "Route: 172.16.0.1/32",
             "target": "Source Protocol: direct",
             "cost": 2
-        },          
-        { 
-            "source": "Route: 172.16.0.1/32",
-            "target": "Code: ",
-            "cost": 2
-        },        
+        },                 
         { 
             "source": "Route: 172.16.0.1/32",
             "target": "Hop: 1",

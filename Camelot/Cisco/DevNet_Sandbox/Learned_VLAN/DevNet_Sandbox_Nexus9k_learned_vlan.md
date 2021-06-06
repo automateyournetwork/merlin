@@ -1,7 +1,7 @@
 
 # Learn VLAN
 | VLAN | Name | State | Shutdown | Interface |
-| |
+| ---- | ---- | ----- | -------- | --------- |
 | interface_vlan_enabled |  |  |  | N/A |
 | 105 | iot | active | False | Port-channel11 |
 | 105 | iot | active | False | Ethernet1/1 |

@@ -599,11 +599,11 @@ class Collect_Information(aetest.Testcase):
 
                 # Show interface status
                 if self.parsed_show_int_status is not None:
-                    sh_int_status_template = env.get_template('show_int_status.j2')
-                    sh_int_status_netjson_json_template = env.get_template('show_int_status_netjson_json.j2')
-                    sh_int_status_netjson_html_template = env.get_template('show_int_status_netjson_html.j2')
-                    sh_int_status_connected_netjson_json_template = env.get_template('show_int_status_connected_netjson_json.j2')
-                    sh_int_status_connected_netjson_html_template = env.get_template('show_int_status_connected_netjson_html.j2')
+                    sh_int_status_template = env.get_template('show_interface_status.j2')
+                    sh_int_status_netjson_json_template = env.get_template('show_interface_status_netjson_json.j2')
+                    sh_int_status_netjson_html_template = env.get_template('show_interface_status_netjson_html.j2')
+                    sh_int_status_connected_netjson_json_template = env.get_template('show_interface_status_connected_netjson_json.j2')
+                    sh_int_status_connected_netjson_html_template = env.get_template('show_interface_status_connected_netjson_html.j2')
 
                     directory = "Show_Interface_Status"
                     file_name = "show_int_status"
@@ -611,7 +611,7 @@ class Collect_Information(aetest.Testcase):
                     self.save_to_yaml_file(device, directory, file_name, self.parsed_show_int_status)
 
                     for filetype in filetype_loop:
-                        parsed_output_type = sh_int_status_template.render(to_parse_interfaces=self.parsed_show_int_status['interfaces'],filetype_loop_jinja2=filetype)
+                        parsed_output_type = sh_int_status_template.render(to_parse_interface=self.parsed_show_int_status['interfaces'],filetype_loop_jinja2=filetype)
 
                         with open("Camelot/Cisco/DevNet_Sandbox/Show_Interface_Status/%s_show_int_status.%s" % (device.alias,filetype), "w") as fh:
                             fh.write(parsed_output_type)  
@@ -619,9 +619,9 @@ class Collect_Information(aetest.Testcase):
                     if os.path.exists("Camelot/Cisco/DevNet_Sandbox/Show_Interface_Status/%s_show_int_status.md" % device.alias):
                         os.system("markmap --no-open Camelot/Cisco/DevNet_Sandbox/Show_Interface_Status/%s_show_int_status.md --output Camelot/Cisco/DevNet_Sandbox/Show_Interface_Status/%s_show_int_status_mind_map.html" % (device.alias,device.alias))
 
-                    parsed_output_netjson_json = sh_int_status_netjson_json_template.render(to_parse_interfaces=self.parsed_show_int_status['interfaces'],device_alias = device.alias)
+                    parsed_output_netjson_json = sh_int_status_netjson_json_template.render(to_parse_interface=self.parsed_show_int_status['interfaces'],device_alias = device.alias)
                     parsed_output_netjson_html = sh_int_status_netjson_html_template.render(device_alias = device.alias)
-                    parsed_output_connected_netjson_json = sh_int_status_connected_netjson_json_template.render(to_parse_interfaces=self.parsed_show_int_status['interfaces'],device_alias = device.alias)
+                    parsed_output_connected_netjson_json = sh_int_status_connected_netjson_json_template.render(to_parse_interface=self.parsed_show_int_status['interfaces'],device_alias = device.alias)
                     parsed_output_connected_netjson_html = sh_int_status_connected_netjson_html_template.render(device_alias = device.alias)
 
                     with open("Camelot/Cisco/DevNet_Sandbox/Show_Interface_Status/%s_show_int_status_netgraph.json" % device.alias, "w") as fh:
@@ -639,7 +639,7 @@ class Collect_Information(aetest.Testcase):
                 # Show Inventory
                 if self.parsed_show_inventory is not None:
                     # Nexus 
-                    sh_inventory_nexus_template = env.get_template('show_inventory_nexus.j2')
+                    sh_inventory_nexus_template = env.get_template('show_inventory.j2')
                     sh_inventory_netjson_json_template = env.get_template('show_inventory_netjson_json.j2')
                     sh_inventory_netjson_html_template = env.get_template('show_inventory_netjson_html.j2')
 
@@ -675,9 +675,9 @@ class Collect_Information(aetest.Testcase):
 
                 # Show ip interface brief
                 if self.parsed_show_ip_int_brief is not None:
-                    sh_ip_int_brief_template = env.get_template('show_ip_int_brief.j2')
-                    sh_ip_int_brief_netjson_json_template = env.get_template('show_ip_int_brief_netjson_json.j2')
-                    sh_ip_int_brief_netjson_html_template = env.get_template('show_ip_int_brief_netjson_html.j2')
+                    sh_ip_int_brief_template = env.get_template('show_ip_interface_brief.j2')
+                    sh_ip_int_brief_netjson_json_template = env.get_template('show_ip_interface_brief_netjson_json.j2')
+                    sh_ip_int_brief_netjson_html_template = env.get_template('show_ip_interface_brief_netjson_html.j2')
 
                     directory = "Show_IP_Interface_Brief"
                     file_name = "show_ip_int_brief"
@@ -893,8 +893,8 @@ class Collect_Information(aetest.Testcase):
                     sh_ip_arp_vrf_netjson_json_template = env.get_template('show_ip_arp_vrf_netjson_json.j2')
                     sh_ip_arp_vrf_netjson_html_template = env.get_template('show_ip_arp_vrf_netjson_html.j2')
                     sh_ip_arp_vrf_stats_template = env.get_template('show_ip_arp_vrf_statistics.j2')
-                    sh_ip_route_vrf_netjson_json_template = env.get_template('show_ip_route_vrf_netjson_json.j2')
-                    sh_ip_route_vrf_netjson_html_template = env.get_template('show_ip_route_vrf_netjson_html.j2')
+                    sh_ip_route_vrf_netjson_json_template = env.get_template('show_ip_route_netjson_json.j2')
+                    sh_ip_route_vrf_netjson_html_template = env.get_template('show_ip_route_netjson_html.j2')
 
                     directory = "Show_VRF"
                     file_name = "show_vrf"

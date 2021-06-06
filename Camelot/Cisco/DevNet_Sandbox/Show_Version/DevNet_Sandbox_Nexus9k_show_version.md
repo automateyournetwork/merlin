@@ -1,5 +1,5 @@
 
 # Show Version
-| Device Name | Chassis | Model | CPU | Memory | RP | Bootflash | Processor Board ID | Slots | Kernel Uptime Days | Hours | Minutes | Seconds | System Version | Image File | Compile Time |
-| ----------- | ------- | ----- | --- | ------ | -- | --------- | ------------------ | ----- | ------------------ | ----- | ------- | ------- | -------------- | ---------- | ------------ |
-| sbx-n9kv | Nexus9000 C9500v | Nexus9000 C9500v | Intel(R) Xeon(R) CPU E5-4669 v4 @ 2.20GHz | 7939724 kB | Supervisor Module | 4287040 kB | 9FJTZNHQ62X | None | 0 | 1 | 5 | 23 | 9.3(5) | bootflash:///nxos.9.3.5.bin | 7/20/2020 20:00:00 [07/21/2020 06:30:11] |
+| Bootflash | Chassis | CPU | Device Name | Memory | Model | Processor Board ID | RP | Slots | Kernel Uptime | Name | OS | Last Reload Reason | BIOS Compile Time | BIOS Version | Kickstart Compile Time | Kickstart Image | Kickstart Version | System Compile Time | System Image File | System Version |
+| --------- | ------- | --- | ----------- | ------ | ----- | ------------------ | -- | ----- | ------------- | ---- | -- | ------------------ | ----------------- | ------------ | ---------------------- | --------------- | ----------------- | ------------------- | ----------------- | -------------- |
+| 4287040 kB | Nexus9000 C9500v | Intel(R) Xeon(R) CPU E5-4669 v4 @ 2.20GHz | sbx-n9kv | 7939720 kB | Nexus9000 C9500v | 9FJTZNHQ62X | Supervisor Module | None | 0 7 24 47 | Nexus | NX-OS | Unknown |  |  |  |  |  | 7/20/2020 20:00:00 [07/21/2020 06:30:11] | bootflash:///nxos.9.3.5.bin | 9.3(5) |

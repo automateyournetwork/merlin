@@ -2,8 +2,8 @@
 # Learn Platform
 | Device Type | Chassis | Serial Number | Uptime | Directory | Total Disk | Used Disk | Free Disk | Image | Main Memory | OS | Version | Slot Name | Slot Serial Number | Slot State | Redundancy State | RP Boot Image | RP Uptime | Virtual Device Name | Virtual Device Status | Virtual Interface | Virtual Interface Type | Virtual Interface Status |
 | ----------- | ------- | ------------- | ------ | --------- | ---------- | --------- | --------- | ----- | ----------- | -- | ------- | --------- | ------------------ | ---------- | ---------------- | ------------- | --------- | ------------------- | --------------------- | ----------------- | ---------------------- | ------------------------ |
-| Nexus9000 C9500v | Nexus9000 C9500v Chassis | 91OMZP37WBR | 3791 | bootflash: | 4186710016 | 1990119424 | 2196590592 | bootflash:///nxos.9.3.5.bin | 7939724 kB | NX-OS | 9.3(5) | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N9K-vSUP | 9FJTZNHQ62X | active | active | bootflash:/nxos.9.3.5.bin | 3791 | N/A | N/A | N/A | N/A | N/A |
+| Nexus9000 C9500v | Nexus9000 C9500v Chassis | 91OMZP37WBR | 26575 | bootflash: | 4186710016 | 1990119424 | 2196590592 | bootflash:///nxos.9.3.5.bin | 7939720 kB | NX-OS | 9.3(5) | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N9K-vSUP | 9FJTZNHQ62X | active | active | bootflash:/nxos.9.3.5.bin | 26575 | N/A | N/A | N/A | N/A | N/A |
 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | Nexus 9000v 64 port Ethernet Module | 9OW8JB5XF53 | ok | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | sbx-n9kv | active | Eth1/64 | Ethernet | OK |
 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | sbx-n9kv | active | Eth1/63 | Ethernet | OK |

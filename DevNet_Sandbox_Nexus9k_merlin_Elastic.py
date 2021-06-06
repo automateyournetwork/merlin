@@ -25,7 +25,6 @@ from jinja2 import Environment, FileSystemLoader
 from ascii_art import GREETING, LEARN, RUNNING, WRITING, FINISHED
 from general_functionalities import ParseShowCommandFunction, ParseLearnFunction, ParseConfigFunction, ParseDictFunction
 from tinydb import TinyDB, Query
-from datetime import datetime
 from elasticsearch import Elasticsearch
 
 # ----------------
@@ -48,7 +47,7 @@ template_dir = 'templates/cisco/nxos'
 env = Environment(loader=FileSystemLoader(template_dir))
 
 # ----------------
-# Create Database
+# Create Tiny Database
 # ----------------
 
 if os.path.exists("Camelot/Cisco/DevNet_Sandbox/The_Grail/Nexus9K_Grail_DB.json"):
@@ -59,10 +58,7 @@ db = TinyDB('Camelot/Cisco/DevNet_Sandbox/The_Grail/Nexus9K_Grail_DB.json')
 # ----------------
 # Define Elastic
 # ----------------
-
-es = Elasticsearch([{'host': 'https://merlin.es.us-west1.gcp.cloud.es.io', 'port': '9243'}], http_auth=('elastic', 'F2iRA317MC6HOJ9BSXTAehX4'))
-
-i = 1
+es = Elasticsearch(cloud_id="{{ YOUR CLOUD ID HERE }}", http_auth=('{{ YOUR ELASTIC USERNAME HERE }}', '{{ YOUR ELASTIC PASSWORD HERE }}'))
 
 # ----------------
 # AE Test Setup
@@ -194,10 +190,18 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store ACLs in Device Table in Database
+                    # Store ACLs in Device Table in Tiny Database
                     # ----------------
 
                     table.insert(self.learned_acl)
+
+                    # ----------------
+                    # Store ACLs in Device Table in Elastic
+                    # ----------------
+
+                    id = "learned_acl"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.learned_acl)
 
                 # Learned ARP
                 if self.learned_arp is not None:
@@ -250,10 +254,18 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store ARP in Device Table in Database
+                    # Store ARP in Device Table in Tiny Database
                     # ----------------
 
                     table.insert(self.learned_arp)
+
+                    # ----------------
+                    # Store ARP in Device Table in Elastic
+                    # ----------------
+
+                    id = "learned_arp"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.learned_arp)
 
                 # Learned BGP
                 if self.learned_bgp is not None:
@@ -289,6 +301,14 @@ class Collect_Information(aetest.Testcase):
                     # ----------------
 
                     table.insert(self.learned_bgp)
+
+                    # ----------------
+                    # Store BGP in Device Table in Elastic
+                    # ----------------
+
+                    id = "learned_bgp"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.learned_bgp)
 
                 # Learned Interface
                 if self.learned_interface is not None:
@@ -336,6 +356,14 @@ class Collect_Information(aetest.Testcase):
 
                     table.insert(self.learned_interface)
 
+                    # ----------------
+                    # Store Interface in Device Table in Elastic
+                    # ----------------
+
+                    id = "learned_interface"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.learned_interface)
+
                 # Learned OSPF
                 if self.learned_ospf is not None:
                     learned_ospf_template = env.get_template('learned_ospf.j2')
@@ -352,6 +380,14 @@ class Collect_Information(aetest.Testcase):
                     # ----------------
 
                     table.insert(self.learned_ospf)
+
+                    # ----------------
+                    # Store OSPF in Device Table in Elastic
+                    # ----------------
+
+                    id = "learned_ospf"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.learned_ospf)
 
                 # Learned Platform
                 if self.learned_platform is not None:
@@ -388,6 +424,14 @@ class Collect_Information(aetest.Testcase):
 
                     table.insert(self.learned_platform)
 
+                    # ----------------
+                    # Store Platform in Device Table in Elastic
+                    # ----------------
+
+                    id = "learned_platform"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.learned_platform)
+
                 # Learned Routing
                 if self.learned_routing is not None:
                     learned_routing_template = env.get_template('learned_routing.j2')
@@ -422,6 +466,14 @@ class Collect_Information(aetest.Testcase):
                     # ----------------
 
                     table.insert(self.learned_routing)
+
+                    # ----------------
+                    # Store Routing in Device Table in Elastic
+                    # ----------------
+
+                    id = "learned_routing"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.learned_routing)
 
                 # Learned VLAN
                 if self.learned_vlan is not None:
@@ -458,6 +510,14 @@ class Collect_Information(aetest.Testcase):
 
                     table.insert(self.learned_vlan)
 
+                    # ----------------
+                    # Store VLAN in Device Table in Elastic
+                    # ----------------
+
+                    id = "learned_vlan"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.learned_vlan)
+
                 # Learned VRF
                 if self.learned_vrf is not None:
                     learned_vrf_template = env.get_template('learned_vrf.j2')
@@ -492,6 +552,14 @@ class Collect_Information(aetest.Testcase):
                     # ----------------
 
                     table.insert(self.learned_vrf)
+
+                    # ----------------
+                    # Store VRF in Device Table in Elastic
+                    # ----------------
+
+                    id = "learned_vrf"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.learned_vrf)
 
                 ###############################
                 # Genie Show Command Section
@@ -537,6 +605,14 @@ class Collect_Information(aetest.Testcase):
 
                     table.insert(self.parsed_show_access_lists)
 
+                    # ----------------
+                    # Store ACLs in Device Table in Elastic
+                    # ----------------
+
+                    id = "show_access_lists"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.parsed_show_access_lists)
+
                 # Show BGP process vrf all
                 if self.parsed_show_bgp_process_vrf_all is not None:
                     sh_bgp_process_vrf_all_template = env.get_template('show_bgp_process_vrf_all.j2')                  
@@ -571,6 +647,14 @@ class Collect_Information(aetest.Testcase):
                     # ----------------
 
                     table.insert(self.parsed_show_bgp_process_vrf_all)
+
+                    # ----------------
+                    # Store BGP Process VRF All in Device Table in Elastic
+                    # ----------------
+
+                    id = "show_bgp_process_vrf_all"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.parsed_show_bgp_process_vrf_all)
 
                 # Show BGP Sessions
                 if self.parsed_show_bgp_sessions is not None:
@@ -607,13 +691,21 @@ class Collect_Information(aetest.Testcase):
 
                     table.insert(self.parsed_show_bgp_sessions)
 
+                    # ----------------
+                    # Store BGP Sessions in Device Table in Elastic
+                    # ----------------
+
+                    id = "show_bgp_sessions"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.parsed_show_bgp_sessions)
+
                 # Show interface status
                 if self.parsed_show_int_status is not None:
-                    sh_int_status_template = env.get_template('show_int_status.j2')
-                    sh_int_status_netjson_json_template = env.get_template('show_int_status_netjson_json.j2')
-                    sh_int_status_netjson_html_template = env.get_template('show_int_status_netjson_html.j2')
-                    sh_int_status_connected_netjson_json_template = env.get_template('show_int_status_connected_netjson_json.j2')
-                    sh_int_status_connected_netjson_html_template = env.get_template('show_int_status_connected_netjson_html.j2')
+                    sh_int_status_template = env.get_template('show_interface_status.j2')
+                    sh_int_status_netjson_json_template = env.get_template('show_interface_status_netjson_json.j2')
+                    sh_int_status_netjson_html_template = env.get_template('show_interface_status_netjson_html.j2')
+                    sh_int_status_connected_netjson_json_template = env.get_template('show_interface_status_connected_netjson_json.j2')
+                    sh_int_status_connected_netjson_html_template = env.get_template('show_interface_status_connected_netjson_html.j2')
 
                     directory = "Show_Interface_Status"
                     file_name = "show_int_status"
@@ -621,7 +713,7 @@ class Collect_Information(aetest.Testcase):
                     self.save_to_yaml_file(device, directory, file_name, self.parsed_show_int_status)
 
                     for filetype in filetype_loop:
-                        parsed_output_type = sh_int_status_template.render(to_parse_interfaces=self.parsed_show_int_status['interfaces'],filetype_loop_jinja2=filetype)
+                        parsed_output_type = sh_int_status_template.render(to_parse_interface=self.parsed_show_int_status['interfaces'],filetype_loop_jinja2=filetype)
 
                         with open("Camelot/Cisco/DevNet_Sandbox/Show_Interface_Status/%s_show_int_status.%s" % (device.alias,filetype), "w") as fh:
                             fh.write(parsed_output_type)  
@@ -629,9 +721,9 @@ class Collect_Information(aetest.Testcase):
                     if os.path.exists("Camelot/Cisco/DevNet_Sandbox/Show_Interface_Status/%s_show_int_status.md" % device.alias):
                         os.system("markmap --no-open Camelot/Cisco/DevNet_Sandbox/Show_Interface_Status/%s_show_int_status.md --output Camelot/Cisco/DevNet_Sandbox/Show_Interface_Status/%s_show_int_status_mind_map.html" % (device.alias,device.alias))
 
-                    parsed_output_netjson_json = sh_int_status_netjson_json_template.render(to_parse_interfaces=self.parsed_show_int_status['interfaces'],device_alias = device.alias)
+                    parsed_output_netjson_json = sh_int_status_netjson_json_template.render(to_parse_interface=self.parsed_show_int_status['interfaces'],device_alias = device.alias)
                     parsed_output_netjson_html = sh_int_status_netjson_html_template.render(device_alias = device.alias)
-                    parsed_output_connected_netjson_json = sh_int_status_connected_netjson_json_template.render(to_parse_interfaces=self.parsed_show_int_status['interfaces'],device_alias = device.alias)
+                    parsed_output_connected_netjson_json = sh_int_status_connected_netjson_json_template.render(to_parse_interface=self.parsed_show_int_status['interfaces'],device_alias = device.alias)
                     parsed_output_connected_netjson_html = sh_int_status_connected_netjson_html_template.render(device_alias = device.alias)
 
                     with open("Camelot/Cisco/DevNet_Sandbox/Show_Interface_Status/%s_show_int_status_netgraph.json" % device.alias, "w") as fh:
@@ -646,10 +738,24 @@ class Collect_Information(aetest.Testcase):
                     with open("Camelot/Cisco/DevNet_Sandbox/Show_Interface_Status/%s_show_int_status_connected_netgraph.html" % device.alias, "w") as fh:
                         fh.write(parsed_output_connected_netjson_html)
 
+                    # ----------------
+                    # Store Interface Status in Device Table in Database
+                    # ----------------
+
+                    table.insert(self.parsed_show_int_status)
+
+                    # ----------------
+                    # Store Interface Status in Device Table in Elastic
+                    # ----------------
+
+                    id = "show_interface_status"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.parsed_show_int_status)
+
                 # Show Inventory
                 if self.parsed_show_inventory is not None:
                     # Nexus 
-                    sh_inventory_nexus_template = env.get_template('show_inventory_nexus.j2')
+                    sh_inventory_nexus_template = env.get_template('show_inventory.j2')
                     sh_inventory_netjson_json_template = env.get_template('show_inventory_netjson_json.j2')
                     sh_inventory_netjson_html_template = env.get_template('show_inventory_netjson_html.j2')
 
@@ -678,16 +784,24 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store Inventory in Device Table in Databse
+                    # Store Inventory in Device Table in Database
                     # ----------------
 
                     table.insert(self.parsed_show_inventory)
 
+                    # ----------------
+                    # Store Inventory in Device Table in Elastic
+                    # ----------------
+
+                    id = "show_inventory"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.parsed_show_inventory)
+
                 # Show ip interface brief
                 if self.parsed_show_ip_int_brief is not None:
-                    sh_ip_int_brief_template = env.get_template('show_ip_int_brief.j2')
-                    sh_ip_int_brief_netjson_json_template = env.get_template('show_ip_int_brief_netjson_json.j2')
-                    sh_ip_int_brief_netjson_html_template = env.get_template('show_ip_int_brief_netjson_html.j2')
+                    sh_ip_int_brief_template = env.get_template('show_ip_interface_brief.j2')
+                    sh_ip_int_brief_netjson_json_template = env.get_template('show_ip_interface_brief_netjson_json.j2')
+                    sh_ip_int_brief_netjson_html_template = env.get_template('show_ip_interface_brief_netjson_html.j2')
 
                     directory = "Show_IP_Interface_Brief"
                     file_name = "show_ip_int_brief"
@@ -697,34 +811,34 @@ class Collect_Information(aetest.Testcase):
                     for filetype in filetype_loop:
                         parsed_output_type = sh_ip_int_brief_template.render(to_parse_interfaces=self.parsed_show_ip_int_brief['interface'],filetype_loop_jinja2=filetype)
 
-                        with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Interface_Brief/%s_show_ip_int_brief.%s" % (device.alias,filetype), "w") as fh:
+                        with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Interface_Brief/%s_show_ip_interface_brief.%s" % (device.alias,filetype), "w") as fh:
                             fh.write(parsed_output_type)
 
-                    if os.path.exists("Camelot/Cisco/DevNet_Sandbox/Show_IP_Interface_Brief/%s_show_ip_int_brief.md" % device.alias):
-                        os.system("markmap --no-open Camelot/Cisco/DevNet_Sandbox/Show_IP_Interface_Brief/%s_show_ip_int_brief.md --output Camelot/Cisco/DevNet_Sandbox/Show_IP_Interface_Brief/%s_show_ip_int_brief_mind_map.html" % (device.alias,device.alias))
+                    if os.path.exists("Camelot/Cisco/DevNet_Sandbox/Show_IP_Interface_Brief/%s_show_ip_interface_brief.md" % device.alias):
+                        os.system("markmap --no-open Camelot/Cisco/DevNet_Sandbox/Show_IP_Interface_Brief/%s_show_ip_interface_brief.md --output Camelot/Cisco/DevNet_Sandbox/Show_IP_Interface_Brief/%s_show_ip_interface_brief_mind_map.html" % (device.alias,device.alias))
 
                     parsed_output_netjson_json = sh_ip_int_brief_netjson_json_template.render(to_parse_interfaces=self.parsed_show_ip_int_brief['interface'],device_alias = device.alias)
                     parsed_output_netjson_html = sh_ip_int_brief_netjson_html_template.render(device_alias = device.alias)
 
-                    with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Interface_Brief/%s_show_ip_int_brief_netgraph.json" % device.alias, "w") as fh:
+                    with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Interface_Brief/%s_show_ip_interface_brief_netgraph.json" % device.alias, "w") as fh:
                         fh.write(parsed_output_netjson_json)               
 
-                    with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Interface_Brief/%s_show_ip_int_brief_netgraph.html" % device.alias, "w") as fh:
+                    with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Interface_Brief/%s_show_ip_interface_brief_netgraph.html" % device.alias, "w") as fh:
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store IP Int Brief in Device Table in Databse
+                    # Store IP Int Brief in Device Table in Database
                     # ----------------
 
                     table.insert(self.parsed_show_ip_int_brief)
 
                     # ----------------
-                    # Send the data into Elastic
+                    # Store IP Int Brief in Device Table in Elastic
                     # ----------------
-                    
-                    es.index(index='ShowIPInterfaceBrief', ignore=400, 
-                             id=i, body=self.parsed_show_ip_int_brief)
-                             i = i + 1
+
+                    id = "show_ip_interface_brief"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.parsed_show_ip_int_brief)
 
                 # Show IP OSPF
                 if self.parsed_show_ip_ospf is not None:
@@ -756,10 +870,18 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store IP OSPF in Device Table in Databse
+                    # Store IP OSPF in Device Table in Database
                     # ----------------
 
                     table.insert(self.parsed_show_ip_ospf)
+
+                    # ----------------
+                    # Store IP OSPF in Device Table in Elastic
+                    # ----------------
+
+                    id = "show_ip_ospf"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.parsed_show_ip_ospf)
 
                 # Show ip Route
                 if self.parsed_show_ip_route is not None:
@@ -791,10 +913,18 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store IP Route Brief in Device Table in Databse
+                    # Store IP Route Brief in Device Table in Database
                     # ----------------
 
                     table.insert(self.parsed_show_ip_route)
+
+                    # ----------------
+                    # Store IP Route in Device Table in Elastic
+                    # ----------------
+
+                    id = "show_ip_route"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.parsed_show_ip_route)
 
                 # Show mac address-table
                 if self.parsed_show_mac_address_table is not None:
@@ -826,10 +956,18 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store MAC Table in Device Table in Databse
+                    # Store MAC Table in Device Table in Database
                     # ----------------
 
                     table.insert(self.parsed_show_mac_address_table)
+
+                    # ----------------
+                    # Store MAC Table in Device Table in Elastic
+                    # ----------------
+
+                    id = "show_mac_address_table"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.parsed_show_mac_address_table)
 
                 # Show port-channel summary
                 if self.parsed_show_port_channel_summary is not None:
@@ -861,10 +999,18 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store Port-Channel in Device Table in Databse
+                    # Store Port-Channel in Device Table in Database
                     # ----------------
 
                     table.insert(self.parsed_show_port_channel_summary)
+
+                    # ----------------
+                    # Store Port-Channel in Device Table in Elastic
+                    # ----------------
+
+                    id = "show_port_channel_summary"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.parsed_show_port_channel_summary)
 
                 # Show version
                 if self.parsed_show_version is not None:
@@ -897,10 +1043,18 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store Version in Device Table in Databse
+                    # Store Version in Device Table in Database
                     # ----------------
 
                     table.insert(self.parsed_show_version)
+
+                    # ----------------
+                    # Store Port-Channel in Device Table in Elastic
+                    # ----------------
+
+                    id = "show_version"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.parsed_show_version)
 
                 # Show vrf
                 if self.parsed_show_vrf is not None:
@@ -911,8 +1065,8 @@ class Collect_Information(aetest.Testcase):
                     sh_ip_arp_vrf_netjson_json_template = env.get_template('show_ip_arp_vrf_netjson_json.j2')
                     sh_ip_arp_vrf_netjson_html_template = env.get_template('show_ip_arp_vrf_netjson_html.j2')
                     sh_ip_arp_vrf_stats_template = env.get_template('show_ip_arp_vrf_statistics.j2')
-                    sh_ip_route_vrf_netjson_json_template = env.get_template('show_ip_route_vrf_netjson_json.j2')
-                    sh_ip_route_vrf_netjson_html_template = env.get_template('show_ip_route_vrf_netjson_html.j2')
+                    sh_ip_route_vrf_netjson_json_template = env.get_template('show_ip_route_netjson_json.j2')
+                    sh_ip_route_vrf_netjson_html_template = env.get_template('show_ip_route_netjson_html.j2')
 
                     directory = "Show_VRF"
                     file_name = "show_vrf"
@@ -938,10 +1092,18 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store VRF in Device Table in Databse
+                    # Store VRF in Device Table in Database
                     # ----------------
 
                     table.insert(self.parsed_show_vrf)
+
+                    # ----------------
+                    # Store VRF in Device Table in Elastic
+                    # ----------------
+
+                    id = "show_vrf"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.parsed_show_vrf)
 
                 # Show vrf all detail
                 if self.parsed_show_vrf_all_detail is not None:
@@ -979,10 +1141,18 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store VRF Detail in Device Table in Databse
+                    # Store VRF Detail in Device Table in Database
                     # ----------------
 
                     table.insert(self.parsed_show_vrf_all_detail)
+
+                    # ----------------
+                    # Store VRF Detail in Device Table in Elastic
+                    # ----------------
+
+                    id = "show_vrf_all_detail"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.parsed_show_vrf_all_detail)
 
                 # Show vrf all interface
                 if self.parsed_show_vrf_all_interface is not None:
@@ -1014,10 +1184,18 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store VRF Interface in Device Table in Databse
+                    # Store VRF Interface in Device Table in Database
                     # ----------------
 
                     table.insert(self.parsed_show_vrf_all_interface)
+
+                    # ----------------
+                    # Store VRF Interface in Device Table in Elastic
+                    # ----------------
+
+                    id = "show_vrf_all_interface"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.parsed_show_vrf_all_interface)
 
                 # Show vlan
                 if self.parsed_show_vlan is not None:
@@ -1049,10 +1227,18 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store VLAN Interface in Device Table in Databse
+                    # Store VLAN in Device Table in Database
                     # ----------------
 
                     table.insert(self.parsed_show_vlan)
+
+                    # ----------------
+                    # Store VLAN Interface in Device Table in Elastic
+                    # ----------------
+
+                    id = "show_vlan"
+                    es.index(index='%s' % device.alias.lower() , ignore=400, 
+                             id=id, body=self.parsed_show_vlan)
 
                     # For Each VRF
                     for vrf in self.parsed_show_vrf['vrfs']:
@@ -1081,15 +1267,6 @@ class Collect_Information(aetest.Testcase):
                             if os.path.exists("Camelot/Cisco/DevNet_Sandbox/Show_IP_ARP_VRF/%s_show_ip_arp_vrf_%s.md" % (device.alias,vrf)):
                                 os.system("markmap --no-open Camelot/Cisco/DevNet_Sandbox/Show_IP_ARP_VRF/%s_show_ip_arp_vrf_%s.md --output Camelot/Cisco/DevNet_Sandbox/Show_IP_ARP_VRF/%s_show_ip_arp_vrf_%s_mind_map.html" % (device.alias,vrf,device.alias,vrf))
 
-                            for filetype in filetype_loop:
-                                parsed_output_type = sh_ip_arp_vrf_stats_template.render(to_parse_ip_arp=self.parsed_show_ip_arp_vrf['statistics'],filetype_loop_jinja2=filetype)
-
-                                with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_ARP_VRF/%s_show_ip_arp_vrf_statistics_%s.%s" % (device.alias,vrf,filetype), "w") as fh:
-                                    fh.write(parsed_output_type)
-        
-                            if os.path.exists("Camelot/Cisco/DevNet_Sandbox/Show_IP_ARP_VRF/%s_show_ip_arp_vrf_statistics_%s.md" % (device.alias,vrf)):
-                                os.system("markmap --no-open Camelot/Cisco/DevNet_Sandbox/Show_IP_ARP_VRF/%s_show_ip_arp_vrf_statistics_%s.md --output Camelot/Cisco/DevNet_Sandbox/Show_IP_ARP_VRF/%s_show_ip_arp_vrf_statistics_%s_mind_map.html" % (device.alias,vrf,device.alias,vrf))
-
                             parsed_output_netjson_json = sh_ip_arp_vrf_netjson_json_template.render(to_parse_ip_arp=self.parsed_show_ip_arp_vrf['interfaces'],filetype_loop_jinja2=filetype,device_alias = device.alias)
                             parsed_output_netjson_html = sh_ip_arp_vrf_netjson_html_template.render(device_alias = device.alias,vrf = vrf)
 
@@ -1100,10 +1277,18 @@ class Collect_Information(aetest.Testcase):
                                 fh.write(parsed_output_netjson_html)
 
                             # ----------------
-                            # Store IP ARP VRF Interface in Device Table in Databse
+                            # Store IP ARP VRF in Device Table in Database
                             # ----------------
 
                             table.insert(self.parsed_show_ip_arp_vrf)
+
+                            # ----------------
+                            # Store IP ARP VRF in Device Table in Elastic
+                            # ----------------
+
+                            id = "show_ip_arp_vrf_%s" % vrf
+                            es.index(index='%s' % device.alias.lower() , ignore=400, 
+                                     id=id, body=self.parsed_show_ip_arp_vrf)
 
                             # Show IP ROUTE VRF <VRF>
                             with steps.start('Parsing ip route vrf',continue_=True) as step:
@@ -1139,11 +1324,18 @@ class Collect_Information(aetest.Testcase):
                                     fh.write(parsed_output_netjson_html)
 
                             # ----------------
-                            # Store IP Route VRF Interface in Device Table in Databse
+                            # Store IP Route VRF Interface in Device Table in Database
                             # ----------------
 
                             table.insert(self.parsed_show_ip_route_vrf)
-        
+                            # ----------------
+                            # Store IP Route VRF in Device Table in Elastic
+                            # ----------------
+
+                            id = "show_ip_route_vrf_%s" % vrf
+                            es.index(index='%s' % device.alias.lower() , ignore=400, 
+                                     id=id, body=self.parsed_show_ip_route_vrf)
+
         db.close()
         # Goodbye Banner
         print(Panel.fit(Text.from_markup(FINISHED)))

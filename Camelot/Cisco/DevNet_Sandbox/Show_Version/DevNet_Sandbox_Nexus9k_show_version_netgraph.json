@@ -8,41 +8,68 @@
         { 
             "id": "DevNet_Sandbox_Nexus9k"
         },
-        {
+        { 
             "id": "Bootflash: 4287040 kB"
         },
-        {
+        { 
             "id": "Chassis: Nexus9000 C9500v"
         },
-        {
+        { 
             "id": "CPU: Intel(R) Xeon(R) CPU E5-4669 v4 @ 2.20GHz"
         },
-        {
+        { 
             "id": "Device Name: sbx-n9kv"
         },
-        {
-            "id": "Memory: 7939724 kB"
+        { 
+            "id": "Memory: 7939720 kB"
         },
-        {
-            "id": "Processor ID: 9FJTZNHQ62X"
+        { 
+            "id": "Model: Nexus9000 C9500v"
         },
-        {
+        { 
+            "id": "Processor Board ID: 9FJTZNHQ62X"
+        },
+        { 
             "id": "RP: Supervisor Module"
         },
-        {
+        { 
             "id": "Slots: None"
         },
-        {
+        { 
+            "id": "Kernel Uptime: 0 7 24 47"
+        },
+        { 
+            "id": "Name: Nexus"
+        },                                              
+        { 
+            "id": "OS: NX-OS"
+        },
+        { 
             "id": "Last Reload Reason: Unknown"
         },
-        {
-            "id": "Compile Time: 7/20/2020 20:00:00 [07/21/2020 06:30:11]"
+        { 
+            "id": "BIOS Compile Time: "
         },
-        {
-            "id": "Image: bootflash:///nxos.9.3.5.bin"
+        { 
+            "id": "BIOS Version: "
         },
-        {
-            "id": "Version: 9.3(5)"
+        { 
+            "id": "Kickstart Compile Time: "
+        },
+        { 
+            "id": "Kickstart Image File: "
+        },
+        { 
+            "id": "Kickstart Version: "
+        },
+        { 
+            "id": "System Compile Time: 7/20/2020 20:00:00 [07/21/2020 06:30:11]"
+        },
+        { 
+            "id": "System Image: bootflash:///nxos.9.3.5.bin"
+        },
+        { 
+            "id": "System Version: 9.3(5)"
         }
     ],
     "links": [
@@ -51,55 +78,105 @@
             "target": "Bootflash: 4287040 kB",
             "cost": 1
         },
-        {
+        { 
             "source": "DevNet_Sandbox_Nexus9k",
             "target": "Chassis: Nexus9000 C9500v",
             "cost": 1
         },
-        {
+        { 
             "source": "DevNet_Sandbox_Nexus9k",
             "target": "CPU: Intel(R) Xeon(R) CPU E5-4669 v4 @ 2.20GHz",
             "cost": 1
         },
-        {
+        { 
             "source": "DevNet_Sandbox_Nexus9k",
             "target": "Device Name: sbx-n9kv",
             "cost": 1
         },
-        {
+        { 
             "source": "DevNet_Sandbox_Nexus9k",
-            "target": "Memory: 7939724 kB",
+            "target": "Memory: 7939720 kB",
             "cost": 1
         },
-        {
+        { 
             "source": "DevNet_Sandbox_Nexus9k",
-            "target": "Processor ID: 9FJTZNHQ62X",
+            "target": "Model: Nexus9000 C9500v",
             "cost": 1
         },
-        {
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Processor Board ID: 9FJTZNHQ62X",
+            "cost": 1
+        },
+        { 
             "source": "DevNet_Sandbox_Nexus9k",
             "target": "RP: Supervisor Module",
             "cost": 1
         },
-        {
+        { 
             "source": "DevNet_Sandbox_Nexus9k",
             "target": "Slots: None",
             "cost": 1
         },
-        {
+        { 
             "source": "DevNet_Sandbox_Nexus9k",
-            "target": "Image: bootflash:///nxos.9.3.5.bin",
-            "cost": 1
-        },         
-        {
-            "source": "Image: bootflash:///nxos.9.3.5.bin",
-            "target": "Compile Time: 7/20/2020 20:00:00 [07/21/2020 06:30:11]",
+            "target": "Kernel Uptime: 0 7 24 47",
             "cost": 1
         },
-        {
-            "source": "Image: bootflash:///nxos.9.3.5.bin",
-            "target": "Version: 9.3(5)",
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Name: Nexus",
             "cost": 1
+        },                                              
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "OS: NX-OS",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Last Reload Reason: Unknown",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "BIOS Compile Time: ",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "BIOS Version: ",
+            "cost": 1            
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Kickstart Compile Time: ",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Kickstart Image File: ",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "Kickstart Version: ",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "System Compile Time: 7/20/2020 20:00:00 [07/21/2020 06:30:11]",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "System Image: bootflash:///nxos.9.3.5.bin",
+            "cost": 1
+        },
+        { 
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "System Version: 9.3(5)",
+            "cost": 1            
         }        
     ]
 }

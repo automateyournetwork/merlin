@@ -10,9 +10,9 @@ disk_total_space: '4186710016'
 disk_used_space: '1990119424'
 image: bootflash:///nxos.9.3.5.bin
 installed_packages: bfd-2.0.0.0-9.3.5.lib32_n9000
-main_mem: 7939724 kB
+main_mem: 7939720 kB
 os: NX-OS
-rp_uptime: 3791
+rp_uptime: 26575
 rtr_type: Nexus9000 C9500v
 slot: !!python/object/new:genie.ops.base.maker.CmdDict
   dictitems:
@@ -28,7 +28,7 @@ slot: !!python/object/new:genie.ops.base.maker.CmdDict
             name: N9K-vSUP
             redundancy_state: active
             rp_boot_image: bootflash:/nxos.9.3.5.bin
-            rp_uptime: 3791
+            rp_uptime: 26575
             sn: 9FJTZNHQ62X
             state: active
           state:

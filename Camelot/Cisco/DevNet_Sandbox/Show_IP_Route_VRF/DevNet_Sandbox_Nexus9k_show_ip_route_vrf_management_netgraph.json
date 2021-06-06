@@ -1,6 +1,6 @@
 {
     "type": "NetworkGraph",
-    "label": "Show IP ROUTE VRF management",
+    "label": "Show IP ROUTE",
     "protocol": "OLSR",
     "version": "0.6.6.2",
     "metric": "ETX",
@@ -8,168 +8,812 @@
         { 
             "id": "DevNet_Sandbox_Nexus9k"
         },
-        {
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Address Family: ipv4"
+        },
+        { 
             "id": "Route: 172.16.0.1/32"
         },
-        {
+        { 
+            "id": "Active: True"
+        },
+        { 
+            "id": "Metric: 0"
+        },
+        { 
+            "id": "Preference: 0"
+        },
+        { 
+            "id": "Source Protocol: direct"
+        },
+        { 
+            "id": "Next Hop Number: 1"
+        },
+        { 
+            "id": "Next Hop: 172.16.0.1"
+        },
+        { 
+            "id": "Best Unicast Next Hop: True"
+        },
+        { 
+            "id": "Metric: 0"
+        },
+        { 
+            "id": "Next Hop Preference: 0"
+        },
+        { 
+            "id": "Source Protocol: local"
+        },
+        { 
+            "id": "Updated: 07:22:56"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Address Family: ipv4"
+        },
+        { 
+            "id": "Route: 172.16.0.1/32"
+        },
+        { 
+            "id": "Active: True"
+        },
+        { 
+            "id": "Metric: 0"
+        },
+        { 
+            "id": "Preference: 0"
+        },
+        { 
+            "id": "Source Protocol: direct"
+        },
+        { 
+            "id": "Next Hop Number: 2"
+        },
+        { 
+            "id": "Next Hop: 172.16.0.1"
+        },
+        { 
+            "id": "Best Unicast Next Hop: True"
+        },
+        { 
+            "id": "Metric: 0"
+        },
+        { 
+            "id": "Next Hop Preference: 0"
+        },
+        { 
+            "id": "Source Protocol: direct"
+        },
+        { 
+            "id": "Updated: 07:22:56"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Address Family: ipv4"
+        },
+        { 
             "id": "Route: 172.16.1.0/30"
         },
-        {
+        { 
+            "id": "Active: True"
+        },
+        { 
+            "id": "Metric: 0"
+        },
+        { 
+            "id": "Preference: 0"
+        },
+        { 
+            "id": "Source Protocol: direct"
+        },
+        { 
+            "id": "Next Hop Number: 1"
+        },
+        { 
+            "id": "Next Hop: 172.16.1.1"
+        },
+        { 
+            "id": "Best Unicast Next Hop: True"
+        },
+        { 
+            "id": "Metric: 0"
+        },
+        { 
+            "id": "Next Hop Preference: 0"
+        },
+        { 
+            "id": "Source Protocol: direct"
+        },
+        { 
+            "id": "Updated: 07:21:59"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Address Family: ipv4"
+        },
+        { 
             "id": "Route: 172.16.1.1/32"
         },
-        {
+        { 
+            "id": "Active: True"
+        },
+        { 
+            "id": "Metric: 0"
+        },
+        { 
+            "id": "Preference: 0"
+        },
+        { 
+            "id": "Source Protocol: local"
+        },
+        { 
+            "id": "Next Hop Number: 1"
+        },
+        { 
+            "id": "Next Hop: 172.16.1.1"
+        },
+        { 
+            "id": "Best Unicast Next Hop: True"
+        },
+        { 
+            "id": "Metric: 0"
+        },
+        { 
+            "id": "Next Hop Preference: 0"
+        },
+        { 
+            "id": "Source Protocol: local"
+        },
+        { 
+            "id": "Updated: 07:21:59"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "VRF: management"
+        },
+        { 
+            "id": "Address Family: ipv4"
+        },
+        { 
             "id": "Route: 0.0.0.0/0"
         },
-        {
+        { 
+            "id": "Active: True"
+        },
+        { 
+            "id": "Metric: 0"
+        },
+        { 
+            "id": "Preference: 1"
+        },
+        { 
+            "id": "Source Protocol: static"
+        },
+        { 
+            "id": "Next Hop Number: 1"
+        },
+        { 
+            "id": "Next Hop: 10.10.20.254"
+        },
+        { 
+            "id": "Best Unicast Next Hop: True"
+        },
+        { 
+            "id": "Metric: 0"
+        },
+        { 
+            "id": "Next Hop Preference: 1"
+        },
+        { 
+            "id": "Source Protocol: static"
+        },
+        { 
+            "id": "Updated: 07:22:56"
+        },
+        { 
+            "id": "VRF: management"
+        },
+        { 
+            "id": "VRF: management"
+        },
+        { 
+            "id": "Address Family: ipv4"
+        },
+        { 
             "id": "Route: 10.10.20.0/24"
         },
-        {
+        { 
+            "id": "Active: True"
+        },
+        { 
+            "id": "Metric: 0"
+        },
+        { 
+            "id": "Preference: 0"
+        },
+        { 
+            "id": "Source Protocol: direct"
+        },
+        { 
+            "id": "Next Hop Number: 1"
+        },
+        { 
+            "id": "Next Hop: 10.10.20.58"
+        },
+        { 
+            "id": "Best Unicast Next Hop: True"
+        },
+        { 
+            "id": "Metric: 0"
+        },
+        { 
+            "id": "Next Hop Preference: 0"
+        },
+        { 
+            "id": "Source Protocol: direct"
+        },
+        { 
+            "id": "Updated: 07:22:56"
+        },
+        { 
+            "id": "VRF: management"
+        },
+        { 
+            "id": "VRF: management"
+        },
+        { 
+            "id": "Address Family: ipv4"
+        },
+        { 
             "id": "Route: 10.10.20.58/32"
         },
-        {
-            "id": "Outgoing Interface: Loopback1"
+        { 
+            "id": "Active: True"
         },
-        {
-            "id": "Next Hop: 172.16.0.1"         
+        { 
+            "id": "Metric: 0"
         },
-        {
-            "id": "Outgoing Interface: Loopback1"
+        { 
+            "id": "Preference: 0"
         },
-        {
-            "id": "Next Hop: 172.16.0.1"         
+        { 
+            "id": "Source Protocol: local"
         },
-        {
-            "id": "Outgoing Interface: Ethernet1/5"
+        { 
+            "id": "Next Hop Number: 1"
         },
-        {
-            "id": "Next Hop: 172.16.1.1"         
-        },
-        {
-            "id": "Outgoing Interface: Ethernet1/5"
-        },
-        {
-            "id": "Next Hop: 172.16.1.1"         
-        },
-        {
-            "id": "Outgoing Interface: "
-        },
-        {
-            "id": "Next Hop: 10.10.20.254"         
-        },
-        {
-            "id": "Outgoing Interface: mgmt0"
-        },
-        {
-            "id": "Next Hop: 10.10.20.58"         
-        },
-        {
-            "id": "Outgoing Interface: mgmt0"
-        },
-        {
+        { 
             "id": "Next Hop: 10.10.20.58"
-        }
+        },
+        { 
+            "id": "Best Unicast Next Hop: True"
+        },
+        { 
+            "id": "Metric: 0"
+        },
+        { 
+            "id": "Next Hop Preference: 0"
+        },
+        { 
+            "id": "Source Protocol: local"
+        },
+        { 
+            "id": "Updated: 07:22:56"
+        },
+        { 
+            "id": "VRF: management"
+        }  
     ],
     "links": [
-        {
-            "source": "DevNet_Sandbox_Nexus9k",
+        { 
+            "source": "VRF: default",
+            "target": "Address Family: ipv4",
+            "cost": 1
+        },
+        { 
+            "source": "Address Family: ipv4",
             "target": "Route: 172.16.0.1/32",
-            "cost": 2
+            "cost": 1
+        },
+        { 
+            "source": "Route: 172.16.0.1/32",
+            "target": "Active: True",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 172.16.0.1/32",
+            "target": "Metric: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 172.16.0.1/32",
+            "target": "Preference: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 172.16.0.1/32",
+            "target": "Source Protocol: direct",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 172.16.0.1/32",
+            "target": "Next Hop Number: 1",
+            "cost": 1            
+        },
+        { 
+            "source": "Next Hop Number: 1",
+            "target": "Next Hop: 172.16.0.1",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 172.16.0.1",
+            "target": "Best Unicast Next Hop: True",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 172.16.0.1",
+            "target": "Metric: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 172.16.0.1",
+            "target": "Next Hop Preference: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 172.16.0.1",
+            "target": "Source Protocol: local",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 172.16.0.1",
+            "target": "Updated: 07:22:56",
+            "cost": 1
         },
         {
             "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VRF: default",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: default",
+            "target": "Address Family: ipv4",
+            "cost": 1
+        },
+        { 
+            "source": "Address Family: ipv4",
+            "target": "Route: 172.16.0.1/32",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 172.16.0.1/32",
+            "target": "Active: True",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 172.16.0.1/32",
+            "target": "Metric: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 172.16.0.1/32",
+            "target": "Preference: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 172.16.0.1/32",
+            "target": "Source Protocol: direct",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 172.16.0.1/32",
+            "target": "Next Hop Number: 2",
+            "cost": 1            
+        },
+        { 
+            "source": "Next Hop Number: 2",
+            "target": "Next Hop: 172.16.0.1",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 172.16.0.1",
+            "target": "Best Unicast Next Hop: True",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 172.16.0.1",
+            "target": "Metric: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 172.16.0.1",
+            "target": "Next Hop Preference: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 172.16.0.1",
+            "target": "Source Protocol: direct",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 172.16.0.1",
+            "target": "Updated: 07:22:56",
+            "cost": 1
+        },
+        {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VRF: default",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: default",
+            "target": "Address Family: ipv4",
+            "cost": 1
+        },
+        { 
+            "source": "Address Family: ipv4",
             "target": "Route: 172.16.1.0/30",
-            "cost": 2
+            "cost": 1
         },
-        {
-            "source": "DevNet_Sandbox_Nexus9k",
-            "target": "Route: 172.16.1.1/32",
-            "cost": 2
-        },
-        {
-            "source": "DevNet_Sandbox_Nexus9k",
-            "target": "Route: 0.0.0.0/0",
-            "cost": 2
-        },
-        {
-            "source": "DevNet_Sandbox_Nexus9k",
-            "target": "Route: 10.10.20.0/24",
-            "cost": 2
-        },
-        {
-            "source": "DevNet_Sandbox_Nexus9k",
-            "target": "Route: 10.10.20.58/32",
-            "cost": 2
-        },
-        {
-            "source": "Route: 172.16.0.1/32",
-            "target": "Outgoing Interface: Loopback1",
-            "cost": 2
-        },
-        {
-            "source": "Outgoing Interface: Loopback1",
-            "target": "Next Hop: 172.16.0.1",
-            "cost": 3
-        },
-        {
-            "source": "Route: 172.16.0.1/32",
-            "target": "Outgoing Interface: Loopback1",
-            "cost": 2
-        },
-        {
-            "source": "Outgoing Interface: Loopback1",
-            "target": "Next Hop: 172.16.0.1",
-            "cost": 3
-        },
-        {
+        { 
             "source": "Route: 172.16.1.0/30",
-            "target": "Outgoing Interface: Ethernet1/5",
-            "cost": 2
+            "target": "Active: True",
+            "cost": 1
         },
-        {
-            "source": "Outgoing Interface: Ethernet1/5",
+        { 
+            "source": "Route: 172.16.1.0/30",
+            "target": "Metric: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 172.16.1.0/30",
+            "target": "Preference: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 172.16.1.0/30",
+            "target": "Source Protocol: direct",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 172.16.1.0/30",
+            "target": "Next Hop Number: 1",
+            "cost": 1            
+        },
+        { 
+            "source": "Next Hop Number: 1",
             "target": "Next Hop: 172.16.1.1",
-            "cost": 3
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 172.16.1.1",
+            "target": "Best Unicast Next Hop: True",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 172.16.1.1",
+            "target": "Metric: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 172.16.1.1",
+            "target": "Next Hop Preference: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 172.16.1.1",
+            "target": "Source Protocol: direct",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 172.16.1.1",
+            "target": "Updated: 07:21:59",
+            "cost": 1
         },
         {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VRF: default",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: default",
+            "target": "Address Family: ipv4",
+            "cost": 1
+        },
+        { 
+            "source": "Address Family: ipv4",
+            "target": "Route: 172.16.1.1/32",
+            "cost": 1
+        },
+        { 
             "source": "Route: 172.16.1.1/32",
-            "target": "Outgoing Interface: Ethernet1/5",
-            "cost": 2
+            "target": "Active: True",
+            "cost": 1
         },
-        {
-            "source": "Outgoing Interface: Ethernet1/5",
+        { 
+            "source": "Route: 172.16.1.1/32",
+            "target": "Metric: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 172.16.1.1/32",
+            "target": "Preference: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 172.16.1.1/32",
+            "target": "Source Protocol: local",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 172.16.1.1/32",
+            "target": "Next Hop Number: 1",
+            "cost": 1            
+        },
+        { 
+            "source": "Next Hop Number: 1",
             "target": "Next Hop: 172.16.1.1",
-            "cost": 3
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 172.16.1.1",
+            "target": "Best Unicast Next Hop: True",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 172.16.1.1",
+            "target": "Metric: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 172.16.1.1",
+            "target": "Next Hop Preference: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 172.16.1.1",
+            "target": "Source Protocol: local",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 172.16.1.1",
+            "target": "Updated: 07:21:59",
+            "cost": 1
         },
         {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VRF: default",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: management",
+            "target": "Address Family: ipv4",
+            "cost": 1
+        },
+        { 
+            "source": "Address Family: ipv4",
+            "target": "Route: 0.0.0.0/0",
+            "cost": 1
+        },
+        { 
             "source": "Route: 0.0.0.0/0",
-            "target": "Outgoing Interface: ",
-            "cost": 2
+            "target": "Active: True",
+            "cost": 1
         },
-        {
-            "source": "Outgoing Interface: ",
+        { 
+            "source": "Route: 0.0.0.0/0",
+            "target": "Metric: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 0.0.0.0/0",
+            "target": "Preference: 1",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 0.0.0.0/0",
+            "target": "Source Protocol: static",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 0.0.0.0/0",
+            "target": "Next Hop Number: 1",
+            "cost": 1            
+        },
+        { 
+            "source": "Next Hop Number: 1",
             "target": "Next Hop: 10.10.20.254",
-            "cost": 3
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 10.10.20.254",
+            "target": "Best Unicast Next Hop: True",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 10.10.20.254",
+            "target": "Metric: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 10.10.20.254",
+            "target": "Next Hop Preference: 1",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 10.10.20.254",
+            "target": "Source Protocol: static",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 10.10.20.254",
+            "target": "Updated: 07:22:56",
+            "cost": 1
         },
         {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VRF: management",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: management",
+            "target": "Address Family: ipv4",
+            "cost": 1
+        },
+        { 
+            "source": "Address Family: ipv4",
+            "target": "Route: 10.10.20.0/24",
+            "cost": 1
+        },
+        { 
             "source": "Route: 10.10.20.0/24",
-            "target": "Outgoing Interface: mgmt0",
-            "cost": 2
+            "target": "Active: True",
+            "cost": 1
         },
-        {
-            "source": "Outgoing Interface: mgmt0",
+        { 
+            "source": "Route: 10.10.20.0/24",
+            "target": "Metric: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 10.10.20.0/24",
+            "target": "Preference: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 10.10.20.0/24",
+            "target": "Source Protocol: direct",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 10.10.20.0/24",
+            "target": "Next Hop Number: 1",
+            "cost": 1            
+        },
+        { 
+            "source": "Next Hop Number: 1",
             "target": "Next Hop: 10.10.20.58",
-            "cost": 3
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 10.10.20.58",
+            "target": "Best Unicast Next Hop: True",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 10.10.20.58",
+            "target": "Metric: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 10.10.20.58",
+            "target": "Next Hop Preference: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 10.10.20.58",
+            "target": "Source Protocol: direct",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 10.10.20.58",
+            "target": "Updated: 07:22:56",
+            "cost": 1
         },
         {
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VRF: management",
+            "cost": 1
+        },
+        { 
+            "source": "VRF: management",
+            "target": "Address Family: ipv4",
+            "cost": 1
+        },
+        { 
+            "source": "Address Family: ipv4",
+            "target": "Route: 10.10.20.58/32",
+            "cost": 1
+        },
+        { 
             "source": "Route: 10.10.20.58/32",
-            "target": "Outgoing Interface: mgmt0",
-            "cost": 2
+            "target": "Active: True",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 10.10.20.58/32",
+            "target": "Metric: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 10.10.20.58/32",
+            "target": "Preference: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 10.10.20.58/32",
+            "target": "Source Protocol: local",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 10.10.20.58/32",
+            "target": "Next Hop Number: 1",
+            "cost": 1            
+        },
+        { 
+            "source": "Next Hop Number: 1",
+            "target": "Next Hop: 10.10.20.58",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 10.10.20.58",
+            "target": "Best Unicast Next Hop: True",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 10.10.20.58",
+            "target": "Metric: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 10.10.20.58",
+            "target": "Next Hop Preference: 0",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 10.10.20.58",
+            "target": "Source Protocol: local",
+            "cost": 1
+        },
+        { 
+            "source": "Next Hop: 10.10.20.58",
+            "target": "Updated: 07:22:56",
+            "cost": 1
         },
         {
-            "source": "Outgoing Interface: mgmt0",
-            "target": "Next Hop: 10.10.20.58",
-            "cost": 3
-        }
-        
+            "source": "DevNet_Sandbox_Nexus9k",
+            "target": "VRF: management",
+            "cost": 1
+        }  
     ]
 }
