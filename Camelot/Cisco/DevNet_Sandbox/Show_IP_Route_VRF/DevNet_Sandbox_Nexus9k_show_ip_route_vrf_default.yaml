@@ -20,7 +20,7 @@ dictitems:
                     outgoing_interface: Loopback1
                     route_preference: 0
                     source_protocol: local
-                    updated: 07:23:21
+                    updated: 00:57:39
                   2:
                     best_ucast_nexthop: true
                     index: 2
@@ -29,7 +29,7 @@ dictitems:
                     outgoing_interface: Loopback1
                     route_preference: 0
                     source_protocol: direct
-                    updated: 07:23:21
+                    updated: 00:57:39
               route: 172.16.0.1/32
               route_preference: 0
               source_protocol: direct
@@ -49,7 +49,7 @@ dictitems:
                     outgoing_interface: Ethernet1/5
                     route_preference: 0
                     source_protocol: direct
-                    updated: 07:22:24
+                    updated: 00:56:38
               route: 172.16.1.0/30
               route_preference: 0
               source_protocol: direct
@@ -69,7 +69,7 @@ dictitems:
                     outgoing_interface: Ethernet1/5
                     route_preference: 0
                     source_protocol: local
-                    updated: 07:22:24
+                    updated: 00:56:38
               route: 172.16.1.1/32
               route_preference: 0
               source_protocol: local

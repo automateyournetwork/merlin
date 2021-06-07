@@ -26,6 +26,7 @@ from ascii_art import GREETING, LEARN, RUNNING, WRITING, FINISHED
 from general_functionalities import ParseShowCommandFunction, ParseLearnFunction, ParseConfigFunction, ParseDictFunction
 from tinydb import TinyDB, Query
 from elasticsearch import Elasticsearch
+from elastic_enterprise_search import AppSearch
 
 # ----------------
 # Get logger for script
@@ -58,7 +59,15 @@ db = TinyDB('Camelot/Cisco/DevNet_Sandbox/The_Grail/Nexus9K_Grail_DB.json')
 # ----------------
 # Define Elastic
 # ----------------
-es = Elasticsearch(cloud_id="{{ YOUR CLOUD ID HERE }}", http_auth=('{{ YOUR ELASTIC USERNAME HERE }}', '{{ YOUR ELASTIC PASSWORD HERE }}'))
+es = Elasticsearch(cloud_id="{{ YOUR CLOUD ID HERE }}", http_auth=('{{ YOUR USERNAME HERE }}', '{{ YOUR PASSWORD HERE}}'))
+
+# ----------------
+# Elastic App Search
+# ----------------
+app_search = AppSearch(
+    "{{ YOUR APP SEARCH ENGINE URL HERE }}",
+    http_auth="{{ YOUR BEARER TOKEN HERE }}"
+)
 
 # ----------------
 # AE Test Setup
@@ -190,18 +199,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store ACLs in Device Table in Tiny Database
+                    # Store ACLs in Tiny Database
                     # ----------------
 
                     table.insert(self.learned_acl)
 
                     # ----------------
-                    # Store ACLs in Device Table in Elastic
+                    # Store ACLs in Elastic
                     # ----------------
 
                     id = "learned_acl"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.learned_acl)
+
+                    # ----------------
+                    # Index ACLs in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.learned_acl)
 
                 # Learned ARP
                 if self.learned_arp is not None:
@@ -254,18 +270,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store ARP in Device Table in Tiny Database
+                    # Store ARP in Tiny Database
                     # ----------------
 
                     table.insert(self.learned_arp)
 
                     # ----------------
-                    # Store ARP in Device Table in Elastic
+                    # Store ARP in Elastic
                     # ----------------
 
                     id = "learned_arp"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.learned_arp)
+
+                    # ----------------
+                    # Index ARP in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.learned_arp)
 
                 # Learned BGP
                 if self.learned_bgp is not None:
@@ -297,18 +320,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store BGP in Device Table in Database
+                    # Store BGP in Database
                     # ----------------
 
                     table.insert(self.learned_bgp)
 
                     # ----------------
-                    # Store BGP in Device Table in Elastic
+                    # Store BGP in Elastic
                     # ----------------
 
                     id = "learned_bgp"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.learned_bgp)
+
+                    # ----------------
+                    # Index BGP in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.learned_bgp)
 
                 # Learned Interface
                 if self.learned_interface is not None:
@@ -351,18 +381,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)                        
 
                     # ----------------
-                    # Store Interface in Device Table in Database
+                    # Store Interface in Database
                     # ----------------
 
                     table.insert(self.learned_interface)
 
                     # ----------------
-                    # Store Interface in Device Table in Elastic
+                    # Store Interface in Elastic
                     # ----------------
 
                     id = "learned_interface"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.learned_interface)
+
+                    # ----------------
+                    # Index Interface in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.learned_interface)
 
                 # Learned OSPF
                 if self.learned_ospf is not None:
@@ -376,18 +413,25 @@ class Collect_Information(aetest.Testcase):
                     self.save_to_yaml_file(device, directory, file_name, self.learned_ospf)
 
                     # ----------------
-                    # Store OSPF in Device Table in Database
+                    # Store OSPF in Database
                     # ----------------
 
                     table.insert(self.learned_ospf)
 
                     # ----------------
-                    # Store OSPF in Device Table in Elastic
+                    # Store OSPF in Elastic
                     # ----------------
 
                     id = "learned_ospf"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.learned_ospf)
+
+                    # ----------------
+                    # Index OSPF in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.learned_ospf)
 
                 # Learned Platform
                 if self.learned_platform is not None:
@@ -419,18 +463,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store Platform in Device Table in Database
+                    # Store Platform in Database
                     # ----------------
 
                     table.insert(self.learned_platform)
 
                     # ----------------
-                    # Store Platform in Device Table in Elastic
+                    # Store Platform in Elastic
                     # ----------------
 
                     id = "learned_platform"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.learned_platform)
+
+                    # ----------------
+                    # Index Platform in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.learned_platform)
 
                 # Learned Routing
                 if self.learned_routing is not None:
@@ -462,18 +513,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store Routing in Device Table in Database
+                    # Store Routing in Database
                     # ----------------
 
                     table.insert(self.learned_routing)
 
                     # ----------------
-                    # Store Routing in Device Table in Elastic
+                    # Store Routing in Elastic
                     # ----------------
 
                     id = "learned_routing"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.learned_routing)
+
+                    # ----------------
+                    # Index Routing in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.learned_routing)
 
                 # Learned VLAN
                 if self.learned_vlan is not None:
@@ -505,18 +563,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store VLAN in Device Table in Database
+                    # Store VLAN in Database
                     # ----------------
 
                     table.insert(self.learned_vlan)
 
                     # ----------------
-                    # Store VLAN in Device Table in Elastic
+                    # Store VLAN in Elastic
                     # ----------------
 
                     id = "learned_vlan"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.learned_vlan)
+
+                    # ----------------
+                    # Index VLAN in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.learned_vlan)
 
                 # Learned VRF
                 if self.learned_vrf is not None:
@@ -548,18 +613,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store VRF in Device Table in Database
+                    # Store VRF in Database
                     # ----------------
 
                     table.insert(self.learned_vrf)
 
                     # ----------------
-                    # Store VRF in Device Table in Elastic
+                    # Store VRF in Elastic
                     # ----------------
 
                     id = "learned_vrf"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.learned_vrf)
+
+                    # ----------------
+                    # Index VRF in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.learned_vrf)
 
                 ###############################
                 # Genie Show Command Section
@@ -600,18 +672,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store ACLs in Device Table in Database
+                    # Store ACLs in Database
                     # ----------------
 
                     table.insert(self.parsed_show_access_lists)
 
                     # ----------------
-                    # Store ACLs in Device Table in Elastic
+                    # Store ACLs in Elastic
                     # ----------------
 
                     id = "show_access_lists"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.parsed_show_access_lists)
+
+                    # ----------------
+                    # Index ACLs in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.parsed_show_access_lists)
 
                 # Show BGP process vrf all
                 if self.parsed_show_bgp_process_vrf_all is not None:
@@ -643,18 +722,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store BGP Process VRF All in Device Table in Database
+                    # Store BGP Process VRF All in Database
                     # ----------------
 
                     table.insert(self.parsed_show_bgp_process_vrf_all)
 
                     # ----------------
-                    # Store BGP Process VRF All in Device Table in Elastic
+                    # Store BGP Process VRF All in Elastic
                     # ----------------
 
                     id = "show_bgp_process_vrf_all"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.parsed_show_bgp_process_vrf_all)
+
+                    # ----------------
+                    # Index BGP Process VRF All in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.parsed_show_bgp_process_vrf_all)
 
                 # Show BGP Sessions
                 if self.parsed_show_bgp_sessions is not None:
@@ -686,18 +772,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store BGP Sessions in Device Table in Database
+                    # Store BGP Sessions in Database
                     # ----------------
 
                     table.insert(self.parsed_show_bgp_sessions)
 
                     # ----------------
-                    # Store BGP Sessions in Device Table in Elastic
+                    # Store BGP Sessions in Elastic
                     # ----------------
 
                     id = "show_bgp_sessions"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.parsed_show_bgp_sessions)
+
+                    # ----------------
+                    # Index BGP Sessions in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.parsed_show_bgp_sessions)
 
                 # Show interface status
                 if self.parsed_show_int_status is not None:
@@ -739,18 +832,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_connected_netjson_html)
 
                     # ----------------
-                    # Store Interface Status in Device Table in Database
+                    # Store Interface Status in Database
                     # ----------------
 
                     table.insert(self.parsed_show_int_status)
 
                     # ----------------
-                    # Store Interface Status in Device Table in Elastic
+                    # Store Interface Status in Elastic
                     # ----------------
 
                     id = "show_interface_status"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.parsed_show_int_status)
+
+                    # ----------------
+                    # Index BGP Sessions in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.parsed_show_bgp_sessions)
 
                 # Show Inventory
                 if self.parsed_show_inventory is not None:
@@ -784,18 +884,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store Inventory in Device Table in Database
+                    # Store Inventory in Database
                     # ----------------
 
                     table.insert(self.parsed_show_inventory)
 
                     # ----------------
-                    # Store Inventory in Device Table in Elastic
+                    # Store Inventory in Elastic
                     # ----------------
 
                     id = "show_inventory"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.parsed_show_inventory)
+
+                    # ----------------
+                    # Index Inventory in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.parsed_show_inventory)
 
                 # Show ip interface brief
                 if self.parsed_show_ip_int_brief is not None:
@@ -827,18 +934,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store IP Int Brief in Device Table in Database
+                    # Store IP Int Brief in Database
                     # ----------------
 
                     table.insert(self.parsed_show_ip_int_brief)
 
                     # ----------------
-                    # Store IP Int Brief in Device Table in Elastic
+                    # Store IP Int Brief in Elastic
                     # ----------------
 
                     id = "show_ip_interface_brief"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.parsed_show_ip_int_brief)
+
+                    # ----------------
+                    # Index IP Int Brief in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.parsed_show_ip_int_brief)
 
                 # Show IP OSPF
                 if self.parsed_show_ip_ospf is not None:
@@ -870,18 +984,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store IP OSPF in Device Table in Database
+                    # Store IP OSPF in Database
                     # ----------------
 
                     table.insert(self.parsed_show_ip_ospf)
 
                     # ----------------
-                    # Store IP OSPF in Device Table in Elastic
+                    # Store IP OSPF in Elastic
                     # ----------------
 
                     id = "show_ip_ospf"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.parsed_show_ip_ospf)
+
+                    # ----------------
+                    # Index IP OSPF in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.parsed_show_ip_ospf)
 
                 # Show ip Route
                 if self.parsed_show_ip_route is not None:
@@ -913,18 +1034,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store IP Route Brief in Device Table in Database
+                    # Store IP Route Brief in Database
                     # ----------------
 
                     table.insert(self.parsed_show_ip_route)
 
                     # ----------------
-                    # Store IP Route in Device Table in Elastic
+                    # Store IP Route in Elastic
                     # ----------------
 
                     id = "show_ip_route"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.parsed_show_ip_route)
+
+                    # ----------------
+                    # Index IP Route in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.parsed_show_ip_route)
 
                 # Show mac address-table
                 if self.parsed_show_mac_address_table is not None:
@@ -956,18 +1084,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store MAC Table in Device Table in Database
+                    # Store MAC Table in Database
                     # ----------------
 
                     table.insert(self.parsed_show_mac_address_table)
 
                     # ----------------
-                    # Store MAC Table in Device Table in Elastic
+                    # Store MAC Table in Elastic
                     # ----------------
 
                     id = "show_mac_address_table"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.parsed_show_mac_address_table)
+
+                    # ----------------
+                    # Index MAC Table in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.parsed_show_mac_address_table)
 
                 # Show port-channel summary
                 if self.parsed_show_port_channel_summary is not None:
@@ -999,18 +1134,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store Port-Channel in Device Table in Database
+                    # Store Port-Channel in Database
                     # ----------------
 
                     table.insert(self.parsed_show_port_channel_summary)
 
                     # ----------------
-                    # Store Port-Channel in Device Table in Elastic
+                    # Store Port-Channel in Elastic
                     # ----------------
 
                     id = "show_port_channel_summary"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.parsed_show_port_channel_summary)
+
+                    # ----------------
+                    # Index Port-Channel in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.parsed_show_port_channel_summary)
 
                 # Show version
                 if self.parsed_show_version is not None:
@@ -1043,18 +1185,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store Version in Device Table in Database
+                    # Store Version in Database
                     # ----------------
 
                     table.insert(self.parsed_show_version)
 
                     # ----------------
-                    # Store Port-Channel in Device Table in Elastic
+                    # Store Version in Elastic
                     # ----------------
 
                     id = "show_version"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.parsed_show_version)
+
+                    # ----------------
+                    # Index Version in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.parsed_show_version)
 
                 # Show vrf
                 if self.parsed_show_vrf is not None:
@@ -1092,18 +1241,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store VRF in Device Table in Database
+                    # Store VRF in Database
                     # ----------------
 
                     table.insert(self.parsed_show_vrf)
 
                     # ----------------
-                    # Store VRF in Device Table in Elastic
+                    # Store VRF in Elastic
                     # ----------------
 
                     id = "show_vrf"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.parsed_show_vrf)
+
+                    # ----------------
+                    # Index VRF in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.parsed_show_vrf)
 
                 # Show vrf all detail
                 if self.parsed_show_vrf_all_detail is not None:
@@ -1141,18 +1297,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store VRF Detail in Device Table in Database
+                    # Store VRF Detail in Database
                     # ----------------
 
                     table.insert(self.parsed_show_vrf_all_detail)
 
                     # ----------------
-                    # Store VRF Detail in Device Table in Elastic
+                    # Store VRF Detail in Elastic
                     # ----------------
 
                     id = "show_vrf_all_detail"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.parsed_show_vrf_all_detail)
+
+                    # ----------------
+                    # Index VRF Detail in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.parsed_show_vrf_all_detail)
 
                 # Show vrf all interface
                 if self.parsed_show_vrf_all_interface is not None:
@@ -1184,18 +1347,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store VRF Interface in Device Table in Database
+                    # Store VRF Interface in Database
                     # ----------------
 
                     table.insert(self.parsed_show_vrf_all_interface)
 
                     # ----------------
-                    # Store VRF Interface in Device Table in Elastic
+                    # Store VRF Interface in Elastic
                     # ----------------
 
                     id = "show_vrf_all_interface"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.parsed_show_vrf_all_interface)
+
+                    # ----------------
+                    # Index VRF Interface in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.parsed_show_vrf_all_interface)
 
                 # Show vlan
                 if self.parsed_show_vlan is not None:
@@ -1227,18 +1397,25 @@ class Collect_Information(aetest.Testcase):
                         fh.write(parsed_output_netjson_html)
 
                     # ----------------
-                    # Store VLAN in Device Table in Database
+                    # Store VLAN in Database
                     # ----------------
 
                     table.insert(self.parsed_show_vlan)
 
                     # ----------------
-                    # Store VLAN Interface in Device Table in Elastic
+                    # Store VLAN in Elastic
                     # ----------------
 
                     id = "show_vlan"
                     es.index(index='%s' % device.alias.lower() , ignore=400, 
                              id=id, body=self.parsed_show_vlan)
+
+                    # ----------------
+                    # Index VLAN in Elastic Search
+                    # ----------------
+                    app_search.index_documents(
+                    engine_name="merlin-search",
+                    documents=self.parsed_show_vlan)
 
                     # For Each VRF
                     for vrf in self.parsed_show_vrf['vrfs']:
@@ -1277,64 +1454,78 @@ class Collect_Information(aetest.Testcase):
                                 fh.write(parsed_output_netjson_html)
 
                             # ----------------
-                            # Store IP ARP VRF in Device Table in Database
+                            # Store IP ARP VRF in Database
                             # ----------------
 
                             table.insert(self.parsed_show_ip_arp_vrf)
 
                             # ----------------
-                            # Store IP ARP VRF in Device Table in Elastic
+                            # Store IP ARP VRF in Elastic
                             # ----------------
 
                             id = "show_ip_arp_vrf_%s" % vrf
                             es.index(index='%s' % device.alias.lower() , ignore=400, 
                                      id=id, body=self.parsed_show_ip_arp_vrf)
 
-                            # Show IP ROUTE VRF <VRF>
-                            with steps.start('Parsing ip route vrf',continue_=True) as step:
-                                try:
-                                    self.parsed_show_ip_route_vrf = device.parse("show ip route vrf %s" % vrf)
-                                except Exception as e:
-                                    step.failed('Could not parse it correctly\n{e}'.format(e=e))
+                            # ----------------
+                            # Index IP ARP VRF in Elastic Search
+                            # ----------------
+                            app_search.index_documents(
+                            engine_name="merlin-search",
+                            documents=self.parsed_show_ip_arp_vrf)
 
-                            with steps.start('Store data',continue_=True) as step:
+                        # Show IP ROUTE VRF <VRF>
+                        with steps.start('Parsing ip route vrf',continue_=True) as step:
+                            try:
+                                self.parsed_show_ip_route_vrf = device.parse("show ip route vrf %s" % vrf)
+                            except Exception as e:
+                                step.failed('Could not parse it correctly\n{e}'.format(e=e))
 
-                                with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s.json" % (device.alias,vrf), "w") as fid:
-                                  json.dump(self.parsed_show_ip_route_vrf, fid, indent=4, sort_keys=True)
+                        with steps.start('Store data',continue_=True) as step:
 
-                                with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s.yaml" % (device.alias,vrf), "w") as yml:
-                                  yaml.dump(self.parsed_show_ip_route_vrf, yml, allow_unicode=True)
-                         
-                                for filetype in filetype_loop:
-                                    parsed_output_type = sh_ip_route_template.render(to_parse_ip_route=self.parsed_show_ip_route_vrf['vrf'],filetype_loop_jinja2=filetype)
+                            with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s.json" % (device.alias,vrf), "w") as fid:
+                              json.dump(self.parsed_show_ip_route_vrf, fid, indent=4, sort_keys=True)
 
-                                    with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s.%s" % (device.alias,vrf,filetype), "w") as fh:
-                                      fh.write(parsed_output_type)
+                            with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s.yaml" % (device.alias,vrf), "w") as yml:
+                              yaml.dump(self.parsed_show_ip_route_vrf, yml, allow_unicode=True)
+                        
+                            for filetype in filetype_loop:
+                                parsed_output_type = sh_ip_route_template.render(to_parse_ip_route=self.parsed_show_ip_route_vrf['vrf'],filetype_loop_jinja2=filetype)
 
-                                if os.path.exists("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s.md" % (device.alias,vrf)):
-                                    os.system("markmap --no-open Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s.md --output Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s_mind_map.html" % (device.alias,vrf,device.alias,vrf))
+                                with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s.%s" % (device.alias,vrf,filetype), "w") as fh:
+                                  fh.write(parsed_output_type)
 
-                                parsed_output_netjson_json = sh_ip_route_vrf_netjson_json_template.render(to_parse_ip_route=self.parsed_show_ip_route['vrf'],filetype_loop_jinja2=filetype,vrf = vrf,device_alias = device.alias)
-                                parsed_output_netjson_html = sh_ip_route_vrf_netjson_html_template.render(device_alias = device.alias,vrf = vrf)
+                            if os.path.exists("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s.md" % (device.alias,vrf)):
+                                os.system("markmap --no-open Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s.md --output Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s_mind_map.html" % (device.alias,vrf,device.alias,vrf))
 
-                                with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s_netgraph.json" % (device.alias,vrf), "w") as fh:
-                                    fh.write(parsed_output_netjson_json)               
+                            parsed_output_netjson_json = sh_ip_route_vrf_netjson_json_template.render(to_parse_ip_route=self.parsed_show_ip_route['vrf'],filetype_loop_jinja2=filetype,vrf = vrf,device_alias = device.alias)
+                            parsed_output_netjson_html = sh_ip_route_vrf_netjson_html_template.render(device_alias = device.alias,vrf = vrf)
 
-                                with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s_netgraph.html" % (device.alias,vrf), "w") as fh:
-                                    fh.write(parsed_output_netjson_html)
+                            with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s_netgraph.json" % (device.alias,vrf), "w") as fh:
+                                fh.write(parsed_output_netjson_json)               
+
+                            with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s_netgraph.html" % (device.alias,vrf), "w") as fh:
+                                fh.write(parsed_output_netjson_html)
 
                             # ----------------
-                            # Store IP Route VRF Interface in Device Table in Database
+                            # Store IP Route VRF Interface in Database
                             # ----------------
 
                             table.insert(self.parsed_show_ip_route_vrf)
                             # ----------------
-                            # Store IP Route VRF in Device Table in Elastic
+                            # Store IP Route VRF in Elastic
                             # ----------------
 
                             id = "show_ip_route_vrf_%s" % vrf
                             es.index(index='%s' % device.alias.lower() , ignore=400, 
                                      id=id, body=self.parsed_show_ip_route_vrf)
+
+                            # ----------------
+                            # Index IP ARP VRF in Elastic Search
+                            # ----------------
+                            app_search.index_documents(
+                            engine_name="merlin-search",
+                            documents=self.parsed_show_ip_arp_vrf)                                         
 
         db.close()
         # Goodbye Banner
