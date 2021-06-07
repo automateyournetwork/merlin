@@ -1087,44 +1087,34 @@ class Collect_Information(aetest.Testcase):
 
                             table.insert(self.parsed_show_ip_arp_vrf)
 
-                            # Show IP ROUTE VRF <VRF>
-                            with steps.start('Parsing ip route vrf',continue_=True) as step:
-                                try:
-                                    self.parsed_show_ip_route_vrf = device.parse("show ip route vrf %s" % vrf)
-                                except Exception as e:
-                                    step.failed('Could not parse it correctly\n{e}'.format(e=e))
-
-                            with steps.start('Store data',continue_=True) as step:
-
-                                with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s.json" % (device.alias,vrf), "w") as fid:
-                                  json.dump(self.parsed_show_ip_route_vrf, fid, indent=4, sort_keys=True)
-
-                                with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s.yaml" % (device.alias,vrf), "w") as yml:
-                                  yaml.dump(self.parsed_show_ip_route_vrf, yml, allow_unicode=True)
-                         
-                                for filetype in filetype_loop:
-                                    parsed_output_type = sh_ip_route_template.render(to_parse_ip_route=self.parsed_show_ip_route_vrf['vrf'],filetype_loop_jinja2=filetype)
-
-                                    with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s.%s" % (device.alias,vrf,filetype), "w") as fh:
-                                      fh.write(parsed_output_type)
-
-                                if os.path.exists("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s.md" % (device.alias,vrf)):
-                                    os.system("markmap --no-open Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s.md --output Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s_mind_map.html" % (device.alias,vrf,device.alias,vrf))
-
-                                parsed_output_netjson_json = sh_ip_route_vrf_netjson_json_template.render(to_parse_ip_route=self.parsed_show_ip_route['vrf'],filetype_loop_jinja2=filetype,vrf = vrf,device_alias = device.alias)
-                                parsed_output_netjson_html = sh_ip_route_vrf_netjson_html_template.render(device_alias = device.alias,vrf = vrf)
-
-                                with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s_netgraph.json" % (device.alias,vrf), "w") as fh:
-                                    fh.write(parsed_output_netjson_json)               
-
-                                with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s_netgraph.html" % (device.alias,vrf), "w") as fh:
-                                    fh.write(parsed_output_netjson_html)
-
-                            # ----------------
-                            # Store IP Route VRF Interface in Device Table in Databse
-                            # ----------------
-
-                            table.insert(self.parsed_show_ip_route_vrf)
+                        # Show IP ROUTE VRF <VRF>
+                        with steps.start('Parsing ip route vrf',continue_=True) as step:
+                            try:
+                                self.parsed_show_ip_route_vrf = device.parse("show ip route vrf %s" % vrf)
+                            except Exception as e:
+                                step.failed('Could not parse it correctly\n{e}'.format(e=e))
+                        with steps.start('Store data',continue_=True) as step:
+                            with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s.json" % (device.alias,vrf), "w") as fid:
+                              json.dump(self.parsed_show_ip_route_vrf, fid, indent=4, sort_keys=True)
+                            with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s.yaml" % (device.alias,vrf), "w") as yml:
+                              yaml.dump(self.parsed_show_ip_route_vrf, yml, allow_unicode=True)
+                        
+                            for filetype in filetype_loop:
+                                parsed_output_type = sh_ip_route_template.render(to_parse_ip_route=self.parsed_show_ip_route_vrf['vrf'],filetype_loop_jinja2=filetype)
+                                with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s.%s" % (device.alias,vrf,filetype), "w") as fh:
+                                  fh.write(parsed_output_type)
+                            if os.path.exists("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s.md" % (device.alias,vrf)):
+                                os.system("markmap --no-open Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s.md --output Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s_mind_map.html" % (device.alias,vrf,device.alias,vrf))
+                            parsed_output_netjson_json = sh_ip_route_vrf_netjson_json_template.render(to_parse_ip_route=self.parsed_show_ip_route['vrf'],filetype_loop_jinja2=filetype,vrf = vrf,device_alias = device.alias)
+                            parsed_output_netjson_html = sh_ip_route_vrf_netjson_html_template.render(device_alias = device.alias,vrf = vrf)
+                            with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s_netgraph.json" % (device.alias,vrf), "w") as fh:
+                                fh.write(parsed_output_netjson_json)               
+                            with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_Route_VRF/%s_show_ip_route_vrf_%s_netgraph.html" % (device.alias,vrf), "w") as fh:
+                                fh.write(parsed_output_netjson_html)
+                        # ----------------
+                        # Store IP Route VRF Interface in Device Table in Databse
+                        # ----------------
+                        table.insert(self.parsed_show_ip_route_vrf)
         
         db.close()
         # Goodbye Banner
