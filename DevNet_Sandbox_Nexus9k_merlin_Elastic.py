@@ -11,6 +11,7 @@ import os
 import sys
 import yaml
 import time
+import datetime
 import json
 import shutil
 import logging
@@ -59,15 +60,21 @@ db = TinyDB('Camelot/Cisco/DevNet_Sandbox/The_Grail/Nexus9K_Grail_DB.json')
 # ----------------
 # Define Elastic
 # ----------------
-es = Elasticsearch(cloud_id="{{ YOUR CLOUD ID HERE }}", http_auth=('{{ YOUR USERNAME HERE }}', '{{ YOUR PASSWORD HERE}}'))
+es = Elasticsearch(cloud_id="{{ YOUR CLOUD ID }}", http_auth=('{{ YOUR USERNAME }}', '{{ YOUR PASSWORD }}'))
 
 # ----------------
 # Elastic App Search
 # ----------------
 app_search = AppSearch(
-    "{{ YOUR APP SEARCH ENGINE URL HERE }}",
-    http_auth="{{ YOUR BEARER TOKEN HERE }}"
+    "{{ YOUR APP SEARCH URL }}",
+    http_auth="{{ YOUR PRIVATE KEY }}"
 )
+
+#
+# Timestamp
+#
+
+timestamp_json = '{ "Timestamp": %s }' % json.dumps(datetime.datetime.now().replace(microsecond=0).isoformat())
 
 # ----------------
 # AE Test Setup
@@ -98,6 +105,21 @@ class Collect_Information(aetest.Testcase):
             # Create a table in the database
             # ----------------
             table = db.table(device.alias)
+
+            # ----------------
+            # Timestamp Elastic
+            # ----------------
+
+            id = "timestamp"
+            es.index(index='%s' % device.alias.lower() , ignore=400, 
+                    id=id, body=timestamp_json)
+
+            # ----------------
+            # Timestamp Elastic Search
+            # ----------------
+            app_search.index_documents(
+            engine_name="merlin-search",
+            documents=timestamp_json)
 
             # ---------------------------------------
             # Genie learn().info for various functions

@@ -6,16 +6,16 @@ dictitems:
       chassis: Nexus9000 C9500v
       cpu: Intel(R) Xeon(R) CPU E5-4669 v4 @ 2.20GHz
       device_name: sbx-n9kv
-      memory: 7939724 kB
+      memory: 7939720 kB
       model: Nexus9000 C9500v
       processor_board_id: 9FJTZNHQ62X
       rp: Supervisor Module
       slots: None
     kernel_uptime:
       days: 0
-      hours: 0
-      minutes: 59
-      seconds: 11
+      hours: 4
+      minutes: 32
+      seconds: 38
     name: Nexus
     os: NX-OS
     reason: Unknown
