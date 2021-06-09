@@ -123,8 +123,8 @@ dictitems:
       out_drops: 0
       out_gratuitous_pkts: 2
       out_replies_pkts: 0
-      out_requests_pkts: 2
-      out_total: 4
+      out_requests_pkts: 10
+      out_total: 12
     state:
       leaf_dict:
         entries_total: &id003 !!python/name:genie.libs.parser.nxos.show_arp.ShowIpArpSummaryVrfAll ''

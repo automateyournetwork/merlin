@@ -17,7 +17,7 @@
                                         "next_hop": "10.10.20.254",
                                         "route_preference": 1,
                                         "source_protocol": "static",
-                                        "updated": "00:57:42"
+                                        "updated": "04:31:19"
                                     }
                                 }
                             },
@@ -41,7 +41,7 @@
                                         "outgoing_interface": "mgmt0",
                                         "route_preference": 0,
                                         "source_protocol": "direct",
-                                        "updated": "00:57:42"
+                                        "updated": "04:31:19"
                                     }
                                 }
                             },
@@ -65,7 +65,7 @@
                                         "outgoing_interface": "mgmt0",
                                         "route_preference": 0,
                                         "source_protocol": "local",
-                                        "updated": "00:57:42"
+                                        "updated": "04:31:19"
                                     }
                                 }
                             },
