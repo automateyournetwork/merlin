@@ -18,7 +18,7 @@
             "id": "Serial Number: 91OMZP37WBR"
         },
         { 
-            "id": "Uptime: 16242"
+            "id": "Uptime: 2764"
         },
         { 
             "id": "Directory: bootflash:"
@@ -1011,7 +1011,7 @@
             "id": "Boot Image: bootflash:/nxos.9.3.5.bin"
         },
         { 
-            "id": "Uptime: 16242"
+            "id": "Uptime: 2764"
         },
         { 
             "id": "Sub_Slot Name: N9K-vSUP"
@@ -1050,7 +1050,7 @@
         },
         {
             "source": "DevNet_Sandbox_Nexus9k",
-            "target": "Uptime: 16242",
+            "target": "Uptime: 2764",
             "cost": 1
         },
         { 
@@ -2705,7 +2705,7 @@
         },
         { 
             "source": "Sub_Slot Name: N9K-vSUP",
-            "target": "Uptime: 16242",
+            "target": "Uptime: 2764",
             "cost": 1
         },
         { 

@@ -18,7 +18,7 @@ dictitems:
                     next_hop: 10.10.20.254
                     route_preference: 1
                     source_protocol: static
-                    updated: 04:31:19
+                    updated: 00:46:28
               route: 0.0.0.0/0
               route_preference: 1
               source_protocol: static
@@ -38,7 +38,7 @@ dictitems:
                     outgoing_interface: mgmt0
                     route_preference: 0
                     source_protocol: direct
-                    updated: 04:31:19
+                    updated: 00:46:28
               route: 10.10.20.0/24
               route_preference: 0
               source_protocol: direct
@@ -58,7 +58,7 @@ dictitems:
                     outgoing_interface: mgmt0
                     route_preference: 0
                     source_protocol: local
-                    updated: 04:31:19
+                    updated: 00:46:28
               route: 10.10.20.58/32
               route_preference: 0
               source_protocol: local

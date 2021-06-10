@@ -13,13 +13,13 @@
                                         "index": 1,
                                         "next_hop": "172.16.0.1",
                                         "outgoing_interface": "Loopback1",
-                                        "updated": "04:30:38"
+                                        "updated": "00:45:59"
                                     },
                                     "2": {
                                         "index": 2,
                                         "next_hop": "172.16.0.1",
                                         "outgoing_interface": "Loopback1",
-                                        "updated": "04:30:38"
+                                        "updated": "00:45:59"
                                     }
                                 }
                             },
@@ -36,7 +36,7 @@
                                         "index": 1,
                                         "next_hop": "172.16.1.1",
                                         "outgoing_interface": "Ethernet1/5",
-                                        "updated": "04:29:40"
+                                        "updated": "00:45:01"
                                     }
                                 }
                             },
@@ -53,7 +53,7 @@
                                         "index": 1,
                                         "next_hop": "172.16.1.1",
                                         "outgoing_interface": "Ethernet1/5",
-                                        "updated": "04:29:40"
+                                        "updated": "00:45:01"
                                     }
                                 }
                             },
@@ -77,7 +77,7 @@
                                     "1": {
                                         "index": 1,
                                         "next_hop": "10.10.20.254",
-                                        "updated": "04:30:38"
+                                        "updated": "00:45:59"
                                     }
                                 }
                             },
@@ -94,7 +94,7 @@
                                         "index": 1,
                                         "next_hop": "10.10.20.58",
                                         "outgoing_interface": "mgmt0",
-                                        "updated": "04:30:38"
+                                        "updated": "00:45:59"
                                     }
                                 }
                             },
@@ -111,7 +111,7 @@
                                         "index": 1,
                                         "next_hop": "10.10.20.58",
                                         "outgoing_interface": "mgmt0",
-                                        "updated": "04:30:38"
+                                        "updated": "00:45:59"
                                     }
                                 }
                             },

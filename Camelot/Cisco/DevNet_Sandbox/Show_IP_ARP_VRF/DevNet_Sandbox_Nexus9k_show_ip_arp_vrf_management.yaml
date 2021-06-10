@@ -5,9 +5,9 @@ dictitems:
       ipv4:
         neighbors:
           10.10.20.254:
-            age: 00:08:51
+            age: 00:09:01
             ip: 10.10.20.254
-            link_layer_address: 0050.56bf.0ecf
+            link_layer_address: 0050.56bf.fc86
             origin: dynamic
             physical_interface: mgmt0
   statistics:

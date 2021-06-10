@@ -36,7 +36,7 @@
             "id": "Slots: None"
         },
         { 
-            "id": "Kernel Uptime: 0 4 32 38"
+            "id": "Kernel Uptime: 0 0 48 3"
         },
         { 
             "id": "Name: Nexus"
@@ -120,7 +120,7 @@
         },
         { 
             "source": "DevNet_Sandbox_Nexus9k",
-            "target": "Kernel Uptime: 0 4 32 38",
+            "target": "Kernel Uptime: 0 0 48 3",
             "cost": 1
         },
         { 

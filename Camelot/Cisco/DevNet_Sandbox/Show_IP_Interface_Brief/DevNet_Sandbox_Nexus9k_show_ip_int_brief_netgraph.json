@@ -8,53 +8,77 @@
         { 
             "id": "DevNet_Sandbox_Nexus9k"
         },
-        {
+        { 
             "id": "Vlan100"
         },
-        {
-            "id": "172.16.100.1"
+        { 
+            "id": "IP Address: 172.16.100.1"
         },
-        {
+        { 
+            "id": "Status: protocol-down/link-down/admin-up"
+        },
+        { 
             "id": "Vlan101"
         },
-        {
-            "id": "172.16.101.1"
+        { 
+            "id": "IP Address: 172.16.101.1"
         },
-        {
+        { 
+            "id": "Status: protocol-down/link-down/admin-up"
+        },
+        { 
             "id": "Vlan102"
         },
-        {
-            "id": "172.16.102.1"
+        { 
+            "id": "IP Address: 172.16.102.1"
         },
-        {
+        { 
+            "id": "Status: protocol-down/link-down/admin-up"
+        },
+        { 
             "id": "Vlan103"
         },
-        {
-            "id": "172.16.103.1"
+        { 
+            "id": "IP Address: 172.16.103.1"
         },
-        {
+        { 
+            "id": "Status: protocol-down/link-down/admin-up"
+        },
+        { 
             "id": "Vlan104"
         },
-        {
-            "id": "172.16.104.1"
+        { 
+            "id": "IP Address: 172.16.104.1"
         },
-        {
+        { 
+            "id": "Status: protocol-down/link-down/admin-up"
+        },
+        { 
             "id": "Vlan105"
         },
-        {
-            "id": "172.16.105.1"
+        { 
+            "id": "IP Address: 172.16.105.1"
         },
-        {
+        { 
+            "id": "Status: protocol-down/link-down/admin-up"
+        },
+        { 
             "id": "Lo1"
         },
-        {
-            "id": "172.16.0.1"
+        { 
+            "id": "IP Address: 172.16.0.1"
+        },        
+        { 
+            "id": "Status: protocol-up/link-up/admin-up"
         },
-        {
+        { 
             "id": "Eth1/5"
         },
-        {
-            "id": "172.16.1.1"
+        { 
+            "id": "IP Address: 172.16.1.1"
+        },        
+        { 
+            "id": "Status: protocol-up/link-up/admin-up"
         }
     ],
     "links": [
@@ -62,80 +86,120 @@
             "source": "DevNet_Sandbox_Nexus9k",
             "target": "Vlan100",
             "cost": 1
-        },
-        {
+        },       
+        { 
             "source": "Vlan100",
-            "target": "172.16.100.1",
+            "target": "IP Address: 172.16.100.1",
+            "cost": 1
+        },
+        { 
+            "source": "Vlan100",
+            "target": "Status: protocol-down/link-down/admin-up",
             "cost": 1
         },
         {
             "source": "DevNet_Sandbox_Nexus9k",
             "target": "Vlan101",
             "cost": 1
-        },
-        {
+        },       
+        { 
             "source": "Vlan101",
-            "target": "172.16.101.1",
+            "target": "IP Address: 172.16.101.1",
+            "cost": 1
+        },
+        { 
+            "source": "Vlan101",
+            "target": "Status: protocol-down/link-down/admin-up",
             "cost": 1
         },
         {
             "source": "DevNet_Sandbox_Nexus9k",
             "target": "Vlan102",
             "cost": 1
-        },
-        {
+        },       
+        { 
             "source": "Vlan102",
-            "target": "172.16.102.1",
+            "target": "IP Address: 172.16.102.1",
+            "cost": 1
+        },
+        { 
+            "source": "Vlan102",
+            "target": "Status: protocol-down/link-down/admin-up",
             "cost": 1
         },
         {
             "source": "DevNet_Sandbox_Nexus9k",
             "target": "Vlan103",
             "cost": 1
-        },
-        {
+        },       
+        { 
             "source": "Vlan103",
-            "target": "172.16.103.1",
+            "target": "IP Address: 172.16.103.1",
+            "cost": 1
+        },
+        { 
+            "source": "Vlan103",
+            "target": "Status: protocol-down/link-down/admin-up",
             "cost": 1
         },
         {
             "source": "DevNet_Sandbox_Nexus9k",
             "target": "Vlan104",
             "cost": 1
-        },
-        {
+        },       
+        { 
             "source": "Vlan104",
-            "target": "172.16.104.1",
+            "target": "IP Address: 172.16.104.1",
+            "cost": 1
+        },
+        { 
+            "source": "Vlan104",
+            "target": "Status: protocol-down/link-down/admin-up",
             "cost": 1
         },
         {
             "source": "DevNet_Sandbox_Nexus9k",
             "target": "Vlan105",
             "cost": 1
-        },
-        {
+        },       
+        { 
             "source": "Vlan105",
-            "target": "172.16.105.1",
+            "target": "IP Address: 172.16.105.1",
             "cost": 1
         },
-        {
+        { 
+            "source": "Vlan105",
+            "target": "Status: protocol-down/link-down/admin-up",
+            "cost": 1
+        },
+        { 
             "source": "DevNet_Sandbox_Nexus9k",
             "target": "Lo1",
             "cost": 1
         },
-        {
+        { 
             "source": "Lo1",
-            "target": "172.16.0.1",
+            "target": "IP Address: 172.16.0.1",
+            "cost": 1            
+        },        
+        { 
+            "source": "Lo1",
+            "target": "Status: protocol-up/link-up/admin-up",
             "cost": 1
         },
-        {
+        { 
             "source": "DevNet_Sandbox_Nexus9k",
             "target": "Eth1/5",
             "cost": 1
         },
-        {
+        { 
             "source": "Eth1/5",
-            "target": "172.16.1.1",
+            "target": "IP Address: 172.16.1.1",
+            "cost": 1            
+        },        
+        { 
+            "source": "Eth1/5",
+            "target": "Status: protocol-up/link-up/admin-up",
             "cost": 1
         }
     ]    

@@ -19,7 +19,7 @@
                                         "outgoing_interface": "Loopback1",
                                         "route_preference": 0,
                                         "source_protocol": "local",
-                                        "updated": "04:30:45"
+                                        "updated": "00:46:06"
                                     },
                                     "2": {
                                         "best_ucast_nexthop": true,
@@ -29,7 +29,7 @@
                                         "outgoing_interface": "Loopback1",
                                         "route_preference": 0,
                                         "source_protocol": "direct",
-                                        "updated": "04:30:45"
+                                        "updated": "00:46:06"
                                     }
                                 }
                             },
@@ -53,7 +53,7 @@
                                         "outgoing_interface": "Ethernet1/5",
                                         "route_preference": 0,
                                         "source_protocol": "direct",
-                                        "updated": "04:29:47"
+                                        "updated": "00:45:08"
                                     }
                                 }
                             },
@@ -77,7 +77,7 @@
                                         "outgoing_interface": "Ethernet1/5",
                                         "route_preference": 0,
                                         "source_protocol": "local",
-                                        "updated": "04:29:47"
+                                        "updated": "00:45:08"
                                     }
                                 }
                             },
@@ -107,7 +107,7 @@
                                         "next_hop": "10.10.20.254",
                                         "route_preference": 1,
                                         "source_protocol": "static",
-                                        "updated": "04:30:45"
+                                        "updated": "00:46:06"
                                     }
                                 }
                             },
@@ -131,7 +131,7 @@
                                         "outgoing_interface": "mgmt0",
                                         "route_preference": 0,
                                         "source_protocol": "direct",
-                                        "updated": "04:30:45"
+                                        "updated": "00:46:06"
                                     }
                                 }
                             },
@@ -155,7 +155,7 @@
                                         "outgoing_interface": "mgmt0",
                                         "route_preference": 0,
                                         "source_protocol": "local",
-                                        "updated": "04:30:45"
+                                        "updated": "00:46:06"
                                     }
                                 }
                             },

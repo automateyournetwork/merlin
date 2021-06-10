@@ -39,12 +39,12 @@
                                                             },
                                                             "header": {
                                                                 "adv_router": "172.16.0.1",
-                                                                "age": 1611,
-                                                                "checksum": "0x7b70",
+                                                                "age": 880,
+                                                                "checksum": "0x8969",
                                                                 "length": 36,
                                                                 "lsa_id": "172.16.0.1",
                                                                 "option": "0x2",
-                                                                "seq_num": "0x8000000a",
+                                                                "seq_num": "0x80000003",
                                                                 "type": 1
                                                             }
                                                         }
