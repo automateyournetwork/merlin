@@ -1,0 +1,181 @@
+{
+  "roomId": "{{ roomid }}",
+  "markdown": "# Parsed Show IP Inteface Brief for {{ device_id }}",
+  "attachments": [
+    {
+      "contentType": "application/vnd.microsoft.card.adaptive",
+      "content": {
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "type": "AdaptiveCard",
+        "version": "1.0",
+        "body": [
+            {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "https://developer.webex.com/images/webex-teams-logo.png"
+                        }
+                    ],
+                    "width": "stretch"
+                },
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Merlin",
+                            "weight": "lighter",
+                            "color": "accent"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "weight": "Bolder",
+                            "text": "Network Magic",
+                            "horizontalAlignment": "Left",
+                            "wrap": true,
+                            "color": "Light",
+                            "size": "Large",
+                            "spacing": "Small"
+                        }
+                    ],
+                    "width": "stretch"
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": 35,
+                    "items": [{% for interface in to_parse_interfaces %}{% set interface_loop = loop %}
+                        {
+                            "type": "TextBlock",
+                            "text": "Interface:",
+                            "color": "Light"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "IP Address:",
+                            "weight": "Lighter",
+                            "color": "Light",
+                            "spacing": "Small"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Status:",
+                            "weight": "Lighter",
+                            "color": "Light",
+                            "spacing": "Small"{% if interface_loop.last %}
+                        }{% else %}
+                        },{% endif %}{% endfor %}
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": 65,
+                    "items": [{% for interface in to_parse_interfaces %}{% set interface_loop = loop %}{% if to_parse_interfaces[interface].vlan_id is defined %}{% for vlan_id in to_parse_interfaces[interface].vlan_id %}
+                        {
+                            "type": "TextBlock",
+                            "text": "{{ interface }}",
+                            "color": "Light"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "{{ to_parse_interfaces[interface].vlan_id[vlan_id].ip_address }}",
+                            "color": "Light",
+                            "weight": "Lighter",
+                            "spacing": "Small"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "{{ to_parse_interfaces[interface].vlan_id[vlan_id].interface_status }}",
+                            "weight": "Lighter",
+                            "color": "Light",
+                            "spacing": "Small"
+                        },{% endfor %}{% else %}
+                        {
+                            "type": "TextBlock",
+                            "text": "{{ interface }}",
+                            "color": "Light"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "{{ to_parse_interfaces[interface].ip_address }}",
+                            "color": "Light",
+                            "weight": "Lighter",
+                            "spacing": "Small"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "{{ to_parse_interfaces[interface].interface_status }}",
+                            "weight": "Lighter",
+                            "color": "Light",
+                            "spacing": "Small"{% if interface_loop.last %}
+                        }{% else %}
+                        },{% endif %}{% endif %}{% endfor %}
+                    ]
+                }
+            ],
+            "spacing": "Padding",
+            "horizontalAlignment": "Center"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Merlin has provided this information for the {{ device_id }} using pyATS Parse Show IP Interface Brief",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Merlin Resources:"
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "altText": "",
+                            "url": "https://developer.webex.com/images/link-icon.png",
+                            "size": "Small",
+                            "width": "30px"
+                        }
+                    ],
+                    "spacing": "Small"
+                },
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "[Merlin GitHub Repository](https://github.com/automateyournetwork/merlin)",
+                            "horizontalAlignment": "Left",
+                            "size": "Medium"
+                        }
+                    ],
+                    "verticalContentAlignment": "Center",
+                    "horizontalAlignment": "Left",
+                    "spacing": "Small"
+                    }                           
+            ]
+            }                
+        ],
+          "actions": [
+            {
+              "type": "Action.OpenUrl",
+              "url": "https://github.com/automateyournetwork/merlin/blob/main/Camelot/Cisco/DevNet_Sandbox/Show_IP_Interface_Brief/{{ device_id }}_show_ip_interface_brief.xlsx",
+              "title": "See The Full Results of Show IP Interface Brief on {{ device_id }}"
+            }
+          ]        
+        }
+        }
+    ]
+}

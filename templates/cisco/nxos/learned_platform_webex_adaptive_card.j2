@@ -1,0 +1,212 @@
+{
+  "roomId": "{{ roomid }}",
+  "markdown": "# Learn Platform for {{ device_id }}",
+  "attachments": [
+    {
+      "contentType": "application/vnd.microsoft.card.adaptive",
+      "content": {
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "type": "AdaptiveCard",
+        "version": "1.0",
+        "body": [
+            {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "https://developer.webex.com/images/webex-teams-logo.png"
+                        }
+                    ],
+                    "width": "stretch"
+                },
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Merlin",
+                            "weight": "lighter",
+                            "color": "accent"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "weight": "Bolder",
+                            "text": "Network Magic",
+                            "horizontalAlignment": "Left",
+                            "wrap": true,
+                            "color": "Light",
+                            "size": "Large",
+                            "spacing": "Small"
+                        }
+                    ],
+                    "width": "stretch"
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": 35,
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Device Type:",
+                            "color": "Light"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Chassis:",
+                            "weight": "Lighter",
+                            "color": "Light",
+                            "spacing": "Small"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Serial Number:",
+                            "weight": "Lighter",
+                            "color": "Light",
+                            "spacing": "Small"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Uptime:",
+                            "color": "Light"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Image:",
+                            "weight": "Lighter",
+                            "color": "Light",
+                            "spacing": "Small"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "OS:",
+                            "weight": "Lighter",
+                            "color": "Light",
+                            "spacing": "Small"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "Version:",
+                            "weight": "Lighter",
+                            "color": "Light",
+                            "spacing": "Small"
+                        }                                                  
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": 65,
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "{{ to_parse_platform.rtr_type }}",
+                            "color": "Light"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "{{ to_parse_platform.chassis }}",
+                            "color": "Light",
+                            "weight": "Lighter",
+                            "spacing": "Small"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "{{ to_parse_platform.chassis_sn }}",
+                            "weight": "Lighter",
+                            "color": "Light",
+                            "spacing": "Small"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "{{ to_parse_platform.rp_uptime }}",
+                            "color": "Light"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "{{ to_parse_platform.image }}",
+                            "color": "Light",
+                            "weight": "Lighter",
+                            "spacing": "Small"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "{{ to_parse_platform.os }}",
+                            "weight": "Lighter",
+                            "color": "Light",
+                            "spacing": "Small"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "{{ to_parse_platform.version }}",
+                            "weight": "Lighter",
+                            "color": "Light",
+                            "spacing": "Small"
+                        }                                                  
+                    ]
+                }
+            ],
+            "spacing": "Padding",
+            "horizontalAlignment": "Center"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Merlin has provided this information for the {{ device_id }} using pyATS Learn Platform",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Merlin Resources:"
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "altText": "",
+                            "url": "https://developer.webex.com/images/link-icon.png",
+                            "size": "Small",
+                            "width": "30px"
+                        }
+                    ],
+                    "spacing": "Small"
+                },
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "[Merlin GitHub Repository](https://github.com/automateyournetwork/merlin)",
+                            "horizontalAlignment": "Left",
+                            "size": "Medium"
+                        }
+                    ],
+                    "verticalContentAlignment": "Center",
+                    "horizontalAlignment": "Left",
+                    "spacing": "Small"
+                    }                           
+            ]
+            }                
+        ],
+          "actions": [
+            {
+              "type": "Action.OpenUrl",
+              "url": "https://www.automateyournetwork.ca/uncategorized/merlin-feature-webex-chatbots-with-pyats/",
+              "title": "Read the full How-To Blog on automateyournetwork.ca"
+            }
+          ]        
+        }
+        }
+    ]
+}

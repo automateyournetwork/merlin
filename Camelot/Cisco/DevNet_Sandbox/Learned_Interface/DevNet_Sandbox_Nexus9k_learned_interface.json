@@ -39,12 +39,12 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.0101",
+        "mac_address": "00bf.50f9.0101",
         "medium": "broadcast",
         "mtu": 1500,
         "native_vlan": 1,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0101",
+        "phys_address": "00bf.50f9.0101",
         "port_channel": {
             "port_channel_int": "Port-channel11",
             "port_channel_member": true
@@ -93,11 +93,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.010a",
+        "phys_address": "00bf.50f9.010a",
         "port_channel": {
             "port_channel_member": false
         },
@@ -143,11 +143,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.010b",
+        "phys_address": "00bf.50f9.010b",
         "port_channel": {
             "port_channel_member": false
         },
@@ -193,11 +193,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.010c",
+        "phys_address": "00bf.50f9.010c",
         "port_channel": {
             "port_channel_member": false
         },
@@ -243,11 +243,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.010d",
+        "phys_address": "00bf.50f9.010d",
         "port_channel": {
             "port_channel_member": false
         },
@@ -293,11 +293,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.010e",
+        "phys_address": "00bf.50f9.010e",
         "port_channel": {
             "port_channel_member": false
         },
@@ -343,11 +343,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.010f",
+        "phys_address": "00bf.50f9.010f",
         "port_channel": {
             "port_channel_member": false
         },
@@ -393,11 +393,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0110",
+        "phys_address": "00bf.50f9.0110",
         "port_channel": {
             "port_channel_member": false
         },
@@ -443,11 +443,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0111",
+        "phys_address": "00bf.50f9.0111",
         "port_channel": {
             "port_channel_member": false
         },
@@ -493,11 +493,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0112",
+        "phys_address": "00bf.50f9.0112",
         "port_channel": {
             "port_channel_member": false
         },
@@ -543,11 +543,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0113",
+        "phys_address": "00bf.50f9.0113",
         "port_channel": {
             "port_channel_member": false
         },
@@ -594,12 +594,12 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.0102",
+        "mac_address": "00bf.50f9.0102",
         "medium": "broadcast",
         "mtu": 1500,
         "native_vlan": 1,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0102",
+        "phys_address": "00bf.50f9.0102",
         "port_channel": {
             "port_channel_int": "Port-channel11",
             "port_channel_member": true
@@ -648,11 +648,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0114",
+        "phys_address": "00bf.50f9.0114",
         "port_channel": {
             "port_channel_member": false
         },
@@ -698,11 +698,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0115",
+        "phys_address": "00bf.50f9.0115",
         "port_channel": {
             "port_channel_member": false
         },
@@ -748,11 +748,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0116",
+        "phys_address": "00bf.50f9.0116",
         "port_channel": {
             "port_channel_member": false
         },
@@ -798,11 +798,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0117",
+        "phys_address": "00bf.50f9.0117",
         "port_channel": {
             "port_channel_member": false
         },
@@ -848,11 +848,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0118",
+        "phys_address": "00bf.50f9.0118",
         "port_channel": {
             "port_channel_member": false
         },
@@ -898,11 +898,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0119",
+        "phys_address": "00bf.50f9.0119",
         "port_channel": {
             "port_channel_member": false
         },
@@ -948,11 +948,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.011a",
+        "phys_address": "00bf.50f9.011a",
         "port_channel": {
             "port_channel_member": false
         },
@@ -998,11 +998,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.011b",
+        "phys_address": "00bf.50f9.011b",
         "port_channel": {
             "port_channel_member": false
         },
@@ -1048,11 +1048,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.011c",
+        "phys_address": "00bf.50f9.011c",
         "port_channel": {
             "port_channel_member": false
         },
@@ -1098,11 +1098,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.011d",
+        "phys_address": "00bf.50f9.011d",
         "port_channel": {
             "port_channel_member": false
         },
@@ -1148,11 +1148,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0103",
+        "phys_address": "00bf.50f9.0103",
         "port_channel": {
             "port_channel_member": false
         },
@@ -1198,11 +1198,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.011e",
+        "phys_address": "00bf.50f9.011e",
         "port_channel": {
             "port_channel_member": false
         },
@@ -1248,11 +1248,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.011f",
+        "phys_address": "00bf.50f9.011f",
         "port_channel": {
             "port_channel_member": false
         },
@@ -1298,11 +1298,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0120",
+        "phys_address": "00bf.50f9.0120",
         "port_channel": {
             "port_channel_member": false
         },
@@ -1348,11 +1348,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0121",
+        "phys_address": "00bf.50f9.0121",
         "port_channel": {
             "port_channel_member": false
         },
@@ -1398,11 +1398,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0122",
+        "phys_address": "00bf.50f9.0122",
         "port_channel": {
             "port_channel_member": false
         },
@@ -1448,11 +1448,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0123",
+        "phys_address": "00bf.50f9.0123",
         "port_channel": {
             "port_channel_member": false
         },
@@ -1498,11 +1498,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0124",
+        "phys_address": "00bf.50f9.0124",
         "port_channel": {
             "port_channel_member": false
         },
@@ -1548,11 +1548,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0125",
+        "phys_address": "00bf.50f9.0125",
         "port_channel": {
             "port_channel_member": false
         },
@@ -1598,11 +1598,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0126",
+        "phys_address": "00bf.50f9.0126",
         "port_channel": {
             "port_channel_member": false
         },
@@ -1648,11 +1648,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0127",
+        "phys_address": "00bf.50f9.0127",
         "port_channel": {
             "port_channel_member": false
         },
@@ -1698,11 +1698,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0104",
+        "phys_address": "00bf.50f9.0104",
         "port_channel": {
             "port_channel_member": false
         },
@@ -1748,11 +1748,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0128",
+        "phys_address": "00bf.50f9.0128",
         "port_channel": {
             "port_channel_member": false
         },
@@ -1798,11 +1798,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0129",
+        "phys_address": "00bf.50f9.0129",
         "port_channel": {
             "port_channel_member": false
         },
@@ -1848,11 +1848,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.012a",
+        "phys_address": "00bf.50f9.012a",
         "port_channel": {
             "port_channel_member": false
         },
@@ -1898,11 +1898,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.012b",
+        "phys_address": "00bf.50f9.012b",
         "port_channel": {
             "port_channel_member": false
         },
@@ -1948,11 +1948,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.012c",
+        "phys_address": "00bf.50f9.012c",
         "port_channel": {
             "port_channel_member": false
         },
@@ -1998,11 +1998,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.012d",
+        "phys_address": "00bf.50f9.012d",
         "port_channel": {
             "port_channel_member": false
         },
@@ -2048,11 +2048,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.012e",
+        "phys_address": "00bf.50f9.012e",
         "port_channel": {
             "port_channel_member": false
         },
@@ -2098,11 +2098,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.012f",
+        "phys_address": "00bf.50f9.012f",
         "port_channel": {
             "port_channel_member": false
         },
@@ -2148,11 +2148,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0130",
+        "phys_address": "00bf.50f9.0130",
         "port_channel": {
             "port_channel_member": false
         },
@@ -2198,11 +2198,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0131",
+        "phys_address": "00bf.50f9.0131",
         "port_channel": {
             "port_channel_member": false
         },
@@ -2226,15 +2226,15 @@
             "out_discard": 0,
             "out_errors": 0,
             "out_mac_pause_frames": 0,
-            "out_multicast_pkts": 354,
-            "out_octets": 35863,
-            "out_pkts": 356,
+            "out_multicast_pkts": 782,
+            "out_octets": 80496,
+            "out_pkts": 784,
             "out_unicast_pkts": 0,
             "rate": {
                 "in_rate": 0,
                 "in_rate_pkts": 0,
                 "load_interval": 300,
-                "out_rate": 96,
+                "out_rate": 104,
                 "out_rate_pkts": 0
             }
         },
@@ -2255,12 +2255,12 @@
                 "prefix_length": "30"
             }
         },
-        "last_change": "00:44:43",
-        "mac_address": "00bf.c126.1b08",
+        "last_change": "01:39:15",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "up",
-        "phys_address": "00bf.c126.0105",
+        "phys_address": "00bf.50f9.0105",
         "port_channel": {
             "port_channel_member": false
         },
@@ -2307,11 +2307,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0132",
+        "phys_address": "00bf.50f9.0132",
         "port_channel": {
             "port_channel_member": false
         },
@@ -2357,11 +2357,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0133",
+        "phys_address": "00bf.50f9.0133",
         "port_channel": {
             "port_channel_member": false
         },
@@ -2407,11 +2407,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0134",
+        "phys_address": "00bf.50f9.0134",
         "port_channel": {
             "port_channel_member": false
         },
@@ -2457,11 +2457,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0135",
+        "phys_address": "00bf.50f9.0135",
         "port_channel": {
             "port_channel_member": false
         },
@@ -2507,11 +2507,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0136",
+        "phys_address": "00bf.50f9.0136",
         "port_channel": {
             "port_channel_member": false
         },
@@ -2557,11 +2557,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0137",
+        "phys_address": "00bf.50f9.0137",
         "port_channel": {
             "port_channel_member": false
         },
@@ -2607,11 +2607,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0138",
+        "phys_address": "00bf.50f9.0138",
         "port_channel": {
             "port_channel_member": false
         },
@@ -2657,11 +2657,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0139",
+        "phys_address": "00bf.50f9.0139",
         "port_channel": {
             "port_channel_member": false
         },
@@ -2707,11 +2707,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.013a",
+        "phys_address": "00bf.50f9.013a",
         "port_channel": {
             "port_channel_member": false
         },
@@ -2757,11 +2757,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.013b",
+        "phys_address": "00bf.50f9.013b",
         "port_channel": {
             "port_channel_member": false
         },
@@ -2807,11 +2807,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0106",
+        "phys_address": "00bf.50f9.0106",
         "port_channel": {
             "port_channel_member": false
         },
@@ -2857,11 +2857,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.013c",
+        "phys_address": "00bf.50f9.013c",
         "port_channel": {
             "port_channel_member": false
         },
@@ -2907,11 +2907,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.013d",
+        "phys_address": "00bf.50f9.013d",
         "port_channel": {
             "port_channel_member": false
         },
@@ -2957,11 +2957,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.013e",
+        "phys_address": "00bf.50f9.013e",
         "port_channel": {
             "port_channel_member": false
         },
@@ -3007,11 +3007,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.013f",
+        "phys_address": "00bf.50f9.013f",
         "port_channel": {
             "port_channel_member": false
         },
@@ -3057,11 +3057,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0140",
+        "phys_address": "00bf.50f9.0140",
         "port_channel": {
             "port_channel_member": false
         },
@@ -3107,11 +3107,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0107",
+        "phys_address": "00bf.50f9.0107",
         "port_channel": {
             "port_channel_member": false
         },
@@ -3157,11 +3157,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0108",
+        "phys_address": "00bf.50f9.0108",
         "port_channel": {
             "port_channel_member": false
         },
@@ -3207,11 +3207,11 @@
             "send": false
         },
         "last_change": "never",
-        "mac_address": "00bf.c126.1b08",
+        "mac_address": "00bf.50f9.1b08",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "down",
-        "phys_address": "00bf.c126.0109",
+        "phys_address": "00bf.50f9.0109",
         "port_channel": {
             "port_channel_member": false
         },
@@ -3246,15 +3246,15 @@
         "counters": {
             "in_broadcast_pkts": 8,
             "in_multicast_pkts": 0,
-            "in_octets": 1775442,
-            "in_pkts": 4508,
-            "in_unicast_pkts": 4506,
+            "in_octets": 576568,
+            "in_pkts": 1495,
+            "in_unicast_pkts": 1493,
             "rate": {
-                "in_rate": 3552,
-                "in_rate_pkts": 5,
+                "in_rate": 728,
+                "in_rate_pkts": 0,
                 "load_interval": 1,
-                "out_rate": 18856,
-                "out_rate_pkts": 7
+                "out_rate": 1128,
+                "out_rate_pkts": 0
             }
         },
         "delay": 10,
@@ -3270,11 +3270,11 @@
                 "prefix_length": "24"
             }
         },
-        "mac_address": "0050.56bf.c126",
+        "mac_address": "0050.56bf.50f9",
         "medium": "broadcast",
         "mtu": 1500,
         "oper_status": "up",
-        "phys_address": "0050.56bf.c126",
+        "phys_address": "0050.56bf.50f9",
         "port_channel": {
             "port_channel_member": false
         },

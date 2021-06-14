@@ -1,4 +1,4 @@
-{% if filetype_loop_jinja2 == "csv" %}VRF,Reason,ID,State{% for vrf in to_parse_vrf %}
+{% if (filetype_loop_jinja2 == "csv") or (filetype_loop_jinja2 == "xlsx") %}VRF,Reason,ID,State{% for vrf in to_parse_vrf %}
 {{ vrf }},{{ to_parse_vrf[vrf].reason }},{{ to_parse_vrf[vrf].vrf_id }},{{ to_parse_vrf[vrf].vrf_state }}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %}
 # Show VRF
 | VRF | Reason | ID | State |

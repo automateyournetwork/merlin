@@ -12,7 +12,7 @@
             "id": "VLAN: -"
         },
         {
-            "id": "MAC Address: 00bf.c126.1b08"
+            "id": "MAC Address: 00bf.50f9.1b08"
         },
         {
             "id": "Interface: Sup-eth1(R)"
@@ -26,11 +26,11 @@
         },
         {
             "source": "VLAN: -",
-            "target": "MAC Address: 00bf.c126.1b08",
+            "target": "MAC Address: 00bf.50f9.1b08",
             "cost": 1
         },
         {
-            "source": "MAC Address: 00bf.c126.1b08",
+            "source": "MAC Address: 00bf.50f9.1b08",
             "target": "Interface: Sup-eth1(R)",
             "cost": 1
         }

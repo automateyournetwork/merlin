@@ -1127,4 +1127,4 @@ class Collect_Information(aetest.Testcase):
         file_path = "Camelot/Cisco/DevNet_Sandbox/{}/{}_{}.{}".format(directory, device.alias, file_name, file_type)
         with open(file_path, "w") as opened_file:
             opened_file.write(content)
-            opened_file.close()              
+            opened_file.close()

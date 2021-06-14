@@ -2,4 +2,4 @@
 # Show MAC Address-Table
 | VLAN | MAC Address | Interface | Entry Type | Age |
 | ---- | ----------- | --------- | ---------- | --- |
-| - | 00bf.c126.1b08 | Sup-eth1(R) | static | - |
+| - | 00bf.50f9.1b08 | Sup-eth1(R) | static | - |
