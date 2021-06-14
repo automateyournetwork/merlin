@@ -18,7 +18,7 @@
             "id": "Serial Number: 91OMZP37WBR"
         },
         { 
-            "id": "Uptime: 16242"
+            "id": "Uptime: 6058"
         },
         { 
             "id": "Directory: bootflash:"
@@ -27,16 +27,16 @@
             "id": "Total Space: 4186710016"
         },    
         { 
-            "id": "Used Space: 1990119424"
+            "id": "Used Space: 1990127616"
         },    
         { 
-            "id": "Free Space: 2196590592"
+            "id": "Free Space: 2196582400"
         },
         { 
             "id": "Image: bootflash:///nxos.9.3.5.bin"
         },
         { 
-            "id": "Memory: 7939720 kB"
+            "id": "Memory: 7939724 kB"
         },    
         { 
             "id": "OS: NX-OS"
@@ -1011,7 +1011,7 @@
             "id": "Boot Image: bootflash:/nxos.9.3.5.bin"
         },
         { 
-            "id": "Uptime: 16242"
+            "id": "Uptime: 6058"
         },
         { 
             "id": "Sub_Slot Name: N9K-vSUP"
@@ -1050,7 +1050,7 @@
         },
         {
             "source": "DevNet_Sandbox_Nexus9k",
-            "target": "Uptime: 16242",
+            "target": "Uptime: 6058",
             "cost": 1
         },
         { 
@@ -1065,12 +1065,12 @@
         },    
         {
             "source": "Total Space: 4186710016",
-            "target": "Used Space: 1990119424",
+            "target": "Used Space: 1990127616",
             "cost": 1
         },    
         { 
             "source": "Total Space: 4186710016",
-            "target": "Free Space: 2196590592",
+            "target": "Free Space: 2196582400",
             "cost": 1
         },
         { 
@@ -1080,7 +1080,7 @@
         },
         { 
             "source": "DevNet_Sandbox_Nexus9k",
-            "target": "Memory: 7939720 kB",
+            "target": "Memory: 7939724 kB",
             "cost": 1            
         },    
         { 
@@ -2705,7 +2705,7 @@
         },
         { 
             "source": "Sub_Slot Name: N9K-vSUP",
-            "target": "Uptime: 16242",
+            "target": "Uptime: 6058",
             "cost": 1
         },
         { 

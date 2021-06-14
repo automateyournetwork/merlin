@@ -1063,15 +1063,6 @@ class Collect_Information(aetest.Testcase):
                             if os.path.exists("Camelot/Cisco/DevNet_Sandbox/Show_IP_ARP_VRF/%s_show_ip_arp_vrf_%s.md" % (device.alias,vrf)):
                                 os.system("markmap --no-open Camelot/Cisco/DevNet_Sandbox/Show_IP_ARP_VRF/%s_show_ip_arp_vrf_%s.md --output Camelot/Cisco/DevNet_Sandbox/Show_IP_ARP_VRF/%s_show_ip_arp_vrf_%s_mind_map.html" % (device.alias,vrf,device.alias,vrf))
 
-                            for filetype in filetype_loop:
-                                parsed_output_type = sh_ip_arp_vrf_stats_template.render(to_parse_ip_arp=self.parsed_show_ip_arp_vrf['statistics'],filetype_loop_jinja2=filetype)
-
-                                with open("Camelot/Cisco/DevNet_Sandbox/Show_IP_ARP_VRF/%s_show_ip_arp_vrf_statistics_%s.%s" % (device.alias,vrf,filetype), "w") as fh:
-                                    fh.write(parsed_output_type)
-        
-                            if os.path.exists("Camelot/Cisco/DevNet_Sandbox/Show_IP_ARP_VRF/%s_show_ip_arp_vrf_statistics_%s.md" % (device.alias,vrf)):
-                                os.system("markmap --no-open Camelot/Cisco/DevNet_Sandbox/Show_IP_ARP_VRF/%s_show_ip_arp_vrf_statistics_%s.md --output Camelot/Cisco/DevNet_Sandbox/Show_IP_ARP_VRF/%s_show_ip_arp_vrf_statistics_%s_mind_map.html" % (device.alias,vrf,device.alias,vrf))
-
                             parsed_output_netjson_json = sh_ip_arp_vrf_netjson_json_template.render(to_parse_ip_arp=self.parsed_show_ip_arp_vrf['interfaces'],filetype_loop_jinja2=filetype,device_alias = device.alias)
                             parsed_output_netjson_html = sh_ip_arp_vrf_netjson_html_template.render(device_alias = device.alias,vrf = vrf)
 
@@ -1136,4 +1127,4 @@ class Collect_Information(aetest.Testcase):
         file_path = "Camelot/Cisco/DevNet_Sandbox/{}/{}_{}.{}".format(directory, device.alias, file_name, file_type)
         with open(file_path, "w") as opened_file:
             opened_file.write(content)
-            opened_file.close()              
+            opened_file.close()

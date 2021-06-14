@@ -1,0 +1,162 @@
+{
+  "roomId": "{{ roomid }}",
+  "markdown": "# Parsed Show VRF for {{ device_id }}",
+  "attachments": [
+    {
+      "contentType": "application/vnd.microsoft.card.adaptive",
+      "content": {
+        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+        "type": "AdaptiveCard",
+        "version": "1.0",
+        "body": [
+            {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "url": "https://developer.webex.com/images/webex-teams-logo.png"
+                        }
+                    ],
+                    "width": "stretch"
+                },
+                {
+                    "type": "Column",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "Merlin",
+                            "weight": "lighter",
+                            "color": "accent"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "weight": "Bolder",
+                            "text": "Network Magic",
+                            "horizontalAlignment": "Left",
+                            "wrap": true,
+                            "color": "Light",
+                            "size": "Large",
+                            "spacing": "Small"
+                        }
+                    ],
+                    "width": "stretch"
+                }
+            ]
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": 35,
+                    "items": [{% for vrf in to_parse_vrf %}{% set vrf_loop = loop %}
+                        {
+                            "type": "TextBlock",
+                            "text": "VRF:",
+                            "color": "Light"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "ID:",
+                            "weight": "Lighter",
+                            "color": "Light",
+                            "spacing": "Small"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "State:",
+                            "weight": "Lighter",
+                            "color": "Light",
+                            "spacing": "Small"{% if vrf_loop.last %}
+                        }{% else %}
+                        },{% endif %}{% endfor %}
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": 65,
+                    "items": [{% for vrf in to_parse_vrf %}{% set vrf_loop = loop %}
+                        {
+                            "type": "TextBlock",
+                            "text": "{{ vrf }}",
+                            "color": "Light"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "{{ to_parse_vrf[vrf].vrf_id }}",
+                            "color": "Light",
+                            "weight": "Lighter",
+                            "spacing": "Small"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "text": "{{ to_parse_vrf[vrf].vrf_state }}",
+                            "weight": "Lighter",
+                            "color": "Light",
+                            "spacing": "Small"{% if vrf_loop.last %}
+                        }{% else %}
+                        },{% endif %}{% endfor %}                                                 
+                    ]
+                }
+            ],
+            "spacing": "Padding",
+            "horizontalAlignment": "Center"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Merlin has provided this information for the {{ device_id }} using pyATS Parse Show VRF",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Merlin Resources:"
+        },
+        {
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "altText": "",
+                            "url": "https://developer.webex.com/images/link-icon.png",
+                            "size": "Small",
+                            "width": "30px"
+                        }
+                    ],
+                    "spacing": "Small"
+                },
+                {
+                    "type": "Column",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "text": "[Merlin GitHub Repository](https://github.com/automateyournetwork/merlin)",
+                            "horizontalAlignment": "Left",
+                            "size": "Medium"
+                        }
+                    ],
+                    "verticalContentAlignment": "Center",
+                    "horizontalAlignment": "Left",
+                    "spacing": "Small"
+                    }                           
+            ]
+            }                
+        ],
+          "actions": [
+            {
+              "type": "Action.OpenUrl",
+              "url": "https://github.com/automateyournetwork/merlin/blob/main/Camelot/Cisco/DevNet_Sandbox/Show_VRF/{{ device_id }}_show_vrf.xlsx",
+              "title": "See The Full Results of Show VRF on {{ device_id }}"
+            }
+          ]        
+        }
+        }
+    ]
+}

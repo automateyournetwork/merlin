@@ -120,7 +120,7 @@ class Collect_Information(aetest.Testcase):
             app_search.index_documents(
             engine_name="merlin-search",
             documents=timestamp_json)
-
+         
             # ---------------------------------------
             # Genie learn().info for various functions
             # ---------------------------------------

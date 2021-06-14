@@ -9,7 +9,7 @@ dictitems:
       neighbor:
         172.16.0.2:
           connections_dropped: 0
-          last_flap: 04:30:46
+          last_flap: 01:41:15
           last_read: never
           last_write: never
           local_port: 0

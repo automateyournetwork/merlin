@@ -21,7 +21,7 @@
             "id": "Device Name: sbx-n9kv"
         },
         { 
-            "id": "Memory: 7939720 kB"
+            "id": "Memory: 7939724 kB"
         },
         { 
             "id": "Model: Nexus9000 C9500v"
@@ -36,7 +36,7 @@
             "id": "Slots: None"
         },
         { 
-            "id": "Kernel Uptime: 0 4 32 38"
+            "id": "Kernel Uptime: 0 1 43 11"
         },
         { 
             "id": "Name: Nexus"
@@ -95,7 +95,7 @@
         },
         { 
             "source": "DevNet_Sandbox_Nexus9k",
-            "target": "Memory: 7939720 kB",
+            "target": "Memory: 7939724 kB",
             "cost": 1
         },
         { 
@@ -120,7 +120,7 @@
         },
         { 
             "source": "DevNet_Sandbox_Nexus9k",
-            "target": "Kernel Uptime: 0 4 32 38",
+            "target": "Kernel Uptime: 0 1 43 11",
             "cost": 1
         },
         { 

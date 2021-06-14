@@ -7,7 +7,7 @@ dictitems:
   bgp_mmode: Initialized
   bgp_paths_per_hwm_attr: 1
   bgp_performance_mode: 'No'
-  bgp_pid: 4622
+  bgp_pid: 4643
   bgp_protocol_started_reason: configuration
   bgp_protocol_state: running
   bgp_tag: '65535'

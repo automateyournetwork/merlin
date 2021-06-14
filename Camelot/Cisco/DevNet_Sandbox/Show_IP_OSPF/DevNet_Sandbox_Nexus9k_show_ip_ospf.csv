@@ -1,2 +1,2 @@
 VRF,Address Family,Instance,Router ID,Area,Area Type,Authentication,Existed,Enabled,Active Interfaces,Passive Interfaces,Loopback Interfaces,Total Interfaces,Total SPF,Last SPF,Auto Cost Unit,Auto Cost Enabled,Reference Bandwidth,Discard External Route,Discard Interal Route,Graceful Restart Type,Graceful Restart Enabled,Restart Interval,State,NSR Enabled,Active Normal Areas,Active NSSA Areas,Active Stub Areas,Total Active Areas,Number of Paths                        
-default,ipv4,1,172.16.0.1,0.0.0.0,normal,none,04:30:44,False,1,6,0,7,1,0.020881,mbps,False,40000,True,True,ietf,True,60,Inactive,True,1,0,0,1,8
+default,ipv4,1,172.16.0.1,0.0.0.0,normal,none,01:41:17,False,1,6,0,7,1,0.012109,mbps,False,40000,True,True,ietf,True,60,Inactive,True,1,0,0,1,8

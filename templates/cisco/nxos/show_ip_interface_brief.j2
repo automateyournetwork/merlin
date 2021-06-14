@@ -1,4 +1,4 @@
-{% if filetype_loop_jinja2 == "csv" %}Interface,IP Address,Status{% for interface in to_parse_interfaces %}{% if to_parse_interfaces[interface].vlan_id is defined %}{% for vlan_id in to_parse_interfaces[interface].vlan_id %}
+{% if (filetype_loop_jinja2 == "csv") or (filetype_loop_jinja2 == "xlsx") %}Interface,IP Address,Status{% for interface in to_parse_interfaces %}{% if to_parse_interfaces[interface].vlan_id is defined %}{% for vlan_id in to_parse_interfaces[interface].vlan_id %}
 {{ interface }},{{ to_parse_interfaces[interface].vlan_id[vlan_id].ip_address }},{{ to_parse_interfaces[interface].vlan_id[vlan_id].interface_status }}{% endfor %}{% else %}
 {{ interface }},{{ to_parse_interfaces[interface].ip_address }},{{ to_parse_interfaces[interface].interface_status }}{% endif %}{% endfor %}{% else %}{% if filetype_loop_jinja2 == "md" %} 
 # Show IP Interface Brief

@@ -36,10 +36,10 @@
             "id": "Output Replies: 0"
         },
         {
-            "id": "Output Requests: 10"
+            "id": "Output Requests: 2"
         },
         {
-            "id": "Output Total: 12"
+            "id": "Output Total: 4"
         }       
     ],
     "links": [
@@ -90,12 +90,12 @@
         },
         {
             "source": "DevNet_Sandbox_Nexus9k",
-            "target": "Output Requests: 10",
+            "target": "Output Requests: 2",
             "cost": 1
         },
         {
             "source": "DevNet_Sandbox_Nexus9k",
-            "target": "Output Total: 12",
+            "target": "Output Total: 4",
             "cost": 1
         }      
     ]

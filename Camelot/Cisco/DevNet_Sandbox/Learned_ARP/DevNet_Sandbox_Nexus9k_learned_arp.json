@@ -65,7 +65,7 @@
         "out_drops": 0,
         "out_gratuitous_pkts": 2,
         "out_replies_pkts": 0,
-        "out_requests_pkts": 10,
-        "out_total": 12
+        "out_requests_pkts": 2,
+        "out_total": 4
     }
 }
