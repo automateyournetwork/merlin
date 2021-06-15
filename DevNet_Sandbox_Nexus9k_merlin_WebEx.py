@@ -22,6 +22,8 @@ from rich.text import Text
 from pyats import aetest
 from pyats import topology
 from pyats.log.utils import banner
+from pyats.results import (Passed, Failed, Aborted, Errored,
+                           Skipped, Blocked, Passx)
 from jinja2 import Environment, FileSystemLoader
 from ascii_art import GREETING, LEARN, RUNNING, WRITING, FINISHED
 from general_functionalities import ParseShowCommandFunction, ParseLearnFunction, ParseConfigFunction, ParseDictFunction
@@ -42,8 +44,8 @@ env = Environment(loader=FileSystemLoader(template_dir))
 # ----------------
 # WebEx Setup
 # ----------------
-webex_roomid = "{{ YOUR ROOM ID HERE }}"
-webex_token = "{{ YOUR WEBEX TOKEN HERE }}"
+webex_roomid = "{{ YOUR WEBEX ROOM ID HERE }}"
+webex_token = "{{ YOUR WEBEX TOKEN ID HERE }}"
 
 # ----------------
 # AE Test Setup
@@ -130,7 +132,7 @@ class Collect_Information(aetest.Testcase):
                 # -----------------------
                 if self.learned_routing is not None:
                     learned_routing_template = env.get_template('learned_routing.j2')
-                    learned_routing_webex_adaptive_card_template = env.get_template('learned_routing_webex_adaptive_card.j2')                   
+                    learned_routing_webex_adaptive_card_template = env.get_template('learned_routing_webex_adaptive_card.j2')
                     directory = "Learned_Routing"
                     file_name = "learned_routing"         
 
@@ -250,10 +252,28 @@ class Collect_Information(aetest.Testcase):
                        # File (XLSX)
                        webex_file_response = requests.post('https://webexapis.com/v1/messages', data=m, headers={"Content-Type": m.content_type, "Authorization": "Bearer %s" % webex_token })
                        print('The POST to WebEx had a response code of ' + str(webex_file_response.status_code) + 'due to' + webex_file_response.reason)
-
+    
         # Goodbye Banner
         print(Panel.fit(Text.from_markup(FINISHED)))
     
+        ## Job Results Adaptive Card
+        #job_results_webex_adaptive_card_template = env.get_template('pyATS_Results_Adaptive_Card.j2')
+        #print(Panel.fit(Text.from_markup(WRITING)))
+        #print(Passed)
+#
+        #webex_adaptive_card = job_results_webex_adaptive_card_template.render(roomid = webex_roomid,
+        #                                                                      passed = Passed.code,
+        #                                                                      passx = Passx.code,
+        #                                                                      failed = Failed.code,
+        #                                                                      aborted = Aborted.code,
+        #                                                                      blocked = Blocked.code,
+        #                                                                      skipped = Skipped.code,
+        #                                                                      errored = Errored.code)
+        print(webex_adaptive_card)
+        webex_adaptive_card_response = requests.post('https://webexapis.com/v1/messages', data=webex_adaptive_card, headers={"Content-Type": "application/json", "Authorization": "Bearer %s" % webex_token })
+                            
+        print('The POST to WebEx had a response code of ' + str(webex_adaptive_card_response.status_code) + 'due to' + webex_adaptive_card_response.reason)
+
     def save_to_specified_file_type(self, device, directory, file_name, content, file_type):
         file_path = "Camelot/Cisco/DevNet_Sandbox/{}/{}_{}.{}".format(directory, device.alias, file_name, file_type)
         with open(file_path, "w") as opened_file:
