@@ -1,0 +1,19 @@
+First PUT the following into https://{{ your elastic instance}}/_ingest/pipeline/{{ your pipeline name }}
+{
+    "description" : "timestamp",
+    "processors" : [
+      {
+        "set": {
+          "field": "_source.ingest_time",
+          "value": "{{_ingest.timestamp}}"
+        }
+      }      
+    ]
+  }
+
+Then *PER INDEX* PUT the following https://{{ your cloud instance }}/{{ your index }}
+{
+    "settings": {
+        "index.default_pipeline": "merlin_pipeline"
+    }
+}

@@ -1,0 +1,1 @@
+{{ to_normalize_for_elastic | lower | replace("/","_") | replace("-","_") | replace("'","\"") | replace("don\"t","don't") | replace ("none,","\"none\",") | replace("{1","{\"1\"") | replace("{0","{\"0\"") | replace("}, 1:","}, \"1\":") | replace("}, 2:","}, \"2\":")| replace("{2:","{\"2\":") | safe }}
