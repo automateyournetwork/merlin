@@ -1,0 +1,61 @@
+version 17.3
+no logging console
+{% for timestamp in host_data_model.global_config.service_timestamps %}service timestamps {{ timestamp }}
+{% endfor %}!
+{% if host_data_model.global_config.service_call_home %}service call-home{% endif %}
+{% if host_data_model.global_config.platform is defined %}{% if host_data_model.global_config.platform.qfp_monitor %}platform qfp utilization monitor load 80{% endif %}
+{% if host_data_model.global_config.platform.keep_alive %}platform punt-keepalive disable-kernel-core{% endif %}
+{% if host_data_model.global_config.platform.console %}platform console virtual{% endif %}{% endif %}
+hostname {{ host_data_model.global_config.hostname }}
+boot-start-marker
+boot-end-marker
+enable secret {{ host_data_model.global_config.enable_secret }}
+{% if host_data_model.global_config.aaa_model %}aaa new-model{% else %}no aaa new-model{% endif %}
+ip domain name {{ host_data_model.global_config.domain }}
+{% if host_data_model.global_config.login_log is defined %}{% if host_data_model.global_config.login_log.on_success %}login on-success log{% endif %}{% endif %}
+{% if host_data_model.global_config.subscriber_templating %}subscriber templating{% endif %}
+multilink bundle-name {{ host_data_model.global_config.multilink_bundle_name }}
+license boot level {{ host_data_model.global_config.license_boot_level }}
+diagnostic bootup level {{ host_data_model.global_config.diagnostic_boot_level }}
+archive
+ path {{ host_data_model.global_config.config_archive.path }}
+memory free low-watermark processor {{ host_data_model.global_config.memory_low_watermark }}
+{% if host_data_model.global_config.stp_extend_sysid %}spanning-tree extend system-id{% endif %}
+username developer privilege 15 secret C1sco12345
+{% if host_data_model.global_config.redundancy %}redundancy{% endif %}
+{% if host_data_model.global_config.control_plane %}control-plane{% endif %}{% for interface in host_data_model.host_interfaces %}
+interface {{ interface }}{% if host_data_model.host_interfaces[interface].description %}
+ description {{ host_data_model.host_interfaces[interface].description }}{% endif %}{% if host_data_model.host_interfaces[interface].ip_address %}
+ ip address {{ host_data_model.host_interfaces[interface].ip_address }}{% else %}
+ no ip address{% endif %}{% if host_data_model.host_interfaces[interface].enabled %}{% else %}
+ shutdown{% endif %}
+ negotiation {{ host_data_model.host_interfaces[interface].negotiation }}{% if host_data_model.host_interfaces[interface].mop_enabled %}
+ mop enabled{% else %}
+ no mop enabled{% endif %}{% if host_data_model.host_interfaces[interface].mop_sysid %}
+ mop sysid{% else %}
+ no mop sysid{% endif %}{% endfor %}{% if host_data_model.host_loopbacks is defined %}{% for loopback in host_data_model.host_loopbacks %}
+interface {{ loopback }}
+ description {{ host_data_model.host_loopbacks[loopback].description }}{% if host_data_model.host_loopbacks[loopback].ip_address is defined %}{% else %}
+ no ip address{% endif %}{% endfor %}{% endif %}
+{% if host_data_model.global_config.ip_settings.forward_protocol is defined %}ip forward-protocol {{ host_data_model.global_config.ip_settings.forward_protocol }}{% endif %}
+{% if host_data_model.global_config.ip_settings.http_server %}ip http server{% endif %}
+{% if host_data_model.global_config.ip_settings.http_authentication is defined %}ip http authentication {{ host_data_model.global_config.ip_settings.http_authentication }}{% endif %}
+{% if host_data_model.global_config.ip_settings.http_secure_server %}ip http secure-server{% endif %}
+{% if host_data_model.global_config.ip_settings.ssh is defined %}{% if host_data_model.global_config.ip_settings.ssh.rsa_keypair_name is defined %}ip ssh rsa keypair-name {{ host_data_model.global_config.ip_settings.ssh.rsa_keypair_name }}{% endif %}
+{% if host_data_model.global_config.ip_settings.ssh.version is defined %}ip ssh version {{ host_data_model.global_config.ip_settings.ssh.version }}{% endif %}{% endif %}
+{% if host_data_model.global_config.ip_settings.scp is defined %}{% if host_data_model.global_config.ip_settings.scp.server is defined %}ip scp server {{ host_data_model.global_config.ip_settings.scp.server }}{% endif %}{% endif %}{% for route in host_data_model.host_routes %}
+ip route {{ route }} {{ host_data_model.host_routes[route].mask }} {{ host_data_model.host_routes[route].interface }} {{ host_data_model.host_routes[route].next_hop }}{% endfor %}
+line con 0
+ stopbits {{ host_data_model.host_lines.con_0.stopbits }}
+ exec-timeout 0 0
+line vty 0 4
+ login {{ host_data_model.host_lines.vty_0_4.login }}
+ transport input {{ host_data_model.host_lines.vty_0_4.transport_input }}
+call-home
+ contact-email-addr {{ host_data_model.host_call_home.contact_email_addr }}{% for profile in host_data_model.host_call_home.profiles %}
+ profile "{{ profile }}"
+  {{ host_data_model.host_call_home.profiles[profile].state }}
+  destination transport-method {{ host_data_model.host_call_home.profiles[profile].destination_transport_method }}{% endfor %}
+{% if host_data_model.global_config.rest_conf %}netconf-yang
+restconf
+end{% endif %}

@@ -1,0 +1,89 @@
+global_config:
+  hostname: csr1000v-1
+  service_timestamps: 
+   - debug datetime msec
+   - log datetime msec
+  service_call_home: true
+  platform:
+    qfp_monitor: 80
+    keep_alive: "disable-kernel-core"
+    console: virtual 
+  enable_secret: 9 $9$GNcSrWbM1PyCqU$9.BCza34ClqbgyABGzRV1v5hjCWhaoN9K.gqxCtcCvE
+  aaa_model: false
+  domain: lab.devnetsandbox.local
+  login_log:
+    on_success: true
+  subscriber_templating: true
+  multilink_bundle_name: "authenticated"
+  license_boot_level: ax
+  diagnostic_boot_level: minimal
+  memory_low_watermark: 71556
+  stp_extend_sysid: true
+  redundancy: true
+  control_plane: true 
+  ip_settings:
+    forward_protocol: nd
+    http_server: true
+    http_authentication: local
+    http_secure_server: true
+    ssh:
+      rsa_keypair_name: "ssh-key"
+      version: 2
+    scp:
+      server: enable
+  rest_conf: true
+  config_archive:
+    path: bootflash:archives
+
+host_interfaces:
+  GigabitEthernet1:
+    description: "MANAGEMENT INTERFACE - DON'T TOUCH ME"
+    ip_address: "10.10.20.48 255.255.255.0"
+    negotiation: auto
+    mop_enabled: false
+    mop_sysid: false 
+    enabled: true
+
+  GigabitEthernet2:
+    description: "Network Interface"
+    negotiation: auto
+    mop_enabled: false
+    mop_sysid: false 
+    enabled: false
+
+  GigabitEthernet3:
+    description: "Network Interface"
+    negotiation: auto
+    mop_enabled: false
+    mop_sysid: false 
+    enabled: false
+
+host_routes:
+  0.0.0.0:
+    mask: 0.0.0.0
+    interface: GigabitEthernet1
+    next_hop: 10.10.20.254
+
+host_banner:
+  "Welcome to the DevNet Sandbox for CSR1000v and IOS XE
+ 
+  The following programmability features are already enabled:
+    - NETCONF
+    - RESTCONF
+ 
+  Thanks for stopping by."
+
+host_lines: 
+  con_0:
+    stopbits: 1
+  vty_0_4:
+    login: local
+    transport_input: ssh
+
+host_call_home:
+  contact_email_addr: "sch-smart-licensing@cisco.com"
+  profiles:
+    CiscoTAC-1:
+      state: active
+      destination_transport_method: http
+                   
