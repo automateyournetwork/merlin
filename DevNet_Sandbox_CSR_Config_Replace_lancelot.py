@@ -16,6 +16,7 @@ import shutil
 import logging
 import requests
 import ftplib
+import re
 from rich import print
 from rich.panel import Panel
 from rich.text import Text
@@ -58,7 +59,6 @@ class Collect_Information(aetest.Testcase):
         # Loop over devices
         # ---------------------------------------
         for device in testbed:
-
             # ---------------------------------------
             # Load Data Model
             # ---------------------------------------           
@@ -175,3 +175,40 @@ class Collect_Information(aetest.Testcase):
                     with open('Camelot/Cisco/DevNet_Sandbox/Lancelot/Changes/%s_SSH_Changes.txt' % timestr, 'w') as f:
                         f.write("IDEMPOTENT - NO CHANGES")
                         f.close()
+
+            ## ---------------------------------------
+            ## Ping the Gateway
+            ## ---------------------------------------
+            with steps.start('PING the gateway',continue_=True) as step:
+                destination = "10.10.20.200"           
+                try:
+                    result = device.ping(destination)
+                    print(result)
+
+                except Exception as e:
+                    log.info("We could NOT ping the gateway so we rolling back to startup-config")
+                    device.execute("configure replace nvram:startup-config force")                                    
+                    self.failed('Ping {} from device {} failed with error: {}'.format(
+                                        destination,
+                                        device,
+                                        str(e),
+                                    ))
+                else:
+                    match = re.search(r'Success rate is (?P<rate>\d+) percent', result)
+                    success_rate = match.group('rate')
+
+                    log.info('Ping {} with success rate of {}%'.format(
+                                                destination,
+                                                success_rate,
+                                            )
+                                        )
+                    ## ---------------------------------------
+                    ## Commit or Rollback
+                    ## ---------------------------------------
+                    with steps.start('Commit or Rollback',continue_=True) as step:
+                        if success_rate == "100":
+                            log.info("We could ping the gateway so we are saving the configuration")
+                            device.execute("write mem")
+                        else:
+                            log.info("We could NOT ping the gateway 100 percent so we rolling back to startup-config")
+                            device.execute("configure replace nvram:startup-config force")
