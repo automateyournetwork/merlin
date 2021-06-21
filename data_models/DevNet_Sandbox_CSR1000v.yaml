@@ -50,7 +50,7 @@ host_interfaces:
     enabled: true
 
   GigabitEthernet2:
-    description: "Network Interface"
+    description: "ROLLBACK TEST"
     negotiation: auto
     mop_enabled: false
     mop_sysid: false 
