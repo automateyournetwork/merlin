@@ -20,8 +20,8 @@ diagnostic bootup level {{ host_data_model.global_config.diagnostic_boot_level }
 archive
  path {{ host_data_model.global_config.config_archive.path }}
 memory free low-watermark processor {{ host_data_model.global_config.memory_low_watermark }}
-{% if host_data_model.global_config.stp_extend_sysid %}spanning-tree extend system-id{% endif %}
-username developer privilege 15 secret C1sco12345
+{% if host_data_model.global_config.stp_extend_sysid %}spanning-tree extend system-id{% endif %}{% for user in host_data_model.host_users %}
+username {{ user }} privilege {{ host_data_model.host_users[user].privilege }} secret {{ host_data_model.host_users[user].secret }}{% endfor %}
 {% if host_data_model.global_config.redundancy %}redundancy{% endif %}
 {% if host_data_model.global_config.control_plane %}control-plane{% endif %}{% for interface in host_data_model.host_interfaces %}
 interface {{ interface }}{% if host_data_model.host_interfaces[interface].description %}
@@ -33,10 +33,10 @@ interface {{ interface }}{% if host_data_model.host_interfaces[interface].descri
  mop enabled{% else %}
  no mop enabled{% endif %}{% if host_data_model.host_interfaces[interface].mop_sysid %}
  mop sysid{% else %}
- no mop sysid{% endif %}{% endfor %}{% if host_data_model.host_loopbacks is defined %}{% for loopback in host_data_model.host_loopbacks %}
+ no mop sysid{% endif %}{% endfor %}{% for loopback in host_data_model.host_loopbacks %}
 interface {{ loopback }}
  description {{ host_data_model.host_loopbacks[loopback].description }}{% if host_data_model.host_loopbacks[loopback].ip_address is defined %}{% else %}
- no ip address{% endif %}{% endfor %}{% endif %}
+ no ip address{% endif %}{% endfor %}
 {% if host_data_model.global_config.ip_settings.forward_protocol is defined %}ip forward-protocol {{ host_data_model.global_config.ip_settings.forward_protocol }}{% endif %}
 {% if host_data_model.global_config.ip_settings.http_server %}ip http server{% endif %}
 {% if host_data_model.global_config.ip_settings.http_authentication is defined %}ip http authentication {{ host_data_model.global_config.ip_settings.http_authentication }}{% endif %}

@@ -35,6 +35,11 @@ global_config:
   config_archive:
     path: bootflash:archives
 
+host_users:
+  developer:
+    privilege: 15
+    secret: 9 $9$oNguEA9um9vRx.$MsDk0DOy1rzBjKAcySWdNjoKcA7GetG9YNnKOs8S67A
+
 host_interfaces:
   GigabitEthernet1:
     description: "MANAGEMENT INTERFACE - DON'T TOUCH ME"
