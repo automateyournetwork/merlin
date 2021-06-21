@@ -180,7 +180,7 @@ class Collect_Information(aetest.Testcase):
             ## Ping the Gateway
             ## ---------------------------------------
             with steps.start('PING the gateway',continue_=True) as step:
-                destination = "10.10.20.200"           
+                destination = "10.10.20.254"           
                 try:
                     result = device.ping(destination)
                     print(result)
