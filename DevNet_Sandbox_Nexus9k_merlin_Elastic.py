@@ -38,7 +38,7 @@ env = Environment(loader=FileSystemLoader(template_dir))
 # ----------------
 # Define Elastic
 # ----------------
-es = Elasticsearch(cloud_id="merlin:dXMtd2VzdDEuZ2NwLmNsb3VkLmVzLmlvJGUwMWM3NjVhMGI0NzRiYzNiYWFkZThlMDgyYTcyYmFjJDI4YTNiMzE1OTllMjQzODk4ZWM2ZmYwZWYzOWY4ZDhj", http_auth=('elastic', 'XrHgEraMvtPLSpf6wRzYRo9j'))
+es = Elasticsearch(cloud_id="{{ YOUR CLOUD ID HERE }}", http_auth=('elastic', '{{ YOUR PASSWORD HERE }}'))
 
 # ----------------
 # AE Test Setup
