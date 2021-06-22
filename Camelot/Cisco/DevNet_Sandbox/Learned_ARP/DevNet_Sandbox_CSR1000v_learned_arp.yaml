@@ -19,7 +19,7 @@ dictitems:
                   10.10.20.254: !!python/object/new:genie.ops.base.maker.CmdDict
                     dictitems:
                       ip: 10.10.20.254
-                      link_layer_address: 0050.56bf.4a47
+                      link_layer_address: 0050.56bf.5a99
                       origin: dynamic
                     state:
                       leaf_dict:
@@ -29,8 +29,18 @@ dictitems:
                   10.10.20.48: !!python/object/new:genie.ops.base.maker.CmdDict
                     dictitems:
                       ip: 10.10.20.48
-                      link_layer_address: 0050.56bf.08f1
+                      link_layer_address: 0050.56bf.bf1f
                       origin: static
+                    state:
+                      leaf_dict:
+                        ip: *id002
+                        link_layer_address: *id002
+                        origin: *id002
+                  10.10.20.50: !!python/object/new:genie.ops.base.maker.CmdDict
+                    dictitems:
+                      ip: 10.10.20.50
+                      link_layer_address: 0050.56bf.f7f5
+                      origin: dynamic
                     state:
                       leaf_dict:
                         ip: *id002
@@ -42,17 +52,29 @@ dictitems:
               leaf_dict: {}
         state:
           leaf_dict: {}
+      Loopback100: !!python/object/new:genie.ops.base.maker.CmdDict
+        dictitems:
+          arp_dynamic_learning: !!python/object/new:genie.ops.base.maker.CmdDict
+            dictitems:
+              local_proxy_enable: false
+              proxy_enable: true
+            state:
+              leaf_dict:
+                local_proxy_enable: *id001
+                proxy_enable: *id001
+        state:
+          leaf_dict: {}
     state:
       leaf_dict: {}
   statistics: !!python/object/new:genie.ops.base.maker.CmdDict
     dictitems:
-      entries_total: 2
+      entries_total: 3
       in_drops: 0
-      in_replies_pkts: 1
-      in_requests_pkts: 5
+      in_replies_pkts: 4
+      in_requests_pkts: 4
       incomplete_total: 0
-      out_replies_pkts: 6
-      out_requests_pkts: 1
+      out_replies_pkts: 5
+      out_requests_pkts: 17
     state:
       leaf_dict:
         entries_total: &id004 !!python/name:genie.libs.parser.iosxe.show_arp.ShowIpArpSummary ''

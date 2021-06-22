@@ -3,5 +3,6 @@
 | Interface | IP Address | Status | Protocol | Method | Interface is OK |
 | --------- | ---------- | ------ | -------- | ------ | --------------- |
 | GigabitEthernet1 | 10.10.20.48 | up | up | NVRAM | YES |
-| GigabitEthernet2 | unassigned | administratively down | down | NVRAM | YES |
-| GigabitEthernet3 | unassigned | administratively down | down | NVRAM | YES |
+| GigabitEthernet2 | unassigned | up | up | NVRAM | YES |
+| GigabitEthernet3 | unassigned | up | up | NVRAM | YES |
+| Loopback100 | 10.10.100.100 | up | up | TFTP | YES |

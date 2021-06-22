@@ -54,14 +54,19 @@ host_interfaces:
     negotiation: auto
     mop_enabled: false
     mop_sysid: false 
-    enabled: false
+    enabled: true
 
   GigabitEthernet3:
     description: "Network Interface"
     negotiation: auto
     mop_enabled: false
     mop_sysid: false 
-    enabled: false
+    enabled: true
+
+host_loopbacks:
+  Loopback100:
+    description: Merlin
+    ip_address: 10.10.100.100 255.255.255.0
 
 host_routes:
   0.0.0.0:

@@ -15,7 +15,16 @@
             "id": "Neighbor IP: 10.10.20.254"
         },
         {
-            "id": "Neighbor MAC: 0050.56bf.4a47"
+            "id": "Neighbor MAC: 0050.56bf.5a99"
+        },
+        {
+            "id": "GigabitEthernet1"
+        },
+        {
+            "id": "Neighbor IP: 10.10.20.50"
+        },
+        {
+            "id": "Neighbor MAC: 0050.56bf.f7f5"
         },
         {
             "id": "GigabitEthernet1"
@@ -24,8 +33,8 @@
             "id": "Neighbor IP: 10.10.20.48"
         },
         {
-            "id": "Neighbor MAC: 0050.56bf.08f1"
-        }
+            "id": "Neighbor MAC: 0050.56bf.bf1f"
+        },
     ],
     "links": [
         {
@@ -40,7 +49,22 @@
         },
         {
             "source": "Neighbor IP: 10.10.20.254",
-            "target": "Neighbor MAC: 0050.56bf.4a47",
+            "target": "Neighbor MAC: 0050.56bf.5a99",
+            "cost": 2
+        },
+        {
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "GigabitEthernet1",
+            "cost": 1
+        },
+        {
+            "source": "GigabitEthernet1",
+            "target": "Neighbor IP: 10.10.20.50",
+            "cost": 2
+        },
+        {
+            "source": "Neighbor IP: 10.10.20.50",
+            "target": "Neighbor MAC: 0050.56bf.f7f5",
             "cost": 2
         },
         {
@@ -55,8 +79,8 @@
         },
         {
             "source": "Neighbor IP: 10.10.20.48",
-            "target": "Neighbor MAC: 0050.56bf.08f1",
+            "target": "Neighbor MAC: 0050.56bf.bf1f",
             "cost": 2
-        }
+        },
     ]
 }
