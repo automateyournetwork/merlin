@@ -9,16 +9,16 @@
             "id": "DevNet_Sandbox_CSR1000v"
         },
         {
-            "id": "Total Entries: 2"
+            "id": "Total Entries: 3"
         },
         {
             "id": "Input Drops: 0"
         },
         {
-            "id": "Input Replies: 1"
+            "id": "Input Replies: 4"
         },
         { 
-            "id": "Input Requests: 5"
+            "id": "Input Requests: 4"
         },
         {
             "id": "Input Total: "
@@ -33,10 +33,10 @@
             "id": "Output Gratuitous: "
         },
         {
-            "id": "Output Replies: 6"
+            "id": "Output Replies: 5"
         },
         {
-            "id": "Output Requests: 1"
+            "id": "Output Requests: 17"
         },
         {
             "id": "Output Total: "
@@ -45,7 +45,7 @@
     "links": [
         {
             "source": "DevNet_Sandbox_CSR1000v",
-            "target": "Total Entries: 2",
+            "target": "Total Entries: 3",
             "cost": 1
         },
         {
@@ -55,12 +55,12 @@
         },
         {
             "source": "DevNet_Sandbox_CSR1000v",
-            "target": "Input Replies: 1",
+            "target": "Input Replies: 4",
             "cost": 1
         },
         {
             "source": "DevNet_Sandbox_CSR1000v",
-            "target": "Input Requests: 5",
+            "target": "Input Requests: 4",
             "cost": 1
         },
         {
@@ -85,12 +85,12 @@
         },
         {
             "source": "DevNet_Sandbox_CSR1000v",
-            "target": "Output Replies: 6",
+            "target": "Output Replies: 5",
             "cost": 1
         },
         {
             "source": "DevNet_Sandbox_CSR1000v",
-            "target": "Output Requests: 1",
+            "target": "Output Requests: 17",
             "cost": 1
         },
         {

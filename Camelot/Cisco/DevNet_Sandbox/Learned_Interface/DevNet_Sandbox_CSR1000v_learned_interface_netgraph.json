@@ -9,19 +9,37 @@
             "id": "DevNet_Sandbox_CSR1000v"
         },
         { 
+            "id": "Loopback100"
+        },
+        { 
+            "id": "Description: Merlin"
+        },
+        { 
+            "id": "IP Address: 10.10.100.100/24"
+        },
+        { 
+            "id": "Enabled: True"
+        },        
+        { 
+            "id": "Operational Status: up"
+        },
+        { 
+            "id": "Port Channel Member: False"
+        },
+        { 
             "id": "GigabitEthernet3"
         },
         { 
             "id": "Description: Network Interface"
         },
         { 
-            "id": "Enabled: False"
+            "id": "Enabled: True"
         },        
         { 
-            "id": "Operational Status: down"
+            "id": "Operational Status: up"
         },
         { 
-            "id": "MAC Address: 0050.56bf.a3a9"
+            "id": "MAC Address: 0050.56bf.5373"
         },
         { 
             "id": "Port Channel Member: False"
@@ -30,16 +48,16 @@
             "id": "GigabitEthernet2"
         },
         { 
-            "id": "Description: Network Interface"
+            "id": "Description: ROLLBACK TEST"
         },
         { 
-            "id": "Enabled: False"
+            "id": "Enabled: True"
         },        
         { 
-            "id": "Operational Status: down"
+            "id": "Operational Status: up"
         },
         { 
-            "id": "MAC Address: 0050.56bf.cc0a"
+            "id": "MAC Address: 0050.56bf.0d66"
         },
         { 
             "id": "Port Channel Member: False"
@@ -60,13 +78,43 @@
             "id": "Operational Status: up"
         },
         { 
-            "id": "MAC Address: 0050.56bf.08f1"
+            "id": "MAC Address: 0050.56bf.bf1f"
         },
         { 
             "id": "Port Channel Member: False"
         }
     ],
     "links": [
+        { 
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "Loopback100",
+            "cost": 2
+        },
+        { 
+            "source": "Loopback100",
+            "target": "Description: Merlin",
+            "cost": 2
+        },
+        { 
+            "source": "Loopback100",
+            "target": "IP Address: 10.10.100.100/24",
+            "cost": 2
+        },
+        { 
+            "source": "Loopback100",
+            "target": "Enabled: True",
+            "cost": 2
+        },        
+        { 
+            "source": "Loopback100",
+            "target": "Operational Status: up",
+            "cost": 2
+        },
+        { 
+            "source": "Loopback100",
+            "target": "Port Channel Member: False",
+            "cost": 2
+        },
         {
             "source": "DevNet_Sandbox_CSR1000v",
             "target": "GigabitEthernet3",
@@ -79,17 +127,17 @@
         },
         { 
             "source": "GigabitEthernet3",
-            "target": "Enabled: False",
+            "target": "Enabled: True",
             "cost": 2
         },        
         { 
             "source": "GigabitEthernet3",
-            "target": "Operational Status: down",
+            "target": "Operational Status: up",
             "cost": 2
         },
         { 
             "source": "GigabitEthernet3",
-            "target": "MAC Address: 0050.56bf.a3a9",
+            "target": "MAC Address: 0050.56bf.5373",
             "cost": 2
         },
         { 
@@ -104,22 +152,22 @@
         },
         { 
             "source": "GigabitEthernet2",
-            "target": "Description: Network Interface",
+            "target": "Description: ROLLBACK TEST",
             "cost": 2
         },
         { 
             "source": "GigabitEthernet2",
-            "target": "Enabled: False",
+            "target": "Enabled: True",
             "cost": 2
         },        
         { 
             "source": "GigabitEthernet2",
-            "target": "Operational Status: down",
+            "target": "Operational Status: up",
             "cost": 2
         },
         { 
             "source": "GigabitEthernet2",
-            "target": "MAC Address: 0050.56bf.cc0a",
+            "target": "MAC Address: 0050.56bf.0d66",
             "cost": 2
         },
         { 
@@ -154,7 +202,7 @@
         },
         { 
             "source": "GigabitEthernet1",
-            "target": "MAC Address: 0050.56bf.08f1",
+            "target": "MAC Address: 0050.56bf.bf1f",
             "cost": 2
         },
         { 

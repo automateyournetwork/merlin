@@ -21,6 +21,32 @@
                             "source_protocol": "static",
                             "source_protocol_codes": "S*"
                         },
+                        "10.10.100.0/24": {
+                            "active": true,
+                            "next_hop": {
+                                "outgoing_interface": {
+                                    "Loopback100": {
+                                        "outgoing_interface": "Loopback100"
+                                    }
+                                }
+                            },
+                            "route": "10.10.100.0/24",
+                            "source_protocol": "connected",
+                            "source_protocol_codes": "C"
+                        },
+                        "10.10.100.100/32": {
+                            "active": true,
+                            "next_hop": {
+                                "outgoing_interface": {
+                                    "Loopback100": {
+                                        "outgoing_interface": "Loopback100"
+                                    }
+                                }
+                            },
+                            "route": "10.10.100.100/32",
+                            "source_protocol": "local",
+                            "source_protocol_codes": "L"
+                        },
                         "10.10.20.0/24": {
                             "active": true,
                             "next_hop": {

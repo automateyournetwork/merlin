@@ -15,6 +15,48 @@
             "id": "Address Family: ipv4"
         },
         { 
+            "id": "Route: 10.10.100.100/32"
+        },
+        { 
+            "id": "Active: True"
+        },
+        { 
+            "id": "Outgoing Interface: Loopback100"
+        },
+        { 
+            "id": "Source Protocol: local"
+        },
+        { 
+            "id": "Code: L"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Address Family: ipv4"
+        },
+        { 
+            "id": "Route: 10.10.100.0/24"
+        },
+        { 
+            "id": "Active: True"
+        },
+        { 
+            "id": "Outgoing Interface: Loopback100"
+        },
+        { 
+            "id": "Source Protocol: connected"
+        },
+        { 
+            "id": "Code: C"
+        },
+        { 
+            "id": "VRF: default"
+        },
+        { 
+            "id": "Address Family: ipv4"
+        },
+        { 
             "id": "Route: 10.10.20.48/32"
         },
         { 
@@ -82,6 +124,76 @@
         }
     ],
     "links": [
+        { 
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "VRF: default",
+            "cost": 1
+        },    
+        { 
+            "source": "VRF: default",
+            "target": "Address Family: ipv4",
+            "cost": 1
+        },
+        { 
+            "source": "Address Family: ipv4",
+            "target": "Route: 10.10.100.100/32",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 10.10.100.100/32",
+            "target": "Active: True",
+            "cost": 2
+        },
+        { 
+            "source": "Route: 10.10.100.100/32",
+            "target": "Outgoing Interface: Loopback100",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 10.10.100.100/32",
+            "target": "Source Protocol: local",
+            "cost": 2
+        },          
+        { 
+            "source": "Route: 10.10.100.100/32",
+            "target": "Code: L",
+            "cost": 2
+        },
+        { 
+            "source": "DevNet_Sandbox_CSR1000v",
+            "target": "VRF: default",
+            "cost": 1
+        },    
+        { 
+            "source": "VRF: default",
+            "target": "Address Family: ipv4",
+            "cost": 1
+        },
+        { 
+            "source": "Address Family: ipv4",
+            "target": "Route: 10.10.100.0/24",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 10.10.100.0/24",
+            "target": "Active: True",
+            "cost": 2
+        },
+        { 
+            "source": "Route: 10.10.100.0/24",
+            "target": "Outgoing Interface: Loopback100",
+            "cost": 1
+        },
+        { 
+            "source": "Route: 10.10.100.0/24",
+            "target": "Source Protocol: connected",
+            "cost": 2
+        },          
+        { 
+            "source": "Route: 10.10.100.0/24",
+            "target": "Code: C",
+            "cost": 2
+        },
         { 
             "source": "DevNet_Sandbox_CSR1000v",
             "target": "VRF: default",

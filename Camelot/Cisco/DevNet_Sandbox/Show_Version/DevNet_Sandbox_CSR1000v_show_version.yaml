@@ -2,7 +2,7 @@
 dictitems:
   version:
     chassis: CSR1000V
-    chassis_sn: 9ZBEJQO6OFH
+    chassis_sn: 9EDLGXF4DUA
     compiled_by: mcpre
     compiled_date: Wed 12-Aug-20 00:16
     curr_config_register: '0x2102'
@@ -31,8 +31,8 @@ dictitems:
     rom: IOS-XE ROMMON
     rtr_type: CSR1000V
     system_image: bootflash:packages.conf
-    uptime: 5 hours, 3 minutes
-    uptime_this_cp: 5 hours, 4 minutes
+    uptime: 7 hours, 6 minutes
+    uptime_this_cp: 7 hours, 8 minutes
     version: 17.3.1a
     version_short: '17.3'
     xe_version: 17.03.01a
