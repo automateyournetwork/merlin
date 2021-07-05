@@ -32,6 +32,12 @@
       tags: sip
 
 
+    - name: Debug Output 
+      debug: 
+       var: pyats_ip_int
+      tags: sip
+      
+
     - name: Create CSV
       ansible.builtin.template:
         src: ../templates/ansible/cisco/ios/sh_ip_int_br_csv.j2
@@ -73,33 +79,24 @@
        var: set_cdp_neighbor
       tags: cdp
 
-    - name: Set Fact Genie Filter 
-      set_fact:
-        strip_cdp: "{{ set_cdp_neighbor['cdp'] }}"
+
+    - name: Create CSV
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/sh_cdp_neighbor_csv.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Show_CDP_Neighbors/{{ inventory_hostname}}.csv
       tags: cdp
 
-    - name: Debug Output 
-      debug: 
-       var: strip_cdp
+
+    - name: Create HTML
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/sh_cdp_neighbor_html.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Show_CDP_Neighbors/{{ inventory_hostname}}.html
       tags: cdp
 
-    # - name: Create CSV
-    #   ansible.builtin.template:
-    #     src: ./sh_ip_int_br_csv.j2
-    #     dest: ../Camelot/Cisco/Ansible/IOS/Show_CDP_Neighbors/{{ inventory_hostname}}.csv
-    #   tags: cdp
-
-
-    # - name: Create HTML
-    #   ansible.builtin.template:
-    #     src: ./sh_ip_int_br_html.j2
-    #     dest: ../Camelot/Cisco/Ansible/IOS/Show_CDP_Neighbors/{{ inventory_hostname}}.html
-    #   tags: cdp
-
-    # - name: Create MarkDown File
-    #   ansible.builtin.template:
-    #     src: ./sh_ip_int_br_md.j2
-    #     dest: ../Camelot/Cisco/Ansible/IOS/Show_CDP_Neighbors/{{ inventory_hostname}}.md
-    #   tags: cdp
+    - name: Create MarkDown File
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/sh_cdp_neighbor_md.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Show_CDP_Neighbors/{{ inventory_hostname}}.md
+      tags: cdp
 
    
