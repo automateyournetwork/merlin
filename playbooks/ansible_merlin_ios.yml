@@ -1,0 +1,105 @@
+---
+- name: pyATS testing
+  hosts: WAN
+  gather_facts: no
+  connection: network_cli
+  collections:
+    - clay584.genie
+
+  tasks:
+
+
+############# PARSE SHOW IP INTERFACE BRIEF IOSXE ##############
+  - block:
+
+    - name: show ip interface brief
+      ios_command:
+        commands:
+          - show ip interface brief
+      register: ip_int_br_raw
+      tags: sip
+
+
+    - name: Set Fact Genie Filter 
+      set_fact:
+        pyats_ip_int_br: "{{ ip_int_br_raw['stdout'][0] | parse_genie(command='show ip interface brief', os='ios') }}"
+      tags: sip
+
+
+    - name: Set Fact Genie Filter 
+      set_fact:
+        pyats_ip_int: "{{ pyats_ip_int_br['interface'] }}"
+      tags: sip
+
+
+    - name: Create CSV
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/sh_ip_int_br_csv.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Show_IP_Interface_Brief/{{ inventory_hostname}}.csv
+      tags: sip
+
+
+    - name: Create HTML
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/sh_ip_int_br_html.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Show_IP_Interface_Brief/{{ inventory_hostname}}.html
+      tags: sip
+
+    - name: Create MarkDown File
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/sh_ip_int_br_md.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Show_IP_Interface_Brief/{{ inventory_hostname}}.md
+      tags: sip
+
+
+############# PARSE SHOW CDP NEIGHBORS IOSXE ##############
+  - block:
+
+    - name: show cdp neighbors
+      ios_command:
+        commands:
+          - show cdp neighbors
+      register: cdp_neigbors
+      tags: cdp
+
+
+    - name: Set Fact Genie Filter 
+      set_fact:
+        set_cdp_neighbor: "{{ cdp_neigbors['stdout'][0] | parse_genie(command='show cdp neighbors', os='ios') }}"
+      tags: cdp
+
+    - name: Debug Output 
+      debug: 
+       var: set_cdp_neighbor
+      tags: cdp
+
+    - name: Set Fact Genie Filter 
+      set_fact:
+        strip_cdp: "{{ set_cdp_neighbor['cdp'] }}"
+      tags: cdp
+
+    - name: Debug Output 
+      debug: 
+       var: strip_cdp
+      tags: cdp
+
+    # - name: Create CSV
+    #   ansible.builtin.template:
+    #     src: ./sh_ip_int_br_csv.j2
+    #     dest: ../Camelot/Cisco/Ansible/IOS/Show_CDP_Neighbors/{{ inventory_hostname}}.csv
+    #   tags: cdp
+
+
+    # - name: Create HTML
+    #   ansible.builtin.template:
+    #     src: ./sh_ip_int_br_html.j2
+    #     dest: ../Camelot/Cisco/Ansible/IOS/Show_CDP_Neighbors/{{ inventory_hostname}}.html
+    #   tags: cdp
+
+    # - name: Create MarkDown File
+    #   ansible.builtin.template:
+    #     src: ./sh_ip_int_br_md.j2
+    #     dest: ../Camelot/Cisco/Ansible/IOS/Show_CDP_Neighbors/{{ inventory_hostname}}.md
+    #   tags: cdp
+
+   

@@ -1,0 +1,25 @@
+<html><head><link rel="stylesheet" href="../../../../styles.css"></head><body>
+<h1>Show IP Interface Brief</h1>
+<table class="merlin-table">
+  <thead>
+    <tr>
+      <th>Interface</th>
+      <th>IP Address</th>
+      <th>Status</th>
+      <th>Protocol</th>
+      <th>Method</th>   
+      <th>Interface is OK</th>   
+    </tr>
+  </thead>
+  <tbody>{% for interface, value in pyats_ip_int_br['interface'].items() %}  
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ value.ip_address }}</td>
+    <td>{{ value.status }}</td>
+    <td>{{ value.protocol }}</td>
+    <td>{{ value.method }}</td>
+    <td>{{ value.interface_is_ok }}</td>
+  </tr>{% endfor %}
+  </tbody>
+</table>
+</body></html>
