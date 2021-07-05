@@ -1,5 +1,5 @@
 ---
-- name: pyATS testing
+- name: Merlin Ansible PyATS
   hosts: WAN
   gather_facts: no
   connection: network_cli
@@ -9,7 +9,7 @@
   tasks:
 
 
-############# PARSE SHOW IP INTERFACE BRIEF IOSXE ##############
+############# PARSE SHOW IP INTERFACE BRIEF IOS ##############
   - block:
 
     - name: show ip interface brief
@@ -25,18 +25,6 @@
         pyats_ip_int_br: "{{ ip_int_br_raw['stdout'][0] | parse_genie(command='show ip interface brief', os='ios') }}"
       tags: sip
 
-
-    - name: Set Fact Genie Filter 
-      set_fact:
-        pyats_ip_int: "{{ pyats_ip_int_br['interface'] }}"
-      tags: sip
-
-
-    - name: Debug Output 
-      debug: 
-       var: pyats_ip_int
-      tags: sip
-      
 
     - name: Create CSV
       ansible.builtin.template:
@@ -58,7 +46,7 @@
       tags: sip
 
 
-############# PARSE SHOW CDP NEIGHBORS IOSXE ##############
+############# PARSE SHOW CDP NEIGHBORS IOS ##############
   - block:
 
     - name: show cdp neighbors
@@ -100,3 +88,53 @@
       tags: cdp
 
    
+
+############# LEARN ARP IOS ##############
+
+- name: Merlin Ansible Genie Learn
+  hosts: WAN
+  gather_facts: no
+  connection: local
+  collections:
+    - clay584.genie
+
+  tasks:
+
+
+  - block:
+
+    - name: Learn Genie - ARP
+      learn_genie:
+        host: "{{ ansible_host }}"
+        port: 22
+        protocol: ssh
+        username: xa
+        password: xa
+        os: iosxe
+        feature: arp
+      register: learned_arp
+      tags: learn_arp
+
+    - name: Debug Genie
+      debug:
+        msg: "{{ learned_arp.genie.arp }}"
+      tags: learn_arp
+
+
+    - name: Create CSV - Learn ARP
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_arp_csv.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ARP/{{ inventory_hostname}}.csv
+      tags: learn_arp
+
+    - name: Create HTML - Learn ARP
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_arp_html.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ARP/{{ inventory_hostname}}.html
+      tags: learn_arp
+
+    - name: Create Mark Down - Learn ARP
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_arp_md.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ARP/{{ inventory_hostname}}.md
+      tags: learn_arp
