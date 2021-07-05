@@ -108,8 +108,8 @@
         host: "{{ ansible_host }}"
         port: 22
         protocol: ssh
-        username: xa
-        password: xa
+        username: "username"
+        password: "password"
         os: iosxe
         feature: arp
       register: learned_arp
