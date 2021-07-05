@@ -1,0 +1,38 @@
+<html><head><link rel="stylesheet" href="../../../../styles.css"></head><body>
+<h1>Learn ARP</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Interface</th>
+    <th>Neighbor IP Address</th>
+    <th>Neighbor MAC Address</th>
+    <th>Origin</th>
+    <th>ARP Dynamic Learning Local Proxy Enabled</th>
+    <th>ARP Dynamic Learning Proxy Enable</th>
+  </tr>
+  </thead>
+  <tbody>
+{% for interface in learned_arp.genie.arp.interfaces %}
+  {% if learned_arp.genie.arp.interfaces[interface].ipv4 is defined %}
+   {% for neighbor in learned_arp.genie.arp.interfaces[interface].ipv4.neighbors %}
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ neighbor }}</td>
+    <td>{{ learned_arp.genie.arp.interfaces[interface].ipv4.neighbors[neighbor].link_layer_address }}</td>
+    <td>{{ learned_arp.genie.arp.interfaces[interface].ipv4.neighbors[neighbor].origin }}</td>
+    <td>{{ learned_arp.genie.arp.interfaces[interface].arp_dynamic_learning.local_proxy_enable }}</td>
+    <td>{{ learned_arp.genie.arp.interfaces[interface].arp_dynamic_learning.proxy_enable }}</td>
+    {% endfor %} 
+    {% else %}
+    <td>{{ interface }}</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>{{ learned_arp.genie.arp.interfaces[interface].arp_dynamic_learning.local_proxy_enable }}</td>
+    <td>{{ learned_arp.genie.arp.interfaces[interface].arp_dynamic_learning.proxy_enable }}</td>
+  </tr>
+  {% endif %}
+  {% endfor %} 
+  </tbody>
+</table>
+</body></html>

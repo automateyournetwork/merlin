@@ -1,0 +1,27 @@
+<html><head><link rel="stylesheet" href="../../../../styles.css"></head><body>
+<h1>Show CDP Neighbors</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Neighbor</th>
+    <th>Platform</th>
+    <th>Local Interface</th>
+    <th>Remote Interface</th>
+    <th>Capability</th>
+    <th>Hold Time</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  {% for neighbor,value in set_cdp_neighbor.cdp.index.items() %}
+  <tr>
+    <td>{{ value.device_id }}</td>
+    <td>{{ value.platform }}</td>
+    <td>{{ value.local_interface }}</td>
+    <td>{{ value.port_id }}</td>
+    <td>{{ value.capability }}</td>
+    <td>{{ value.hold_time }}</td>
+  </tr>{% endfor %}
+  </tbody>
+</table>
+</body></html>
