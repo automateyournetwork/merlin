@@ -13,8 +13,8 @@
   </thead>
   <tbody>
 {% for interface in learned_arp.genie.arp.interfaces %}
-  {% if learned_arp.genie.arp.interfaces[interface].ipv4 is defined %}
-   {% for neighbor in learned_arp.genie.arp.interfaces[interface].ipv4.neighbors %}
+{% if learned_arp.genie.arp.interfaces[interface].ipv4 is defined %}
+{% for neighbor in learned_arp.genie.arp.interfaces[interface].ipv4.neighbors %}
   <tr>
     <td>{{ interface }}</td>
     <td>{{ neighbor }}</td>
@@ -22,8 +22,8 @@
     <td>{{ learned_arp.genie.arp.interfaces[interface].ipv4.neighbors[neighbor].origin }}</td>
     <td>{{ learned_arp.genie.arp.interfaces[interface].arp_dynamic_learning.local_proxy_enable }}</td>
     <td>{{ learned_arp.genie.arp.interfaces[interface].arp_dynamic_learning.proxy_enable }}</td>
-    {% endfor %} 
-    {% else %}
+{% endfor %}
+{% else %}
     <td>{{ interface }}</td>
     <td>N/A</td>
     <td>N/A</td>
@@ -31,8 +31,8 @@
     <td>{{ learned_arp.genie.arp.interfaces[interface].arp_dynamic_learning.local_proxy_enable }}</td>
     <td>{{ learned_arp.genie.arp.interfaces[interface].arp_dynamic_learning.proxy_enable }}</td>
   </tr>
-  {% endif %}
-  {% endfor %} 
-  </tbody>
+{% endif %}
+{% endfor %}
+</tbody>
 </table>
 </body></html>

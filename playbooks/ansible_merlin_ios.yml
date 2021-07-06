@@ -1,6 +1,6 @@
 ---
 - name: Merlin Ansible PyATS
-  hosts: WAN
+  hosts: WAN:LAN
   gather_facts: no
   connection: network_cli
   collections:
@@ -29,20 +29,20 @@
     - name: Create CSV
       ansible.builtin.template:
         src: ../templates/ansible/cisco/ios/sh_ip_int_br_csv.j2
-        dest: ../Camelot/Cisco/Ansible/IOS/Show_IP_Interface_Brief/{{ inventory_hostname}}.csv
+        dest: ../Camelot/Cisco/Ansible/IOS/Show_IP_Interface_Brief/{{ inventory_hostname }}.csv
       tags: sip
 
 
     - name: Create HTML
       ansible.builtin.template:
         src: ../templates/ansible/cisco/ios/sh_ip_int_br_html.j2
-        dest: ../Camelot/Cisco/Ansible/IOS/Show_IP_Interface_Brief/{{ inventory_hostname}}.html
+        dest: ../Camelot/Cisco/Ansible/IOS/Show_IP_Interface_Brief/{{ inventory_hostname }}.html
       tags: sip
 
     - name: Create MarkDown File
       ansible.builtin.template:
         src: ../templates/ansible/cisco/ios/sh_ip_int_br_md.j2
-        dest: ../Camelot/Cisco/Ansible/IOS/Show_IP_Interface_Brief/{{ inventory_hostname}}.md
+        dest: ../Camelot/Cisco/Ansible/IOS/Show_IP_Interface_Brief/{{ inventory_hostname }}.md
       tags: sip
 
 
@@ -71,28 +71,28 @@
     - name: Create CSV
       ansible.builtin.template:
         src: ../templates/ansible/cisco/ios/sh_cdp_neighbor_csv.j2
-        dest: ../Camelot/Cisco/Ansible/IOS/Show_CDP_Neighbors/{{ inventory_hostname}}.csv
+        dest: ../Camelot/Cisco/Ansible/IOS/Show_CDP_Neighbors/{{ inventory_hostname }}.csv
       tags: cdp
 
 
     - name: Create HTML
       ansible.builtin.template:
         src: ../templates/ansible/cisco/ios/sh_cdp_neighbor_html.j2
-        dest: ../Camelot/Cisco/Ansible/IOS/Show_CDP_Neighbors/{{ inventory_hostname}}.html
+        dest: ../Camelot/Cisco/Ansible/IOS/Show_CDP_Neighbors/{{ inventory_hostname }}.html
       tags: cdp
 
     - name: Create MarkDown File
       ansible.builtin.template:
         src: ../templates/ansible/cisco/ios/sh_cdp_neighbor_md.j2
-        dest: ../Camelot/Cisco/Ansible/IOS/Show_CDP_Neighbors/{{ inventory_hostname}}.md
+        dest: ../Camelot/Cisco/Ansible/IOS/Show_CDP_Neighbors/{{ inventory_hostname }}.md
       tags: cdp
 
    
 
-############# LEARN ARP IOS ##############
+############# LEARN GENIE IOS ##############
 
-- name: Merlin Ansible Genie Learn
-  hosts: WAN
+- name: Merlin Ansible PyATS Learn
+  hosts: WAN:LAN
   gather_facts: no
   connection: local
   collections:
@@ -103,19 +103,19 @@
 
   - block:
 
-    - name: Learn Genie - ARP
+    - name: Learn PyATS - ARP
       learn_genie:
         host: "{{ ansible_host }}"
         port: 22
         protocol: ssh
-        username: "username"
-        password: "password"
+        username: "xa"
+        password: "xa"
         os: iosxe
         feature: arp
       register: learned_arp
       tags: learn_arp
 
-    - name: Debug Genie
+    - name: Debug PyATS
       debug:
         msg: "{{ learned_arp.genie.arp }}"
       tags: learn_arp
@@ -124,17 +124,55 @@
     - name: Create CSV - Learn ARP
       ansible.builtin.template:
         src: ../templates/ansible/cisco/ios/learned_arp_csv.j2
-        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ARP/{{ inventory_hostname}}.csv
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ARP/{{ inventory_hostname }}.csv
       tags: learn_arp
 
     - name: Create HTML - Learn ARP
       ansible.builtin.template:
         src: ../templates/ansible/cisco/ios/learned_arp_html.j2
-        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ARP/{{ inventory_hostname}}.html
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ARP/{{ inventory_hostname }}.html
       tags: learn_arp
 
     - name: Create Mark Down - Learn ARP
       ansible.builtin.template:
         src: ../templates/ansible/cisco/ios/learned_arp_md.j2
-        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ARP/{{ inventory_hostname}}.md
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ARP/{{ inventory_hostname }}.md
       tags: learn_arp
+
+
+    - name: Learn PyATS - ACL
+      learn_genie:
+        host: "{{ ansible_host }}"
+        port: 22
+        protocol: ssh
+        username: "xa"
+        password: "xa"
+        os: iosxe
+        feature: acl
+      register: learned_acl
+      tags: learn_acl
+
+    - name: Debug PyATS
+      debug:
+        msg: "{{ learned_acl.genie.acl }}"
+      tags: learn_acl
+
+
+    - name: Create CSV - Learn ACL
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_acl_csv.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ACL/{{ inventory_hostname }}.csv
+      tags: learn_acl
+
+
+    - name: Create HTML - Learn ACL
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_acl_html.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ACL/{{ inventory_hostname }}.html
+      tags: learn_acl
+
+    - name: Create Mark Down - Learn ACL
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_acl_md.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ACL/{{ inventory_hostname }}.md
+      tags: learn_acl

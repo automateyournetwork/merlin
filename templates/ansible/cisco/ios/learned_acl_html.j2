@@ -1,0 +1,137 @@
+<html><head><link rel="stylesheet" href="../../../../styles.css"></head><body>
+<h1>Show Access-Lists</h1>
+<table style="width:100%">
+  <tr>
+    <th>Access Control List</th>
+    <th>Access Control Entry</th>
+    <th>Permission</th>
+    <th>Logging</th>
+    <th>Source Network</th>
+    <th>Destination Network</th>
+    <th>L3 Protocol</th>
+    <th>L4 Protocol</th>
+    <th>Operator</th>
+    <th>Port</th>
+  </tr>{% for list in learned_acl.genie.acl.acls %}
+  {% if learned_acl.genie.acl.acls[list].aces is defined %}
+  {% for ace in learned_acl.genie.acl.acls[list].aces %}{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l3 is defined %}
+  {% if learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4 is defined %}
+  {% if learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4.source_ipv4_network is defined %}
+  {% if learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4.destination_ipv4_network is defined %}
+  {% for source_ipv4_network in learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4.source_ipv4_network %}
+  <tr>
+    <td>{{ list }}</td>
+    <td>{{ ace }}</td>
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].actions.forwarding }}</td>
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].actions.logging | default ("No Logging") }}</td>
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4.source_ipv4_network[source_ipv4_network] | replace("{'source_ipv4_network': ","") | replace("}","") | replace("'","") }}</td>
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4.destination_ipv4_network | replace(" {'destination_ipv4_network':","") | replace("}","") | replace("{","") | replace("'","") | replace(":","") | default("N/A") }}</td>
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4.protocol | default("N/A") }}</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endfor %}
+  {% else %}
+  {% if learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4.destination_ipv4_network is defined %}
+  {% for destination_ipv4_network in learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4.destination_ipv4_network %}
+  <tr>
+    <td>{{ list }}</td>
+    <td>{{ ace }}</td>
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].actions.forwarding }}</td>
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].actions.logging | default ("No Logging") }}</td>
+    <td>N/A</td>
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4.destination_ipv4_network | replace(" {'destination_ipv4_network':","") | replace("}","") | replace("{","") | replace("'","") | replace(":","") | default("N/A") }}</td>
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4.protocol | default("N/A") }}</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endfor %}
+  {% endif %}
+  {% endif %}
+  {% endif %}
+  {% endif %}
+  {% endif %}
+  {% endfor %}
+  {% else %}
+  <tr>
+    <td>{{ list }}</td>
+    <td>No ACEs</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endif %}{% endfor %}{% for list in learned_acl.genie.acl.acls %}{% if learned_acl.genie.acl.acls[list].aces is defined %}{% for ace in learned_acl.genie.acl.acls[list].aces %}{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4 is defined %}{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4.udp is defined %}{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4.udp.source_port is defined %}
+  <tr>
+    <td>{{ list }}</td>
+    <td>{{ ace }}</td>
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].actions.forwarding }}</td>
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].actions.logging | default ("No Logging") }}</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>UDP</td>{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4.udp.source_port.operator is defined %}
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l4.udp.source_port.operator.operator }}</td>
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l4.udp.source_port.operator.port }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}
+  </tr>{% else %}{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4.udp.destination_port is defined%}
+  <tr>
+    <td>{{ list }}</td>
+    <td>{{ ace }}</td>
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].actions.forwarding }}</td>
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].actions.logging | default ("No Logging") }}</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>
+    <td>UDP</td>{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4.udp.destination_port.operator is defined %}
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l4.udp.destination_port.operator.operator }}</td>
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l4.udp.destination_port.operator.port }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}
+  </tr>{% endif %}{% endif %}{% else %}{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4.tcp is defined %}{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4.tcp.source_port is defined %}
+  <tr>
+    <td>{{ list }}</td>
+    <td>{{ ace }}</td>
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].actions.forwarding }}</td>
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].actions.logging | default ("No Logging") }}</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4.tcp.source_port.operator is defined %}
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l4.tcp.source_port.operator.operator }}</td>
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l4.tcp.source_port.operator.port }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}
+  </tr>{% else %}{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4.tcp.destination_port is defined%}
+  <tr>
+    <td>{{ list }}</td>
+    <td>{{ ace }}</td>
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].actions.forwarding }}</td>
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].actions.logging | default ("No Logging") }}</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4.tcp.destination_port.operator is defined %}
+    <td>{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l4.tcp.destination_port.operator.operator }}</td>
+    {% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}
+  </tr>{% endif %}{% endif %}{% endif %}{% endif %}{% endif %}{% endfor %}{% else %}
+  <tr>
+    <td>{{ list }}</td>
+    <td>No ACEs</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endif %}{% endfor %}
+</table>
+</body></html>

@@ -1,0 +1,1530 @@
+<html><head><link rel="stylesheet" href="../../../../styles.css"></head><body>
+<h1>Show Access-Lists</h1>
+<table style="width:100%">
+  <tr>
+    <th>Access Control List</th>
+    <th>Access Control Entry</th>
+    <th>Permission</th>
+    <th>Logging</th>
+    <th>Source Network</th>
+    <th>Destination Network</th>
+    <th>L3 Protocol</th>
+    <th>L4 Protocol</th>
+    <th>Operator</th>
+    <th>Port</th>
+  </tr>                                                                                <tr>
+    <td>preauth_ipv4_acl</td>
+    <td>60</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>preauth_ipv4_acl</td>
+    <td>50</td>
+    <td>permit</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>udp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>preauth_ipv4_acl</td>
+    <td>40</td>
+    <td>permit</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>udp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>preauth_ipv4_acl</td>
+    <td>30</td>
+    <td>permit</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>udp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>preauth_ipv4_acl</td>
+    <td>20</td>
+    <td>permit</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>preauth_ipv4_acl</td>
+    <td>10</td>
+    <td>permit</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>udp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                          <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>460</td>
+    <td>permit</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>450</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>10.25.48.0 0.0.15.255</td>
+    <td>any any</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>440</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.25.128.0 0.0.0.127 10.25.128.0 0.0.0.127</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>430</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.24.143.176 0.0.0.15 10.24.143.176 0.0.0.15</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>420</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.24.243.48 0.0.0.15 10.24.243.48 0.0.0.15</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>410</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.24.243.32 0.0.0.15 10.24.243.32 0.0.0.15</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>400</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.67.250.80 0.0.0.15 10.67.250.80 0.0.0.15</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>390</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.67.250.64 0.0.0.15 10.67.250.64 0.0.0.15</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>380</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.25.240.224 0.0.0.31 10.25.240.224 0.0.0.31</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>370</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.25.240.192 0.0.0.31 10.25.240.192 0.0.0.31</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>360</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.76.28.0 0.0.0.31 10.76.28.0 0.0.0.31</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>350</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.1.50.64 0.0.0.31 10.1.50.64 0.0.0.31</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>340</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.0.247.192 0.0.0.31 10.0.247.192 0.0.0.31</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>330</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.113.72.0 0.0.7.255 10.113.72.0 0.0.7.255</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>320</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.112.72.0 0.0.7.255 10.112.72.0 0.0.7.255</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>310</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.24.41.192 0.0.0.63 10.24.41.192 0.0.0.63</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>300</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.111.72.0 0.0.7.255 10.111.72.0 0.0.7.255</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>290</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.25.48.0 0.0.15.255 10.25.48.0 0.0.15.255</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>280</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.24.48.0 0.0.15.255 10.24.48.0 0.0.15.255</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>270</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.78.70.16 0.0.0.7 10.78.70.16 0.0.0.7</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>260</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>10.78.70.16 0.0.0.7</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>250</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>240</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>230</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>220</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>210</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>200</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>190</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>180</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>170</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>160</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>150</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>140</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>130</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>120</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>110</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>100</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>90</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>80</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>70</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>60</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>50</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>40</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>30</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>20</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>10</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>udp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                          <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>390</td>
+    <td>permit</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>380</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.25.128.0 0.0.0.127 10.25.128.0 0.0.0.127</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>370</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.24.143.176 0.0.0.15 10.24.143.176 0.0.0.15</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>360</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.24.243.48 0.0.0.15 10.24.243.48 0.0.0.15</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>350</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.24.243.32 0.0.0.15 10.24.243.32 0.0.0.15</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>340</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.67.250.80 0.0.0.15 10.67.250.80 0.0.0.15</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>330</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.67.250.64 0.0.0.15 10.67.250.64 0.0.0.15</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>320</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.25.240.224 0.0.0.31 10.25.240.224 0.0.0.31</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>310</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.25.240.192 0.0.0.31 10.25.240.192 0.0.0.31</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>300</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.24.41.192 0.0.0.31 10.24.41.192 0.0.0.31</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>290</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.111.72.0 0.0.7.255 10.111.72.0 0.0.7.255</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>280</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.25.48.0 0.0.15.255 10.25.48.0 0.0.15.255</td>
+    <td>ipv4</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>270</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>10.78.70.16 0.0.0.7 10.78.70.16 0.0.0.7</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>260</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>10.78.70.16 0.0.0.7</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>250</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>240</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>230</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>220</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>210</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>200</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>190</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>180</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>170</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>160</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>150</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>140</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>130</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>120</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>110</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>100</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>90</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>80</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>70</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>60</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>50</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>40</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>30</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>20</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>tcp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>                    <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>10</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>any</td>
+    <td>any any</td>
+    <td>udp</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>              <tr>
+    <td>preauth_ipv6_acl</td>
+    <td>90</td>
+    <td>permit</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>UDP</td>    <td>eq</td>
+    <td>546</td>  </tr>  <tr>
+    <td>preauth_ipv6_acl</td>
+    <td>80</td>
+    <td>permit</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>UDP</td>    <td>eq</td>
+    <td>547</td>  </tr>  <tr>
+    <td>preauth_ipv6_acl</td>
+    <td>20</td>
+    <td>permit</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr>  <tr>
+    <td>preauth_ipv6_acl</td>
+    <td>10</td>
+    <td>permit</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>
+    <td>UDP</td>    <td>eq</td>
+    <td>53</td>  </tr>  <tr>
+    <td>preauth_ipv4_acl</td>
+    <td>50</td>
+    <td>permit</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>UDP</td>    <td>eq</td>
+    <td>bootpc</td>  </tr>  <tr>
+    <td>preauth_ipv4_acl</td>
+    <td>40</td>
+    <td>permit</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>
+    <td>UDP</td>    <td>eq</td>
+    <td>68</td>  </tr>  <tr>
+    <td>preauth_ipv4_acl</td>
+    <td>30</td>
+    <td>permit</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>UDP</td>    <td>eq</td>
+    <td>bootps</td>  </tr>  <tr>
+    <td>preauth_ipv4_acl</td>
+    <td>20</td>
+    <td>permit</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr>  <tr>
+    <td>preauth_ipv4_acl</td>
+    <td>10</td>
+    <td>permit</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>
+    <td>UDP</td>    <td>eq</td>
+    <td>53</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>250</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>eq</td>
+    <td>8081</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>240</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>230</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>eq</td>
+    <td>1494</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>220</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>210</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>eq</td>
+    <td>2598</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>200</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>190</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>eq</td>
+    <td>smtp</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>180</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>170</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>eq</td>
+    <td>444</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>160</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>150</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>eq</td>
+    <td>443</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>140</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>130</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>eq</td>
+    <td>9999</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>120</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>110</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>N/A</td>
+    <td>N/A</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>100</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>range</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>90</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>eq</td>
+    <td>5070</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>80</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>70</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>N/A</td>
+    <td>N/A</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>60</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>range</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>50</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>eq</td>
+    <td>22</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>40</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>30</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>eq</td>
+    <td>telnet</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_OUT</td>
+    <td>20</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>250</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>eq</td>
+    <td>8081</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>240</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>230</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>eq</td>
+    <td>1494</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>220</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>210</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>eq</td>
+    <td>2598</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>200</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>190</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>eq</td>
+    <td>smtp</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>180</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>170</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>eq</td>
+    <td>444</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>160</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>150</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>eq</td>
+    <td>443</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>140</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>130</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>eq</td>
+    <td>9999</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>120</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>110</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>N/A</td>
+    <td>N/A</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>100</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>range</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>90</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>eq</td>
+    <td>5070</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>80</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>70</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>N/A</td>
+    <td>N/A</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>60</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>range</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>50</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>eq</td>
+    <td>22</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>40</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>30</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>Source Protocol</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>TCP</td>    <td>eq</td>
+    <td>telnet</td>  </tr>  <tr>
+    <td>WANOPT_POLICY_ROUTING_IN</td>
+    <td>20</td>
+    <td>deny</td>
+    <td>log-none</td>
+    <td>N/A</td>
+    <td>Destination Protocol</td>
+    <td>N/A</td>    
+    <td>TCP</td>    <td>eq</td>
+      </tr></table>
+</body></html>
