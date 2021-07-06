@@ -1,4 +1,0 @@
-Access Control List,Access Control Entry,Permission,Logging,Source Network,Destination Network,L3 Protocol,L4 Protocol,Operator,Port
-MERLIN,30,permit,log-syslog,host 10.100.100.102,any any,ipv4,N/A,N/A,N/A
-MERLIN,20,permit,log-syslog,host 10.100.100.101,any any,ipv4,N/A,N/A,N/A
-MERLIN,10,permit,log-syslog,host 10.100.100.100,any any,ipv4,N/A,N/A,N/A
