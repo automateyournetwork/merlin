@@ -1,0 +1,44 @@
+<html><head><link rel="stylesheet" href="../../../../styles.css"></head><body>
+<h1>Learn Routing</h1>
+<table class="merlin-table">
+  <tr>
+    <th>VRF</th>
+    <th>Address Family</th>
+    <th>Route</th>
+    <th>Active</th>
+    <th>Metric</th>
+    <th>Next Hop Index</th>
+    <th>Next Hop</th>
+    <th>Outgoing Interface</th>
+    <th>Route Preference</th>
+    <th>Source Protocol</th>
+    <th>Source Protocol Code</th>
+  </tr>
+  <tr>{% for vrf in learned_routing.genie.routing.vrf %}{% for address_family in learned_routing.genie.routing.vrf[vrf].address_family %}{% for route in learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes %}{% if learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].next_hop.next_hop_list is defined %}{% for next_hop in learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].next_hop.next_hop_list %}
+    <td>{{ vrf }}</td>
+    <td>{{ address_family }}</td>
+    <td>{{ route }}</td>
+    <td>{{ learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].active }}</td>
+    <td>{{ learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].metric }}</td>
+    <td>{{ next_hop }}</td>
+    <td>{{ learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].next_hop }}</td>
+    <td>N/A</td>
+    <td>{{ learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].route_preference }}</td>
+    <td>{{ learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].source_protocol }}</td>
+    <td>{{ learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].source_protocol_codes }}</td>{% endfor %}
+    {% else %}
+    {% for outgoing_interface in learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].next_hop.outgoing_interface %}
+    <td>{{ vrf }}</td>
+    <td>{{ address_family }}</td>
+    <td>{{ route }}</td>
+    <td>{{ learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].active }}</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>{{ outgoing_interface }}</td>
+    <td>N/A</td>
+    <td>{{ learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].source_protocol }}</td>
+    <td>{{ learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].source_protocol_codes }}</td>
+  </tr>{% endfor %}{% endif %}{% endfor %}{% endfor %}{% endfor %}
+</table>
+</body></html>

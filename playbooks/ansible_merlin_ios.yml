@@ -333,3 +333,41 @@
         src: ../templates/ansible/cisco/ios/learned_ospf_md.j2
         dest: ../Camelot/Cisco/Ansible/IOS/Learned_OSPF/{{ inventory_hostname }}.md
       tags: learn_ospf
+
+
+    - name: Learn PyATS - ROUTING
+      learn_genie:
+        host: "{{ ansible_host }}"
+        port: 22
+        protocol: ssh
+        username: "creds"
+        password: "creds"
+        os: iosxe
+        feature: routing
+      register: learned_routing
+      tags: learn_routing
+
+    - name: Debug PyATS
+      debug:
+        msg: "{{ learned_routing.genie.routing.vrf }}"
+      tags: learn_routing
+
+
+    - name: Create CSV - Learn ROUTING
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_routing_csv.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ROUTING/{{ inventory_hostname }}.csv
+      tags: learn_routing
+
+
+    - name: Create HTML - Learn ROUTING
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_routing_html.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ROUTING/{{ inventory_hostname }}.html
+      tags: learn_routing
+
+    - name: Create Mark Down - Learn ROUTING
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_routing_md.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ROUTING/{{ inventory_hostname }}.md
+      tags: learn_routing
