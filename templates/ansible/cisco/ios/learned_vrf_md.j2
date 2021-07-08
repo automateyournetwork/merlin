@@ -1,0 +1,10 @@
+# Learn VRF
+| VRF | Address Family | Route Distinguisher |
+| --- | -------------- | ------------------- |
+{% for vrf in learned_vrf.genie.vrf.vrfs %}
+{% if learned_vrf.genie.vrf.vrfs[vrf].address_family is defined %}
+{% for address_family in learned_vrf.genie.vrf.vrfs[vrf].address_family %}
+| {{ vrf }} | {{ address_family }} | {{ learned_vrf.genie.vrf.vrfs[vrf].route_distinguisher }} |
+{% endfor %}
+{% endif %}
+{% endfor %}

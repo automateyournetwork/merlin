@@ -1,0 +1,379 @@
+<html><head><link rel="stylesheet" href="../../../../styles.css"></head><body>
+<h1>Learn OSPF</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>VRF</th>
+    <th>Address Family</th>
+    <th>Instance</th>
+    <th>Router ID</th>
+    <th>Auto Cost Enabled</th>
+    <th>BFD Enable</th>
+    <th>Graceful Restart Type</th>
+    <th>Graceful Restart Enabled</th>
+    <th>MPLS Auto Config</th>
+    <th>NSR Enabled</th>
+    <th>Preference</th>
+    <th>Paths</th>
+    <th>SPF Throttle Start</th>
+    <th>SPF Hold</th>
+    <th>SPF Maximum</th>
+    <th>Area</th>
+    <th>Area Type</th>
+    <th>SPF Total</th>
+    <th>MPLS TE</th>
+    <th>LSA Type</th>
+    <th>LSA Advertising Router</th>
+    <th>LSA ID</th>
+    <th>Number of Links</th>
+    <th>Link</th>
+    <th>Link ID</th>
+    <th>Link Data</th>
+    <th>Type</th>
+    <th>Summary</th>
+    <th>Summary Mask</th>
+    <th>Topology</th>
+    <th>Metric</th>
+    <th>Age</th>
+    <th>Checksum</th>
+    <th>Length</th>
+    <th>Option</th>
+    <th>Sequence Number</th>
+    <th>Interface</th>
+    <th>BFD Enable</th>
+    <th>Cost</th>
+    <th>Enabled</th>
+    <th>Passive</th>
+    <th>State</th>
+    <th>Interface Type</th>
+    <th>Dead Interval</th>
+    <th>DR IP Address</th>
+    <th>DR Router ID</th>
+    <th>Hello Interval</th>
+    <th>Hello Timer</th>
+    <th>Priority</th>
+    <th>Retransmit Interval</th>
+    <th>Transmit Delay</th>
+    <th>Neighbor</th>
+    <th>Neighbor Address</th>
+    <th>BDR IP Address</th>
+    <th>Dead Timer</th>
+    <th>DR IP Address</th>
+    <th>Neighbor Router ID</th>
+    <th>State</th>
+    <th>Event Count</th>
+    <th>Retransmit Queue</th>
+  </tr>
+  </thead>
+  <tbody>{% for vrf in learned_ospf.genie.ospf.vrf %}{% if vrf == "default" %}{% for address_family in learned_ospf.genie.ospf.vrf[vrf].address_family %}{% for instance in learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance %}{% for graceful_restart in learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].graceful_restart %}{% for area in learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas %}{% for lsa_type in learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types %}{% for lsa in learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas %}{% if learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router is defined %}{% for link in learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router.links %}{% for topology in learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router.links[link].topologies %}{% for interface in learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces %}{% if learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors is defined %}{% for neighbor in learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors %}
+    <tr>
+      <td>{{ vrf }}</td>
+      <td>{{ address_family }}</td>
+      <td>{{ instance }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].router_id }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].auto_cost.enable }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].bfd.enable }}</td>
+      <td>{{ graceful_restart }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].graceful_restart[graceful_restart].enable }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].mpls.ldp.autoconfig }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].nsr.enable }}</td>
+      <td>{% if learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].preference is defined %}{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].preference.single_value.all }}{% else %}N/A{% endif %}</td>
+      <td>{% if learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].spf_control.paths is defined %}{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].spf_control.paths }}{% else %}N/A{% endif %}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].spf_control.throttle.spf.start }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].spf_control.throttle.spf.hold }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].spf_control.throttle.spf.maximum }}</td>
+      <td>{{ area }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].area_type }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].statistics.spf_runs_count }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].mpls.te.enable }}</td>
+      <td>{{ lsa_type }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].adv_router }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].lsa_id }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router.num_of_links }}</td>
+      <td>{{ link }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router.links[link].link_id }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router.links[link].link_data }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router.links[link].type }}</td>
+      <td>NO</td>
+      <td>N/A</td>
+      <td>{{ topology }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router.links[link].topologies[topology].metric }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.age }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.checksum }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.length }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.option }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.seq_num }}</td>
+      <td>{{ interface }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].bfd.enable }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].cost }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].enable }}</td>
+      <td>{% if learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive is defined %}{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive }}{% else %}N/A{% endif %}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].state }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].interface_type }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].dead_interval| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].dr_ip_addr| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].dr_router_id| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].hello_interval| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].hello_timer| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].priority| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].retransmit_interval| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].transmit_delay| default ("N/A") }}</td>
+      <td>{{ neighbor }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].address }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].bdr_ip_addr }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].dead_timer }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].dr_ip_addr }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].neighbor_router_id }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].state }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].statistics.nbr_event_count }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].statistics.nbr_retrans_qlen }}</td>
+    </tr>{% endfor %}{% else %}
+    <tr>
+      <td>{{ vrf }}</td>
+      <td>{{ address_family }}</td>
+      <td>{{ instance }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].router_id }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].auto_cost.enable }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].bfd.enable }}</td>
+      <td>{{ graceful_restart }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].graceful_restart[graceful_restart].enable }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].mpls.ldp.autoconfig }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].nsr.enable }}</td>
+      <td>{% if learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].preference is defined %}{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].preference.single_value.all }}{% else %}N/A{% endif %}</td>
+      <td>{% if learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].spf_control.paths is defined %}{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].spf_control.paths }}{% else %}N/A{% endif %}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].spf_control.throttle.spf.start }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].spf_control.throttle.spf.hold }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].spf_control.throttle.spf.maximum }}</td>
+      <td>{{ area }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].area_type }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].statistics.spf_runs_count }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].mpls.te.enable }}</td>
+      <td>{{ lsa_type }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].adv_router }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].lsa_id }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router.num_of_links }}</td>
+      <td>{{ link }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router.links[link].link_id }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router.links[link].link_data }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router.links[link].type }}</td>
+      <td>NO</td>
+      <td>N/A</td>
+      <td>{{ topology }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.router.links[link].topologies[topology].metric }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.age }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.checksum }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.length }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.option }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.seq_num }}</td>
+      <td>{{ interface }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].bfd.enable }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].cost }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].enable }}</td>
+      <td>{% if learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive is defined %}{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive }}{% else %}N/A{% endif %}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].state }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].interface_type }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].dead_interval| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].dr_ip_addr| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].dr_router_id| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].hello_interval| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].hello_timer| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].priority| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].retransmit_interval| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].transmit_delay| default ("N/A") }}</td>
+      <td>No Neighbors</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>{% endif %}{% endfor %}{% endfor %}{% endfor %}{% else %}{% if learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.summary is defined %}{% for topology in learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.summary.topologies %}
+    <tr>
+      <td>{{ vrf }}</td>
+      <td>{{ address_family }}</td>
+      <td>{{ instance }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].router_id }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].auto_cost.enable }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].bfd.enable }}</td>
+      <td>{{ graceful_restart }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].graceful_restart[graceful_restart].enable }}</td>
+      <td>{% if learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].mpls is defined %}{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].mpls.ldp.autoconfig }}{% else %}N/A{% endif %}</td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].nsr.enable }}</td>
+      <td>{% if learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].preference is defined %}{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].preference.single_value.all }}{% else %}N/A{% endif %}</td>
+      <td>{% if learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].spf_control.paths is defined %}{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].spf_control.paths }}{% else %}N/A{% endif %}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].spf_control.throttle.spf.start }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].spf_control.throttle.spf.hold }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].spf_control.throttle.spf.maximum }}</td>
+      <td>{{ area }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].area_type }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].statistics.spf_runs_count }}</td>
+      <td>{% if learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].mpls is defined %}{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].mpls.te.enable }}{% else %}N/A{% endif %}</td>
+      <td>{{ lsa_type }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].adv_router }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].lsa_id }}</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>YES</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.summary.network_mask }}</td>
+      <td>{{ topology }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.body.summary.topologies[topology].metric }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.age }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.checksum }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.length }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.option }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].database.lsa_types[lsa_type].lsas[lsa].ospfv2.header.seq_num }}</td>
+      <td>No Interfaces</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>No Neighbors</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>{% endfor %}{% endif %}{% endif %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% else %}{% for address_family in learned_ospf.genie.ospf.vrf[vrf].address_family %}{% for instance in learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance %}{% for area in learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas %}{% for interface in learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces %}{% if learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors is defined %}{% for neighbor in learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors %}
+    <tr>
+      <td>{{ vrf }}</td>
+      <td>{{ address_family }}</td>
+      <td>{{ instance }}</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>{{ area }}</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].mpls.te.enable }}</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>NO</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>{{ interface }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].bfd.enable }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].cost }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].enable }}</td>
+      <td>{% if learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive is defined %}{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive }}{% else %}N/A{% endif %}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].state }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].interface_type }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].dead_interval | default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].dr_ip_addr| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].dr_router_id| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].hello_interval| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].hello_timer| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].priority| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].retransmit_interval| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].transmit_delay| default ("N/A") }}</td>
+      <td>{{ neighbor }}</td><td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].address }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].bdr_ip_addr }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].dead_timer }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].dr_ip_addr }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].neighbor_router_id }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].state }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].statistics.nbr_event_count }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].neighbors[neighbor].statistics.nbr_retrans_qlen }}</td>
+    </tr>{% endfor %}{% else %}
+    <tr>
+      <td>{{ vrf }}</td>
+      <td>{{ address_family }}</td>
+      <td>{{ instance }}</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>{{ area }}</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].mpls.te.enable }}</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>NO</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>{{ interface }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].bfd.enable }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].cost }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].enable }}</td>
+      <td>{% if learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive is defined %}{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].passive }}{% else %}N/A{% endif %}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].state }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].interface_type }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].dead_interval| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].dr_ip_addr| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].dr_router_id| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].hello_interval| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].hello_timer| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].priority| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].retransmit_interval| default ("N/A") }}</td>
+      <td>{{ learned_ospf.genie.ospf.vrf[vrf].address_family[address_family].instance[instance].areas[area].interfaces[interface].transmit_delay| default ("N/A") }}</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+      <td>N/A</td>
+    </tr>{% endif %}{% endfor %}{% endfor %}{% endfor %}{% endfor %}{% endif %}{% endfor %}
+    </tbody>
+</table>
+</body></html>
