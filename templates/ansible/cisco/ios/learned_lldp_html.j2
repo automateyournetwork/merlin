@@ -1,0 +1,49 @@
+<html><head><link rel="stylesheet" href="../../../../styles.css"></head><body>
+<h1>Learn LLDP Interfaces</h1>
+<table class="merlin-table">
+  <tr>
+    <th>Interface</th>
+    <th>LLDP</th>
+    <th>Neighbor</th>
+    <th>Neighbor Port</th>
+    <th>Neighbor Port Description</th>
+    <th>Capabilities</th>
+    <th>Chassis ID</th>
+    <th>Management Address</th>
+    <th>System Description</th>
+  </tr>
+{% for interface in learned_lldp.genie.lldp.interfaces %}
+{% if learned_lldp.genie.lldp.interfaces[interface].port_id is defined %}
+{% for port in learned_lldp.genie.lldp.interfaces[interface].port_id %}
+{% for neighbor in learned_lldp.genie.lldp.interfaces[interface].port_id[port].neighbors %}
+{% for capability in learned_lldp.genie.lldp.interfaces[interface].port_id[port].neighbors[neighbor].capabilities %}
+  <tr>
+    <td>{{ port }}</td>
+    <td>{{ learned_lldp.genie.lldp.interfaces[interface].port_id[port].neighbors[neighbor].capabilities.router.enabled }}</td>
+    <td>{{ neighbor }}</td>
+    <td>{{ port }}</td>
+    <td>{{ learned_lldp.genie.lldp.interfaces[interface].port_id[port].neighbors[neighbor].port_description }}</td>
+    <td>{{ capability }}</td>
+    <td>{{ learned_lldp.genie.lldp.interfaces[interface].port_id[port].neighbors[neighbor].chassis_id }}</td>
+    <td>{{ learned_lldp.genie.lldp.interfaces[interface].port_id[port].neighbors[neighbor].management_address }}</td>
+    <td>{{ learned_lldp.genie.lldp.interfaces[interface].port_id[port].neighbors[neighbor].system_description | regex_search('Cisco\s+IOS\s+Software.*') | replace(","," ") }}</td>
+  </tr>
+  {% endfor %}
+  {% endfor %}
+  {% endfor %}
+  {% else %}
+  <tr>
+    <td>{{ interface }}</td>
+    <td>{{ learned_lldp.genie.lldp.interfaces[interface].enabled }}</td>
+    <td>No Neighbor</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>
+  {% endif %}
+  {% endfor %}
+</table>
+</body></html>

@@ -371,3 +371,42 @@
         src: ../templates/ansible/cisco/ios/learned_routing_md.j2
         dest: ../Camelot/Cisco/Ansible/IOS/Learned_ROUTING/{{ inventory_hostname }}.md
       tags: learn_routing
+
+
+    - name: Learn PyATS - LLDP INTERFACES
+      learn_genie:
+        host: "{{ ansible_host }}"
+        port: 22
+        protocol: ssh
+        username: "creds"
+        password: "creds"
+        os: ios
+        feature: lldp
+      register: learned_lldp
+      tags: learn_lldp
+
+    - name: Debug PyATS
+      debug:
+        msg: "{{ learned_lldp.genie.lldp.interfaces }}"
+      tags: learn_lldp
+
+
+
+    - name: Create CSV - Learn LLDP INTERFACES
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_lldp_csv.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_LLDP/{{ inventory_hostname }}.csv
+      tags: learn_lldp
+
+
+    - name: Create HTML - Learn LLDP INTERFACES
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_lldp_html.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_LLDP/{{ inventory_hostname }}.html
+      tags: learn_lldp
+
+    - name: Create Mark Down - Learn LLDP INTERFACES
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_lldp_md.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_LLDP/{{ inventory_hostname }}.md
+      tags: learn_lldp

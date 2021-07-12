@@ -1,0 +1,13 @@
+Interface,LLDP,Neighbor,Neighbor Port,Neighbor Port Description,Capabilities,Chassis ID,Management Address,System Description
+{% for interface in learned_lldp.genie.lldp.interfaces %}
+{% if learned_lldp.genie.lldp.interfaces[interface].port_id is defined %}
+{% for port in learned_lldp.genie.lldp.interfaces[interface].port_id %}
+{% for neighbor in learned_lldp.genie.lldp.interfaces[interface].port_id[port].neighbors %}
+{% for capability in learned_lldp.genie.lldp.interfaces[interface].port_id[port].neighbors[neighbor].capabilities %}{{ port }},{{ learned_lldp.genie.lldp.interfaces[interface].port_id[port].neighbors[neighbor].capabilities.router.enabled }},{{ neighbor }},{{ port }},{{ learned_lldp.genie.lldp.interfaces[interface].port_id[port].neighbors[neighbor].port_description }},{{ capability }},{{ learned_lldp.genie.lldp.interfaces[interface].port_id[port].neighbors[neighbor].chassis_id }},{{ learned_lldp.genie.lldp.interfaces[interface].port_id[port].neighbors[neighbor].management_address }},{{ learned_lldp.genie.lldp.interfaces[interface].port_id[port].neighbors[neighbor].system_description | regex_search('Cisco\s+IOS\s+Software.*') | replace(","," ") }}
+{% endfor %}
+{% endfor %}
+{% endfor %}
+{% else %}
+{{ interface }},{{ learned_lldp.genie.lldp.interfaces[interface].enabled }},No Neighbor,N/A,N/A,N/A,N/A,N/A,N/A
+{% endif %}
+{% endfor %}
