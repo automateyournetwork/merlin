@@ -1,0 +1,63 @@
+Access Control List,Access Control Entry,Permission,Logging,Source Network,Destination Network,L3 Protocol,L4 Protocol,Operator,Port
+{% for list in learned_acl.genie.acl.acls %}
+{% if learned_acl.genie.acl.acls[list].aces is defined %}
+{% for ace in learned_acl.genie.acl.acls[list].aces %}
+{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l3 is defined %}
+{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4 is defined %}
+{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4.source_ipv4_network is defined %}
+{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4.destination_ipv4_network is defined %}
+{% for source_ipv4_network in learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4.source_ipv4_network %}
+{{ list }},{{ ace }},{{ learned_acl.genie.acl.acls[list].aces[ace].actions.forwarding }},{{ learned_acl.genie.acl.acls[list].aces[ace].actions.logging | default ("No Logging") }},{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4.source_ipv4_network[source_ipv4_network] | replace("{'source_ipv4_network': ","") | replace("}","") | replace("'","") }},{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4.destination_ipv4_network | replace(" {'destination_ipv4_network':","") | replace("}","") | replace("{","") | replace("'","") | replace(":","") | default("N/A") }},{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4.protocol | default("N/A") }},N/A,N/A,N/A
+{% endfor %}
+{% else %}
+{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4.destination_ipv4_network is defined %}
+{% for destination_ipv4_network in learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4.destination_ipv4_network %}
+{{ list }},{{ ace }},{{ learned_acl.genie.acl.acls[list].aces[ace].actions.forwarding }},{{ learned_acl.genie.acl.acls[list].aces[ace].actions.logging | default("No Logging") }},N/A,{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4.destination_ipv4_network[destination_ipv4_network]  | replace(" {'destination_ipv4_network':","") | replace("}","") | replace("{","") | replace("'","") | replace(":","") | default("NA") }},{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l3.ipv4.protocol | default("N/A") }},N/A,N/A,N/A
+{% endfor %}
+{% endif %}
+{% endif %}
+{% endif %}
+{% endif %}
+{% endif %}
+{% endfor %}
+{% else %}
+{{ list }},No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+{% endif %}
+{% endfor %}
+{% for list in learned_acl.genie.acl.acls %}
+{% if learned_acl.genie.acl.acls[list].aces is defined %}
+{% for ace in learned_acl.genie.acl.acls[list].aces %}
+{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4 is defined %}
+{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4.udp is defined %}
+{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4.udp.source_port is defined %}
+{{ list }},{{ ace }},{{ learned_acl.genie.acl.acls[list].aces[ace].actions.forwarding }},{{ learned_acl.genie.acl.acls[list].aces[ace].actions.logging | default ("No Logging") }},Source Protocol,N/A,N/A,UDP,{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4.udp.source_port.operator is defined %}{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l4.udp.source_port.operator.operator }},{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l4.udp.source_port.operator.port }}
+{% else %}N/A,N/A
+{% endif %}
+{% else %}
+{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4.udp.destination_port is defined %}  
+{{ list }},{{ ace }},{{ learned_acl.genie.acl.acls[list].aces[ace].actions.forwarding }},{{ learned_acl.genie.acl.acls[list].aces[ace].actions.logging | default ("No Logging") }},N/A,Destination Protocol,N/A,UDP,{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4.udp.destination_port.operator is defined %}{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l4.udp.destination_port.operator.operator }},{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l4.udp.destination_port.operator.port }}
+{% else %}N/A,N/A
+{% endif %}
+{% endif %}
+{% endif %}
+{% else %}
+{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4.tcp is defined %}
+{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4.tcp.source_port is defined %}
+{{ list }},{{ ace }},{{ learned_acl.genie.acl.acls[list].aces[ace].actions.forwarding }},{{ learned_acl.genie.acl.acls[list].aces[ace].actions.logging | default ("No Logging") }},Source Protocol,N/A,N/A,TCP,{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4.tcp.source_port.operator is defined %}{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l4.tcp.source_port.operator.operator }},{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l4.tcp.source_port.operator.port }}
+{% else %}N/A,N/A
+{% endif %}
+{% else %}
+{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4.tcp.destination_port is defined %}  
+{{ list }},{{ ace }},{{ learned_acl.genie.acl.acls[list].aces[ace].actions.forwarding }},{{ learned_acl.genie.acl.acls[list].aces[ace].actions.logging | default ("No Logging") }},N/A,Destination Protocol,N/A,TCP,{% if learned_acl.genie.acl.acls[list].aces[ace].matches.l4.tcp.destination_port.operator is defined %}{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l4.tcp.destination_port.operator.operator }},{{ learned_acl.genie.acl.acls[list].aces[ace].matches.l4.tcp.destination_port.operator.port }}
+{% else %}N/A,N/A
+{% endif %}
+{% endif %}
+{% endif %}
+{% endif %}
+{% endif %}
+{% endif %}
+{% endfor %}
+{% else %}
+{{ list }},No ACEs,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+{% endif %}
+{% endfor %}

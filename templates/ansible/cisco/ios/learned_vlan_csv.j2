@@ -1,0 +1,10 @@
+VLAN,Name,State,Shutdown,Interface
+{% for vlan in learned_vlan.genie.vlan.vlans %}
+{% if learned_vlan.genie.vlan.vlans[vlan].interfaces is defined %}
+{% for interface in learned_vlan.genie.vlan.vlans[vlan].interfaces %}
+{{ vlan }},{{ learned_vlan.genie.vlan.vlans[vlan].name }},{{ learned_vlan.genie.vlan.vlans[vlan].state }},{{ learned_vlan.genie.vlan.vlans[vlan].shutdown }},{{ interface }}
+{% endfor %}
+{% else %}
+{{ vlan }},{{ learned_vlan.genie.vlan.vlans[vlan].name }},{{ learned_vlan.genie.vlan.vlans[vlan].state }},{{ learned_vlan.genie.vlan.vlans[vlan].shutdown }},N/A
+{% endif %}
+{% endfor %}

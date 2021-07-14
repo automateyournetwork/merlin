@@ -1,0 +1,18 @@
+# Learn Routing
+| VRF | Address Family | Route | Active | Metric | Next Hop Index | Next Hop | Outgoing Interface | Route Preference | Source Protocol | Source Protocol Code |
+| --- | -------------- | ----- | ------ | ------ | -------------- | -------- | -------------------| ---------------- | --------------- | -------------------- |
+{% for vrf in learned_routing.genie.routing.vrf %}
+{% for address_family in learned_routing.genie.routing.vrf[vrf].address_family %}
+{% for route in learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes %}
+{% if learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].next_hop.next_hop_list is defined %}
+{% for next_hop in learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].next_hop.next_hop_list %}
+| {{ vrf }} | {{ address_family }} | {{ route }} | {{ learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].active }} | {{ learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].metric }} | {{ next_hop }} | {{ learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].next_hop.next_hop_list[next_hop].next_hop }} | N/A | {{ learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].route_preference }} | {{ learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].source_protocol }} | {{ learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].source_protocol_codes }} |
+{% endfor %}
+{% else %}
+{% for outgoing_interface in learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].next_hop.outgoing_interface %}
+| {{ vrf }} | {{ address_family }} | {{ route }} | {{ learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].active }} | N/A | N/A | N/A | {{ outgoing_interface }} | N/A | {{ learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].source_protocol }} | {{ learned_routing.genie.routing.vrf[vrf].address_family[address_family].routes[route].source_protocol_codes }} |
+{% endfor %}
+{% endif %}
+{% endfor %}
+{% endfor %}
+{% endfor %}

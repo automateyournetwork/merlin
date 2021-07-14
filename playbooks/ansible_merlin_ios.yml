@@ -1,0 +1,452 @@
+---
+- name: Merlin Ansible PyATS
+  hosts: WAN:LAN
+  gather_facts: no
+  connection: network_cli
+  collections:
+    - clay584.genie
+
+  tasks:
+
+
+
+############# LEARN PYATS IOS ##############
+
+- name: Merlin Ansible PyATS Learn
+  hosts: WAN:LAN
+  gather_facts: no
+  connection: local
+  collections:
+    - clay584.genie
+
+  tasks:
+
+
+  - block:
+
+    - name: Learn PyATS - ARP
+      learn_genie:
+        host: "{{ ansible_host }}"
+        port: 22
+        protocol: ssh
+        username: "creds"
+        password: "creds"
+        os: iosxe
+        feature: arp
+      register: learned_arp
+      tags: learn_arp
+
+    - name: Debug PyATS
+      debug:
+        msg: "{{ learned_arp.genie.arp }}"
+      tags: learn_arp
+
+
+    - name: Create CSV - Learn ARP
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_arp_csv.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ARP/{{ inventory_hostname }}.csv
+      tags: learn_arp
+
+    - name: Create HTML - Learn ARP
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_arp_html.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ARP/{{ inventory_hostname }}.html
+      tags: learn_arp
+
+    - name: Create Mark Down - Learn ARP
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_arp_md.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ARP/{{ inventory_hostname }}.md
+      tags: learn_arp
+
+
+    - name: Learn PyATS - ACL
+      learn_genie:
+        host: "{{ ansible_host }}"
+        port: 22
+        protocol: ssh
+        username: "creds"
+        password: "creds"
+        os: iosxe
+        feature: acl
+      register: learned_acl
+      tags: learn_acl
+
+    - name: Debug PyATS
+      debug:
+        msg: "{{ learned_acl.genie.acl }}"
+      tags: learn_acl
+
+
+    - name: Create CSV - Learn ACL
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_acl_csv.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ACL/{{ inventory_hostname }}.csv
+      tags: learn_acl
+
+
+    - name: Create HTML - Learn ACL
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_acl_html.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ACL/{{ inventory_hostname }}.html
+      tags: learn_acl
+
+    - name: Create Mark Down - Learn ACL
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_acl_md.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ACL/{{ inventory_hostname }}.md
+      tags: learn_acl
+
+
+
+    - name: Learn PyATS - VRF
+      learn_genie:
+        host: "{{ ansible_host }}"
+        port: 22
+        protocol: ssh
+        username: "creds"
+        password: "creds"
+        os: iosxe
+        feature: vrf
+      register: learned_vrf
+      tags: learn_vrf
+
+    - name: Debug PyATS
+      debug:
+        msg: "{{ learned_vrf.genie.vrf }}"
+      tags: learn_vrf
+
+
+    - name: Create CSV - Learn VRF
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_vrf_csv.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_VRF/{{ inventory_hostname }}.csv
+      tags: learn_vrf
+
+
+    - name: Create HTML - Learn VRF
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_vrf_html.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_VRF/{{ inventory_hostname }}.html
+      tags: learn_vrf
+
+    - name: Create Mark Down - Learn VRF
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_vrf_md.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_VRF/{{ inventory_hostname }}.md
+      tags: learn_vrf
+
+
+
+    - name: Learn PyATS - INTERFACE
+      learn_genie:
+        host: "{{ ansible_host }}"
+        port: 22
+        protocol: ssh
+        username: "creds"
+        password: "creds"
+        os: iosxe
+        feature: interface
+      register: learned_interface
+      tags: learn_interface
+
+    - name: Debug PyATS
+      debug:
+        msg: "{{ learned_interface.genie.interface }}"
+      tags: learn_interface
+
+
+    - name: Create CSV - Learn INTERFACE
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_interface_csv.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_INTERFACE/{{ inventory_hostname }}.csv
+      tags: learn_interface
+
+
+    - name: Create HTML - Learn INTERFACE
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_interface_html.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_INTERFACE/{{ inventory_hostname }}.html
+      tags: learn_interface
+
+    - name: Create Mark Down - Learn INTERFACE
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_interface_md.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_INTERFACE/{{ inventory_hostname }}.md
+      tags: learn_interface
+
+
+
+    - name: Learn PyATS - NTP
+      learn_genie:
+        host: "{{ ansible_host }}"
+        port: 22
+        protocol: ssh
+        username: "creds"
+        password: "creds"
+        os: iosxe
+        feature: ntp
+      register: learned_ntp
+      tags: learn_ntp
+
+    - name: Debug PyATS
+      debug:
+        msg: "{{ learned_ntp.genie.ntp.vrf }}"
+      tags: learn_ntp
+
+
+    - name: Create CSV - Learn NTP
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_ntp_csv.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_NTP/{{ inventory_hostname }}.csv
+      tags: learn_ntp
+
+
+    - name: Create HTML - Learn NTP
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_ntp_html.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_NTP/{{ inventory_hostname }}.html
+      tags: learn_ntp
+
+    - name: Create Mark Down - Learn NTP
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_ntp_md.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_NTP/{{ inventory_hostname }}.md
+      tags: learn_ntp
+
+
+
+
+    - name: Learn PyATS - OSPF
+      learn_genie:
+        host: "{{ ansible_host }}"
+        port: 22
+        protocol: ssh
+        username: "creds"
+        password: "creds"
+        os: iosxe
+        feature: ospf
+      register: learned_ospf
+      tags: learn_ospf
+
+    - name: Debug PyATS
+      debug:
+        msg: "{{ learned_ospf.genie.ospf.vrf }}"
+      tags: learn_ospf
+
+
+    - name: Create CSV - Learn OSPF
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_ospf_csv.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_OSPF/{{ inventory_hostname }}.csv
+      tags: learn_ospf
+
+
+    - name: Create HTML - Learn OSPF
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_ospf_html.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_OSPF/{{ inventory_hostname }}.html
+      tags: learn_ospf
+
+    - name: Create Mark Down - Learn OSPF
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_ospf_md.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_OSPF/{{ inventory_hostname }}.md
+      tags: learn_ospf
+
+
+    - name: Learn PyATS - ROUTING
+      learn_genie:
+        host: "{{ ansible_host }}"
+        port: 22
+        protocol: ssh
+        username: "creds"
+        password: "creds"
+        os: iosxe
+        feature: routing
+      register: learned_routing
+      tags: learn_routing
+
+    - name: Debug PyATS
+      debug:
+        msg: "{{ learned_routing.genie.routing.vrf }}"
+      tags: learn_routing
+
+
+    - name: Create CSV - Learn ROUTING
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_routing_csv.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ROUTING/{{ inventory_hostname }}.csv
+      tags: learn_routing
+
+
+    - name: Create HTML - Learn ROUTING
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_routing_html.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ROUTING/{{ inventory_hostname }}.html
+      tags: learn_routing
+
+    - name: Create Mark Down - Learn ROUTING
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_routing_md.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_ROUTING/{{ inventory_hostname }}.md
+      tags: learn_routing
+
+
+    - name: Learn PyATS - LLDP INTERFACES
+      learn_genie:
+        host: "{{ ansible_host }}"
+        port: 22
+        protocol: ssh
+        username: "creds"
+        password: "creds"
+        os: ios
+        feature: lldp
+      register: learned_lldp
+      tags: learn_lldp
+
+    - name: Debug PyATS
+      debug:
+        msg: "{{ learned_lldp.genie.lldp.interfaces }}"
+      tags: learn_lldp
+
+
+
+    - name: Create CSV - Learn LLDP INTERFACES
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_lldp_csv.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_LLDP/{{ inventory_hostname }}.csv
+      tags: learn_lldp
+
+
+    - name: Create HTML - Learn LLDP INTERFACES
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_lldp_html.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_LLDP/{{ inventory_hostname }}.html
+      tags: learn_lldp
+
+    - name: Create Mark Down - Learn LLDP INTERFACES
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_lldp_md.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_LLDP/{{ inventory_hostname }}.md
+      tags: learn_lldp
+
+
+
+
+    - name: Learn PyATS - VLAN
+      learn_genie:
+        host: "{{ ansible_host }}"
+        port: 22
+        protocol: ssh
+        username: "creds"
+        password: "creds"
+        os: ios
+        feature: vlan
+      register: learned_vlan
+      tags: learn_vlan
+
+    - name: Debug PyATS
+      debug:
+        msg: "{{ learned_vlan.genie.vlan.vlans }}"
+      tags: learn_vlan
+
+
+
+    - name: Create CSV - Learn VLAN
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_vlan_csv.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_VLAN/{{ inventory_hostname }}.csv
+      tags: learn_vlan
+
+
+    - name: Create HTML - Learn VLAN
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_vlan_html.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_VLAN/{{ inventory_hostname }}.html
+      tags: learn_vlan
+
+    - name: Create Mark Down - Learn VLAN
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_vlan_md.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_VLAN/{{ inventory_hostname }}.md
+      tags: learn_vlan
+
+
+
+    - name: Learn PyATS - STP
+      learn_genie:
+        host: "{{ ansible_host }}"
+        port: 22
+        protocol: ssh
+        username: "creds"
+        password: "creds"
+        os: ios
+        feature: stp
+      register: learned_stp
+      tags: learn_stp
+
+    - name: Debug PyATS
+      debug:
+        msg: "{{ learned_stp.genie.stp.global }}"
+      tags: learn_stp
+
+
+
+    - name: Create CSV - Learn STP
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_stp_csv.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_STP/{{ inventory_hostname }}.csv
+      tags: learn_stp
+
+
+    - name: Create HTML - Learn STP
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_stp_html.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_STP/{{ inventory_hostname }}.html
+      tags: learn_stp
+
+    - name: Create Mark Down - Learn STP
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_stp_md.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_STP/{{ inventory_hostname }}.md
+      tags: learn_stp
+
+
+
+    - name: Learn PyATS - DOT1X
+      learn_genie:
+        host: "{{ ansible_host }}"
+        port: 22
+        protocol: ssh
+        username: "creds"
+        password: "creds"
+        os: ios
+        feature: dot1x
+      register: learned_dot1x
+      tags: learn_dot1x
+
+    - name: Debug PyATS
+      debug:
+        msg: "{{ learned_dot1x.genie.dot1x }}"
+      tags: learn_dot1x
+
+    - name: Create CSV - Learn DOT1X
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_dot1x_csv.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_DOT1X/{{ inventory_hostname }}.csv
+      tags: learn_dot1x
+
+
+    - name: Create HTML - Learn DOT1X
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_dot1x_html.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_DOT1X/{{ inventory_hostname }}.html
+      tags: learn_dot1x
+
+    - name: Create Mark Down - Learn DOT1X
+      ansible.builtin.template:
+        src: ../templates/ansible/cisco/ios/learned_dot1x_md.j2
+        dest: ../Camelot/Cisco/Ansible/IOS/Learned_DOT1X/{{ inventory_hostname }}.md
+      tags: learn_dot1x

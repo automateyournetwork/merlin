@@ -1,0 +1,10 @@
+# Learn NTP Associations
+| VRF | Association Address | Delay | Configured | Local Mode | Offset | Poll | Reach | Receive Time | Reference ID | Stratum |
+| --- | ------------------- | ----- | ---------- | ---------- | ------ | ---- | ----- | ------------ | ------------ | ------- | 
+{% for vrf in learned_ntp.genie.ntp.vrf  %}
+{% for address in learned_ntp.genie.ntp.vrf [vrf].associations.address %}
+{% for is_conf,value in learned_ntp.genie.ntp.vrf [vrf].associations.address[address].local_mode.client.isconfigured.items() %}
+| {{ vrf }} | {{ address }} | {{ value.delay }} | {{ value.isconfigured }} | {{ value.local_mode }} | {{ value.offset }} | {{ value.poll }} | {{ value.reach }} | {{ value.receive_time }} | {{ value.refid }} | {{ value.stratum }} |
+{% endfor %}
+{% endfor %}
+{% endfor %}

@@ -1,0 +1,23 @@
+<html><head><link rel="stylesheet" href="../../../../styles.css"></head><body>
+<h1>Learn STP Global</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>BPDU Filter</th>
+    <th>BPDU Guard</th>
+    <th>BPDU Guard Recovery Timeout</th>
+    <th>EtherChannel Misconfig Guard</th>
+    <th>Loop Guard</th>
+  </tr>
+  </thead>
+  <tbody>  
+  <tr>
+    <td>{{ learned_stp.genie.stp.global.bpdu_filter }}</td>
+    <td>{{ learned_stp.genie.stp.global.bpdu_guard }}</td>
+    <td>{{ learned_stp.genie.stp.global.bpduguard_timeout_recovery }}</td>
+    <td>{{ learned_stp.genie.stp.global.etherchannel_misconfig_guard }}</td>
+    <td>{{ learned_stp.genie.stp.global.loop_guard }}</td>
+  </tr>
+  </tbody>  
+</table>
+</body></html>

@@ -1,0 +1,21 @@
+<html><head><link rel="stylesheet" href="../../../../styles.css"></head><body>
+<h1>Learn VRF</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>VRF</th>
+    <th>Address Family</th>
+    <th>Route Distinguisher</th>
+  </tr>
+  </thead>
+  <tbody>{% for vrf in learned_vrf.genie.vrf.vrfs %}
+  {% if learned_vrf.genie.vrf.vrfs[vrf].address_family is defined %}
+  {% for address_family in learned_vrf.genie.vrf.vrfs[vrf].address_family %}
+  <tr>
+    <td>{{ vrf }}</td>
+    <td>{{ address_family }}</td>
+    <td>{{ learned_vrf.genie.vrf.vrfs[vrf].route_distinguisher }}</td>
+  </tr>{% endfor %}{% endif %}{% endfor %}
+  </tbody>  
+</table>
+</body></html>
