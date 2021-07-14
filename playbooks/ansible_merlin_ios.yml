@@ -378,8 +378,8 @@
         host: "{{ ansible_host }}"
         port: 22
         protocol: ssh
-        username: "xa"
-        password: "xa"
+        username: "creds"
+        password: "creds"
         os: ios
         feature: lldp
       register: learned_lldp
