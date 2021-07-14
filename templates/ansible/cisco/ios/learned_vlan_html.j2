@@ -1,0 +1,36 @@
+<html><head><link rel="stylesheet" href="../../../../styles.css"></head><body>
+<h1>Learn VLAN</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+  <th>VLAN</th>
+  <th>Name</th>
+  <th>State</th>
+  <th>ShutdownInterface</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for vlan in learned_vlan.genie.vlan.vlans %}
+  {% if learned_vlan.genie.vlan.vlans[vlan].interfaces is defined %}
+  {% for interface in learned_vlan.genie.vlan.vlans[vlan].interfaces %}
+  <tr>
+    <td>{{ vlan }}</td>
+    <td>{{ learned_vlan.genie.vlan.vlans[vlan].name }}</td>
+    <td>{{ learned_vlan.genie.vlan.vlans[vlan].state }}</td>
+    <td>{{ learned_vlan.genie.vlan.vlans[vlan].shutdown }}</td>
+    <td>{{ interface }}</td>
+  </tr>
+  {% endfor %}
+  {% else %}
+  <tr>
+    <td>{{ vlan }}</td>
+    <td>{{ learned_vlan.genie.vlan.vlans[vlan].name }}</td>
+    <td>{{ learned_vlan.genie.vlan.vlans[vlan].state }}</td>
+    <td>{{ learned_vlan.genie.vlan.vlans[vlan].shutdown }}</td>
+    <td>N/A</td>
+  </tr>
+  {% endif %}
+  {% endfor %}
+  </tbody>  
+</table>
+</body></html>
