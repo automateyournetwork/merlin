@@ -1,4 +1,0 @@
-Neighbor,Platform,Local Interface,Remote Interface,Capability,Hold Time
-{% for neighbor,value in set_cdp_neighbor.cdp.index.items() %}
-{{ value.device_id }},{{ value.platform }},{{ value.local_interface }},{{ value.port_id }},{{ value.capability }},{{ value.hold_time }}
-{% endfor %}
