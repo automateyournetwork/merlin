@@ -1,0 +1,618 @@
+<html><head><link rel="stylesheet" href="../../../../styles.css"></head><body>
+<h1>Learn Interface</h1>
+<table class="merlin-table">
+  <thead>
+  <tr>
+    <th>Interface</th>
+    <th>Description</th>
+    <th>IP Address</th>
+    <th>IP Origin</th>
+    <th>Type</th>
+    <th>Enabled</th>
+    <th>Operational Status</th>
+    <th>Physical Address</th>
+    <th>MAC Address</th>
+    <th>Switchport Enabled</th>
+    <th>Switchport Mode</th>
+    <th>Access VLAN</th>
+    <th>Trunk VLAN</th>
+    <th>Native VLAN</th>
+    <th>VRF</th>
+    <th>Bandwidth</th>
+    <th>MTU</th>
+    <th>Delay</th>
+    <th>Encapsulation</th>
+    <th>Medium</th>
+    <th>Flow Control Receive</th>
+    <th>Flow Control Send</th>
+    <th>Last Change</th>
+    <th>Port Channel</th>
+    <th>Port Channel Member</th>
+    <th>Input Broadcast</th>
+    <th>Input CRC Errors</th>
+    <th>Input Errors</th>
+    <th>Input Unicast</th>
+    <th>Input Multicast</th>
+    <th>Input Total</th>
+    <th>Output Broadcast</th>
+    <th>Output Discards</th>
+    <th>Output Errors</th>
+    <th>Output Unicast</th>
+    <th>Output Multicast</th>
+    <th>Output Total</th>
+    <th>Input Rate</th>
+    <th>Output Rate</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for interface in learned_interface.genie.interface %}
+  {% if (learned_interface.genie.interface[interface].ipv4 is defined) and (learned_interface.genie.interface[interface].port_channel is defined) %}
+  {% for ip_address in learned_interface.genie.interface[interface].ipv4 %}
+  {% if learned_interface.genie.interface[interface].port_channel.port_channel_member_intfs is defined %}
+  {% for member in learned_interface.genie.interface[interface].port_channel.port_channel_member_intfs %}
+  <tr>
+    <td>{{ interface }}</td>{% if learned_interface.genie.interface[interface].description is defined %}
+    <td>{{ learned_interface.genie.interface[interface].description }}</td>{% else %}
+    <td>No Description</td>{% endif %}{% if learned_interface.genie.interface[interface].ipv4 is defined %}
+    <td>{{ ip_address }}</td>
+    <td>{{ learned_interface.genie.interface[interface].ipv4[ip_address].origin | default("No Origin") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].type is defined %}
+    <td>{{ learned_interface.genie.interface[interface].type }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ learned_interface.genie.interface[interface].enabled }}</td>
+    <td>{{ learned_interface.genie.interface[interface].oper_status }}</td>{% if learned_interface.genie.interface[interface].phys_address is defined %}
+    <td>{{ learned_interface.genie.interface[interface].phys_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].mac_address is defined %}
+    <td>{{ learned_interface.genie.interface[interface].mac_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].switchport_enable is defined %}
+    <td>{{ learned_interface.genie.interface[interface].switchport_enable }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].switchport_mode is defined %}
+    <td>{{ learned_interface.genie.interface[interface].switchport_mode }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].access_vlan is defined %}
+    <td>{{ learned_interface.genie.interface[interface].access_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].trunk_vlans is defined %}
+    <td>{{ learned_interface.genie.interface[interface].trunk_vlans | replace(","," ") }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].native_vlan is defined %}
+    <td>{{ learned_interface.genie.interface[interface].native_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].vrf is defined %}
+    <td>{{ learned_interface.genie.interface[interface].vrf }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ learned_interface.genie.interface[interface].bandwidth }}</td>
+    <td>{{ learned_interface.genie.interface[interface].mtu }}</td>
+    <td>{{ learned_interface.genie.interface[interface].delay }}</td>
+    <td>{{ learned_interface.genie.interface[interface].encapsulation.encapsulation }}</td>{% if learned_interface.genie.interface[interface].medium is defined %}
+    <td>{{ learned_interface.genie.interface[interface].medium }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].flow_control is defined %}
+    <td>{{ learned_interface.genie.interface[interface].flow_control.receive }}</td>
+    <td>{{ learned_interface.genie.interface[interface].flow_control.send }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].last_change is defined %}
+    <td>{{ learned_interface.genie.interface[interface].last_change }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ interface }}</td>
+    <td>{{ member }}{% if learned_interface.genie.interface[interface].counters is defined %}
+    <td>{{ learned_interface.genie.interface[interface].counters.in_broadcast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_crc_errors | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_errors }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_unicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_multicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_pkts  | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_broadcast_pkts| default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_discard | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_errors | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_unicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_multicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.rate.in_rate | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.rate.out_rate | default("N/A") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endif %}{% endfor %}{% else %}{% if learned_interface.genie.interface[interface].port_channel.port_channel_member == "True" %}
+  <tr>
+    <td>{{ interface }}</td>{% if learned_interface.genie.interface[interface].description is defined %}
+    <td>{{ learned_interface.genie.interface[interface].description }}</td>{% else %}
+    <td>No Description</td>{% endif %}{% if learned_interface.genie.interface[interface].ipv4 is defined %}
+    <td>{{ ip_address }}</td>
+    <td>{{ learned_interface.genie.interface[interface].ipv4[ip_address].origin | default("No Origin") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].type is defined %}
+    <td>{{ learned_interface.genie.interface[interface].type }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ learned_interface.genie.interface[interface].enabled }}</td>
+    <td>{{ learned_interface.genie.interface[interface].oper_status }}</td>{% if learned_interface.genie.interface[interface].phys_address is defined %}
+    <td>{{ learned_interface.genie.interface[interface].phys_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].mac_address is defined %}
+    <td>{{ learned_interface.genie.interface[interface].mac_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].switchport_enable is defined %}
+    <td>{{ learned_interface.genie.interface[interface].switchport_enable }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].switchport_mode is defined %}
+    <td>{{ learned_interface.genie.interface[interface].switchport_mode }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].access_vlan is defined %}
+    <td>{{ learned_interface.genie.interface[interface].access_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].trunk_vlans is defined %}
+    <td>{{ learned_interface.genie.interface[interface].trunk_vlans | replace(","," ") }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].native_vlan is defined %}
+    <td>{{ learned_interface.genie.interface[interface].native_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].vrf is defined %}
+    <td>{{ learned_interface.genie.interface[interface].vrf }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ learned_interface.genie.interface[interface].bandwidth }}</td>
+    <td>{{ learned_interface.genie.interface[interface].mtu }}</td>
+    <td>{{ learned_interface.genie.interface[interface].delay }}</td>
+    <td>{{ learned_interface.genie.interface[interface].encapsulation.encapsulation }}</td>{% if learned_interface.genie.interface[interface].medium is defined %}
+    <td>{{ learned_interface.genie.interface[interface].medium }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].flow_control is defined %}
+    <td>{{ learned_interface.genie.interface[interface].flow_control.receive }}</td>
+    <td>{{ learned_interface.genie.interface[interface].flow_control.send }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].last_change is defined %}
+    <td>{{ learned_interface.genie.interface[interface].last_change }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ learned_interface.genie.interface[interface].port_channel.port_channel_int }}</td>
+    <td>{{ learned_interface.genie.interface[interface].port_channel.port_channel_member }}</td>{% if learned_interface.genie.interface[interface].counters is defined %}
+    <td>{{ learned_interface.genie.interface[interface].counters.in_broadcast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_crc_errors | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_errors }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_unicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_multicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_pkts  | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_broadcast_pkts| default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_discard | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_errors | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_unicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_multicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.rate.in_rate | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.rate.out_rate | default("N/A") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endif %}{% else %}
+  <tr>
+    <td>{{ interface }}</td>{% if learned_interface.genie.interface[interface].description is defined %}
+    <td>{{ learned_interface.genie.interface[interface].description }}</td>{% else %}
+    <td>No Description</td>{% endif %}{% if learned_interface.genie.interface[interface].ipv4 is defined %}
+    <td>{{ ip_address }}</td>
+    <td>{{ learned_interface.genie.interface[interface].ipv4[ip_address].origin | default("No Origin") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].type is defined %}
+    <td>{{ learned_interface.genie.interface[interface].type }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ learned_interface.genie.interface[interface].enabled }}</td>
+    <td>{{ learned_interface.genie.interface[interface].oper_status }}</td>{% if learned_interface.genie.interface[interface].phys_address is defined %}
+    <td>{{ learned_interface.genie.interface[interface].phys_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].mac_address is defined %}
+    <td>{{ learned_interface.genie.interface[interface].mac_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].switchport_enable is defined %}
+    <td>{{ learned_interface.genie.interface[interface].switchport_enable }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].switchport_mode is defined %}
+    <td>{{ learned_interface.genie.interface[interface].switchport_mode }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].access_vlan is defined %}
+    <td>{{ learned_interface.genie.interface[interface].access_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].trunk_vlans is defined %}
+    <td>{{ learned_interface.genie.interface[interface].trunk_vlans | replace(","," ") }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].native_vlan is defined %}
+    <td>{{ learned_interface.genie.interface[interface].native_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].vrf is defined %}
+    <td>{{ learned_interface.genie.interface[interface].vrf }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ learned_interface.genie.interface[interface].bandwidth }}</td>
+    <td>{{ learned_interface.genie.interface[interface].mtu }}</td>
+    <td>{{ learned_interface.genie.interface[interface].delay }}</td>
+    <td>{{ learned_interface.genie.interface[interface].encapsulation.encapsulation }}</td>{% if learned_interface.genie.interface[interface].medium is defined %}
+    <td>{{ learned_interface.genie.interface[interface].medium }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].flow_control is defined %}
+    <td>{{ learned_interface.genie.interface[interface].flow_control.receive }}</td>
+    <td>{{ learned_interface.genie.interface[interface].flow_control.send }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].last_change is defined %}
+    <td>{{ learned_interface.genie.interface[interface].last_change }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>N/A</td>
+    <td>{{ learned_interface.genie.interface[interface].port_channel.port_channel_member }}</td>{% if learned_interface.genie.interface[interface].counters is defined %}
+    <td>{{ learned_interface.genie.interface[interface].counters.in_broadcast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_crc_errors | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_errors | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_unicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_multicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_pkts  | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_broadcast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_discard | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_errors | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_unicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_multicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.rate.in_rate | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.rate.out_rate | default("N/A") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  <tr>{% endif %}{% endif %}{% endif %}{% endfor %}{% else %}{% if learned_interface.genie.interface[interface].ipv4 is defined %}
+  <tr>
+    <td>{{ interface }}</td>{% if learned_interface.genie.interface[interface].description is defined %}
+    <td>{{ learned_interface.genie.interface[interface].description }}</td>{% else %}
+    <td>No Description</td>{% endif %}{% if learned_interface.genie.interface[interface].ipv4 is defined %}
+    <td>{{ ip_address }}</td>
+    <td>{{ learned_interface.genie.interface[interface].ipv4[ip_address].origin | default("No Origin") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].type is defined %}
+    <td>{{ learned_interface.genie.interface[interface].type }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ learned_interface.genie.interface[interface].enabled }}</td>
+    <td>{{ learned_interface.genie.interface[interface].oper_status }}</td>{% if learned_interface.genie.interface[interface].phys_address is defined %}
+    <td>{{ learned_interface.genie.interface[interface].phys_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].mac_address is defined %}
+    <td>{{ learned_interface.genie.interface[interface].mac_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].switchport_enable is defined %}
+    <td>{{ learned_interface.genie.interface[interface].switchport_enable }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].switchport_mode is defined %}
+    <td>{{ learned_interface.genie.interface[interface].switchport_mode }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].access_vlan is defined %}
+    <td>{{ learned_interface.genie.interface[interface].access_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].trunk_vlans is defined %}
+    <td>{{ learned_interface.genie.interface[interface].trunk_vlans | replace(","," ") }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].native_vlan is defined %}
+    <td>{{ learned_interface.genie.interface[interface].native_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].vrf is defined %}
+    <td>{{ learned_interface.genie.interface[interface].vrf }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ learned_interface.genie.interface[interface].bandwidth }}</td>
+    <td>{{ learned_interface.genie.interface[interface].mtu }}</td>
+    <td>{{ learned_interface.genie.interface[interface].delay }}</td>
+    <td>{{ learned_interface.genie.interface[interface].encapsulation.encapsulation }}</td>{% if learned_interface.genie.interface[interface].medium is defined %}
+    <td>{{ learned_interface.genie.interface[interface].medium }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].flow_control is defined %}
+    <td>{{ learned_interface.genie.interface[interface].flow_control.receive }}</td>
+    <td>{{ learned_interface.genie.interface[interface].flow_control.send }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].last_change is defined %}
+    <td>{{ learned_interface.genie.interface[interface].last_change }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>N/A</td>
+    <td>N/A</td>{% if learned_interface.genie.interface[interface].counters is defined %}
+    <td>{{ learned_interface.genie.interface[interface].counters.in_broadcast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_crc_errors | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_errors }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_unicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_multicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_pkts  | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_broadcast_pkts| default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_discard | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_errors | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_unicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_multicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.rate.in_rate | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.rate.out_rate | default("N/A") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endif %}{% else %}{% if learned_interface.genie.interface[interface].port_channel is defined %}{% if learned_interface.genie.interface[interface].port_channel.port_channel_member_intfs is defined %}{% for member in learned_interface.genie.interface[interface].port_channel.port_channel_member_intfs %}
+  <tr>
+    <td>{{ interface }}</td>{% if learned_interface.genie.interface[interface].description is defined %}
+    <td>{{ learned_interface.genie.interface[interface].description }}</td>{% else %}
+    <td>No Description</td>{% endif %}
+    <td>N/A</td>
+    <td>N/A</td>{% if learned_interface.genie.interface[interface].type is defined %}
+    <td>{{ learned_interface.genie.interface[interface].type }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ learned_interface.genie.interface[interface].enabled }}</td>
+    <td>{{ learned_interface.genie.interface[interface].oper_status }}</td>{% if learned_interface.genie.interface[interface].phys_address is defined %}
+    <td>{{ learned_interface.genie.interface[interface].phys_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].mac_address is defined %}
+    <td>{{ learned_interface.genie.interface[interface].mac_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].switchport_enable is defined %}
+    <td>{{ learned_interface.genie.interface[interface].switchport_enable }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].switchport_mode is defined %}
+    <td>{{ learned_interface.genie.interface[interface].switchport_mode }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].access_vlan is defined %}
+    <td>{{ learned_interface.genie.interface[interface].access_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].trunk_vlans is defined %}
+    <td>{{ learned_interface.genie.interface[interface].trunk_vlans | replace(","," ") }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].native_vlan is defined %}
+    <td>{{ learned_interface.genie.interface[interface].native_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].vrf is defined %}
+    <td>{{ learned_interface.genie.interface[interface].vrf }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ learned_interface.genie.interface[interface].bandwidth }}</td>
+    <td>{{ learned_interface.genie.interface[interface].mtu }}</td>
+    <td>{{ learned_interface.genie.interface[interface].delay }}</td>
+    <td>{{ learned_interface.genie.interface[interface].encapsulation.encapsulation }}</td>{% if learned_interface.genie.interface[interface].medium is defined %}
+    <td>{{ learned_interface.genie.interface[interface].medium }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].flow_control is defined %}
+    <td>{{ learned_interface.genie.interface[interface].flow_control.receive }}</td>
+    <td>{{ learned_interface.genie.interface[interface].flow_control.send }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].last_change is defined %}
+    <td>{{ learned_interface.genie.interface[interface].last_change }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ interface }}</td>
+    <td>{{ member }}{% if learned_interface.genie.interface[interface].counters is defined %}
+    <td>{{ learned_interface.genie.interface[interface].counters.in_broadcast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_crc_errors | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_errors }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_unicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_multicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_pkts  | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_broadcast_pkts| default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_discard | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_errors | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_unicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_multicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.rate.in_rate | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.rate.out_rate | default("N/A") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endif %}{% endfor %}{% else %}{% if learned_interface.genie.interface[interface].port_channel.port_channel_member == "True" %}
+  <tr>
+    <td>{{ interface }}</td>{% if learned_interface.genie.interface[interface].description is defined %}
+    <td>{{ learned_interface.genie.interface[interface].description }}</td>{% else %}
+    <td>No Description</td>{% endif %}
+    <td>N/A</td>
+    <td>N/A</td>{% if learned_interface.genie.interface[interface].type is defined %}
+    <td>{{ learned_interface.genie.interface[interface].type }}{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ learned_interface.genie.interface[interface].enabled }}</td>
+    <td>{{ learned_interface.genie.interface[interface].oper_status }}</td>{% if learned_interface.genie.interface[interface].phys_address is defined %}
+    <td>{{ learned_interface.genie.interface[interface].phys_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].mac_address is defined %}
+    <td>{{ learned_interface.genie.interface[interface].mac_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].switchport_enable is defined %}
+    <td>{{ learned_interface.genie.interface[interface].switchport_enable }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].switchport_mode is defined %}
+    <td>{{ learned_interface.genie.interface[interface].switchport_mode }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].access_vlan is defined %}
+    <td>{{ learned_interface.genie.interface[interface].access_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].trunk_vlans is defined %}
+    <td>{{ learned_interface.genie.interface[interface].trunk_vlans | replace(","," ") }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].native_vlan is defined %}
+    <td>{{ learned_interface.genie.interface[interface].native_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].vrf is defined %}
+    <td>{{ learned_interface.genie.interface[interface].vrf }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ learned_interface.genie.interface[interface].bandwidth }}</td>
+    <td>{{ learned_interface.genie.interface[interface].mtu }}</td>
+    <td>{{ learned_interface.genie.interface[interface].delay }}</td>
+    <td>{{ learned_interface.genie.interface[interface].encapsulation.encapsulation }}</td>{% if learned_interface.genie.interface[interface].medium is defined %}
+    <td>{{ learned_interface.genie.interface[interface].medium }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].flow_control is defined %}
+    <td>{{ learned_interface.genie.interface[interface].flow_control.receive }}</td>
+    <td>{{ learned_interface.genie.interface[interface].flow_control.send }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].last_change is defined %}
+    <td>{{ learned_interface.genie.interface[interface].last_change }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ learned_interface.genie.interface[interface].port_channel.port_channel_int }}</td>
+    <td>{{ learned_interface.genie.interface[interface].port_channel.port_channel_member }}</td>{% if learned_interface.genie.interface[interface].counters is defined %}
+    <td>{{ learned_interface.genie.interface[interface].counters.in_broadcast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_crc_errors | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_errors }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_unicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_multicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_pkts  | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_broadcast_pkts| default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_discard | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_errors | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_unicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_multicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.rate.in_rate | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.rate.out_rate | default("N/A") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endif %}{% else %}
+  <tr>
+    <td>{{ interface }}</td>{% if learned_interface.genie.interface[interface].description is defined %}
+    <td>{{ learned_interface.genie.interface[interface].description }}</td>{% else %}
+    <td>No Description</td>{% endif %}
+    <td>N/A</td>
+    <td>N/A</td>{% if learned_interface.genie.interface[interface].type is defined %}
+    <td>{{ learned_interface.genie.interface[interface].type }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ learned_interface.genie.interface[interface].enabled }}</td>
+    <td>{{ learned_interface.genie.interface[interface].oper_status }}</td>{% if learned_interface.genie.interface[interface].phys_address is defined %}
+    <td>{{ learned_interface.genie.interface[interface].phys_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].mac_address is defined %}
+    <td>{{ learned_interface.genie.interface[interface].mac_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].switchport_enable is defined %}
+    <td>{{ learned_interface.genie.interface[interface].switchport_enable }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].switchport_mode is defined %}
+    <td>{{ learned_interface.genie.interface[interface].switchport_mode }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].access_vlan is defined %}
+    <td>{{ learned_interface.genie.interface[interface].access_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].trunk_vlans is defined %}
+    <td>{{ learned_interface.genie.interface[interface].trunk_vlans | replace(","," ") }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].native_vlan is defined %}
+    <td>{{ learned_interface.genie.interface[interface].native_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].vrf is defined %}
+    <td>{{ learned_interface.genie.interface[interface].vrf }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ learned_interface.genie.interface[interface].bandwidth }}</td>
+    <td>{{ learned_interface.genie.interface[interface].mtu }}</td>
+    <td>{{ learned_interface.genie.interface[interface].delay }}</td>
+    <td>{{ learned_interface.genie.interface[interface].encapsulation.encapsulation }}</td>{% if learned_interface.genie.interface[interface].medium is defined %}
+    <td>{{ learned_interface.genie.interface[interface].medium }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].flow_control is defined %}
+    <td>{{ learned_interface.genie.interface[interface].flow_control.receive }}</td>
+    <td>{{ learned_interface.genie.interface[interface].flow_control.send }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].last_change is defined %}
+    <td>{{ learned_interface.genie.interface[interface].last_change }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].port_channel.port_channel_member == "True" %}
+    <td>{{ interface }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ learned_interface.genie.interface[interface].port_channel.port_channel_member }}</td>{% if learned_interface.genie.interface[interface].counters is defined %}
+    <td>{{ learned_interface.genie.interface[interface].counters.in_broadcast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_crc_errors | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_errors }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_unicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_multicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_pkts  | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_broadcast_pkts| default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_discard | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_errors | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_unicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_multicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.rate.in_rate | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.rate.out_rate | default("N/A") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endif %}{% endif %}{% endif %}{% else %}
+  <tr>
+    <td>{{ interface }}</td>{% if learned_interface.genie.interface[interface].description is defined %}
+    <td>{{ learned_interface.genie.interface[interface].description }}</td>{% else %}
+    <td>No Description</td>{% endif %}
+    <td>N/A</td>
+    <td>N/A</td>{% if learned_interface.genie.interface[interface].type is defined %}
+    <td>{{ learned_interface.genie.interface[interface].type }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ learned_interface.genie.interface[interface].enabled }}</td>
+    <td>{{ learned_interface.genie.interface[interface].oper_status }}</td>{% if learned_interface.genie.interface[interface].phys_address is defined %}
+    <td>{{ learned_interface.genie.interface[interface].phys_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].mac_address is defined %}
+    <td>{{ learned_interface.genie.interface[interface].mac_address }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].switchport_enable is defined %}
+    <td>{{ learned_interface.genie.interface[interface].switchport_enable }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].switchport_mode is defined %}
+    <td>{{ learned_interface.genie.interface[interface].switchport_mode }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].access_vlan is defined %}
+    <td>{{ learned_interface.genie.interface[interface].access_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].trunk_vlans is defined %}
+    <td>{{ learned_interface.genie.interface[interface].trunk_vlans | replace(","," ") }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].native_vlan is defined %}
+    <td>{{ learned_interface.genie.interface[interface].native_vlan }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].vrf is defined %}
+    <td>{{ learned_interface.genie.interface[interface].vrf }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ learned_interface.genie.interface[interface].bandwidth }}</td>
+    <td>{{ learned_interface.genie.interface[interface].mtu }}</td>
+    <td>{{ learned_interface.genie.interface[interface].delay }}</td>
+    <td>{{ learned_interface.genie.interface[interface].encapsulation.encapsulation }}</td>{% if learned_interface.genie.interface[interface].medium is defined %}
+    <td>{{ learned_interface.genie.interface[interface].medium }}</td>{% else %}
+    <td>N/A</td>{% endif %}{% if learned_interface.genie.interface[interface].flow_control is defined %}
+    <td>{{ learned_interface.genie.interface[interface].flow_control.receive }}</td>
+    <td>{{ learned_interface.genie.interface[interface].flow_control.send }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>{% endif %}
+    <td>N/A</td>
+    <td>N/A</td>{% if learned_interface.genie.interface[interface].last_change is defined %}
+    <td>{{ learned_interface.genie.interface[interface].last_change }}</td>{% else %}
+    <td>N/A</td>{% endif %}
+    <td>{{ learned_interface.genie.interface[interface].port_channel.port_channel_int }}</td>
+    <td>{{ learned_interface.genie.interface[interface].port_channel.port_channel_member }}</td>{% if learned_interface.genie.interface[interface].counters is defined %}
+    <td>{{ learned_interface.genie.interface[interface].counters.in_broadcast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_crc_errors | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_errors }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_unicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_multicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.in_pkts  | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_broadcast_pkts| default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_discard | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_errors | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_unicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_multicast_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.out_pkts | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.rate.in_rate | default("N/A") }}</td>
+    <td>{{ learned_interface.genie.interface[interface].counters.rate.out_rate | default("N/A") }}</td>{% else %}
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+    <td>N/A</td>
+  </tr>{% endif %}{% endif %}{% endif %}{% endif %}{% endfor %}
+  </tbody>
+</table>
+</body></html>
