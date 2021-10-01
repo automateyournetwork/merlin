@@ -1,0 +1,4 @@
+pyats[full]
+tinydb
+rich
+xmltodict

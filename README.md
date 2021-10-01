@@ -140,19 +140,7 @@ git clone https://github.com/automateyournetwork/merlin
 Install pyATS, Rich, markmap, netjsongraph, xmltodict and TinyDB into your environment:
 
 ```console
-pip install pyats[full]
-```
-
-```console
-pip install rich
-```
-
-```console
-pip install xmltodict
-```
-
-```console
-pip install tinydb
+pip install -r requirements.txt
 ```
 
 ```console

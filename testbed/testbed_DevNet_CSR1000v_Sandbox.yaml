@@ -17,7 +17,7 @@ devices:
       connections:        
         cli:
           protocol: ssh
-          ip: 10.10.20.48
+          ip: sandbox-iosxe-latest-1.cisco.com
           port: 22
           arguments:
             connection_timeout: 360            

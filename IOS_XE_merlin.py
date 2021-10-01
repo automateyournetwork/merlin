@@ -63,7 +63,7 @@ class common_setup(aetest.CommonSetup):
     def connect_to_devices(self, testbed):
         """Connect to all the devices"""
         print(Panel.fit(Text.from_markup(GREETING)))
-        testbed.connect()
+        testbed.connect(learn_hostname=True)
 
 # ----------------
 # Test Case #1
@@ -672,16 +672,24 @@ class Collect_Information(aetest.Testcase):
                         fh.close()
 
                     for filetype in filetype_loop:
-                        parsed_output_type = learned_stp_rpvst_template.render(to_parse_stp=self.learned_stp['rapid_pvst'],filetype_loop_jinja2=filetype)
+                        if 'rapid_pvst' in self.learned_stp:
+                            parsed_output_type = learned_stp_rpvst_template.render(to_parse_stp=self.learned_stp['rapid_pvst'],filetype_loop_jinja2=filetype)
 
-                        with open("Camelot/Cisco/IOS_XE/Learned_STP/%s_learned_stp_rpvst.%s" % (device.alias,filetype), "w") as fh:
-                            fh.write(parsed_output_type)
-                            fh.close() 
+                            with open("Camelot/Cisco/IOS_XE/Learned_STP/%s_learned_stp_rpvst.%s" % (device.alias,filetype), "w") as fh:
+                                fh.write(parsed_output_type)
+                                fh.close() 
+                        else:
+                            print(f"Spanning-tree is not RPVST: \n{self.learned_stp}")
+                        # TODO: Add parser for MST and PVST
                     
                     if os.path.exists("Camelot/Cisco/IOS_XE/Learned_STP/%s_learned_stp_rpvst.md" % device.alias):
                         os.system("markmap --no-open Camelot/Cisco/IOS_XE/Learned_STP/%s_learned_stp_rpvst.md --output Camelot/Cisco/IOS_XE/Learned_STP/%s_learned_stp_rpvst_mind_map.html" % (device.alias,device.alias))
 
-                    parsed_output_netjson_json = learned_stp_rpvst_netjson_json_template.render(to_parse_stp=self.learned_stp['rapid_pvst'],device_alias = device.alias)
+                    if 'rapid_pvst' in self.learned_stp:
+                        parsed_output_netjson_json = learned_stp_rpvst_netjson_json_template.render(to_parse_stp=self.learned_stp['rapid_pvst'],device_alias = device.alias)
+                    else:
+                        print(f"Spanning-tree is not RPVST: \n{self.learned_stp}")
+                        # TODO: Add parser for MST and PVST
                     parsed_output_netjson_html = learned_stp_rpvst_netjson_html_template.render(device_alias = device.alias)
 
                     with open("Camelot/Cisco/IOS_XE/Learned_STP/%s_learned_stp_rpvst_netgraph.json" % device.alias, "w") as fh:
