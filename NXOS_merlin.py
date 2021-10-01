@@ -1547,8 +1547,11 @@ class Collect_Information(aetest.Testcase):
 
                         with steps.start('Store data',continue_=True) as step:
                             with open("Camelot/Cisco/NXOS/Show_IP_OSPF_Neighbor_Detail_VRF/%s_show_ip_ospf_neighbor_detail_vrf_%s.json" % (device.alias,vrf), "w") as fid:
-                                json.dump(self.parsed_show_ip_ospf_neighbor_detail_vrf, fid, indent=4, sort_keys=True)
-                                fid.close()
+                                try:
+                                    json.dump(self.parsed_show_ip_ospf_neighbor_detail_vrf, fid, indent=4, sort_keys=True)
+                                    fid.close()
+                                except Exception as e:
+                                    step.failed('Could not parse it correctly\n{e}'.format(e=e))
 
                             with open("Camelot/Cisco/NXOS/Show_IP_OSPF_Neighbor_Detail_VRF/%s_show_ip_ospf_neighbor_detail_vrf_%s.yaml" % (device.alias,vrf), "w") as yml:
                                 yaml.dump(self.parsed_show_ip_ospf_neighbor_detail_vrf, yml, allow_unicode=True)
