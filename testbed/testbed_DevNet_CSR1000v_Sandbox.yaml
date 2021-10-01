@@ -5,7 +5,7 @@ testbed:
       address: 10.10.20.50
       
 devices:
-    csr1Kv:
+    csr1000v-1:
       alias: 'DevNet_Sandbox_CSR1000v'
       type: 'router'
       os: 'iosxe'

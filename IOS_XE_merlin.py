@@ -685,7 +685,11 @@ class Collect_Information(aetest.Testcase):
                     if os.path.exists("Camelot/Cisco/IOS_XE/Learned_STP/%s_learned_stp_rpvst.md" % device.alias):
                         os.system("markmap --no-open Camelot/Cisco/IOS_XE/Learned_STP/%s_learned_stp_rpvst.md --output Camelot/Cisco/IOS_XE/Learned_STP/%s_learned_stp_rpvst_mind_map.html" % (device.alias,device.alias))
 
-                    parsed_output_netjson_json = learned_stp_rpvst_netjson_json_template.render(to_parse_stp=self.learned_stp['rapid_pvst'],device_alias = device.alias)
+                    if 'rapid_pvst' in self.learned_stp:
+                        parsed_output_netjson_json = learned_stp_rpvst_netjson_json_template.render(to_parse_stp=self.learned_stp['rapid_pvst'],device_alias = device.alias)
+                    else:
+                        print(f"Spanning-tree is not RPVST: \n{self.learned_stp}")
+                        # TODO: Add parser for MST and PVST
                     parsed_output_netjson_html = learned_stp_rpvst_netjson_html_template.render(device_alias = device.alias)
 
                     with open("Camelot/Cisco/IOS_XE/Learned_STP/%s_learned_stp_rpvst_netgraph.json" % device.alias, "w") as fh:
