@@ -53,7 +53,7 @@ A CSV spreadsheet (command_output.csv)
 
 A Markdown file (command_output.md)
 
-An HTML page (comand_output.html)
+An HTML page (command_output.html)
 
 An interactive HTML Mind Map (command_output_mind_map.html)
 
